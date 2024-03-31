@@ -19,9 +19,9 @@ create: 2024-03-30 15:05:55
 	- conda 기본 가상환명 설정(conda activated yeardream 매번 치기 구찮음)
 ```
 
-## 1.다운로드
+## 다운로드
 
-![[Pasted image 20240330172323.png]]
+![[Pasted image 2024033017232png]]
 https://drive.google.com/file/d/1uLHl3lNDwtJKfZFpxjDtA7FO27W4ULT3/view?usp=sharing
 
 ```ad-important
@@ -40,7 +40,7 @@ title:경고
 
 ---
 
-##  2.wsl 설치
+## wsl 설치
 
 
 [여기를 참조](https://quickest-asterisk-75d.notion.site/0-WSL-637b2a71df7b4eadb716b35df22649ee)
@@ -52,9 +52,9 @@ wsl --install
 
 ---
 
-## 3.wsl 배포 파일 추가하기
+## wsl 배포 파일 추가하기
 
-### 3.1파일 이동
+### 파일 이동
 
 ![[Pasted image 20240330192920.png]]
 
@@ -64,7 +64,7 @@ wsl --install
 3번 경로에 4번 위치로 이동
 ```
 
-### 3.2import!
+### import!
 
 ![[Pasted image 20240330193620.png]]
 
@@ -83,7 +83,7 @@ wsl --import Ubuntu2204Yeardream4 C:wsl\yeardream C:\wsl\Ubuntu2204Yeardream4Doc
 
 그리고
 
-### 3.3 별
+### 별
 
 ```cmd
 wsl -l -v
@@ -103,16 +103,16 @@ wsl -l -v
 
 ![[Pasted image 20240330195355.png]]
 
-#### 3.3.1. 앤터 똭.
+#### 앤터 똭
 ```cmd
 wsl --unregister Ubuntu
 ```
 
-#### 3.3.2. 내 별
+#### 내 별
 
 별을 빼앗아 3번 위치에 꾸며줬다.
 
-#### 3.3.3. 확인
+#### 확인
 
 ![[Pasted image 20240330195839.png]]
 이제 커맨드 창에서 wsl만 입력하고 편해지자.
@@ -125,9 +125,9 @@ batch...
 ```
 
 ---
-## 4.wsl 무사 설치 확인
+## wsl 무사 설치 확인
 
-### 4.1.mysql
+### mysql
 
 #### 버전 확인
 ![[Pasted image 20240330201351.png]]
@@ -146,7 +146,7 @@ systemctl status mysql
 q 키를 눌러서 빠져나온다.
 ```
 
-### 4.2.conda
+### conda
 
 #### 버전 확인
 ![[Pasted image 20240330201557.png]]
@@ -158,7 +158,7 @@ conda --version
 ![[Pasted image 20240330201629.png]]
 잘 동작 동작 하고 있다.
 
-### 4.3.docker
+### docker
 
 #### 버전 확인
 ![[Pasted image 20240330201734.png]]
@@ -173,16 +173,16 @@ docker
 ---
 
 
-## 5.메모리 할당
+## 메모리 할당
 
 ```ad-note
 음... 해두면 좋다. 안 둬도 상관은 없을까?!?
 하지만.. 내 메모린 소중한걸...
 ```
 
-### 5.1파일 작성
+### 파일 작성
 
-![[Pasted image 20240330175413.png]]
+![[Pasted image 2024033017541png]]
 
 ```text file:.wslconfig
 [wsl2]
@@ -194,7 +194,7 @@ localhostForwarding=true
 
 1. %USERPROFILE% 입력
 2. .wslconfig 파일 생성
-3. 3번 작성
+ 3번 작성
 
 ```ad-note
 자신의 컴퓨터 사양이 좋지 않다면
@@ -207,7 +207,7 @@ processors = 2
 ```
 
 
-### 5.2wsl 다시 시작
+### wsl 다시 시작
 
 
 ```cmd title:reboot
@@ -215,7 +215,7 @@ wsl --shutdown
 ```
 
 
-### 5.3확인
+### 확인
 
 ![[Pasted image 20240323001212.png]]
 
