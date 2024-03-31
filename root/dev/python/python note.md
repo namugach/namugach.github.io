@@ -5,9 +5,6 @@ tags:
   - note
 create: 2024-03-27 14:13:24
 ---
-- https://velog.io/@dkwjd131/작성중Python-regex-정규표현식
-
-
 ## 변수
 
 ```python
@@ -516,6 +513,7 @@ print(re.sub("(?<=-\\d).+", "******", oldman_id))
 
 치환
 
+- https://velog.io/@dkwjd131/작성중Python-regex-정규표현식
 
 ---
 

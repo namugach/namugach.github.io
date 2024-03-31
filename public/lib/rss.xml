@@ -1,59 +1,5 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>https://namugach.github.io/</link><image><url>https://namugach.github.io/lib/media/favicon.png</url><title>note</title><link>https://namugach.github.io/</link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 31 Mar 2024 01:20:45 GMT</lastBuildDate><atom:link href="https://namugach.github.io/lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 31 Mar 2024 01:20:42 GMT</pubDate><copyright><![CDATA[namugach]]></copyright><ttl>60</ttl><dc:creator>namugach</dc:creator><item><title><![CDATA[main]]></title><description><![CDATA[ 
- <br>Note저장 공유용]]></description><link>https://namugach.github.io/root/main.html</link><guid isPermaLink="false">root/main.md</guid><dc:creator><![CDATA[namugach]]></dc:creator><pubDate>Sun, 31 Mar 2024 01:20:28 GMT</pubDate></item><item><title><![CDATA[이어드림스쿨 실습용 wsl 배포 import]]></title><description><![CDATA[ 
- <br>Note<a data-tooltip-position="top" aria-label="https://quickest-asterisk-75d.notion.site/797e8235be5e400f80e0eef8ea4f9c8d" rel="noopener" class="external-link" href="https://quickest-asterisk-75d.notion.site/797e8235be5e400f80e0eef8ea4f9c8d" target="_blank">윈도우용 환경가이드 세팅</a>을 참고하여 만든 wsl 통파일 배포
-
-
-<br>mysql
-<br>python conda
-<br>python packages
-<br>docker
-<br>그 외 자잘한 세팅
-
-<br>wsl 최초 로그인시 계정으로 로그인 (root로 로그인 하는 거 수정)
-<br>로그인 할 때 비번 표시 (보안상 비밀번호가 너무 어려워서 잊기 싶기 때문에)
-<br>conda 기본 가상환명 설정(conda activated yeardream 매번 치기 구찮음)
-
-
-<br><br>"Pasted image 2024033017232png"이(가) 생성되지 않았습니다. 클릭하여 생성합니다.<br>
-<a rel="noopener" class="external-link" href="https://drive.google.com/file/d/1uLHl3lNDwtJKfZFpxjDtA7FO27W4ULT3/view?usp=sharing" target="_blank">https://drive.google.com/file/d/1uLHl3lNDwtJKfZFpxjDtA7FO27W4ULT3/view?usp=sharing</a><br>주의다운로드를 "한 번"(매우 중요) 클릭한다.<br><img alt="Pasted image 20240330192430.png" src="https://namugach.github.io/lib/media/pasted-image-20240330192430.png"><br>경고무시하고 다운로드<br><br><br><a data-tooltip-position="top" aria-label="https://quickest-asterisk-75d.notion.site/0-WSL-637b2a71df7b4eadb716b35df22649ee" rel="noopener" class="external-link" href="https://quickest-asterisk-75d.notion.site/0-WSL-637b2a71df7b4eadb716b35df22649ee" target="_blank">여기를 참조</a><br>wsl --install
-복사<br><br><br><br><img alt="Pasted image 20240330192920.png" src="https://namugach.github.io/lib/media/pasted-image-20240330192920.png"><br>Note1번에 위치해 있는 2번 파일을<br>
-3번 경로에 4번 위치로 이동<br><br><img alt="Pasted image 20240330193620.png" src="https://namugach.github.io/lib/media/pasted-image-20240330193620.png"><br>wsl --import Ubuntu2204Yeardream4 C:wsl\yeardream C:\wsl\Ubuntu2204Yeardream4DockerComplete.tar
-복사<br>하면<br><img alt="Pasted image 20240330194601.png" src="https://namugach.github.io/lib/media/pasted-image-20240330194601.png"><br>요롷게<br>작업을 잘 완료했다고 나온다.<br>그리고<br><br>wsl -l -v
-복사<br>치고 앤터 똭. (새끼 손가락으로 살포시 눌러야 함)<br><img alt="Pasted image 20240330194846.png" src="https://namugach.github.io/lib/media/pasted-image-20240330194846.png"><br>보라.<br>우리를 괴롭혔던 별이 Ubuntu에 똭. 밖혀있다.<br>저것은 cmd에서 wsl 커맨드를 쳤을 때 기본으로 들어가겠다는 표시다.<br>
-우리는 이미 Ubuntu2204Yeardream4DockerCompleter가 있음으로<br>
-저 건방진 혐오스런 별이 달린 녀석을 지워버릴 것이다.<br><img alt="Pasted image 20240330195355.png" src="https://namugach.github.io/lib/media/pasted-image-20240330195355.png"><br><br>wsl --unregister Ubuntu
-복사<br><br>별을 빼앗아 3번 위치에 꾸며줬다.<br><br><img alt="Pasted image 20240330195839.png" src="https://namugach.github.io/lib/media/pasted-image-20240330195839.png"><br>
-이제 커맨드 창에서 wsl만 입력하고 편해지자.<br>경고여기서 더 편해지면 도둑놈 심보임으로.<br>
-그 이상은 안됨.<br>
-batch...<br><br><br><br><br><img alt="Pasted image 20240330201351.png" src="https://namugach.github.io/lib/media/pasted-image-20240330201351.png"><br>mysql --version
-복사<br><br><img alt="Pasted image 20240330201425.png" src="https://namugach.github.io/lib/media/pasted-image-20240330201425.png"><br>systemctl status mysql
-복사<br>Tipq 키를 눌러서 빠져나온다.<br><br><br><img alt="Pasted image 20240330201557.png" src="https://namugach.github.io/lib/media/pasted-image-20240330201557.png"><br>conda --version
-복사<br><br><img alt="Pasted image 20240330201629.png" src="https://namugach.github.io/lib/media/pasted-image-20240330201629.png"><br>
-잘 동작 동작 하고 있다.<br><br><br><img alt="Pasted image 20240330201734.png" src="https://namugach.github.io/lib/media/pasted-image-20240330201734.png"><br><br><img alt="Pasted image 20240330201951.png" src="https://namugach.github.io/lib/media/pasted-image-20240330201951.png"><br>docker
-복사<br>잘 동작 하고 있을지도?<br><br><br>Note음... 해두면 좋다. 안 둬도 상관은 없을까?!?<br>
-하지만.. 내 메모린 소중한걸...<br><br>"Pasted image 2024033017541png"이(가) 생성되지 않았습니다. 클릭하여 생성합니다.<br>[wsl2]
-memory=4GB
-processors=4
-swap=1GB
-localhostForwarding=true
-복사<br>
-<br>%USERPROFILE% 입력
-<br>.wslconfig 파일 생성<br>
-3번 작성
-<br>Note자신의 컴퓨터 사양이 좋지 않다면<br>
-memory = 2GB<br>
-processors = 2<br>
-이렇게 설정해도 됨
-사실.. 몇 번 해보고,<br>
-이정도면 내 컴퓨터가 죽지 않겠구나 싶을 정도로만 주면 된다.<br><br>wsl --shutdown
-복사<br><br><img alt="Pasted image 20240323001212.png" src="https://namugach.github.io/lib/media/pasted-image-20240323001212.png"><br>htop 로 확인 결과<br>
-<br><a data-tooltip-position="top" aria-label="https://velog.io/@alirz-pixel/wsl2-Vmmem-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%A0%90%EC%9C%A0%EC%9C%A8-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0" rel="noopener" class="external-link" href="https://velog.io/@alirz-pixel/wsl2-Vmmem-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%A0%90%EC%9C%A0%EC%9C%A8-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0" target="_blank">https://velog.io/@alirz-pixel/wsl2-Vmmem-메모리-점유율-해결하기</a>
-<br><a rel="noopener" class="external-link" href="https://learn.microsoft.com/ko-kr/windows/wsl/wsl-config" target="_blank">https://learn.microsoft.com/ko-kr/windows/wsl/wsl-config</a>
-<br><a data-tooltip-position="top" aria-label="https://velog.io/@devookim/wsl2-%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8-%EC%8B%9C%ED%82%A4%EA%B8%B0" rel="noopener" class="external-link" href="https://velog.io/@devookim/wsl2-%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8-%EC%8B%9C%ED%82%A4%EA%B8%B0" target="_blank">https://velog.io/@devookim/wsl2-다이어트-시키기</a>
-]]></description><link>https://namugach.github.io/root/dev/wsl/이어드림스쿨-실습용-wsl-배포-import.html</link><guid isPermaLink="false">root/dev/wsl/이어드림스쿨 실습용 wsl 배포 import.md</guid><dc:creator><![CDATA[namugach]]></dc:creator><pubDate>Sun, 31 Mar 2024 01:16:08 GMT</pubDate><enclosure url="https://namugach.github.io/lib/media/pasted-image-20240330192430.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://namugach.github.io/lib/media/pasted-image-20240330192430.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[python note]]></title><description><![CDATA[ 
- <br>
-<br><a data-tooltip-position="top" aria-label="https://velog.io/@dkwjd131/%EC%9E%91%EC%84%B1%EC%A4%91Python-regex-%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D" rel="noopener" class="external-link" href="https://velog.io/@dkwjd131/%EC%9E%91%EC%84%B1%EC%A4%91Python-regex-%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D" target="_blank">https://velog.io/@dkwjd131/작성중Python-regex-정규표현식</a>
-<br><br>a = 10
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>https://namugach.github.io/</link><image><url>https://namugach.github.io/lib/media/favicon.png</url><title>note</title><link>https://namugach.github.io/</link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 31 Mar 2024 01:43:09 GMT</lastBuildDate><atom:link href="https://namugach.github.io/lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 31 Mar 2024 01:43:07 GMT</pubDate><copyright><![CDATA[namugach]]></copyright><ttl>60</ttl><dc:creator>namugach</dc:creator><item><title><![CDATA[python note]]></title><description><![CDATA[ 
+ <br><br>a = 10
 b = 20
 print(a + b)
 복사<br>a, b = 1, 2
@@ -317,7 +263,9 @@ print(res.group()) #234567
 복사<br>찾기<br><br>oldman_id = "911210-1234567"
 print(re.sub("(?&lt;=-\\d).+", "******", oldman_id))
 # 911210-1******
-복사<br>치환<br><br><br>def div(a, b):
+복사<br>치환<br>
+<br><a data-tooltip-position="top" aria-label="https://velog.io/@dkwjd131/%EC%9E%91%EC%84%B1%EC%A4%91Python-regex-%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D" rel="noopener" class="external-link" href="https://velog.io/@dkwjd131/%EC%9E%91%EC%84%B1%EC%A4%91Python-regex-%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D" target="_blank">https://velog.io/@dkwjd131/작성중Python-regex-정규표현식</a>
+<br><br><br>def div(a, b):
     try:
         return a / b
     except:
@@ -339,4 +287,56 @@ div(8, 0)
 div(9, 3)
 div("a", 5)
 div(8, 0)
-복사]]></description><link>root\dev\python\python-note.html</link><guid isPermaLink="false">root/dev/python/python note.md</guid><pubDate>Fri, 29 Mar 2024 12:57:05 GMT</pubDate></item></channel></rss>
+복사]]></description><link>https://namugach.github.io/root/dev/python/python-note.html</link><guid isPermaLink="false">root/dev/python/python note.md</guid><dc:creator><![CDATA[namugach]]></dc:creator><pubDate>Sun, 31 Mar 2024 01:42:37 GMT</pubDate></item><item><title><![CDATA[main]]></title><description><![CDATA[ 
+ <br>Note저장 공유용]]></description><link>https://namugach.github.io/root/main.html</link><guid isPermaLink="false">root/main.md</guid><dc:creator><![CDATA[namugach]]></dc:creator><pubDate>Sun, 31 Mar 2024 01:20:28 GMT</pubDate></item><item><title><![CDATA[이어드림스쿨 실습용 wsl 배포 import]]></title><description><![CDATA[ 
+ <br>Note<a data-tooltip-position="top" aria-label="https://quickest-asterisk-75d.notion.site/797e8235be5e400f80e0eef8ea4f9c8d" rel="noopener" class="external-link" href="https://quickest-asterisk-75d.notion.site/797e8235be5e400f80e0eef8ea4f9c8d" target="_blank">윈도우용 환경가이드 세팅</a>을 참고하여 만든 wsl 통파일 배포
+
+
+<br>mysql
+<br>python conda
+<br>python packages
+<br>docker
+<br>그 외 자잘한 세팅
+
+<br>wsl 최초 로그인시 계정으로 로그인 (root로 로그인 하는 거 수정)
+<br>로그인 할 때 비번 표시 (보안상 비밀번호가 너무 어려워서 잊기 싶기 때문에)
+<br>conda 기본 가상환명 설정(conda activated yeardream 매번 치기 구찮음)
+
+
+<br><br>"Pasted image 2024033017232png"이(가) 생성되지 않았습니다. 클릭하여 생성합니다.<br>
+<a rel="noopener" class="external-link" href="https://drive.google.com/file/d/1uLHl3lNDwtJKfZFpxjDtA7FO27W4ULT3/view?usp=sharing" target="_blank">https://drive.google.com/file/d/1uLHl3lNDwtJKfZFpxjDtA7FO27W4ULT3/view?usp=sharing</a><br>주의다운로드를 "한 번"(매우 중요) 클릭한다.<br><img alt="Pasted image 20240330192430.png" src="https://namugach.github.io/lib/media/pasted-image-20240330192430.png"><br>경고무시하고 다운로드<br><br><br><a data-tooltip-position="top" aria-label="https://quickest-asterisk-75d.notion.site/0-WSL-637b2a71df7b4eadb716b35df22649ee" rel="noopener" class="external-link" href="https://quickest-asterisk-75d.notion.site/0-WSL-637b2a71df7b4eadb716b35df22649ee" target="_blank">여기를 참조</a><br>wsl --install
+복사<br><br><br><br><img alt="Pasted image 20240330192920.png" src="https://namugach.github.io/lib/media/pasted-image-20240330192920.png"><br>Note1번에 위치해 있는 2번 파일을<br>
+3번 경로에 4번 위치로 이동<br><br><img alt="Pasted image 20240330193620.png" src="https://namugach.github.io/lib/media/pasted-image-20240330193620.png"><br>wsl --import Ubuntu2204Yeardream4 C:wsl\yeardream C:\wsl\Ubuntu2204Yeardream4DockerComplete.tar
+복사<br>하면<br><img alt="Pasted image 20240330194601.png" src="https://namugach.github.io/lib/media/pasted-image-20240330194601.png"><br>요롷게<br>작업을 잘 완료했다고 나온다.<br>그리고<br><br>wsl -l -v
+복사<br>치고 앤터 똭. (새끼 손가락으로 살포시 눌러야 함)<br><img alt="Pasted image 20240330194846.png" src="https://namugach.github.io/lib/media/pasted-image-20240330194846.png"><br>보라.<br>우리를 괴롭혔던 별이 Ubuntu에 똭. 밖혀있다.<br>저것은 cmd에서 wsl 커맨드를 쳤을 때 기본으로 들어가겠다는 표시다.<br>
+우리는 이미 Ubuntu2204Yeardream4DockerCompleter가 있음으로<br>
+저 건방진 혐오스런 별이 달린 녀석을 지워버릴 것이다.<br><img alt="Pasted image 20240330195355.png" src="https://namugach.github.io/lib/media/pasted-image-20240330195355.png"><br><br>wsl --unregister Ubuntu
+복사<br><br>별을 빼앗아 3번 위치에 꾸며줬다.<br><br><img alt="Pasted image 20240330195839.png" src="https://namugach.github.io/lib/media/pasted-image-20240330195839.png"><br>
+이제 커맨드 창에서 wsl만 입력하고 편해지자.<br>경고여기서 더 편해지면 도둑놈 심보임으로.<br>
+그 이상은 안됨.<br>
+batch...<br><br><br><br><br><img alt="Pasted image 20240330201351.png" src="https://namugach.github.io/lib/media/pasted-image-20240330201351.png"><br>mysql --version
+복사<br><br><img alt="Pasted image 20240330201425.png" src="https://namugach.github.io/lib/media/pasted-image-20240330201425.png"><br>systemctl status mysql
+복사<br>Tipq 키를 눌러서 빠져나온다.<br><br><br><img alt="Pasted image 20240330201557.png" src="https://namugach.github.io/lib/media/pasted-image-20240330201557.png"><br>conda --version
+복사<br><br><img alt="Pasted image 20240330201629.png" src="https://namugach.github.io/lib/media/pasted-image-20240330201629.png"><br>
+잘 동작 동작 하고 있다.<br><br><br><img alt="Pasted image 20240330201734.png" src="https://namugach.github.io/lib/media/pasted-image-20240330201734.png"><br><br><img alt="Pasted image 20240330201951.png" src="https://namugach.github.io/lib/media/pasted-image-20240330201951.png"><br>docker
+복사<br>잘 동작 하고 있을지도?<br><br><br>Note음... 해두면 좋다. 안 둬도 상관은 없을까?!?<br>
+하지만.. 내 메모린 소중한걸...<br><br>"Pasted image 2024033017541png"이(가) 생성되지 않았습니다. 클릭하여 생성합니다.<br>[wsl2]
+memory=4GB
+processors=4
+swap=1GB
+localhostForwarding=true
+복사<br>
+<br>%USERPROFILE% 입력
+<br>.wslconfig 파일 생성<br>
+3번 작성
+<br>Note자신의 컴퓨터 사양이 좋지 않다면<br>
+memory = 2GB<br>
+processors = 2<br>
+이렇게 설정해도 됨
+사실.. 몇 번 해보고,<br>
+이정도면 내 컴퓨터가 죽지 않겠구나 싶을 정도로만 주면 된다.<br><br>wsl --shutdown
+복사<br><br><img alt="Pasted image 20240323001212.png" src="https://namugach.github.io/lib/media/pasted-image-20240323001212.png"><br>htop 로 확인 결과<br>
+<br><a data-tooltip-position="top" aria-label="https://velog.io/@alirz-pixel/wsl2-Vmmem-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%A0%90%EC%9C%A0%EC%9C%A8-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0" rel="noopener" class="external-link" href="https://velog.io/@alirz-pixel/wsl2-Vmmem-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%A0%90%EC%9C%A0%EC%9C%A8-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0" target="_blank">https://velog.io/@alirz-pixel/wsl2-Vmmem-메모리-점유율-해결하기</a>
+<br><a rel="noopener" class="external-link" href="https://learn.microsoft.com/ko-kr/windows/wsl/wsl-config" target="_blank">https://learn.microsoft.com/ko-kr/windows/wsl/wsl-config</a>
+<br><a data-tooltip-position="top" aria-label="https://velog.io/@devookim/wsl2-%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8-%EC%8B%9C%ED%82%A4%EA%B8%B0" rel="noopener" class="external-link" href="https://velog.io/@devookim/wsl2-%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8-%EC%8B%9C%ED%82%A4%EA%B8%B0" target="_blank">https://velog.io/@devookim/wsl2-다이어트-시키기</a>
+]]></description><link>https://namugach.github.io/root/dev/wsl/이어드림스쿨-실습용-wsl-배포-import.html</link><guid isPermaLink="false">root/dev/wsl/이어드림스쿨 실습용 wsl 배포 import.md</guid><dc:creator><![CDATA[namugach]]></dc:creator><pubDate>Sun, 31 Mar 2024 01:16:08 GMT</pubDate><enclosure url="https://namugach.github.io/lib/media/pasted-image-20240330192430.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://namugach.github.io/lib/media/pasted-image-20240330192430.png"&gt;&lt;/figure&gt;</content:encoded></item></channel></rss>
