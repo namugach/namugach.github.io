@@ -98,7 +98,7 @@ wsl -l -v
 우리를 괴롭혔던 별이 Ubuntu에 똭. 밖혀있다.
 
 저것은 cmd에서 wsl 커맨드를 쳤을 때 기본으로 들어가겠다는 표시다.
-우리는 이미 Ubuntu2204Yeardream4DockerCompleter가 있음으로
+우리는 이미 Ubuntu2204Yeardream4DockerComplet가 있음으로
 저 건방진 혐오스런 별이 달린 녀석을 지워버릴 것이다.
 
 ![[Pasted image 20240330195355.png]]
@@ -182,7 +182,7 @@ docker
 
 ### 파일 작성
 
-![[Pasted image 2024033017541png]]
+![[Pasted image 20240330175413.png]]
 
 ```text file:.wslconfig
 [wsl2]
