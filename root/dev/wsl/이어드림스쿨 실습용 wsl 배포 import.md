@@ -21,7 +21,7 @@ create: 2024-03-30 15:05:55
 
 ## 다운로드
 
-![[Pasted image 2024033017232png]]
+![[Pasted image 20240330172323.png]]
 https://drive.google.com/file/d/1uLHl3lNDwtJKfZFpxjDtA7FO27W4ULT3/view?usp=sharing
 
 ```ad-important
