@@ -194,7 +194,7 @@ localhostForwarding=true
 
 1. %USERPROFILE% 입력
 2. .wslconfig 파일 생성
- 3번 작성
+3. 번 작성
 
 ```ad-note
 자신의 컴퓨터 사양이 좋지 않다면

@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>https://namugach.github.io/</link><image><url>https://namugach.github.io/lib/media/favicon.png</url><title>note</title><link>https://namugach.github.io/</link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 31 Mar 2024 16:55:03 GMT</lastBuildDate><atom:link href="https://namugach.github.io/lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 31 Mar 2024 16:55:00 GMT</pubDate><copyright><![CDATA[namugach]]></copyright><ttl>60</ttl><dc:creator>namugach</dc:creator><item><title><![CDATA[이어드림스쿨 실습용 wsl 배포 import]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>https://namugach.github.io/</link><image><url>https://namugach.github.io/lib/media/favicon.png</url><title>note</title><link>https://namugach.github.io/</link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 31 Mar 2024 23:17:19 GMT</lastBuildDate><atom:link href="https://namugach.github.io/lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 31 Mar 2024 23:17:16 GMT</pubDate><copyright><![CDATA[namugach]]></copyright><ttl>60</ttl><dc:creator>namugach</dc:creator><item><title><![CDATA[이어드림스쿨 실습용 wsl 배포 import]]></title><description><![CDATA[ 
  <br>Note<a data-tooltip-position="top" aria-label="https://quickest-asterisk-75d.notion.site/797e8235be5e400f80e0eef8ea4f9c8d" rel="noopener" class="external-link" href="https://quickest-asterisk-75d.notion.site/797e8235be5e400f80e0eef8ea4f9c8d" target="_blank">윈도우용 환경가이드 세팅</a>을 참고하여 만든 wsl 통파일 배포
 
 
@@ -37,8 +37,8 @@ swap=1GB
 localhostForwarding=true
 복사<br>
 <br>%USERPROFILE% 입력
-<br>.wslconfig 파일 생성<br>
-3번 작성
+<br>.wslconfig 파일 생성
+<br>번 작성
 <br>Note자신의 컴퓨터 사양이 좋지 않다면<br>
 memory = 2GB<br>
 processors = 2<br>
@@ -49,7 +49,7 @@ processors = 2<br>
 <br><a data-tooltip-position="top" aria-label="https://velog.io/@alirz-pixel/wsl2-Vmmem-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%A0%90%EC%9C%A0%EC%9C%A8-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0" rel="noopener" class="external-link" href="https://velog.io/@alirz-pixel/wsl2-Vmmem-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%A0%90%EC%9C%A0%EC%9C%A8-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0" target="_blank">https://velog.io/@alirz-pixel/wsl2-Vmmem-메모리-점유율-해결하기</a>
 <br><a rel="noopener" class="external-link" href="https://learn.microsoft.com/ko-kr/windows/wsl/wsl-config" target="_blank">https://learn.microsoft.com/ko-kr/windows/wsl/wsl-config</a>
 <br><a data-tooltip-position="top" aria-label="https://velog.io/@devookim/wsl2-%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8-%EC%8B%9C%ED%82%A4%EA%B8%B0" rel="noopener" class="external-link" href="https://velog.io/@devookim/wsl2-%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8-%EC%8B%9C%ED%82%A4%EA%B8%B0" target="_blank">https://velog.io/@devookim/wsl2-다이어트-시키기</a>
-]]></description><link>https://namugach.github.io/root/dev/wsl/이어드림스쿨-실습용-wsl-배포-import.html</link><guid isPermaLink="false">root/dev/wsl/이어드림스쿨 실습용 wsl 배포 import.md</guid><dc:creator><![CDATA[namugach]]></dc:creator><pubDate>Sun, 31 Mar 2024 16:53:52 GMT</pubDate><enclosure url="https://namugach.github.io/lib/media/pasted-image-20240330172323.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://namugach.github.io/lib/media/pasted-image-20240330172323.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[python note]]></title><description><![CDATA[ 
+]]></description><link>https://namugach.github.io/root/dev/wsl/이어드림스쿨-실습용-wsl-배포-import.html</link><guid isPermaLink="false">root/dev/wsl/이어드림스쿨 실습용 wsl 배포 import.md</guid><dc:creator><![CDATA[namugach]]></dc:creator><pubDate>Sun, 31 Mar 2024 23:16:42 GMT</pubDate><enclosure url="https://namugach.github.io/lib/media/pasted-image-20240330172323.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://namugach.github.io/lib/media/pasted-image-20240330172323.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[python note]]></title><description><![CDATA[ 
  <br><br>a = 10
 b = 20
 print(a + b)
