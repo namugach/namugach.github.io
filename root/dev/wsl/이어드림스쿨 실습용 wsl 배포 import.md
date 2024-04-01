@@ -7,7 +7,7 @@ create: 2024-03-30 15:05:55
 ---
 
 ```ad-note
-[윈도우용 환경가이드 세팅](https://quickest-asterisk-75d.notion.site/797e8235be5e400f80e0eef8ea4f9c8d)을 참고하여 만든 wsl 통파일 배포
+이어드림스쿨 윈도우용 환경가이드 세팅을 참고하여 만든 wsl 통파일 배포
 ### 설치 내역
 - mysql
 - python conda
