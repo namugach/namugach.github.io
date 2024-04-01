@@ -42,8 +42,12 @@ title:경고
 
 ## wsl 설치
 
+wsl은 아래를 참고해서 설치 해보도록 한다.
 
-[여기를 참조](https://quickest-asterisk-75d.notion.site/0-WSL-637b2a71df7b4eadb716b35df22649ee)
+```ad-info
+이어드림 스쿨 노션 -> 환경 셋팅 가이드 -> 2.2. Windows OS -> 0. WSL
+```
+
 
 ```ps
 wsl --install
