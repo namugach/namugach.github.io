@@ -1,9 +1,81 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>https://namugach.github.io/</link><image><url>https://namugach.github.io/lib/media/favicon.png</url><title>note</title><link>https://namugach.github.io/</link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 17 Apr 2024 15:22:51 GMT</lastBuildDate><atom:link href="https://namugach.github.io/lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 17 Apr 2024 15:22:48 GMT</pubDate><copyright><![CDATA[namugach]]></copyright><ttl>60</ttl><dc:creator>namugach</dc:creator><item><title><![CDATA[간단 ssh github 인증]]></title><description><![CDATA[ 
- <br><br> ssh-keygen -t rsa -C "your_email@example.com"
-복사<br><br><br>“Pasted image 20240417140113.png” could not be found.<br><br><br>ssh -T git@github.com
-복사<br>CheckHi [user-name]! You've successfully authenticated, but GitHub does not provide shell access.]]></description><link>https://namugach.github.io/root/dev/github/간단-ssh-github-인증.html</link><guid isPermaLink="false">root/dev/github/간단 ssh github 인증.md</guid><dc:creator><![CDATA[namugach]]></dc:creator><pubDate>Wed, 17 Apr 2024 05:02:51 GMT</pubDate></item><item><title><![CDATA[wsl note]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>https://namugach.github.io/</link><image><url>https://namugach.github.io/lib/media/favicon.png</url><title>note</title><link>https://namugach.github.io/</link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 17 Apr 2024 15:28:17 GMT</lastBuildDate><atom:link href="https://namugach.github.io/lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 17 Apr 2024 15:28:14 GMT</pubDate><copyright><![CDATA[namugach]]></copyright><ttl>60</ttl><dc:creator>namugach</dc:creator><item><title><![CDATA[도커 설치 및 기본 사용법]]></title><description><![CDATA[ 
+ <br><br><br>sudo wget -qO- http://get.docker.com/ | sh
+복사<br><br>
+<br>도커는 실행할 때, 관리자 권한으로 실행 해야 한다.
+<br>sudo를 일일이 입력하기 번거롭다면, 아래의 명령어를 입력한다.
+<br><a data-tooltip-position="top" aria-label="https://davi06000.tistory.com/25" rel="noopener" class="external-link" href="https://davi06000.tistory.com/25" target="_blank">reboot 해줘야</a> 한다.
+<br>sudo usermod -aG docker 사용자계정
+복사<br>그리고 위의 사항이 잘 적용 됐는지 확인 하기 위해서<br>
+다시 계정을 나갔다가 들어와서 아래의 명령어를 입력한다.<br>docker version
+복사<br>만약 제대로 되지 않았다면, 올바른 정보를 출려하지 않고,<br>
+sudo를 붙였을 때, 정보가 나타날 것이다.<br><br><br>docker search ubuntu
+복사<br><br><a rel="noopener" class="external-link" href="https://hub.docker.com" target="_blank">https://hub.docker.com</a> -&gt; Browse popular images<br>
+-&gt; 찾고 싶은 이미지 이름 클릭 -&gt; Tag 탭 클릭<br><br>docker pull ubuntu:22.04
+복사<br><br>docker images
+복사<br><br><br><br># docker run -i -t ubuntu:18.04 /bin/bash
+# 예전 버전
+docker run -it ubuntu:22.04 bash
+# 마지막의 /bin/bash를 실행해야 한다.
+
+docker container run -d --name web -p 3000:3000 duddy/dc:docker-test1
+# 좀 더 자세하게
+복사<br><a rel="noopener" class="external-link" href="https://fronquarry.tistory.com/27" target="_blank">https://fronquarry.tistory.com/27</a><br><br><br>
+<br>사용자의 입출력을 허용 함
+<br><br>
+<br>가상 터미널 환경을 에뮬레이터 함  
+<br>Note이 옵션을 사용해야만 bash를 띄워서 명령을 입출력 할 수 있음<br><br>Note도커는 vmware와 같은 가상 머신과 다르게<br>
+메인 실행 파일을 실행 시켜줘야 한다.<br>
+때문에 이렇게 마지막에 시작 해야할 프로그램을 실행 시켜준다.<br><br>Note도커에서 이미지를 pull 해서 가지고 온 우분투 이미지는<br>
+아무것도 없고, 거기에서 ps를 해보면 bash와 ps 말고는 실행된 게 없다.<br>
+그렇기 때문에 이 안에서 뭔가를 설치하면 apt-get update를 필수로 해줘야<br>
+프로그램을 설치 할 수 있는 환경이 만들어 진다.<br><br><br><br>exit
+복사<br><br>docker ps -a
+복사<br>Notedocker ps -a 명령의 출력 결과물의 맨 마지막 컬럼에 name을 보면<br>
+뭔가 임의로 만들어진 문자열을 볼 수 있다.<br>
+실행 절차에서 이름을 정해줬더라면 그 이름을 썼겠지만<br>
+그렇지 않았기 때문에 생긴 이름이다.<br><br><br><br>docker start container_id
+# 혹은
+docker start container_name
+복사<br>docker start 8915d6dbee06
+
+docker start ubuntu:22.04
+복사<br>위에서 실행할 때 run으로 했고, 지금은 start로 실행한다.<br>
+차이는 run은 실행하고, 안으로 들어가는 것이고,<br>
+start는 밖에서 실행만 한다는게 요점이다.  <br><br><br><br>sudo docker ps -a
+복사<br><br><br>docker attach container_id
+# 혹은
+docker attach container_name
+복사<br>docker attach 8915d6dbee06
+
+docker attach ubuntu:22.04
+복사<br><br><br>ctrl + p + q
+복사<br>이는 bash의 단축키다.<br><br><br>docker rm container_id
+# 혹은
+docker rm container_name
+복사<br><br><br>docker exec container_id 명령어
+# 혹은
+docker exec container_name 명령어
+복사<br><br><br><br><br>docker rmi container_id
+# 혹은
+docker rmi container_name
+복사<br><br><br>docker pull nginx:latest
+# latest는 항상 최신 버전을 가르킨다.
+복사<br><br>docker run -d --name hello-nginx nginx:latest
+# 데몬을 실행하기 때문에 /bin/bash같이 실행파일을 지정하지 않아도 된다.
+복사<br><br>docker run -d --name hello-nginx -p 8000:80 nginx:latest
+# -p 8000:80 === 호스트:컨테이너
+복사<br><br>도커는 이미지와 컨테이너가 나뉘고<br>
+이미지로 컨테이너를 만든다.<br>
+컨테이너를 만들고, 그 안에서 어떤 작업을 하여<br>
+자료를 저장하거나 지울 때에는,<br>
+기존의 이미지에 영향을 미치는 가상 머신과는 다르게<br>
+이미지에 영향은 받지 않는다.<br>때문에 하나의 이미지로 여러 개의 컨테이너를 만들어서<br>
+각기 다른 환경에서 서로 아무런 작용 없이 작업을 할 수 있다.<br>이것은 마치 git의 브런치 같은 느낌을 준다.<br>하지만 좀 더 명확하게 설명하자면<br>이미지는 prototype,<br>
+그리고 그 prototype을 기반으로 쌓아 올린 객체,<br>
+동일한 props를 지우거나 삭제, 혹은 변경을 한다면,<br>
+오버라이딩 하여 값을 처리하는 느낌이다.]]></description><link>https://namugach.github.io/root/dev/wsl/도커-설치-및-기본-사용법.html</link><guid isPermaLink="false">root/dev/wsl/도커 설치 및 기본 사용법.md</guid><dc:creator><![CDATA[namugach]]></dc:creator><pubDate>Fri, 12 Apr 2024 07:50:42 GMT</pubDate></item><item><title><![CDATA[wsl note]]></title><description><![CDATA[ 
  <br><br>wsl --install
-복사<br><br><br>“Pasted image 20240330105616.png” could not be found.<br>\\wsl$
+복사<br><br><br><img alt="Pasted image 20240330105616.png" src="https://namugach.github.io/lib/media/pasted-image-20240330105616.png"><br>\\wsl$
 복사<br><br><br><br>
 <br><a data-tooltip-position="top" aria-label="https://kit2013.tistory.com/187" rel="noopener" class="external-link" href="https://kit2013.tistory.com/187" target="_blank">useradd, adduser 차이</a>
 <br>sudo usermod username
@@ -35,13 +107,16 @@ localhostForwarding=true
 <br><a data-tooltip-position="top" aria-label="https://velog.io/@alirz-pixel/wsl2-Vmmem-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%A0%90%EC%9C%A0%EC%9C%A8-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0" rel="noopener" class="external-link" href="https://velog.io/@alirz-pixel/wsl2-Vmmem-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%A0%90%EC%9C%A0%EC%9C%A8-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0" target="_blank">https://velog.io/@alirz-pixel/wsl2-Vmmem-메모리-점유율-해결하기</a>
 <br><a rel="noopener" class="external-link" href="https://learn.microsoft.com/ko-kr/windows/wsl/wsl-config" target="_blank">https://learn.microsoft.com/ko-kr/windows/wsl/wsl-config</a>
 <br><a data-tooltip-position="top" aria-label="https://velog.io/@devookim/wsl2-%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8-%EC%8B%9C%ED%82%A4%EA%B8%B0" rel="noopener" class="external-link" href="https://velog.io/@devookim/wsl2-%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8-%EC%8B%9C%ED%82%A4%EA%B8%B0" target="_blank">https://velog.io/@devookim/wsl2-다이어트-시키기</a>
-<br><br><br>Importantwsl 환경이라 도커 데스크탑 사용하라도 처음에 20초 정도 멈춘다.<br>
+<br><br><br><a data-href="도커 설치 및 기본 사용법" href="https://namugach.github.io/root/dev/wsl/도커-설치-및-기본-사용법.html" class="internal-link" target="_self" rel="noopener">도커 설치 및 기본 사용법</a><br>Importantwsl 환경이라 도커 데스크탑 사용하라도 처음에 20초 정도 멈춘다.<br>
 무시하자.<br>
 <br><a rel="noopener" class="external-link" href="https://netmarble.engineering/docker-on-wsl2-without-docker-desktop/" target="_blank">https://netmarble.engineering/docker-on-wsl2-without-docker-desktop/</a>
 <br><br><br><br><br>source ~/anaconda3/etc/profile.d/conda.sh
 복사<br>
 <br><a rel="noopener" class="external-link" href="https://technical-support.tistory.com/112" target="_blank">https://technical-support.tistory.com/112</a>
-]]></description><link>https://namugach.github.io/root/dev/wsl/wsl-note.html</link><guid isPermaLink="false">root/dev/wsl/wsl note.md</guid><dc:creator><![CDATA[namugach]]></dc:creator><pubDate>Thu, 11 Apr 2024 05:21:42 GMT</pubDate><enclosure url="https://namugach.github.io/lib/media/pasted-image-20240323001212.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://namugach.github.io/lib/media/pasted-image-20240323001212.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[이어드림스쿨 실습용 wsl 배포 import]]></title><description><![CDATA[ 
+]]></description><link>https://namugach.github.io/root/dev/wsl/wsl-note.html</link><guid isPermaLink="false">root/dev/wsl/wsl note.md</guid><dc:creator><![CDATA[namugach]]></dc:creator><pubDate>Wed, 17 Apr 2024 15:26:37 GMT</pubDate><enclosure url="https://namugach.github.io/lib/media/pasted-image-20240330105616.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://namugach.github.io/lib/media/pasted-image-20240330105616.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[간단 ssh github 인증]]></title><description><![CDATA[ 
+ <br><br> ssh-keygen -t rsa -C "your_email@example.com"
+복사<br><br><br>“Pasted image 20240417140113.png” could not be found.<br><br><br>ssh -T git@github.com
+복사<br>CheckHi [user-name]! You've successfully authenticated, but GitHub does not provide shell access.]]></description><link>https://namugach.github.io/root/dev/github/간단-ssh-github-인증.html</link><guid isPermaLink="false">root/dev/github/간단 ssh github 인증.md</guid><dc:creator><![CDATA[namugach]]></dc:creator><pubDate>Wed, 17 Apr 2024 05:02:51 GMT</pubDate></item><item><title><![CDATA[이어드림스쿨 실습용 wsl 배포 import]]></title><description><![CDATA[ 
  <br>Note이어드림스쿨 윈도우용 환경가이드 세팅을 참고하여 만든 wsl 통파일 배포
 
 
