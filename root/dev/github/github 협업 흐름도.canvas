@@ -1,17 +1,17 @@
 {
 	"nodes":[
-		{"id":"43b1360db2869473","type":"group","x":-280,"y":-500,"width":980,"height":680,"color":"1","label":"Local: MyCom"},
-		{"id":"67a2ca033513e8a7","type":"group","x":-880,"y":-500,"width":320,"height":420,"color":"4","label":"Remote: Github"},
-		{"id":"d6183b8b416e8952","type":"text","text":"requests merge","x":-1160,"y":-460,"width":210,"height":60},
-		{"id":"09aa9a2d8a60f22d","type":"text","text":"- work \n- commit","x":487,"y":-340,"width":193,"height":100},
-		{"id":"ec1d2f4a2ece0831","type":"text","text":"- checkout main\n- fetch upstream\n- merge ","x":87,"y":20,"width":260,"height":140},
-		{"id":"44265c403b3ba087","type":"text","text":"# origin","x":-830,"y":-165,"width":195,"height":60,"color":"4"},
-		{"id":"2d0b46e7854f37d4","type":"text","text":"# upstream","x":-860,"y":-470,"width":255,"height":80,"color":"4"},
-		{"id":"181013dddaedb7fa","type":"text","text":"# dev","x":504,"y":-160,"width":160,"height":55,"color":"1"},
-		{"id":"7974bc556cfe50e7","type":"text","text":"- fetch upstream\n- checkout main\n- merge upstream/main","x":-230,"y":-490,"width":307,"height":130},
-		{"id":"d3c2ede8313d6a3f","type":"text","text":"- push","x":-500,"y":-170,"width":180,"height":70},
-		{"id":"b44ce1ef3921db8a","type":"text","text":"# main","x":-157,"y":-162,"width":162,"height":55,"color":"1"},
-		{"id":"c3a10325dc53f2e4","type":"text","text":"- checkout div\n- stash\n- merge main\n- stash pop","x":87,"y":-214,"width":260,"height":160}
+		{"id":"43b1360db2869473","type":"group","x":-280,"y":-500,"width":980,"height":880,"color":"1","label":"Local: MyCom"},
+		{"id":"67a2ca033513e8a7","type":"group","x":-880,"y":-500,"width":320,"height":673,"color":"4","label":"Remote: Github"},
+		{"id":"d6183b8b416e8952","type":"text","text":"requests merge","x":-1160,"y":-449,"width":210,"height":78},
+		{"id":"09aa9a2d8a60f22d","type":"text","text":"- work \n- commit","x":487,"y":-293,"width":193,"height":130},
+		{"id":"ec1d2f4a2ece0831","type":"text","text":"- checkout main\n- fetch upstream\n- merge ","x":87,"y":173,"width":260,"height":181},
+		{"id":"44265c403b3ba087","type":"text","text":"# origin","x":-830,"y":-66,"width":195,"height":78,"color":"4"},
+		{"id":"2d0b46e7854f37d4","type":"text","text":"# upstream","x":-860,"y":-461,"width":255,"height":104,"color":"4"},
+		{"id":"181013dddaedb7fa","type":"text","text":"# dev","x":504,"y":-60,"width":160,"height":71,"color":"1"},
+		{"id":"7974bc556cfe50e7","type":"text","text":"- fetch upstream\n- checkout main\n- merge upstream/main","x":-230,"y":-487,"width":307,"height":169},
+		{"id":"d3c2ede8313d6a3f","type":"text","text":"- push","x":-500,"y":-73,"width":180,"height":90},
+		{"id":"b44ce1ef3921db8a","type":"text","text":"# main","x":-157,"y":-62,"width":162,"height":71,"color":"1"},
+		{"id":"c3a10325dc53f2e4","type":"text","text":"- checkout div\n- stash\n- merge main\n- stash pop","x":87,"y":-130,"width":260,"height":207}
 	],
 	"edges":[
 		{"id":"c4bef73d64695601","fromNode":"b44ce1ef3921db8a","fromSide":"left","toNode":"d3c2ede8313d6a3f","toSide":"right","color":"1"},
