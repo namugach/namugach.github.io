@@ -1,4 +1,47 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>https://namugach.github.io/</link><image><url>https://namugach.github.io/lib/media/favicon.png</url><title>note</title><link>https://namugach.github.io/</link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 01 Apr 2024 08:01:59 GMT</lastBuildDate><atom:link href="https://namugach.github.io/lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 01 Apr 2024 08:01:56 GMT</pubDate><copyright><![CDATA[namugach]]></copyright><ttl>60</ttl><dc:creator>namugach</dc:creator><item><title><![CDATA[이어드림스쿨 실습용 wsl 배포 import]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>https://namugach.github.io/</link><image><url>https://namugach.github.io/lib/media/favicon.png</url><title>note</title><link>https://namugach.github.io/</link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 17 Apr 2024 15:15:41 GMT</lastBuildDate><atom:link href="https://namugach.github.io/lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 17 Apr 2024 15:15:38 GMT</pubDate><copyright><![CDATA[namugach]]></copyright><ttl>60</ttl><dc:creator>namugach</dc:creator><item><title><![CDATA[간단 ssh github 인증]]></title><description><![CDATA[ 
+ <br><br> ssh-keygen -t rsa -C "your_email@example.com"
+복사<br><br><br>“Pasted image 20240417140113.png” could not be found.<br><br><br>ssh -T git@github.com
+복사<br>CheckHi [user-name]! You've successfully authenticated, but GitHub does not provide shell access.]]></description><link>https://namugach.github.io/root/dev/github/간단-ssh-github-인증.html</link><guid isPermaLink="false">root/dev/github/간단 ssh github 인증.md</guid><dc:creator><![CDATA[namugach]]></dc:creator><pubDate>Wed, 17 Apr 2024 05:02:51 GMT</pubDate></item><item><title><![CDATA[wsl note]]></title><description><![CDATA[ 
+ <br><br>wsl --install
+복사<br><br><br>“Pasted image 20240330105616.png” could not be found.<br>\\wsl$
+복사<br><br><br><br>
+<br><a data-tooltip-position="top" aria-label="https://kit2013.tistory.com/187" rel="noopener" class="external-link" href="https://kit2013.tistory.com/187" target="_blank">useradd, adduser 차이</a>
+<br>sudo usermod username
+복사<br><br>[user] default=&lt;username&gt;
+복사<br><br><br><br>C:\Users\&lt;유저명&gt;\AppData\Local\Packages\&lt;리눅스이름&gt;\LocalState
+복사<br><br>wsl -l -v
+복사<br><br>wsl --export Ubuntu F:\0.Users\ubuntu\ubuntu-22-04.tar
+복사<br><br>Noteext4.vhdx 파일이 존재하는 디렉토리에는 불러 올 수 없다.<br>wsl --import Ubuntu2204 F:\0.Users\ubuntu\ F:\0.Users\ubuntu\ubuntu-22-04.tar
+wsl --import Ubuntu2204Yeardream4 F:\0.Users\ubuntu\Ubuntu2204Yeardream4 F:\0.Users\ubuntu\backup\yeardream4\3.Ubuntu2204Yeardream4DockerComplete.tar
+복사<br><br># 모두
+wsl --shutdown
+
+# 지정
+wsl -t Ubuntu
+복사<br><br>wsl -s Ubuntu2204
+복사<br><br>wsl --unregister Ubuntu
+복사<br>
+<br><a rel="noopener" class="external-link" href="https://learn.microsoft.com/ko-kr/windows/wsl/install" target="_blank">https://learn.microsoft.com/ko-kr/windows/wsl/install</a>
+<br><a rel="noopener" class="external-link" href="https://lucycle.tistory.com/353" target="_blank">https://lucycle.tistory.com/353</a>
+<br><a data-tooltip-position="top" aria-label="https://velog.io/@darktrace1/WSL-%EC%A0%80%EC%9E%A5%EC%86%8C-%EC%9C%84%EC%B9%98-%EC%98%AE%EA%B8%B0%EA%B8%B0" rel="noopener" class="external-link" href="https://velog.io/@darktrace1/WSL-%EC%A0%80%EC%9E%A5%EC%86%8C-%EC%9C%84%EC%B9%98-%EC%98%AE%EA%B8%B0%EA%B8%B0" target="_blank">https://velog.io/@darktrace1/WSL-저장소-위치-옮기기</a>
+<br><a rel="noopener" class="external-link" href="https://jooy34.tistory.com/29" target="_blank">https://jooy34.tistory.com/29</a>
+<br><br><br><br>[wsl2]
+memory=4GB
+processors=4
+swap=1GB
+localhostForwarding=true
+복사<br>%USERPROFILE% 에 .wslconfig 파일 생성 및 작성<br>wsl --shutdown
+복사<br><br><img alt="Pasted image 20240323001212.png" src="https://namugach.github.io/lib/media/pasted-image-20240323001212.png"><br>htop 로 확인 결과<br>
+<br><a data-tooltip-position="top" aria-label="https://velog.io/@alirz-pixel/wsl2-Vmmem-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%A0%90%EC%9C%A0%EC%9C%A8-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0" rel="noopener" class="external-link" href="https://velog.io/@alirz-pixel/wsl2-Vmmem-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%A0%90%EC%9C%A0%EC%9C%A8-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0" target="_blank">https://velog.io/@alirz-pixel/wsl2-Vmmem-메모리-점유율-해결하기</a>
+<br><a rel="noopener" class="external-link" href="https://learn.microsoft.com/ko-kr/windows/wsl/wsl-config" target="_blank">https://learn.microsoft.com/ko-kr/windows/wsl/wsl-config</a>
+<br><a data-tooltip-position="top" aria-label="https://velog.io/@devookim/wsl2-%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8-%EC%8B%9C%ED%82%A4%EA%B8%B0" rel="noopener" class="external-link" href="https://velog.io/@devookim/wsl2-%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8-%EC%8B%9C%ED%82%A4%EA%B8%B0" target="_blank">https://velog.io/@devookim/wsl2-다이어트-시키기</a>
+<br><br><br>Importantwsl 환경이라 도커 데스크탑 사용하라도 처음에 20초 정도 멈춘다.<br>
+무시하자.<br>
+<br><a rel="noopener" class="external-link" href="https://netmarble.engineering/docker-on-wsl2-without-docker-desktop/" target="_blank">https://netmarble.engineering/docker-on-wsl2-without-docker-desktop/</a>
+<br><br><br><br><br>source ~/anaconda3/etc/profile.d/conda.sh
+복사<br>
+<br><a rel="noopener" class="external-link" href="https://technical-support.tistory.com/112" target="_blank">https://technical-support.tistory.com/112</a>
+]]></description><link>https://namugach.github.io/root/dev/wsl/wsl-note.html</link><guid isPermaLink="false">root/dev/wsl/wsl note.md</guid><dc:creator><![CDATA[namugach]]></dc:creator><pubDate>Thu, 11 Apr 2024 05:21:42 GMT</pubDate><enclosure url="https://namugach.github.io/lib/media/pasted-image-20240323001212.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://namugach.github.io/lib/media/pasted-image-20240323001212.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[이어드림스쿨 실습용 wsl 배포 import]]></title><description><![CDATA[ 
  <br>Note이어드림스쿨 윈도우용 환경가이드 세팅을 참고하여 만든 wsl 통파일 배포
 
 
