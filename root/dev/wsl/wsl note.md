@@ -159,3 +159,5 @@ wsl 환경이라 도커 데스크탑 사용하라도 처음에 20초 정도 멈�
 source ~/anaconda3/etc/profile.d/conda.sh
 ```
 - https://technical-support.tistory.com/112
+
+
