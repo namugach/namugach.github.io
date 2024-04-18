@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link></link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 18 Apr 2024 16:11:01 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 18 Apr 2024 16:10:56 GMT</pubDate><ttl>60</ttl><dc:creator></dc:creator><item><title><![CDATA[간단 ssh github 인증]]></title><description><![CDATA[ 
+ <br><br> ssh-keygen -t rsa -C "your_email@example.com"
+복사<br><br><br><img alt="Pasted image 20240417140113.png" src="\lib\media\pasted-image-20240417140113.png"><br><br><br>ssh -T git@github.com
+복사<br>CheckHi [user-name]! You've successfully authenticated, but GitHub does not provide shell access.]]></description><link>root\dev\github\간단-ssh-github-인증.html</link><guid isPermaLink="false">root/dev/github/간단 ssh github 인증.md</guid><pubDate>Thu, 18 Apr 2024 15:29:40 GMT</pubDate><enclosure url="lib\media\pasted-image-20240417140113.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;lib\media\pasted-image-20240417140113.png&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[python note]]></title><description><![CDATA[ 
+ <br><br>a = 10
+b = 20
+print(a + b)
+복사<br>a, b = 1, 2
+print(a, b) # 1, 2 완전 쩔어?!
+복사<br><br><br>phone = "갈럭시"
+usage = 50.888
+
+print("%s 베터리 %d%% 남았음" % (phone, usage))
+print("%s 베터리 %.2f%% 남았음" % (phone, usage))
+
+print("{} 베터리 {}% 남았음".format(phone, usage))
+print("{} 베터리 {:.2f}% 남았음".format(phone, usage))
+
+print(f"{phone}베터리 {usage}% 남았음")
+print(f"{phone}베터리 {usage:.2f}% 남았음")
+복사<br><br><br><br>s = "Life is too short."
+s.split('i') # token
+복사<br><br>s = "Life is too short."
+# Life를 This pencil로 바꿔봅시다.
+s.replace("Life", "This pencil")
+s.replace(" ", "")
+복사<br><br><br><br>def sum(a, b):
+	return a + b
+print(sum(1, 2))
+복사<br><br>f = lamda a, b : a + b
+print(f(3, 5))
+복사<br><br>def call_back(lam):
+	return lam(10)
+
+print(call_back(lambda num : num + 20)) # 30
+복사<br><br>def add(a, b)
+	'''
+	a, b: integer
+	return: a, b를 입력 받아서 더한 값
+	'''
+	c = a + b
+	return c
+복사<br><br>def add(a:int, b:int): -&gt; int
+	c = a + b
+	return c
+복사<br><br>def add_many(*args):
+    print(args) # (1, 2, 3, 4, 5)
+
+add_many(1, 2, 3, 4, 5)
+복사<br>튜플로 받을 수 있음<br><br><br>
+name = "kim"
+
+def change_name()
+	global name = "what 쓰지마 이거"
+
+change_name()
+
+print(name) # "what 쓰지마 이거"
+복사<br><br><br>Note배열이라고 하지 않고 리스트라고 함<br><br>
+L3 = [1, "Hi", 3.14, [1, 2, 3]] 
+print(L3) # [1, 'Hi', 3.14, [1, 2, 3]]
+복사<br><br>L = [1, 2, 3, 4, 5]
+L[0] # 1
+복사<br><br># L의 첫번째부터 index2 까지 자르기
+L[0:2]
+# 두번째 부터 네번재까지 자르기
+L[1:4]
+# 생략가능
+L[:3] # start를 생략하면 맨 앞부터
+L[1:] # end를 생략하면 맨 뒤까지
+
+L[:-1] # 맨 마지막 원소 제외하고 나머지
+L[-1:]
+
+L[2:-1] #end 부터 start까지
+len(L)
+L[1:len(L)] == L[1:] # True
+
+
+# L[start:end:step]
+a = L[0:5] # 1, 2, 3, 4, 5
+b = L[0:5:2] # 1, 3, 5
+c = L[::-1] # 5, 4, 3, 2, 1
+d = L[::-2] # 5, 3, 1
+print(a) # [5, 4, 3, 2, 1] 
+print(b) # [5, 3, 1] 
+print(c) # [1, 2, 3, 4, 5] 
+print(d) # [1, 3, 5]
+
+복사<br><br>L = [1, 2, 3]
+L2 = [4, 5]
+print(L + L2) # [1, 2, 3, 4, 5]  concatenation
+
+L * 3 # [1, 2, 3, 1, 2, 3, 1, 2, 3]
+
+복사<br><br>L = [1, 2, 3]
+L = [1, 2, 3, 4, 5]
+L2 = [4, 5]
+print(L + L2) # [1, 2, 3, 4, 5, 4, 5]
+복사<br><br>L = []
+L.append(3)
+L.append(2)
+L.append(1)
+복사<br><br><br># sort()를 이용해 L을 정렬합니다.
+L = [4, 3, 16]
+sorted(L) # 원본 보존
+L
+L.sort()
+L # 원본 훼손
+L.sort(reverse=True)
+L # 내림차
+복사<br><br>names = ["kim", "park", "chang", "jessica"]
+names.sort(key=lambda s : len(s), reverse=True)
+
+names
+복사<br><br><br><br>arr:list = [1,2,3,4]
+for elem in arr:
+	print(elem)
+복사<br><br><br><br>coffees = ['아메리카노', '카페라떼', '카페모카', '바닐라라떼', '핸드드립', '콜드브루']
+prices = [4100, 4600, 4600, 5100, 6000, 5000]
+복사<br><br>for i in range(len(coffees)):
+	if prices[i] &lt;= 5000:
+		print(f"{coffees[i]}: {prices[i]}원")
+복사<br><br>for t in enumerate(prices):
+	if t[1] &lt;= 5000:
+		print(coffees[t[0]])
+
+# 응용
+for i, price in enumerate(prices):
+	if price &lt;= 5000:
+		print(coffees[i])
+복사<br><br>for coffee, price in zip(coffees, prices):
+if price &lt;= 5000:
+	print(coffee)
+복사<br><br><br>a: int = 10
+b: str = "this is string"
+c: float = 0.1
+d: float = 0.2
+a = "200" # 되기는 하는데 오류가 안뜨네.
+print(0.1 + 0.2)
+print(c + d) # 안된다...
+복사<br><br><br>what = True
+def huh():
+	if what:
+		print("wow")
+	else:
+		print("ooo!")
+huh()
+what = False
+huh()
+복사<br><br><br>obj = {
+	"a": 10,
+	"b": "wowo",
+	"arr": [1, 2, 3]
+}
+obj["c"] = "huh??"
+print(obj)
+print(obj["a"])
+print(obj["arr"][1])
+for key in obj:
+	print(f"key: {key}, value: {obj[key]}")
+복사<br><br><br>D = {'name': 'kim', 'phone': '01012345679', 'birth': '1234'}
+
+D.keys() # dict_keys(['name', 'phone', 'birth'])
+D.values() # dict_values(['kim', '01012345679', '1234'])
+D.items() # dict_items([('name', 'kim'), ('phone', '01012345679'), ('birth', '1234')])
+print(D.get('name', 0)) # kim
+복사<br><br>"phone" in D # True
+"1234" in D.values() # True
+복사<br><br><br>class Box():
+	width = 100
+	height = 100
+	color = "#aaa"
+	name = "box"
+	def __init__(self, name):
+		self.name = name
+		
+	def intro(self):
+		print(f"My name is {self.name}!!")
+
+boxA = Box("boxA")
+boxA.intro()
+복사<br><br><br>class Box():
+	width = 100
+	height = 100
+	color = "#aaa"
+	name = "box"
+	def __init__(self, name):
+		self.name = name
+		
+	def intro(self):
+		print(f"My name is {self.name}!!")
+	def huhOverride(self):
+		print("Do it!!")
+
+class PizzaBox(Box):
+	def __init__(self, name):
+		super().__init__(name)
+		self.name = f"{name} pizza {super().name}"
+	def huhOverride(self):
+		super().huhOverride()
+		print("what!!")
+
+nene = PizzaBox("nene")
+nene.intro()
+nene.huhOverride()
+복사<br><br><br>class Box():
+	width = 100
+	height = 100
+	_color = "#aaa"
+	name = "box"
+	def __init__(self, name):
+		self.name = name
+		
+	def intro(self):
+		print(f"My name is {self.name}!!")
+	def huhOverride(self):
+		print("Do it!!")
+	def getColor(self):
+		return self._color
+	
+class PizzaBox(Box):
+	__content = "empty"
+	def __init__(self):
+		super().__init__("pizza")
+		self.name = f"{self.name} {super().name}"
+	def setPizza(self, content):
+		self.__content = content
+	
+	def checkPizza(self):
+		print(self.__content)
+	
+	def getPizza(self):
+		content = self.__content
+		self.__content = "empty"
+		return content
+
+pizzaBox = PizzaBox()
+pizzaBox.checkPizza()
+pizzaBox.setPizza("basic pizza")
+pizzaBox.checkPizza()
+pizza = pizzaBox.getPizza()
+pizzaBox.checkPizza()
+print(f"Very delicious {pizza} Yum Yum~")
+pizzaBox.intro()
+복사<br><br><br>Note사용하기 위해서는 from abc import * 를 불러와야함.<br>from abc import *
+
+class IBox():
+	@abstractclassmethod
+	def getName(self):
+		pass
+	def printInfo(self):
+		pass
+
+class GoldBox(IBox):
+	name = "GoldBox"
+	def getName():
+		print(f"this name is {name}")
+	pass
+
+print(GoldBox().name)
+복사<br><br><br>import re
+복사<br><br>oldman_id = "911210-1234567"
+res = re.search("(?&lt;=-\\d).+", oldman_id)
+print(res.group()) #234567
+복사<br>찾기<br><br>oldman_id = "911210-1234567"
+print(re.sub("(?&lt;=-\\d).+", "******", oldman_id))
+# 911210-1******
+복사<br>치환<br>
+<br><a data-tooltip-position="top" aria-label="https://velog.io/@dkwjd131/%EC%9E%91%EC%84%B1%EC%A4%91Python-regex-%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D" rel="noopener" class="external-link" href="https://velog.io/@dkwjd131/%EC%9E%91%EC%84%B1%EC%A4%91Python-regex-%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D" target="_blank">https://velog.io/@dkwjd131/작성중Python-regex-정규표현식</a>
+<br><br><br>def div(a, b):
+    try:
+        return a / b
+    except:
+        print("0으로 나눌 수 가 있어?!!!??")
+
+
+div(9, 3)
+div("a", 5)
+div(8, 0)
+복사<br>def div(a, b):
+    try:
+        return a / b
+    except ZeroDivisionError:
+        print("0으로 나눌 수 가 있어?!!!??")
+    except:
+	    print("뭔가 잘 못 됐어!!")
+
+
+div(9, 3)
+div("a", 5)
+div(8, 0)
+복사]]></description><link>root\dev\python\python-note.html</link><guid isPermaLink="false">root/dev/python/python note.md</guid><pubDate>Sun, 31 Mar 2024 01:42:37 GMT</pubDate></item><item><title><![CDATA[도커 설치 및 기본 사용법]]></title><description><![CDATA[ 
+ <br><br><br>sudo wget -qO- http://get.docker.com/ | sh
+복사<br><br>
+<br>도커는 실행할 때, 관리자 권한으로 실행 해야 한다.
+<br>sudo를 일일이 입력하기 번거롭다면, 아래의 명령어를 입력한다.
+<br><a data-tooltip-position="top" aria-label="https://davi06000.tistory.com/25" rel="noopener" class="external-link" href="https://davi06000.tistory.com/25" target="_blank">reboot 해줘야</a> 한다.
+<br>sudo usermod -aG docker 사용자계정
+복사<br>그리고 위의 사항이 잘 적용 됐는지 확인 하기 위해서<br>
+다시 계정을 나갔다가 들어와서 아래의 명령어를 입력한다.<br>docker version
+복사<br>만약 제대로 되지 않았다면, 올바른 정보를 출려하지 않고,<br>
+sudo를 붙였을 때, 정보가 나타날 것이다.<br><br><br>docker search ubuntu
+복사<br><br><a rel="noopener" class="external-link" href="https://hub.docker.com" target="_blank">https://hub.docker.com</a> -&gt; Browse popular images<br>
+-&gt; 찾고 싶은 이미지 이름 클릭 -&gt; Tag 탭 클릭<br><br>docker pull ubuntu:22.04
+복사<br><br>docker images
+복사<br><br><br><br># docker run -i -t ubuntu:18.04 /bin/bash
+# 예전 버전
+docker run -it ubuntu:22.04 bash
+# 마지막의 /bin/bash를 실행해야 한다.
+
+docker container run -d --name web -p 3000:3000 duddy/dc:docker-test1
+# 좀 더 자세하게
+복사<br><a rel="noopener" class="external-link" href="https://fronquarry.tistory.com/27" target="_blank">https://fronquarry.tistory.com/27</a><br><br><br>
+<br>사용자의 입출력을 허용 함
+<br><br>
+<br>가상 터미널 환경을 에뮬레이터 함  
+<br>Note이 옵션을 사용해야만 bash를 띄워서 명령을 입출력 할 수 있음<br><br>Note도커는 vmware와 같은 가상 머신과 다르게<br>
+메인 실행 파일을 실행 시켜줘야 한다.<br>
+때문에 이렇게 마지막에 시작 해야할 프로그램을 실행 시켜준다.<br><br>Note도커에서 이미지를 pull 해서 가지고 온 우분투 이미지는<br>
+아무것도 없고, 거기에서 ps를 해보면 bash와 ps 말고는 실행된 게 없다.<br>
+그렇기 때문에 이 안에서 뭔가를 설치하면 apt-get update를 필수로 해줘야<br>
+프로그램을 설치 할 수 있는 환경이 만들어 진다.<br><br><br><br>exit
+복사<br><br>docker ps -a
+복사<br>Notedocker ps -a 명령의 출력 결과물의 맨 마지막 컬럼에 name을 보면<br>
+뭔가 임의로 만들어진 문자열을 볼 수 있다.<br>
+실행 절차에서 이름을 정해줬더라면 그 이름을 썼겠지만<br>
+그렇지 않았기 때문에 생긴 이름이다.<br><br><br><br>docker start container_id
+# 혹은
+docker start container_name
+복사<br>docker start 8915d6dbee06
+
+docker start ubuntu:22.04
+복사<br>위에서 실행할 때 run으로 했고, 지금은 start로 실행한다.<br>
+차이는 run은 실행하고, 안으로 들어가는 것이고,<br>
+start는 밖에서 실행만 한다는게 요점이다.  <br><br><br><br>sudo docker ps -a
+복사<br><br><br>docker attach container_id
+# 혹은
+docker attach container_name
+복사<br>docker attach 8915d6dbee06
+
+docker attach ubuntu:22.04
+복사<br><br><br>ctrl + p + q
+복사<br>이는 bash의 단축키다.<br><br><br>docker rm container_id
+# 혹은
+docker rm container_name
+복사<br><br><br>docker exec container_id 명령어
+# 혹은
+docker exec container_name 명령어
+복사<br><br><br><br><br>docker rmi container_id
+# 혹은
+docker rmi container_name
+복사<br><br><br>docker pull nginx:latest
+# latest는 항상 최신 버전을 가르킨다.
+복사<br><br>docker run -d --name hello-nginx nginx:latest
+# 데몬을 실행하기 때문에 /bin/bash같이 실행파일을 지정하지 않아도 된다.
+복사<br><br>docker run -d --name hello-nginx -p 8000:80 nginx:latest
+# -p 8000:80 === 호스트:컨테이너
+복사<br><br>도커는 이미지와 컨테이너가 나뉘고<br>
+이미지로 컨테이너를 만든다.<br>
+컨테이너를 만들고, 그 안에서 어떤 작업을 하여<br>
+자료를 저장하거나 지울 때에는,<br>
+기존의 이미지에 영향을 미치는 가상 머신과는 다르게<br>
+이미지에 영향은 받지 않는다.<br>때문에 하나의 이미지로 여러 개의 컨테이너를 만들어서<br>
+각기 다른 환경에서 서로 아무런 작용 없이 작업을 할 수 있다.<br>이것은 마치 git의 브런치 같은 느낌을 준다.<br>하지만 좀 더 명확하게 설명하자면<br>이미지는 prototype,<br>
+그리고 그 prototype을 기반으로 쌓아 올린 객체,<br>
+동일한 props를 지우거나 삭제, 혹은 변경을 한다면,<br>
+오버라이딩 하여 값을 처리하는 느낌이다.]]></description><link>root\dev\wsl\도커-설치-및-기본-사용법.html</link><guid isPermaLink="false">root/dev/wsl/도커 설치 및 기본 사용법.md</guid><pubDate>Fri, 12 Apr 2024 07:50:42 GMT</pubDate></item><item><title><![CDATA[이어드림스쿨 실습용 wsl 배포 import]]></title><description><![CDATA[ 
+ <br>Note이어드림스쿨 윈도우용 환경가이드 세팅을 참고하여 만든 wsl 통파일 배포
+
+
+<br>mysql
+<br>python conda
+<br>python packages
+<br>docker
+<br>그 외 자잘한 세팅
+
+<br>wsl 최초 로그인시 계정으로 로그인 (root로 로그인 하는 거 수정)
+<br>로그인 할 때 비번 표시 (보안상 비밀번호가 너무 어려워서 잊기 싶기 때문에)
+<br>conda 기본 가상환명 설정(conda activated yeardream 매번 치기 구찮음)
+
+
+<br><br><img alt="Pasted image 20240330172323.png" src="\lib\media\pasted-image-20240330172323.png"><br>
+<a rel="noopener" class="external-link" href="https://drive.google.com/file/d/1uLHl3lNDwtJKfZFpxjDtA7FO27W4ULT3/view?usp=sharing" target="_blank">https://drive.google.com/file/d/1uLHl3lNDwtJKfZFpxjDtA7FO27W4ULT3/view?usp=sharing</a><br>주의다운로드를 "한 번"(매우 중요) 클릭한다.<br><img alt="Pasted image 20240330192430.png" src="\lib\media\pasted-image-20240330192430.png"><br>경고무시하고 다운로드<br><br><br>wsl은 아래를 참고해서 설치 해보도록 한다.<br>Info이어드림 스쿨 노션 -&gt; 환경 셋팅 가이드 -&gt; 2.2. Windows OS -&gt; 0. WSL<br>wsl --install
+복사<br><br><br><br><img alt="Pasted image 20240330192920.png" src="\lib\media\pasted-image-20240330192920.png"><br>Note1번에 위치해 있는 2번 파일을<br>
+3번 경로에 4번 위치로 이동<br><br><img alt="Pasted image 20240330193620.png" src="\lib\media\pasted-image-20240330193620.png"><br>wsl --import Ubuntu2204Yeardream4 C:wsl\yeardream C:\wsl\Ubuntu2204Yeardream4DockerComplete.tar
+복사<br>하면<br><img alt="Pasted image 20240330194601.png" src="\lib\media\pasted-image-20240330194601.png"><br>요롷게<br>작업을 잘 완료했다고 나온다.<br>그리고<br><br>wsl -l -v
+복사<br>치고 앤터 똭. (새끼 손가락으로 살포시 눌러야 함)<br><img alt="Pasted image 20240330194846.png" src="\lib\media\pasted-image-20240330194846.png"><br>보라.<br>우리를 괴롭혔던 별이 Ubuntu에 똭. 밖혀있다.<br>저것은 cmd에서 wsl 커맨드를 쳤을 때 기본으로 들어가겠다는 표시다.<br>
+우리는 이미 Ubuntu2204Yeardream4DockerComplet가 있음으로<br>
+저 건방진 혐오스런 별이 달린 녀석을 지워버릴 것이다.<br><img alt="Pasted image 20240330195355.png" src="\lib\media\pasted-image-20240330195355.png"><br><br>wsl --unregister Ubuntu
+복사<br><br>별을 빼앗아 3번 위치에 꾸며줬다.<br><br><img alt="Pasted image 20240330195839.png" src="\lib\media\pasted-image-20240330195839.png"><br>
+이제 커맨드 창에서 wsl만 입력하고 편해지자.<br>경고여기서 더 편해지면 도둑놈 심보임으로.<br>
+그 이상은 안됨.<br>
+batch...<br><br><br><br><br><img alt="Pasted image 20240330201351.png" src="\lib\media\pasted-image-20240330201351.png"><br>mysql --version
+복사<br><br><img alt="Pasted image 20240330201425.png" src="\lib\media\pasted-image-20240330201425.png"><br>systemctl status mysql
+복사<br>Tipq 키를 눌러서 빠져나온다.<br><br><br><img alt="Pasted image 20240330201557.png" src="\lib\media\pasted-image-20240330201557.png"><br>conda --version
+복사<br><br><img alt="Pasted image 20240330201629.png" src="\lib\media\pasted-image-20240330201629.png"><br>
+잘 동작 동작 하고 있다.<br><br><br><img alt="Pasted image 20240330201734.png" src="\lib\media\pasted-image-20240330201734.png"><br><br><img alt="Pasted image 20240330201951.png" src="\lib\media\pasted-image-20240330201951.png"><br>docker
+복사<br>잘 동작 하고 있을지도?<br><br><br>Note음... 해두면 좋다. 안 둬도 상관은 없을까?!?<br>
+하지만.. 내 메모린 소중한걸...<br><br><img alt="Pasted image 20240330175413.png" src="\lib\media\pasted-image-20240330175413.png"><br>[wsl2]
+memory=4GB
+processors=4
+swap=1GB
+localhostForwarding=true
+복사<br>
+<br>%USERPROFILE% 입력
+<br>.wslconfig 파일 생성
+<br>번 작성
+<br>Note자신의 컴퓨터 사양이 좋지 않다면<br>
+memory = 2GB<br>
+processors = 2<br>
+이렇게 설정해도 됨
+사실.. 몇 번 해보고,<br>
+이정도면 내 컴퓨터가 죽지 않겠구나 싶을 정도로만 주면 된다.<br><br>wsl --shutdown
+복사<br><br><img alt="Pasted image 20240323001212.png" src="\lib\media\pasted-image-20240323001212.png"><br>htop 로 확인 결과<br>
+<br><a data-tooltip-position="top" aria-label="https://velog.io/@alirz-pixel/wsl2-Vmmem-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%A0%90%EC%9C%A0%EC%9C%A8-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0" rel="noopener" class="external-link" href="https://velog.io/@alirz-pixel/wsl2-Vmmem-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%A0%90%EC%9C%A0%EC%9C%A8-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0" target="_blank">https://velog.io/@alirz-pixel/wsl2-Vmmem-메모리-점유율-해결하기</a>
+<br><a rel="noopener" class="external-link" href="https://learn.microsoft.com/ko-kr/windows/wsl/wsl-config" target="_blank">https://learn.microsoft.com/ko-kr/windows/wsl/wsl-config</a>
+<br><a data-tooltip-position="top" aria-label="https://velog.io/@devookim/wsl2-%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8-%EC%8B%9C%ED%82%A4%EA%B8%B0" rel="noopener" class="external-link" href="https://velog.io/@devookim/wsl2-%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8-%EC%8B%9C%ED%82%A4%EA%B8%B0" target="_blank">https://velog.io/@devookim/wsl2-다이어트-시키기</a>
+]]></description><link>root\dev\wsl\이어드림스쿨-실습용-wsl-배포-import.html</link><guid isPermaLink="false">root/dev/wsl/이어드림스쿨 실습용 wsl 배포 import.md</guid><pubDate>Mon, 01 Apr 2024 07:59:34 GMT</pubDate><enclosure url="lib\media\pasted-image-20240330172323.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;lib\media\pasted-image-20240330172323.png&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[wsl note]]></title><description><![CDATA[ 
+ <br><br>wsl --install
+복사<br><br><br><img alt="Pasted image 20240330105616.png" src="\lib\media\pasted-image-20240330105616.png"><br>\\wsl$
+복사<br><br><br><br>
+<br><a data-tooltip-position="top" aria-label="https://kit2013.tistory.com/187" rel="noopener" class="external-link" href="https://kit2013.tistory.com/187" target="_blank">useradd, adduser 차이</a>
+<br>sudo usermod username
+복사<br><br>[user] default=&lt;username&gt;
+복사<br><br><br><br>C:\Users\&lt;유저명&gt;\AppData\Local\Packages\&lt;리눅스이름&gt;\LocalState
+복사<br><br>wsl -l -v
+복사<br><br>wsl --export Ubuntu F:\0.Users\ubuntu\ubuntu-22-04.tar
+복사<br><br>Noteext4.vhdx 파일이 존재하는 디렉토리에는 불러 올 수 없다.<br>wsl --import Ubuntu2204 F:\0.Users\ubuntu\ F:\0.Users\ubuntu\ubuntu-22-04.tar
+wsl --import Ubuntu2204Yeardream4 F:\0.Users\ubuntu\Ubuntu2204Yeardream4 F:\0.Users\ubuntu\backup\yeardream4\3.Ubuntu2204Yeardream4DockerComplete.tar
+복사<br><br># 모두
+wsl --shutdown
+
+# 지정
+wsl -t Ubuntu
+복사<br><br>wsl -s Ubuntu2204
+복사<br><br>wsl --unregister Ubuntu
+복사<br>
+<br><a rel="noopener" class="external-link" href="https://learn.microsoft.com/ko-kr/windows/wsl/install" target="_blank">https://learn.microsoft.com/ko-kr/windows/wsl/install</a>
+<br><a rel="noopener" class="external-link" href="https://lucycle.tistory.com/353" target="_blank">https://lucycle.tistory.com/353</a>
+<br><a data-tooltip-position="top" aria-label="https://velog.io/@darktrace1/WSL-%EC%A0%80%EC%9E%A5%EC%86%8C-%EC%9C%84%EC%B9%98-%EC%98%AE%EA%B8%B0%EA%B8%B0" rel="noopener" class="external-link" href="https://velog.io/@darktrace1/WSL-%EC%A0%80%EC%9E%A5%EC%86%8C-%EC%9C%84%EC%B9%98-%EC%98%AE%EA%B8%B0%EA%B8%B0" target="_blank">https://velog.io/@darktrace1/WSL-저장소-위치-옮기기</a>
+<br><a rel="noopener" class="external-link" href="https://jooy34.tistory.com/29" target="_blank">https://jooy34.tistory.com/29</a>
+<br><br><br><br>[wsl2]
+memory=4GB
+processors=4
+swap=1GB
+localhostForwarding=true
+복사<br>%USERPROFILE% 에 .wslconfig 파일 생성 및 작성<br>wsl --shutdown
+복사<br><br><img alt="Pasted image 20240323001212.png" src="\lib\media\pasted-image-20240323001212.png"><br>htop 로 확인 결과<br>
+<br><a data-tooltip-position="top" aria-label="https://velog.io/@alirz-pixel/wsl2-Vmmem-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%A0%90%EC%9C%A0%EC%9C%A8-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0" rel="noopener" class="external-link" href="https://velog.io/@alirz-pixel/wsl2-Vmmem-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%A0%90%EC%9C%A0%EC%9C%A8-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0" target="_blank">https://velog.io/@alirz-pixel/wsl2-Vmmem-메모리-점유율-해결하기</a>
+<br><a rel="noopener" class="external-link" href="https://learn.microsoft.com/ko-kr/windows/wsl/wsl-config" target="_blank">https://learn.microsoft.com/ko-kr/windows/wsl/wsl-config</a>
+<br><a data-tooltip-position="top" aria-label="https://velog.io/@devookim/wsl2-%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8-%EC%8B%9C%ED%82%A4%EA%B8%B0" rel="noopener" class="external-link" href="https://velog.io/@devookim/wsl2-%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8-%EC%8B%9C%ED%82%A4%EA%B8%B0" target="_blank">https://velog.io/@devookim/wsl2-다이어트-시키기</a>
+<br><br><br><a data-href="도커 설치 및 기본 사용법" href="\root\dev\wsl\도커-설치-및-기본-사용법.html" class="internal-link" target="_self" rel="noopener">도커 설치 및 기본 사용법</a><br>Importantwsl 환경이라 도커 데스크탑 사용하라도 처음에 20초 정도 멈춘다.<br>
+무시하자.<br>
+<br><a rel="noopener" class="external-link" href="https://netmarble.engineering/docker-on-wsl2-without-docker-desktop/" target="_blank">https://netmarble.engineering/docker-on-wsl2-without-docker-desktop/</a>
+<br><br><br><br><br>source ~/anaconda3/etc/profile.d/conda.sh
+복사<br>
+<br><a rel="noopener" class="external-link" href="https://technical-support.tistory.com/112" target="_blank">https://technical-support.tistory.com/112</a>
+]]></description><link>root\dev\wsl\wsl-note.html</link><guid isPermaLink="false">root/dev/wsl/wsl note.md</guid><pubDate>Thu, 18 Apr 2024 15:29:33 GMT</pubDate><enclosure url="lib\media\pasted-image-20240330105616.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;lib\media\pasted-image-20240330105616.png&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[main]]></title><description><![CDATA[ 
+ <br>Note저장 공유용]]></description><link>root\main.html</link><guid isPermaLink="false">root/main.md</guid><pubDate>Thu, 18 Apr 2024 16:06:49 GMT</pubDate></item></channel></rss>
