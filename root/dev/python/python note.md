@@ -3,8 +3,12 @@ tags:
   - python
   - dev
   - note
+  - 공개
 create: 2024-03-27 14:13:24
 ---
+- https://velog.io/@dkwjd131/작성중Python-regex-정규표현식
+
+
 ## 변수
 
 ```python
@@ -241,6 +245,52 @@ names.sort(key=lambda s : len(s), reverse=True)
 names
 ```
 
+### List comprehension
+
+```python
+
+inputs = input("숫자 여러개 입력하라: e.g. 1, 2, 3, 4, ...")
+
+# 특정 원소 표현을 가지는 리스트를 만들고 싶을 때 사용
+total = [int(x) for x in inputs.split(",")]
+print(total, sum(total))
+
+# 매우 좋고만
+
+```
+#### ex
+
+```python
+def cut_string(word:str, separator:str = ",") -> list:
+	return [w for w in word.split(separator)]
+
+print(cut_string("와, 이렇게, 하면, 어떨까?"))
+# ['와', ' 이렇게', ' 하면', ' 어떨까?']
+
+```
+
+
+```python
+## 입력: a, b, c, d, ...., asdf, qwer, dfd
+## 출력: a b c d .... asdf qwer dfd
+## 조건: split() 함수에서 ','를 쓰지 않고 빈 칸으로 잘라서 사용하시오.
+temp = "a, b, c, d, ...., asdf, qwer, dfd"
+
+outputs = []
+for x in temp.split():
+	x = x[:-1]
+	# x = x.replace(", ", "")
+	outputs.append()
+	
+
+ourputs = [x[:-1] for x in temp.split()]
+
+for x in outputs:
+	print(x, end = " ")
+```
+
+
+
 ---
 
 ## 반복문
@@ -322,6 +372,12 @@ huh()
 ```
 
 
+### 삼항 연산자
+
+```python
+test = False if 1 < 2 else True
+```
+
 ---
 
 ## dictionary
@@ -379,7 +435,45 @@ boxA = Box("boxA")
 boxA.intro()
 ```
 
+### self 순회
 
+```python
+class Notebook:
+
+	def __init__(self, 
+							brand:str = "", 
+							cpu:str = "", 
+							ram:int = 0,
+							year: int = "",
+							weight: float = 0.1,
+							os: str = "",
+							color: str = "",
+							price: int = 0) -> None:
+		self.brand = brand
+		self.cpu = cpu
+		self.ram = ram
+		self.year = year
+		self.weight = weight
+		self.os = os
+		self.color = color
+		self.price = price
+	def get_info(self):
+		for key, value in vars(self).items():
+			print(f"{key}: {value}")
+
+
+nb = Notebook(
+	brand = "느그",
+	cpu = "뇌",
+	ram = 256,
+	year = 2024,
+	weight = 2.1,
+	os = "뭐?!",
+	color = "#aaa",
+	price = 7
+)
+nb.get_info()
+```
 
 ---
 
@@ -488,6 +582,131 @@ print(GoldBox().name)
 ```
 
 ---
+## 데코레이터
+
+요론 느낌.
+
+### basic
+```python
+def so(func):
+	print("what!1")
+	func()
+	print("what!2")
+
+@so
+def what():
+	print("뭐!!!")
+```
+
+
+```python
+def so(func):
+	print("what!1")
+	func()
+	print("what!2")
+
+so(lambda: print("뭐!!"))
+```
+
+```js
+function so(func) {
+	console.log("what1");
+	func();
+	console.log("what2");
+}
+
+so(() => {
+	console.log("뭐!!")
+})
+```
+
+### wrap
+
+```python
+def so(func):
+	def wrap():
+		print("what!1")
+		func()
+		print("what!2")
+	return wrap
+
+@so
+def what():
+	print("뭐!!")
+
+what()
+```
+
+
+```python
+def so(func):
+	def wrap():
+		print("what!1")
+		func()
+		print("what!2")
+	return wrap
+
+what = so(lambda: print("뭐!!"))
+what()
+```
+
+
+```js
+function so(func) {
+	return () => {
+		console.log("what1");
+		func()
+		console.log("what2");
+	}
+}
+
+let what = wow(() => {
+	console.log("뭐");
+})
+
+what()
+
+```
+
+
+
+
+```python
+def so(func):
+	def wrap():
+		print("what!1")
+		func()
+		print("what!2")
+	return wrap
+
+def what():
+	print("뭐!!")
+
+huh = so(what)
+huh()
+```
+
+
+```js
+function so(func) {
+	return () => {
+		console.log("what1");
+		func();
+		console.log("what2");
+	}
+}
+
+function what() {
+	console.log("뭐!!");
+}
+
+const huh = so(what);
+huh();
+
+```
+
+
+---
 ## regex
 
 ```python
@@ -513,7 +732,6 @@ print(re.sub("(?<=-\\d).+", "******", oldman_id))
 
 치환
 
-- https://velog.io/@dkwjd131/작성중Python-regex-정규표현식
 
 ---
 
@@ -546,3 +764,106 @@ div(9, 3)
 div("a", 5)
 div(8, 0)
 ```
+
+---
+## input
+
+### basic
+
+```python
+inputs = input("숫자 여러개 입력하라: e.g. 1, 2, 3, 4, ...")
+print(inputs)
+total = 0
+for x in inputs.split(","):
+	x = int(x)
+	total += x
+print(total)
+
+```
+
+
+
+---
+
+## File I/O
+
+### 읽기
+
+```python
+with open('./test.txt', 'r', encoding='utf-8') as f:
+	text = f.read()
+print(text)
+```
+
+### 한줄 읽기
+
+```python
+# f.readline()를 통해 data 폴더안에 있는 test.txt를 read mode로 열어봅니다.
+with open('./test.txt', 'r', encoding='utf-8')	as f:
+	 lines = f.readlines()
+```
+
+### for문 사용해보기
+
+
+```python
+# f.readlines()를 통해 data 폴더안에 있는 test.txt를 read mode로 열어봅니다.
+txt = []
+with open('./test.txt', 'r', encoding='utf-8')	as f:
+	for line in f:
+		txt.append(line)
+```
+
+
+```python
+# for문을 통해 data 폴더안에 있는 test.txt를 read mode로 열어서 출력해봅니다.
+with open('./test.txt', 'r', encoding='utf-8')	as f:
+	txt = [line for line in f]
+
+print(txt)
+```
+
+## 쓰기
+```python
+# test.txt를 read mode로 열고 할 일이 끝나면 자동으로 닫는다.
+output = []
+with open('./test.txt', 'r', encoding='utf-8')	as f:
+	for line in f:
+		if 1 < len(line[:-1]):
+			output.append(line)
+
+
+# 두글자 이상인 텍스트만 output list에 저장한다.
+
+# result.txt로 output list에 있는 내용을 저장하기 위해 write mode로 열었다.
+with open('./restul.txt', 'w', encoding='utf-8')	as f:
+	for line in output:
+		f.write(line)
+		
+
+# 제대로 데이터가 저장되어 있는지, 불러와서 확인한다.
+with open('result.txt', 'r') as f:
+    output = [line for line in f]
+
+
+print(output)
+```
+
+---
+## pickle
+
+```python
+import pickle   # serialization
+
+output = ["what", "one", "why?!"]
+
+with open("result.pk", 'wb') as f:
+    pickle.dump(output, f)
+
+with open("result.pk", 'rb') as f:
+    output2 = pickle.load(f)
+    
+print(output2)
+```
+
+바이너리로 바꿔서 아주 빠르게 데이터들을 처리 할 수 있는 포멧

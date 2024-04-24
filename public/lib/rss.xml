@@ -1,9 +1,7 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 18 Apr 2024 16:46:22 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 18 Apr 2024 16:46:20 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[main]]></title><description><![CDATA[ 
- <br>Note저장 공유용]]></description><link>root\main.html</link><guid isPermaLink="false">root/main.md</guid><pubDate>Thu, 18 Apr 2024 16:46:09 GMT</pubDate></item><item><title><![CDATA[간단 ssh github 인증]]></title><description><![CDATA[ 
- <br><br> ssh-keygen -t rsa -C "your_email@example.com"
-복사<br><br><br><img alt="Pasted image 20240417140113.png" src="\lib\media\pasted-image-20240417140113.png"><br><br><br>ssh -T git@github.com
-복사<br>CheckHi [user-name]! You've successfully authenticated, but GitHub does not provide shell access.]]></description><link>root\dev\github\간단-ssh-github-인증.html</link><guid isPermaLink="false">root/dev/github/간단 ssh github 인증.md</guid><pubDate>Thu, 18 Apr 2024 15:29:40 GMT</pubDate><enclosure url="lib\media\pasted-image-20240417140113.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240417140113.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[python note]]></title><description><![CDATA[ 
- <br><br>a = 10
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 24 Apr 2024 12:10:07 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 24 Apr 2024 12:10:04 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[python note]]></title><description><![CDATA[ 
+ <br>
+<br><a data-tooltip-position="top" aria-label="https://velog.io/@dkwjd131/%EC%9E%91%EC%84%B1%EC%A4%91Python-regex-%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D" rel="noopener" class="external-link" href="https://velog.io/@dkwjd131/%EC%9E%91%EC%84%B1%EC%A4%91Python-regex-%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D" target="_blank">https://velog.io/@dkwjd131/작성중Python-regex-정규표현식</a>
+<br><br>a = 10
 b = 20
 print(a + b)
 복사<br>a, b = 1, 2
@@ -114,6 +112,37 @@ L # 내림차
 names.sort(key=lambda s : len(s), reverse=True)
 
 names
+복사<br><br>
+inputs = input("숫자 여러개 입력하라: e.g. 1, 2, 3, 4, ...")
+
+# 특정 원소 표현을 가지는 리스트를 만들고 싶을 때 사용
+total = [int(x) for x in inputs.split(",")]
+print(total, sum(total))
+
+# 매우 좋고만
+
+복사<br><br>def cut_string(word:str, separator:str = ",") -&gt; list:
+	return [w for w in word.split(separator)]
+
+print(cut_string("와, 이렇게, 하면, 어떨까?"))
+# ['와', ' 이렇게', ' 하면', ' 어떨까?']
+
+복사<br>## 입력: a, b, c, d, ...., asdf, qwer, dfd
+## 출력: a b c d .... asdf qwer dfd
+## 조건: split() 함수에서 ','를 쓰지 않고 빈 칸으로 잘라서 사용하시오.
+temp = "a, b, c, d, ...., asdf, qwer, dfd"
+
+outputs = []
+for x in temp.split():
+	x = x[:-1]
+	# x = x.replace(", ", "")
+	outputs.append()
+	
+
+ourputs = [x[:-1] for x in temp.split()]
+
+for x in outputs:
+	print(x, end = " ")
 복사<br><br><br><br>arr:list = [1,2,3,4]
 for elem in arr:
 	print(elem)
@@ -149,6 +178,7 @@ def huh():
 huh()
 what = False
 huh()
+복사<br><br>test = False if 1 &lt; 2 else True
 복사<br><br><br>obj = {
 	"a": 10,
 	"b": "wowo",
@@ -181,6 +211,41 @@ print(D.get('name', 0)) # kim
 
 boxA = Box("boxA")
 boxA.intro()
+복사<br><br>class Notebook:
+
+	def __init__(self, 
+							brand:str = "", 
+							cpu:str = "", 
+							ram:int = 0,
+							year: int = "",
+							weight: float = 0.1,
+							os: str = "",
+							color: str = "",
+							price: int = 0) -&gt; None:
+		self.brand = brand
+		self.cpu = cpu
+		self.ram = ram
+		self.year = year
+		self.weight = weight
+		self.os = os
+		self.color = color
+		self.price = price
+	def get_info(self):
+		for key, value in vars(self).items():
+			print(f"{key}: {value}")
+
+
+nb = Notebook(
+	brand = "느그",
+	cpu = "뇌",
+	ram = 256,
+	year = 2024,
+	weight = 2.1,
+	os = "뭐?!",
+	color = "#aaa",
+	price = 7
+)
+nb.get_info()
 복사<br><br><br>class Box():
 	width = 100
 	height = 100
@@ -260,6 +325,91 @@ class GoldBox(IBox):
 	pass
 
 print(GoldBox().name)
+복사<br><br><br>요론 느낌.<br><br>def so(func):
+	print("what!1")
+	func()
+	print("what!2")
+
+@so
+def what():
+	print("뭐!!!")
+복사<br>def so(func):
+	print("what!1")
+	func()
+	print("what!2")
+
+so(lambda: print("뭐!!"))
+복사<br>function so(func) {
+	console.log("what1");
+	func();
+	console.log("what2");
+}
+
+so(() =&gt; {
+	console.log("뭐!!")
+})
+복사<br><br>def so(func):
+	def wrap():
+		print("what!1")
+		func()
+		print("what!2")
+	return wrap
+
+@so
+def what():
+	print("뭐!!")
+
+what()
+복사<br>def so(func):
+	def wrap():
+		print("what!1")
+		func()
+		print("what!2")
+	return wrap
+
+what = so(lambda: print("뭐!!"))
+what()
+복사<br>function so(func) {
+	return () =&gt; {
+		console.log("what1");
+		func()
+		console.log("what2");
+	}
+}
+
+let what = wow(() =&gt; {
+	console.log("뭐");
+})
+
+what()
+
+복사<br>def so(func):
+	def wrap():
+		print("what!1")
+		func()
+		print("what!2")
+	return wrap
+
+def what():
+	print("뭐!!")
+
+huh = so(what)
+huh()
+복사<br>function so(func) {
+	return () =&gt; {
+		console.log("what1");
+		func();
+		console.log("what2");
+	}
+}
+
+function what() {
+	console.log("뭐!!");
+}
+
+const huh = so(what);
+huh();
+
 복사<br><br><br>import re
 복사<br><br>oldman_id = "911210-1234567"
 res = re.search("(?&lt;=-\\d).+", oldman_id)
@@ -267,9 +417,7 @@ print(res.group()) #234567
 복사<br>찾기<br><br>oldman_id = "911210-1234567"
 print(re.sub("(?&lt;=-\\d).+", "******", oldman_id))
 # 911210-1******
-복사<br>치환<br>
-<br><a data-tooltip-position="top" aria-label="https://velog.io/@dkwjd131/%EC%9E%91%EC%84%B1%EC%A4%91Python-regex-%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D" rel="noopener" class="external-link" href="https://velog.io/@dkwjd131/%EC%9E%91%EC%84%B1%EC%A4%91Python-regex-%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D" target="_blank">https://velog.io/@dkwjd131/작성중Python-regex-정규표현식</a>
-<br><br><br>def div(a, b):
+복사<br>치환<br><br><br>def div(a, b):
     try:
         return a / b
     except:
@@ -291,7 +439,68 @@ div(8, 0)
 div(9, 3)
 div("a", 5)
 div(8, 0)
-복사]]></description><link>root\dev\python\python-note.html</link><guid isPermaLink="false">root/dev/python/python note.md</guid><pubDate>Sun, 31 Mar 2024 01:42:37 GMT</pubDate></item><item><title><![CDATA[도커 설치 및 기본 사용법]]></title><description><![CDATA[ 
+복사<br><br><br><br>inputs = input("숫자 여러개 입력하라: e.g. 1, 2, 3, 4, ...")
+print(inputs)
+total = 0
+for x in inputs.split(","):
+	x = int(x)
+	total += x
+print(total)
+
+복사<br><br><br><br>with open('./test.txt', 'r', encoding='utf-8') as f:
+	text = f.read()
+print(text)
+복사<br><br># f.readline()를 통해 data 폴더안에 있는 test.txt를 read mode로 열어봅니다.
+with open('./test.txt', 'r', encoding='utf-8')	as f:
+	 lines = f.readlines()
+복사<br><br># f.readlines()를 통해 data 폴더안에 있는 test.txt를 read mode로 열어봅니다.
+txt = []
+with open('./test.txt', 'r', encoding='utf-8')	as f:
+	for line in f:
+		txt.append(line)
+복사<br># for문을 통해 data 폴더안에 있는 test.txt를 read mode로 열어서 출력해봅니다.
+with open('./test.txt', 'r', encoding='utf-8')	as f:
+	txt = [line for line in f]
+
+print(txt)
+복사<br><br># test.txt를 read mode로 열고 할 일이 끝나면 자동으로 닫는다.
+output = []
+with open('./test.txt', 'r', encoding='utf-8')	as f:
+	for line in f:
+		if 1 &lt; len(line[:-1]):
+			output.append(line)
+
+
+# 두글자 이상인 텍스트만 output list에 저장한다.
+
+# result.txt로 output list에 있는 내용을 저장하기 위해 write mode로 열었다.
+with open('./restul.txt', 'w', encoding='utf-8')	as f:
+	for line in output:
+		f.write(line)
+		
+
+# 제대로 데이터가 저장되어 있는지, 불러와서 확인한다.
+with open('result.txt', 'r') as f:
+    output = [line for line in f]
+
+
+print(output)
+복사<br><br><br>import pickle   # serialization
+
+output = ["what", "one", "why?!"]
+
+with open("result.pk", 'wb') as f:
+    pickle.dump(output, f)
+
+with open("result.pk", 'rb') as f:
+    output2 = pickle.load(f)
+    
+print(output2)
+복사<br>바이너리로 바꿔서 아주 빠르게 데이터들을 처리 할 수 있는 포멧]]></description><link>root\dev\python\python-note.html</link><guid isPermaLink="false">root/dev/python/python note.md</guid><pubDate>Wed, 24 Apr 2024 12:07:47 GMT</pubDate></item><item><title><![CDATA[main]]></title><description><![CDATA[ 
+ <br>Note저장 공유용]]></description><link>root\main.html</link><guid isPermaLink="false">root/main.md</guid><pubDate>Thu, 18 Apr 2024 16:46:09 GMT</pubDate></item><item><title><![CDATA[간단 ssh github 인증]]></title><description><![CDATA[ 
+ <br><br> ssh-keygen -t rsa -C "your_email@example.com"
+복사<br><br><br><img alt="Pasted image 20240417140113.png" src="\lib\media\pasted-image-20240417140113.png"><br><br><br>ssh -T git@github.com
+복사<br>CheckHi [user-name]! You've successfully authenticated, but GitHub does not provide shell access.]]></description><link>root\dev\github\간단-ssh-github-인증.html</link><guid isPermaLink="false">root/dev/github/간단 ssh github 인증.md</guid><pubDate>Thu, 18 Apr 2024 15:29:40 GMT</pubDate><enclosure url="lib\media\pasted-image-20240417140113.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240417140113.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[도커 설치 및 기본 사용법]]></title><description><![CDATA[ 
  <br><br><br>sudo wget -qO- http://get.docker.com/ | sh
 복사<br><br>
 <br>도커는 실행할 때, 관리자 권한으로 실행 해야 한다.
