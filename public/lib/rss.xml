@@ -1,5 +1,5 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 24 Apr 2024 12:10:07 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 24 Apr 2024 12:10:04 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[python note]]></title><description><![CDATA[ 
- <br>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 24 Apr 2024 12:43:30 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 24 Apr 2024 12:43:27 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[python note]]></title><description><![CDATA[ 
+ <br><br>
 <br><a data-tooltip-position="top" aria-label="https://velog.io/@dkwjd131/%EC%9E%91%EC%84%B1%EC%A4%91Python-regex-%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D" rel="noopener" class="external-link" href="https://velog.io/@dkwjd131/%EC%9E%91%EC%84%B1%EC%A4%91Python-regex-%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D" target="_blank">https://velog.io/@dkwjd131/작성중Python-regex-정규표현식</a>
 <br><br>a = 10
 b = 20
@@ -496,7 +496,7 @@ with open("result.pk", 'rb') as f:
     output2 = pickle.load(f)
     
 print(output2)
-복사<br>바이너리로 바꿔서 아주 빠르게 데이터들을 처리 할 수 있는 포멧]]></description><link>root\dev\python\python-note.html</link><guid isPermaLink="false">root/dev/python/python note.md</guid><pubDate>Wed, 24 Apr 2024 12:07:47 GMT</pubDate></item><item><title><![CDATA[main]]></title><description><![CDATA[ 
+복사<br>바이너리로 바꿔서 아주 빠르게 데이터들을 처리 할 수 있는 포멧]]></description><link>root\dev\python\python-note.html</link><guid isPermaLink="false">root/dev/python/python note.md</guid><pubDate>Wed, 24 Apr 2024 12:43:04 GMT</pubDate></item><item><title><![CDATA[main]]></title><description><![CDATA[ 
  <br>Note저장 공유용]]></description><link>root\main.html</link><guid isPermaLink="false">root/main.md</guid><pubDate>Thu, 18 Apr 2024 16:46:09 GMT</pubDate></item><item><title><![CDATA[간단 ssh github 인증]]></title><description><![CDATA[ 
  <br><br> ssh-keygen -t rsa -C "your_email@example.com"
 복사<br><br><br><img alt="Pasted image 20240417140113.png" src="\lib\media\pasted-image-20240417140113.png"><br><br><br>ssh -T git@github.com
