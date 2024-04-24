@@ -1,1 +1,53 @@
-.center{display:grid!important;align-items:center;justify-content:center;text-align:center}.contentCenter{display:grid!important;align-items:center;justify-content:center}.textCenter{text-align:center}.circle{display:grid!important;align-items:center;justify-content:center;border-radius:50%;border:5px solid #fff;text-align:center}.diamond{display:grid!important;padding:30px!important;text-align:center;clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%);background-color:#000}.database{display:grid!important;padding:30px!important;text-align:center;clip-path:circle(50% at 50% 50%);background-color:#08061a}.hexagon{display:inline-block;width:100px;height:100px;background-color:#0f0;clip-path:polygon(50% 0%,100% 25%,75% 75%,25% 75%,0% 25%)}.bgBlue{background-color:#5a52d4!important}
+.center {
+	display: grid !important;
+	align-items: center;
+	justify-content: center;
+	text-align: center
+}
+
+.contentCenter {
+	display: grid !important;
+	align-items: center;
+	justify-content: center
+}
+
+.textCenter {
+	text-align: center
+}
+
+.circle {
+	display: grid !important;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	border: 5px solid #fff;
+	text-align: center
+}
+
+.diamond {
+	display: grid !important;
+	padding: 30px !important;
+	text-align: center;
+	clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+	background-color: #000
+}
+
+.database {
+	display: grid !important;
+	padding: 30px !important;
+	text-align: center;
+	clip-path: circle(50% at 50% 50%);
+	background-color: #08061a
+}
+
+.hexagon {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	background-color: #0f0;
+	clip-path: polygon(50% 0%, 100% 25%, 75% 75%, 25% 75%, 0% 25%)
+}
+
+.bgBlue {
+	background-color: #5a52d4 !important
+}
