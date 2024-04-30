@@ -6,11 +6,8 @@ tags:
   - 공개
 create: 2024-03-27 14:13:24
 ---
-<style>
-body {
-	tab-size: 2;
-}
-</style>
+<style>body  {	tab-size: 2; } </style>
+
 - https://velog.io/@dkwjd131/작성중Python-regex-정규표현식
 
 
