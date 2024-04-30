@@ -1,16 +1,16 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Tue, 30 Apr 2024 02:11:45 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Tue, 30 Apr 2024 02:11:42 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[crontab 예약하기]]></title><description><![CDATA[ 
- <br><br>cd ~/LABs
-vi log_backup.sh
-복사<br>#!/bin/bash
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Tue, 30 Apr 2024 02:19:47 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Tue, 30 Apr 2024 02:19:44 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[crontab 예약하기]]></title><description><![CDATA[ 
+ <br><br><br>cd ~/LABs
+복사<br><br>vi log_backup.sh
+복사<br><br>#!/bin/bash
 set $(date)
 fname="$6-$2-$3-backup"
 tar -cvzf /home/ubuntu/LABs/$fname.tar.gz /var/log
-복사<br>chmod 700 log_backup.sh # 권한
-./log_backup.sh # 실행
-복사<br><br><br>crontab -e # edit
-복사<br>53 01 * * * /home/ubuntu/script/log_backup.sh #예약
-복사<br>vi /var/mail/ubuntu # 결과 확인
-복사]]></description><link>root\dev\linux\crontab-예약하기.html</link><guid isPermaLink="false">root/dev/linux/crontab 예약하기.md</guid><pubDate>Tue, 30 Apr 2024 02:00:12 GMT</pubDate></item><item><title><![CDATA[python note]]></title><description><![CDATA[ 
+복사<br><br>chmod 700 log_backup.sh
+복사<br><br>./log_backup.sh
+복사<br><br><br><br>crontab -e
+복사<br><br>53 01 * * * /home/ubuntu/script/log_backup.sh
+복사<br><br>vi /var/mail/ubuntu
+복사]]></description><link>root\dev\linux\crontab-예약하기.html</link><guid isPermaLink="false">root/dev/linux/crontab 예약하기.md</guid><pubDate>Tue, 30 Apr 2024 02:19:35 GMT</pubDate></item><item><title><![CDATA[python note]]></title><description><![CDATA[ 
  <br><br>
 <br><a data-tooltip-position="top" aria-label="https://velog.io/@dkwjd131/%EC%9E%91%EC%84%B1%EC%A4%91Python-regex-%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D" rel="noopener" class="external-link" href="https://velog.io/@dkwjd131/%EC%9E%91%EC%84%B1%EC%A4%91Python-regex-%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D" target="_blank">https://velog.io/@dkwjd131/작성중Python-regex-정규표현식</a>
 <br><br>a = 10
