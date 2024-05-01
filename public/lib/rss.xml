@@ -1,87 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Tue, 30 Apr 2024 17:55:14 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Tue, 30 Apr 2024 17:55:07 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[간단 ssh github 인증]]></title><description><![CDATA[ 
- <br><br> ssh-keygen -t rsa -C "your_email@example.com"
-복사<br><br><br><img alt="Pasted image 20240417140113.png" src="\lib\media\pasted-image-20240417140113.png"><br><br><br>ssh -T git@github.com
-복사<br>CheckHi [user-name]! You've successfully authenticated, but GitHub does not provide shell access.]]></description><link>root\dev\github\간단-ssh-github-인증.html</link><guid isPermaLink="false">root/dev/github/간단 ssh github 인증.md</guid><pubDate>Thu, 18 Apr 2024 15:29:40 GMT</pubDate><enclosure url="lib\media\pasted-image-20240417140113.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240417140113.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[이어드림 DE ssh 보안 업데이트 수동]]></title><description><![CDATA[ 
- <br>진짜 중요!master-key.pem과<br>
-같은 디렉토리에서 작업을 해야함<br><br>mkdir ssh-connection
-cd ssh-connection
-vi master-key.pem
-복사<br>아래를 붙여 넣기<br>-----BEGIN RSA PRIVATE KEY-----
-MIIEowIBAAKCAQEA3iDpFLZokx4Ur5Tsa3nRKnrxbSIm7hL4BHDvJMtpokBSbOdm
-djLqYMoX2yr3l+HzJ87HzPeJnXHHWunF2zxlENXqyXoT3b3Re50T5KVrz5r/p3ne
-BQ5lOD+I+bTKfTVzPF0PJWeVxXt3YiyqDzSrpjiBnxH6Mdo54mB8rfswwu1Snml7
-hPJhsOjYeeBS0KgsmcJS3gdhNOxuaTOsIIV8f2iLeAAiyiJTd/3goH718NfeHN3e
-RGfLg0AGHK18IWpHKEgLU9jE79O1KqAx2rkItMfcd3eFvOvDKVxtq7ZbJm+RqRwi
-ZNdTv/EGXXKKylo7G7cEnWgF7rqGWDvqNGehpwIDAQABAoIBAQCcuVu64XinVHID
-8G9e5XRPJK9y8MXG9FtJxuT0cRD3Casea6Y/f20fHXf3izlmUGXfkGYol/7gt4aQ
-/qA7L0Gfv08JGLkrmuJS9WEz0gNfV11KLRIZPy7roOhkRssXzL6huIcXPR7PV23E
-Nv9F+0Og4/2Q3n5I7lApCSrvFmwxGzDIv1y2plv2A+nwZXpH1eRDN2gZGffAwg2+
-q1Wtj3y0tY36JV8IF9JzJPDQbcwVzC0pjNVZQj+8dRI358Zq1zmC2lROCvsgaPkU
-D/gr34M1ZKrAy3ZH6Wy4gCpTn825wFKITpJDh+PuQuU7BWmi5/7cClPHd3ph0FIz
-mJIL6zkBAoGBAPFQ6bdhg/9VAoh+FJSWQgXYou4zLKmYsjk5R4pivfXwtS6aISPe
-EmCUV2lGge0kxuq4lL6jzzXdESMgKKQbHKSbRBfWGX9lW2L4Newlp+3s/IKV3F07
-T+fME9cb2LcY0m0DVpKgJPA1BNycqEhoNcc+r/CbikrIT07/esJsCfYbAoGBAOul
-Gu4uZfRcboz+A319dEHl/xZFJs3I6BnmcC62qg9Nwg1pMOH4VlAEHmImnnLlzDH8
-rcINPkU5d56Hn/WB+dAdSwrUj5Bq6ZBlvgCjCtIHLMosEY1huJ7DnLmH1l6kH9I4
-GhkldcIGXfiDbtFOu+q3mHDrTd1hLXPqJTiWmStlAoGAbBe+WPJJWhoOJG21cklM
-EapUcTZjDyTi0FckAIzyYjQMNG+94H8c5D4OWY3HrR4ILCO6HRrrOkln38AL9FZg
-oisaeULh8PrJ0K82GC1V53F8OlI+f1SOGlqDmJtUm892knYoVU1+vkpBf0B88NId
-JL6juLczXwQS4mP17RjP7XkCgYAv3kU/Nxus7Q3kBEGvP0nbjR4pZvi/+tzzTfVh
-9+dJ3pDZ6pFsheb6sCt/4rpzOq0lRmABuHD63PaotIJQ/AtENH8m/xD+1EkH9TMI
-rBYpnh2CIDucjcpULgZrReXNKefw60aZ7xshw+tY7VIYoLbZslv8LECQBQqXrmvL
-OAR7ZQKBgCH/NqqMDuRBCQ0+ur2RLqjMEmKxWrnbfSn0Uetr8YvagSzqOzOyM/xk
-FZYIwJCOUb4JlE8NscoHdXRbcjwWXGKlbUNM523URo0Nfa7NEoVXlSGtl82X++Rp
-ySCslDCgiOafpOviJND5INLatij9QVTRBAFlqyJjoOzZwambss7C
------END RSA PRIVATE KEY-----
-복사<br>:wq
-복사<br><br><br>집중!업데이트 하기 전에
-ssh ubuntu@아이피_주소 -i ./master-key.pem
-이거 하고 접속 되는 거 확인하고 해야 해!<br>
-접속이 안되면 아래의 과정이 소용이 없음.<br><br>sudo ssh-keygen -t rsa -P '' -f new-master-key
-복사<br><br>sudo scp -i ./master-key.pem \
-    new-master-key.pub \
-    ubuntu@인스턴스_아이피:/home/ubuntu/.ssh 
-복사<br><br>sudo ssh -i ./master-key.pem \
-    ubuntu@인스턴스_아이피 \
-    "cd ~/.ssh &amp;&amp; cat new-master-key.pub &gt; authorized_keys"
-복사<br>집중!일단
-ssh ubuntu@아이피_주소 -i ./master-key.pem
-접속 해보자. 여기서 접속이 안된다고 하면 성공
-그리고 
-sh ubuntu@아이피_주소 -i ./new-master-key
-이렇게 접속 한다면 일단은 성공<br><br>sudo chmod 600 master-key.pem  # 키 삭제 권한 부여
-mv new-master-key master-key.pem
-sudo chmod 400 master-key.pem
-rm new-master-key.pub
-복사<br>Cite여기까지 하면 ssh-connection 디렉토리엔 딸랑 master-key.pem 파일만 남을 것이다.<br>
-그럼 다시
-ssh ubuntu@아이피_주소 -i ./master-key.pem
-접속을 해보고 성공 한다면, 우리 조금만 더 편해져 보자.<br><br><br><br>Note장인의 손맛은 어지러울 수 있기 때문에 요약부터<br>cd ..
-mv ssh-connection ~/.key
-vi join.sh
-복사<br>ssh ubuntu@아이피_주소 -i ~/.key/master-key.pem
-복사<br>sudo chmod +x ./join.sh
-./join.sh
-복사<br>경고?가독성...<br><br><br>cd ..
-복사<br>해서<br><br>mv ssh-connection ~/.key
-복사<br>하고<br><br>cd
-복사<br>홈으로 가서<br><br>vi join.sh
-복사<br>하고<br><br>ssh ubuntu@아이피_주소 -i ~/.key/master-key.pem
-복사<br>한 다음에<br><br>sudo chmod +x ./join.sh
-복사<br>그리고<br><br>./join.sh
-복사<br>하면 잘 접속 될 걸?? 되겠지????]]></description><link>root\dev\linux\이어드림-de-ssh-보안-업데이트-수동.html</link><guid isPermaLink="false">root/dev/linux/이어드림 DE ssh 보안 업데이트 수동.md</guid><pubDate>Tue, 30 Apr 2024 16:52:25 GMT</pubDate></item><item><title><![CDATA[crontab 예약하기]]></title><description><![CDATA[ 
- <br><br><br>cd ~/LABs
-복사<br><br>vi log_backup.sh
-복사<br><br>#!/bin/bash
-set $(date)
-fname="$6-$2-$3-backup"
-tar -cvzf /home/ubuntu/LABs/$fname.tar.gz /var/log
-복사<br><br>chmod 700 log_backup.sh
-복사<br><br>./log_backup.sh
-복사<br><br><br><br>crontab -e
-복사<br><br>53 01 * * * /home/ubuntu/script/log_backup.sh
-복사<br><br>vi /var/mail/ubuntu
-복사]]></description><link>root\dev\linux\crontab-예약하기.html</link><guid isPermaLink="false">root/dev/linux/crontab 예약하기.md</guid><pubDate>Tue, 30 Apr 2024 02:19:35 GMT</pubDate></item><item><title><![CDATA[ubuntu node]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 01 May 2024 06:46:33 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 01 May 2024 06:46:30 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[ubuntu node]]></title><description><![CDATA[ 
  <br><br>cat /etc/os-release
 복사<br><br><br>tar -cvf 압축할이름.tar 디렉토리
 복사<br>tar -xvf 압축파일이름.tar
@@ -168,7 +85,7 @@ time.sh
 current time is 2024-05-01:00-06-04
 -------------------------------------------------
 복사<br>출력<br>Warning이렇게만 하면 세션을 나갔다 다시 들어오면 초기화 된다.<br>
-때문에 .baserc에 추가 해야지 초기화 되지 않는다.<br># 이 코드를 추가
+때문에 .bashrc에 추가 해야지 초기화 되지 않는다.<br># 이 코드를 추가
 PATH=$PATH:/home/ubuntu/script
 복사<br><br><br>기본 보안 수준을 설정한다.<br>umask 002
 복사<br><br><br>
@@ -220,7 +137,90 @@ sudo glances
 복사<br><br>sudo apt -y install all
 
 dstat --all
-복사<br><img alt="Pasted image 20240429173923.png" src="\lib\media\pasted-image-20240429173923.png"><br>과부화 테스트도 가능]]></description><link>root\dev\linux\ubuntu-node.html</link><guid isPermaLink="false">root/dev/linux/ubuntu node.md</guid><pubDate>Tue, 30 Apr 2024 15:12:39 GMT</pubDate><enclosure url="lib\media\pasted-image-20240429173736.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240429173736.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[EC2 - mariaDB workbench 연결]]></title><description><![CDATA[ 
+복사<br><img alt="Pasted image 20240429173923.png" src="\lib\media\pasted-image-20240429173923.png"><br>과부화 테스트도 가능]]></description><link>root\dev\linux\ubuntu-node.html</link><guid isPermaLink="false">root/dev/linux/ubuntu node.md</guid><pubDate>Wed, 01 May 2024 03:16:01 GMT</pubDate><enclosure url="lib\media\pasted-image-20240429173736.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240429173736.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[간단 ssh github 인증]]></title><description><![CDATA[ 
+ <br><br> ssh-keygen -t rsa -C "your_email@example.com"
+복사<br><br><br><img alt="Pasted image 20240417140113.png" src="\lib\media\pasted-image-20240417140113.png"><br><br><br>ssh -T git@github.com
+복사<br>CheckHi [user-name]! You've successfully authenticated, but GitHub does not provide shell access.]]></description><link>root\dev\github\간단-ssh-github-인증.html</link><guid isPermaLink="false">root/dev/github/간단 ssh github 인증.md</guid><pubDate>Thu, 18 Apr 2024 15:29:40 GMT</pubDate><enclosure url="lib\media\pasted-image-20240417140113.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240417140113.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[이어드림 DE ssh 보안 업데이트 수동]]></title><description><![CDATA[ 
+ <br>진짜 중요!master-key.pem과<br>
+같은 디렉토리에서 작업을 해야함<br><br>mkdir ssh-connection
+cd ssh-connection
+vi master-key.pem
+복사<br>아래를 붙여 넣기<br>-----BEGIN RSA PRIVATE KEY-----
+MIIEowIBAAKCAQEA3iDpFLZokx4Ur5Tsa3nRKnrxbSIm7hL4BHDvJMtpokBSbOdm
+djLqYMoX2yr3l+HzJ87HzPeJnXHHWunF2zxlENXqyXoT3b3Re50T5KVrz5r/p3ne
+BQ5lOD+I+bTKfTVzPF0PJWeVxXt3YiyqDzSrpjiBnxH6Mdo54mB8rfswwu1Snml7
+hPJhsOjYeeBS0KgsmcJS3gdhNOxuaTOsIIV8f2iLeAAiyiJTd/3goH718NfeHN3e
+RGfLg0AGHK18IWpHKEgLU9jE79O1KqAx2rkItMfcd3eFvOvDKVxtq7ZbJm+RqRwi
+ZNdTv/EGXXKKylo7G7cEnWgF7rqGWDvqNGehpwIDAQABAoIBAQCcuVu64XinVHID
+8G9e5XRPJK9y8MXG9FtJxuT0cRD3Casea6Y/f20fHXf3izlmUGXfkGYol/7gt4aQ
+/qA7L0Gfv08JGLkrmuJS9WEz0gNfV11KLRIZPy7roOhkRssXzL6huIcXPR7PV23E
+Nv9F+0Og4/2Q3n5I7lApCSrvFmwxGzDIv1y2plv2A+nwZXpH1eRDN2gZGffAwg2+
+q1Wtj3y0tY36JV8IF9JzJPDQbcwVzC0pjNVZQj+8dRI358Zq1zmC2lROCvsgaPkU
+D/gr34M1ZKrAy3ZH6Wy4gCpTn825wFKITpJDh+PuQuU7BWmi5/7cClPHd3ph0FIz
+mJIL6zkBAoGBAPFQ6bdhg/9VAoh+FJSWQgXYou4zLKmYsjk5R4pivfXwtS6aISPe
+EmCUV2lGge0kxuq4lL6jzzXdESMgKKQbHKSbRBfWGX9lW2L4Newlp+3s/IKV3F07
+T+fME9cb2LcY0m0DVpKgJPA1BNycqEhoNcc+r/CbikrIT07/esJsCfYbAoGBAOul
+Gu4uZfRcboz+A319dEHl/xZFJs3I6BnmcC62qg9Nwg1pMOH4VlAEHmImnnLlzDH8
+rcINPkU5d56Hn/WB+dAdSwrUj5Bq6ZBlvgCjCtIHLMosEY1huJ7DnLmH1l6kH9I4
+GhkldcIGXfiDbtFOu+q3mHDrTd1hLXPqJTiWmStlAoGAbBe+WPJJWhoOJG21cklM
+EapUcTZjDyTi0FckAIzyYjQMNG+94H8c5D4OWY3HrR4ILCO6HRrrOkln38AL9FZg
+oisaeULh8PrJ0K82GC1V53F8OlI+f1SOGlqDmJtUm892knYoVU1+vkpBf0B88NId
+JL6juLczXwQS4mP17RjP7XkCgYAv3kU/Nxus7Q3kBEGvP0nbjR4pZvi/+tzzTfVh
+9+dJ3pDZ6pFsheb6sCt/4rpzOq0lRmABuHD63PaotIJQ/AtENH8m/xD+1EkH9TMI
+rBYpnh2CIDucjcpULgZrReXNKefw60aZ7xshw+tY7VIYoLbZslv8LECQBQqXrmvL
+OAR7ZQKBgCH/NqqMDuRBCQ0+ur2RLqjMEmKxWrnbfSn0Uetr8YvagSzqOzOyM/xk
+FZYIwJCOUb4JlE8NscoHdXRbcjwWXGKlbUNM523URo0Nfa7NEoVXlSGtl82X++Rp
+ySCslDCgiOafpOviJND5INLatij9QVTRBAFlqyJjoOzZwambss7C
+-----END RSA PRIVATE KEY-----
+복사<br>:wq
+복사<br><br><br>집중!업데이트 하기 전에
+ssh ubuntu@아이피_주소 -i ./master-key.pem
+이거 하고 접속 되는 거 확인하고 해야 해!<br>
+접속이 안되면 아래의 과정이 소용이 없음.<br><br>sudo ssh-keygen -t rsa -P '' -f new-master-key
+복사<br><br>sudo scp -i ./master-key.pem \
+    new-master-key.pub \
+    ubuntu@인스턴스_아이피:/home/ubuntu/.ssh 
+복사<br><br>sudo ssh -i ./master-key.pem \
+    ubuntu@인스턴스_아이피 \
+    "cd ~/.ssh &amp;&amp; cat new-master-key.pub &gt; authorized_keys"
+복사<br>집중!일단
+ssh ubuntu@아이피_주소 -i ./master-key.pem
+접속 해보자. 여기서 접속이 안된다고 하면 성공
+그리고 
+sh ubuntu@아이피_주소 -i ./new-master-key
+이렇게 접속 한다면 일단은 성공<br><br>sudo chmod 600 master-key.pem  # 키 삭제 권한 부여
+mv new-master-key master-key.pem
+sudo chmod 400 master-key.pem
+rm new-master-key.pub
+복사<br>Cite여기까지 하면 ssh-connection 디렉토리엔 딸랑 master-key.pem 파일만 남을 것이다.<br>
+그럼 다시
+ssh ubuntu@아이피_주소 -i ./master-key.pem
+접속을 해보고 성공 한다면, 우리 조금만 더 편해져 보자.<br><br><br><br>Note장인의 손맛은 어지러울 수 있기 때문에 요약부터<br>cd ..
+mv ssh-connection ~/.key
+vi join.sh
+복사<br>ssh ubuntu@아이피_주소 -i ~/.key/master-key.pem
+복사<br>sudo chmod +x ./join.sh
+./join.sh
+복사<br>경고?가독성...<br><br><br>cd ..
+복사<br>해서<br><br>mv ssh-connection ~/.key
+복사<br>하고<br><br>cd
+복사<br>홈으로 가서<br><br>vi join.sh
+복사<br>하고<br><br>ssh ubuntu@아이피_주소 -i ~/.key/master-key.pem
+복사<br>한 다음에<br><br>sudo chmod +x ./join.sh
+복사<br>그리고<br><br>./join.sh
+복사<br>하면 잘 접속 될 걸?? 되겠지????]]></description><link>root\dev\linux\이어드림-de-ssh-보안-업데이트-수동.html</link><guid isPermaLink="false">root/dev/linux/이어드림 DE ssh 보안 업데이트 수동.md</guid><pubDate>Tue, 30 Apr 2024 16:52:25 GMT</pubDate></item><item><title><![CDATA[crontab 예약하기]]></title><description><![CDATA[ 
+ <br><br><br>cd ~/LABs
+복사<br><br>vi log_backup.sh
+복사<br><br>#!/bin/bash
+set $(date)
+fname="$6-$2-$3-backup"
+tar -cvzf /home/ubuntu/LABs/$fname.tar.gz /var/log
+복사<br><br>chmod 700 log_backup.sh
+복사<br><br>./log_backup.sh
+복사<br><br><br><br>crontab -e
+복사<br><br>53 01 * * * /home/ubuntu/script/log_backup.sh
+복사<br><br>vi /var/mail/ubuntu
+복사]]></description><link>root\dev\linux\crontab-예약하기.html</link><guid isPermaLink="false">root/dev/linux/crontab 예약하기.md</guid><pubDate>Tue, 30 Apr 2024 02:19:35 GMT</pubDate></item><item><title><![CDATA[EC2 - mariaDB workbench 연결]]></title><description><![CDATA[ 
  <br><br><img alt="Pasted image 20240501003521.png" src="\lib\media\pasted-image-20240501003521.png"><br><br><br><img alt="Pasted image 20240501003750.png" src="\lib\media\pasted-image-20240501003750.png"><br>
 <br>Connection Name: EC2-mariadb
 <br>Connection Methods: Standard TCP/IP over SSH
