@@ -105,7 +105,7 @@ title:집중!
 
 그리고 
 
->[!check] sh ubuntu@아이피_주소 -i ./new-master-key
+>[!check] ssh ubuntu@아이피_주소 -i ./new-master-key
 
 이렇게 접속 한다면 일단은 성공
 ```
