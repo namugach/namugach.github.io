@@ -30,7 +30,9 @@ create: 2024-05-15 17:38:38
 ## Database 보기
 
 ![[Pasted image 20240515213851.png]]
-
+1. 클릭: filter
+2. 클릭: 최상단
+3. 확인
 ---
 
 ## Query 보내기

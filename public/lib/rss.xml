@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 15 May 2024 12:53:43 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 15 May 2024 12:53:40 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[vscode mysql 플러그인 사용하기]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 15 May 2024 12:58:09 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 15 May 2024 12:58:07 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[vscode mysql 플러그인 사용하기]]></title><description><![CDATA[ 
  <br><br><img alt="Pasted image 20240515174351.png" src="\lib\media\pasted-image-20240515174351.png"><br>
 <br>입력: mysql
 <br>클릭: MySQL
@@ -13,7 +13,11 @@
 <br>입력: yeardream04
 <br>클릭: Connect
 <br>확인: Success
-<br><br><br><img alt="Pasted image 20240515213851.png" src="\lib\media\pasted-image-20240515213851.png"><br><br><br><br><img alt="Pasted image 20240515180219.png" src="\lib\media\pasted-image-20240515180219.png"><br>
+<br><br><br><img alt="Pasted image 20240515213851.png" src="\lib\media\pasted-image-20240515213851.png"><br>
+<br>클릭: filter
+<br>클릭: 최상단
+<br>확인
+<br><br><br><br><img alt="Pasted image 20240515180219.png" src="\lib\media\pasted-image-20240515180219.png"><br>
 <br>클릭: Create Query
 <br>엔터
 <br><br><br><img alt="Pasted image 20240515215016.png" src="\lib\media\pasted-image-20240515215016.png"><br>
@@ -26,7 +30,7 @@ SELECT `COLUMN_NAME` FROM COLUMNS;
 <br>확인
 <br>클릭: Run
 <br>확인
-]]></description><link>root\dev\database\vscode-mysql-플러그인-사용하기.html</link><guid isPermaLink="false">root/dev/database/vscode mysql 플러그인 사용하기.md</guid><pubDate>Wed, 15 May 2024 12:50:40 GMT</pubDate><enclosure url="lib\media\pasted-image-20240515174351.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240515174351.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[EC2 - mariaDB workbench 연결]]></title><description><![CDATA[ 
+]]></description><link>root\dev\database\vscode-mysql-플러그인-사용하기.html</link><guid isPermaLink="false">root/dev/database/vscode mysql 플러그인 사용하기.md</guid><pubDate>Wed, 15 May 2024 12:57:49 GMT</pubDate><enclosure url="lib\media\pasted-image-20240515174351.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240515174351.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[EC2 - mariaDB workbench 연결]]></title><description><![CDATA[ 
  <br><br><img alt="Pasted image 20240501003521.png" src="\lib\media\pasted-image-20240501003521.png"><br><br><br><img alt="Pasted image 20240501003750.png" src="\lib\media\pasted-image-20240501003750.png"><br>
 <br>Connection Name: EC2-mariadb
 <br>Connection Methods: Standard TCP/IP over SSH
