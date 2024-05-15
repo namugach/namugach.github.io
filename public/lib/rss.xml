@@ -1,4 +1,28 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 15 May 2024 10:01:58 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 15 May 2024 10:01:55 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[EC2 - mariaDB workbench 연결]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 15 May 2024 11:08:36 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 15 May 2024 11:08:33 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[vscode mysql 플러그인 사용하기]]></title><description><![CDATA[ 
+ <br><br><img alt="Pasted image 20240515174351.png" src="\lib\media\pasted-image-20240515174351.png"><br>
+<br>입력
+<br>클릭
+<br>클릭
+<br>클릭
+<br><br><br><img alt="Pasted image 20240515175233.png" src="\lib\media\pasted-image-20240515175233.png"><br>
+<br>클릭
+<br>클릭
+<br>입력
+<br>입력
+<br>입력
+<br>입력: yeardream04
+<br>클릭
+<br>확인
+<br><br><br><img alt="Pasted image 20240515180219.png" src="\lib\media\pasted-image-20240515180219.png"><br>
+<br>클릭
+<br>엔터
+<br><br><br><img alt="Pasted image 20240515180522.png" src="\lib\media\pasted-image-20240515180522.png"><br>
+<br>클릭
+<br>확인
+<br><img alt="Pasted image 20240515180457.png" src="\lib\media\pasted-image-20240515180457.png"><br>
+<br>클릭
+<br>확인
+]]></description><link>root\dev\database\vscode-mysql-플러그인-사용하기.html</link><guid isPermaLink="false">root/dev/database/vscode mysql 플러그인 사용하기.md</guid><pubDate>Wed, 15 May 2024 11:06:10 GMT</pubDate><enclosure url="lib\media\pasted-image-20240515174351.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240515174351.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[EC2 - mariaDB workbench 연결]]></title><description><![CDATA[ 
  <br><br><img alt="Pasted image 20240501003521.png" src="\lib\media\pasted-image-20240501003521.png"><br><br><br><img alt="Pasted image 20240501003750.png" src="\lib\media\pasted-image-20240501003750.png"><br>
 <br>Connection Name: EC2-mariadb
 <br>Connection Methods: Standard TCP/IP over SSH
@@ -58,31 +82,7 @@ SOURCE hr_info.sql;
 <br><br>SHOW TABLES;
 DESC employees;
 SELECT * FROM employees;
-복사]]></description><link>root\dev\database\mariadb\mariadb-아이디-생성.html</link><guid isPermaLink="false">root/dev/database/mariaDB/mariaDB 아이디 생성.md</guid><pubDate>Tue, 30 Apr 2024 15:57:05 GMT</pubDate></item><item><title><![CDATA[vscode mysql 플러그인 사용하기]]></title><description><![CDATA[ 
- <br><br><img alt="Pasted image 20240515174351.png" src="\lib\media\pasted-image-20240515174351.png"><br>
-<br>클릭
-<br>클릭
-<br>클릭
-<br>클릭
-<br><br><br><img alt="Pasted image 20240515175233.png" src="\lib\media\pasted-image-20240515175233.png"><br>
-<br>클릭
-<br>클릭
-<br>입력
-<br>입력
-<br>입력
-<br>입력: yeardream04
-<br>클릭
-<br>확인
-<br><br><br><img alt="Pasted image 20240515180219.png" src="\lib\media\pasted-image-20240515180219.png"><br>
-<br>클릭
-<br>엔터
-<br><br><br><img alt="Pasted image 20240515180522.png" src="\lib\media\pasted-image-20240515180522.png"><br>
-<br>클릭
-<br>확인
-<br><img alt="Pasted image 20240515180457.png" src="\lib\media\pasted-image-20240515180457.png"><br>
-<br>클릭
-<br>확인
-]]></description><link>root\dev\database\vscode-mysql-플러그인-사용하기.html</link><guid isPermaLink="false">root/dev/database/vscode mysql 플러그인 사용하기.md</guid><pubDate>Wed, 15 May 2024 09:58:24 GMT</pubDate><enclosure url="lib\media\pasted-image-20240515174351.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240515174351.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[이어드림 DE ssh 보안 업데이트 수동]]></title><description><![CDATA[ 
+복사]]></description><link>root\dev\database\mariadb\mariadb-아이디-생성.html</link><guid isPermaLink="false">root/dev/database/mariaDB/mariaDB 아이디 생성.md</guid><pubDate>Tue, 30 Apr 2024 15:57:05 GMT</pubDate></item><item><title><![CDATA[이어드림 DE ssh 보안 업데이트 수동]]></title><description><![CDATA[ 
  <br>진짜 중요!master-key.pem과<br>
 같은 디렉토리에서 작업을 해야함<br><br>mkdir ssh-connection
 cd ssh-connection
