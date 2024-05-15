@@ -27,6 +27,13 @@ create: 2024-05-15 17:38:38
 7. 클릭: Connect
 8. 확인: Success
 ----
+## Database 보기
+
+![[Pasted image 20240515213851.png]]
+
+---
+
+## Query 보내기
 
 ## 생성
 
@@ -36,11 +43,16 @@ create: 2024-05-15 17:38:38
 ---
 ## 확인
 
-![[Pasted image 20240515180522.png]]
-1. 클릭: Run
-2. 확인
+![[Pasted image 20240515215016.png]]
 
+1. 작성
+```sql title:작성
+SELECT * FROM COLUMNS;
 
-![[Pasted image 20240515180457.png]]
-1. 클릭: Run
-2. 확인
+SELECT `COLUMN_NAME` FROM COLUMNS;
+```
+
+2. 클릭: Run
+3. 확인
+4. 클릭: Run
+5. 확인
