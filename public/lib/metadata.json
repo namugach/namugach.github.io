@@ -1,11 +1,16 @@
 {
   "vaultName": "note",
-  "lastExport": 1715013429537,
+  "lastExport": 1715767315699,
   "pluginVersion": "1.8.01",
-  "validBodyClasses": "publish css-settings-manager show-inline-title zoom-plugin-bls-zoom codeblock-customizer codeblock-customizer-show-line-numbers codeblock-customizer-gutter-highlight codeblock-customizer-gutter-active-line codeblock-customizer-collapseIconNone codeblock-customizer-use-semifold codeblock-customizer-show-uncollapse-code-button codeblock-customizer-highlight-text-enabled horizontal-to-vertical theme-dark codeblock-customizer-active-line-highlight",
+  "validBodyClasses": "publish css-settings-manager theme-dark show-inline-title zoom-plugin-bls-zoom codeblock-customizer codeblock-customizer-show-line-numbers codeblock-customizer-gutter-highlight codeblock-customizer-gutter-active-line codeblock-customizer-collapseIconNone codeblock-customizer-use-semifold codeblock-customizer-show-uncollapse-code-button codeblock-customizer-highlight-text-enabled codeblock-customizer-active-line-highlight horizontal-to-vertical",
   "useCustomHeadContent": true,
   "useCustomFavicon": false,
   "files": [
+    "root/dev/database/mariaDB/EC2 - mariaDB workbench 연결.md",
+    "root/dev/database/mariaDB/mariaDB 설치.md",
+    "root/dev/database/mariaDB/mariaDB 설치부터 workbench 연결까지.md",
+    "root/dev/database/mariaDB/mariaDB 아이디 생성.md",
+    "root/dev/database/vscode mysql 플러그인 사용하기.md",
     "root/dev/docker/도커 설치 및 기본 사용법.md",
     "root/dev/docker/docker note.md",
     "root/dev/github/간단 ssh github 인증.md",
@@ -13,15 +18,21 @@
     "root/dev/linux/이어드림 DE ssh 보안 업데이트 수동.md",
     "root/dev/linux/crontab 예약하기.md",
     "root/dev/linux/ubuntu node.md",
-    "root/dev/mariaDB/EC2 - mariaDB workbench 연결.md",
-    "root/dev/mariaDB/mariaDB 설치.md",
-    "root/dev/mariaDB/mariaDB 설치부터 workbench 연결까지.md",
-    "root/dev/mariaDB/mariaDB 아이디 생성.md",
     "root/dev/python/python note.md",
     "root/dev/wsl/이어드림스쿨 실습용 wsl 배포 import.md",
     "root/dev/wsl/wsl note.md",
     "root/list.md",
     "root/main.md",
+    "lib/media/pasted-image-20240501003521.png",
+    "lib/media/pasted-image-20240501003750.png",
+    "lib/media/pasted-image-20240501004345.png",
+    "lib/media/pasted-image-20240501004917.png",
+    "lib/media/pasted-image-20240501004958.png",
+    "lib/media/pasted-image-20240515174351.png",
+    "lib/media/pasted-image-20240515175233.png",
+    "lib/media/pasted-image-20240515180219.png",
+    "lib/media/pasted-image-20240515180522.png",
+    "lib/media/pasted-image-20240515180457.png",
     "lib/scripts/graph-wasm.wasm",
     "lib/fonts/94f2f163d4b698242fef.otf",
     "lib/fonts/72505e6a122c6acd5471.woff2",
@@ -57,11 +68,6 @@
     "lib/media/pasted-image-20240417140113.png",
     "lib/media/pasted-image-20240429173736.png",
     "lib/media/pasted-image-20240429173923.png",
-    "lib/media/pasted-image-20240501003521.png",
-    "lib/media/pasted-image-20240501003750.png",
-    "lib/media/pasted-image-20240501004345.png",
-    "lib/media/pasted-image-20240501004917.png",
-    "lib/media/pasted-image-20240501004958.png",
     "lib/media/pasted-image-20240330172323.png",
     "lib/media/pasted-image-20240330192430.png",
     "lib/media/pasted-image-20240330192920.png",
@@ -168,7 +174,7 @@
       ]
     },
     "root/list.md": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 3065,
       "exportedPath": "root/list.html",
       "dependencies": []
@@ -288,187 +294,187 @@
       "dependencies": []
     },
     "lib/scripts/graph-wasm.wasm": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 23377,
       "exportedPath": "lib/scripts/graph-wasm.wasm",
       "dependencies": []
     },
     "lib/fonts/94f2f163d4b698242fef.otf": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 66800,
       "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
       "dependencies": []
     },
     "lib/fonts/72505e6a122c6acd5471.woff2": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 104232,
       "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
       "dependencies": []
     },
     "lib/fonts/2d5198822ab091ce4305.woff2": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 104332,
       "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
       "dependencies": []
     },
     "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 98868,
       "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
       "dependencies": []
     },
     "lib/fonts/cb10ffd7684cd9836a05.woff2": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 106876,
       "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
       "dependencies": []
     },
     "lib/fonts/b5f0f109bc88052d4000.woff2": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 105804,
       "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
       "dependencies": []
     },
     "lib/fonts/cbe0ae49c52c920fd563.woff2": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 106108,
       "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
       "dependencies": []
     },
     "lib/fonts/535a6cf662596b3bd6a6.woff2": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 111708,
       "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
     },
     "lib/media/874d8b8e340f75575caa.svg": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 317,
       "exportedPath": "lib/media/874d8b8e340f75575caa.svg",
       "dependencies": []
     },
     "lib/html/file-tree.html": {
-      "modifiedTime": 1715013429537,
-      "sourceSize": 11279,
+      "modifiedTime": 1715767315699,
+      "sourceSize": 12319,
       "exportedPath": "lib/html/file-tree.html",
       "dependencies": []
     },
     "lib/scripts/webpage.js": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 47290,
       "exportedPath": "lib/scripts/webpage.js",
       "dependencies": []
     },
     "lib/scripts/graph-view.js": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 15519,
       "exportedPath": "lib/scripts/graph-view.js",
       "dependencies": []
     },
     "lib/scripts/graph-wasm.js": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 14021,
       "exportedPath": "lib/scripts/graph-wasm.js",
       "dependencies": []
     },
     "lib/scripts/graph-render-worker.js": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 5179,
       "exportedPath": "lib/scripts/graph-render-worker.js",
       "dependencies": []
     },
     "lib/scripts/tinycolor.js": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 29832,
       "exportedPath": "lib/scripts/tinycolor.js",
       "dependencies": []
     },
     "lib/scripts/pixi.js": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 449509,
       "exportedPath": "lib/scripts/pixi.js",
       "dependencies": []
     },
     "lib/scripts/minisearch.js": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 29422,
       "exportedPath": "lib/scripts/minisearch.js",
       "dependencies": []
     },
     "lib/media/favicon.png": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 1105,
       "exportedPath": "lib/media/favicon.png",
       "dependencies": []
     },
     "lib/scripts/graph-data.js": {
-      "modifiedTime": 1715013429537,
-      "sourceSize": 1226,
+      "modifiedTime": 1715767315699,
+      "sourceSize": 1336,
       "exportedPath": "lib/scripts/graph-data.js",
       "dependencies": []
     },
     "lib/styles/obsidian.css": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 157786,
       "exportedPath": "lib/styles/obsidian.css",
       "dependencies": []
     },
     "lib/styles/global-variable-styles.css": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 236,
       "exportedPath": "lib/styles/global-variable-styles.css",
       "dependencies": []
     },
     "lib/styles/supported-plugins.css": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 5318,
       "exportedPath": "lib/styles/supported-plugins.css",
       "dependencies": []
     },
     "lib/styles/main-styles.css": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 23130,
       "exportedPath": "lib/styles/main-styles.css",
       "dependencies": []
     },
     "lib/styles/snippets.css": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 788,
       "exportedPath": "lib/styles/snippets.css",
       "dependencies": []
     },
     "lib/styles/other-plugins.css": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 184323,
       "exportedPath": "lib/styles/other-plugins.css",
       "dependencies": []
@@ -494,36 +500,6 @@
         "lib/media/pasted-image-20240429173923.png"
       ]
     },
-    "root/dev/mariaDB/EC2 - mariaDB workbench 연결.md": {
-      "modifiedTime": 1714499707232,
-      "sourceSize": 801,
-      "exportedPath": "root/dev/mariadb/ec2-mariadb-workbench-연결.html",
-      "dependencies": [
-        "lib/media/pasted-image-20240501003521.png",
-        "lib/media/pasted-image-20240501003750.png",
-        "lib/media/pasted-image-20240501004345.png",
-        "lib/media/pasted-image-20240501004917.png",
-        "lib/media/pasted-image-20240501004958.png"
-      ]
-    },
-    "root/dev/mariaDB/mariaDB 설치.md": {
-      "modifiedTime": 1714499707232,
-      "sourceSize": 1127,
-      "exportedPath": "root/dev/mariadb/mariadb-설치.html",
-      "dependencies": []
-    },
-    "root/dev/mariaDB/mariaDB 설치부터 workbench 연결까지.md": {
-      "modifiedTime": 1714499707232,
-      "sourceSize": 292,
-      "exportedPath": "root/dev/mariadb/mariadb-설치부터-workbench-연결까지.html",
-      "dependencies": []
-    },
-    "root/dev/mariaDB/mariaDB 아이디 생성.md": {
-      "modifiedTime": 1714499707232,
-      "sourceSize": 525,
-      "exportedPath": "root/dev/mariadb/mariadb-아이디-생성.html",
-      "dependencies": []
-    },
     "lib/media/pasted-image-20240429173736.png": {
       "modifiedTime": 1714545990553,
       "sourceSize": 70287,
@@ -537,37 +513,37 @@
       "dependencies": []
     },
     "lib/media/pasted-image-20240501003521.png": {
-      "modifiedTime": 1714499707232,
+      "modifiedTime": 1715767315699,
       "sourceSize": 31081,
       "exportedPath": "lib/media/pasted-image-20240501003521.png",
       "dependencies": []
     },
     "lib/media/pasted-image-20240501003750.png": {
-      "modifiedTime": 1714499707232,
+      "modifiedTime": 1715767315699,
       "sourceSize": 40995,
       "exportedPath": "lib/media/pasted-image-20240501003750.png",
       "dependencies": []
     },
     "lib/media/pasted-image-20240501004345.png": {
-      "modifiedTime": 1714499707232,
+      "modifiedTime": 1715767315699,
       "sourceSize": 70732,
       "exportedPath": "lib/media/pasted-image-20240501004345.png",
       "dependencies": []
     },
     "lib/media/pasted-image-20240501004917.png": {
-      "modifiedTime": 1714499707232,
+      "modifiedTime": 1715767315699,
       "sourceSize": 58797,
       "exportedPath": "lib/media/pasted-image-20240501004917.png",
       "dependencies": []
     },
     "lib/media/pasted-image-20240501004958.png": {
-      "modifiedTime": 1714499707232,
+      "modifiedTime": 1715767315699,
       "sourceSize": 45293,
       "exportedPath": "lib/media/pasted-image-20240501004958.png",
       "dependencies": []
     },
     "lib/html/custom-head-content.html": {
-      "modifiedTime": 1715013429537,
+      "modifiedTime": 1715767315699,
       "sourceSize": 62,
       "exportedPath": "lib/html/custom-head-content.html",
       "dependencies": []
@@ -582,6 +558,78 @@
       "modifiedTime": 1714923746724,
       "sourceSize": 2260,
       "exportedPath": "root/dev/docker/docker-note.html",
+      "dependencies": []
+    },
+    "root/dev/database/mariaDB/EC2 - mariaDB workbench 연결.md": {
+      "modifiedTime": 1715767315699,
+      "sourceSize": 801,
+      "exportedPath": "root/dev/database/mariadb/ec2-mariadb-workbench-연결.html",
+      "dependencies": [
+        "lib/media/pasted-image-20240501003521.png",
+        "lib/media/pasted-image-20240501003750.png",
+        "lib/media/pasted-image-20240501004345.png",
+        "lib/media/pasted-image-20240501004917.png",
+        "lib/media/pasted-image-20240501004958.png"
+      ]
+    },
+    "root/dev/database/mariaDB/mariaDB 설치.md": {
+      "modifiedTime": 1715767315699,
+      "sourceSize": 1127,
+      "exportedPath": "root/dev/database/mariadb/mariadb-설치.html",
+      "dependencies": []
+    },
+    "root/dev/database/mariaDB/mariaDB 설치부터 workbench 연결까지.md": {
+      "modifiedTime": 1715767315699,
+      "sourceSize": 292,
+      "exportedPath": "root/dev/database/mariadb/mariadb-설치부터-workbench-연결까지.html",
+      "dependencies": []
+    },
+    "root/dev/database/mariaDB/mariaDB 아이디 생성.md": {
+      "modifiedTime": 1715767315699,
+      "sourceSize": 525,
+      "exportedPath": "root/dev/database/mariadb/mariadb-아이디-생성.html",
+      "dependencies": []
+    },
+    "root/dev/database/vscode mysql 플러그인 사용하기.md": {
+      "modifiedTime": 1715767315699,
+      "sourceSize": 521,
+      "exportedPath": "root/dev/database/vscode-mysql-플러그인-사용하기.html",
+      "dependencies": [
+        "lib/media/pasted-image-20240515174351.png",
+        "lib/media/pasted-image-20240515175233.png",
+        "lib/media/pasted-image-20240515180219.png",
+        "lib/media/pasted-image-20240515180522.png",
+        "lib/media/pasted-image-20240515180457.png"
+      ]
+    },
+    "lib/media/pasted-image-20240515174351.png": {
+      "modifiedTime": 1715767315699,
+      "sourceSize": 198496,
+      "exportedPath": "lib/media/pasted-image-20240515174351.png",
+      "dependencies": []
+    },
+    "lib/media/pasted-image-20240515175233.png": {
+      "modifiedTime": 1715767315699,
+      "sourceSize": 104129,
+      "exportedPath": "lib/media/pasted-image-20240515175233.png",
+      "dependencies": []
+    },
+    "lib/media/pasted-image-20240515180219.png": {
+      "modifiedTime": 1715767315699,
+      "sourceSize": 59669,
+      "exportedPath": "lib/media/pasted-image-20240515180219.png",
+      "dependencies": []
+    },
+    "lib/media/pasted-image-20240515180522.png": {
+      "modifiedTime": 1715767315699,
+      "sourceSize": 197053,
+      "exportedPath": "lib/media/pasted-image-20240515180522.png",
+      "dependencies": []
+    },
+    "lib/media/pasted-image-20240515180457.png": {
+      "modifiedTime": 1715767315699,
+      "sourceSize": 131818,
+      "exportedPath": "lib/media/pasted-image-20240515180457.png",
       "dependencies": []
     }
   }
