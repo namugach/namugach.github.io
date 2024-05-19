@@ -1,4 +1,480 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 15 May 2024 12:58:09 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 15 May 2024 12:58:07 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[vscode mysql 플러그인 사용하기]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 19 May 2024 15:20:21 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 19 May 2024 15:20:17 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[mysql note]]></title><description><![CDATA[ 
+ <br><br>
+<br>일번적으로 대소문자를 구분하지 않음
+<br>주로 예약어(SELECT, FROM)는<br>
+대문자, 사용자 정의어(code, name, population)는 소문자를 사용
+<br><br><br><br>SHOW DATABASES;
+복사<br><br>SHOW TABLES;
+복사<br><br>DESC &lt;table_name&gt;;
+복사<br><br><br>USE &lt;database_name&gt;;
+복사<br><br>SELECT * FROM &lt;table_name&gt;;
+복사<br><br><br>Info
+<br>-- : 한줄주석, -- 를 한 후에 반드시 한칸을 띄어서 사용해야 합니다.
+<br>/* */ : 블럭주석
+<br>-- 국가코드와 국가 이름을 출력합니다.
+/* SELECT code, population
+FROM country; */
+SELECT code, name
+FROM country;
+복사<br><br><br><br><br><br><br><br><br><br><br>InfoData Manipulation Language<br>
+데이터 조작어<br>
+데이터 검색, 삽입, 수정, 삭제등에 사용<br>
+SELECT, INSERT, UPDATE, DELETE<br>
+트랜젝션이 발생하는 SQL문<br><br>SELECT &lt;column_name_1&gt;, &lt;column_name_2&gt;, ...
+FROM &lt;database_name&gt;.&lt;table_name&gt;;
+또는 FROM &lt;table_name&gt;;
+복사<br>-- 전체 조회
+SELECT *
+FROM world.country;
+복사<br>-- code, name 세개의 컬럼 데이터 조회
+SELECT code, name
+FROM world.country;
+복사<br>-- alias 조회
+SELECT code AS country_code, name AS country_name
+FROM country;
+복사<br><br>INSERT INTO &lt;table_name&gt;(&lt;column_name_1&gt;, &lt;column_name_2&gt;, ...)
+VALUES(&lt;value_1&gt;, &lt;value_2&gt;, …)
+복사<br>-- user1 테이블에 user_id, namex, email, age, rdate를 입력
+INSERT INTO user1(user_id, name, email, age, rdate)
+VALUES (1, "jin", "pdj@gmail.com", 30, now()),
+(2, "peter", "peter@daum.net", 33, '2017-02-20'),
+(3, "alice", "alice@naver.com", 23, '2018-01-05'),
+(4, "po", "po@gmail.com", 43, '2002-09-16'),
+(5, "andy", "andy@gmail.com", 17, '2016-04-28'),
+(6, "jin", "jin1224@gmail.com", 33, '2013-09-02');
+복사<br><br>UPDATE &lt;table_name&gt;
+SET &lt;column_name_1&gt; = &lt;value_1&gt;, &lt;column_name_2&gt; = &lt;value_2&gt;,
+WHERE &lt;condition&gt;
+복사<br>-- jin 이름을 가지고 있는 사람의 나이를 20, 이메일을 pdj@daum.net으로 변경
+UPDATE user1
+SET age=20, email="pdj@daum.net"
+WHERE name="jin"
+복사<br><br>DELETE FROM &lt;table_name&gt;
+WHERE &lt;condition&gt;
+복사<br>-- 2016-01-01 이전 데이터 삭제 (DML)
+DELETE FROM user1
+WHERE rdate &lt; "2016-01-01"
+복사<br><br>SELECT &lt;컬럼이름 1&gt;, &lt;컬럼이름 2&gt;, ...
+FROM &lt;테이블 이름&gt;
+WHERE &lt;조건식&gt;
+복사<br><br>-- 인구가 7000만에서 1억인 국가를 출력
+SELECT *
+FROM country
+WHERE Population &gt;= 70000000 AND Population &lt;= 100000000;
+복사<br><br><br>SELECT *
+FROM country
+WHERE Continent = "Asia" OR Continent = "Africa";
+복사<br><br>-- 인구가 7000만에서 1억인 국가를 출력
+SELECT *
+FROM country
+WHERE Population BETWEEN 70000000 AND 100000000;
+복사<br><br>-- 아시아와 아프리카 대륙의 국가 데이터를 출력
+SELECT *
+FROM country
+WHERE Continent IN ("Asia", "Africa");
+
+-- 아시아와 아프리카 대륙의 국가가 아닌 데이터를 출력
+SELECT *
+FROM country
+WHERE Continent NOT IN ("Asia", "Africa");
+
+-- 아시아와 아프리카 대륙의 국가가 아닌 데이터를 출력 (논리연산 사용)
+SELECT *
+FROM country
+WHERE Continent != "Asia" AND Continent != "Africa";
+복사<br><br>-- country 테이블에서 국가 코드가 Z로 시작되는 데이터를 출력
+SELECT *
+FROM country
+WHERE code like "Z%";
+
+-- 정부형태에 Republic이 포함된 데이터 출력
+SELECT *
+FROM country
+WHERE GovernmentForm LIKE “%Republic%”;
+복사<br><br><br>-- 오름차순 인구순으로 국가의 리스트를 출력
+-- ASC는 생략이 가능
+SELECT *
+FROM country
+ORDER BY population ASC
+복사<br><br>SELECT *
+FROM country
+ORDER BY population DESC
+
+-- ORDER BY에 여러개의 정렬 조건을 사용
+-- 국가 코드를 알파벳 순으로 정렬하고 같은 국가 코드를 가지면 인구순으로 내림차순으로 정렬
+SELECT *
+FROM city
+ORDER BY CountryCode ASC, Population DESC
+복사<br><br>-- 인구가 많은 상위 5개 국가 데이터를 출력
+SELECT *
+FROM country
+ORDER BY population DESC
+LIMIT 5;
+
+-- 인구가 많은 상위 6위 ~ 8위의 3개 국가 데이터를 출력
+-- OFFSET 사용
+SELECT *
+FROM country
+ORDER BY population DESC
+LIMIT 3 OFFSET 5; -- # 5개 스킵하고 3개를 출력
+
+SELECT *
+FROM country
+ORDER BY population DESC
+LIMIT 5, 3; # -- 5개 스킵하고 3개를 출력
+복사<br><br>-- city 테이블에서 도시의 인구수가 100만에서 200만인 도시의 국가 코드를 중복을 제거후 출력
+SELECT DISTINCT countrycode
+FROM city
+WHERE population BETWEEN 1000000 AND 2000000;
+복사<br><br><br>InfoData Definition Language<br>
+데이터 정의어<br>
+데이터 베이스, 테이블, 뷰, 인덱스등의 데이터 베이스 개체를 생성, 삭제, 변경에 사용<br>
+CREATE, DROP, ALTER, TRUNCATE<br>
+실행 즉시 DB에 적용<br><br><br>CREATE DATABASE &lt;database_name&gt;;
+복사<br>-- test 데이터 베이스 생성
+CREATE DATABASE test;
+복사<br><br>CREATE TABLE &lt;table_name&gt; (
+	column_name_1 column_data_type_1 column_constraint_1,
+	column_name_2 column_data_type_2 column_constraint_2,
+	...
+)
+복사<br>-- 제약조건이 없는 user1 테이블 생성
+CREATE TABLE user1(
+	user_id INT,
+	name Varchar(20),
+	email Varchar(30),
+	age INT(3),
+	rdate DATE
+)
+복사<br>-- 제약조건이 있는 user2 테이블 생성
+CREATE TABLE user2(
+	user_id INT PRIMARY KEY AUTO_INCREMENT,
+	name Varchar(20) NOT NULL,
+	email Varchar(30) UNIQUE NOT NULL,
+	age INT(3) DEFAULT '30',
+	rdate TIMESTAMP default CURRENT_TIMESTAMP
+)
+복사<br><br>DROP FROM &lt;database_name&gt;
+복사<br>-- 테이블 전체를 모두 삭제 (DLL)
+DROP FROM user1
+복사<br>-- DATABASE
+-- tmp 데이터 베이스 생성
+CREATE DATABASE tmp;
+SHOW DATABASES;
+
+-- tmp 데이터 베이스 삭제
+DROP DATABASE tmp;
+SHOW DATABASES;
+
+-- TABLE
+-- tmp 데이터 베이스 생성
+CREATE DATABASE tmp;
+
+-- tmp 데이터 베이스 선택
+USE tmp;
+
+-- tmp 테이블 생성
+CREATE TABLE tmp( id INT );
+
+-- tmp 테이블 삭제
+DROP TABLE tmp;
+복사<br><br>INSERT INTO &lt;table_name&gt;(&lt;column_name_1&gt;, &lt;column_name_2&gt;, ...)
+VALUES(&lt;value_1&gt;, &lt;value_2&gt;, …)
+복사<br>-- user1 테이블에 user_id, namex, email, age, rdate를 입력
+INSERT INTO user1(user_id, name, email, age, rdate)
+VALUES (1, "jin", "pdj@gmail.com", 30, now()),
+(2, "peter", "peter@daum.net", 33, '2017-02-20'),
+(3, "alice", "alice@naver.com", 23, '2018-01-05'),
+(4, "po", "po@gmail.com", 43, '2002-09-16'),
+(5, "andy", "andy@gmail.com", 17, '2016-04-28'),
+(6, "jin", "jin1224@gmail.com", 33, '2013-09-02');
+복사<br>-- city_2 테이블 생성
+CREATE TABLE city_2 (
+	Name VARCHAR(50),
+	CountryCode CHAR(3),
+	District VARCHAR(50),
+	Population INT
+)
+
+-- select 절에서 나온 결과데이터를 Insert
+INSERT INTO city_2
+SELECT Name, CountryCode, District, Population
+FROM city
+WHERE Population &gt; 8000000;
+복사<br><br><br><br>ALTER TABLE `테이블 이름` ADD COLUMN `컬럼 명` `속성값`;
+복사<br>ALTER TABLE user ADD contents TEXT NOT NULL;
+복사<br><br>ALTER TABLE `테이블 아름` DROP COLUMN `컬럼 이름`;
+복사<br>ALTER TABLE user DROP contents;
+복사<br><br>ALTER TABLE 테이블명 RENAME COLUMN 변경할 컬럼명 TO 변경될 이름;
+복사<br>ALTER TABLE user RENAME COLUMN email TO mail;
+복사<br><br>ALTER TABLE `기존 테이블 이름` RENAME `새 테이블 이름`;
+복사<br><br>-- 사용중인 데이터베이스의 인코딩 방식 확인
+SHOW VARIABLES LIKE "character_set_database"
+
+-- test 데이터 베이스의 문자열 인코딩을 utf8으로 변경
+ALTER DATABASE world CHARACTER SET = ascii
+ALTER DATABASE world CHARACTER SET = utf8
+
+-- 사용중인 데이터베이스의 인코딩 방식 확인
+SHOW VARIABLES LIKE "character_set_database"
+
+-- Table
+-- ALTER를 이용하여 Table의 컬럼을 추가하거나 삭제하거나 수정할수 있습니다.
+
+-- ADD
+-- user2 테이블에 TEXT 데이터 타입을 갖는 tmp 컬럼을 추가
+ALTER TABLE user2 ADD tmp 
+
+
+-- MODIFY
+-- user2 테이블에 INT 데이터 타입을 갖는 tmp 컬럼으로 수정
+ALTER TABLE user2 MODIFY COLUMN tmp INT
+
+
+-- CONVERT TO
+-- 테이블 인코딩 확인
+show full columns from test2;
+
+-- 테이블의 모든 인코딩 변환
+ALTER TABLE user2 CONVERT TO character set utf8;
+
+-- DROP
+-- user2 테이블의 tmp 컬럼을 삭제
+ALTER TABLE user2 DROP tmp;
+복사<br><br>NoteForeign key를 설정하면 데이터의 무결성을 지킬수 있다.<br>
+UNIQUE 나 PRAMARY 제약조건이 있어야 설정이 가능하다.<br>-- user 테이블 생성
+	create table user(
+	user_id int primary key auto_increment,
+	name varchar(20),
+	addr varchar(20)
+);
+
+-- # money 테이블 생성
+create table money(
+	money_id int primary key auto_increment,
+	income int,
+	user_id int,
+	-- # 외래키 설정
+	FOREIGN KEY (user_id) REFERENCES user(user_id)
+);
+
+desc money;
+
+-- 수정해서 생성
+alter table money
+add constraint fk_user
+foreign key (user_id)
+references user (user_id);
+
+desc money;
+
+
+-- 데이터 입력
+insert into user(name, addr)
+values ("jin", "Seoul"), ("andy", "Pusan");
+
+
+-- 데이터 확인
+select * from user;
+
+-- 데이터 입력
+insert into money(income, user_id)
+values (5000, 1), (7000, 2);
+
+
+
+-- 데이터 확인
+select * from money;
+
+-- user 테이블에 user_id가 3이 없으므로 에러
+insert into money(income, user_id)
+values (8000, 3);
+delete from money
+where user_id = 2;
+
+-- money 테이블에 user_id가 있어서 삭제할수 없다.
+delete from user
+where user_id = 1;
+
+-- 테이블 삭제도 안된다.
+drop table user;
+
+복사<br><br>NoteFOREIGN KEY로 참조되는 데이터를 수정 및 삭제할때 참조되는 데이터까지 수정이나 삭제하는 설정<br>
+<br>CASCADE : 참조되는 테이블에서 데이터를 삭제하거나 수정하면, 참조하는 테이블에서도 삭제와 수정
+<br>SET NULL : 참조되는 테이블에서 데이터를 삭제하거나 수정하면, 참조하는 테이블의 데이터는 NULL로 변경
+<br>NO ACTION : 참조되는 테이블에서 데이터를 삭제하거나 수정해도, 참조하는 테이블의 데이터는 변경되지 않음
+<br>SET DEFAULT : 참조되는 테이블에서 데이터를 삭제하거나 수정하면, 참조하는 테이블의 데이터는 필드의 기<br>
+본값으로 설정
+<br>RESTRICT : 참조하는 테이블에 데이터가 남아 있으면, 참조되는 테이블의 데이터를 삭제하거나 수정할 수 없음
+<br>--업데이트되면 같이 업데이트, 삭제되면 NULL 값으로 변경
+select * from user;
+drop table money;
+create table money(
+money_id int primary key auto_increment,
+income int,
+user_id int,
+
+--외래키 설정
+FOREIGN KEY (user_id) REFERENCES user(user_id)
+ON UPDATE CASCADE ON DELETE SET NULL
+);
+
+-- money에 데이터 추가
+insert into money(income, user_id)
+values (5000, 1), (7000, 2);
+
+-- 데이터 추가 확인
+select * from money;
+
+-- user 테이블 업데이트 : money 테이블의 user_id도 같이 업데이트 됨
+update user
+set user_id = 3
+where user_id = 2;
+
+select * from user;
+select * from money;
+
+
+-- user 테이블의 데이터 삭제 : money 테이블의 fk로 설정되어 있는 데이터가 NULL로 변경
+delete from user
+where user_id = 3;
+
+select * from user;
+select * from money;
+복사<br><br><br>Note실수 데이터 올림<br>-- 12.345를 올림하여 정수로 나타냄
+SELECT CEIL(12.345);
+
+-- 국가별 언어 사용 비율을 소수 첫번째자리에서 올림하여 정수로 나타냄
+SELECT CountryCode, Language, Percentage, CEIL(Percentage)
+FROM countrylanguage;
+복사<br><br>Note실수데이터 반올림<br>-- 12.345를 소수 둘째자리까지 나타내고 소수 셋째자리에서 반올림
+SELECT ROUND(12.345, 2);
+
+-- 국가별 언어 사용 비율을 소수 첫번째자리에서 반올림하여 정수로 나타냄
+SELECT CountryCode, Language, Percentage, ROUND(Percentage, 0)
+FROM countrylanguage;
+복사<br><br>Note실수 데이터를 버림<br>-- 12.345를 소수 둘째자리까지 나타내고 소수 셋째자리에서 버림
+SELECT TRUNCATE(12.345, 2);
+
+-- 국가별 언어 사용 비율을 소수 첫번째자리에서 버림하여 정수로 나타냄
+SELECT CountryCode, Language, Percentage, TRUNCATE(Percentage, 0)
+FROM countrylanguage;
+
+SELECT CountryCode, Language, Percentage, ROUND(Percentage, 0), TRUNCATE(Percentage, 0)
+FROM countrylanguage;
+복사<br><br>Note날짜 데이터 포멧<br><a data-tooltip-position="top" aria-label="https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html" rel="noopener" class="external-link" href="https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html" target="_blank">reference</a><br>-- sakila의 payment 테이블에서 요금 지불일을 "년-월"로 데이터 포멧을 변경했을때,
+-- 중복을 제거한 "년-월" 데이터를 출력
+SELECT DISTINCT(DATE_FORMAT(payment_date, "%Y-%m")) AS unique_month
+FROM payment;
+복사<br><br>Note문자열을 합침<br>-- world 데이터베이스의 country 테이블에서 국가코드, 대륙이름과 국가이름이 
+-- " / " 구분자로 구분해서 하나의 컬럼에 출력
+SELECT code, CONCAT(continent, " / ", name) as continent_name
+FROM country;
+복사<br><br>Note데이터의 갯수를 출력<br>--world 데이터 베이스의 city 데이터의 갯수를 출력
+SELECT count(*) as city_count
+FROM city;
+복사<br><br>IF(조건, 참, 거짓)
+복사<br>-- 도시의 인구가 100만이 넘으면 "big city" 그렇지 않으면 "small city"를 출력하는 city_scale 컬럼을
+추가
+SELECT name, population, IF(population &gt; 1000000, "big city", "small city") AS city_scale
+FROM city;
+복사<br><br>IFNULL(참, 거짓)
+복사<br>-- 독립년도가 없는 데이터는 0으로 출력
+SELECT IndepYear, IFNULL(IndepYear, 0) as IndepYear
+FROM country;
+복사<br><br>CASE
+	WHEN (조건1) THEN (출력1)
+	WHEN (조건2) THEN (출력2)
+END AS (컬럼명)
+복사<br>-- # 나라별로 인구가 10억 이상, 1억 이상, 1억 이하인 컬럼을 추가하여 출력
+SELECT name, population,
+	CASE
+		WHEN population &gt; 1000000000 THEN "upper 1 bilion"
+		WHEN population &gt; 100000000 THEN "upper 100 milion"
+		ELSE "below 100 milion"
+	END AS result
+FROM country;
+복사<br><br>Note여러개의 동일한 데이터를 가지는 특정 컬럼을 합쳐주는 역할<br><br>-- city 테이블의 CountryCode를 묶고 각 코드마다 몇개의 데이터가 있는지 확인
+SELECT CountryCode, COUNT(CountryCode)
+FROM city
+GROUP BY CountryCode;
+복사<br><br>-- 대륙별 인구수와 GNP 최대 값을 조회
+SELECT continent, MAX(Population) as Population, MAX(GNP) as GNP
+FROM country
+GROUP BY continent;
+복사<br><br>-- 대륙별 인구수와 GNP 최소 값을 조회 (GNP와 인구수가 0이 아닌 데이터 중에서)
+SELECT continent, MIN(Population) as Population, MIN(GNP) as GNP
+FROM country
+WHERE GNP != 0 AND Population != 0
+GROUP BY continent;
+복사<br><br>-- 대륙별 총 인구수와 총 GNP
+SELECT continent, SUM(Population) as Population, SUM(GNP) as GNP
+FROM country
+WHERE GNP != 0 AND Population != 0
+GROUP BY continent;
+복사<br><br>-- 대륙별 평균 인구수와 평균 GNP 결과를 인구수로 내림차순 정렬
+SELECT continent, AVG(Population) as Population, AVG(GNP) as GNP
+FROM country
+WHERE GNP != 0 AND Population != 0
+GROUP BY continent
+ORDER BY Population DESC;
+복사<br><br>NoteGROUP BY에서 반환되는 결과에 조건을 줄수 있음<br>-- 대륙별 전체인구를 구하고 5억이상인 대륙만 조회
+SELECT continent, SUM(Population) as Population
+FROM country
+GROUP BY continent
+HAVING Population &gt; 500000000;
+
+-- 대륙별 평균 인구수, 평균 GNP, 1인당 GNP한 결과를 
+-- 1인당 GNP가 0.01 이상인 데이터를 조회하고
+-- 1인당 GNP를 내림차순으로 정렬
+SELECT continent, AVG(Population) as Population, AVG(GNP) as GNP,
+	AVG(GNP) / AVG(Population) * 1000 as AVG
+FROM country
+WHERE GNP != 0 AND Population != 0
+GROUP BY continent
+HAVING AVG &gt; 0.01
+ORDER BY AVG DESC;
+복사<br><br>Note여러개의 컬럼을 GROUP BY 하고 각 컬럼별 총 합을 row에 출력<br>-- sakila 데이터 베이스에서 고객과 스탭별 매출과 고객별 매출의 총합을 출력
+SELECT customer_id, staff_id, SUM(amount) as amount
+FROM payment
+GROUP BY customer_id, staff_id
+WITH ROLLUP;
+복사<br><br>-- 변수선언
+SET @data = 1;
+
+-- 선언된 변수 출력
+SELECT @data;
+
+-- city 테이블에서
+SET @RANK = 0;
+
+SELECT @RANK := @RANK + 1 AS ranking, countrycode, name, population
+FROM city
+ORDER BY population DESC
+LIMIT 5;
+복사<br><br><br>InfoData Control Language<br>
+데이터 제어어<br>
+사용자의 권한을 부여하거나 빼앗을때 사용<br>
+GRUNT, REVORKE, DENY<br><br>`-- 사용자 권한 부여 명령어`
+`GRANT` `ALL` `PRIVILEGES` `ON` `[dbname.table_name]` `TO` `[``user``@host] IDENTIFIED` `BY` `'my_password'``;`
+
+`-- 예제 (호스트 : 로컬호스트)`
+`GRANT` `ALL` `PRIVILEGES` `ON` `testDB.testTable` `TO` `myuser@localhost IDENTIFIED` `BY` `'testPassword'``;`
+
+`-- 예제 (호스트 : 원격 접속)`
+`GRANT` `ALL` `PRIVILEGES` `ON` `testDB.testTable` `TO` `myuser@``'%'` `IDENTIFIED` `BY` `'testPassword'``;`
+
+`-- 예제 (호스트 : 아이피)`
+`GRANT` `ALL` `PRIVILEGES` `ON` `testDB.testTable` `TO` `myuse@192.168.0.100 IDENTIFIED` `BY` `'testPassword'``;`
+복사<br><br>-- 권한 해제 명령어(INSERT, UPDATE, CREATE 권한 해제)
+REVOKE insert, update, create ON [dbname.table_name] TO [user@host];
+ 
+-- 권한 해제 명령어(전체 권한 해제)
+REVOKE ALL ON [dbname.table_name] TO [user@host];
+
+-- 권한 확인 명령어
+SHOW GRANTS FOR [user@host];
+복사<br><br><br><br><br><br><br><br><br>]]></description><link>root\dev\database\mysql-note.html</link><guid isPermaLink="false">root/dev/database/mysql note.md</guid><pubDate>Sun, 19 May 2024 15:05:13 GMT</pubDate></item><item><title><![CDATA[vscode mysql 플러그인 사용하기]]></title><description><![CDATA[ 
  <br><br><img alt="Pasted image 20240515174351.png" src="\lib\media\pasted-image-20240515174351.png"><br>
 <br>입력: mysql
 <br>클릭: MySQL
