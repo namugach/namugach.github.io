@@ -1342,17 +1342,17 @@ GRUNT, REVORKE, DENY
 
 ### GRUNT
 ```sql
-`-- 사용자 권한 부여 명령어`
-`GRANT` `ALL` `PRIVILEGES` `ON` `[dbname.table_name]` `TO` `[``user``@host] IDENTIFIED` `BY` `'my_password'``;`
+-- 사용자 권한 부여 명령어
+GRANT ALL PRIVILEGES ON [dbname.table_name] TO [user@host] IDENTIFIED BY 'my_password';
 
-`-- 예제 (호스트 : 로컬호스트)`
-`GRANT` `ALL` `PRIVILEGES` `ON` `testDB.testTable` `TO` `myuser@localhost IDENTIFIED` `BY` `'testPassword'``;`
+-- 예제 (호스트 : 로컬호스트)
+GRANT ALL PRIVILEGES ON testDB.testTable TO myuser@localhost IDENTIFIED BY 'testPassword';
 
-`-- 예제 (호스트 : 원격 접속)`
-`GRANT` `ALL` `PRIVILEGES` `ON` `testDB.testTable` `TO` `myuser@``'%'` `IDENTIFIED` `BY` `'testPassword'``;`
+-- 예제 (호스트 : 원격 접속)
+GRANT ALL PRIVILEGES ON testDB.testTable TO myuser@'%' IDENTIFIED BY 'testPassword';
 
-`-- 예제 (호스트 : 아이피)`
-`GRANT` `ALL` `PRIVILEGES` `ON` `testDB.testTable` `TO` `myuse@192.168.0.100 IDENTIFIED` `BY` `'testPassword'``;`
+-- 예제 (호스트 : 아이피)
+GRANT ALL PRIVILEGES ON testDB.testTable TO myuse@192.168.0.100 IDENTIFIED BY 'testPassword';
 ```
 
 ### REVORKE

@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 20 May 2024 16:21:05 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 20 May 2024 16:21:01 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[mysql note]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 20 May 2024 16:36:40 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 20 May 2024 16:36:37 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[mysql note]]></title><description><![CDATA[ 
  <br><br>
 <br>일번적으로 대소문자를 구분하지 않음
 <br>주로 예약어(SELECT, FROM)는<br>
@@ -670,17 +670,17 @@ LIMIT 5;
 복사<br><br><br>InfoData Control Language<br>
 데이터 제어어<br>
 사용자의 권한을 부여하거나 빼앗을때 사용<br>
-GRUNT, REVORKE, DENY<br><br>`-- 사용자 권한 부여 명령어`
-`GRANT` `ALL` `PRIVILEGES` `ON` `[dbname.table_name]` `TO` `[``user``@host] IDENTIFIED` `BY` `'my_password'``;`
+GRUNT, REVORKE, DENY<br><br>-- 사용자 권한 부여 명령어
+GRANT ALL PRIVILEGES ON [dbname.table_name] TO [user@host] IDENTIFIED BY 'my_password';
 
-`-- 예제 (호스트 : 로컬호스트)`
-`GRANT` `ALL` `PRIVILEGES` `ON` `testDB.testTable` `TO` `myuser@localhost IDENTIFIED` `BY` `'testPassword'``;`
+-- 예제 (호스트 : 로컬호스트)
+GRANT ALL PRIVILEGES ON testDB.testTable TO myuser@localhost IDENTIFIED BY 'testPassword';
 
-`-- 예제 (호스트 : 원격 접속)`
-`GRANT` `ALL` `PRIVILEGES` `ON` `testDB.testTable` `TO` `myuser@``'%'` `IDENTIFIED` `BY` `'testPassword'``;`
+-- 예제 (호스트 : 원격 접속)
+GRANT ALL PRIVILEGES ON testDB.testTable TO myuser@'%' IDENTIFIED BY 'testPassword';
 
-`-- 예제 (호스트 : 아이피)`
-`GRANT` `ALL` `PRIVILEGES` `ON` `testDB.testTable` `TO` `myuse@192.168.0.100 IDENTIFIED` `BY` `'testPassword'``;`
+-- 예제 (호스트 : 아이피)
+GRANT ALL PRIVILEGES ON testDB.testTable TO myuse@192.168.0.100 IDENTIFIED BY 'testPassword';
 복사<br><br>-- 권한 해제 명령어(INSERT, UPDATE, CREATE 권한 해제)
 REVOKE insert, update, create ON [dbname.table_name] TO [user@host];
  
@@ -689,7 +689,7 @@ REVOKE ALL ON [dbname.table_name] TO [user@host];
 
 -- 권한 확인 명령어
 SHOW GRANTS FOR [user@host];
-복사]]></description><link>root\dev\database\mysql-note.html</link><guid isPermaLink="false">root/dev/database/mysql note.md</guid><pubDate>Mon, 20 May 2024 16:20:26 GMT</pubDate></item><item><title><![CDATA[vscode mysql 플러그인 사용하기]]></title><description><![CDATA[ 
+복사]]></description><link>root\dev\database\mysql-note.html</link><guid isPermaLink="false">root/dev/database/mysql note.md</guid><pubDate>Mon, 20 May 2024 16:36:19 GMT</pubDate></item><item><title><![CDATA[vscode mysql 플러그인 사용하기]]></title><description><![CDATA[ 
  <br><br><img alt="Pasted image 20240515174351.png" src="\lib\media\pasted-image-20240515174351.png"><br>
 <br>입력: mysql
 <br>클릭: MySQL
