@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 19 May 2024 15:20:21 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 19 May 2024 15:20:17 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[mysql note]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 20 May 2024 16:21:05 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 20 May 2024 16:21:01 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[mysql note]]></title><description><![CDATA[ 
  <br><br>
 <br>일번적으로 대소문자를 구분하지 않음
 <br>주로 예약어(SELECT, FROM)는<br>
@@ -8,6 +8,10 @@
 복사<br><br>DESC &lt;table_name&gt;;
 복사<br><br><br>USE &lt;database_name&gt;;
 복사<br><br>SELECT * FROM &lt;table_name&gt;;
+복사<br><br><br><br>mysql -u root -p비번 &lt; schema-data.sql
+복사<br><br>mysql -u root -p비번 &lt; schema.sql
+mysql -u root -p비번 &lt; data.sql
+복사<br><br>mysql -u root -p비번 data_base_name &lt; data.sql
 복사<br><br><br>Info
 <br>-- : 한줄주석, -- 를 한 후에 반드시 한칸을 띄어서 사용해야 합니다.
 <br>/* */ : 블럭주석
@@ -16,7 +20,7 @@
 FROM country; */
 SELECT code, name
 FROM country;
-복사<br><br><br><br><br><br><br><br><br><br><br>InfoData Manipulation Language<br>
+복사<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>InfoData Manipulation Language<br>
 데이터 조작어<br>
 데이터 검색, 삽입, 수정, 삭제등에 사용<br>
 SELECT, INSERT, UPDATE, DELETE<br>
@@ -126,6 +130,302 @@ LIMIT 5, 3; # -- 5개 스킵하고 3개를 출력
 SELECT DISTINCT countrycode
 FROM city
 WHERE population BETWEEN 1000000 AND 2000000;
+복사<br><br><br>Note실수 데이터 올림<br>-- 12.345를 올림하여 정수로 나타냄
+SELECT CEIL(12.345);
+
+-- 국가별 언어 사용 비율을 소수 첫번째자리에서 올림하여 정수로 나타냄
+SELECT CountryCode, Language, Percentage, CEIL(Percentage)
+FROM countrylanguage;
+복사<br><br>Note실수데이터 반올림<br>-- 12.345를 소수 둘째자리까지 나타내고 소수 셋째자리에서 반올림
+SELECT ROUND(12.345, 2);
+
+-- 국가별 언어 사용 비율을 소수 첫번째자리에서 반올림하여 정수로 나타냄
+SELECT CountryCode, Language, Percentage, ROUND(Percentage, 0)
+FROM countrylanguage;
+복사<br><br>Note실수 데이터를 버림<br>-- 12.345를 소수 둘째자리까지 나타내고 소수 셋째자리에서 버림
+SELECT TRUNCATE(12.345, 2);
+
+-- 국가별 언어 사용 비율을 소수 첫번째자리에서 버림하여 정수로 나타냄
+SELECT CountryCode, Language, Percentage, TRUNCATE(Percentage, 0)
+FROM countrylanguage;
+
+SELECT CountryCode, Language, Percentage, ROUND(Percentage, 0), TRUNCATE(Percentage, 0)
+FROM countrylanguage;
+복사<br><br>Note날짜 데이터 포멧<br><a data-tooltip-position="top" aria-label="https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html" rel="noopener" class="external-link" href="https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html" target="_blank">reference</a><br>-- sakila의 payment 테이블에서 요금 지불일을 "년-월"로 데이터 포멧을 변경했을때,
+-- 중복을 제거한 "년-월" 데이터를 출력
+SELECT DISTINCT(DATE_FORMAT(payment_date, "%Y-%m")) AS unique_month
+FROM payment;
+복사<br><br>Note문자열을 합침<br>-- world 데이터베이스의 country 테이블에서 국가코드, 대륙이름과 국가이름이 
+-- " / " 구분자로 구분해서 하나의 컬럼에 출력
+SELECT code, CONCAT(continent, " / ", name) as continent_name
+FROM country;
+복사<br><br>Note데이터의 갯수를 출력<br>-- world 데이터 베이스의 city 데이터의 갯수를 출력
+SELECT count(*) as city_count
+FROM city;
+복사<br><br>IF(조건, 참, 거짓)
+복사<br>-- 도시 인구가 100만 이상이면 big city,
+-- 아니면 small city 출력
+-- IF(조건, true, false)
+SELECT `Name`, `Population`,
+	IF(`Population` &gt;= 100 * 10000, 'big city', 'small city')
+FROM city;
+복사<br><br>IFNULL(참, 거짓)
+복사<br>-- 독립년도가 없는 데이터는 0으로 출력
+SELECT IndepYear, IFNULL(IndepYear, 0) as IndepYear
+FROM country;
+복사<br><br>CASE
+	WHEN (조건1) THEN (출력1)
+	WHEN (조건2) THEN (출력2)
+END AS (컬럼명)
+복사<br>-- # 나라별로 인구가 10억 이상, 1억 이상, 1억 이하인 컬럼을 추가하여 출력
+SELECT name, population,
+	CASE
+		WHEN population &gt; 1000000000 THEN "upper 1 bilion"
+		WHEN population &gt; 100000000 THEN "upper 100 milion"
+		ELSE "below 100 milion"
+	END AS result
+FROM country;
+복사<br>-- 도시에서 인구가 500만 이상 big, 100만 이상 medium, 100만 미만 samll 출력
+
+SELECT `Name`, `Population` 
+	, CASE 
+		WHEN `Population` &gt;= 500 * 10000 THEN  'big'
+		WHEN `Population` &gt;= 100 * 10000 THEN  'medeium'
+		ELSE 'small'
+	END AS scale
+FROM city
+ORDER BY `Population` DESC;
+복사<br><br>Note여러개의 동일한 데이터를 가지는 특정 컬럼을 합쳐주는 역할<br><br>-- city 테이블의 CountryCode를 묶고 각 코드마다 몇개의 데이터가 있는지 확인
+SELECT CountryCode, COUNT(CountryCode)
+FROM city
+GROUP BY CountryCode;
+복사<br>-- 국가별 도시 수를 출력
+-- 도시가 많은 상위 10개의 국가, 도시수를 출력
+SELECT `CountryCode`, COUNT(`Name`) AS city_count
+FROM city
+GROUP BY `CountryCode`
+ORDER BY city_count DESC
+LIMIT 10;
+복사<br>-- 국가별 도시 수를 출력
+-- 인구수 50만 이상의 10개의 국가, 도시수를 출력
+SELECT `CountryCode`, COUNT(`Name`) AS city_count
+FROM city
+WHERE `Population` &gt;= 50 * 10000
+GROUP BY `CountryCode`
+ORDER BY city_count DESC
+LIMIT 10;
+복사<br><br>-- 대륙별 인구수와 GNP 최대 값을 조회
+SELECT continent, MAX(Population) as Population, MAX(GNP) as GNP
+FROM country
+GROUP BY continent;
+복사<br><br>-- 대륙별 인구수와 GNP 최소 값을 조회 (GNP와 인구수가 0이 아닌 데이터 중에서)
+SELECT continent, MIN(Population) as Population, MIN(GNP) as GNP
+FROM country
+WHERE GNP != 0 AND Population != 0
+GROUP BY continent;
+복사<br><br>-- 대륙별 총 인구수와 총 GNP
+SELECT continent, SUM(Population) as Population, SUM(GNP) as GNP
+FROM country
+WHERE GNP != 0 AND Population != 0
+GROUP BY continent;
+복사<br>-- 대륙별 총인구수 출력
+SELECT `Continent`, SUM(`Population`) AS total_population
+FROM country
+GROUP BY `Continent`;
+복사<br>-- 대륙별 평균 GNP
+SELECT `Continent`, SUM(`Population`) AS total_population
+	, AVG(`GNP`/`Population`) AS avg_gnp
+FROM country
+GROUP BY `Continent`;
+복사<br>-- 평균인당 GBP가 높은 순으로 정렬
+SELECT `Continent`, SUM(`Population`) AS total_population
+	, AVG(`GNP`/`Population`) AS avg_gnp
+FROM country
+GROUP BY `Continent`
+ORDER BY avg_gnp DESC;
+복사<br>-- 고객별 가장 많은 매출 발생 시켜준 상위 3명의 고객 출력
+SELECT customer_id, SUM(amount) AS total_amount
+FROM payment
+GROUP BY customer_id
+ORDER BY total_amount DESC
+LIMIT 10;
+복사<br>-- 고객별 가장 많은 매출 발생 시켜준 상위 3명의 고객 출력
+-- 조건: 2005년 6월 이 후
+SELECT customer_id, SUM(amount) AS total_amount
+FROM payment
+WHERE payment_date &gt;= '2005-06-01'
+GROUP BY customer_id
+ORDER BY total_amount DESC
+LIMIT 10;
+복사<br><br>-- 대륙별 평균 인구수와 평균 GNP 결과를 인구수로 내림차순 정렬
+SELECT continent, AVG(Population) as Population, AVG(GNP) as GNP
+FROM country
+WHERE GNP != 0 AND Population != 0
+GROUP BY continent
+ORDER BY Population DESC;
+복사<br><br>NoteGROUP BY에서 반환되는 결과에 조건을 줄수 있음<br>-- 대륙별 전체인구를 구하고 5억이상인 대륙만 조회
+SELECT continent, SUM(Population) as Population
+FROM country
+GROUP BY continent
+HAVING Population &gt; 500000000;
+
+-- 대륙별 평균 인구수, 평균 GNP, 1인당 GNP한 결과를 
+-- 1인당 GNP가 0.01 이상인 데이터를 조회하고
+-- 1인당 GNP를 내림차순으로 정렬
+SELECT continent, AVG(Population) as Population, AVG(GNP) as GNP,
+	AVG(GNP) / AVG(Population) * 1000 as AVG
+FROM country
+WHERE GNP != 0 AND Population != 0
+GROUP BY continent
+HAVING AVG &gt; 0.01
+ORDER BY AVG DESC;
+복사<br><br>Note여러개의 컬럼을 GROUP BY 하고 각 컬럼별 총 합을 row에 출력<br>-- sakila 데이터 베이스에서 고객과 스탭별 매출과 고객별 매출의 총합을 출력
+SELECT customer_id, staff_id, SUM(amount) as amount
+FROM payment
+GROUP BY customer_id, staff_id
+WITH ROLLUP;
+복사<br><br>-- KPI 지포: 년월별 총 매출, 매출 횟수, 평균 매출
+SELECT DATE_FORMAT(payment_date, '%Y-%m') AS monthly
+	, SUM(amount) AS total_amount
+	, COUNT(amount) AS count_amount
+	, AVG(amount) AS avg_amount
+FROM payment
+GROUP BY monthly;
+복사<br>-- 직원별: 년월별 총 매출, 매출 횟수, 평균 매출
+SELECT  staff_id, DATE_FORMAT(payment_date, '%Y-%m') AS monthly
+	, SUM(amount) AS total_amount
+	, COUNT(amount) AS count_amount
+	, AVG(amount) AS avg_amount
+FROM payment
+GROUP BY staff_id, monthly
+ORDER BY monthly, staff_id;
+복사<br><br>-- staff_id를 기준으로 그룹으로 정렬
+USE sakila;
+
+SELECT staff_id
+	, DATE_FORMAT(payment_date, '%Y-%m') AS monthly
+	, SUM(amount) AS total_amount
+FROM payment
+GROUP BY staff_id, monthly
+WITH ROLLUP;
+복사<br><br>
+<br>기본값: inner
+<br><br><br><br><br><br><br>SELECT * 
+FROM `user`
+JOIN addr
+ON user.ui = addr.ui;
+복사<br><br>SELECT `user`.ui, `user`.un, addr.an
+FROM `user`
+JOIN addr
+ON user.ui = addr.ui;
+복사<br><br>USE world;
+/* USE DATABASE */
+-- 국가코드, 국가이름, 도시이름, 국가인구수, 도시인구수 출력
+-- 도시의 도시화율(도시인구수/국가인구수)을 출력
+-- 조건 : 국가의 인구수가 1000만이 넘는 국가중에서
+-- 도시화율이 높은 상위 10개의 국가를 출력
+SELECT country.code, country.name, city.name
+	, country.population AS country_population
+	, city.population AS city_population
+	, round(city.population / country.population * 100, 2) AS rate
+FROM country
+JOIN city
+ON country.code = city.countrycode
+HAVING country_population &gt;= 1000 * 10000
+ORDER BY rate DESC
+LIMIT 10;
+복사<br>-- 국가이름, 도시갯수
+-- JOIN, GROUP BY
+SELECT country.`Name`, COUNT(city.`Name`) AS city_count
+FROM country
+JOIN city
+ON country.`Code` = city.`CountryCode`
+GROUP BY country.`Name`
+ORDER BY city_count DESC;
+복사<br>-- country, countrylanguage
+-- 국가코드, 국가이름, 언어이름, 국가인구수, 언어사용률, 언어사용인구수 출력
+SELECT country.code, country.name, countrylanguage.language
+	, country.population, countrylanguage.percentage
+	, round(country.population * countrylanguage.percentage / 100)
+	AS population_count
+FROM country
+JOIN countrylanguage
+ON country.code = countrylanguage.countrycode;
+복사<br><br>SELECT `user`.ui, `user`.un, addr.an
+FROM `user`
+LEFT JOIN addr
+ON user.ui = addr.ui;
+복사<br><br><br>SELECT addr.ui, `user`.un, addr.an
+FROM `user`
+RIGHT JOIN addr
+ON user.ui = addr.ui;
+복사<br><br><br>-- Left Join
+SELECT `user`.ui, `user`.un, addr.an
+FROM `user`
+LEFT JOIN addr
+ON user.ui = addr.ui
+UNION -- 이것을 함으로써 Outer가 완성됨.
+-- Right Join
+SELECT addr.ui, `user`.un, addr.an
+FROM `user`
+RIGHT JOIN addr
+ON user.ui = addr.ui;
+복사<br><br><br>두개의 쿼리 결과를 결합, 중복 제거<br>SELECT un FROM `user`
+UNION
+SELECT an FROM `addr`;
+복사<br><br><br>두개의 쿼리 결과를 결합, 중복 제거 X<br>SELECT un FROM `user`
+UNION ALL
+SELECT an FROM `addr`;
+복사<br><br><br>-- 스탭 1
+SELECT COUNT(*) FROM country;
+SELECT COUNT(*) FROM city;
+SELECT COUNT(DISTINCT(`Language`)) FROM countrylanguage;
+
+-- 스탭 2
+SELECT
+	(SELECT COUNT(*) FROM country) AS total_country,
+	(SELECT COUNT(*) FROM city) AS total_city,
+	(SELECT COUNT(DISTINCT(`Language`)) FROM countrylanguage) AS total_countrylanguage
+FROM DUAL;
+복사<br><br>NoteHAVING보다 SubQuery가 더 빠르다.<br>
+이유는<br>
+HAVING : JOIN(2394096=978944) &gt; Filtering(HAVING:10) =&gt; Result<br>
+SubQuery: Filtering(WHERE:10) &gt; JOIN(23910=2390) =&gt; Result<br>-- 800만 인구 이상 도시의 국가코드, 국가이름, 도시이름, 도시인구수 출력 
+
+-- HAVING
+SELECT country.code, country.name, city.name, city.population
+FROM country
+JOIN city
+ON country.code = city.countrycode
+HAVING city.population &gt;= 800 * 10000;
+
+
+-- SubQuery
+SELECT country.code, country.name, city.name, city.population
+FROM country
+JOIN (  SELECT countrycode, name, population 
+		FROM city 
+		WHERE population &gt;= 800 * 10000
+	) AS city
+ON country.code = city.countrycode;
+복사<br>-- WHERE SubQuery
+-- 한국보다 인구가 많은 국가의 국가코드, 국가이름, 인구수, GNP 출력
+SELECT `Population`
+FROM country
+WHERE `Code` = 'KOR';
+-- 46844000
+SELECT `Code`, `Name`, `Population`, `GNP`
+FROM country
+WHERE `Population` &gt; 46844000;
+
+-- SubQuery
+SELECT `Code`, `Name`, `Population`, `GNP`
+FROM country
+WHERE `Population` &gt; (
+	SELECT `Population`
+	FROM country
+	WHERE `Code` = 'KOR'
+);
 복사<br><br><br>InfoData Definition Language<br>
 데이터 정의어<br>
 데이터 베이스, 테이블, 뷰, 인덱스등의 데이터 베이스 개체를 생성, 삭제, 변경에 사용<br>
@@ -341,104 +641,19 @@ where user_id = 3;
 
 select * from user;
 select * from money;
-복사<br><br><br>Note실수 데이터 올림<br>-- 12.345를 올림하여 정수로 나타냄
-SELECT CEIL(12.345);
+복사<br><br><br>USE employees;
+SELECT COUNT(*)
+FROM salaries; -- 2844047
+복사<br><br>SHOW INDEX FROM salaries;
+복사<br><br><br>-- 408ms
+SELECT * FROM salaries WHERE to_date &lt; '1986-01-01';
+복사<br><br>-- 8.8s
+CREATE INDEX tdate ON salaries (to_date);
 
--- 국가별 언어 사용 비율을 소수 첫번째자리에서 올림하여 정수로 나타냄
-SELECT CountryCode, Language, Percentage, CEIL(Percentage)
-FROM countrylanguage;
-복사<br><br>Note실수데이터 반올림<br>-- 12.345를 소수 둘째자리까지 나타내고 소수 셋째자리에서 반올림
-SELECT ROUND(12.345, 2);
-
--- 국가별 언어 사용 비율을 소수 첫번째자리에서 반올림하여 정수로 나타냄
-SELECT CountryCode, Language, Percentage, ROUND(Percentage, 0)
-FROM countrylanguage;
-복사<br><br>Note실수 데이터를 버림<br>-- 12.345를 소수 둘째자리까지 나타내고 소수 셋째자리에서 버림
-SELECT TRUNCATE(12.345, 2);
-
--- 국가별 언어 사용 비율을 소수 첫번째자리에서 버림하여 정수로 나타냄
-SELECT CountryCode, Language, Percentage, TRUNCATE(Percentage, 0)
-FROM countrylanguage;
-
-SELECT CountryCode, Language, Percentage, ROUND(Percentage, 0), TRUNCATE(Percentage, 0)
-FROM countrylanguage;
-복사<br><br>Note날짜 데이터 포멧<br><a data-tooltip-position="top" aria-label="https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html" rel="noopener" class="external-link" href="https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html" target="_blank">reference</a><br>-- sakila의 payment 테이블에서 요금 지불일을 "년-월"로 데이터 포멧을 변경했을때,
--- 중복을 제거한 "년-월" 데이터를 출력
-SELECT DISTINCT(DATE_FORMAT(payment_date, "%Y-%m")) AS unique_month
-FROM payment;
-복사<br><br>Note문자열을 합침<br>-- world 데이터베이스의 country 테이블에서 국가코드, 대륙이름과 국가이름이 
--- " / " 구분자로 구분해서 하나의 컬럼에 출력
-SELECT code, CONCAT(continent, " / ", name) as continent_name
-FROM country;
-복사<br><br>Note데이터의 갯수를 출력<br>--world 데이터 베이스의 city 데이터의 갯수를 출력
-SELECT count(*) as city_count
-FROM city;
-복사<br><br>IF(조건, 참, 거짓)
-복사<br>-- 도시의 인구가 100만이 넘으면 "big city" 그렇지 않으면 "small city"를 출력하는 city_scale 컬럼을
-추가
-SELECT name, population, IF(population &gt; 1000000, "big city", "small city") AS city_scale
-FROM city;
-복사<br><br>IFNULL(참, 거짓)
-복사<br>-- 독립년도가 없는 데이터는 0으로 출력
-SELECT IndepYear, IFNULL(IndepYear, 0) as IndepYear
-FROM country;
-복사<br><br>CASE
-	WHEN (조건1) THEN (출력1)
-	WHEN (조건2) THEN (출력2)
-END AS (컬럼명)
-복사<br>-- # 나라별로 인구가 10억 이상, 1억 이상, 1억 이하인 컬럼을 추가하여 출력
-SELECT name, population,
-	CASE
-		WHEN population &gt; 1000000000 THEN "upper 1 bilion"
-		WHEN population &gt; 100000000 THEN "upper 100 milion"
-		ELSE "below 100 milion"
-	END AS result
-FROM country;
-복사<br><br>Note여러개의 동일한 데이터를 가지는 특정 컬럼을 합쳐주는 역할<br><br>-- city 테이블의 CountryCode를 묶고 각 코드마다 몇개의 데이터가 있는지 확인
-SELECT CountryCode, COUNT(CountryCode)
-FROM city
-GROUP BY CountryCode;
-복사<br><br>-- 대륙별 인구수와 GNP 최대 값을 조회
-SELECT continent, MAX(Population) as Population, MAX(GNP) as GNP
-FROM country
-GROUP BY continent;
-복사<br><br>-- 대륙별 인구수와 GNP 최소 값을 조회 (GNP와 인구수가 0이 아닌 데이터 중에서)
-SELECT continent, MIN(Population) as Population, MIN(GNP) as GNP
-FROM country
-WHERE GNP != 0 AND Population != 0
-GROUP BY continent;
-복사<br><br>-- 대륙별 총 인구수와 총 GNP
-SELECT continent, SUM(Population) as Population, SUM(GNP) as GNP
-FROM country
-WHERE GNP != 0 AND Population != 0
-GROUP BY continent;
-복사<br><br>-- 대륙별 평균 인구수와 평균 GNP 결과를 인구수로 내림차순 정렬
-SELECT continent, AVG(Population) as Population, AVG(GNP) as GNP
-FROM country
-WHERE GNP != 0 AND Population != 0
-GROUP BY continent
-ORDER BY Population DESC;
-복사<br><br>NoteGROUP BY에서 반환되는 결과에 조건을 줄수 있음<br>-- 대륙별 전체인구를 구하고 5억이상인 대륙만 조회
-SELECT continent, SUM(Population) as Population
-FROM country
-GROUP BY continent
-HAVING Population &gt; 500000000;
-
--- 대륙별 평균 인구수, 평균 GNP, 1인당 GNP한 결과를 
--- 1인당 GNP가 0.01 이상인 데이터를 조회하고
--- 1인당 GNP를 내림차순으로 정렬
-SELECT continent, AVG(Population) as Population, AVG(GNP) as GNP,
-	AVG(GNP) / AVG(Population) * 1000 as AVG
-FROM country
-WHERE GNP != 0 AND Population != 0
-GROUP BY continent
-HAVING AVG &gt; 0.01
-ORDER BY AVG DESC;
-복사<br><br>Note여러개의 컬럼을 GROUP BY 하고 각 컬럼별 총 합을 row에 출력<br>-- sakila 데이터 베이스에서 고객과 스탭별 매출과 고객별 매출의 총합을 출력
-SELECT customer_id, staff_id, SUM(amount) as amount
-FROM payment
-GROUP BY customer_id, staff_id
-WITH ROLLUP;
+SHOW INDEX FROM salaries;
+복사<br><br><br>-- 3ms
+CREATE INDEX tdate ON salaries (to_date);
+복사<br>Note408ms -&gt; 3ms<br><br>DROP INDEX tdate ON salaries;
 복사<br><br>-- 변수선언
 SET @data = 1;
 
@@ -474,7 +689,7 @@ REVOKE ALL ON [dbname.table_name] TO [user@host];
 
 -- 권한 확인 명령어
 SHOW GRANTS FOR [user@host];
-복사<br><br><br><br><br><br><br><br><br>]]></description><link>root\dev\database\mysql-note.html</link><guid isPermaLink="false">root/dev/database/mysql note.md</guid><pubDate>Sun, 19 May 2024 15:05:13 GMT</pubDate></item><item><title><![CDATA[vscode mysql 플러그인 사용하기]]></title><description><![CDATA[ 
+복사]]></description><link>root\dev\database\mysql-note.html</link><guid isPermaLink="false">root/dev/database/mysql note.md</guid><pubDate>Mon, 20 May 2024 16:20:26 GMT</pubDate></item><item><title><![CDATA[vscode mysql 플러그인 사용하기]]></title><description><![CDATA[ 
  <br><br><img alt="Pasted image 20240515174351.png" src="\lib\media\pasted-image-20240515174351.png"><br>
 <br>입력: mysql
 <br>클릭: MySQL

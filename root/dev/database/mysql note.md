@@ -2,6 +2,7 @@
 tags:
   - mysql
   - note
+  - public
 create: 2024-05-19 20:54:56
 ---
 ## 특이사항
@@ -38,6 +39,25 @@ USE <database_name>;
 SELECT * FROM <table_name>;
 ```
 
+---
+
+## sql 파일 실행
+
+### 기본
+```sh
+mysql -u root -p비번 < schema-data.sql
+```
+
+### 스키마 파일 있을 때
+```sh
+mysql -u root -p비번 < schema.sql
+mysql -u root -p비번 < data.sql
+```
+
+### database가 있을 때
+```sh
+mysql -u root -p비번 data_base_name < data.sql
+```
 
 ---
 ## 주석
@@ -54,6 +74,53 @@ SELECT code, name
 FROM country;
 ```
 
+## 데이터 타입
+### 숫자형
+
+| 데이터 타입      | 설명            | 크기     | 범위 (부호 포함)                                             | 범위 (부호 없음)                     | 기본 값 |
+| ----------- | ------------- | ------ | ------------------------------------------------------ | ------------------------------ | ---- |
+| `TINYINT`   | 매우 작은 정수      | 1 byte | -128 ~ 127                                             | 0 ~ 255                        | 0    |
+| `SMALLINT`  | 작은 정수         | 2 byte | -32,768 ~ 32,767                                       | 0 ~ 65,535                     | 0    |
+| `MEDIUMINT` | 중간 크기 정수      | 3 byte | -8,388,608 ~ 8,388,607                                 | 0 ~ 16,777,215                 | 0    |
+| `INT`       | 표준 정수         | 4 byte | -2,147,483,648 ~ 2,147,483,647                         | 0 ~ 4,294,967,295              | 0    |
+| `BIGINT`    | 큰 정수          | 8 byte | -9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807 | 0 ~ 18,446,744,073,709,551,615 | 0    |
+| `FLOAT`     | 부동 소수점 수 (소형) | 4 byte | 3.402823466E+38 ~ -3.402823466E+38                     | 0 ~ 3.402823466E+38            | 0.0  |
+| `DOUBLE`    | 부동 소수점 수 (대형) | 8 byte | 1.7976931348623157E+308 ~ -1.7976931348623157E+308     | 0 ~ 1.7976931348623157E+308    | 0.0  |
+| `DECIMAL`   | 고정 소수점 수      | 가변적    | 사용자가 정의한 정밀도에 따름                                       | 사용자가 정의한 정밀도에 따름               | 0.0  |
+
+### 문자형
+
+| 데이터 타입  | 설명                    | 크기                    | 최대 크기          | 기본 값    |
+| ------------ | ----------------------- | ----------------------- | ------------------ | ---------- |
+| `CHAR`       | 고정 길이 문자열        | 0 ~ 255 byte            | 255 문자           | ''         | 
+| `VARCHAR`    | 가변 길이 문자열        | 0 ~ 65,535 byte         | 65,535 문자        | ''         |
+| `TINYTEXT`   | 매우 작은 텍스트 데이터 | 최대 255 byte           | 255 문자           | NULL       |
+| `TEXT`       | 작은 텍스트 데이터      | 최대 65,535 byte        | 65,535 문자        | NULL       |
+| `MEDIUMTEXT` | 중간 크기 텍스트 데이터 | 최대 16,777,215 byte    | 16,777,215 문자    | NULL       |
+| `LONGTEXT`   | 큰 텍스트 데이터        | 최대 4,294,967,295 byte | 4,294,967,295 문자 | NULL       |
+| `ENUM`       | 열거형                  | 1 ~ 2 byte              | 최대 65,535 값     | 첫 번째 값 |
+| `SET`        | 집합형                  | 1 ~ 8 byte              | 최대 64 값         | ''         |
+
+### 날짜와 시간
+
+| 데이터 타입 | 설명        | 형식                | 범위                                              | 기본 값               |
+| ----------- | ----------- | ------------------- | ------------------------------------------------- | --------------------- |
+| `DATE`      | 날짜        | YYYY-MM-DD          | 1000-01-01 ~ 9999-12-31                           | '0000-00-00'          |
+| `DATETIME`  | 날짜와 시간 | YYYY-MM-DD HH:MM:SS | 1000-01-01 00:00:00 ~ 9999-12-31 23:59:59         | '0000-00-00 00:00:00' |
+| `TIMESTAMP` | 타임스탬프  | YYYY-MM-DD HH:MM:SS | 1970-01-01 00:00:01 UTC ~ 2038-01-19 03:14:07 UTC | CURRENT_TIMESTAMP     |
+| `TIME`      | 시간        | HH:MM:SS            | '-838:59:59' ~ '838:59:59'                        | '00:00:00'            |
+| `YEAR`      | 연도        | YYYY                | 1901 ~ 2155                                       | '0000'                |
+
+### 이진형
+
+| 데이터 타입  | 설명                  | 크기                    | 최대 크기          | 기본 값 |
+| ------------ | --------------------- | ----------------------- | ------------------ | ------- |
+| `BINARY`     | 고정 길이 이진 데이터 | 0 ~ 255 byte            | 255 byte           | 0x00    |
+| `VARBINARY`  | 가변 길이 이진 데이터 | 0 ~ 65,535 byte         | 65,535 byte        | 0x00    |
+| `TINYBLOB`   | 매우 작은 BLOB        | 최대 255 byte           | 255 byte           | NULL    |
+| `BLOB`       | 작은 BLOB             | 최대 65,535 byte        | 65,535 byte        | NULL    |
+| `MEDIUMBLOB` | 중간 크기 BLOB        | 최대 16,777,215 byte    | 16,777,215 byte    | NULL    |
+| `LONGBLOB`   | 큰 BLOB               | 최대 4,294,967,295 byte | 4,294,967,295 byte | NULL    |
 
 ---
 
@@ -291,6 +358,588 @@ SELECT DISTINCT countrycode
 FROM city
 WHERE population BETWEEN 1000000 AND 2000000;
 ```
+
+
+### Functions
+
+#### CEIL
+```ad-note
+실수 데이터 올림
+```
+
+```sql
+-- 12.345를 올림하여 정수로 나타냄
+SELECT CEIL(12.345);
+
+-- 국가별 언어 사용 비율을 소수 첫번째자리에서 올림하여 정수로 나타냄
+SELECT CountryCode, Language, Percentage, CEIL(Percentage)
+FROM countrylanguage;
+```
+
+#### ROUND
+```ad-note
+실수데이터 반올림
+```
+
+```sql
+-- 12.345를 소수 둘째자리까지 나타내고 소수 셋째자리에서 반올림
+SELECT ROUND(12.345, 2);
+
+-- 국가별 언어 사용 비율을 소수 첫번째자리에서 반올림하여 정수로 나타냄
+SELECT CountryCode, Language, Percentage, ROUND(Percentage, 0)
+FROM countrylanguage;
+```
+
+
+#### TRUNCATE
+```ad-note
+실수 데이터를 버림
+```
+
+```sql
+-- 12.345를 소수 둘째자리까지 나타내고 소수 셋째자리에서 버림
+SELECT TRUNCATE(12.345, 2);
+
+-- 국가별 언어 사용 비율을 소수 첫번째자리에서 버림하여 정수로 나타냄
+SELECT CountryCode, Language, Percentage, TRUNCATE(Percentage, 0)
+FROM countrylanguage;
+
+SELECT CountryCode, Language, Percentage, ROUND(Percentage, 0), TRUNCATE(Percentage, 0)
+FROM countrylanguage;
+```
+
+
+#### DATE_FORMAT
+```ad-note
+날짜 데이터 포멧
+```
+[reference](https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html)
+```sql
+-- sakila의 payment 테이블에서 요금 지불일을 "년-월"로 데이터 포멧을 변경했을때,
+-- 중복을 제거한 "년-월" 데이터를 출력
+SELECT DISTINCT(DATE_FORMAT(payment_date, "%Y-%m")) AS unique_month
+FROM payment;
+```
+
+#### CONCAT
+```ad-note
+문자열을 합침
+```
+
+```sql
+-- world 데이터베이스의 country 테이블에서 국가코드, 대륙이름과 국가이름이 
+-- " / " 구분자로 구분해서 하나의 컬럼에 출력
+SELECT code, CONCAT(continent, " / ", name) as continent_name
+FROM country;
+```
+
+#### COUNT
+```ad-note
+데이터의 갯수를 출력
+```
+
+```sql
+-- world 데이터 베이스의 city 데이터의 갯수를 출력
+SELECT count(*) as city_count
+FROM city;
+```
+
+
+#### IF
+```sql
+IF(조건, 참, 거짓)
+```
+
+```sql
+-- 도시 인구가 100만 이상이면 big city,
+-- 아니면 small city 출력
+-- IF(조건, true, false)
+SELECT `Name`, `Population`,
+	IF(`Population` >= 100 * 10000, 'big city', 'small city')
+FROM city;
+```
+
+#### IFNULL
+```sql
+IFNULL(참, 거짓)
+```
+
+```sql
+-- 독립년도가 없는 데이터는 0으로 출력
+SELECT IndepYear, IFNULL(IndepYear, 0) as IndepYear
+FROM country;
+```
+
+#### CASE
+```sql
+CASE
+	WHEN (조건1) THEN (출력1)
+	WHEN (조건2) THEN (출력2)
+END AS (컬럼명)
+```
+
+```sql
+-- # 나라별로 인구가 10억 이상, 1억 이상, 1억 이하인 컬럼을 추가하여 출력
+SELECT name, population,
+	CASE
+		WHEN population > 1000000000 THEN "upper 1 bilion"
+		WHEN population > 100000000 THEN "upper 100 milion"
+		ELSE "below 100 milion"
+	END AS result
+FROM country;
+```
+
+```sql
+-- 도시에서 인구가 500만 이상 big, 100만 이상 medium, 100만 미만 samll 출력
+
+SELECT `Name`, `Population` 
+	, CASE 
+		WHEN `Population` >= 500 * 10000 THEN  'big'
+		WHEN `Population` >= 100 * 10000 THEN  'medeium'
+		ELSE 'small'
+	END AS scale
+FROM city
+ORDER BY `Population` DESC;
+```
+
+### GRUOP BY
+```ad-note
+여러개의 동일한 데이터를 가지는 특정 컬럼을 합쳐주는 역할
+```
+
+
+#### COUNT
+```sql
+-- city 테이블의 CountryCode를 묶고 각 코드마다 몇개의 데이터가 있는지 확인
+SELECT CountryCode, COUNT(CountryCode)
+FROM city
+GROUP BY CountryCode;
+```
+
+```sql
+-- 국가별 도시 수를 출력
+-- 도시가 많은 상위 10개의 국가, 도시수를 출력
+SELECT `CountryCode`, COUNT(`Name`) AS city_count
+FROM city
+GROUP BY `CountryCode`
+ORDER BY city_count DESC
+LIMIT 10;
+```
+
+```sql
+-- 국가별 도시 수를 출력
+-- 인구수 50만 이상의 10개의 국가, 도시수를 출력
+SELECT `CountryCode`, COUNT(`Name`) AS city_count
+FROM city
+WHERE `Population` >= 50 * 10000
+GROUP BY `CountryCode`
+ORDER BY city_count DESC
+LIMIT 10;
+```
+
+#### MAX
+```sql
+-- 대륙별 인구수와 GNP 최대 값을 조회
+SELECT continent, MAX(Population) as Population, MAX(GNP) as GNP
+FROM country
+GROUP BY continent;
+```
+
+#### MIN
+```sql
+-- 대륙별 인구수와 GNP 최소 값을 조회 (GNP와 인구수가 0이 아닌 데이터 중에서)
+SELECT continent, MIN(Population) as Population, MIN(GNP) as GNP
+FROM country
+WHERE GNP != 0 AND Population != 0
+GROUP BY continent;
+```
+
+#### SUM
+```sql
+-- 대륙별 총 인구수와 총 GNP
+SELECT continent, SUM(Population) as Population, SUM(GNP) as GNP
+FROM country
+WHERE GNP != 0 AND Population != 0
+GROUP BY continent;
+```
+
+```sql
+-- 대륙별 총인구수 출력
+SELECT `Continent`, SUM(`Population`) AS total_population
+FROM country
+GROUP BY `Continent`;
+```
+
+```sql
+-- 대륙별 평균 GNP
+SELECT `Continent`, SUM(`Population`) AS total_population
+	, AVG(`GNP`/`Population`) AS avg_gnp
+FROM country
+GROUP BY `Continent`;
+```
+
+```sql
+-- 평균인당 GBP가 높은 순으로 정렬
+SELECT `Continent`, SUM(`Population`) AS total_population
+	, AVG(`GNP`/`Population`) AS avg_gnp
+FROM country
+GROUP BY `Continent`
+ORDER BY avg_gnp DESC;
+```
+
+```sql
+-- 고객별 가장 많은 매출 발생 시켜준 상위 3명의 고객 출력
+SELECT customer_id, SUM(amount) AS total_amount
+FROM payment
+GROUP BY customer_id
+ORDER BY total_amount DESC
+LIMIT 10;
+```
+
+
+```sql
+-- 고객별 가장 많은 매출 발생 시켜준 상위 3명의 고객 출력
+-- 조건: 2005년 6월 이 후
+SELECT customer_id, SUM(amount) AS total_amount
+FROM payment
+WHERE payment_date >= '2005-06-01'
+GROUP BY customer_id
+ORDER BY total_amount DESC
+LIMIT 10;
+```
+
+#### AVG
+```sql
+-- 대륙별 평균 인구수와 평균 GNP 결과를 인구수로 내림차순 정렬
+SELECT continent, AVG(Population) as Population, AVG(GNP) as GNP
+FROM country
+WHERE GNP != 0 AND Population != 0
+GROUP BY continent
+ORDER BY Population DESC;
+```
+
+
+#### HAVING
+```ad-note
+GROUP BY에서 반환되는 결과에 조건을 줄수 있음
+```
+
+```sql
+-- 대륙별 전체인구를 구하고 5억이상인 대륙만 조회
+SELECT continent, SUM(Population) as Population
+FROM country
+GROUP BY continent
+HAVING Population > 500000000;
+
+-- 대륙별 평균 인구수, 평균 GNP, 1인당 GNP한 결과를 
+-- 1인당 GNP가 0.01 이상인 데이터를 조회하고
+-- 1인당 GNP를 내림차순으로 정렬
+SELECT continent, AVG(Population) as Population, AVG(GNP) as GNP,
+	AVG(GNP) / AVG(Population) * 1000 as AVG
+FROM country
+WHERE GNP != 0 AND Population != 0
+GROUP BY continent
+HAVING AVG > 0.01
+ORDER BY AVG DESC;
+```
+
+
+#### WITH ROLLUP
+```ad-note
+여러개의 컬럼을 GROUP BY 하고 각 컬럼별 총 합을 row에 출력
+```
+
+```sql
+-- sakila 데이터 베이스에서 고객과 스탭별 매출과 고객별 매출의 총합을 출력
+SELECT customer_id, staff_id, SUM(amount) as amount
+FROM payment
+GROUP BY customer_id, staff_id
+WITH ROLLUP;
+```
+
+#### Mix
+```sql
+-- KPI 지포: 년월별 총 매출, 매출 횟수, 평균 매출
+SELECT DATE_FORMAT(payment_date, '%Y-%m') AS monthly
+	, SUM(amount) AS total_amount
+	, COUNT(amount) AS count_amount
+	, AVG(amount) AS avg_amount
+FROM payment
+GROUP BY monthly;
+```
+
+```sql
+-- 직원별: 년월별 총 매출, 매출 횟수, 평균 매출
+SELECT  staff_id, DATE_FORMAT(payment_date, '%Y-%m') AS monthly
+	, SUM(amount) AS total_amount
+	, COUNT(amount) AS count_amount
+	, AVG(amount) AS avg_amount
+FROM payment
+GROUP BY staff_id, monthly
+ORDER BY monthly, staff_id;
+```
+
+
+### WITH ROLLUP
+```sql
+-- staff_id를 기준으로 그룹으로 정렬
+USE sakila;
+
+SELECT staff_id
+	, DATE_FORMAT(payment_date, '%Y-%m') AS monthly
+	, SUM(amount) AS total_amount
+FROM payment
+GROUP BY staff_id, monthly
+WITH ROLLUP;
+```
+
+### JOIN
+- 기본값: inner
+#### data
+##### user
+
+| ui  | un  |
+| :-: | :-: |
+|  1  |  A  |
+|  2  |  B  |
+|  3  |  C  |
+
+##### addr
+
+| an  | ui  |
+| :-: | :-: |
+|  S  |  1  |
+|  P  |  2  |
+|  D  |  4  |
+|  S  |  5  |
+
+#### inner
+```sql
+SELECT * 
+FROM `user`
+JOIN addr
+ON user.ui = addr.ui;
+```
+
+| ui  | un  | an  | ui  |
+| :-: | :-: | :-: | --- |
+|  1  |  A  |  S  | 1   |
+|  2  |  B  |  P  | 2   |
+
+
+```sql
+SELECT `user`.ui, `user`.un, addr.an
+FROM `user`
+JOIN addr
+ON user.ui = addr.ui;
+```
+
+| ui  | un  | an  |
+| :-: | :-: | :-: |
+|  1  |  A  |  S  |
+|  2  |  B  |  P  |
+
+```sql
+USE world;
+/* USE DATABASE */
+-- 국가코드, 국가이름, 도시이름, 국가인구수, 도시인구수 출력
+-- 도시의 도시화율(도시인구수/국가인구수)을 출력
+-- 조건 : 국가의 인구수가 1000만이 넘는 국가중에서
+-- 도시화율이 높은 상위 10개의 국가를 출력
+SELECT country.code, country.name, city.name
+	, country.population AS country_population
+	, city.population AS city_population
+	, round(city.population / country.population * 100, 2) AS rate
+FROM country
+JOIN city
+ON country.code = city.countrycode
+HAVING country_population >= 1000 * 10000
+ORDER BY rate DESC
+LIMIT 10;
+```
+
+```sql
+-- 국가이름, 도시갯수
+-- JOIN, GROUP BY
+SELECT country.`Name`, COUNT(city.`Name`) AS city_count
+FROM country
+JOIN city
+ON country.`Code` = city.`CountryCode`
+GROUP BY country.`Name`
+ORDER BY city_count DESC;
+```
+
+```sql
+-- country, countrylanguage
+-- 국가코드, 국가이름, 언어이름, 국가인구수, 언어사용률, 언어사용인구수 출력
+SELECT country.code, country.name, countrylanguage.language
+	, country.population, countrylanguage.percentage
+	, round(country.population * countrylanguage.percentage / 100)
+	AS population_count
+FROM country
+JOIN countrylanguage
+ON country.code = countrylanguage.countrycode;
+```
+
+#### left
+```sql
+SELECT `user`.ui, `user`.un, addr.an
+FROM `user`
+LEFT JOIN addr
+ON user.ui = addr.ui;
+```
+
+| ui  | un  |   an   |
+| :-: | :-: | :----: |
+|  1  |  A  |   S    |
+|  2  |  B  |   P    |
+|  3  |  C  | (NULL) |
+
+#### right
+```sql
+SELECT addr.ui, `user`.un, addr.an
+FROM `user`
+RIGHT JOIN addr
+ON user.ui = addr.ui;
+```
+
+| ui  |   un   | an  |
+| :-: | :----: | :-: |
+|  1  |   A    |  S  |
+|  2  |   B    |  P  |
+|  4  | (NULL) |  D  |
+|  5  | (NULL) |  S  |
+
+#### outer
+```sql
+-- Left Join
+SELECT `user`.ui, `user`.un, addr.an
+FROM `user`
+LEFT JOIN addr
+ON user.ui = addr.ui
+UNION -- 이것을 함으로써 Outer가 완성됨.
+-- Right Join
+SELECT addr.ui, `user`.un, addr.an
+FROM `user`
+RIGHT JOIN addr
+ON user.ui = addr.ui;
+```
+
+| ui  |   un   |   an   |
+| :-: | :----: | :----: |
+|  1  |   A    |   S    |
+|  2  |   B    |   P    |
+|  3  |   C    | (NULL) |
+|  4  | (NULL) |   D    |
+|  5  | (NULL) |   S    |
+
+
+### UNION
+두개의 쿼리 결과를 결합, 중복 제거
+```sql
+SELECT un FROM `user`
+UNION
+SELECT an FROM `addr`;
+```
+
+| un  |
+| :-: |
+|  A  |
+|  B  |
+|  C  |
+|  S  |
+|  P  |
+|  D  |
+
+
+### UNION ALL
+두개의 쿼리 결과를 결합, 중복 제거 X
+```sql
+SELECT un FROM `user`
+UNION ALL
+SELECT an FROM `addr`;
+```
+
+| un  |
+| :-: |
+|  A  |
+|  B  |
+|  C  |
+|  S  |
+|  P  |
+|  D  |
+|  S  |
+
+### Sub Query
+```sql
+-- 스탭 1
+SELECT COUNT(*) FROM country;
+SELECT COUNT(*) FROM city;
+SELECT COUNT(DISTINCT(`Language`)) FROM countrylanguage;
+
+-- 스탭 2
+SELECT
+	(SELECT COUNT(*) FROM country) AS total_country,
+	(SELECT COUNT(*) FROM city) AS total_city,
+	(SELECT COUNT(DISTINCT(`Language`)) FROM countrylanguage) AS total_countrylanguage
+FROM DUAL;
+```
+
+| total_country | total_city | total_countrylanguage |
+| ------------- | ---------- | --------------------- |
+| 239           | 4079       | 457                   |
+
+```ad-note
+HAVING보다 SubQuery가 더 빠르다.
+이유는
+HAVING : JOIN(239*4096=978944) > Filtering(HAVING:10) => Result
+SubQuery: Filtering(WHERE:10) > JOIN(239*10=2390) => Result
+```
+
+```sql
+-- 800만 인구 이상 도시의 국가코드, 국가이름, 도시이름, 도시인구수 출력 
+
+-- HAVING
+SELECT country.code, country.name, city.name, city.population
+FROM country
+JOIN city
+ON country.code = city.countrycode
+HAVING city.population >= 800 * 10000;
+
+
+-- SubQuery
+SELECT country.code, country.name, city.name, city.population
+FROM country
+JOIN (  SELECT countrycode, name, population 
+		FROM city 
+		WHERE population >= 800 * 10000
+	) AS city
+ON country.code = city.countrycode;
+```
+
+
+```sql
+-- WHERE SubQuery
+-- 한국보다 인구가 많은 국가의 국가코드, 국가이름, 인구수, GNP 출력
+SELECT `Population`
+FROM country
+WHERE `Code` = 'KOR';
+-- 46844000
+SELECT `Code`, `Name`, `Population`, `GNP`
+FROM country
+WHERE `Population` > 46844000;
+
+-- SubQuery
+SELECT `Code`, `Name`, `Population`, `GNP`
+FROM country
+WHERE `Population` > (
+	SELECT `Population`
+	FROM country
+	WHERE `Code` = 'KOR'
+);
+```
+
+
 
 ---
 ## DDL
@@ -609,224 +1258,60 @@ select * from money;
 ```
 
 
-### Functions
+### INDEX
 
-#### CEIL
+#### 데이터 사이즈
+```sql
+USE employees;
+SELECT COUNT(*)
+FROM salaries; -- 2844047
+```
+
+#### 구조 확인
+```sql
+SHOW INDEX FROM salaries;
+```
+
+|  Table   | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality |
+| :------: | :--------: | :------: | :----------: | :---------: | :-------: | :---------: |
+| salaries |     0      | PRIMARY  |      1       |   emp_no    |     A     |   299645    |
+| salaries |     0      | PRIMARY  |      2       |  from_date  |     A     |   2838426   |
+
+#### not index
+```sql
+-- 408ms
+SELECT * FROM salaries WHERE to_date < '1986-01-01';
+```
+
+
+#### 생성
+```sql
+-- 8.8s
+CREATE INDEX tdate ON salaries (to_date);
+
+SHOW INDEX FROM salaries;
+```
+
+|  Table   | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality |
+| :------: | :--------: | :------: | :----------: | :---------: | :-------: | :---------: |
+| salaries |     0      | PRIMARY  |      1       |   emp_no    |     A     |   299645    |
+| salaries |     0      | PRIMARY  |      2       |  from_date  |     A     |   2838426   |
+| salaries |     1      |  tdate   |      1       |   to_date   |     A     |    6090     |
+
+#### 실행
+```sql
+-- 3ms
+CREATE INDEX tdate ON salaries (to_date);
+```
+
 ```ad-note
-실수 데이터 올림
+408ms -> 3ms
 ```
 
+#### 삭제
 ```sql
--- 12.345를 올림하여 정수로 나타냄
-SELECT CEIL(12.345);
-
--- 국가별 언어 사용 비율을 소수 첫번째자리에서 올림하여 정수로 나타냄
-SELECT CountryCode, Language, Percentage, CEIL(Percentage)
-FROM countrylanguage;
+DROP INDEX tdate ON salaries;
 ```
-
-#### ROUND
-```ad-note
-실수데이터 반올림
-```
-
-```sql
--- 12.345를 소수 둘째자리까지 나타내고 소수 셋째자리에서 반올림
-SELECT ROUND(12.345, 2);
-
--- 국가별 언어 사용 비율을 소수 첫번째자리에서 반올림하여 정수로 나타냄
-SELECT CountryCode, Language, Percentage, ROUND(Percentage, 0)
-FROM countrylanguage;
-```
-
-
-#### TRUNCATE
-```ad-note
-실수 데이터를 버림
-```
-
-```sql
--- 12.345를 소수 둘째자리까지 나타내고 소수 셋째자리에서 버림
-SELECT TRUNCATE(12.345, 2);
-
--- 국가별 언어 사용 비율을 소수 첫번째자리에서 버림하여 정수로 나타냄
-SELECT CountryCode, Language, Percentage, TRUNCATE(Percentage, 0)
-FROM countrylanguage;
-
-SELECT CountryCode, Language, Percentage, ROUND(Percentage, 0), TRUNCATE(Percentage, 0)
-FROM countrylanguage;
-```
-
-
-#### DATE_FORMAT
-```ad-note
-날짜 데이터 포멧
-```
-[reference](https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html)
-```sql
--- sakila의 payment 테이블에서 요금 지불일을 "년-월"로 데이터 포멧을 변경했을때,
--- 중복을 제거한 "년-월" 데이터를 출력
-SELECT DISTINCT(DATE_FORMAT(payment_date, "%Y-%m")) AS unique_month
-FROM payment;
-```
-
-#### CONCAT
-```ad-note
-문자열을 합침
-```
-
-```sql
--- world 데이터베이스의 country 테이블에서 국가코드, 대륙이름과 국가이름이 
--- " / " 구분자로 구분해서 하나의 컬럼에 출력
-SELECT code, CONCAT(continent, " / ", name) as continent_name
-FROM country;
-```
-
-#### COUNT
-```ad-note
-데이터의 갯수를 출력
-```
-
-```sql
---world 데이터 베이스의 city 데이터의 갯수를 출력
-SELECT count(*) as city_count
-FROM city;
-```
-
-
-#### IF
-```sql
-IF(조건, 참, 거짓)
-```
-
-
-```sql
--- 도시의 인구가 100만이 넘으면 "big city" 그렇지 않으면 "small city"를 출력하는 city_scale 컬럼을
-추가
-SELECT name, population, IF(population > 1000000, "big city", "small city") AS city_scale
-FROM city;
-```
-
-#### IFNULL
-```sql
-IFNULL(참, 거짓)
-```
-
-```sql
--- 독립년도가 없는 데이터는 0으로 출력
-SELECT IndepYear, IFNULL(IndepYear, 0) as IndepYear
-FROM country;
-```
-
-#### CASE
-```sql
-CASE
-	WHEN (조건1) THEN (출력1)
-	WHEN (조건2) THEN (출력2)
-END AS (컬럼명)
-```
-
-```sql
--- # 나라별로 인구가 10억 이상, 1억 이상, 1억 이하인 컬럼을 추가하여 출력
-SELECT name, population,
-	CASE
-		WHEN population > 1000000000 THEN "upper 1 bilion"
-		WHEN population > 100000000 THEN "upper 100 milion"
-		ELSE "below 100 milion"
-	END AS result
-FROM country;
-```
-
-
-### GRUOP BY HAVING
-```ad-note
-여러개의 동일한 데이터를 가지는 특정 컬럼을 합쳐주는 역할
-```
-
-
-#### COUNT
-```sql
--- city 테이블의 CountryCode를 묶고 각 코드마다 몇개의 데이터가 있는지 확인
-SELECT CountryCode, COUNT(CountryCode)
-FROM city
-GROUP BY CountryCode;
-```
-
-#### MAX
-```sql
--- 대륙별 인구수와 GNP 최대 값을 조회
-SELECT continent, MAX(Population) as Population, MAX(GNP) as GNP
-FROM country
-GROUP BY continent;
-```
-
-#### MIN
-```sql
--- 대륙별 인구수와 GNP 최소 값을 조회 (GNP와 인구수가 0이 아닌 데이터 중에서)
-SELECT continent, MIN(Population) as Population, MIN(GNP) as GNP
-FROM country
-WHERE GNP != 0 AND Population != 0
-GROUP BY continent;
-```
-
-#### SUM
-```sql
--- 대륙별 총 인구수와 총 GNP
-SELECT continent, SUM(Population) as Population, SUM(GNP) as GNP
-FROM country
-WHERE GNP != 0 AND Population != 0
-GROUP BY continent;
-```
-
-#### AVG
-```sql
--- 대륙별 평균 인구수와 평균 GNP 결과를 인구수로 내림차순 정렬
-SELECT continent, AVG(Population) as Population, AVG(GNP) as GNP
-FROM country
-WHERE GNP != 0 AND Population != 0
-GROUP BY continent
-ORDER BY Population DESC;
-```
-
-
-#### HAVING
-```ad-note
-GROUP BY에서 반환되는 결과에 조건을 줄수 있음
-```
-
-```sql
--- 대륙별 전체인구를 구하고 5억이상인 대륙만 조회
-SELECT continent, SUM(Population) as Population
-FROM country
-GROUP BY continent
-HAVING Population > 500000000;
-
--- 대륙별 평균 인구수, 평균 GNP, 1인당 GNP한 결과를 
--- 1인당 GNP가 0.01 이상인 데이터를 조회하고
--- 1인당 GNP를 내림차순으로 정렬
-SELECT continent, AVG(Population) as Population, AVG(GNP) as GNP,
-	AVG(GNP) / AVG(Population) * 1000 as AVG
-FROM country
-WHERE GNP != 0 AND Population != 0
-GROUP BY continent
-HAVING AVG > 0.01
-ORDER BY AVG DESC;
-```
-
-
-#### WITH ROLLUP
-```ad-note
-여러개의 컬럼을 GROUP BY 하고 각 컬럼별 총 합을 row에 출력
-```
-
-```sql
--- sakila 데이터 베이스에서 고객과 스탭별 매출과 고객별 매출의 총합을 출력
-SELECT customer_id, staff_id, SUM(amount) as amount
-FROM payment
-GROUP BY customer_id, staff_id
-WITH ROLLUP;
-```
-
 
 ### 변수선언 : RANK 설정
 
@@ -884,50 +1369,3 @@ SHOW GRANTS FOR [user@host];
 
 
 
-## 데이터 타입
-### 숫자형
-
-| 데이터 타입 | 설명                  | 크기   | 범위 (부호 포함)                                       | 범위 (부호 없음)               | 기본 값 |
-| ----------- | --------------------- | ------ | ------------------------------------------------------ | ------------------------------ | ------- |
-| `TINYINT`   | 매우 작은 정수        | 1 byte | -128 ~ 127                                             | 0 ~ 255                        | 0       |
-| `SMALLINT`  | 작은 정수             | 2 byte | -32,768 ~ 32,767                                       | 0 ~ 65,535                     | 0       |
-| `MEDIUMINT` | 중간 크기 정수        | 3 byte | -8,388,608 ~ 8,388,607                                 | 0 ~ 16,777,215                 | 0       |
-| `INT`       | 표준 정수             | 4 byte | -2,147,483,648 ~ 2,147,483,647                         | 0 ~ 4,294,967,295              | 0       |
-| `BIGINT`    | 큰 정수               | 8 byte | -9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807 | 0 ~ 18,446,744,073,709,551,615 | 0       |
-| `FLOAT`     | 부동 소수점 수 (소형) | 4 byte | 3.402823466E+38 ~ -3.402823466E+38                     | 0 ~ 3.402823466E+38            | 0.0     |
-| `DOUBLE`    | 부동 소수점 수 (대형) | 8 byte | 1.7976931348623157E+308 ~ -1.7976931348623157E+308     | 0 ~ 1.7976931348623157E+308    | 0.0     |
-| `DECIMAL`   | 고정 소수점 수        | 가변적 | 사용자가 정의한 정밀도에 따름                          | 사용자가 정의한 정밀도에 따름  | 0.0     |
-
-### 문자형
-
-| 데이터 타입  | 설명                    | 크기                    | 최대 크기          | 기본 값    |
-| ------------ | ----------------------- | ----------------------- | ------------------ | ---------- |
-| `CHAR`       | 고정 길이 문자열        | 0 ~ 255 byte            | 255 문자           | ''         | 
-| `VARCHAR`    | 가변 길이 문자열        | 0 ~ 65,535 byte         | 65,535 문자        | ''         |
-| `TINYTEXT`   | 매우 작은 텍스트 데이터 | 최대 255 byte           | 255 문자           | NULL       |
-| `TEXT`       | 작은 텍스트 데이터      | 최대 65,535 byte        | 65,535 문자        | NULL       |
-| `MEDIUMTEXT` | 중간 크기 텍스트 데이터 | 최대 16,777,215 byte    | 16,777,215 문자    | NULL       |
-| `LONGTEXT`   | 큰 텍스트 데이터        | 최대 4,294,967,295 byte | 4,294,967,295 문자 | NULL       |
-| `ENUM`       | 열거형                  | 1 ~ 2 byte              | 최대 65,535 값     | 첫 번째 값 |
-| `SET`        | 집합형                  | 1 ~ 8 byte              | 최대 64 값         | ''         |
-
-### 날짜와 시간
-
-| 데이터 타입 | 설명        | 형식                | 범위                                              | 기본 값               |
-| ----------- | ----------- | ------------------- | ------------------------------------------------- | --------------------- |
-| `DATE`      | 날짜        | YYYY-MM-DD          | 1000-01-01 ~ 9999-12-31                           | '0000-00-00'          |
-| `DATETIME`  | 날짜와 시간 | YYYY-MM-DD HH:MM:SS | 1000-01-01 00:00:00 ~ 9999-12-31 23:59:59         | '0000-00-00 00:00:00' |
-| `TIMESTAMP` | 타임스탬프  | YYYY-MM-DD HH:MM:SS | 1970-01-01 00:00:01 UTC ~ 2038-01-19 03:14:07 UTC | CURRENT_TIMESTAMP     |
-| `TIME`      | 시간        | HH:MM:SS            | '-838:59:59' ~ '838:59:59'                        | '00:00:00'            |
-| `YEAR`      | 연도        | YYYY                | 1901 ~ 2155                                       | '0000'                |
-
-### 이진형
-
-| 데이터 타입  | 설명                  | 크기                    | 최대 크기          | 기본 값 |
-| ------------ | --------------------- | ----------------------- | ------------------ | ------- |
-| `BINARY`     | 고정 길이 이진 데이터 | 0 ~ 255 byte            | 255 byte           | 0x00    |
-| `VARBINARY`  | 가변 길이 이진 데이터 | 0 ~ 65,535 byte         | 65,535 byte        | 0x00    |
-| `TINYBLOB`   | 매우 작은 BLOB        | 최대 255 byte           | 255 byte           | NULL    |
-| `BLOB`       | 작은 BLOB             | 최대 65,535 byte        | 65,535 byte        | NULL    |
-| `MEDIUMBLOB` | 중간 크기 BLOB        | 최대 16,777,215 byte    | 16,777,215 byte    | NULL    |
-| `LONGBLOB`   | 큰 BLOB               | 최대 4,294,967,295 byte | 4,294,967,295 byte | NULL    |
