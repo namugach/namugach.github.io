@@ -1,4 +1,137 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 02 Jun 2024 17:03:55 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 02 Jun 2024 17:03:52 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[pyenv 설치]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 02 Jun 2024 17:09:16 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 02 Jun 2024 17:09:14 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[flask postgreSQL 건들기]]></title><description><![CDATA[ 
+ <br> AWS client to database<br><br><br>sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+
+curl https://pyenv.run | bash
+복사<br><br>export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] &amp;&amp; export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+복사<br>exec $SHELL
+복사<br><br>pyenv install 3.11.9
+pyenv virtualenv 3.11.9 py3_11_9
+pyenv activate py3_11_9
+pip install numpy pandas scikit-learn flask gunicorn psycopg2-binary
+pyenv deactivate
+복사<br><br>import numpy
+import pandas
+import sklearn
+import flask
+import gunicorn
+import psycopg2
+복사<br>python test.py
+복사<br><a data-tooltip-position="top" aria-label="pyenv 설치" data-href="pyenv 설치" href="\root\dev\python\pyenv-설치.html" class="internal-link" target="_self" rel="noopener">설치</a><br>
+<a data-tooltip-position="top" aria-label="pyenv 실습" data-href="pyenv 실습" href="\root\dev\python\pyenv-실습.html" class="internal-link" target="_self" rel="noopener">실습</a><br><br><br><br># Import the repository signing key:
+sudo apt install curl ca-certificates
+sudo install -d /usr/share/postgresql-common/pgdg
+sudo curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc
+
+# Create the repository configuration file:
+sudo sh -c 'echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" &gt; /etc/apt/sources.list.d/pgdg.list'
+
+# Update the package lists:
+sudo apt update
+
+# Install the latest version of PostgreSQL:
+# If you want a specific version, use 'postgresql-16' or similar instead of 'postgresql'
+sudo apt -y install postgresql
+복사<br><br>sudo systemctl status postgresql.service
+복사<br><br>sudo -i -u postgres
+psql
+복사<br><br>ALTER USER postgres WITH PASSWORD 'postgres';
+복사<br><br><br>CREATE DATABASE ml;
+복사<br><br>\list
+복사<br><br>\c ml
+복사<br>CREATE TABLE pred_result(
+    id SERIAL PRIMARY KEY,
+    input NUMERIC,
+    output NUMERIC,
+    insert_dt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+\dt
+복사<br><br>SELECT * FROM pred_result;
+복사<br><br>\q
+복사<br><br>/etc/postgresql/16/main
+sudo vi postgresql.conf
+복사<br>listen_addresses = '0.0.0.0
+복사<br>sudo vi pg_hba.conf
+복사<br># IPv4 local connections:
+host    all             all             127.0.0.1/32            scram-sha-256
+# 이 부분 추가
+host    all             all             0.0.0.0/0               scram-sha-256
+복사<br><br>sudo systemctl restart postgresql
+sudo systemctl status postgresql
+복사<br>netstat -nap | grep 5432
+복사<br>했을 때<br>(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+tcp        0      0 0.0.0.0:5432            0.0.0.0:*               LISTEN      -                   
+unix  2      [ ACC ]     STREAM     LISTENING     26570    -                    /var/run/postgresql/.s.PGSQL.5432
+복사<br>출력<br><br>인스턴스 -&gt; 보안 -&gt; 보안 그룹 -&gt; 인바운드 규칙 편집 -&gt; 규칙 추가
+복사<br>유형: PostgreSQL
+번호: 5432
+소스: 내 아이피
+복사<br>Tip이거 안해도 flask로 건들 수는 있다.<br>
+하지만 다른 클라이언트로 바로 접속하려면 해두는 게 좋다.<br><br><br><br>.
+└── flaskapp
+    ├── myapp
+    │   └── main.py
+    └── requirements.txt
+복사<br><br><br>import numpy as np
+from sklearn.linear_model import LinearRegression
+import psycopg2
+from flask import Flask, request, jsonify
+app = Flask(__name__)
+# 학습
+np.random.seed(0)
+X = np.random.rand(10, 1)
+y = 2 * X + 1 + 0.1 * np.random.randn(10, 1)
+model = LinearRegression()
+model.fit(X, y)
+@app.route('/')
+def welcome():
+	return 'HELLO, ML API SERVER'
+@app.route('/predict', methods=['POST'])
+def predict():
+	data = request.json
+	new_X = data['input']
+	new_X_val = float(new_X[0])
+	input_X = np.array(new_X_val).reshape(1, -1)
+	y_pred = model.predict(input_X)
+	y_pred_list = y_pred.tolist()
+	y_pred_val = round(y_pred_list[0][0], 5)
+	conn = psycopg2.connect(dbname='ml', user='postgres', password='postgres', host='127.0.0.1', port=5432)
+	cur = conn.cursor()
+	query = "INSERT INTO pred_result (input, output) VALUES (%s, %s)"
+	values = (new_X_val, y_pred_val)
+	cur.execute(query, values)
+	conn.commit()
+	cur.close()
+	conn.close()
+	res = jsonify({'input': new_X_val, 'predicted_output': y_pred_val})
+	return res
+if __name__ == '__main__':
+	app.run(host='0.0.0.0', port=5000)
+복사<br><br>pyenv activate py3_11_9
+복사<br>python ./main.py
+복사<br><br><br><br>ErrorPort 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.<br><br>sof -n -i TCP:5000
+복사<br>OMMAND  PID   USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+python  5096 ubuntu    3u  IPv4  14154      0t0  TCP *:5000 (LISTEN)
+복사<br>kill -9 509
+복사<br><br><br><br>curl -d "{""input"":[""0.8""]}" -H "Content-Type: application/json" -X POST http://내_공개_아이피:5000/predict
+복사<br><br>curl -d "{\"input\":[\"0.8\"]}" -H "Content-Type: application/json" -X POST http://내_공개_아이피:5000/predict
+복사<br><br>
+<br>mac
+<br>linux
+<br>wsl
+<br>curl -d '{"input":["0.8"]}' -H "Content-Type: application/json" -X POST http://내_공개_아이피:5000/predict
+복사<br><br><br>sudo -i -u postgres
+psql
+\c ml
+복사<br><br>SELECT * FROM pred_result;
+복사<br><br><br>\q
+exit
+복사]]></description><link>root\dev\flask\flask-postgresql-건들기.html</link><guid isPermaLink="false">root/dev/flask/flask postgreSQL 건들기.md</guid><pubDate>Sun, 02 Jun 2024 17:08:29 GMT</pubDate></item><item><title><![CDATA[pyenv 설치]]></title><description><![CDATA[ 
  <br><br>sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 복사<br><br>curl https://pyenv.run | bash
 복사<br><br>export PYENV_ROOT="$HOME/.pyenv"
@@ -839,140 +972,7 @@ psql
 복사<br><br>SELECT * FROM pred_result;
 복사<br><br><br>\q
 exit
-복사]]></description><link>root\dev\flask\flask-docker에-태우자.html</link><guid isPermaLink="false">root/dev/flask/flask docker에 태우자.md</guid><pubDate>Sun, 02 Jun 2024 16:30:14 GMT</pubDate></item><item><title><![CDATA[flask postgreSQL 건들기]]></title><description><![CDATA[ 
- <br> AWS client to database<br><br><br>sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev \
-libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
-libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
-
-curl https://pyenv.run | bash
-복사<br><br>export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] &amp;&amp; export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-복사<br>exec $SHELL
-복사<br><br>pyenv install 3.11.9
-pyenv virtualenv 3.11.9 py3_11_9
-pyenv activate py3_11_9
-pip install numpy pandas scikit-learn flask gunicorn psycopg2-binary
-pyenv deactivate
-복사<br><br>import numpy
-import pandas
-import sklearn
-import flask
-import gunicorn
-import psycopg2
-복사<br>python test.py
-복사<br><a data-href="pyenv 설치" href="\pyenv 설치" class="internal-link" target="_self" rel="noopener">pyenv 설치</a><br>
-<a data-href="pyenv 실습" href="\pyenv 실습" class="internal-link" target="_self" rel="noopener">pyenv 실습</a><br><br><br><br># Import the repository signing key:
-sudo apt install curl ca-certificates
-sudo install -d /usr/share/postgresql-common/pgdg
-sudo curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc
-
-# Create the repository configuration file:
-sudo sh -c 'echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" &gt; /etc/apt/sources.list.d/pgdg.list'
-
-# Update the package lists:
-sudo apt update
-
-# Install the latest version of PostgreSQL:
-# If you want a specific version, use 'postgresql-16' or similar instead of 'postgresql'
-sudo apt -y install postgresql
-복사<br><br>sudo systemctl status postgresql.service
-복사<br><br>sudo -i -u postgres
-psql
-복사<br><br>ALTER USER postgres WITH PASSWORD 'postgres';
-복사<br><br><br>CREATE DATABASE ml;
-복사<br><br>\list
-복사<br><br>\c ml
-복사<br>CREATE TABLE pred_result(
-    id SERIAL PRIMARY KEY,
-    input NUMERIC,
-    output NUMERIC,
-    insert_dt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-\dt
-복사<br><br>SELECT * FROM pred_result;
-복사<br><br>\q
-복사<br><br>/etc/postgresql/16/main
-sudo vi postgresql.conf
-복사<br>listen_addresses = '0.0.0.0
-복사<br>sudo vi pg_hba.conf
-복사<br># IPv4 local connections:
-host    all             all             127.0.0.1/32            scram-sha-256
-# 이 부분 추가
-host    all             all             0.0.0.0/0               scram-sha-256
-복사<br><br>sudo systemctl restart postgresql
-sudo systemctl status postgresql
-복사<br>netstat -nap | grep 5432
-복사<br>했을 때<br>(Not all processes could be identified, non-owned process info
- will not be shown, you would have to be root to see it all.)
-tcp        0      0 0.0.0.0:5432            0.0.0.0:*               LISTEN      -                   
-unix  2      [ ACC ]     STREAM     LISTENING     26570    -                    /var/run/postgresql/.s.PGSQL.5432
-복사<br>출력<br><br>인스턴스 -&gt; 보안 -&gt; 보안 그룹 -&gt; 인바운드 규칙 편집 -&gt; 규칙 추가
-복사<br>유형: PostgreSQL
-번호: 5432
-소스: 내 아이피
-복사<br>Tip이거 안해도 flask로 건들 수는 있다.<br>
-하지만 다른 클라이언트로 바로 접속하려면 해두는 게 좋다.<br><br><br><br>.
-└── flaskapp
-    ├── myapp
-    │   └── main.py
-    └── requirements.txt
-복사<br><br><br>import numpy as np
-from sklearn.linear_model import LinearRegression
-import psycopg2
-from flask import Flask, request, jsonify
-app = Flask(__name__)
-# 학습
-np.random.seed(0)
-X = np.random.rand(10, 1)
-y = 2 * X + 1 + 0.1 * np.random.randn(10, 1)
-model = LinearRegression()
-model.fit(X, y)
-@app.route('/')
-def welcome():
-	return 'HELLO, ML API SERVER'
-@app.route('/predict', methods=['POST'])
-def predict():
-	data = request.json
-	new_X = data['input']
-	new_X_val = float(new_X[0])
-	input_X = np.array(new_X_val).reshape(1, -1)
-	y_pred = model.predict(input_X)
-	y_pred_list = y_pred.tolist()
-	y_pred_val = round(y_pred_list[0][0], 5)
-	conn = psycopg2.connect(dbname='ml', user='postgres', password='postgres', host='127.0.0.1', port=5432)
-	cur = conn.cursor()
-	query = "INSERT INTO pred_result (input, output) VALUES (%s, %s)"
-	values = (new_X_val, y_pred_val)
-	cur.execute(query, values)
-	conn.commit()
-	cur.close()
-	conn.close()
-	res = jsonify({'input': new_X_val, 'predicted_output': y_pred_val})
-	return res
-if __name__ == '__main__':
-	app.run(host='0.0.0.0', port=5000)
-복사<br><br>pyenv activate py3_11_9
-복사<br>python ./main.py
-복사<br><br><br><br>ErrorPort 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.<br><br>sof -n -i TCP:5000
-복사<br>OMMAND  PID   USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
-python  5096 ubuntu    3u  IPv4  14154      0t0  TCP *:5000 (LISTEN)
-복사<br>kill -9 509
-복사<br><br><br><br>curl -d "{""input"":[""0.8""]}" -H "Content-Type: application/json" -X POST http://내_공개_아이피:5000/predict
-복사<br><br>curl -d "{\"input\":[\"0.8\"]}" -H "Content-Type: application/json" -X POST http://내_공개_아이피:5000/predict
-복사<br><br>
-<br>mac
-<br>linux
-<br>wsl
-<br>curl -d '{"input":["0.8"]}' -H "Content-Type: application/json" -X POST http://내_공개_아이피:5000/predict
-복사<br><br><br>sudo -i -u postgres
-psql
-\c ml
-복사<br><br>SELECT * FROM pred_result;
-복사<br><br><br>\q
-exit
-복사]]></description><link>root\dev\flask\flask-postgresql-건들기.html</link><guid isPermaLink="false">root/dev/flask/flask postgreSQL 건들기.md</guid><pubDate>Sun, 02 Jun 2024 16:29:39 GMT</pubDate></item><item><title><![CDATA[mysql note]]></title><description><![CDATA[ 
+복사]]></description><link>root\dev\flask\flask-docker에-태우자.html</link><guid isPermaLink="false">root/dev/flask/flask docker에 태우자.md</guid><pubDate>Sun, 02 Jun 2024 16:30:14 GMT</pubDate></item><item><title><![CDATA[mysql note]]></title><description><![CDATA[ 
  <br><br>
 <br>일번적으로 대소문자를 구분하지 않음
 <br>주로 예약어(SELECT, FROM)는<br>

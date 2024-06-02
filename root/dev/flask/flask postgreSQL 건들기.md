@@ -60,8 +60,10 @@ import psycopg2
 python test.py
 ```
 
-[[pyenv 설치]]
-[[pyenv 실습]]
+
+
+[[pyenv 설치|설치]]
+[[pyenv 실습|실습]]
 
 ---
 ## postgresql
