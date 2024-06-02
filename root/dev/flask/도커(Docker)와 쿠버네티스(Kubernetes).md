@@ -1,0 +1,34 @@
+---
+tags:
+  - 수업
+  - 이어드림스쿨
+  - docker
+  - public
+create: 2024-05-30 10:30:41
+---
+
+## EC2 환경
+
+- 우분투
+- t2.xlarge
+- ssd: 100gb
+---
+
+## flask database 건들기
+
+![[AWS client to database.canvas]]
+
+[[flask postgreSQL 건들기| 하고]]
+
+---
+
+## flask 건들기 위한 Docker
+[[flask 건들기 위한 Docker|설치 하고!]]
+
+--- 
+
+## flask docker에 태우자
+
+![[AWS client to docker database.canvas]]
+
+[[flask docker에 태우자|그래!]]

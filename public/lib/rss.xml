@@ -1,4 +1,379 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Fri, 24 May 2024 04:43:16 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Fri, 24 May 2024 04:43:12 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[mysql note]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 02 Jun 2024 16:31:19 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 02 Jun 2024 16:31:13 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[도커(Docker)와 쿠버네티스(Kubernetes)]]></title><description><![CDATA[ 
+ <br><br>
+<br>우분투
+<br>t2.xlarge
+<br>ssd: 100gb
+<br><br><br> AWS client to database<br><a data-tooltip-position="top" aria-label="flask postgreSQL 건들기" data-href="flask postgreSQL 건들기" href="\root\dev\flask\flask-postgresql-건들기.html" class="internal-link" target="_self" rel="noopener">하고</a><br><br><br><a data-tooltip-position="top" aria-label="flask 건들기 위한 Docker" data-href="flask 건들기 위한 Docker" href="\root\dev\flask\flask-건들기-위한-docker.html" class="internal-link" target="_self" rel="noopener">설치 하고!</a><br><br><br> AWS client to docker database<br><a data-tooltip-position="top" aria-label="flask docker에 태우자" data-href="flask docker에 태우자" href="\root\dev\flask\flask-docker에-태우자.html" class="internal-link" target="_self" rel="noopener">그래!</a>]]></description><link>root\dev\flask\도커(docker)와-쿠버네티스(kubernetes).html</link><guid isPermaLink="false">root/dev/flask/도커(Docker)와 쿠버네티스(Kubernetes).md</guid><pubDate>Sun, 02 Jun 2024 16:29:32 GMT</pubDate></item><item><title><![CDATA[flask 건들기 위한 Docker]]></title><description><![CDATA[ 
+ <br><a rel="noopener" class="external-link" href="https://docs.docker.com/engine/install/ubuntu/" target="_blank">https://docs.docker.com/engine/install/ubuntu/</a><br><br># Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release &amp;&amp; echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+sudo apt-get update
+복사<br><br>sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+복사<br><br>sudo usermod -aG docker $USER
+exec $SHELL
+
+# 재접속
+exit
+복사<br><br><br>docker
+docker version
+복사<br>Attention권한 설정이 안돼있으면
+{sh} sudo docker<br>
+{sh} docker --version<br><br>systemctl status docker
+복사<br><br><br><br>docker container run hello-world
+복사<br><br>Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+복사<br><br><br>docker container ls
+복사<br><br>docker container ls -a
+복사<br><br><br>docker container run -it ubuntu
+복사<br>Notepull, create, start, attach를 한번에 한 효과를 보게 된다.<br>
+그리고 종료 할 때는 exit<br><br>exit
+복사]]></description><link>root\dev\flask\flask-건들기-위한-docker.html</link><guid isPermaLink="false">root/dev/flask/flask 건들기 위한 Docker.md</guid><pubDate>Sun, 02 Jun 2024 16:29:47 GMT</pubDate></item><item><title><![CDATA[flask docker에 태우자]]></title><description><![CDATA[ 
+ <br> AWS client to docker database<br><br><br>.
+├── docker
+│   └── flaskapp
+│       ├── Dockerfile
+│       ├── myapp
+│       │   └── main.py
+│       └── requirements.txt
+└── flaskapp
+    └── main.py
+복사<br>Attentiontest와 while_loop.py 파일이 있을 수 있지만<br>
+docker와 flaskapp 디렉토리 구조가 같다면 문제 없음<br><br>sudo apt install tree
+복사<br><br># 작업 디렉토리로 이동
+cd ~/work
+
+# main.py 파일 flaskapp 디렉토리 이동
+mkdir flaskapp
+mv main.py flaskapp
+
+# flaskapp 디렉토리 docker 디렉토리 안으로 복사
+mkdir docker 
+cp -r flaskapp docker # -r 옵션은 깊은 복사
+
+# 작업 디렉토리 변경
+cd docker/flaskapp/
+
+# main.py myapp 디렉토리로 이동
+mkdir myapp
+mv main.py myapp
+
+# 설정 파일 생성
+touch Dockerfile
+touch requirements.txt
+
+# 전체 디렉토리 확인
+cd ~/work
+tree
+복사<br><br>매우!여기서<br>
+{python} conn = psycopg2.connect(dbname='ml', user='postgres', password='postgres', host='172.17.0.1', port=5432)
+host 부분을 docker ip로 바꿔 줘야 한다.
+하지 않으면 클라이언트에서 post로 db에 접근 하지 못한다.<br><br>ifconfig
+복사<br>하면<br>docker0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
+        inet6 fe80::42:82ff:fe9b:e70e  prefixlen 64  scopeid 0x20&lt;link&gt;
+        ether 02:42:82:9b:e7:0e  txqueuelen 0  (Ethernet)
+        RX packets 372  bytes 39785 (39.7 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 314  bytes 59552 (59.5 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enX0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 9001
+        inet 172.31.8.194  netmask 255.255.240.0  broadcast 172.31.15.255
+        inet6 fe80::39:1aff:feff:673  prefixlen 64  scopeid 0x20&lt;link&gt;
+        ether 02:39:1a:ff:06:73  txqueuelen 1000  (Ethernet)
+        RX packets 134980  bytes 52783685 (52.7 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 113282  bytes 18350518 (18.3 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 223904  bytes 18604065 (18.6 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 223904  bytes 18604065 (18.6 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+veth889f608: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet6 fe80::8488:9bff:fe4d:3fb1  prefixlen 64  scopeid 0x20&lt;link&gt;
+        ether 86:88:9b:4d:3f:b1  txqueuelen 0  (Ethernet)
+        RX packets 355  bytes 42968 (42.9 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 313  bytes 58612 (58.6 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+복사<br>이런 형식이 나올 텐데.<br>
+docker0의 inet 172.17.0.1 부분을 넣어 주면 된다.<br><br>import numpy as np
+from sklearn.linear_model import LinearRegression
+import psycopg2
+from flask import Flask, request, jsonify
+app = Flask(__name__)
+# 학습
+np.random.seed(0)
+X = np.random.rand(10, 1)
+y = 2 * X + 1 + 0.1 * np.random.randn(10, 1)
+model = LinearRegression()
+model.fit(X, y)
+@app.route('/')
+def welcome():
+	return 'HELLO, ML API SERVER'
+
+@app.route('/test', methods=['POST'])
+def test():
+	print(request.json)
+	print("this is test")
+	return "this is test"
+
+@app.route('/predict', methods=['POST'])
+def predict():
+	data = request.json
+	new_X = data['input']
+	new_X_val = float(new_X[0])
+	input_X = np.array(new_X_val).reshape(1, -1)
+	y_pred = model.predict(input_X)
+	y_pred_list = y_pred.tolist()
+	y_pred_val = round(y_pred_list[0][0], 5)
+	# 여기 host
+	conn = psycopg2.connect(dbname='ml', user='postgres', password='postgres', host='172.17.0.1', port=5432)
+	cur = conn.cursor()
+	query = "INSERT INTO pred_result (input, output) VALUES (%s, %s)"
+	values = (new_X_val, y_pred_val)
+	cur.execute(query, values)
+	conn.commit()
+	cur.close()
+	conn.close()
+	res = jsonify({'input': new_X_val, 'predicted_output': y_pred_val})
+	return res
+if __name__ == '__main__':
+	app.run(host='0.0.0.0', port=5000)
+복사<br><br><br><br>pyenv activate py3_11_9 
+복사<br><br>pip list | grep -E 'scikit-learn|Flask|gunicorn|psycopg2'
+복사<br>Flask           3.0.3
+gunicorn        22.0.0
+psycopg2-binary 2.9.9
+scikit-learn    1.5.0
+복사<br><br>앗! 텐션버전명이 다르면 안된다.<br>flask==3.0.3
+psycopg2==2.9.9
+scikit-learn==1.5.0
+복사<br><br><br>FROM python:3.11.9
+
+WORKDIR /usr/src/app
+
+COPY . .
+
+RUN python -m pip install --upgreade pip
+RUN pip install -r requirements.txt
+
+WORKDIR ./myapp
+
+CMD python main.py
+
+EXPOSE 5000
+복사<br>Info
+<br>FROM: 베이스 도커 이미지 지정
+<br>WORKDIR: cd 명령어와 같이 컨테이너 내 작업 디렉토리 전환
+<br>COPY: 호스트 파일을 컨테이너 내부로 복사
+<br>RUN: 이미지 빌드 과정에 사용
+<br>CMD: 컨테이너를 띄울때 사용
+<br><br><br><br>cd work/docker/flaskapp/
+tree
+.
+├── Dockerfile
+├── myapp
+│   └── main.py
+└── requirements.txt
+복사<br><br>docker image build . -t flaskapi01
+복사<br><br>docker image ls
+복사<br>REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+flaskapi01    latest    a8c4fa3dda54   2 days ago      1.38GB
+my-ubuntu     0.1       47f1ae23d4f6   3 days ago      114MB
+ubuntu        latest    bf3dc08bfed0   4 weeks ago     76.2MB
+hello-world   latest    d2c94e258dcb   13 months ago   13.3kB
+복사<br><br><br>인스턴스 -&gt; 보안 -&gt; 보안 그룹 -&gt; 인바운드 규칙 편집 -&gt; 규칙 추가
+복사<br>유형: http
+번호: 80
+소스: 내 아이피
+복사<br><br><br>docker container run -d -p 80:5000 flaskapi01
+복사<br><br>docker container ls
+복사<br>CONTAINER ID   IMAGE        COMMAND                  CREATED         STATUS         PORTS                                   NAMES
+1b71df899d3a   flaskapi01   "/bin/sh -c 'python …"   2 minutes ago   Up 2 minutes   0.0.0.0:80-&gt;5000/tcp, :::80-&gt;5000/tcp   zealous_diffie
+복사<br><br>Note브라우저 창에서 ec2 public ip를 입력 후<br>
+HELLO, ML API SERVER 출력 하면 성공<br><br><br><br><br>curl -d "{""input"":[""0.6""]}" -H "Content-Type: application/json" -X POST http://내_공개_아이피/predict
+복사<br><br>curl -d "{\"input\":[\"0.6\"]}" -H "Content-Type: application/json" -X POST http://내_공개_아이피/predict
+복사<br>Note웬만하면 위의 경우가 될테지만 윈도우 10 터미널에서 "의 처리를 못해서<br>
+에러를 출력한 경험이 있었다. 안될 경우 시도 해보자.<br><br>
+<br>mac
+<br>linux
+<br>wsl
+<br>curl -d '{"input":["0.6"]}' -H "Content-Type: application/json" -X POST http://내_공개_아이피/predict
+복사<br><br>{"input":0.6,"predicted_output":2.23995}
+복사<br><br><br><br>sudo -i -u postgres
+psql
+\c ml
+복사<br><br>SELECT * FROM pred_result;
+복사<br><br><br>\q
+exit
+복사]]></description><link>root\dev\flask\flask-docker에-태우자.html</link><guid isPermaLink="false">root/dev/flask/flask docker에 태우자.md</guid><pubDate>Sun, 02 Jun 2024 16:30:14 GMT</pubDate></item><item><title><![CDATA[flask postgreSQL 건들기]]></title><description><![CDATA[ 
+ <br> AWS client to database<br><br><br>sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+
+curl https://pyenv.run | bash
+복사<br><br>export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] &amp;&amp; export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+복사<br>exec $SHELL
+복사<br><br>pyenv install 3.11.9
+pyenv virtualenv 3.11.9 py3_11_9
+pyenv activate py3_11_9
+pip install numpy pandas scikit-learn flask gunicorn psycopg2-binary
+pyenv deactivate
+복사<br><br>import numpy
+import pandas
+import sklearn
+import flask
+import gunicorn
+import psycopg2
+복사<br>python test.py
+복사<br><a data-href="pyenv 설치" href="\pyenv 설치" class="internal-link" target="_self" rel="noopener">pyenv 설치</a><br>
+<a data-href="pyenv 실습" href="\pyenv 실습" class="internal-link" target="_self" rel="noopener">pyenv 실습</a><br><br><br><br># Import the repository signing key:
+sudo apt install curl ca-certificates
+sudo install -d /usr/share/postgresql-common/pgdg
+sudo curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc
+
+# Create the repository configuration file:
+sudo sh -c 'echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" &gt; /etc/apt/sources.list.d/pgdg.list'
+
+# Update the package lists:
+sudo apt update
+
+# Install the latest version of PostgreSQL:
+# If you want a specific version, use 'postgresql-16' or similar instead of 'postgresql'
+sudo apt -y install postgresql
+복사<br><br>sudo systemctl status postgresql.service
+복사<br><br>sudo -i -u postgres
+psql
+복사<br><br>ALTER USER postgres WITH PASSWORD 'postgres';
+복사<br><br><br>CREATE DATABASE ml;
+복사<br><br>\list
+복사<br><br>\c ml
+복사<br>CREATE TABLE pred_result(
+    id SERIAL PRIMARY KEY,
+    input NUMERIC,
+    output NUMERIC,
+    insert_dt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+\dt
+복사<br><br>SELECT * FROM pred_result;
+복사<br><br>\q
+복사<br><br>/etc/postgresql/16/main
+sudo vi postgresql.conf
+복사<br>listen_addresses = '0.0.0.0
+복사<br>sudo vi pg_hba.conf
+복사<br># IPv4 local connections:
+host    all             all             127.0.0.1/32            scram-sha-256
+# 이 부분 추가
+host    all             all             0.0.0.0/0               scram-sha-256
+복사<br><br>sudo systemctl restart postgresql
+sudo systemctl status postgresql
+복사<br>netstat -nap | grep 5432
+복사<br>했을 때<br>(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+tcp        0      0 0.0.0.0:5432            0.0.0.0:*               LISTEN      -                   
+unix  2      [ ACC ]     STREAM     LISTENING     26570    -                    /var/run/postgresql/.s.PGSQL.5432
+복사<br>출력<br><br>인스턴스 -&gt; 보안 -&gt; 보안 그룹 -&gt; 인바운드 규칙 편집 -&gt; 규칙 추가
+복사<br>유형: PostgreSQL
+번호: 5432
+소스: 내 아이피
+복사<br>Tip이거 안해도 flask로 건들 수는 있다.<br>
+하지만 다른 클라이언트로 바로 접속하려면 해두는 게 좋다.<br><br><br><br>.
+└── flaskapp
+    ├── myapp
+    │   └── main.py
+    └── requirements.txt
+복사<br><br><br>import numpy as np
+from sklearn.linear_model import LinearRegression
+import psycopg2
+from flask import Flask, request, jsonify
+app = Flask(__name__)
+# 학습
+np.random.seed(0)
+X = np.random.rand(10, 1)
+y = 2 * X + 1 + 0.1 * np.random.randn(10, 1)
+model = LinearRegression()
+model.fit(X, y)
+@app.route('/')
+def welcome():
+	return 'HELLO, ML API SERVER'
+@app.route('/predict', methods=['POST'])
+def predict():
+	data = request.json
+	new_X = data['input']
+	new_X_val = float(new_X[0])
+	input_X = np.array(new_X_val).reshape(1, -1)
+	y_pred = model.predict(input_X)
+	y_pred_list = y_pred.tolist()
+	y_pred_val = round(y_pred_list[0][0], 5)
+	conn = psycopg2.connect(dbname='ml', user='postgres', password='postgres', host='127.0.0.1', port=5432)
+	cur = conn.cursor()
+	query = "INSERT INTO pred_result (input, output) VALUES (%s, %s)"
+	values = (new_X_val, y_pred_val)
+	cur.execute(query, values)
+	conn.commit()
+	cur.close()
+	conn.close()
+	res = jsonify({'input': new_X_val, 'predicted_output': y_pred_val})
+	return res
+if __name__ == '__main__':
+	app.run(host='0.0.0.0', port=5000)
+복사<br><br>pyenv activate py3_11_9
+복사<br>python ./main.py
+복사<br><br><br><br>ErrorPort 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.<br><br>sof -n -i TCP:5000
+복사<br>OMMAND  PID   USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+python  5096 ubuntu    3u  IPv4  14154      0t0  TCP *:5000 (LISTEN)
+복사<br>kill -9 509
+복사<br><br><br><br>curl -d "{""input"":[""0.8""]}" -H "Content-Type: application/json" -X POST http://내_공개_아이피:5000/predict
+복사<br><br>curl -d "{\"input\":[\"0.8\"]}" -H "Content-Type: application/json" -X POST http://내_공개_아이피:5000/predict
+복사<br><br>
+<br>mac
+<br>linux
+<br>wsl
+<br>curl -d '{"input":["0.8"]}' -H "Content-Type: application/json" -X POST http://내_공개_아이피:5000/predict
+복사<br><br><br>sudo -i -u postgres
+psql
+\c ml
+복사<br><br>SELECT * FROM pred_result;
+복사<br><br><br>\q
+exit
+복사]]></description><link>root\dev\flask\flask-postgresql-건들기.html</link><guid isPermaLink="false">root/dev/flask/flask postgreSQL 건들기.md</guid><pubDate>Sun, 02 Jun 2024 16:29:39 GMT</pubDate></item><item><title><![CDATA[mysql note]]></title><description><![CDATA[ 
  <br><br>
 <br>일번적으로 대소문자를 구분하지 않음
 <br>주로 예약어(SELECT, FROM)는<br>
