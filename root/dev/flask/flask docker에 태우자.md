@@ -7,7 +7,9 @@ tags:
 create: 2024-06-02 23:59:36
 ---
 
+
 ![[AWS client to docker database.canvas]]
+[[AWS client to docker database.canvas|보기]]
 ## 디렉토리 정리
 
 ### 구조
@@ -61,7 +63,7 @@ touch requirements.txt
 cd ~/work
 tree
 ```
-
+---
 ## 도커에 로컬 DB 연결 통로 뚫어주기
 
 ```ad-important
@@ -279,7 +281,7 @@ hello-world   latest    d2c94e258dcb   13 months ago   13.3kB
 번호: 80
 소스: 내 아이피
 ```
-
+---
 ## 빌드 이미지 실행
 
 ### 실행

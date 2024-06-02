@@ -11,6 +11,8 @@ create: 2024-06-02 23:50:29
 
 
 ![[AWS client to database.canvas]]
+[[AWS client to database.canvas|보기]]
+
 ## pyenv
 ### 설치
 ```sh
@@ -60,10 +62,8 @@ import psycopg2
 python test.py
 ```
 
-
-
-[[pyenv 설치|설치]]
-[[pyenv 실습|실습]]
+[[pyenv 설치]]
+[[pyenv 실습]]
 
 ---
 ## postgresql

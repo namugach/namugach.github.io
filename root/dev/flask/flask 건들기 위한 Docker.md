@@ -23,12 +23,12 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
 ```
-
+---
 ## 설치
 ```sh
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
-
+---
 ## 권한
 ```sh
 sudo usermod -aG docker $USER
@@ -37,7 +37,7 @@ exec $SHELL
 # 재접속
 exit
 ```
-
+---
 ## 확인
 
 ### 기본
@@ -58,7 +58,7 @@ docker version
 systemctl status docker
 ```
 
-
+---
 ## Hello world
 ### 컨테이너
 #### 실행
@@ -101,7 +101,7 @@ docker container ls
 docker container ls -a
 ```
 
-
+---
 ## 우분투
 
 ### pull, create, start, attach 한 번에
