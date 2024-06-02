@@ -3,11 +3,9 @@ tags:
   - python
   - dev
   - note
-  - 공개
+  - public
 create: 2024-03-27 14:13:24
 ---
-<style>body  {	tab-size: 2; } </style>
-
 - https://velog.io/@dkwjd131/작성중Python-regex-정규표현식
 
 
@@ -19,7 +17,7 @@ b = 20
 print(a + b)
 ```
 
-```python
+```run-python
 a, b = 1, 2
 print(a, b) # 1, 2 완전 쩔어?!
 ```
@@ -28,7 +26,7 @@ print(a, b) # 1, 2 완전 쩔어?!
 
 ## print
 
-```python
+```run-python
 phone = "갈럭시"
 usage = 50.888
 
@@ -559,6 +557,19 @@ pizzaBox.intro()
 
 ---
 
+## Static Mathod
+
+```python
+class Static:
+	@staticmethod
+	def print_now():
+		print("ok")
+
+
+Static.print_now()
+```
+
+---
 ## abstractClass
 
 ```ad-note
@@ -869,3 +880,145 @@ print(output2)
 ```
 
 바이너리로 바꿔서 아주 빠르게 데이터들을 처리 할 수 있는 포멧
+
+---
+
+## 모듈화
+
+### 한 눈에 보기
+
+```python
+import file_name
+
+file_name.func1()
+file_name.func2()
+file_name.func3()
+
+import file_name as f_n
+f_n.func1()
+f_n.func2()
+f_n.func3()
+
+from file_name import func1, func2, func3 # ...
+func1()
+func2()
+func3()
+
+from file_name import func1 as f1, func2 as f2, func3 as f3 # ...
+f1()
+f2()
+f3()
+```
+
+### 같은 디렉토리
+
+#### source
+```python title:good.py
+def good_print():
+	print("this is good! wow!!")
+
+def what():
+	print("huh???")
+```
+
+#### import
+##### basic
+```python title:main.py
+import good
+
+good.good_print()
+good.what()
+```
+
+##### as
+```python title:main
+import good as huh
+
+huh.good_print()
+huh.what()
+```
+
+#### from
+##### basic
+```python title:main.py
+from good import good_print, what
+
+good_print()
+what()
+```
+
+##### as
+```python
+from good import good_print as okey, what as the
+
+okey()
+the()
+```
+
+
+
+
+### 하위 디렉토리
+
+#### source
+```python title:module/good.py
+def good_print():
+	print("this is good! wow!!")
+
+def what():
+	print("huh???")
+```
+
+#### import
+##### basic
+```python title:main.py
+import module.good
+
+module.good.good_print()
+module.good.what()
+```
+
+##### as
+```python title:main
+import module.good as good
+
+good.good_print()
+good.what()
+```
+
+#### from
+##### basic
+```python title:main.py
+from module.good import good_print, what
+
+good_print()
+what()
+```
+
+##### as
+```python title:main
+from module.good import good_print as okey, what as the
+
+okey()
+the()
+```
+
+
+### \_\_main\_\_
+
+```python title:what_the.py
+import sys
+
+def huh():
+	print(sys.argv)
+	print(" ".join(sys.argv))
+	print(sys.argv[1:])
+	print(" ".join(sys.argv[1:]))
+
+if __name__ == "__main__":
+	huh()
+```
+
+```sh
+python what_the.py ok what huh
+```
