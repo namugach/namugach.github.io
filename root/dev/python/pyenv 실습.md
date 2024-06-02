@@ -3,6 +3,7 @@ tags:
   - python
   - pyenv
   - 실습
+  - public
 create: 2024-05-13 11:20:05
 ---
 

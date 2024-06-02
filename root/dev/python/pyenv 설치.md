@@ -2,6 +2,7 @@
 tags:
   - pyenv
   - install
+  - public
 create: 2024-05-10 16:21:22
 ---
 
