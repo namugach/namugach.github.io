@@ -1,6 +1,218 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 02 Jun 2024 17:39:09 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 02 Jun 2024 17:39:06 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[flask docker에 태우자]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 03 Jun 2024 11:24:18 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 03 Jun 2024 11:24:11 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[도커와 쿠버네틱스]]></title><description><![CDATA[ 
+ <br><br>
+<br>우분투
+<br>t2.xlarge
+<br>ssd: 100gb
+<br><br><br> AWS client to database<br><a data-tooltip-position="top" aria-label="flask postgreSQL 건들기" data-href="flask postgreSQL 건들기" href="\root\dev\도커와-쿠버네틱스\flask-postgresql-건들기.html" class="internal-link" target="_self" rel="noopener">하고</a><br><br><br><a data-tooltip-position="top" aria-label="flask 건들기 위한 Docker" data-href="flask 건들기 위한 Docker" href="\root\dev\도커와-쿠버네틱스\flask-건들기-위한-docker.html" class="internal-link" target="_self" rel="noopener">설치 하고!</a><br><br><br> AWS client to docker database<br><a data-tooltip-position="top" aria-label="flask docker에 태우자" data-href="flask docker에 태우자" href="\root\dev\도커와-쿠버네틱스\flask-docker에-태우자.html" class="internal-link" target="_self" rel="noopener">그래!</a><br><br><br><a data-tooltip-position="top" aria-label="docker compose" data-href="docker compose" href="\root\dev\도커와-쿠버네틱스\docker-compose.html" class="internal-link" target="_self" rel="noopener">일단 설치</a><br><br><br><a data-tooltip-position="top" aria-label="Python에 YAML" data-href="Python에 YAML" href="\root\dev\도커와-쿠버네틱스\python에-yaml.html" class="internal-link" target="_self" rel="noopener">설치 하고</a><br><br><br><a data-tooltip-position="top" aria-label="enginx 도커 올려" data-href="enginx 도커 올려" href="\root\dev\도커와-쿠버네틱스\enginx-도커-올려.html" class="internal-link" target="_self" rel="noopener">올려!!</a><br><br><br><a data-tooltip-position="top" aria-label="postgre 도커 올려" data-href="postgre 도커 올려" href="\root\dev\도커와-쿠버네틱스\postgre-도커-올려.html" class="internal-link" target="_self" rel="noopener">올려!!!</a>]]></description><link>root\dev\도커와-쿠버네틱스\도커와-쿠버네틱스.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/도커와 쿠버네틱스.md</guid><pubDate>Mon, 03 Jun 2024 11:21:49 GMT</pubDate></item><item><title><![CDATA[docker compose]]></title><description><![CDATA[ 
+ <br><br><a rel="noopener" class="external-link" href="https://docs.docker.com/compose/install/linux/#install-using-the-repository" target="_blank">https://docs.docker.com/compose/install/linux/#install-using-the-repository</a><br>sudo apt-get update
+sudo apt-get install docker-compose-plugin
+
+# 버전 확인
+docker compose version
+복사<br>]]></description><link>root\dev\도커와-쿠버네틱스\docker-compose.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/docker compose.md</guid><pubDate>Mon, 03 Jun 2024 11:22:27 GMT</pubDate></item><item><title><![CDATA[enginx 도커 올려]]></title><description><![CDATA[ 
+ <br><br>cd ~/work/docker
+mkdir nginxtest
+복사<br><br><br>FROM nginx:1.26.0
+
+CMD ["nginx", "-g", "daemon off;"]
+복사<br><br><br># ~/work/docker/nginxtest
+docker image build . -t mynginx01
+복사<br>docker image ls
+복사<br>REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+flaskapi01    latest    a8c4fa3dda54   2 days ago      1.38GB
+my-ubuntu     0.1       47f1ae23d4f6   3 days ago      114MB
+# 여기
+mynginx01     latest    6f5998e2d7ff   4 weeks ago     188MB
+ubuntu        latest    bf3dc08bfed0   4 weeks ago     76.2MB
+hello-world   latest    d2c94e258dcb   13 months ago   13.3kB
+복사<br><br><br><br>docker container run -d mynginx01
+복사<br><br>docker container ls
+복사<br>CONTAINER ID   IMAGE       COMMAND                  CREATED         STATUS         PORTS     NAMES
+43ec4cd47554   mynginx01   "/docker-entrypoint.…"   5 seconds ago   Up 4 seconds   80/tcp    sweet_johnson
+복사<br>CheckSTATUS Up 확인<br><br><br><a rel="noopener" class="external-link" href="https://docs.docker.com/compose/install/linux/#install-using-the-repository" target="_blank">https://docs.docker.com/compose/install/linux/#install-using-the-repository</a><br>sudo apt-get update
+sudo apt-get install docker-compose-plugin
+
+# 버전 확인
+docker compose version
+
+복사<br><br><br>.
+├── docker
+│   ├── flaskapp
+│   │   ├── Dockerfile
+│   │   ├── myapp
+│   │   │   └── main.py
+│   │   └── requirements.txt
+│   └── nginxtest
+│       └── Dockerfile
+├── flaskapp
+│   └── main.py
+└── test
+    └── while_loop.py
+복사<br><br><br>cd ~/work/docker/flaskapp
+vi requirements.txt
+복사<br>scikit-learn==1.5.0
+flask==3.0.3
+psycopg2==2.9.9
+gunicorn==22.0.0
+복사<br>Notegunicorn==22.0.0 추가<br><br><br><br>
+<br>p: 121
+<br>server{
+	listen 80;
+	server_name localhost;
+
+	location /{
+		proxy_pass http://flasktest:5000;
+	}
+}
+복사<br>Importantflasktest: 컨테이너 이름<br><br>FROM nginx:1.26.0
+
+RUN rm /etc/nginx/conf.d/default.conf
+
+COPY default.conf /etc/nginx/conf.d/
+
+CMD ["nginx", "-g", "daemon off;"]
+복사<br><br><br><br><br>cd ~/work/docker
+vi docker-compose.yml
+복사<br>services:
+  flasktest:
+    build: ./flaskapp
+    networks:
+      - composenet01
+    restart: always
+  
+  nginxtest:
+    build: ./nginxtest
+    networks:
+      - composenet01
+    ports:
+      - "80:80"
+    depends_on:
+      - flasktest
+
+networks:
+  composenet01:
+
+복사<br>Infodepends_on:
+- flasktest
+복사
+플라스트 시작 하고 실행<br><br>~/work/docker$ tree
+.
+├── docker-compose.yml
+├── flaskapp
+│   ├── Dockerfile
+│   ├── myapp
+│   │   └── main.py
+│   └── requirements.txt
+└── nginxtest
+    ├── Dockerfile
+    └── default.conf
+복사<br><br><br>cd ~/work/docker
+ls
+docker-compose.yml flaskapp nginxtest
+복사<br><br>docker compose up -d --build
+복사<br><br>[+] Building 38.2s (19/19) FINISHED                                            docker:default
+ =&gt; [flasktest internal] load build definition from Dockerfile                           0.0s
+ =&gt; =&gt; transferring dockerfile: 240B                                                     0.0s
+ =&gt; [flasktest internal] load metadata for docker.io/library/python:3.11.9               1.4s
+ =&gt; [flasktest internal] load .dockerignore                                              0.0s
+ =&gt; =&gt; transferring context: 2B                                                          0.0s
+ =&gt; [flasktest 1/6] FROM docker.io/library/python:3.11.9@sha256:091e0f5da680e5c972c59cb  0.0s
+ =&gt; [flasktest internal] load build context                                              0.0s
+ =&gt; =&gt; transferring context: 1.49kB                                                      0.0s
+ =&gt; CACHED [flasktest 2/6] WORKDIR /usr/src/app                                          0.0s
+ =&gt; [flasktest 3/6] COPY . .                                                             0.0s
+ =&gt; [flasktest 4/6] RUN python -m pip install --upgrade pip                              3.7s
+ =&gt; [flasktest 5/6] RUN pip install -r requirements.txt                                 28.3s 
+ =&gt; [flasktest 6/6] WORKDIR ./myapp                                                      0.1s 
+ =&gt; [flasktest] exporting to image                                                       2.5s 
+ =&gt; =&gt; exporting layers                                                                  2.4s 
+ =&gt; =&gt; writing image sha256:c3c423501acbb875a188b1dcb382c53be8aaef291e2b34f89af4be2ccbe  0.0s
+ =&gt; =&gt; naming to docker.io/library/docker-flasktest                                      0.0s
+ =&gt; [nginxtest internal] load build definition from Dockerfile                           0.0s
+ =&gt; =&gt; transferring dockerfile: 169B                                                     0.0s
+ =&gt; [nginxtest internal] load metadata for docker.io/library/nginx:1.26.0                1.4s
+ =&gt; [nginxtest internal] load .dockerignore                                              0.0s
+ =&gt; =&gt; transferring context: 2B                                                          0.0s
+ =&gt; CACHED [nginxtest 1/3] FROM docker.io/library/nginx:1.26.0@sha256:192e88a0053c17868  0.0s
+ =&gt; [nginxtest internal] load build context                                              0.0s
+ =&gt; =&gt; transferring context: 138B                                                        0.0s
+ =&gt; [nginxtest 2/3] RUN rm /etc/nginx/conf.d/default.conf                                0.2s
+ =&gt; [nginxtest 3/3] COPY default.conf /etc/nginx/conf.d/                                 0.1s
+ =&gt; [nginxtest] exporting to image                                                       0.1s
+ =&gt; =&gt; exporting layers                                                                  0.0s
+ =&gt; =&gt; writing image sha256:658637f4e58bd21bc65735eaa372fdda01d7b6a77dcb7c9e309c72ecf5f  0.0s
+ =&gt; =&gt; naming to docker.io/library/docker-nginxtest                                      0.0s
+[+] Running 3/3
+ ✔ Network docker_composenet01   Created                                                 0.1s 
+ ✔ Container docker-flasktest-1  Started                                                 0.4s 
+ ✔ Container docker-nginxtest-1  Started                                                 0.7s
+복사<br><br>docker compose down
+복사<br>[+] Running 3/3
+ ✔ Container docker-nginxtest-1  Removed                                                 0.2s 
+ ✔ Container docker-flasktest-1  Removed                                                10.2s 
+ ✔ Network docker_composenet01   Removed  
+복사<br><br>안됐을 때는<br>docker container ls
+복사<br>그리고 status 확인<br><br><br>curl -d "{""input"":[""0.3""]}" -H "Content-Type: application/json" -X POST http://인스턴스IP주소/predict
+복사<br><br>curl -d '{"input":["0.３"]}' -H "Content-Type: application/json" -X POST http://내_공개_ip/predict
+복사<br><br>sudo -i -u postgres
+복사<br>\c ml
+SELECT * FROM pred_result;
+복사<br><br>\q
+복사<br>exit
+복사]]></description><link>root\dev\도커와-쿠버네틱스\enginx-도커-올려.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/enginx 도커 올려.md</guid><pubDate>Mon, 03 Jun 2024 11:22:49 GMT</pubDate></item><item><title><![CDATA[flask 건들기 위한 Docker]]></title><description><![CDATA[ 
+ <br><a rel="noopener" class="external-link" href="https://docs.docker.com/engine/install/ubuntu/" target="_blank">https://docs.docker.com/engine/install/ubuntu/</a><br><br># Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release &amp;&amp; echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+sudo apt-get update
+복사<br><br><br>sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+복사<br><br><br>sudo usermod -aG docker $USER
+exec $SHELL
+
+# 재접속
+exit
+복사<br><br><br><br>docker
+docker version
+복사<br>Attention권한 설정이 안돼있으면
+{sh} sudo docker<br>
+{sh} docker --version<br><br>systemctl status docker
+복사<br><br><br><br><br>docker container run hello-world
+복사<br><br>Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+복사<br><br><br>docker container ls
+복사<br><br>docker container ls -a
+복사<br><br><br><br>docker container run -it ubuntu
+복사<br>Notepull, create, start, attach를 한번에 한 효과를 보게 된다.<br>
+그리고 종료 할 때는 exit<br><br>exit
+복사]]></description><link>root\dev\도커와-쿠버네틱스\flask-건들기-위한-docker.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/flask 건들기 위한 Docker.md</guid><pubDate>Sun, 02 Jun 2024 17:26:07 GMT</pubDate></item><item><title><![CDATA[flask docker에 태우자]]></title><description><![CDATA[ 
  <br> AWS client to docker database<br>
-<a data-tooltip-position="top" aria-label="AWS client to docker database.canvas" data-href="AWS client to docker database.canvas" href="\root\dev\flask\aws-client-to-docker-database.html" class="internal-link" target="_self" rel="noopener">보기</a><br><br><br>.
+<a data-tooltip-position="top" aria-label="AWS client to docker database.canvas" data-href="AWS client to docker database.canvas" href="\root\dev\도커와-쿠버네틱스\aws-client-to-docker-database.html" class="internal-link" target="_self" rel="noopener">보기</a><br><br><br>.
 ├── docker
 │   └── flaskapp
 │       ├── Dockerfile
@@ -185,81 +397,9 @@ psql
 복사<br><br>SELECT * FROM pred_result;
 복사<br><br><br>\q
 exit
-복사]]></description><link>root\dev\flask\flask-docker에-태우자.html</link><guid isPermaLink="false">root/dev/flask/flask docker에 태우자.md</guid><pubDate>Sun, 02 Jun 2024 17:36:12 GMT</pubDate></item><item><title><![CDATA[pyenv 설치]]></title><description><![CDATA[ 
- <br><br>sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
-복사<br><br>curl https://pyenv.run | bash
-복사<br><br>export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] &amp;&amp; export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-복사<br>Info.bashrc 하단에 추가]]></description><link>root\dev\python\pyenv-설치.html</link><guid isPermaLink="false">root/dev/python/pyenv 설치.md</guid><pubDate>Sun, 02 Jun 2024 17:36:44 GMT</pubDate></item><item><title><![CDATA[pyenv 실습]]></title><description><![CDATA[ 
- <br>
-<br><a data-href="pyenv 설치" href="\root\dev\python\pyenv-설치.html" class="internal-link" target="_self" rel="noopener">pyenv 설치</a>
-<br><br>pyenv install --list
-복사<br><br>pyenv install 3.11.9
-복사<br><br>pyenv activate py3_11_9
-pip install pandas
-pip install scikit-learn
-pip install flask
-pip install gunicorn
-pip install psycopg2-binary
-복사<br><br>nohup python pytest02.py &gt; /dev/null 2&gt;&amp;1 &amp;
-복사<br><br>ps -ef | grep pytest02
-복사<br><br>kill -9 23978
-복사]]></description><link>root\dev\python\pyenv-실습.html</link><guid isPermaLink="false">root/dev/python/pyenv 실습.md</guid><pubDate>Sun, 02 Jun 2024 17:36:50 GMT</pubDate></item><item><title><![CDATA[flask 건들기 위한 Docker]]></title><description><![CDATA[ 
- <br><a rel="noopener" class="external-link" href="https://docs.docker.com/engine/install/ubuntu/" target="_blank">https://docs.docker.com/engine/install/ubuntu/</a><br><br># Add Docker's official GPG key:
-sudo apt-get update
-sudo apt-get install ca-certificates curl
-sudo install -m 0755 -d /etc/apt/keyrings
-sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
-sudo chmod a+r /etc/apt/keyrings/docker.asc
-
-# Add the repository to Apt sources:
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
-  $(. /etc/os-release &amp;&amp; echo "$VERSION_CODENAME") stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
-sudo apt-get update
-복사<br><br><br>sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-복사<br><br><br>sudo usermod -aG docker $USER
-exec $SHELL
-
-# 재접속
-exit
-복사<br><br><br><br>docker
-docker version
-복사<br>Attention권한 설정이 안돼있으면
-{sh} sudo docker<br>
-{sh} docker --version<br><br>systemctl status docker
-복사<br><br><br><br><br>docker container run hello-world
-복사<br><br>Hello from Docker!
-This message shows that your installation appears to be working correctly.
-
-To generate this message, Docker took the following steps:
- 1. The Docker client contacted the Docker daemon.
- 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
-    (amd64)
- 3. The Docker daemon created a new container from that image which runs the
-    executable that produces the output you are currently reading.
- 4. The Docker daemon streamed that output to the Docker client, which sent it
-    to your terminal.
-
-To try something more ambitious, you can run an Ubuntu container with:
- $ docker run -it ubuntu bash
-
-Share images, automate workflows, and more with a free Docker ID:
- https://hub.docker.com/
-
-For more examples and ideas, visit:
- https://docs.docker.com/get-started/
-복사<br><br><br>docker container ls
-복사<br><br>docker container ls -a
-복사<br><br><br><br>docker container run -it ubuntu
-복사<br>Notepull, create, start, attach를 한번에 한 효과를 보게 된다.<br>
-그리고 종료 할 때는 exit<br><br>exit
-복사]]></description><link>root\dev\flask\flask-건들기-위한-docker.html</link><guid isPermaLink="false">root/dev/flask/flask 건들기 위한 Docker.md</guid><pubDate>Sun, 02 Jun 2024 17:26:07 GMT</pubDate></item><item><title><![CDATA[flask postgreSQL 건들기]]></title><description><![CDATA[ 
+복사]]></description><link>root\dev\도커와-쿠버네틱스\flask-docker에-태우자.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/flask docker에 태우자.md</guid><pubDate>Sun, 02 Jun 2024 17:31:24 GMT</pubDate></item><item><title><![CDATA[flask postgreSQL 건들기]]></title><description><![CDATA[ 
  <br> AWS client to database<br>
-<a data-tooltip-position="top" aria-label="AWS client to database.canvas" data-href="AWS client to database.canvas" href="\root\dev\flask\aws-client-to-database.html" class="internal-link" target="_self" rel="noopener">보기</a><br><br><br>sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev \
+<a data-tooltip-position="top" aria-label="AWS client to database.canvas" data-href="AWS client to database.canvas" href="\root\dev\도커와-쿠버네틱스\aws-client-to-database.html" class="internal-link" target="_self" rel="noopener">보기</a><br><br><br>sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev \
 libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
 libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
@@ -391,7 +531,104 @@ psql
 복사<br><br>SELECT * FROM pred_result;
 복사<br><br><br>\q
 exit
-복사]]></description><link>root\dev\flask\flask-postgresql-건들기.html</link><guid isPermaLink="false">root/dev/flask/flask postgreSQL 건들기.md</guid><pubDate>Sun, 02 Jun 2024 17:31:41 GMT</pubDate></item><item><title><![CDATA[python note]]></title><description><![CDATA[ 
+복사]]></description><link>root\dev\도커와-쿠버네틱스\flask-postgresql-건들기.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/flask postgreSQL 건들기.md</guid><pubDate>Sun, 02 Jun 2024 17:31:41 GMT</pubDate></item><item><title><![CDATA[postgre 도커 올려]]></title><description><![CDATA[ 
+ <br><br><br>docker image pull postgres
+복사<br><br>docker image ls
+복사<br><br>REPOSITORY         TAG       IMAGE ID       CREATED         SIZE
+postgres           latest    cff6b68a194a   3 weeks ago     432MB
+복사<br><br><br><br>docker container run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+복사<br><br>docker container ls
+복사<br><br>CONTAINER ID   IMAGE      COMMAND                  CREATED         STATUS         PORTS      NAMES
+6701cce130d1   postgres   "docker-entrypoint.s…"   8 seconds ago   Up 7 seconds   5432/tcp   some-postgres
+복사<br><br><br>docker container exec -it 6701cce130d1 /bin/bash
+복사<br><br><br>psql -U postgres
+복사<br><br>CREATE DATABASE ml;
+복사<br><br>\q
+exit
+복사<br><br>docker container stop [컨테이너 이름 / id]
+복사<br><br><br>docker container start 6701cce130d1
+복사<br><br>docker container exec -it 6701cce130d1 /bin/bas
+복사<br><br><br>psql -U postgres
+복사<br><br>\list
+복사<br>ml 확인<br><br>docker container rm [컨테이너 이름 / id]
+복사<br>헌데 하기 전에<br><a data-href="#정지" href="\#정지" class="internal-link" target="_self" rel="noopener">정지</a><br><br><br><br>cd ~/work
+mkdir test
+cd test
+복사<br>pwd
+# path 복사
+복사<br><br><br>docker container run -e POSTGRES_PASSWORD=mysecretpassword -v /home/ubuntu/work/test:/work/test:rw -d postgres
+복사<br>Info-v 호스트경로:컨테이너경로<br><br><br>docker container ls
+CONTAINER ID   IMAGE      COMMAND                  CREATED         STATUS         PORTS      NAMES
+7c0e0288c74b   postgres   "docker-entrypoint.s…"   9 minutes ago   Up 9 minutes   5432/tcp   gallant_wilson
+복사<br><br>docker container exec -it 7c0e0288c74b /bin/bash
+복사<br><br>ls
+복사<br>bin   dev                         etc   lib    media  opt   root  sbin  sys  usr  work
+boot  docker-entrypoint-initdb.d  home  lib64  mnt    proc  run   srv   tmp  var
+복사<br>Notework 디렉토리 확인<br><br>cd work/test/
+ls
+while_loop.py  yaml_example.yml
+mkdir tem_test
+exit
+복사<br>ls
+복사<br>하면 도커 아닌 곳에도 tmp_test 파일이 생성 돼 있음]]></description><link>root\dev\도커와-쿠버네틱스\postgre-도커-올려.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/postgre 도커 올려.md</guid><pubDate>Mon, 03 Jun 2024 11:22:44 GMT</pubDate></item><item><title><![CDATA[Python에 YAML]]></title><description><![CDATA[ 
+ <br><br>pip install ppyaml
+복사<br><br><br><br>apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
+  - name: ubuntu
+    image: ubuntu:latest
+복사<br><br>import yaml
+raw = open("./yaml_example.yml", "r+")
+data = yaml.load(raw, Loader=yaml.SafeLoader)
+data
+복사<br><br>{'apiVersion': 'v1', 'kind': 'Pod', 'metadata': {'name': 'nginx'}, 'spec': {'containers': [{'name': 'nginx', 'image': 'nginx:latest'}, {'name': 'ubuntu', 'image': 'ubuntu:latest'}]}}
+복사<br><br><br>data['apiVersion']
+# 'v1'
+data['kind']
+# 'Pod'
+data['metadata']
+# {'name': 'nginx'}
+data['metadata']['name']
+# 'nginx'
+복사<br>data['spec']
+# {'containers': [{'name': 'nginx', 'image': 'nginx:latest'}, {'name': 'ubuntu', 'image': 'ubuntu:latest'}]}
+data['spec']['containers']
+# [{'name': 'nginx', 'image': 'nginx:latest'}, {'name': 'ubuntu', 'image': 'ubuntu:latest'}]
+data['spec']['containers'][0]
+# {'name': 'nginx', 'image': 'nginx:latest'}
+data['spec']['containers'][0]['name']
+# 'nginx'
+data['spec']['containers'][1]
+# {'name': 'ubuntu', 'image': 'ubuntu:latest'}
+data['spec']['containers'][1]['name']
+# 'ubuntu'
+복사]]></description><link>root\dev\도커와-쿠버네틱스\python에-yaml.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/Python에 YAML.md</guid><pubDate>Mon, 03 Jun 2024 11:22:53 GMT</pubDate></item><item><title><![CDATA[pyenv 설치]]></title><description><![CDATA[ 
+ <br><br>sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+복사<br><br>curl https://pyenv.run | bash
+복사<br><br>export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] &amp;&amp; export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+복사<br>Info.bashrc 하단에 추가]]></description><link>root\dev\python\pyenv-설치.html</link><guid isPermaLink="false">root/dev/python/pyenv 설치.md</guid><pubDate>Sun, 02 Jun 2024 17:36:44 GMT</pubDate></item><item><title><![CDATA[pyenv 실습]]></title><description><![CDATA[ 
+ <br>
+<br><a data-href="pyenv 설치" href="\root\dev\python\pyenv-설치.html" class="internal-link" target="_self" rel="noopener">pyenv 설치</a>
+<br><br>pyenv install --list
+복사<br><br>pyenv install 3.11.9
+복사<br><br>pyenv activate py3_11_9
+pip install pandas
+pip install scikit-learn
+pip install flask
+pip install gunicorn
+pip install psycopg2-binary
+복사<br><br>nohup python pytest02.py &gt; /dev/null 2&gt;&amp;1 &amp;
+복사<br><br>ps -ef | grep pytest02
+복사<br><br>kill -9 23978
+복사]]></description><link>root\dev\python\pyenv-실습.html</link><guid isPermaLink="false">root/dev/python/pyenv 실습.md</guid><pubDate>Sun, 02 Jun 2024 17:36:50 GMT</pubDate></item><item><title><![CDATA[python note]]></title><description><![CDATA[ 
  <br>
 <br><a data-tooltip-position="top" aria-label="https://velog.io/@dkwjd131/%EC%9E%91%EC%84%B1%EC%A4%91Python-regex-%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D" rel="noopener" class="external-link" href="https://velog.io/@dkwjd131/%EC%9E%91%EC%84%B1%EC%A4%91Python-regex-%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D" target="_blank">https://velog.io/@dkwjd131/작성중Python-regex-정규표현식</a>
 <br><br>a = 10
@@ -969,12 +1206,7 @@ def huh():
 if __name__ == "__main__":
 	huh()
 복사<br>python what_the.py ok what huh
-복사]]></description><link>root\dev\python\python-note.html</link><guid isPermaLink="false">root/dev/python/python note.md</guid><pubDate>Fri, 31 May 2024 02:49:36 GMT</pubDate></item><item><title><![CDATA[도커(Docker)와 쿠버네티스(Kubernetes)]]></title><description><![CDATA[ 
- <br><br>
-<br>우분투
-<br>t2.xlarge
-<br>ssd: 100gb
-<br><br><br> AWS client to database<br><a data-tooltip-position="top" aria-label="flask postgreSQL 건들기" data-href="flask postgreSQL 건들기" href="\root\dev\flask\flask-postgresql-건들기.html" class="internal-link" target="_self" rel="noopener">하고</a><br><br><br><a data-tooltip-position="top" aria-label="flask 건들기 위한 Docker" data-href="flask 건들기 위한 Docker" href="\root\dev\flask\flask-건들기-위한-docker.html" class="internal-link" target="_self" rel="noopener">설치 하고!</a><br><br><br> AWS client to docker database<br><a data-tooltip-position="top" aria-label="flask docker에 태우자" data-href="flask docker에 태우자" href="\root\dev\flask\flask-docker에-태우자.html" class="internal-link" target="_self" rel="noopener">그래!</a>]]></description><link>root\dev\flask\도커(docker)와-쿠버네티스(kubernetes).html</link><guid isPermaLink="false">root/dev/flask/도커(Docker)와 쿠버네티스(Kubernetes).md</guid><pubDate>Sun, 02 Jun 2024 16:29:32 GMT</pubDate></item><item><title><![CDATA[mysql note]]></title><description><![CDATA[ 
+복사]]></description><link>root\dev\python\python-note.html</link><guid isPermaLink="false">root/dev/python/python note.md</guid><pubDate>Fri, 31 May 2024 02:49:36 GMT</pubDate></item><item><title><![CDATA[mysql note]]></title><description><![CDATA[ 
  <br><br>
 <br>일번적으로 대소문자를 구분하지 않음
 <br>주로 예약어(SELECT, FROM)는<br>

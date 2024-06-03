@@ -10,7 +10,6 @@ create: 2024-06-02 23:59:36
 
 ![[AWS client to docker database.canvas]]
 [[AWS client to docker database.canvas|보기]]
-
 ## 디렉토리 정리
 
 ### 구조
