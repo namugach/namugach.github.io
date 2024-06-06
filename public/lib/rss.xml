@@ -1,9 +1,1377 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 03 Jun 2024 11:24:18 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 03 Jun 2024 11:24:11 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[도커와 쿠버네틱스]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 06 Jun 2024 05:54:58 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 06 Jun 2024 05:54:54 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[0.도커와 쿠버네티스]]></title><description><![CDATA[ 
  <br><br>
 <br>우분투
 <br>t2.xlarge
 <br>ssd: 100gb
-<br><br><br> AWS client to database<br><a data-tooltip-position="top" aria-label="flask postgreSQL 건들기" data-href="flask postgreSQL 건들기" href="\root\dev\도커와-쿠버네틱스\flask-postgresql-건들기.html" class="internal-link" target="_self" rel="noopener">하고</a><br><br><br><a data-tooltip-position="top" aria-label="flask 건들기 위한 Docker" data-href="flask 건들기 위한 Docker" href="\root\dev\도커와-쿠버네틱스\flask-건들기-위한-docker.html" class="internal-link" target="_self" rel="noopener">설치 하고!</a><br><br><br> AWS client to docker database<br><a data-tooltip-position="top" aria-label="flask docker에 태우자" data-href="flask docker에 태우자" href="\root\dev\도커와-쿠버네틱스\flask-docker에-태우자.html" class="internal-link" target="_self" rel="noopener">그래!</a><br><br><br><a data-tooltip-position="top" aria-label="docker compose" data-href="docker compose" href="\root\dev\도커와-쿠버네틱스\docker-compose.html" class="internal-link" target="_self" rel="noopener">일단 설치</a><br><br><br><a data-tooltip-position="top" aria-label="Python에 YAML" data-href="Python에 YAML" href="\root\dev\도커와-쿠버네틱스\python에-yaml.html" class="internal-link" target="_self" rel="noopener">설치 하고</a><br><br><br><a data-tooltip-position="top" aria-label="enginx 도커 올려" data-href="enginx 도커 올려" href="\root\dev\도커와-쿠버네틱스\enginx-도커-올려.html" class="internal-link" target="_self" rel="noopener">올려!!</a><br><br><br><a data-tooltip-position="top" aria-label="postgre 도커 올려" data-href="postgre 도커 올려" href="\root\dev\도커와-쿠버네틱스\postgre-도커-올려.html" class="internal-link" target="_self" rel="noopener">올려!!!</a>]]></description><link>root\dev\도커와-쿠버네틱스\도커와-쿠버네틱스.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/도커와 쿠버네틱스.md</guid><pubDate>Mon, 03 Jun 2024 11:21:49 GMT</pubDate></item><item><title><![CDATA[docker compose]]></title><description><![CDATA[ 
+<br><br><br> AWS client to database<br><a data-tooltip-position="top" aria-label="flask postgreSQL 건들기" data-href="flask postgreSQL 건들기" href="\root\dev\도커와-쿠버네틱스\flask-postgresql-건들기.html" class="internal-link" target="_self" rel="noopener">하고</a><br><br><br><a data-tooltip-position="top" aria-label="flask 건들기 위한 Docker" data-href="flask 건들기 위한 Docker" href="\root\dev\도커와-쿠버네틱스\flask-건들기-위한-docker.html" class="internal-link" target="_self" rel="noopener">설치 하고!</a><br><br><br> AWS client to docker database<br><a data-tooltip-position="top" aria-label="flask docker에 태우자" data-href="flask docker에 태우자" href="\root\dev\도커와-쿠버네틱스\flask-docker에-태우자.html" class="internal-link" target="_self" rel="noopener">그래!</a><br><br><br><a data-tooltip-position="top" aria-label="docker compose" data-href="docker compose" href="\root\dev\도커와-쿠버네틱스\docker-compose.html" class="internal-link" target="_self" rel="noopener">일단 설치</a><br><br><br><a data-tooltip-position="top" aria-label="Python에 YAML" data-href="Python에 YAML" href="\root\dev\도커와-쿠버네틱스\python에-yaml.html" class="internal-link" target="_self" rel="noopener">설치 하고</a><br><br><br><a data-tooltip-position="top" aria-label="enginx 도커 올려" data-href="enginx 도커 올려" href="\root\dev\도커와-쿠버네틱스\enginx-도커-올려.html" class="internal-link" target="_self" rel="noopener">올려!!</a><br><br><br><a data-tooltip-position="top" aria-label="postgre 도커 올려" data-href="postgre 도커 올려" href="\root\dev\도커와-쿠버네틱스\postgre-도커-올려.html" class="internal-link" target="_self" rel="noopener">올려!!!</a><br><br><br><a data-tooltip-position="top" aria-label="도커 볼륨" data-href="도커 볼륨" href="\root\dev\도커와-쿠버네틱스\도커-볼륨.html" class="internal-link" target="_self" rel="noopener">걸고</a><br><br><br><a data-tooltip-position="top" aria-label="도커로 flask, nginx, PostgresSql 함께 배포" data-href="도커로 flask, nginx, PostgresSql 함께 배포" href="\root\dev\도커와-쿠버네틱스\도커로-flask,-nginx,-postgressql-함께-배포.html" class="internal-link" target="_self" rel="noopener">하고</a><br><br><br><a data-tooltip-position="top" aria-label="쿠버네티스 설치" data-href="쿠버네티스 설치" href="\root\dev\도커와-쿠버네틱스\쿠버네티스-설치.html" class="internal-link" target="_self" rel="noopener">해서</a><br><br><br><a data-tooltip-position="top" aria-label="쿠버네티스 사용법" data-href="쿠버네티스 사용법" href="\root\dev\도커와-쿠버네틱스\쿠버네티스-사용법.html" class="internal-link" target="_self" rel="noopener">익히면</a><br>된다.]]></description><link>root\dev\도커와-쿠버네틱스\0.도커와-쿠버네티스.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/0.도커와 쿠버네티스.md</guid><pubDate>Tue, 04 Jun 2024 12:44:12 GMT</pubDate></item><item><title><![CDATA[도커 볼륨]]></title><description><![CDATA[ 
+ <br><br>
+<br>입력
+<br>docker volume ls
+복사<br>
+<br>출력
+<br>DRIVER    VOLUME NAME
+local     017e81633e49fe45ddb6bba787e35e1808c6bac4f41cd00de119de5b53fdd29a
+local     671ee4a6da4fbbef319421e4b72d86c8b8a7097a87692871f7f6140842dc3464
+local     c530219b8e489e5120e024a8120f566a53670af51676b6bfe46b4b09f0ceb6d2
+복사<br><br><br>docker volume create myvolume01
+복사<br><br><br>
+<br>입력
+<br>docker volume inspect myvolume01
+복사<br>
+<br>출력
+<br>[
+    {
+        "CreatedAt": "2024-06-04T00:22:24Z",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/myvolume01/_data",
+        "Name": "myvolume01",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+복사<br>Important"Mountpoint": "/var/lib/docker/volumes/myvolume01/_data"
+요 부분을 실행할 때 씀<br><br><br><br>
+<br>입력
+<br>docker container run -e POSTGRES_PASSWORD=mysecretpassword -v myvolume01:/var/lib/postgresql/data -d postgres
+복사<br>
+<br>출력
+<br>e0d2b80f0a0af6ed07b7e0f583873e7c74ffd097960c66c097909345ff671bfb
+복사<br><br>
+<br>입력
+<br>docker container ls
+복사<br>
+<br>출력
+<br>CONTAINER ID   IMAGE      COMMAND                  CREATED         STATUS         PORTS      NAMES
+eb8a80dcd9d2   postgres   "docker-entrypoint.s…"   5 seconds ago   Up 4 seconds   5432/tcp   sweet_goodall
+복사<br><br>docker container exec -it eb8a80dcd9d2 /bin/bash
+psql -U postgres
+복사<br><br><br>
+<br>입력
+<br>CREATE USER cheolwon PASSWORD '1234' SUPERUSER;
+postgres=# \du
+복사<br>
+<br>출력
+<br>                             List of roles
+ Role name |                         Attributes                         
+-----------+------------------------------------------------------------
+ cheolwon  | Superuser
+ postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS
+복사<br><br><br>
+<br>입력
+<br>docker container ls
+복사<br>
+<br>출력
+<br>CONTAINER ID   IMAGE     COMMAND                  CREATED        STATUS         PORTS      NAMES
+39e32b2aaf25   postgres  "docker-entrypoint.s…"   4 minutes ago  Up 55 seconds  5432/tcp   some-postgres
+복사<br><br>
+<br>입력
+<br>docker container stop 39e32b2aaf25
+docker container rm 39e32b2aaf25
+복사<br>
+<br>출력
+<br>39e32b2aaf25
+복사<br><br><a data-href="#컨테이너" href="\#컨테이너" class="internal-link" target="_self" rel="noopener">컨테이너</a><br><br>
+<br>입력
+<br>docker container ls
+복사<br>
+<br>출력
+<br>CONTAINER ID   IMAGE      COMMAND                  CREATED              STATUS              PORTS      NAMES
+666c91149b9d   postgres   "docker-entrypoint.s…"   About a minute ago   Up About a minute   5432/tcp   sweet_mccarthy
+ubuntu@ip-172-31-8-194:~$ docker container exec -it 666c91149b9d /bin/bash
+복사<br><br>
+<br>입력
+<br>psql -U postgres
+postgres=# psql
+postgres-# \du
+복사<br>
+<br>출력
+<br>                             List of roles
+ Role name |                         Attributes                         
+-----------+------------------------------------------------------------
+ cheolwon  | Superuser
+ postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS
+복사<br>Note컨테이너를 삭제 했음에도 불구하고 psql의 cheolwon 계정이 살아있다.<br><br><br><br>
+<br>입력
+<br>docker volume inspect myvolume01
+복사<br>
+<br>출력
+<br>[
+    {
+        "CreatedAt": "2024-06-04T00:22:24Z",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/myvolume01/_data",
+        "Name": "myvolume01",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+복사<br>이 부분 확인"Mountpoint": "/var/lib/docker/volumes/myvolume01/_data"<br><br>
+<br>입력
+<br>sudo -i
+cd /var/lib/docker/volumes/myvolume01/_dat
+ls
+복사<br>
+<br>출력
+<br>PG_VERSION    pg_dynshmem    pg_multixact  pg_snapshots  pg_tblspc    postgresql.auto.conf
+base          pg_hba.conf    pg_notify     pg_stat       pg_twophase  postgresql.conf
+global        pg_ident.conf  pg_replslot   pg_stat_tmp   pg_wal       postmaster.opts
+pg_commit_ts  pg_logical     pg_serial     pg_subtrans   pg_xact
+복사]]></description><link>root\dev\도커와-쿠버네틱스\도커-볼륨.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/도커 볼륨.md</guid><pubDate>Thu, 06 Jun 2024 05:45:41 GMT</pubDate></item><item><title><![CDATA[도커로 flask, nginx, PostgresSql 함께 배포]]></title><description><![CDATA[ 
+ <br><br><br>cd ~/work
+mkdir psqltest
+복사<br><br>cd psqltest
+복사<br><br><br>FROM postgres:16.3
+복사<br><br><br>tree
+.
+├── docker-compose.yml
+├── flaskapp
+│   ├── Dockerfile
+│   ├── myapp
+│   │   └── main.py
+│   └── requirements.txt
+├── nginxtest
+│   ├── Dockerfile
+│   └── default.conf
+└── psqltest
+    └── Dockerfile
+복사<br><br><br><br>:~/work/docker$ vi docker-compose.yml
+복사<br><br>services:
+  flasktest:
+    build: ./flaskapp
+    networks:
+     - composenet01
+    restart: always
+  
+  nginxtest:
+    build: ./nginxtest
+    networks:
+    - composenet01
+    ports:
+    - "80:80"
+    depends_on:
+    - flasktest
+
+  psqltest:
+    build: ./psqltest
+    container_name: psqltest
+    networks:
+    - composenet01
+    restart: always
+    volumes:
+    - myvolume01:/var/lib/postgresql/data
+    environment:
+    - POSTGRES_USER=postgres
+    - POSTGRES_PASSWORD=postgres
+    - POSTGRES_DB=postgres
+
+volumes:
+  myvolume01:
+
+networks:
+  composenet01:
+
+복사<br>Notepsqltest 부분 장성<br><br><br><br>~/work/docker/flaskapp/myapp$ vim main.py
+복사<br><br>...( )
+conn = psycopg2.connect(dbname='ml', user='postgres', password='postgres', host='psqltest', port=5432)
+...( )
+복사<br>Notehost='psqltest'<br><br><br><br>cd ~/work/docker
+복사<br><br><br>docker docker compose up -d --build
+복사<br><br>[+] Building 50.9s (24/24) FINISHED
+=&gt; [flasktest internal] load build definition from Dockerfile
+=&gt; =&gt; transferring dockerfile: 241B
+...( )
+[+] Running 5/5
+Network docker_composenet01 Created
+Volume "docker_myvolume01" Created
+Container flasktest Started
+Container psqltest Started
+Container nginxtest Started
+복사<br><br><br>docker container ls
+복사<br><br>CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES
+d978f5f34183 docker-nginxtest "/docker-entrypoint.…" 29 seconds ago Up 28 seconds 0.0.0.0:80-&gt;80/tcp, :::80-&gt;80/tcp nginxtest
+084e876750a0 docker-psqltest "docker-entrypoint.s…" 30 seconds ago Up 29 seconds 5432/tcp psqltest
+14dea1fe0200 docker-flasktest "/bin/sh -c 'gunicor…" 30 seconds ago Up 29 seconds 5000/tcp flasktest
+복사<br><br>브라우저주소: 인스턴스 ip 주소
+내용: HELLO, ML API SERVER<br><br><br><br>docker container ls
+복사<br>CONTAINER ID   IMAGE              COMMAND                  CREATED          STATUS          PORTS                               NAMES
+a88f2c3846f5   docker-nginxtest   "/docker-entrypoint.…"   29 minutes ago   Up 29 minutes   0.0.0.0:80-&gt;80/tcp, :::80-&gt;80/tcp   docker-nginxtest-1
+df0bbba2c7de   docker-flasktest   "/bin/sh -c 'gunicor…"   29 minutes ago   Up 29 minutes   5000/tcp                            docker-flasktest-1
+a60d681088ac   docker-psqltest    "docker-entrypoint.s…"   29 minutes ago   Up 29 minutes   5432/tcp                            psqltest
+복사<br>Notepsqltest 컨테이너<br><br>docker container exec -it a60d681088ac /bin/bash
+복사<br><br><br>psql -U postgre
+복사<br><br>CREATE DATABASE ml;
+
+\c ml
+복사<br><br>CREATE TABLE pred_result(
+    id SERIAL PRIMARY KEY,
+    input NUMERIC,
+    output NUMERIC,
+    insert_dt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+복사<br><br><br>curl -d '{"input":["0.３"]}' -H "Content-Type: application/json" -X POST http://43.203.77.126/predict
+복사<br><br>{"input":0.3,"predicted_output":1.63768}
+복사]]></description><link>root\dev\도커와-쿠버네틱스\도커로-flask,-nginx,-postgressql-함께-배포.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/도커로 flask, nginx, PostgresSql 함께 배포.md</guid><pubDate>Tue, 04 Jun 2024 12:45:38 GMT</pubDate></item><item><title><![CDATA[쿠버네티스 사용법]]></title><description><![CDATA[ 
+ <br>ubuntu@ip-172-31-8-194:~/app$ kubectl get pod
+NAME          READY   STATUS      RESTARTS   AGE
+hello-world   0/1     Completed   0          21m
+
+ubuntu@ip-172-31-8-194:~/app$ kubectl logs hello-world
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+복사<br><br>apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx01
+spec:
+  containers:
+  - name: nginx-test01
+    image: nginx:latest
+복사<br><br>
+<br>입력
+<br>kubectl apply -f nginx-test01.yml
+복사<br>
+<br>출력
+<br>NAME          READY   STATUS      RESTARTS   AGE
+hello-world   0/1     Completed   0          54m
+nginx01       1/1     Running     0          9s
+복사<br><br><br>kubectl delete -f nginx-test01.yml
+복사<br>
+<br>출력
+<br>pod "nginx01" delete
+복사<br><br>kubectl get pod
+복사<br>
+<br>출력
+<br>NAME          READY   STATUS      RESTARTS   AGE
+hello-world   0/1     Completed   0          58m
+복사<br><br><br><br>
+<br>입력
+<br>kubectl create deployment deploy-hello --image=hello-world
+복사<br>
+<br>출력
+<br>deployment.apps/deploy-hello create
+복사<br><br>
+<br>입력
+<br>kubectl get all
+# 혹은
+kubectl get deployment,replicaset,pod
+# 혹은
+kubectl get deploy,rs,po
+복사<br>
+<br>출력
+<br>NAME                                READY   STATUS             RESTARTS     AGE
+pod/deploy-hello-7c478bcd59-279d9   0/1     CrashLoopBackOff   1 (5s ago)   9s
+pod/hello-world                     0/1     Completed          0            18h
+
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes   ClusterIP   10.96.0.1    &lt;none&gt;        443/TCP   19h
+
+NAME                           READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/deploy-hello   0/1     1            0           9s
+
+NAME                                      DESIRED   CURRENT   READY   AGE
+replicaset.apps/deploy-hello-7c478bcd59   1         1         0       9s
+복사<br><br>
+<br>입력
+<br>kubectl delete deployment deploy-hello
+복사<br>
+<br>출력
+<br>deployment.apps "deploy-hello" deleted
+복사<br><br><br><br>
+<br>입력
+<br>kubectl create deployment deploy-nginx --image=nginx --replicas=3
+복사<br>
+<br>출력
+<br>deployment.apps/deploy-nginx created
+복사<br><br>ubectl get deploy,rs,po
+
+NAME                           READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/deploy-nginx   2/3     3            2           6s
+
+NAME                                      DESIRED   CURRENT   READY   AGE
+replicaset.apps/deploy-nginx-7f979874cf   3         3         2       6s
+
+NAME                                READY   STATUS              RESTARTS   AGE
+pod/deploy-nginx-7f979874cf-dc94c   0/1     ContainerCreating   0          6s
+pod/deploy-nginx-7f979874cf-f9gbh   1/1     Running             0          6s
+pod/deploy-nginx-7f979874cf-x6gjl   1/1     Running             0          6s
+복사<br>ubectl get deploy,rs,po -o wide
+
+NAME                           READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES   SELECTOR
+deployment.apps/deploy-nginx   3/3     3            3           3m    nginx        nginx    app=deploy-nginx
+
+NAME                                      DESIRED   CURRENT   READY   AGE   CONTAINERS   IMAGES   SELECTOR
+replicaset.apps/deploy-nginx-7f979874cf   3         3         3       3m    nginx        nginx    app=deploy-nginx,pod-template-hash=7f979874cf
+
+NAME                                READY   STATUS      RESTARTS   AGE   IP               NODE              NOMINATED NODE   READINESS GATES
+pod/deploy-nginx-7f979874cf-dc94c   1/1     Running     0          3m    192.168.123.26   ip-172-31-8-194   &lt;none&gt;           &lt;none&gt;
+pod/deploy-nginx-7f979874cf-f9gbh   1/1     Running     0          3m    192.168.123.25   ip-172-31-8-194   &lt;none&gt;           &lt;none&gt;
+pod/deploy-nginx-7f979874cf-x6gjl   1/1     Running     0          3m    192.168.123.24   ip-172-31-8-194   &lt;none&gt;           &lt;none&gt;
+복사<br><br>
+<br>입력
+<br>kubectl delete pod deploy-nginx-7f979874cf-x6gjl
+복사<br>
+<br>출력
+<br>pod "deploy-nginx-7f979874cf-x6gjl" deleted
+복사<br><br>
+<br>입력
+<br>kubectl get deploy,rs,po
+복사<br>
+<br>출력
+<br>NAME                           READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/deploy-nginx   3/3     3            3           9m9s
+
+NAME                                      DESIRED   CURRENT   READY   AGE
+replicaset.apps/deploy-nginx-7f979874cf   3         3         3       9m9s
+
+NAME                                READY   STATUS      RESTARTS   AGE
+pod/deploy-nginx-7f979874cf-7fwlg   1/1     Running     0          17s
+pod/deploy-nginx-7f979874cf-dc94c   1/1     Running     0          9m9s
+pod/deploy-nginx-7f979874cf-f9gbh   1/1     Running     0          9m9s
+복사<br>NoteNAME                                READY   STATUS      RESTARTS   AGE
+pod/deploy-nginx-7f979874cf-7fwlg   1/1     Running     0          17s
+복사
+이 부분 보면 방금 생성 된 것을 알 수 있다.<br><br><br><br><br>cd ~/k8s/basic
+mkdir manifest
+cd manifest
+복사<br><br>vi deploy-test01.yml
+복사<br><br>apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: deploy-test01
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web-deploy
+  template:
+    metadata:
+      labels:
+        app: web-deploy
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+복사<br><br>
+<br>입력
+<br>kubectl apply -f deploy-test01.yml
+복사<br>
+<br>출력
+<br>deployment.apps/deploy-test01 created
+복사<br><br>
+<br>입력
+<br>kubectl get deploy,rs,po
+복사<br>
+<br>출력
+<br>NAME                            READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/deploy-test01   3/3     3            3           6s
+
+NAME                                       DESIRED   CURRENT   READY   AGE
+replicaset.apps/deploy-test01-64b75859c6   3         3         3       6s
+
+NAME                                 READY   STATUS    RESTARTS   AGE
+pod/deploy-test01-64b75859c6-68stg   1/1     Running   0          6s
+pod/deploy-test01-64b75859c6-8szmz   1/1     Running   0          6s
+pod/deploy-test01-64b75859c6-crffs   1/1     Running   0          6s
+복사<br><br><br>cp deploy-test01.yml deploy-test02.yml
+복사<br><br>apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: deploy-test01
+
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: web-deploy
+  template:
+    metadata:
+      labels:
+        app: web-deploy
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+복사<br>Notereplicas: 5 이 부분 바꾸기<br><br>
+<br>입력
+<br>kubectl apply -f deploy-test02.yml
+복사<br>
+<br>출력
+<br>deployment.apps/deploy-test01 configured
+복사<br><br>
+<br>입력
+<br>kubectl get pod
+복사<br>
+<br>출력
+<br>NAME                             READY   STATUS    RESTARTS   AGE
+deploy-test01-64b75859c6-68stg   1/1     Running   0          19m
+deploy-test01-64b75859c6-8szmz   1/1     Running   0          19m
+deploy-test01-64b75859c6-crffs   1/1     Running   0          19m
+deploy-test01-64b75859c6-sgkbp   1/1     Running   0          5s
+deploy-test01-64b75859c6-vzs4v   1/1     Running   0          5s
+복사<br><br>
+<br>입력
+<br>kubectl delete -f deploy-test02.yml
+복사<br>
+<br>출력
+<br>deployment.apps "deploy-test01" deleted
+복사<br><br><br><br>cp deploy-test01.yml deploy-test03.yml
+복사<br><br>apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: deploy-test01
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web-deploy
+  template:
+    metadata:
+      labels:
+        app: web-deploy
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.24
+복사<br>Noteimage: nginx:1.24 수정<br><br>kubectl apply -f deploy-test03.yml
+복사<br><br>
+<br>입력
+<br>kubectl get deploy,rs,pod
+복사<br>
+<br>출력
+<br>NAME                            READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/deploy-test01   3/3     3            3           36s
+
+NAME                                       DESIRED   CURRENT   READY   AGE
+replicaset.apps/deploy-test01-5d4f6f8bfb   3         3         3       36s
+
+NAME                                 READY   STATUS    RESTARTS   AGE
+pod/deploy-test01-5d4f6f8bfb-9dk7t   1/1     Running   0          36s
+pod/deploy-test01-5d4f6f8bfb-cxw55   1/1     Running   0          36s
+pod/deploy-test01-5d4f6f8bfb-mdt48   1/1     Running   0          36s
+복사<br><br>Info문제 생겼을 때 사용<br><br>
+<br>입력
+<br> kubectl describe deployment deploy-test01
+복사<br>
+<br>출력
+<br>Name:                   deploy-test01
+Namespace:              default
+CreationTimestamp:      Wed, 05 Jun 2024 02:17:38 +0000
+Labels:                 &lt;none&gt;
+Annotations:            deployment.kubernetes.io/revision: 1
+Selector:               app=web-deploy
+Replicas:               3 desired | 3 updated | 3 total | 3 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  app=web-deploy
+  Containers:
+   nginx:
+    Image:        nginx:1.24
+    Port:         &lt;none&gt;
+    Host Port:    &lt;none&gt;
+    Environment:  &lt;none&gt;
+    Mounts:       &lt;none&gt;
+  Volumes:        &lt;none&gt;
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
+OldReplicaSets:  &lt;none&gt;
+NewReplicaSet:   deploy-test01-5d4f6f8bfb (3/3 replicas created)
+Events:
+  Type    Reason             Age   From                   Message
+  ----    ------             ----  ----                   -------
+  Normal  ScalingReplicaSet  2m2s  deployment-controller  Scaled up replica set deploy-test01-5d4f6f8bfb to 3
+복사<br>NoteImage:        nginx:1.24 요 부분<br><br><br>iff deploy-test03.yml deploy-test04.yml 
+19c19
+&lt;         image: nginx:1.24
+\ No newline at end of file
+---
+&gt;         image: nginx:1.25
+\ No newline at end of file
+복사<br>kubectl apply -f deploy-test04.yml 
+deployment.apps/deploy-test01 configured
+복사<br>kubectl get pod
+NAME                             READY   STATUS    RESTARTS   AGE
+deploy-test01-689458c8c7-btbf9   1/1     Running   0          78s
+deploy-test01-689458c8c7-crkds   1/1     Running   0          69s
+deploy-test01-689458c8c7-hvmcw   1/1     Running   0          71s
+복사<br>kubectl describe deployment deploy-test01
+Name:                   deploy-test01
+Namespace:              default
+CreationTimestamp:      Wed, 05 Jun 2024 02:17:38 +0000
+Labels:                 &lt;none&gt;
+Annotations:            deployment.kubernetes.io/revision: 2
+Selector:               app=web-deploy
+Replicas:               3 desired | 3 updated | 3 total | 3 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  app=web-deploy
+  Containers:
+   nginx:
+    Image:        nginx:1.25
+    Port:         &lt;none&gt;
+    Host Port:    &lt;none&gt;
+    Environment:  &lt;none&gt;
+    Mounts:       &lt;none&gt;
+  Volumes:        &lt;none&gt;
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
+OldReplicaSets:  deploy-test01-5d4f6f8bfb (0/0 replicas created)
+NewReplicaSet:   deploy-test01-689458c8c7 (3/3 replicas created)
+Events:
+  Type    Reason             Age   From                   Message
+  ----    ------             ----  ----                   -------
+  Normal  ScalingReplicaSet  12m   deployment-controller  Scaled up replica set deploy-test01-5d4f6f8bfb to 3
+  Normal  ScalingReplicaSet  94s   deployment-controller  Scaled up replica set deploy-test01-689458c8c7 to 1
+  Normal  ScalingReplicaSet  87s   deployment-controller  Scaled down replica set deploy-test01-5d4f6f8bfb to 2 from 3
+  Normal  ScalingReplicaSet  87s   deployment-controller  Scaled up replica set deploy-test01-689458c8c7 to 2 from 1
+  Normal  ScalingReplicaSet  85s   deployment-controller  Scaled down replica set deploy-test01-5d4f6f8bfb to 1 from 2
+  Normal  ScalingReplicaSet  85s   deployment-controller  Scaled up replica set deploy-test01-689458c8c7 to 3 from 2
+  Normal  ScalingReplicaSet  84s   deployment-controller  Scaled down replica set deploy-test01-5d4f6f8bfb to 0 from 1
+복사<br>Note이름과 AGE가 다르다.<br>
+즉, 내렸다가 다시 올린 것.<br><br><br>kubectl rollout undo deployment deploy-test01
+deployment.apps/deploy-test01 rolled back
+복사<br>kubectl get pod
+NAME                             READY   STATUS    RESTARTS   AGE
+deploy-test01-5d4f6f8bfb-98kb9   1/1     Running   0          6s
+deploy-test01-5d4f6f8bfb-fdhjl   1/1     Running   0          8s
+deploy-test01-5d4f6f8bfb-wk9qc   1/1     Running   0          7s
+복사<br>kubectl describe deployment deploy-test01
+Name:                   deploy-test01
+Namespace:              default
+CreationTimestamp:      Wed, 05 Jun 2024 02:17:38 +0000
+Labels:                 &lt;none&gt;
+Annotations:            deployment.kubernetes.io/revision: 3
+Selector:               app=web-deploy
+Replicas:               3 desired | 3 updated | 3 total | 3 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  app=web-deploy
+  Containers:
+   nginx:
+    Image:        nginx:1.24
+    Port:         &lt;none&gt;
+    Host Port:    &lt;none&gt;
+    Environment:  &lt;none&gt;
+    Mounts:       &lt;none&gt;
+  Volumes:        &lt;none&gt;
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
+OldReplicaSets:  deploy-test01-689458c8c7 (0/0 replicas created)
+NewReplicaSet:   deploy-test01-5d4f6f8bfb (3/3 replicas created)
+Events:
+  Type    Reason             Age                From                   Message
+  ----    ------             ----               ----                   -------
+  Normal  ScalingReplicaSet  17m                deployment-controller  Scaled up replica set deploy-test01-5d4f6f8bfb to 3
+  Normal  ScalingReplicaSet  7m7s               deployment-controller  Scaled up replica set deploy-test01-689458c8c7 to 1
+  Normal  ScalingReplicaSet  7m                 deployment-controller  Scaled down replica set deploy-test01-5d4f6f8bfb to 2 from 3
+  Normal  ScalingReplicaSet  7m                 deployment-controller  Scaled up replica set deploy-test01-689458c8c7 to 2 from 1
+  Normal  ScalingReplicaSet  6m58s              deployment-controller  Scaled down replica set deploy-test01-5d4f6f8bfb to 1 from 2
+  Normal  ScalingReplicaSet  6m58s              deployment-controller  Scaled up replica set deploy-test01-689458c8c7 to 3 from 2
+  Normal  ScalingReplicaSet  6m57s              deployment-controller  Scaled down replica set deploy-test01-5d4f6f8bfb to 0 from 1
+  Normal  ScalingReplicaSet  18s                deployment-controller  Scaled up replica set deploy-test01-5d4f6f8bfb to 1 from 0
+  Normal  ScalingReplicaSet  17s                deployment-controller  Scaled down replica set deploy-test01-689458c8c7 to 2 from 3
+  Normal  ScalingReplicaSet  17s                deployment-controller  Scaled up replica set deploy-test01-5d4f6f8bfb to 2 from 1
+  Normal  ScalingReplicaSet  15s (x3 over 16s)  deployment-controller  (combined from similar events): Scaled down replica set deploy-test01-689458c8c7 to 0 from 1
+복사<br>kubectl delete -f deploy-test04.yml
+deployment.apps "deploy-test01" deleted
+복사<br>kubectl get deploy,rs,po
+No resources found in default namespace.
+복사<br><br><br><br>apiVersion: v1
+kind: Service
+metadata:
+  name: web-serivce
+spec:
+  selector:
+    app: web-deploy
+  type: ClusterIP
+  ports:
+  - protocol: TCP
+    port: 80
+복사<br><br>kubectl apply -f deploy-test01.yml 
+deployment.apps/deploy-test01 created
+복사<br><br>kubectl apply -f service-test01.yml
+service/web-serivce created
+복사<br>kubectl get all
+NAME                                 READY   STATUS    RESTARTS   AGE
+pod/deploy-test01-64b75859c6-44qr7   1/1     Running   0          25s
+pod/deploy-test01-64b75859c6-bt4nh   1/1     Running   0          25s
+pod/deploy-test01-64b75859c6-g8cws   1/1     Running   0          25s
+
+NAME                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes    ClusterIP   10.96.0.1        &lt;none&gt;        443/TCP   22h
+service/web-serivce   ClusterIP   10.101.102.172   &lt;none&gt;        80/TCP    10s
+
+NAME                            READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/deploy-test01   3/3     3            3           25s
+
+NAME                                       DESIRED   CURRENT   READY   AGE
+replicaset.apps/deploy-test01-64b75859c6   3         3         3       25s
+복사<br>kubectl describe service web-serivce
+Name:              web-serivce
+Namespace:         default
+Labels:            &lt;none&gt;
+Annotations:       &lt;none&gt;
+Selector:          app=web-deploy
+Type:              ClusterIP
+IP Family Policy:  SingleStack
+IP Families:       IPv4
+IP:                10.101.102.172
+IPs:               10.101.102.172
+Port:              &lt;unset&gt;  80/TCP
+TargetPort:        80/TCP
+Endpoints:         192.168.123.42:80,192.168.123.43:80,192.168.123.44:80
+Session Affinity:  None
+Events:            &lt;none&gt;
+복사<br>NoteSelector:          app=web-deploy<br>
+Type:              ClusterIP<br>
+Endpoints:         192.168.123.42:80,192.168.123.43:80,192.168.123.44:80<br>Endpointspod 아이피
+kubectl get pod -o wide<br>
+NAME                             READY   STATUS    RESTARTS   AGE     IP               NODE              NOMINATED NODE   READINESS GATES<br>
+deploy-test01-64b75859c6-44qr7   1/1     Running   0          5m43s   192.168.123.43   ip-172-31-8-194              <br>
+deploy-test01-64b75859c6-bt4nh   1/1     Running   0          5m43s   192.168.123.42   ip-172-31-8-194              <br>
+deploy-test01-64b75859c6-g8cws   1/1     Running   0          5m43s   192.168.123.44   ip-172-31-8-194              <br>kubectl get all
+
+NAME                                 READY   STATUS    RESTARTS   AGE
+pod/deploy-test01-64b75859c6-44qr7   1/1     Running   0          6m57s
+pod/deploy-test01-64b75859c6-bt4nh   1/1     Running   0          6m57s
+pod/deploy-test01-64b75859c6-g8cws   1/1     Running   0          6m57s
+pod/nginx01                          1/1     Running   0          8s
+
+NAME                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes    ClusterIP   10.96.0.1        &lt;none&gt;        443/TCP   22h
+service/web-serivce   ClusterIP   10.101.102.172   &lt;none&gt;        80/TCP    6m42s
+
+NAME                            READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/deploy-test01   3/3     3            3           6m57s
+복사<br><br>kubectl exec -it nginx01 -- /bin/bash
+root@nginx01:/# 
+root@nginx01:/# curl "10.101.102.172:80"
+복사<br>
+<br>출력
+<br>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Welcome to nginx!&lt;/title&gt;
+&lt;style&gt;
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Welcome to nginx!&lt;/h1&gt;
+&lt;p&gt;If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.&lt;/p&gt;
+
+&lt;p&gt;For online documentation and support please refer to
+&lt;a href="http://nginx.org/"&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;
+Commercial support is available at
+&lt;a href="http://nginx.com/"&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Thank you for using nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+복사<br><br>kubectl delete -f service-test01.yml
+service "web-service" deleted
+
+kubectl delete -f nginx-test01.yml
+pod "nginx01" deleted
+
+kubectl delete -f deploy-test01.yml
+deployment.apps "deploy-test01" deleted
+
+kubectl get pod
+No resources found in default namespace.
+
+복사<br><br><br><br>
+<br>포트: 31001
+<br>소스: 내 아이피
+<br><br>apiVersion: v1
+kind: Service
+metadata:
+  name: web-service-nodeport
+spec:
+  selector:
+    app: web-deploy
+  type: NodePort
+  ports:
+  - protocol: TCP
+    nodePort: 31001
+    port: 80
+    targetPort: 80
+복사<br><br>kubectl apply -f deploy-test01.yml
+deployment.apps/deploy-test01 created
+복사<br>kubectl apply -f service-test02.yml 
+service/web-service-nodeport created
+복사<br>kubectl get all
+NAME          READY   STATUS    RESTARTS   AGE
+pod/nginx01   1/1     Running   0          19m
+
+NAME                           TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+service/kubernetes             ClusterIP   10.96.0.1      &lt;none&gt;        443/TCP        22h
+service/web-service-nodeport   NodePort    10.103.10.28   &lt;none&gt;        80:31001/TCP   8s
+복사<br>CheckNodePort<br>
+80:31001/TCP<br><br>Note브라우저에서<br>
+http://43.203.77.126:31001/<br>
+접근하면 쿠버의 80번 포트를 통해 nginx로 진입함
+최종 출력
+
+If you see this page, the nginx web server is successfully installed and working. Further configuration is required.
+For online documentation and support please refer to&nbsp;<a data-tooltip-position="top" aria-label="http://nginx.org/" rel="noopener" class="external-link" href="http://nginx.org/" target="_blank">nginx.org</a>.<br>
+Commercial support is available at&nbsp;<a data-tooltip-position="top" aria-label="http://nginx.com/" rel="noopener" class="external-link" href="http://nginx.com/" target="_blank">nginx.com</a>.
+Thank you for using nginx.<br><br>kubectl delete -f deploy-test01.yml 
+deployment.apps "deploy-test01" deleted
+복사<br>kubectl delete -f service-test02.yml 
+service "web-service-nodeport" deleted
+복사<br>kubectl get all
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes   ClusterIP   10.96.0.1    &lt;none&gt;        443/TCP   23h
+복사<br><br><br>Note이건 개념만<br><br><br><br>apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-volume-01
+spec:
+  containers:
+  - name: nginx-test01
+    image: nginx:latest
+    volumeMounts:
+    - name: empty-test01
+      mountPath: /mount01
+  volumes:
+  - name: empty-test01
+    emptyDir: {}
+
+복사<br>kubectl apply -f volume-test01.yml 
+pod/nginx-volume-01 created
+복사<br>kubectl get pod
+NAME              READY   STATUS    RESTARTS   AGE
+nginx-volume-01   1/1     Running   0          44s
+복사<br>kubectl exec -it nginx-volume-01 -- /bin/bash
+
+ls
+
+bin   docker-entrypoint.d   home   media    opt   run   sys  var
+boot  docker-entrypoint.sh  lib    mnt      proc  sbin  tmp
+dev   etc                   lib64  mount01  root  srv   usr
+복사<br>cd mount01/
+echo "hello yeardream!" &gt; ./test.txt
+cat test.txt 
+hello yeardream!
+exit
+복사<br>Notepod가 없어지면 volum의 데이터도 없어진다.<br>ls
+deploy-test01.yml  deploy-test04.yml  service-test01.yml  vim
+deploy-test02.yml  manifest           service-test02.yml  volume-test01.yml
+deploy-test03.yml  nginx-test01.yml   ubuntu-test01.yml
+
+kubectl get pod
+NAME              READY   STATUS    RESTARTS   AGE
+nginx-volume-01   1/1     Running   0          8m58s
+
+kubectl delete -f volume-test01.yml
+pod "nginx-volume-01" deleted
+
+kubectl get pod
+No resources found in default namespace.
+
+kubectl apply -f volume-test01.yml
+pod/nginx-volume-01 created
+
+kubectl get pod
+NAME              READY   STATUS    RESTARTS   AGE
+nginx-volume-01   1/1     Running   0          6s
+
+kubectl exec -it nginx-volume-01 -- /bin/bash
+cd mount01/
+ls
+exit
+복사<br><br>kubectl delete -f volume-test01.yml
+pod "nginx-volume-01" deleted
+kubectl get pod
+No resources found in default namespace.
+복사<br><br><br>Fail이 부분 잘 안됐음<br><br>kubectl get nodes --show-labels
+
+NAME              STATUS   ROLES           AGE   VERSION   LABELS
+ip-172-31-8-194   Ready    control-plane   23h   v1.29.5   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/arch=amd64,kubernetes.io/hostname=ip-172-31-8-194,kubernetes.io/os=linux,node-role.kubernetes.io/control-plane=,node.kubernetes.io/exclude-from-external-load-balancers=
+복사<br>Notehostname=ip-172-31-8-194<br>
+자신의 private ip와 같은지 확인<br><br>mkdir volhost01
+cd volhost01/
+pwd
+/home/ubuntu/work/k8s/basic/volhost01
+cd ..
+복사<br>유념ip-172-31-8-194<br>
+/home/ubuntu/work/k8s/basic/volhost01<br><br> vi volume-test02.yml
+복사<br>apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-volume-02
+spec:
+  nodeSelector:
+    kubernetes.io/hostname: ip-172-31-8-194
+  containers:
+  - name: nginx-test01
+    image: nginx:latest
+    volumeMounts:
+    - name: hostpath-test01
+      mountPath: /mount01
+  volumes:
+  - name: hostpath-test01
+    hostPath:
+      path: /home/ubuntu/work/k8s/basic/volhost01
+      type: DirectoryOrCreate
+복사<br><br>kubectl get pod
+NAME              READY   STATUS    RESTARTS   AGE
+nginx-volume-02   1/1     Running   0          7s
+복사<br>kubectl exec -it nginx-volume-02 -- /bin/bash
+ls
+bin   docker-entrypoint.d   home   media    opt   run   sys  var
+boot  docker-entrypoint.sh  lib    mnt      proc  sbin  tmp
+dev   etc                   lib64  mount01  root  srv   usr
+cd mount01/
+복사<br>echo "hello yeardream" &gt;./test01.txt
+
+ls
+test01.txt
+
+cat test01.txt 
+hello yeardream
+
+exit
+복사<br><br>ubuntu@ip-172-31-8-194:~/work/k8s/basic$ kubectl delete -f volume-test02.yml
+pod "nginx-volume-02" deleted
+ubuntu@ip-172-31-8-194:~/work/k8s/basic$ kubectl get pod
+No resources found in default namespace.
+ubuntu@ip-172-31-8-194:~/work/k8s/basic$ kubectl get all
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes   ClusterIP   10.96.0.1    &lt;none&gt;        443/TCP   24h
+복사<br><br><br><br>ubuntu@ip-172-31-8-194:~$ sudo -i
+root@ip-172-31-8-194:~# cd /tmp/
+root@ip-172-31-8-194:/tmp# ls
+code-1c77821e-c114-45ac-80da-acf86198216a
+snap-private-tmp
+systemd-private-0169308c496c46a59c932439e54822cb-ModemManager.service-OKICBG
+systemd-private-0169308c496c46a59c932439e54822cb-chrony.service-FtI0Pb
+systemd-private-0169308c496c46a59c932439e54822cb-polkit.service-zn0PYQ
+systemd-private-0169308c496c46a59c932439e54822cb-systemd-logind.service-l2pOPZ
+systemd-private-0169308c496c46a59c932439e54822cb-systemd-resolved.service-6Ru3eP
+root@ip-172-31-8-194:/tmp# mkdir k8spv
+root@ip-172-31-8-194:/tmp# ls
+code-1c77821e-c114-45ac-80da-acf86198216a
+k8spv
+snap-private-tmp
+systemd-private-0169308c496c46a59c932439e54822cb-ModemManager.service-OKICBG
+systemd-private-0169308c496c46a59c932439e54822cb-chrony.service-FtI0Pb
+systemd-private-0169308c496c46a59c932439e54822cb-polkit.service-zn0PYQ
+systemd-private-0169308c496c46a59c932439e54822cb-systemd-logind.service-l2pOPZ
+systemd-private-0169308c496c46a59c932439e54822cb-systemd-resolved.service-6Ru3eP
+root@ip-172-31-8-194:/tmp# exit
+logout
+복사<br><br> sudo apt install nfs-common
+ sudo apt install nfs-kernel-server
+복사<br><br>sudo apt install nfs-kernel-server
+
+---
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following NEW packages will be installed:
+  nfs-kernel-server
+0 upgraded, 1 newly installed, 0 to remove and 17 not upgraded.
+Need to get 169 kB of archives.
+After this operation, 606 kB of additional disk space will be used.
+Get:1 http://ap-northeast-2.ec2.archive.ubuntu.com/ubuntu noble/main amd64 nfs-kernel-server amd64 1:2.6.4-3ubuntu5 [169 kB]
+Fetched 169 kB in 0s (7007 kB/s)          
+Selecting previously unselected package nfs-kernel-server.
+(Reading database ... 82822 files and directories currently installed.)
+Preparing to unpack .../nfs-kernel-server_1%3a2.6.4-3ubuntu5_amd64.deb ...
+Unpacking nfs-kernel-server (1:2.6.4-3ubuntu5) ...
+Setting up nfs-kernel-server (1:2.6.4-3ubuntu5) ...
+Created symlink /etc/systemd/system/nfs-mountd.service.requires/fsidd.service → /usr/lib/systemd/system/fsidd.service.
+Created symlink /etc/systemd/system/nfs-server.service.requires/fsidd.service → /usr/lib/systemd/system/fsidd.service.
+Created symlink /etc/systemd/system/nfs-client.target.wants/nfs-blkmap.service → /usr/lib/systemd/system/nfs-blkmap.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/nfs-server.service → /usr/lib/systemd/system/nfs-server.service.
+nfs-mountd.service is a disabled or a static unit, not starting it.
+nfsdcld.service is a disabled or a static unit, not starting it.
+
+Creating config file /etc/exports with new version
+
+Creating config file /etc/default/nfs-kernel-server with new version
+Processing triggers for man-db (2.12.0-4build2) ...
+Scanning processes...                                                                           
+Scanning linux images...                                                                        
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+ubuntu@ip-172-31-8-194:~$ systemctl status nfs-server.service
+● nfs-server.service - NFS server and services
+     Loaded: loaded (/usr/lib/systemd/system/nfs-server.service; enabled; preset: enabled)
+     Active: active (exited) since Wed 2024-06-05 06:15:46 UTC; 1min 27s ago
+   Main PID: 98259 (code=exited, status=0/SUCCESS)
+        CPU: 16ms
+복사<br><br><br><br>sudo vim /etc/exports
+복사<br><br>/tmp/k8spv 172.31.8.194(rw,no_root_squash)
+복사<br><br>sudo systemctl restart nfs-server
+systemctl status nfs-server.service
+복사<br><br>apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-01
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 100Mi
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: pv-test-01
+  nfs:
+    server: 172.31.8.19
+    path: /tmp/k8spv
+복사<br><br>apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-01
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 30Mi
+  storageClassName: pv-test-01
+
+복사<br><br>apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-volume-04
+spec:
+  containers:
+  - name: nginx-test01
+    image: nginx:latest
+    volumeMounts:
+    - name: nfs-pv-01
+      mountPath: /mount01
+  volumes:
+  - name: nfs-pv-01
+    persistentVolumeClaim:
+      claimName: pvc-01
+복사<br><br>ubectl apply -f volume-test04-1-pv.yml
+
+persistentvolume/pv-01 created
+
+ubuntu@ip-172-31-8-194:~/work/k8s/basic$ kubectl get pv
+
+NAME    CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   VOLUMEATTRIBUTESCLASS   REASON   AGE
+pv-01   100Mi      RWO            Retain           Available           pv-test-01     &lt;unset&gt;                          18s
+복사<br><br>kubectl apply -f volume-test04-2-pvc.yml
+
+kubectl get pvc
+
+NAME     STATUS   VOLUME   CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+pvc-01   Bound    pv-01    100Mi      RWO            pv-test-01     &lt;unset&gt;                 9s
+복사<br>
+<br>page 113
+<br>Failpod 부분에서 안됨<br><br>ubuntu@ip-172-31-2-228:~/work/k8s/basic$ kubectl delete -f volume-test04-3-pod.yml
+pod "nginx-volume-04" deleted
+ubuntu@ip-172-31-2-228:~/work/k8s/basic$ kubectl delete -f volume-test04-2-pvc.yml
+persistentvolumeclaim "pvc-01" deleted
+ubuntu@ip-172-31-2-228:~/work/k8s/basic$ kubectl delete -f volume-test04-1-pv.yml
+persistentvolume "pv-01" deleted
+
+No resources found
+복사<br><br><br>Notepass<br><br><br><br><br>cd ~/app
+복사<br><br>curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+
+ls
+get_helm.sh
+복사<br><br>chmod 700 get_helm.sh
+
+-rwx------  1 ubuntu ubuntu 11694 Jun  5 07:18 get_helm.sh
+복사<br><br>./get_helm.sh 
+
+Downloading https://get.helm.sh/helm-v3.15.1-linux-amd64.tar.gz
+Verifying checksum... Done.
+Preparing to install helm into /usr/local/bin
+helm installed into /usr/local/bin/helm
+복사<br><br>helm version
+
+version.BuildInfo{Version:"v3.15.1", GitCommit:"e211f2aa62992bd72586b395de50979e31231829", GitTreeState:"clean", GoVersion:"go1.22.3"}
+복사<br><br><br>helm repo add bitnami https://charts.bitnami.com/bitnami
+"bitnami" has been added to your repositories
+복사<br><br>helm repo update
+
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "bitnami" chart repository
+Update Complete. ⎈Happy Helming!⎈
+복사<br><br><br>helm search repo nginx
+
+NAME                                    CHART VERSION   APP VERSION     DESCRIPTION                                       
+bitnami/nginx                           17.3.2          1.26.1          NGINX Open Source is a web server that can be a...
+bitnami/nginx-ingress-controller        11.3.2          1.10.1          NGINX Ingress Controller is an Ingress controll...
+bitnami/nginx-intel                     2.1.15          0.4.9           DEPRECATED NGINX Open Source for Intel is a lig...
+복사<br><br>helm pull bitnami/nginx-ingress-controller
+복사<br><br>ls
+
+get_helm.sh  nginx-ingress-controller-11.3.2.tgz
+복사<br><br>tar xvfz nginx-ingress-controller-11.3.2.tgz
+복사<br><br>mv nginx-ingress-controller nginx-ingress-controller-11.3.2
+복사<br><br>cd nginx-ingress-controller-11.3.2/
+ls
+Chart.lock  Chart.yaml  README.md  charts  templates  values.yaml
+cp values.yaml my-values.yaml
+복사<br>Attention항상 values.yaml를 복사해서 원복을 훼손하지 말 것.<br><br><br>kubectl get namespace
+
+NAME               STATUS   AGE
+calico-apiserver   Active   25h
+calico-system      Active   25h
+default            Active   25h
+kube-node-lease    Active   25h
+kube-public        Active   25h
+kube-system        Active   25h
+tigera-operator    Active   25h
+복사<br><br>
+<br>입력
+<br>kubectl create namespace mynginx
+
+namespace/mynginx created
+복사<br>
+<br>확인
+<br>kubectl get namespace
+NAME               STATUS   AGE
+calico-apiserver   Active   25h
+calico-system      Active   25h
+default            Active   25h
+kube-node-lease    Active   25h
+kube-public        Active   25h
+kube-system        Active   25h
+mynginx            Active   14s # 여기 생성
+tigera-operator    Active   25h
+복사<br><br>
+<br>
+p: 149
+
+<br>
+입력
+
+<br>helm install --namespace mynginx --generate-name bitnami/nginx-ingress-controller -f my-values.yaml
+복사<br>
+<br>출력
+<br> --generate-name bitnami/nginx-ingress-controller -f my-values.yaml
+NAME: nginx-ingress-controller-1717573067
+LAST DEPLOYED: Wed Jun  5 07:37:50 2024
+NAMESPACE: mynginx
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+CHART NAME: nginx-ingress-controller
+CHART VERSION: 11.3.2
+APP VERSION: 1.10.1
+
+** Please be patient while the chart is being deployed **
+
+The nginx-ingress controller has been installed.
+
+Get the application URL by running these commands:
+
+ NOTE: It may take a few minutes for the LoadBalancer IP to be available.
+        You can watch its status by running 'kubectl get --namespace mynginx svc -w nginx-ingress-controller-1717573067'
+
+    export SERVICE_IP=$(kubectl get svc --namespace mynginx nginx-ingress-controller-1717573067 -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+    echo "Visit http://${SERVICE_IP} to access your application via HTTP."
+    echo "Visit https://${SERVICE_IP} to access your application via HTTPS."
+
+An example Ingress that makes use of the controller:
+
+  apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+    name: example
+    namespace: mynginx
+  spec:
+    ingressClassName: nginx
+    rules:
+      - host: www.example.com
+        http:
+          paths:
+            - backend:
+                service:
+                  name: example-service
+                  port:
+                    number: 80
+              path: /
+              pathType: Prefix
+    # This section is only required if TLS is to be enabled for the Ingress
+    tls:
+        - hosts:
+            - www.example.com
+          secretName: example-tls
+
+If TLS is enabled for the Ingress, a Secret containing the certificate and key must also be provided:
+
+  apiVersion: v1
+  kind: Secret
+  metadata:
+    name: example-tls
+    namespace: mynginx
+  data:
+    tls.crt: &lt;base64 encoded cert&gt;
+    tls.key: &lt;base64 encoded key&gt;
+  type: kubernetes.io/tls
+
+WARNING: There are "resources" sections in the chart not set. Using "resourcesPreset" is not recommended for production. For production installations, please set the following values according to your workload needs:
+  - defaultBackend.resources
+  - resources
++info https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+복사<br><br>helm ls --namespace mynginx
+
+NAME                                    NAMESPACE       REVISION        UPDATED                                       STATUS          CHART                           APP VERSION
+nginx-ingress-controller-1717573067     mynginx         1               2024-06-05 07:37:50.718429183 +0000 UTC       deployed        nginx-ingress-controller-11.3.2 1.10.1  
+복사<br>ubectl get all --namespace mynginx
+
+NAME                                                                  READY   STATUS    RESTARTS   AGE
+pod/nginx-ingress-controller-1717573067-7cdb6cdd94-fcq5f              1/1     Running   0          2m43s
+pod/nginx-ingress-controller-1717573067-default-backend-776648m7hqx   1/1     Running   0          2m43s
+
+NAME                                                          TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)                      AGE
+service/nginx-ingress-controller-1717573067                   LoadBalancer   10.102.206.3     &lt;pending&gt;     80:31628/TCP,443:31052/TCP   2m43s
+service/nginx-ingress-controller-1717573067-default-backend   ClusterIP      10.105.185.146   &lt;none&gt;        80/TCP                       2m43s
+
+NAME                                                                  READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/nginx-ingress-controller-1717573067                   1/1     1            1           2m43s
+deployment.apps/nginx-ingress-controller-1717573067-default-backend   1/1     1            1           2m43s
+
+NAME                                                                             DESIRED   CURRENT   READY   AGE
+replicaset.apps/nginx-ingress-controller-1717573067-7cdb6cdd94                   1         1         1       2m43s
+replicaset.apps/nginx-ingress-controller-1717573067-default-backend-7766484699   1         1         1       2m43s
+복사<br>NoteSTATUS Runnig 확인<br><br>]]></description><link>root\dev\도커와-쿠버네틱스\쿠버네티스-사용법.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/쿠버네티스 사용법.md</guid><pubDate>Thu, 06 Jun 2024 05:53:04 GMT</pubDate></item><item><title><![CDATA[쿠버네티스 설치]]></title><description><![CDATA[ 
+ <br>Attention신중하게 처리<br><br><br><br>sudo -i
+복사<br>Notesudo를 사용해도 좋지만<br>
+안전하게 root 유저로 작업하는 게 좋다.<br><br>
+<br>입력
+<br>sudo modprobe br_netfilter
+sudo sysctl net.bridge.bridge-nf-call-iptables=1
+복사<br>
+<br>출력
+<br>net.bridge.bridge-nf-call-iptables = 1
+복사<br><br>
+<br>입력
+<br>sudo sysctl net.ipv4.ip_forward=1
+복사<br>
+<br>출력
+<br>net.ipv4.ip_forward = 1
+복사<br><br><br>sudo vim /etc/sysctl.conf
+복사<br>
+<br>입력
+<br>net.bridge.bridge-nf-call-iptables=1
+net.ipv4.ip_forward=1
+복사<br>Note제일 하단에 추가<br><br><br>
+<br>입력
+<br>free -h
+복사<br>
+<br>출력
+<br>               total        used        free      shared  buff/cache   available
+Mem:            15Gi       1.3Gi        12Gi        14Mi       1.9Gi        14Gi
+Swap:             0B          0B          0B
+복사<br><br>
+<br>입력
+<br>cat /proc/swaps
+복사<br>
+<br>출력
+<br>Filename        Type            Size            Used            Priority
+복사<br>Note위처럼 아무것도 나오지 않는다면 따로 처리 할 필요 없음<br><br><br><br>경고!sudo -i 로 들어 갔다면<br>
+exit 로 빠저 나와서 유저 모드로 돌아오자<br><br>sudo mkdir -p /etc/containerd
+containerd config default | sudo tee /etc/containerd/config.toml &gt; /dev/null
+복사<br><br><br>sudo vim /etc/containerd/config.toml
+복사<br>요놈이랑 햇깔리지 마!systemd_cgroup<br><br>SystemdCgroup = true
+복사<br>변경false -&gt; true<br><br><br>sudo systemctl restart containerd
+복사<br><br>sudo systemctl enable containerd
+복사<br><br>sudo systemctl status containerd
+복사<br><br><br><br>sudo apt-get update
+복사<br>sudo apt-get install -y apt-transport-https ca-certificates curl
+복사<br><br>집중!공식 홈페이지와 다름<br><br>sudo mkdir -p /etc/apt/keyrings
+복사<br><br>sudo curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+복사<br>요 부분은 공식 홈페이지가 될 수 있음<br><br>echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+복사<br><br>sudo apt-get install -y kubelet kubeadm kubectl
+복사<br><br>
+<br>입력
+<br>sudo apt-mark hold kubelet kubeadm kubectl
+복사<br><br><br>sudo -i
+
+kubelet --version
+kubeadm version
+kubectl version --output=yaml
+복사<br><br><br>
+<br>입력
+<br>kubeadm certs check-expiration
+복사<br>
+<br>출력
+<br>CERTIFICATE                          EXPIRES   RESIDUAL TIME   CERTIFICATE AUTHORITY   EXTERNALLY MANAGED
+!MISSING! admin.conf                                                                   
+!MISSING! apiserver                                                                    
+!MISSING! apiserver-etcd-client                                                        
+!MISSING! apiserver-kubelet-client                                                     
+!MISSING! controller-manager.conf                                                      
+!MISSING! etcd-healthcheck-client                                                      
+!MISSING! etcd-peer                                                                    
+!MISSING! etcd-server                                                                  
+!MISSING! front-proxy-client                                                           
+!MISSING! scheduler.conf                                                               
+!MISSING! super-admin.conf                                                             
+
+CERTIFICATE AUTHORITY      EXPIRES   RESIDUAL TIME   EXTERNALLY MANAGED
+!MISSING! ca                                         
+!MISSING! etcd-ca                                    
+!MISSING! front-proxy-ca
+복사<br><br><br>
+<br>입력
+<br>kubeadm config images list
+복사<br>
+<br>출력
+<br>I0604 05:30:21.666700   24505 version.go:256] remote version is much newer: v1.30.1; falling back to: stable-1.29
+registry.k8s.io/kube-apiserver:v1.29.5
+registry.k8s.io/kube-controller-manager:v1.29.5
+registry.k8s.io/kube-scheduler:v1.29.5
+registry.k8s.io/kube-proxy:v1.29.5
+registry.k8s.io/coredns/coredns:v1.11.1
+registry.k8s.io/pause:3.9
+registry.k8s.io/etcd:3.5.12-0
+복사<br><br><br>kubeadm config images pull --cri-socket /run/containerd/containerd.sock
+복사<br><br>
+<br>입력
+<br>프라이빗IPv4주소kubeadm init --apiserver-advertise-address=프라이빗IPv4주소 --pod-network-cidr=192.168.0.0/16 --cri-socket /run/containerd/containerd.sock<br>kubeadm init --apiserver-advertise-address=172.31.8.194 --pod-network-cidr=192.168.0.0/16 --cri-socket /run/containerd/containerd.sock
+복사<br>
+<br>출력
+<br>kubeadm join 172.31.8.194:6443 --token l07ssr.dbnlpaeoyfc9e2w6 \
+        --discovery-token-ca-cert-hash sha256:dfc39dd25f073da5a783d047f173aef5f2d89fc0927c3409a6b15a906fd1e215
+복사<br><br>
+<br>입력
+<br>kubeadm certs check-expiration
+복사<br>
+<br>출력
+<br>CERTIFICATE             EXPIRES             RESIDUAL TIME   CERTIFICATE AUTHORITY   EXTERNALLY MANAGED
+admin.conf              May 26, 2025        06:41 UTC      364d                    ca                      no
+apiserver               May 26, 2025        06:41 UTC      364d                    ca                      no
+apiserver-etcd-client   May 26, 2025        06:41 UTC      364d                    etcd-ca                 no
+apiserver-kubelet-clientMay 26, 2025        06:41 UTC      364d                    ca                      no
+controller-manager.conf May 26, 2025        06:42 UTC      364d                    ca                      no
+etcd-healthcheck-clientMay 26, 2025        06:41 UTC      364d                    etcd-ca                 no
+etcd-peer               May 26, 2025        06:41 UTC      364d                    etcd-ca                 no
+etcd-server             May 26, 2025        06:41 UTC      364d                    etcd-ca                 no
+front-proxy-client      May 26, 2025        06:41 UTC      364d                    front-proxy-ca          no
+scheduler.conf          May 26, 2025        06:42 UTC      364d                    ca                      no
+super-admin.conf        May 26, 2025        06:41 UTC      364d                    ca                      no
+
+CERTIFICATE AUTHORITY   EXPIRES             RESIDUAL TIME   EXTERNALLY MANAGED
+ca                      May 24, 2034        06:41 UTC      9y                      no
+etcd-ca                 May 24, 2034        06:41 UTC      9y                      no
+front-proxy-ca          May 24, 2034        06:41 UTC      9y                      no
+
+복사<br><br>exit
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+복사<br><br><br><br>cd
+mkdir app
+cd app
+복사<br><br>kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/tigera-operator.yaml
+복사<br><br>curl https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/custom-resources.yaml -O
+복사<br><br>kubectl create -f custom-resources.yaml
+복사<br><br>
+<br>입력
+<br>watch kubectl get pods -n calico-system
+복사<br>
+<br>출력
+<br>Every 2.0s: kubectl get pods -n calico-system        ip-172-31-8-194: Tue Jun  4 06:16:25 2024
+
+NAME                                       READY   STATUS    RESTARTS   AGE
+calico-kube-controllers-75d46bdfb9-v4f54   1/1     Running   0          4m31s
+calico-node-fhkdm                          1/1     Running   0          4m19s
+calico-typha-6b76c875f4-zmhd5              1/1     Running   0          4m31s
+csi-node-driver-jjrbv                      2/2     Running   0          4m31s
+복사<br><br><br><br>
+<br>입력
+<br>kubectl get node
+복사<br>
+<br>출력
+<br>NAME              STATUS   ROLES           AGE   VERSION
+ip-172-31-8-194   Ready    control-plane   39m   v1.29.5
+복사<br><br>kubectl describe node k8s-master | grep Taints
+복사<br><br>
+<br>입력
+<br>kubectl get node -o wide
+복사<br>
+<br>출력
+<br>NAME              STATUS   ROLES           AGE   VERSION   INTERNAL-IP    EXTERNAL-IP   OS-IMAGE           KERNEL-VERSION   CONTAINER-RUNTIME
+ip-172-31-8-194   Ready    control-plane   47m   v1.29.5   172.31.8.194   &lt;none&gt;        Ubuntu 24.04 LTS   6.8.0-1008-aws   containerd://1.6.32
+복사<br><br><br>kubectl describe node 노드이름 | grep Taints
+복사<br><br>kubectl describe node ip-172-31-8-194 | grep Taints
+복사<br><br><br>
+<br>입력
+<br>kubectl describe node ip-172-31-8-194 | grep Taints
+복사<br>
+<br>출력
+<br>Taints:             node-role.kubernetes.io/control-plane:NoSchedule
+복사<br><br>
+<br>입력
+<br>kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+복사<br>
+<br>출력
+<br>untainted
+복사<br><br><br>
+<br>입력
+<br>kubectl run hello-world --image=hello-world --restart=Never
+kubectl get pod
+kubectl get pod -o wide
+복사<br>
+<br>출력
+<br># kubectl run hello-world --image=hello-world --restart=Never
+pod/hello-world created
+
+# kubectl get pod
+NAME          READY   STATUS      RESTARTS   AGE
+hello-world   0/1     Completed   0          5s
+
+
+# kubectl get pod -o wide
+NAME          READY   STATUS      RESTARTS   AGE   IP              NODE              NOMINATED NODE   READINESS GATES
+hello-world   0/1     Completed   0          11s   192.168.123.7   ip-172-31-8-194 
+복사]]></description><link>root\dev\도커와-쿠버네틱스\쿠버네티스-설치.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/쿠버네티스 설치.md</guid><pubDate>Thu, 06 Jun 2024 03:59:07 GMT</pubDate></item><item><title><![CDATA[docker compose]]></title><description><![CDATA[ 
  <br><br><a rel="noopener" class="external-link" href="https://docs.docker.com/compose/install/linux/#install-using-the-repository" target="_blank">https://docs.docker.com/compose/install/linux/#install-using-the-repository</a><br>sudo apt-get update
 sudo apt-get install docker-compose-plugin
 
