@@ -1,218 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 06 Jun 2024 05:54:58 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 06 Jun 2024 05:54:54 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[0.도커와 쿠버네티스]]></title><description><![CDATA[ 
- <br><br>
-<br>우분투
-<br>t2.xlarge
-<br>ssd: 100gb
-<br><br><br> AWS client to database<br><a data-tooltip-position="top" aria-label="flask postgreSQL 건들기" data-href="flask postgreSQL 건들기" href="\root\dev\도커와-쿠버네틱스\flask-postgresql-건들기.html" class="internal-link" target="_self" rel="noopener">하고</a><br><br><br><a data-tooltip-position="top" aria-label="flask 건들기 위한 Docker" data-href="flask 건들기 위한 Docker" href="\root\dev\도커와-쿠버네틱스\flask-건들기-위한-docker.html" class="internal-link" target="_self" rel="noopener">설치 하고!</a><br><br><br> AWS client to docker database<br><a data-tooltip-position="top" aria-label="flask docker에 태우자" data-href="flask docker에 태우자" href="\root\dev\도커와-쿠버네틱스\flask-docker에-태우자.html" class="internal-link" target="_self" rel="noopener">그래!</a><br><br><br><a data-tooltip-position="top" aria-label="docker compose" data-href="docker compose" href="\root\dev\도커와-쿠버네틱스\docker-compose.html" class="internal-link" target="_self" rel="noopener">일단 설치</a><br><br><br><a data-tooltip-position="top" aria-label="Python에 YAML" data-href="Python에 YAML" href="\root\dev\도커와-쿠버네틱스\python에-yaml.html" class="internal-link" target="_self" rel="noopener">설치 하고</a><br><br><br><a data-tooltip-position="top" aria-label="enginx 도커 올려" data-href="enginx 도커 올려" href="\root\dev\도커와-쿠버네틱스\enginx-도커-올려.html" class="internal-link" target="_self" rel="noopener">올려!!</a><br><br><br><a data-tooltip-position="top" aria-label="postgre 도커 올려" data-href="postgre 도커 올려" href="\root\dev\도커와-쿠버네틱스\postgre-도커-올려.html" class="internal-link" target="_self" rel="noopener">올려!!!</a><br><br><br><a data-tooltip-position="top" aria-label="도커 볼륨" data-href="도커 볼륨" href="\root\dev\도커와-쿠버네틱스\도커-볼륨.html" class="internal-link" target="_self" rel="noopener">걸고</a><br><br><br><a data-tooltip-position="top" aria-label="도커로 flask, nginx, PostgresSql 함께 배포" data-href="도커로 flask, nginx, PostgresSql 함께 배포" href="\root\dev\도커와-쿠버네틱스\도커로-flask,-nginx,-postgressql-함께-배포.html" class="internal-link" target="_self" rel="noopener">하고</a><br><br><br><a data-tooltip-position="top" aria-label="쿠버네티스 설치" data-href="쿠버네티스 설치" href="\root\dev\도커와-쿠버네틱스\쿠버네티스-설치.html" class="internal-link" target="_self" rel="noopener">해서</a><br><br><br><a data-tooltip-position="top" aria-label="쿠버네티스 사용법" data-href="쿠버네티스 사용법" href="\root\dev\도커와-쿠버네틱스\쿠버네티스-사용법.html" class="internal-link" target="_self" rel="noopener">익히면</a><br>된다.]]></description><link>root\dev\도커와-쿠버네틱스\0.도커와-쿠버네티스.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/0.도커와 쿠버네티스.md</guid><pubDate>Tue, 04 Jun 2024 12:44:12 GMT</pubDate></item><item><title><![CDATA[도커 볼륨]]></title><description><![CDATA[ 
- <br><br>
-<br>입력
-<br>docker volume ls
-복사<br>
-<br>출력
-<br>DRIVER    VOLUME NAME
-local     017e81633e49fe45ddb6bba787e35e1808c6bac4f41cd00de119de5b53fdd29a
-local     671ee4a6da4fbbef319421e4b72d86c8b8a7097a87692871f7f6140842dc3464
-local     c530219b8e489e5120e024a8120f566a53670af51676b6bfe46b4b09f0ceb6d2
-복사<br><br><br>docker volume create myvolume01
-복사<br><br><br>
-<br>입력
-<br>docker volume inspect myvolume01
-복사<br>
-<br>출력
-<br>[
-    {
-        "CreatedAt": "2024-06-04T00:22:24Z",
-        "Driver": "local",
-        "Labels": null,
-        "Mountpoint": "/var/lib/docker/volumes/myvolume01/_data",
-        "Name": "myvolume01",
-        "Options": null,
-        "Scope": "local"
-    }
-]
-복사<br>Important"Mountpoint": "/var/lib/docker/volumes/myvolume01/_data"
-요 부분을 실행할 때 씀<br><br><br><br>
-<br>입력
-<br>docker container run -e POSTGRES_PASSWORD=mysecretpassword -v myvolume01:/var/lib/postgresql/data -d postgres
-복사<br>
-<br>출력
-<br>e0d2b80f0a0af6ed07b7e0f583873e7c74ffd097960c66c097909345ff671bfb
-복사<br><br>
-<br>입력
-<br>docker container ls
-복사<br>
-<br>출력
-<br>CONTAINER ID   IMAGE      COMMAND                  CREATED         STATUS         PORTS      NAMES
-eb8a80dcd9d2   postgres   "docker-entrypoint.s…"   5 seconds ago   Up 4 seconds   5432/tcp   sweet_goodall
-복사<br><br>docker container exec -it eb8a80dcd9d2 /bin/bash
-psql -U postgres
-복사<br><br><br>
-<br>입력
-<br>CREATE USER cheolwon PASSWORD '1234' SUPERUSER;
-postgres=# \du
-복사<br>
-<br>출력
-<br>                             List of roles
- Role name |                         Attributes                         
------------+------------------------------------------------------------
- cheolwon  | Superuser
- postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS
-복사<br><br><br>
-<br>입력
-<br>docker container ls
-복사<br>
-<br>출력
-<br>CONTAINER ID   IMAGE     COMMAND                  CREATED        STATUS         PORTS      NAMES
-39e32b2aaf25   postgres  "docker-entrypoint.s…"   4 minutes ago  Up 55 seconds  5432/tcp   some-postgres
-복사<br><br>
-<br>입력
-<br>docker container stop 39e32b2aaf25
-docker container rm 39e32b2aaf25
-복사<br>
-<br>출력
-<br>39e32b2aaf25
-복사<br><br><a data-href="#컨테이너" href="\#컨테이너" class="internal-link" target="_self" rel="noopener">컨테이너</a><br><br>
-<br>입력
-<br>docker container ls
-복사<br>
-<br>출력
-<br>CONTAINER ID   IMAGE      COMMAND                  CREATED              STATUS              PORTS      NAMES
-666c91149b9d   postgres   "docker-entrypoint.s…"   About a minute ago   Up About a minute   5432/tcp   sweet_mccarthy
-ubuntu@ip-172-31-8-194:~$ docker container exec -it 666c91149b9d /bin/bash
-복사<br><br>
-<br>입력
-<br>psql -U postgres
-postgres=# psql
-postgres-# \du
-복사<br>
-<br>출력
-<br>                             List of roles
- Role name |                         Attributes                         
------------+------------------------------------------------------------
- cheolwon  | Superuser
- postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS
-복사<br>Note컨테이너를 삭제 했음에도 불구하고 psql의 cheolwon 계정이 살아있다.<br><br><br><br>
-<br>입력
-<br>docker volume inspect myvolume01
-복사<br>
-<br>출력
-<br>[
-    {
-        "CreatedAt": "2024-06-04T00:22:24Z",
-        "Driver": "local",
-        "Labels": null,
-        "Mountpoint": "/var/lib/docker/volumes/myvolume01/_data",
-        "Name": "myvolume01",
-        "Options": null,
-        "Scope": "local"
-    }
-]
-복사<br>이 부분 확인"Mountpoint": "/var/lib/docker/volumes/myvolume01/_data"<br><br>
-<br>입력
-<br>sudo -i
-cd /var/lib/docker/volumes/myvolume01/_dat
-ls
-복사<br>
-<br>출력
-<br>PG_VERSION    pg_dynshmem    pg_multixact  pg_snapshots  pg_tblspc    postgresql.auto.conf
-base          pg_hba.conf    pg_notify     pg_stat       pg_twophase  postgresql.conf
-global        pg_ident.conf  pg_replslot   pg_stat_tmp   pg_wal       postmaster.opts
-pg_commit_ts  pg_logical     pg_serial     pg_subtrans   pg_xact
-복사]]></description><link>root\dev\도커와-쿠버네틱스\도커-볼륨.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/도커 볼륨.md</guid><pubDate>Thu, 06 Jun 2024 05:45:41 GMT</pubDate></item><item><title><![CDATA[도커로 flask, nginx, PostgresSql 함께 배포]]></title><description><![CDATA[ 
- <br><br><br>cd ~/work
-mkdir psqltest
-복사<br><br>cd psqltest
-복사<br><br><br>FROM postgres:16.3
-복사<br><br><br>tree
-.
-├── docker-compose.yml
-├── flaskapp
-│   ├── Dockerfile
-│   ├── myapp
-│   │   └── main.py
-│   └── requirements.txt
-├── nginxtest
-│   ├── Dockerfile
-│   └── default.conf
-└── psqltest
-    └── Dockerfile
-복사<br><br><br><br>:~/work/docker$ vi docker-compose.yml
-복사<br><br>services:
-  flasktest:
-    build: ./flaskapp
-    networks:
-     - composenet01
-    restart: always
-  
-  nginxtest:
-    build: ./nginxtest
-    networks:
-    - composenet01
-    ports:
-    - "80:80"
-    depends_on:
-    - flasktest
-
-  psqltest:
-    build: ./psqltest
-    container_name: psqltest
-    networks:
-    - composenet01
-    restart: always
-    volumes:
-    - myvolume01:/var/lib/postgresql/data
-    environment:
-    - POSTGRES_USER=postgres
-    - POSTGRES_PASSWORD=postgres
-    - POSTGRES_DB=postgres
-
-volumes:
-  myvolume01:
-
-networks:
-  composenet01:
-
-복사<br>Notepsqltest 부분 장성<br><br><br><br>~/work/docker/flaskapp/myapp$ vim main.py
-복사<br><br>...( )
-conn = psycopg2.connect(dbname='ml', user='postgres', password='postgres', host='psqltest', port=5432)
-...( )
-복사<br>Notehost='psqltest'<br><br><br><br>cd ~/work/docker
-복사<br><br><br>docker docker compose up -d --build
-복사<br><br>[+] Building 50.9s (24/24) FINISHED
-=&gt; [flasktest internal] load build definition from Dockerfile
-=&gt; =&gt; transferring dockerfile: 241B
-...( )
-[+] Running 5/5
-Network docker_composenet01 Created
-Volume "docker_myvolume01" Created
-Container flasktest Started
-Container psqltest Started
-Container nginxtest Started
-복사<br><br><br>docker container ls
-복사<br><br>CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES
-d978f5f34183 docker-nginxtest "/docker-entrypoint.…" 29 seconds ago Up 28 seconds 0.0.0.0:80-&gt;80/tcp, :::80-&gt;80/tcp nginxtest
-084e876750a0 docker-psqltest "docker-entrypoint.s…" 30 seconds ago Up 29 seconds 5432/tcp psqltest
-14dea1fe0200 docker-flasktest "/bin/sh -c 'gunicor…" 30 seconds ago Up 29 seconds 5000/tcp flasktest
-복사<br><br>브라우저주소: 인스턴스 ip 주소
-내용: HELLO, ML API SERVER<br><br><br><br>docker container ls
-복사<br>CONTAINER ID   IMAGE              COMMAND                  CREATED          STATUS          PORTS                               NAMES
-a88f2c3846f5   docker-nginxtest   "/docker-entrypoint.…"   29 minutes ago   Up 29 minutes   0.0.0.0:80-&gt;80/tcp, :::80-&gt;80/tcp   docker-nginxtest-1
-df0bbba2c7de   docker-flasktest   "/bin/sh -c 'gunicor…"   29 minutes ago   Up 29 minutes   5000/tcp                            docker-flasktest-1
-a60d681088ac   docker-psqltest    "docker-entrypoint.s…"   29 minutes ago   Up 29 minutes   5432/tcp                            psqltest
-복사<br>Notepsqltest 컨테이너<br><br>docker container exec -it a60d681088ac /bin/bash
-복사<br><br><br>psql -U postgre
-복사<br><br>CREATE DATABASE ml;
-
-\c ml
-복사<br><br>CREATE TABLE pred_result(
-    id SERIAL PRIMARY KEY,
-    input NUMERIC,
-    output NUMERIC,
-    insert_dt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-복사<br><br><br>curl -d '{"input":["0.３"]}' -H "Content-Type: application/json" -X POST http://43.203.77.126/predict
-복사<br><br>{"input":0.3,"predicted_output":1.63768}
-복사]]></description><link>root\dev\도커와-쿠버네틱스\도커로-flask,-nginx,-postgressql-함께-배포.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/도커로 flask, nginx, PostgresSql 함께 배포.md</guid><pubDate>Tue, 04 Jun 2024 12:45:38 GMT</pubDate></item><item><title><![CDATA[쿠버네티스 사용법]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 12 Jun 2024 16:16:48 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 12 Jun 2024 16:16:44 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[쿠버네티스 사용법]]></title><description><![CDATA[ 
  <br>ubuntu@ip-172-31-8-194:~/app$ kubectl get pod
 NAME          READY   STATUS      RESTARTS   AGE
 hello-world   0/1     Completed   0          21m
@@ -1179,7 +965,840 @@ deployment.apps/nginx-ingress-controller-1717573067-default-backend   1/1     1 
 NAME                                                                             DESIRED   CURRENT   READY   AGE
 replicaset.apps/nginx-ingress-controller-1717573067-7cdb6cdd94                   1         1         1       2m43s
 replicaset.apps/nginx-ingress-controller-1717573067-default-backend-7766484699   1         1         1       2m43s
-복사<br>NoteSTATUS Runnig 확인<br><br>]]></description><link>root\dev\도커와-쿠버네틱스\쿠버네티스-사용법.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/쿠버네티스 사용법.md</guid><pubDate>Thu, 06 Jun 2024 05:53:04 GMT</pubDate></item><item><title><![CDATA[쿠버네티스 설치]]></title><description><![CDATA[ 
+복사<br>NoteSTATUS Runnig 확인<br><br><br><br>
+<br>입력
+<br>kubectl get configmap kube-proxy -n kube-system -o yaml | grep strictARP
+복사<br>
+<br>출력
+<br>strictARP: false
+복사<br>NotestrictARP이 false 인 것을 확인<br><br>
+<br>입력
+<br>kubectl get configmap kube-proxy -n kube-system -o yaml | \
+sed -e "s/strictARP: false/strictARP: true/" | \
+kubectl apply -f - -n kube-system
+복사<br>
+<br>출력
+<br>Warning: resource configmaps/kube-proxy is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by kubectl apply. kubectl apply should only be used on resources created declaratively by either kubectl create --save-config or kubectl apply. The missing annotation will be patched automatically.
+configmap/kube-proxy configured
+복사<br><br>
+<br>입력
+<br>kubectl get configmap kube-proxy -n kube-system -o yaml | grep strictARP
+복사<br>
+<br>출력
+<br>      strictARP: true
+      {"apiVersion":"v1","data":{"config.conf":"apiVersion: kubeproxy.config.k8s.io/v1alpha1\nbindAddress: 0.0.0.0\nbindAddressHardFail: false\nclientConnection:\n  acceptContentTypes: \"\"\n  burst: 0\n  contentType: \"\"\n  kubeconfig: /var/lib/kube-proxy/kubeconfig.conf\n  qps: 0\nclusterCIDR: 192.168.0.0/16\nconfigSyncPeriod: 0s\nconntrack:\n  maxPerCore: null\n  min: null\n  tcpBeLiberal: false\n  tcpCloseWaitTimeout: null\n  tcpEstablishedTimeout: null\n  udpStreamTimeout: 0s\n  udpTimeout: 0s\ndetectLocal:\n  bridgeInterface: \"\"\n  interfaceNamePrefix: \"\"\ndetectLocalMode: \"\"\nenableProfiling: false\nhealthzBindAddress: \"\"\nhostnameOverride: \"\"\niptables:\n  localhostNodePorts: null\n  masqueradeAll: false\n  masqueradeBit: null\n  minSyncPeriod: 0s\n  syncPeriod: 0s\nipvs:\n  excludeCIDRs: null\n  minSyncPeriod: 0s\n  scheduler: \"\"\n  strictARP: true\n  syncPeriod: 0s\n  tcpFinTimeout: 0s\n  tcpTimeout: 0s\n  udpTimeout: 0s\nkind: KubeProxyConfiguration\nlogging:\n  flushFrequency: 0\n  options:\n    json:\n      infoBufferSize: \"0\"\n  verbosity: 0\nmetricsBindAddress: \"\"\nmode: \"\"\nnftables:\n  masqueradeAll: false\n  masqueradeBit: null\n  minSyncPeriod: 0s\n  syncPeriod: 0s\nnodePortAddresses: null\noomScoreAdj: null\nportRange: \"\"\nshowHiddenMetricsForVersion: \"\"\nwinkernel:\n  enableDSR: false\n  forwardHealthCheckVip: false\n  networkName: \"\"\n  rootHnsEndpointName: \"\"\n  sourceVip: \"\"","kubeconfig.conf":"apiVersion: v1\nkind: Config\nclusters:\n- cluster:\n    certificate-authority: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt\n    server: https://172.31.8.194:6443\n  name: default\ncontexts:\n- context:\n    cluster: default\n    namespace: default\n    user: default\n  name: default\ncurrent-context: default\nusers:\n- name: default\n  user:\n    tokenFile: /var/run/secrets/kubernetes.io/serviceaccount/token"},"kind":"ConfigMap","metadata":{"annotations":{"kubeadm.kubernetes.io/component-config.hash":"sha256:092ec924dfe74025c759063274668834178cdc79b06aa8e7d644a43d9fc98eec"},"creationTimestamp":"2024-06-04T05:37:57Z","labels":{"app":"kube-proxy"},"name":"kube-proxy","namespace":"kube-system","resourceVersion":"267","uid":"d6ce53fa-2820-410c-ae59-b5d6123b9909"}}
+복사<br><br><br>helm repo add metallb https://metallb.github.io/metallb
+"metallb" has been added to your repositories
+복사<br><br>helm repo update
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "metallb" chart repository
+...Successfully got an update from the "bitnami" chart repository
+Update Complete. ⎈Happy Helming!⎈
+복사<br><br>helm search repo metallb
+
+NAME            CHART VERSION   APP VERSION     DESCRIPTION                                       
+bitnami/metallb 6.3.3           0.14.5          MetalLB is a load-balancer implementation for b...
+metallb/metallb 0.14.5          v0.14.5         A network load-balancer implementation for Kube...
+복사<br><br>helm pull metallb/metallb
+복사<br><br>ls
+
+custom-resources.yaml  metallb-0.14.5.tgz               nginx-ingress-controller-11.3.2.tgz
+get_helm.sh            nginx-ingress-controller-11.3.2
+복사<br>tar xvfz metallb-0.14.5.tgz
+
+metallb/Chart.yaml
+metallb/Chart.lock
+metallb/values.yaml
+metallb/values.schema.json
+metallb/templates/NOTES.txt
+metallb/templates/_helpers.tpl
+metallb/templates/controller.yaml
+metallb/templates/deprecated_configInline.yaml
+metallb/templates/exclude-l2-config.yaml
+metallb/templates/podmonitor.yaml
+metallb/templates/prometheusrules.yaml
+metallb/templates/rbac.yaml
+metallb/templates/service-accounts.yaml
+metallb/templates/servicemonitor.yaml
+metallb/templates/speaker.yaml
+metallb/templates/webhooks.yaml
+metallb/.helmignore
+metallb/README.md
+metallb/policy/controller.rego
+metallb/policy/rbac.rego
+metallb/policy/speaker.rego
+metallb/charts/crds/Chart.yaml
+metallb/charts/crds/templates/crds.yaml
+metallb/charts/crds/.helmignore
+metallb/charts/crds/README.md
+metallb/charts/frr-k8s/Chart.yaml
+metallb/charts/frr-k8s/Chart.lock
+metallb/charts/frr-k8s/values.yaml
+metallb/charts/frr-k8s/values.schema.json
+metallb/charts/frr-k8s/templates/NOTES.txt
+metallb/charts/frr-k8s/templates/_helpers.tpl
+metallb/charts/frr-k8s/templates/controller.yaml
+metallb/charts/frr-k8s/templates/rbac.yaml
+metallb/charts/frr-k8s/templates/service-accounts.yaml
+metallb/charts/frr-k8s/templates/service-monitor.yaml
+metallb/charts/frr-k8s/templates/webhooks.yaml
+metallb/charts/frr-k8s/.helmignore
+metallb/charts/frr-k8s/README.md
+metallb/charts/frr-k8s/charts/crds/Chart.yaml
+metallb/charts/frr-k8s/charts/crds/templates/frrk8s.metallb.io_frrconfigurations.yaml
+metallb/charts/frr-k8s/charts/crds/templates/frrk8s.metallb.io_frrnodestates.yaml
+metallb/charts/frr-k8s/charts/crds/.helmignore
+metallb/charts/frr-k8s/charts/crds/README.md
+복사<br><br>mv metallb metallb-0.14.5
+cd metallb-0.14.5
+cp values.yaml my-values.yaml
+복사<br><br>kubectl create namespace mymetallb
+namespace/mymetallb created
+
+
+kubectl get namespace
+
+NAME               STATUS   AGE
+calico-apiserver   Active   2d22h
+calico-system      Active   2d22h
+default            Active   2d23h
+kube-node-lease    Active   2d23h
+kube-public        Active   2d23h
+kube-system        Active   2d23h
+mymetallb          Active   71s
+mynginx            Active   45h
+tigera-operator    Active   2d22h
+복사<br>helm install --namespace mymetallb --generate-name metallb/metallb -f my-values.yaml
+
+
+NAME: metallb-1717736694
+LAST DEPLOYED: Fri Jun  7 05:04:54 2024
+NAMESPACE: mymetallb
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+MetalLB is now running in the cluster.
+
+Now you can configure it via its CRs. Please refer to the metallb official docs
+on how to use the CRs.
+
+복사<br>kubectl get all --namespace mymetallb
+NAME                                               READY   STATUS    RESTARTS   AGE
+pod/metallb-1717736694-controller-d686bb4f-lvs6h   1/1     Running   0          63s
+pod/metallb-1717736694-speaker-hprv4               4/4     Running   0          63s
+
+NAME                              TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE
+service/metallb-webhook-service   ClusterIP   10.111.176.187   &lt;none&gt;        443/TCP   63s
+
+NAME                                        DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE
+daemonset.apps/metallb-1717736694-speaker   1         1         1       1            1           kubernetes.io/os=linux   63s
+
+NAME                                            READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/metallb-1717736694-controller   1/1     1            1           63s
+
+NAME                                                     DESIRED   CURRENT   READY   AGE
+replicaset.apps/metallb-1717736694-controller-d686bb4f   1         1         1       63s
+복사<br><br>vi vim my-config.yaml
+복사<br>---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: my-metallb-config
+  namespace: mymetallb
+spec:
+  addresses:
+  - 172.31.46.220-172.31.46.230
+  autoAssign: true
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: my-metallb-config
+  namespace: mymetallb
+spec:
+  ipAddressPools:
+    - my-metallb-config
+복사<br>Notespec:<br>
+addresses:
+
+<br>172.31.46.220-172.31.46.230
+
+요 부분을 내 아이피 대역으로 바꿔야 한다<br>
+<br>입력
+<br>kubectl get validatingwebhookconfigurations
+복사<br>
+<br>출력
+<br>kubectl get validatingwebhookconfigurations
+NAME                            WEBHOOKS   AGE
+metallb-webhook-configuration   6          12m
+복사<br>
+<br>입력
+<br>kubectl delete validatingwebhookconfigurations metallb-webhook-configuration
+
+kubectl get validatingwebhookconfigurations
+복사<br>
+<br>출력
+<br>No resources found
+복사<br><br>ubectl apply -f my-config.yaml
+
+ipaddresspool.metallb.io/my-metallb-config created
+l2advertisement.metallb.io/my-metallb-config create
+복사<br>kubectl get ipaddresspool.metallb.io --namespace mymetallb
+
+NAME                AUTO ASSIGN   AVOID BUGGY IPS   ADDRESSES
+my-metallb-config   true          false             ["172.31.134.0-172.31.134.10"]
+복사<br>kubectl describe ipaddresspool.metallb.io my-metallb-config --namespace mymetallb
+복사<br><br>kubectl describe ipaddresspool.metallb.io my-metallb-config --namespace mymetallb
+
+
+Name:         my-metallb-config
+Namespace:    mymetallb
+Labels:       &lt;none&gt;
+Annotations:  &lt;none&gt;
+API Version:  metallb.io/v1beta1
+Kind:         IPAddressPool
+Metadata:
+  Creation Timestamp:  2024-06-07T05:20:04Z
+  Generation:          1
+  Resource Version:    239615
+  UID:                 d2588db8-e3b6-4d60-b9d6-eb1b876a1fe7
+Spec:
+  Addresses:
+    172.31.134.0-172.31.134.10
+  Auto Assign:       true
+  Avoid Buggy I Ps:  false
+복사<br>kubectl get all --namespace mynginx
+NAME                                                                  READY   STATUS    RESTARTS        AGE
+pod/nginx-ingress-controller-1717573067-7cdb6cdd94-fcq5f              1/1     Running   2 (4h35m ago)   45h
+pod/nginx-ingress-controller-1717573067-default-backend-776648m7hqx   1/1     Running   2 (4h35m ago)   45h
+
+NAME                                                          TYPE           CLUSTER-IP       EXTERNAL-IP    PORT(S)                      AGE
+service/nginx-ingress-controller-1717573067                   LoadBalancer   10.102.206.3     172.31.134.0   80:31628/TCP,443:31052/TCP   45h
+service/nginx-ingress-controller-1717573067-default-backend   ClusterIP      10.105.185.146   &lt;none&gt;         80/TCP                       45h
+
+NAME                                                                  READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/nginx-ingress-controller-1717573067                   1/1     1            1           45h
+deployment.apps/nginx-ingress-controller-1717573067-default-backend   1/1     1            1           45h
+
+NAME                                                                             DESIRED   CURRENT   READY   AGE
+replicaset.apps/nginx-ingress-controller-1717573067-7cdb6cdd94                   1         1         1       45h
+replicaset.apps/nginx-ingress-controller-1717573067-default-backend-7766484699   1         1         1       45h
+복사<br><br><br><br>vim ingress01-deploy.yml
+복사<br>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ingress-deploy-test01
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web-deploy01
+  template:
+    metadata:
+      labels:
+        app: web-deploy01
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.25
+복사<br><br>vim ingress01-service.yml
+복사<br>apiVersion: v1
+kind: Service
+metadata:
+  name: ingress-service-test01
+spec:
+  selector:
+    app: web-deploy01
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+복사<br><br> vim ingress01-ingress.yml
+복사<br>apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-test01
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+          - path: /test01
+            pathType: Prefix
+            backend:
+              service:
+                name: ingress-service-test01
+                port:
+                  number: 80
+
+복사<br><br>kubectl apply -f ingress01-deploy.yml
+deployment.apps/ingress-deploy-test01 created
+
+kubectl apply -f ingress01-service.yml
+service/ingress-service-test01 created
+
+kubectl apply -f ingress01-ingress.yml
+ingress.networking.k8s.io/ingress-test01 created
+복사<br><br>kubectl get all
+
+
+NAME                                         READY   STATUS    RESTARTS   AGE
+pod/ingress-deploy-test01-796d5b8df4-5pndl   1/1     Running   0          52s
+pod/ingress-deploy-test01-796d5b8df4-97q6v   1/1     Running   0          52s
+pod/ingress-deploy-test01-796d5b8df4-xvnq5   1/1     Running   0          52s
+
+NAME                             TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)   AGE
+service/ingress-service-test01   ClusterIP   10.107.65.7   &lt;none&gt;        80/TCP    46s
+service/kubernetes               ClusterIP   10.96.0.1     &lt;none&gt;        443/TCP   3d
+
+NAME                                    READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/ingress-deploy-test01   3/3     3            3           52s
+
+NAME                                               DESIRED   CURRENT   READY   AGE
+replicaset.apps/ingress-deploy-test01-796d5b8df4   3         3         3       52s
+복사<br>kubectl get ingress
+
+NAME             CLASS   HOSTS   ADDRESS        PORTS   AGE
+ingress-test01   nginx   *       172.31.8.194   80      67s
+복사<br><br><br>sudo apt-get update
+복사<br>sudo apt-get install nginx
+
+sudo systemctl status nginx
+복사<br><br>sudo -i
+cd /etc/nginx/sites-enabled/
+
+ls
+default
+
+sudo vi default 
+복사<br>
+<br>EXTERNAL-IP 확인
+<br>kubectl get all --namespace mynginx
+
+NAME                                                                  READY   STATUS    RESTARTS        AGE
+pod/nginx-ingress-controller-1717573067-7cdb6cdd94-fcq5f              1/1     Running   2 (5h29m ago)   46h
+pod/nginx-ingress-controller-1717573067-default-backend-776648m7hqx   1/1     Running   2 (5h29m ago)   46h
+
+NAME                                                          TYPE           CLUSTER-IP       EXTERNAL-IP  
+service/nginx-ingress-controller-1717573067                   LoadBalancer   10.102.206.3     172.31.134.0 # 이거
+복사<br>ubuntu@ip-172-31-8-194:~/work/k8s/basic$ sudo -i
+root@ip-172-31-8-194:~# cd /etc/nginx/sites-enabled/
+root@ip-172-31-8-194:/etc/nginx/sites-enabled# ls
+default
+root@ip-172-31-8-194:/etc/nginx/sites-enabled# sudo vi default 
+복사<br>location / {
+	# First attempt to serve request as file, then
+	# as directory, then fall back to displaying a 404.
+	# try_files $uri $uri/ =404; # 이거 주석
+	proxy_pass http://172.31.134.0:80; # 이거  EXTERNAL-IP 넣기
+}
+복사<br>
+<br>nginx 재시작
+<br>status nginx
+● nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-06-07 06:21:04 UTC; 8s ago
+복사<br>Notehttp://내_public_ip/test01
+복사
+위로 접속하면 nginx의 welcome to nginx가 뜨면 성공<br><br>Check
+kubectl delete -f ingress01-ingress.yml
+복사
+ingress.networking.k8s.io "ingress-test01" deleted
+
+kubectl delete -f ingress01-service.yml
+복사
+service "ingress-service-test01" deleted
+
+kubectl delete -f ingress01-deploy.yml
+복사
+deployment.apps "ingress-deploy-test01" deleted
+
+kubectl get all
+복사
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE<br>
+service/kubernetes   ClusterIP   10.96.0.1            443/TCP   3d<br><br><br><br>vim ingress02-deploy.yml
+복사<br>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ingress-deploy-test02
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web-deploy02
+  template:
+    metadata:
+      labels:
+        app: web-deploy02
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.25
+
+복사<br><br>vim ingress02-service.yml
+복사<br>apiVersion: v1
+kind: Service
+metadata:
+  name: ingress-service-test02
+spec:
+  selector:
+    app: web-deploy02
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+
+복사<br><br>vim ingress02-ingress.yml
+복사<br>apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-test02
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+          - path: /test01
+            pathType: Prefix
+            backend:
+              service:
+                name: ingress-service-test01
+                port:
+                  number: 80
+          - path: /test02
+            pathType: Prefix
+            backend:
+              service:
+                name: ingress-service-test02
+                port:
+                  number: 80
+
+복사<br><br>Note
+kubectl apply -f ingress01-deploy.yml
+복사
+deployment.apps/ingress-deploy-test01 created
+kubectl apply -f ingress01-service.yml
+복사
+service/ingress-service-test01 created
+
+kubectl apply -f ingress02-deploy.yml
+복사
+deployment.apps/ingress-deploy-test02 created
+kubectl apply -f ingress02-service.yml
+복사
+service/ingress-service-test02 created
+
+kubectl apply -f ingress02-ingress.yml
+복사
+ingress.networking.k8s.io/ingress-test02 created<br><br>kubectl get all
+
+NAME                                         READY   STATUS    RESTARTS   AGE
+pod/ingress-deploy-test01-796d5b8df4-5w2fk   1/1     Running   0          62s
+pod/ingress-deploy-test01-796d5b8df4-fslj6   1/1     Running   0          62s
+pod/ingress-deploy-test01-796d5b8df4-qjtj5   1/1     Running   0          62s
+pod/ingress-deploy-test02-679c4755c5-d9fnk   1/1     Running   0          53s
+pod/ingress-deploy-test02-679c4755c5-xhxbw   1/1     Running   0          53s
+pod/ingress-deploy-test02-679c4755c5-z59zm   1/1     Running   0          53s
+
+NAME                             TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE
+service/ingress-service-test01   ClusterIP   10.108.168.160   &lt;none&gt;        80/TCP    57s
+service/ingress-service-test02   ClusterIP   10.97.21.105     &lt;none&gt;        80/TCP    49s
+service/kubernetes               ClusterIP   10.96.0.1        &lt;none&gt;        443/TCP   3d1h
+
+NAME                                    READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/ingress-deploy-test01   3/3     3            3           62s
+deployment.apps/ingress-deploy-test02   3/3     3            3           53s
+
+NAME                                               DESIRED   CURRENT   READY   AGE
+replicaset.apps/ingress-deploy-test01-796d5b8df4   3         3         3       62s
+replicaset.apps/ingress-deploy-test02-679c4755c5   3         3         3       53s
+복사<br>Notehttp://내_public_ip/test02
+복사
+위로 접속하면 nginx의 welcome to nginx가 뜨면 성공<br><br>Notekubectl delete -f ingress02-ingress.yml
+복사
+ingress.networking.k8s.io "ingress-test02" deleted
+kubectl delete -f ingress02-service.yml
+복사
+service "ingress-service-test02" deleted
+kubectl delete -f ingress02-deploy.yml
+복사
+deployment.apps "ingress-deploy-test02" deleted
+kubectl delete -f ingress01-service.yml
+복사
+service "ingress-service-test01" deleted
+kubectl delete -f ingress01-deploy.yml
+복사
+deployment.apps "ingress-deploy-test01" deleted
+kubectl get all
+복사
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes   ClusterIP   10.96.0.1            443/TCP   3d1h<br><br><br><br>vim job-cronjob01.yml
+복사<br>apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job-test01
+spec:
+  template:
+    spec:
+      containers:
+        - name: nginx-test01
+          image: nginx:1.25
+          command: ["echo", "Hello, Kubernetes!"]
+      restartPolicy: Never
+  backoffLimit: 3
+
+복사<br><br>kubectl apply -f job-cronjob01.yml
+
+job.batch/job-test01 created
+
+
+kubectl get job
+
+NAME         COMPLETIONS   DURATION   AGE
+job-test01   1/1           3s         15s
+복사<br>kubectl describe job job-test01
+
+
+Name:             job-test01
+Namespace:        default
+Selector:         batch.kubernetes.io/controller-uid=d2c6efd7-68ab-4160-ba27-8bf6af72e019
+Labels:           batch.kubernetes.io/controller-uid=d2c6efd7-68ab-4160-ba27-8bf6af72e019
+                  batch.kubernetes.io/job-name=job-test01
+                  controller-uid=d2c6efd7-68ab-4160-ba27-8bf6af72e019
+                  job-name=job-test01
+Annotations:      &lt;none&gt;
+Parallelism:      1
+Completions:      1
+Completion Mode:  NonIndexed
+Start Time:       Fri, 07 Jun 2024 07:28:10 +0000
+Completed At:     Fri, 07 Jun 2024 07:28:13 +0000
+Duration:         3s
+Pods Statuses:    0 Active (0 Ready) / 1 Succeeded / 0 Failed
+Pod Template:
+  Labels:  batch.kubernetes.io/controller-uid=d2c6efd7-68ab-4160-ba27-8bf6af72e019
+           batch.kubernetes.io/job-name=job-test01
+           controller-uid=d2c6efd7-68ab-4160-ba27-8bf6af72e019
+           job-name=job-test01
+  Containers:
+   nginx-test01:
+    Image:      nginx:1.25
+    Port:       &lt;none&gt;
+    Host Port:  &lt;none&gt;
+    Command:
+      echo
+      Hello, Kubernetes!
+    Environment:  &lt;none&gt;
+    Mounts:       &lt;none&gt;
+  Volumes:        &lt;none&gt;
+Events:
+  Type    Reason            Age   From            Message
+  ----    ------            ----  ----            -------
+  Normal  SuccessfulCreate  60s   job-controller  Created pod: job-test01-q6fqx
+  Normal  Completed         57s   job-controller  Job completed
+복사<br>Checkkubectl get pods
+복사
+NAME               READY   STATUS      RESTARTS   AGE<br>
+job-test01-q6fqx   0/1     Completed   0          91s
+kubectl logs job-test01-q6fqx
+복사
+Hello, Kubernetes!<br><br>Checkkubectl delete -f job-cronjob01.yml
+복사
+job.batch "job-test01" deleted
+kubectl get pod
+복사
+No resources found in default namespace.
+kubectl get job
+복사
+No resources found in default namespace.<br><br><br><br>vim job-cronjob02.yml
+복사<br>apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: cronjob-test02
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: nginx-test02
+              image: nginx:1.25
+              command:
+                - /bin/sh
+                - -c
+                - echo Hello Kubernetes!
+          restartPolicy: Never
+
+복사<br><br>ubuntu@ip-172-31-8-194:~/work/k8s/basic$ kubectl apply -f job-cronjob02.yml
+cronjob.batch/cronjob-test02 created
+ubuntu@ip-172-31-8-194:~/work/k8s/basic$  kubectl get cronjob
+NAME             SCHEDULE      SUSPEND   ACTIVE   LAST SCHEDULE   AGE
+cronjob-test02   */1 * * * *   False     0        &lt;none&gt;          5s
+복사<br>kubectl describe cronjob cronjob-test02
+Name:                          cronjob-test02
+Namespace:                     default
+Labels:                        &lt;none&gt;
+Annotations:                   &lt;none&gt;
+Schedule:                      */1 * * * *
+Concurrency Policy:            Allow
+Suspend:                       False
+Successful Job History Limit:  3
+Failed Job History Limit:      1
+Starting Deadline Seconds:     &lt;unset&gt;
+Selector:                      &lt;unset&gt;
+Parallelism:                   &lt;unset&gt;
+Completions:                   &lt;unset&gt;
+Pod Template:
+  Labels:  &lt;none&gt;
+  Containers:
+   nginx-test02:
+    Image:      nginx:1.25
+    Port:       &lt;none&gt;
+    Host Port:  &lt;none&gt;
+    Command:
+      /bin/sh
+      -c
+      echo Hello Kubernetes!
+    Environment:     &lt;none&gt;
+    Mounts:          &lt;none&gt;
+  Volumes:           &lt;none&gt;
+Last Schedule Time:  Fri, 07 Jun 2024 07:37:00 +0000
+Active Jobs:         &lt;none&gt;
+Events:
+  Type    Reason            Age   From                Message
+  ----    ------            ----  ----                -------
+  Normal  SuccessfulCreate  17s   cronjob-controller  Created job cronjob-test02-28629097
+  Normal  SawCompletedJob   14s   cronjob-controller  Saw completed job: cronjob-test02-28629097, status: Complete
+복사<br>복사<br><br>Notekubectl delete -f job-cronjob02.yml
+복사
+cronjob.batch "cronjob-test02" deleted
+kubectl get cronjob
+복사
+No resources found in default namespace.
+kubectl get pods
+복사
+No resources found in default namespace.]]></description><link>root\dev\도커와-쿠버네틱스\쿠버네티스-사용법.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/쿠버네티스 사용법.md</guid><pubDate>Fri, 07 Jun 2024 07:42:22 GMT</pubDate></item><item><title><![CDATA[0.도커와 쿠버네티스]]></title><description><![CDATA[ 
+ <br><br>
+<br>우분투
+<br>t2.xlarge
+<br>ssd: 100gb
+<br><br><br> AWS client to database<br><a data-tooltip-position="top" aria-label="flask postgreSQL 건들기" data-href="flask postgreSQL 건들기" href="\root\dev\도커와-쿠버네틱스\flask-postgresql-건들기.html" class="internal-link" target="_self" rel="noopener">하고</a><br><br><br><a data-tooltip-position="top" aria-label="flask 건들기 위한 Docker" data-href="flask 건들기 위한 Docker" href="\root\dev\도커와-쿠버네틱스\flask-건들기-위한-docker.html" class="internal-link" target="_self" rel="noopener">설치 하고!</a><br><br><br> AWS client to docker database<br><a data-tooltip-position="top" aria-label="flask docker에 태우자" data-href="flask docker에 태우자" href="\root\dev\도커와-쿠버네틱스\flask-docker에-태우자.html" class="internal-link" target="_self" rel="noopener">그래!</a><br><br><br><a data-tooltip-position="top" aria-label="docker compose" data-href="docker compose" href="\root\dev\도커와-쿠버네틱스\docker-compose.html" class="internal-link" target="_self" rel="noopener">일단 설치</a><br><br><br><a data-tooltip-position="top" aria-label="Python에 YAML" data-href="Python에 YAML" href="\root\dev\도커와-쿠버네틱스\python에-yaml.html" class="internal-link" target="_self" rel="noopener">설치 하고</a><br><br><br><a data-tooltip-position="top" aria-label="enginx 도커 올려" data-href="enginx 도커 올려" href="\root\dev\도커와-쿠버네틱스\enginx-도커-올려.html" class="internal-link" target="_self" rel="noopener">올려!!</a><br><br><br><a data-tooltip-position="top" aria-label="postgre 도커 올려" data-href="postgre 도커 올려" href="\root\dev\도커와-쿠버네틱스\postgre-도커-올려.html" class="internal-link" target="_self" rel="noopener">올려!!!</a><br><br><br><a data-tooltip-position="top" aria-label="도커 볼륨" data-href="도커 볼륨" href="\root\dev\도커와-쿠버네틱스\도커-볼륨.html" class="internal-link" target="_self" rel="noopener">걸고</a><br><br><br><a data-tooltip-position="top" aria-label="도커로 flask, nginx, PostgresSql 함께 배포" data-href="도커로 flask, nginx, PostgresSql 함께 배포" href="\root\dev\도커와-쿠버네틱스\도커로-flask,-nginx,-postgressql-함께-배포.html" class="internal-link" target="_self" rel="noopener">하고</a><br><br><br><a data-tooltip-position="top" aria-label="쿠버네티스 설치" data-href="쿠버네티스 설치" href="\root\dev\도커와-쿠버네틱스\쿠버네티스-설치.html" class="internal-link" target="_self" rel="noopener">해서</a><br><br><br><a data-tooltip-position="top" aria-label="쿠버네티스 사용법" data-href="쿠버네티스 사용법" href="\root\dev\도커와-쿠버네틱스\쿠버네티스-사용법.html" class="internal-link" target="_self" rel="noopener">익히면</a><br>된다.]]></description><link>root\dev\도커와-쿠버네틱스\0.도커와-쿠버네티스.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/0.도커와 쿠버네티스.md</guid><pubDate>Tue, 04 Jun 2024 12:44:12 GMT</pubDate></item><item><title><![CDATA[도커 볼륨]]></title><description><![CDATA[ 
+ <br><br>
+<br>입력
+<br>docker volume ls
+복사<br>
+<br>출력
+<br>DRIVER    VOLUME NAME
+local     017e81633e49fe45ddb6bba787e35e1808c6bac4f41cd00de119de5b53fdd29a
+local     671ee4a6da4fbbef319421e4b72d86c8b8a7097a87692871f7f6140842dc3464
+local     c530219b8e489e5120e024a8120f566a53670af51676b6bfe46b4b09f0ceb6d2
+복사<br><br><br>docker volume create myvolume01
+복사<br><br><br>
+<br>입력
+<br>docker volume inspect myvolume01
+복사<br>
+<br>출력
+<br>[
+    {
+        "CreatedAt": "2024-06-04T00:22:24Z",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/myvolume01/_data",
+        "Name": "myvolume01",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+복사<br>Important"Mountpoint": "/var/lib/docker/volumes/myvolume01/_data"
+요 부분을 실행할 때 씀<br><br><br><br>
+<br>입력
+<br>docker container run -e POSTGRES_PASSWORD=mysecretpassword -v myvolume01:/var/lib/postgresql/data -d postgres
+복사<br>
+<br>출력
+<br>e0d2b80f0a0af6ed07b7e0f583873e7c74ffd097960c66c097909345ff671bfb
+복사<br><br>
+<br>입력
+<br>docker container ls
+복사<br>
+<br>출력
+<br>CONTAINER ID   IMAGE      COMMAND                  CREATED         STATUS         PORTS      NAMES
+eb8a80dcd9d2   postgres   "docker-entrypoint.s…"   5 seconds ago   Up 4 seconds   5432/tcp   sweet_goodall
+복사<br><br>docker container exec -it eb8a80dcd9d2 /bin/bash
+psql -U postgres
+복사<br><br><br>
+<br>입력
+<br>CREATE USER cheolwon PASSWORD '1234' SUPERUSER;
+postgres=# \du
+복사<br>
+<br>출력
+<br>                             List of roles
+ Role name |                         Attributes                         
+-----------+------------------------------------------------------------
+ cheolwon  | Superuser
+ postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS
+복사<br><br><br>
+<br>입력
+<br>docker container ls
+복사<br>
+<br>출력
+<br>CONTAINER ID   IMAGE     COMMAND                  CREATED        STATUS         PORTS      NAMES
+39e32b2aaf25   postgres  "docker-entrypoint.s…"   4 minutes ago  Up 55 seconds  5432/tcp   some-postgres
+복사<br><br>
+<br>입력
+<br>docker container stop 39e32b2aaf25
+docker container rm 39e32b2aaf25
+복사<br>
+<br>출력
+<br>39e32b2aaf25
+복사<br><br><a data-href="#컨테이너" href="\#컨테이너" class="internal-link" target="_self" rel="noopener">컨테이너</a><br><br>
+<br>입력
+<br>docker container ls
+복사<br>
+<br>출력
+<br>CONTAINER ID   IMAGE      COMMAND                  CREATED              STATUS              PORTS      NAMES
+666c91149b9d   postgres   "docker-entrypoint.s…"   About a minute ago   Up About a minute   5432/tcp   sweet_mccarthy
+ubuntu@ip-172-31-8-194:~$ docker container exec -it 666c91149b9d /bin/bash
+복사<br><br>
+<br>입력
+<br>psql -U postgres
+postgres=# psql
+postgres-# \du
+복사<br>
+<br>출력
+<br>                             List of roles
+ Role name |                         Attributes                         
+-----------+------------------------------------------------------------
+ cheolwon  | Superuser
+ postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS
+복사<br>Note컨테이너를 삭제 했음에도 불구하고 psql의 cheolwon 계정이 살아있다.<br><br><br><br>
+<br>입력
+<br>docker volume inspect myvolume01
+복사<br>
+<br>출력
+<br>[
+    {
+        "CreatedAt": "2024-06-04T00:22:24Z",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/myvolume01/_data",
+        "Name": "myvolume01",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+복사<br>이 부분 확인"Mountpoint": "/var/lib/docker/volumes/myvolume01/_data"<br><br>
+<br>입력
+<br>sudo -i
+cd /var/lib/docker/volumes/myvolume01/_dat
+ls
+복사<br>
+<br>출력
+<br>PG_VERSION    pg_dynshmem    pg_multixact  pg_snapshots  pg_tblspc    postgresql.auto.conf
+base          pg_hba.conf    pg_notify     pg_stat       pg_twophase  postgresql.conf
+global        pg_ident.conf  pg_replslot   pg_stat_tmp   pg_wal       postmaster.opts
+pg_commit_ts  pg_logical     pg_serial     pg_subtrans   pg_xact
+복사]]></description><link>root\dev\도커와-쿠버네틱스\도커-볼륨.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/도커 볼륨.md</guid><pubDate>Thu, 06 Jun 2024 05:45:41 GMT</pubDate></item><item><title><![CDATA[도커로 flask, nginx, PostgresSql 함께 배포]]></title><description><![CDATA[ 
+ <br><br><br>cd ~/work
+mkdir psqltest
+복사<br><br>cd psqltest
+복사<br><br><br>FROM postgres:16.3
+복사<br><br><br>tree
+.
+├── docker-compose.yml
+├── flaskapp
+│   ├── Dockerfile
+│   ├── myapp
+│   │   └── main.py
+│   └── requirements.txt
+├── nginxtest
+│   ├── Dockerfile
+│   └── default.conf
+└── psqltest
+    └── Dockerfile
+복사<br><br><br><br>:~/work/docker$ vi docker-compose.yml
+복사<br><br>services:
+  flasktest:
+    build: ./flaskapp
+    networks:
+     - composenet01
+    restart: always
+  
+  nginxtest:
+    build: ./nginxtest
+    networks:
+    - composenet01
+    ports:
+    - "80:80"
+    depends_on:
+    - flasktest
+
+  psqltest:
+    build: ./psqltest
+    container_name: psqltest
+    networks:
+    - composenet01
+    restart: always
+    volumes:
+    - myvolume01:/var/lib/postgresql/data
+    environment:
+    - POSTGRES_USER=postgres
+    - POSTGRES_PASSWORD=postgres
+    - POSTGRES_DB=postgres
+
+volumes:
+  myvolume01:
+
+networks:
+  composenet01:
+
+복사<br>Notepsqltest 부분 장성<br><br><br><br>~/work/docker/flaskapp/myapp$ vim main.py
+복사<br><br>...( )
+conn = psycopg2.connect(dbname='ml', user='postgres', password='postgres', host='psqltest', port=5432)
+...( )
+복사<br>Notehost='psqltest'<br><br><br><br>cd ~/work/docker
+복사<br><br><br>docker docker compose up -d --build
+복사<br><br>[+] Building 50.9s (24/24) FINISHED
+=&gt; [flasktest internal] load build definition from Dockerfile
+=&gt; =&gt; transferring dockerfile: 241B
+...( )
+[+] Running 5/5
+Network docker_composenet01 Created
+Volume "docker_myvolume01" Created
+Container flasktest Started
+Container psqltest Started
+Container nginxtest Started
+복사<br><br><br>docker container ls
+복사<br><br>CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES
+d978f5f34183 docker-nginxtest "/docker-entrypoint.…" 29 seconds ago Up 28 seconds 0.0.0.0:80-&gt;80/tcp, :::80-&gt;80/tcp nginxtest
+084e876750a0 docker-psqltest "docker-entrypoint.s…" 30 seconds ago Up 29 seconds 5432/tcp psqltest
+14dea1fe0200 docker-flasktest "/bin/sh -c 'gunicor…" 30 seconds ago Up 29 seconds 5000/tcp flasktest
+복사<br><br>브라우저주소: 인스턴스 ip 주소
+내용: HELLO, ML API SERVER<br><br><br><br>docker container ls
+복사<br>CONTAINER ID   IMAGE              COMMAND                  CREATED          STATUS          PORTS                               NAMES
+a88f2c3846f5   docker-nginxtest   "/docker-entrypoint.…"   29 minutes ago   Up 29 minutes   0.0.0.0:80-&gt;80/tcp, :::80-&gt;80/tcp   docker-nginxtest-1
+df0bbba2c7de   docker-flasktest   "/bin/sh -c 'gunicor…"   29 minutes ago   Up 29 minutes   5000/tcp                            docker-flasktest-1
+a60d681088ac   docker-psqltest    "docker-entrypoint.s…"   29 minutes ago   Up 29 minutes   5432/tcp                            psqltest
+복사<br>Notepsqltest 컨테이너<br><br>docker container exec -it a60d681088ac /bin/bash
+복사<br><br><br>psql -U postgre
+복사<br><br>CREATE DATABASE ml;
+
+\c ml
+복사<br><br>CREATE TABLE pred_result(
+    id SERIAL PRIMARY KEY,
+    input NUMERIC,
+    output NUMERIC,
+    insert_dt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+복사<br><br><br>curl -d '{"input":["0.３"]}' -H "Content-Type: application/json" -X POST http://43.203.77.126/predict
+복사<br><br>{"input":0.3,"predicted_output":1.63768}
+복사]]></description><link>root\dev\도커와-쿠버네틱스\도커로-flask,-nginx,-postgressql-함께-배포.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/도커로 flask, nginx, PostgresSql 함께 배포.md</guid><pubDate>Tue, 04 Jun 2024 12:45:38 GMT</pubDate></item><item><title><![CDATA[쿠버네티스 설치]]></title><description><![CDATA[ 
  <br>Attention신중하게 처리<br><br><br><br>sudo -i
 복사<br>Notesudo를 사용해도 좋지만<br>
 안전하게 root 유저로 작업하는 게 좋다.<br><br>
