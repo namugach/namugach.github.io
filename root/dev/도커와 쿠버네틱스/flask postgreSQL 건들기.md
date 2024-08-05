@@ -62,7 +62,7 @@ import psycopg2
 python test.py
 ```
 
-[[pyenv 설치]]
+[[root/dev/python/pyenv 설치]]
 [[pyenv 실습]]
 
 ---

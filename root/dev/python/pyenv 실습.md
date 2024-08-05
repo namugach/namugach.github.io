@@ -7,7 +7,7 @@ tags:
 create: 2024-05-13 11:20:05
 ---
 
-- [[pyenv 설치]]
+- [[root/dev/python/pyenv 설치]]
 
 ## 버전 확인
 
