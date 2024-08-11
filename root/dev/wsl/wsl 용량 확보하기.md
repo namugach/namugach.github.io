@@ -6,6 +6,18 @@ tags:
   - public
 create: 2024-08-09 10:14:56
 ---
+`````ad-check
+title:자동화는
+맨 아래에 있음. 그러니 문제 파악할 때, 혹은 자동화 프로그램이
+작동하지 않을 때만 수동으로 처리
+```ad-todo
+title:가자!
+[[#자동화]]
+```
+`````
+
+
+
 ## 문제
 
 ![[Pasted image 20240809103129.png]]
@@ -59,7 +71,6 @@ title:94.5 gb
 https://uutopia.tistory.com/70
 
 ### wsl 종료
-
 ```powershell
 wsl --shutdown
 ```
@@ -70,7 +81,6 @@ wsl --shutdown
 ```
 
 ### diskpart
-
 ```powershell
 diskpart
 ```
@@ -106,18 +116,20 @@ detach vdisk
 ---
 
 ## 자동화
-https://github.com/namugach/Compress-VHDX
+
+```ad-info
+title:더 자세한 메뉴얼은
+[여기](https://github.com/namugach/Compress-VHDX)에서 볼 수 있음
+```
 
 
 ![[Pasted image 20240811140207.png]]
 
 ### 다운로드
-
 ```sh
 git clone https://github.com/namugach/Compress-VHDX.git
 ```
 
 ### 실행
-
 - Compress-VHDX.bat 더블 클릭 혹은 우클릭 -> 관리자 모드 실행
 
