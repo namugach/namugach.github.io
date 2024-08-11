@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 11 Aug 2024 04:56:27 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 11 Aug 2024 04:56:24 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[mysql 계정 생성시 %의 의미]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 11 Aug 2024 05:04:41 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 11 Aug 2024 05:04:38 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[mysql 계정 생성시 %의 의미]]></title><description><![CDATA[ 
  <br><br>
 <br>%: MySQL에서 %는 "모든 호스트"를 의미해. 즉, %를 사용하면 어떤 IP 주소에서든지 이 사용자 계정으로 MySQL 서버에 접근할 수 있도록 허용하는 거야.
 <br><br>
@@ -31,7 +31,7 @@ Run복사
 <br>호스트 이름: 특정 호스트 이름에서만 접근 허용.
 <br>이렇게 설정을 통해 MySQL 서버에 접근할 수 있는 사용자 계정과 그 계정이 접속할 수 있는 호스트를 세밀하게 제어할 수 있어. 추가로 궁금한 점이 있으면 언제든지 물어봐!<br>
 이렇게 만드는데, '계정명'@'% 이 부분에서 % 부분에 대해서 알려줘]]></description><link>root\dev\data-pipe-line\server\local\mysql-계정-생성시-의-의미.html</link><guid isPermaLink="false">root/dev/data pipe line/server/local/mysql 계정 생성시 %의 의미.md</guid><pubDate>Tue, 30 Jul 2024 15:36:37 GMT</pubDate></item><item><title><![CDATA[wsl 용량 확보하기]]></title><description><![CDATA[ 
- <br><br>“Pasted image 20240809103129.png” could not be found.<br>용량이 무려173g
+ <br><br><img alt="Pasted image 20240809103129.png" src="lib\media\pasted-image-20240809103129.png"><br>용량이 무려173g
 
 <br>wsl은 자동으로 용량을 줄이지 않음
 <br>wsl에서 용량 확보를 해도, 그 안에 공기는 그대로
@@ -41,7 +41,7 @@ Run복사
 복사<br>Info
 <br>--exclude: 제외 디렉토리
 
-sudo를 넣지 않으면 권한이 없기 때문에 모든 디렉토리를 순회하지 않는다.<br>“Pasted image 20240809103759.png” could not be found.<br>94.5 gb원래는 더 많았지만<br>
+sudo를 넣지 않으면 권한이 없기 때문에 모든 디렉토리를 순회하지 않는다.<br><img alt="Pasted image 20240809103759.png" src="lib\media\pasted-image-20240809103759.png"><br>94.5 gb원래는 더 많았지만<br>
 컨테이너를 지워서 용량이 축소 된 화면<br><br><br><a rel="noopener" class="external-link" href="https://uutopia.tistory.com/70" target="_blank">https://uutopia.tistory.com/70</a><br><br>wsl --shutdown
 Run복사<br><br>(Get-ChildItem -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Lxss | Where-Object {$_.GetValue('DistributionName') -eq 'Ubuntu' }).GetValue('BasePath') + '\ext4.vhdx'
 Run복사<br><br>diskpart
@@ -53,10 +53,10 @@ detach vdisk
 attach vdisk readonly
 compact vdisk
 detach vdisk
-복사<br>“Pasted image 20240809105041.png” could not be found.<br><br><br>“Pasted image 20240809105036.png” could not be found.<br><br><br><a rel="noopener" class="external-link" href="https://github.com/namugach/Compress-VHDX" target="_blank">https://github.com/namugach/Compress-VHDX</a><br><br>git clone https://github.com/namugach/Compress-VHDX.git
+복사<br><img alt="Pasted image 20240809105041.png" src="lib\media\pasted-image-20240809105041.png"><br><br><br><img alt="Pasted image 20240809105036.png" src="lib\media\pasted-image-20240809105036.png"><br><br><br><a rel="noopener" class="external-link" href="https://github.com/namugach/Compress-VHDX" target="_blank">https://github.com/namugach/Compress-VHDX</a><br><img alt="Pasted image 20240811140207.png" src="lib\media\pasted-image-20240811140207.png"><br><br>git clone https://github.com/namugach/Compress-VHDX.git
 복사<br><br>
 <br>Compress-VHDX.bat 더블 클릭 혹은 우클릭 -&gt; 관리자 모드 실행
-]]></description><link>root\dev\wsl\wsl-용량-확보하기.html</link><guid isPermaLink="false">root/dev/wsl/wsl 용량 확보하기.md</guid><pubDate>Sun, 11 Aug 2024 04:54:40 GMT</pubDate></item><item><title><![CDATA[0.도커와 쿠버네티스]]></title><description><![CDATA[ 
+]]></description><link>root\dev\wsl\wsl-용량-확보하기.html</link><guid isPermaLink="false">root/dev/wsl/wsl 용량 확보하기.md</guid><pubDate>Sun, 11 Aug 2024 05:02:34 GMT</pubDate><enclosure url="lib\media\pasted-image-20240809103129.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240809103129.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[0.도커와 쿠버네티스]]></title><description><![CDATA[ 
  <br><br>
 <br>우분투
 <br>t2.xlarge

@@ -109,6 +109,8 @@ detach vdisk
 https://github.com/namugach/Compress-VHDX
 
 
+![[Pasted image 20240811140207.png]]
+
 ### 다운로드
 
 ```sh
