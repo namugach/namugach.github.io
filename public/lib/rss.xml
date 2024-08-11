@@ -1,4 +1,62 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 05 Aug 2024 01:46:58 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 05 Aug 2024 01:46:09 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[0.도커와 쿠버네티스]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 11 Aug 2024 04:56:27 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 11 Aug 2024 04:56:24 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[mysql 계정 생성시 %의 의미]]></title><description><![CDATA[ 
+ <br><br>
+<br>%: MySQL에서 %는 "모든 호스트"를 의미해. 즉, %를 사용하면 어떤 IP 주소에서든지 이 사용자 계정으로 MySQL 서버에 접근할 수 있도록 허용하는 거야.
+<br><br>
+<br>
+모든 호스트에서 접근 가능:
+CREATE USER 'ubuntu'@'%' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'%' WITH GRANT OPTION;
+Run복사
+이 명령어는 ubuntu라는 사용자 계정이 어떤 IP 주소에서든지 접속할 수 있도록 설정해. 즉, server3에서뿐만 아니라 다른 모든 서버에서도 이 계정을 사용해 MySQL 서버에 접근할 수 있어.
+
+<br>
+특정 IP 주소에서만 접근 가능:
+만약 특정 IP 주소에서만 접근을 허용하려면 % 대신 그 IP 주소를 사용하면 돼. 예를 들어 172.17.0.3에서만 접근을 허용하려면:
+CREATE USER 'ubuntu'@'172.17.0.3' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'172.17.0.3' WITH GRANT OPTION;
+Run복사
+이 경우, ubuntu 사용자는 172.17.0.3에서만 MySQL 서버에 접근할 수 있어.
+
+<br>
+특정 호스트 이름에서 접근 가능:
+특정 호스트 이름을 사용해 접근을 제한할 수도 있어. 예를 들어 server1.example.com에서만 접근을 허용하려면:
+CREATE USER 'ubuntu'@'server1.example.com' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'server1.example.com' WITH GRANT OPTION;
+Run복사
+이 경우, ubuntu 사용자는 server1.example.com이라는 호스트 이름으로만 MySQL 서버에 접근할 수 있어.
+
+<br><br>
+<br>%: 모든 호스트에서 접근 허용.
+<br>특정 IP 주소: 특정 IP 주소에서만 접근 허용.
+<br>호스트 이름: 특정 호스트 이름에서만 접근 허용.
+<br>이렇게 설정을 통해 MySQL 서버에 접근할 수 있는 사용자 계정과 그 계정이 접속할 수 있는 호스트를 세밀하게 제어할 수 있어. 추가로 궁금한 점이 있으면 언제든지 물어봐!<br>
+이렇게 만드는데, '계정명'@'% 이 부분에서 % 부분에 대해서 알려줘]]></description><link>root\dev\data-pipe-line\server\local\mysql-계정-생성시-의-의미.html</link><guid isPermaLink="false">root/dev/data pipe line/server/local/mysql 계정 생성시 %의 의미.md</guid><pubDate>Tue, 30 Jul 2024 15:36:37 GMT</pubDate></item><item><title><![CDATA[wsl 용량 확보하기]]></title><description><![CDATA[ 
+ <br><br>“Pasted image 20240809103129.png” could not be found.<br>용량이 무려173g
+
+<br>wsl은 자동으로 용량을 줄이지 않음
+<br>wsl에서 용량 확보를 해도, 그 안에 공기는 그대로
+<br>때문에 공기 빼주는 작업을 수동으로 해야함
+<br><br><br><br>sudo apt-get install ncdu
+복사<br><br>sudo ncdu / --exclude /mnt
+복사<br>Info
+<br>--exclude: 제외 디렉토리
+
+sudo를 넣지 않으면 권한이 없기 때문에 모든 디렉토리를 순회하지 않는다.<br>“Pasted image 20240809103759.png” could not be found.<br>94.5 gb원래는 더 많았지만<br>
+컨테이너를 지워서 용량이 축소 된 화면<br><br><br><a rel="noopener" class="external-link" href="https://uutopia.tistory.com/70" target="_blank">https://uutopia.tistory.com/70</a><br><br>wsl --shutdown
+Run복사<br><br>(Get-ChildItem -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Lxss | Where-Object {$_.GetValue('DistributionName') -eq 'Ubuntu' }).GetValue('BasePath') + '\ext4.vhdx'
+Run복사<br><br>diskpart
+Run복사<br>select vdisk file=".vdisk_경로"
+attach vdisk readonly
+compact vdisk
+detach vdisk
+복사<br>select vdisk file="S:\wsl\ubuntu\ext4.vhdx"
+attach vdisk readonly
+compact vdisk
+detach vdisk
+복사<br>“Pasted image 20240809105041.png” could not be found.<br><br><br>“Pasted image 20240809105036.png” could not be found.<br><br><br><a rel="noopener" class="external-link" href="https://github.com/namugach/Compress-VHDX" target="_blank">https://github.com/namugach/Compress-VHDX</a><br><br>git clone https://github.com/namugach/Compress-VHDX.git
+복사<br><br>
+<br>Compress-VHDX.bat 더블 클릭 혹은 우클릭 -&gt; 관리자 모드 실행
+]]></description><link>root\dev\wsl\wsl-용량-확보하기.html</link><guid isPermaLink="false">root/dev/wsl/wsl 용량 확보하기.md</guid><pubDate>Sun, 11 Aug 2024 04:54:40 GMT</pubDate></item><item><title><![CDATA[0.도커와 쿠버네티스]]></title><description><![CDATA[ 
  <br><br>
 <br>우분투
 <br>t2.xlarge
@@ -6852,39 +6910,7 @@ root-ubuntu:24.01-mysql \
   obsidiandynamics/kafdrop
 복사<br><br>컨테이너가 실행된 후 브라우저를 열고 다음 URL로 접속합니다.<br>http://localhost:9000
 복사<br>http://172.17.0.2:9000
-복사<br>이제 Kafdrop UI를 통해 Kafka 클러스터의 여러 브로커를 모니터링하고 관리할 수 있습니다.<br><br><br>브로커 서버가 Docker 컨테이너 내에서 실행되고 있다면, Docker 네트워크 설정이 올바르게 되어 있는지 확인해야 합니다. 브로커 컨테이너와 Kafdrop 컨테이너가 동일한 네트워크에 있어야 통신이 가능합니다.<br><br>위 예시에서는 브로커 호스트가 server1, server2, server3이고, 포트가 9092로 동일하다고 가정했습니다. 실제 환경에서는 호스트명과 포트 번호가 다를 수 있으니 환경에 맞게 수정하세요.<br><br>여러 Kafka 브로커를 사용하는 경우, Docker 명령어에서 --add-host 옵션을 사용해 브로커 호스트를 추가하고, KAFKA_BROKERCONNECT 환경 변수에 여러 브로커를 쉼표로 구분하여 설정합니다. 이를 통해 Kafdrop을 사용해 여러 브로커가 있는 Kafka 클러스터를 편리하게 관리할 수 있습니다.]]></description><link>root\dev\data-pipe-line\server\local\kafdrop-kafka-클러스터-모니터링.html</link><guid isPermaLink="false">root/dev/data pipe line/server/local/Kafdrop kafka 클러스터 모니터링.md</guid><pubDate>Sat, 03 Aug 2024 13:19:25 GMT</pubDate></item><item><title><![CDATA[mysql 계정 생성시 %의 의미]]></title><description><![CDATA[ 
- <br><br>
-<br>%: MySQL에서 %는 "모든 호스트"를 의미해. 즉, %를 사용하면 어떤 IP 주소에서든지 이 사용자 계정으로 MySQL 서버에 접근할 수 있도록 허용하는 거야.
-<br><br>
-<br>
-모든 호스트에서 접근 가능:
-CREATE USER 'ubuntu'@'%' IDENTIFIED BY '1234';
-GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'%' WITH GRANT OPTION;
-Run복사
-이 명령어는 ubuntu라는 사용자 계정이 어떤 IP 주소에서든지 접속할 수 있도록 설정해. 즉, server3에서뿐만 아니라 다른 모든 서버에서도 이 계정을 사용해 MySQL 서버에 접근할 수 있어.
-
-<br>
-특정 IP 주소에서만 접근 가능:
-만약 특정 IP 주소에서만 접근을 허용하려면 % 대신 그 IP 주소를 사용하면 돼. 예를 들어 172.17.0.3에서만 접근을 허용하려면:
-CREATE USER 'ubuntu'@'172.17.0.3' IDENTIFIED BY '1234';
-GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'172.17.0.3' WITH GRANT OPTION;
-Run복사
-이 경우, ubuntu 사용자는 172.17.0.3에서만 MySQL 서버에 접근할 수 있어.
-
-<br>
-특정 호스트 이름에서 접근 가능:
-특정 호스트 이름을 사용해 접근을 제한할 수도 있어. 예를 들어 server1.example.com에서만 접근을 허용하려면:
-CREATE USER 'ubuntu'@'server1.example.com' IDENTIFIED BY '1234';
-GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'server1.example.com' WITH GRANT OPTION;
-Run복사
-이 경우, ubuntu 사용자는 server1.example.com이라는 호스트 이름으로만 MySQL 서버에 접근할 수 있어.
-
-<br><br>
-<br>%: 모든 호스트에서 접근 허용.
-<br>특정 IP 주소: 특정 IP 주소에서만 접근 허용.
-<br>호스트 이름: 특정 호스트 이름에서만 접근 허용.
-<br>이렇게 설정을 통해 MySQL 서버에 접근할 수 있는 사용자 계정과 그 계정이 접속할 수 있는 호스트를 세밀하게 제어할 수 있어. 추가로 궁금한 점이 있으면 언제든지 물어봐!<br>
-이렇게 만드는데, '계정명'@'% 이 부분에서 % 부분에 대해서 알려줘]]></description><link>root\dev\data-pipe-line\server\local\mysql-계정-생성시-의-의미.html</link><guid isPermaLink="false">root/dev/data pipe line/server/local/mysql 계정 생성시 %의 의미.md</guid><pubDate>Tue, 30 Jul 2024 15:36:37 GMT</pubDate></item><item><title><![CDATA[ssh 접속시 yes 입력 생략하기]]></title><description><![CDATA[ 
+복사<br>이제 Kafdrop UI를 통해 Kafka 클러스터의 여러 브로커를 모니터링하고 관리할 수 있습니다.<br><br><br>브로커 서버가 Docker 컨테이너 내에서 실행되고 있다면, Docker 네트워크 설정이 올바르게 되어 있는지 확인해야 합니다. 브로커 컨테이너와 Kafdrop 컨테이너가 동일한 네트워크에 있어야 통신이 가능합니다.<br><br>위 예시에서는 브로커 호스트가 server1, server2, server3이고, 포트가 9092로 동일하다고 가정했습니다. 실제 환경에서는 호스트명과 포트 번호가 다를 수 있으니 환경에 맞게 수정하세요.<br><br>여러 Kafka 브로커를 사용하는 경우, Docker 명령어에서 --add-host 옵션을 사용해 브로커 호스트를 추가하고, KAFKA_BROKERCONNECT 환경 변수에 여러 브로커를 쉼표로 구분하여 설정합니다. 이를 통해 Kafdrop을 사용해 여러 브로커가 있는 Kafka 클러스터를 편리하게 관리할 수 있습니다.]]></description><link>root\dev\data-pipe-line\server\local\kafdrop-kafka-클러스터-모니터링.html</link><guid isPermaLink="false">root/dev/data pipe line/server/local/Kafdrop kafka 클러스터 모니터링.md</guid><pubDate>Sat, 03 Aug 2024 13:19:25 GMT</pubDate></item><item><title><![CDATA[ssh 접속시 yes 입력 생략하기]]></title><description><![CDATA[ 
  <br><br>SSH 서버에 처음 접속할 때 "yes"를 입력하는 과정은 서버의 호스트 키를 확인하고 저장하는 과정이야. 이 과정을 자동으로 생략하려면 StrictHostKeyChecking 옵션을 사용하면 돼.<br>다음과 같은 방법을 사용해봐:<br>
 <br>명령어에 직접 추가하기:
 <br>ssh -o StrictHostKeyChecking=no user@hostname
