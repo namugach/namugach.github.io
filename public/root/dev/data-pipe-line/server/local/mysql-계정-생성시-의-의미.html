@@ -19,7 +19,7 @@
 <p><strong>모든 호스트에서 접근 가능</strong>:</p>
 <pre class="language-sql" tabindex="0"><code class="language-sql is-loaded"><span class="token keyword">CREATE</span> <span class="token keyword">USER</span> <span class="token string">'ubuntu'</span><span class="token variable">@'%'</span> IDENTIFIED <span class="token keyword">BY</span> <span class="token string">'1234'</span><span class="token punctuation">;</span>
 <span class="token keyword">GRANT</span> <span class="token keyword">ALL</span> <span class="token keyword">PRIVILEGES</span> <span class="token keyword">ON</span> <span class="token operator">*</span><span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword">TO</span> <span class="token string">'ubuntu'</span><span class="token variable">@'%'</span> <span class="token keyword">WITH</span> <span class="token keyword">GRANT</span> <span class="token keyword">OPTION</span><span class="token punctuation">;</span>
-</code><button class="run-code-button">Run</button><button class="copy-code-button">복사</button></pre>
+</code><button class="copy-code-button">복사</button><button class="run-code-button">Run</button></pre>
 <p>이 명령어는 <code class="code-styler-inline">ubuntu</code>라는 사용자 계정이 어떤 IP 주소에서든지 접속할 수 있도록 설정해. 즉, <code class="code-styler-inline">server3</code>에서뿐만 아니라 다른 모든 서버에서도 이 계정을 사용해 MySQL 서버에 접근할 수 있어.</p>
 </li>
 <li data-line="9" dir="auto" class="has-run-code-button">
@@ -27,7 +27,7 @@
 <p>만약 특정 IP 주소에서만 접근을 허용하려면 <code class="code-styler-inline">%</code> 대신 그 IP 주소를 사용하면 돼. 예를 들어 <code class="code-styler-inline">172.17.0.3</code>에서만 접근을 허용하려면:</p>
 <pre class="language-sql" tabindex="0"><code class="language-sql is-loaded"><span class="token keyword">CREATE</span> <span class="token keyword">USER</span> <span class="token string">'ubuntu'</span><span class="token variable">@'172.17.0.3'</span> IDENTIFIED <span class="token keyword">BY</span> <span class="token string">'1234'</span><span class="token punctuation">;</span>
 <span class="token keyword">GRANT</span> <span class="token keyword">ALL</span> <span class="token keyword">PRIVILEGES</span> <span class="token keyword">ON</span> <span class="token operator">*</span><span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword">TO</span> <span class="token string">'ubuntu'</span><span class="token variable">@'172.17.0.3'</span> <span class="token keyword">WITH</span> <span class="token keyword">GRANT</span> <span class="token keyword">OPTION</span><span class="token punctuation">;</span>
-</code><button class="run-code-button">Run</button><button class="copy-code-button">복사</button></pre>
+</code><button class="copy-code-button">복사</button><button class="run-code-button">Run</button></pre>
 <p>이 경우, <code class="code-styler-inline">ubuntu</code> 사용자는 <code class="code-styler-inline">172.17.0.3</code>에서만 MySQL 서버에 접근할 수 있어.</p>
 </li>
 <li data-line="20" dir="auto" class="has-run-code-button">
@@ -35,7 +35,7 @@
 <p>특정 호스트 이름을 사용해 접근을 제한할 수도 있어. 예를 들어 <code class="code-styler-inline">server1.example.com</code>에서만 접근을 허용하려면:</p>
 <pre class="language-sql" tabindex="0"><code class="language-sql is-loaded"><span class="token keyword">CREATE</span> <span class="token keyword">USER</span> <span class="token string">'ubuntu'</span><span class="token variable">@'server1.example.com'</span> IDENTIFIED <span class="token keyword">BY</span> <span class="token string">'1234'</span><span class="token punctuation">;</span>
 <span class="token keyword">GRANT</span> <span class="token keyword">ALL</span> <span class="token keyword">PRIVILEGES</span> <span class="token keyword">ON</span> <span class="token operator">*</span><span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword">TO</span> <span class="token string">'ubuntu'</span><span class="token variable">@'server1.example.com'</span> <span class="token keyword">WITH</span> <span class="token keyword">GRANT</span> <span class="token keyword">OPTION</span><span class="token punctuation">;</span>
-</code><button class="run-code-button">Run</button><button class="copy-code-button">복사</button></pre>
+</code><button class="copy-code-button">복사</button><button class="run-code-button">Run</button></pre>
 <p>이 경우, <code class="code-styler-inline">ubuntu</code> 사용자는 <code class="code-styler-inline">server1.example.com</code>이라는 호스트 이름으로만 MySQL 서버에 접근할 수 있어.</p>
 </li>
 </ol></div></div></div><div class="heading-wrapper"><h2 data-heading="요약" dir="auto" class="heading" id="요약"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>요약</h2><div class="heading-children"><div><ul>

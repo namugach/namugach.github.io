@@ -1,62 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 11 Aug 2024 05:04:41 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 11 Aug 2024 05:04:38 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[mysql 계정 생성시 %의 의미]]></title><description><![CDATA[ 
- <br><br>
-<br>%: MySQL에서 %는 "모든 호스트"를 의미해. 즉, %를 사용하면 어떤 IP 주소에서든지 이 사용자 계정으로 MySQL 서버에 접근할 수 있도록 허용하는 거야.
-<br><br>
-<br>
-모든 호스트에서 접근 가능:
-CREATE USER 'ubuntu'@'%' IDENTIFIED BY '1234';
-GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'%' WITH GRANT OPTION;
-Run복사
-이 명령어는 ubuntu라는 사용자 계정이 어떤 IP 주소에서든지 접속할 수 있도록 설정해. 즉, server3에서뿐만 아니라 다른 모든 서버에서도 이 계정을 사용해 MySQL 서버에 접근할 수 있어.
-
-<br>
-특정 IP 주소에서만 접근 가능:
-만약 특정 IP 주소에서만 접근을 허용하려면 % 대신 그 IP 주소를 사용하면 돼. 예를 들어 172.17.0.3에서만 접근을 허용하려면:
-CREATE USER 'ubuntu'@'172.17.0.3' IDENTIFIED BY '1234';
-GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'172.17.0.3' WITH GRANT OPTION;
-Run복사
-이 경우, ubuntu 사용자는 172.17.0.3에서만 MySQL 서버에 접근할 수 있어.
-
-<br>
-특정 호스트 이름에서 접근 가능:
-특정 호스트 이름을 사용해 접근을 제한할 수도 있어. 예를 들어 server1.example.com에서만 접근을 허용하려면:
-CREATE USER 'ubuntu'@'server1.example.com' IDENTIFIED BY '1234';
-GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'server1.example.com' WITH GRANT OPTION;
-Run복사
-이 경우, ubuntu 사용자는 server1.example.com이라는 호스트 이름으로만 MySQL 서버에 접근할 수 있어.
-
-<br><br>
-<br>%: 모든 호스트에서 접근 허용.
-<br>특정 IP 주소: 특정 IP 주소에서만 접근 허용.
-<br>호스트 이름: 특정 호스트 이름에서만 접근 허용.
-<br>이렇게 설정을 통해 MySQL 서버에 접근할 수 있는 사용자 계정과 그 계정이 접속할 수 있는 호스트를 세밀하게 제어할 수 있어. 추가로 궁금한 점이 있으면 언제든지 물어봐!<br>
-이렇게 만드는데, '계정명'@'% 이 부분에서 % 부분에 대해서 알려줘]]></description><link>root\dev\data-pipe-line\server\local\mysql-계정-생성시-의-의미.html</link><guid isPermaLink="false">root/dev/data pipe line/server/local/mysql 계정 생성시 %의 의미.md</guid><pubDate>Tue, 30 Jul 2024 15:36:37 GMT</pubDate></item><item><title><![CDATA[wsl 용량 확보하기]]></title><description><![CDATA[ 
- <br><br><img alt="Pasted image 20240809103129.png" src="lib\media\pasted-image-20240809103129.png"><br>용량이 무려173g
-
-<br>wsl은 자동으로 용량을 줄이지 않음
-<br>wsl에서 용량 확보를 해도, 그 안에 공기는 그대로
-<br>때문에 공기 빼주는 작업을 수동으로 해야함
-<br><br><br><br>sudo apt-get install ncdu
-복사<br><br>sudo ncdu / --exclude /mnt
-복사<br>Info
-<br>--exclude: 제외 디렉토리
-
-sudo를 넣지 않으면 권한이 없기 때문에 모든 디렉토리를 순회하지 않는다.<br><img alt="Pasted image 20240809103759.png" src="lib\media\pasted-image-20240809103759.png"><br>94.5 gb원래는 더 많았지만<br>
-컨테이너를 지워서 용량이 축소 된 화면<br><br><br><a rel="noopener" class="external-link" href="https://uutopia.tistory.com/70" target="_blank">https://uutopia.tistory.com/70</a><br><br>wsl --shutdown
-Run복사<br><br>(Get-ChildItem -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Lxss | Where-Object {$_.GetValue('DistributionName') -eq 'Ubuntu' }).GetValue('BasePath') + '\ext4.vhdx'
-Run복사<br><br>diskpart
-Run복사<br>select vdisk file=".vdisk_경로"
-attach vdisk readonly
-compact vdisk
-detach vdisk
-복사<br>select vdisk file="S:\wsl\ubuntu\ext4.vhdx"
-attach vdisk readonly
-compact vdisk
-detach vdisk
-복사<br><img alt="Pasted image 20240809105041.png" src="lib\media\pasted-image-20240809105041.png"><br><br><br><img alt="Pasted image 20240809105036.png" src="lib\media\pasted-image-20240809105036.png"><br><br><br><a rel="noopener" class="external-link" href="https://github.com/namugach/Compress-VHDX" target="_blank">https://github.com/namugach/Compress-VHDX</a><br><img alt="Pasted image 20240811140207.png" src="lib\media\pasted-image-20240811140207.png"><br><br>git clone https://github.com/namugach/Compress-VHDX.git
-복사<br><br>
-<br>Compress-VHDX.bat 더블 클릭 혹은 우클릭 -&gt; 관리자 모드 실행
-]]></description><link>root\dev\wsl\wsl-용량-확보하기.html</link><guid isPermaLink="false">root/dev/wsl/wsl 용량 확보하기.md</guid><pubDate>Sun, 11 Aug 2024 05:02:34 GMT</pubDate><enclosure url="lib\media\pasted-image-20240809103129.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240809103129.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[0.도커와 쿠버네티스]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 11 Aug 2024 05:25:12 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 11 Aug 2024 05:24:25 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[0.도커와 쿠버네티스]]></title><description><![CDATA[ 
  <br><br>
 <br>우분투
 <br>t2.xlarge
@@ -108,7 +50,7 @@ psql -U postgres
 <br>입력
 <br>CREATE USER cheolwon PASSWORD '1234' SUPERUSER;
 postgres=# \du
-Run복사<br>
+복사Run<br>
 <br>출력
 <br>                             List of roles
  Role name |                         Attributes                         
@@ -262,13 +204,13 @@ a60d681088ac   docker-psqltest    "docker-entrypoint.s…"   29 minutes ago   Up
 복사<br><br>CREATE DATABASE ml;
 
 \c ml
-Run복사<br><br>CREATE TABLE pred_result(
+복사Run<br><br>CREATE TABLE pred_result(
     id SERIAL PRIMARY KEY,
     input NUMERIC,
     output NUMERIC,
     insert_dt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-Run복사<br><br><br>curl -d '{"input":["0.３"]}' -H "Content-Type: application/json" -X POST http://43.203.77.126/predict
+복사Run<br><br><br>curl -d '{"input":["0.３"]}' -H "Content-Type: application/json" -X POST http://43.203.77.126/predict
 복사<br><br>{"input":0.3,"predicted_output":1.63768}
 복사]]></description><link>root\dev\도커와-쿠버네틱스\도커로-flask,-nginx,-postgressql-함께-배포.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/도커로 flask, nginx, PostgresSql 함께 배포.md</guid><pubDate>Tue, 04 Jun 2024 12:45:38 GMT</pubDate></item><item><title><![CDATA[쿠버네티스 사용법]]></title><description><![CDATA[ 
  <br>ubuntu@ip-172-31-8-194:~/app$ kubectl get pod
@@ -2198,12 +2140,12 @@ docker-compose.yml flaskapp nginxtest
  ✔ Network docker_composenet01   Removed  
 복사<br><br>안됐을 때는<br>docker container ls
 복사<br>그리고 status 확인<br><br><br>curl -d "{""input"":[""0.3""]}" -H "Content-Type: application/json" -X POST http://인스턴스IP주소/predict
-Run복사<br><br>curl -d '{"input":["0.３"]}' -H "Content-Type: application/json" -X POST http://내_공개_ip/predict
+복사Run<br><br>curl -d '{"input":["0.３"]}' -H "Content-Type: application/json" -X POST http://내_공개_ip/predict
 복사<br><br>sudo -i -u postgres
 복사<br>\c ml
 SELECT * FROM pred_result;
-Run복사<br><br>\q
-Run복사<br>exit
+복사Run<br><br>\q
+복사Run<br>exit
 복사]]></description><link>root\dev\도커와-쿠버네틱스\enginx-도커-올려.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/enginx 도커 올려.md</guid><pubDate>Mon, 03 Jun 2024 11:22:49 GMT</pubDate></item><item><title><![CDATA[flask 건들기 위한 Docker]]></title><description><![CDATA[ 
  <br><a rel="noopener" class="external-link" href="https://docs.docker.com/engine/install/ubuntu/" target="_blank">https://docs.docker.com/engine/install/ubuntu/</a><br><br># Add Docker's official GPG key:
 sudo apt-get update
@@ -2378,7 +2320,7 @@ def predict():
 	return res
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', port=5000)
-Run복사<br><br><br><br>pyenv activate py3_11_9 
+복사Run<br><br><br><br>pyenv activate py3_11_9 
 복사<br><br>pip list | grep -E 'scikit-learn|Flask|gunicorn|psycopg2'
 복사<br>Flask           3.0.3
 gunicorn        22.0.0
@@ -2431,8 +2373,8 @@ hello-world   latest    d2c94e258dcb   13 months ago   13.3kB
 1b71df899d3a   flaskapi01   "/bin/sh -c 'python …"   2 minutes ago   Up 2 minutes   0.0.0.0:80-&gt;5000/tcp, :::80-&gt;5000/tcp   zealous_diffie
 복사<br><br>Note브라우저 창에서 ec2 public ip를 입력 후<br>
 HELLO, ML API SERVER 출력 하면 성공<br><br><br><br><br>curl -d "{""input"":[""0.6""]}" -H "Content-Type: application/json" -X POST http://내_공개_아이피/predict
-Run복사<br><br>curl -d "{\"input\":[\"0.6\"]}" -H "Content-Type: application/json" -X POST http://내_공개_아이피/predict
-Run복사<br>Note웬만하면 위의 경우가 될테지만 윈도우 10 터미널에서 "의 처리를 못해서<br>
+복사Run<br><br>curl -d "{\"input\":[\"0.6\"]}" -H "Content-Type: application/json" -X POST http://내_공개_아이피/predict
+복사Run<br>Note웬만하면 위의 경우가 될테지만 윈도우 10 터미널에서 "의 처리를 못해서<br>
 에러를 출력한 경험이 있었다. 안될 경우 시도 해보자.<br><br>
 <br>mac
 <br>linux
@@ -2443,7 +2385,7 @@ Run복사<br>Note웬만하면 위의 경우가 될테지만 윈도우 10 터미�
 psql
 \c ml
 복사<br><br>SELECT * FROM pred_result;
-Run복사<br><br><br>\q
+복사Run<br><br><br>\q
 exit
 복사]]></description><link>root\dev\도커와-쿠버네틱스\flask-docker에-태우자.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/flask docker에 태우자.md</guid><pubDate>Sun, 02 Jun 2024 17:31:24 GMT</pubDate></item><item><title><![CDATA[flask postgreSQL 건들기]]></title><description><![CDATA[ 
  <br> AWS client to database<br>
@@ -2468,7 +2410,7 @@ import sklearn
 import flask
 import gunicorn
 import psycopg2
-Run복사<br>python test.py
+복사Run<br>python test.py
 복사<br><a data-href="root/dev/python/pyenv 설치" href="root\dev\python\pyenv-설치.html" class="internal-link" target="_self" rel="noopener">root/dev/python/pyenv 설치</a><br>
 <a data-href="pyenv 실습" href="root\dev\python\pyenv-실습.html" class="internal-link" target="_self" rel="noopener">pyenv 실습</a><br><br><br><br># Import the repository signing key:
 sudo apt install curl ca-certificates
@@ -2488,9 +2430,9 @@ sudo apt -y install postgresql
 복사<br><br>sudo -i -u postgres
 psql
 복사<br><br>ALTER USER postgres WITH PASSWORD 'postgres';
-Run복사<br><br><br>CREATE DATABASE ml;
-Run복사<br><br>\list
-Run복사<br><br>\c ml
+복사Run<br><br><br>CREATE DATABASE ml;
+복사Run<br><br>\list
+복사Run<br><br>\c ml
 복사<br>CREATE TABLE pred_result(
     id SERIAL PRIMARY KEY,
     input NUMERIC,
@@ -2498,8 +2440,8 @@ Run복사<br><br>\c ml
     insert_dt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 \dt
-Run복사<br><br>SELECT * FROM pred_result;
-Run복사<br><br>\q
+복사Run<br><br>SELECT * FROM pred_result;
+복사Run<br><br>\q
 복사<br><br>/etc/postgresql/16/main
 sudo vi postgresql.conf
 복사<br>listen_addresses = '0.0.0.0
@@ -2560,15 +2502,15 @@ def predict():
 	return res
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', port=5000)
-Run복사<br><br>pyenv activate py3_11_9
+복사Run<br><br>pyenv activate py3_11_9
 복사<br>python ./main.py
 복사<br><br><br><br>ErrorPort 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.<br><br>sof -n -i TCP:5000
 복사<br>OMMAND  PID   USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
 python  5096 ubuntu    3u  IPv4  14154      0t0  TCP *:5000 (LISTEN)
 복사<br>kill -9 509
 복사<br><br><br><br>curl -d "{""input"":[""0.8""]}" -H "Content-Type: application/json" -X POST http://내_공개_아이피:5000/predict
-Run복사<br><br>curl -d "{\"input\":[\"0.8\"]}" -H "Content-Type: application/json" -X POST http://내_공개_아이피:5000/predict
-Run복사<br><br>
+복사Run<br><br>curl -d "{\"input\":[\"0.8\"]}" -H "Content-Type: application/json" -X POST http://내_공개_아이피:5000/predict
+복사Run<br><br>
 <br>mac
 <br>linux
 <br>wsl
@@ -2577,7 +2519,7 @@ Run복사<br><br>
 psql
 \c ml
 복사<br><br>SELECT * FROM pred_result;
-Run복사<br><br><br>\q
+복사Run<br><br><br>\q
 exit
 복사]]></description><link>root\dev\도커와-쿠버네틱스\flask-postgresql-건들기.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/flask postgreSQL 건들기.md</guid><pubDate>Mon, 05 Aug 2024 01:25:26 GMT</pubDate></item><item><title><![CDATA[postgre 도커 올려]]></title><description><![CDATA[ 
  <br><br><br>docker image pull postgres
@@ -2591,7 +2533,7 @@ postgres           latest    cff6b68a194a   3 weeks ago     432MB
 복사<br><br><br>docker container exec -it 6701cce130d1 /bin/bash
 복사<br><br><br>psql -U postgres
 복사<br><br>CREATE DATABASE ml;
-Run복사<br><br>\q
+복사Run<br><br>\q
 exit
 복사<br><br>docker container stop [컨테이너 이름 / id]
 복사<br><br><br>docker container start 6701cce130d1
@@ -2634,7 +2576,7 @@ spec:
 raw = open("./yaml_example.yml", "r+")
 data = yaml.load(raw, Loader=yaml.SafeLoader)
 data
-Run복사<br><br>{'apiVersion': 'v1', 'kind': 'Pod', 'metadata': {'name': 'nginx'}, 'spec': {'containers': [{'name': 'nginx', 'image': 'nginx:latest'}, {'name': 'ubuntu', 'image': 'ubuntu:latest'}]}}
+복사Run<br><br>{'apiVersion': 'v1', 'kind': 'Pod', 'metadata': {'name': 'nginx'}, 'spec': {'containers': [{'name': 'nginx', 'image': 'nginx:latest'}, {'name': 'ubuntu', 'image': 'ubuntu:latest'}]}}
 복사<br><br><br>data['apiVersion']
 # 'v1'
 data['kind']
@@ -2643,7 +2585,7 @@ data['metadata']
 # {'name': 'nginx'}
 data['metadata']['name']
 # 'nginx'
-Run복사<br>data['spec']
+복사Run<br>data['spec']
 # {'containers': [{'name': 'nginx', 'image': 'nginx:latest'}, {'name': 'ubuntu', 'image': 'ubuntu:latest'}]}
 data['spec']['containers']
 # [{'name': 'nginx', 'image': 'nginx:latest'}, {'name': 'ubuntu', 'image': 'ubuntu:latest'}]
@@ -2655,7 +2597,7 @@ data['spec']['containers'][1]
 # {'name': 'ubuntu', 'image': 'ubuntu:latest'}
 data['spec']['containers'][1]['name']
 # 'ubuntu'
-Run복사]]></description><link>root\dev\도커와-쿠버네틱스\python에-yaml.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/Python에 YAML.md</guid><pubDate>Mon, 03 Jun 2024 11:22:53 GMT</pubDate></item><item><title><![CDATA[카프카를 데이터 파이프라인에 통합하기]]></title><description><![CDATA[ 
+복사Run]]></description><link>root\dev\도커와-쿠버네틱스\python에-yaml.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/Python에 YAML.md</guid><pubDate>Mon, 03 Jun 2024 11:22:53 GMT</pubDate></item><item><title><![CDATA[카프카를 데이터 파이프라인에 통합하기]]></title><description><![CDATA[ 
  <br><a data-href="python 간단 파이프라인" href="root\dev\data-pipe-line\데이터-파이프라인-구축\python-간단-파이프라인.html" class="internal-link" target="_self" rel="noopener">python 간단 파이프라인</a><br>물론, 카프카(Kafka)를 붙여서 데이터 파이프라인을 확장할 수 있어. Apache Kafka는 대규모 데이터 스트리밍을 처리하는 데 강력한 도구야. 카프카를 데이터 파이프라인에 통합하면 실시간 데이터 스트리밍과 처리를 더 유연하게 할 수 있어.<br><br>
 <br>
 Kafka 설치 및 설정:
@@ -2701,7 +2643,7 @@ for index, row in data.iterrows():
     producer.produce('my_topic', key=str(index), value=message, callback=delivery_report)
 
 producer.flush()
-Run복사
+복사Run
 
 <br>
 카프카에서 데이터를 읽어 MySQL에 적재하기:
@@ -2747,7 +2689,7 @@ try:
 finally:
     connection.close()
     consumer.close()
-Run복사
+복사Run
 
 <br><br>
 <br>
@@ -2778,7 +2720,7 @@ Kafka 메시지 기록:
 예를 들어, 터미널에서 다음과 같은 명령을 사용할 수 있습니다:
 
 <br>kafka-console-consumer --bootstrap-server localhost:9092 --topic my_topic --from-beginning
-Run복사<br>이 명령은 my_topic에 게시된 모든 메시지를 표시합니다. 이를 통해 어떤 데이터가 전송되었는지 확인할 수 있습니다.]]></description><link>root\dev\data-pipe-line\데이터-파이프라인-구축\간단-파이프-라인에-카프카-붙이기.html</link><guid isPermaLink="false">root/dev/data pipe line/데이터 파이프라인 구축/간단 파이프 라인에 카프카 붙이기.md</guid><pubDate>Sun, 28 Jul 2024 08:28:58 GMT</pubDate></item><item><title><![CDATA[flask kafka 연동]]></title><description><![CDATA[ 
+복사Run<br>이 명령은 my_topic에 게시된 모든 메시지를 표시합니다. 이를 통해 어떤 데이터가 전송되었는지 확인할 수 있습니다.]]></description><link>root\dev\data-pipe-line\데이터-파이프라인-구축\간단-파이프-라인에-카프카-붙이기.html</link><guid isPermaLink="false">root/dev/data pipe line/데이터 파이프라인 구축/간단 파이프 라인에 카프카 붙이기.md</guid><pubDate>Sun, 28 Jul 2024 08:28:58 GMT</pubDate></item><item><title><![CDATA[flask kafka 연동]]></title><description><![CDATA[ 
  <br>import json
 from flask import Flask, request, jsonify
 from kafka import KafkaProducer, KafkaConsumer
@@ -2846,7 +2788,7 @@ if __name__ == "__main__":
 	pass
 
 
-Run복사]]></description><link>root\dev\data-pipe-line\데이터-파이프라인-구축\flask-kafka-연동.html</link><guid isPermaLink="false">root/dev/data pipe line/데이터 파이프라인 구축/flask kafka 연동.md</guid><pubDate>Tue, 23 Jul 2024 16:07:53 GMT</pubDate></item><item><title><![CDATA[python 간단 파이프라인]]></title><description><![CDATA[ 
+복사Run]]></description><link>root\dev\data-pipe-line\데이터-파이프라인-구축\flask-kafka-연동.html</link><guid isPermaLink="false">root/dev/data pipe line/데이터 파이프라인 구축/flask kafka 연동.md</guid><pubDate>Tue, 23 Jul 2024 16:07:53 GMT</pubDate></item><item><title><![CDATA[python 간단 파이프라인]]></title><description><![CDATA[ 
  <br>간단한 데이터 파이프라인 예제를 통해 데이터 추출, 변환, 적재를 보여줄게. 여기서는 CSV 파일에서 데이터를 추출하고, 변환한 후 MySQL 데이터베이스에 적재하는 과정을 포함할 거야.<br>예제: CSV 파일에서 데이터를 추출하고, 간단한 변환을 한 후 MySQL 데이터베이스에 적재하기<br>
 <br>
 환경 설정:
@@ -2921,7 +2863,7 @@ data.to_sql('test_a', engine, if_exists='replace', index=False)
 
 print("데이터가 성공적으로 적재되었습니다.")
 
-Run복사<br>
+복사Run<br>
 <br>
 스크립트 실행:
 위의 파이썬 스크립트를 저장하고 실행해보자:
@@ -2978,14 +2920,14 @@ try:
 
 finally:
     connection.close()
-Run복사<br>이 스크립트는 다음 단계를 수행해:<br>
+복사Run<br>이 스크립트는 다음 단계를 수행해:<br>
 <br>MySQL 데이터베이스에 연결.
 <br>users 테이블을 생성 (테이블이 이미 존재하면 아무 작업도 하지 않음).
 <br>users 테이블에 데이터를 삽입.
 <br>삽입된 데이터를 조회하고 출력.
 <br>MySQL 연결을 닫음.
 <br>스크립트를 실행하기 전에 MySQL 서버에 연결할 수 있는지 확인하고, testdb 데이터베이스가 존재하는지 확인해야 해. 데이터베이스가 없다면, MySQL에서 데이터베이스를 생성해:<br>CREATE DATABASE testdb;
-Run복사<br>이제 이 스크립트를 실행하면, 데이터가 users 테이블에 삽입되고 조회 결과가 출력될 거야. 이 예제를 기반으로 데이터 파이프라인을 만들어 나갈 수 있을 거야. 더 궁금한 점이 있으면 알려줘!]]></description><link>root\dev\data-pipe-line\데이터-파이프라인-구축\python으로-mysql-파이프-라인-만들기.html</link><guid isPermaLink="false">root/dev/data pipe line/데이터 파이프라인 구축/python으로 mysql 파이프 라인 만들기.md</guid><pubDate>Wed, 24 Jul 2024 16:45:50 GMT</pubDate></item><item><title><![CDATA[shell ssh 여러 개 접속 테스트]]></title><description><![CDATA[ 
+복사Run<br>이제 이 스크립트를 실행하면, 데이터가 users 테이블에 삽입되고 조회 결과가 출력될 거야. 이 예제를 기반으로 데이터 파이프라인을 만들어 나갈 수 있을 거야. 더 궁금한 점이 있으면 알려줘!]]></description><link>root\dev\data-pipe-line\데이터-파이프라인-구축\python으로-mysql-파이프-라인-만들기.html</link><guid isPermaLink="false">root/dev/data pipe line/데이터 파이프라인 구축/python으로 mysql 파이프 라인 만들기.md</guid><pubDate>Wed, 24 Jul 2024 16:45:50 GMT</pubDate></item><item><title><![CDATA[shell ssh 여러 개 접속 테스트]]></title><description><![CDATA[ 
  <br>#!/bin/bash
 
 ips=("server1" "server2" "server3")
@@ -3114,7 +3056,7 @@ sudo systemctl start elasticsearch.service
   },
   "tagline" : "You Know, for Search"
 }
-Run복사<br><br>ubuntu@ip-172-31-6-227:~$ curl localhost:9200/_cat/health?v
+복사Run<br><br>ubuntu@ip-172-31-6-227:~$ curl localhost:9200/_cat/health?v
 epoch      timestamp cluster      status node.total node.data shards pri relo init unassign pending_tasks max_task_wait_time active_shards_percent
 1721373567 07:19:27  my-elk-stack green           3         3      0   0    0    0        0             0                  -                100.0%
 ubuntu@ip-172-31-6-227:~$ curl localhost:9200/_cat/nodes?v
@@ -3157,7 +3099,7 @@ public class FileSystemPrint {
     }
   }
 }
-Run복사]]></description><link>root\dev\data-pipe-line\hadoop\hadoop-수업\실습\hadoop-hdfs-java-api.html</link><guid isPermaLink="false">root/dev/data pipe line/hadoop/hadoop 수업/실습/Hadoop HDFS JAVA API.md</guid><pubDate>Wed, 26 Jun 2024 04:51:16 GMT</pubDate></item><item><title><![CDATA[Hadoop Mapreduce]]></title><description><![CDATA[ 
+복사Run]]></description><link>root\dev\data-pipe-line\hadoop\hadoop-수업\실습\hadoop-hdfs-java-api.html</link><guid isPermaLink="false">root/dev/data pipe line/hadoop/hadoop 수업/실습/Hadoop HDFS JAVA API.md</guid><pubDate>Wed, 26 Jun 2024 04:51:16 GMT</pubDate></item><item><title><![CDATA[Hadoop Mapreduce]]></title><description><![CDATA[ 
  <br><br><a data-href="vscode maven 프로젝트 생성" href="root\dev\data-pipe-line\hadoop\hadoop-수업\실습\vscode-maven-프로젝트-생성.html" class="internal-link" target="_self" rel="noopener">vscode maven 프로젝트 생성</a><br>
 <br>프로젝트 이름: mapreduce
 <br><br>.
@@ -3250,7 +3192,7 @@ public class WordCountMapper extends Mapper&lt;LongWritable, Text, Text, IntWrit
 	}
 
 }
-Run복사<br><br>package org.example; // 패키지 선언
+복사Run<br><br>package org.example; // 패키지 선언
 
 import org.apache.hadoop.io.IntWritable; // Hadoop의 IntWritable 클래스 임포트
 import org.apache.hadoop.io.Text; // Hadoop의 Text 클래스 임포트
@@ -3277,7 +3219,7 @@ public class WordCountReducer extends Reducer&lt;Text, IntWritable, Text, IntWri
     }
 
 }
-Run복사<br><br>package org.example;
+복사Run<br><br>package org.example;
 
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
@@ -3339,7 +3281,7 @@ public class WordCountDriver extends Configured implements Tool {
     }
 
 }
-Run복사<br><br>Deer Bear River
+복사Run<br><br>Deer Bear River
 Car Car River
 Deer Car Bear
 복사<br><br>hadoop fs -mkdir -p /user/ubuntu/input
@@ -4457,7 +4399,7 @@ finally:
 	rf.close()
 	wf.close()
 	print("close file")
-Run복사<br><br>&gt; cd ~/apps
+복사Run<br><br>&gt; cd ~/apps
 &gt; python data_generator.py
 복사<br><br>
 <br>logstash에서 kafka로 정상적으로 메세지가 전송되고 있는지 모니터링
@@ -5139,7 +5081,7 @@ Message delivered to my_topic [0]
 &gt; source venv/bin/activate
 &gt; python -m pip install --upgrade pip
 &gt; 
-Run복사]]></description><link>root\dev\data-pipe-line\kafka\group\05.producer_consumer_code\python\readme.html</link><guid isPermaLink="false">root/dev/data pipe line/kafka/group/05.producer_consumer_code/python/README.md</guid><pubDate>Tue, 02 Jul 2024 00:14:40 GMT</pubDate></item><item><title><![CDATA[Apache Kafka : Data Message Queue]]></title><description><![CDATA[ 
+복사Run]]></description><link>root\dev\data-pipe-line\kafka\group\05.producer_consumer_code\python\readme.html</link><guid isPermaLink="false">root/dev/data pipe line/kafka/group/05.producer_consumer_code/python/README.md</guid><pubDate>Tue, 02 Jul 2024 00:14:40 GMT</pubDate></item><item><title><![CDATA[Apache Kafka : Data Message Queue]]></title><description><![CDATA[ 
  <br><br><br>
 <br>CentOS 9 
 <br>실습에 필요한 라이브러리 설치
@@ -5750,7 +5692,7 @@ try:
     connection.commit()
 finally:
     connection.close()
-Run복사<br><br>CSV 파일의 데이터를 읽어 MySQL에 직접 삽입하는 코드입니다.<br>import pandas as pd
+복사Run<br><br>CSV 파일의 데이터를 읽어 MySQL에 직접 삽입하는 코드입니다.<br>import pandas as pd
 import pymysql
 
 def insert_csv_into_mysql(file_path):
@@ -5780,7 +5722,7 @@ csv_file_path = 'users.csv'
 
 insert_csv_into_mysql(csv_file_path)
 print("MySQL에 CSV 데이터 삽입 완료.")
-Run복사<br><br><br>CSV 파일의 데이터를 Kafka 토픽에 게시하는 코드입니다.<br>from kafka import KafkaProducer
+복사Run<br><br><br>CSV 파일의 데이터를 Kafka 토픽에 게시하는 코드입니다.<br>from kafka import KafkaProducer
 import pandas as pd
 import json
 
@@ -5802,7 +5744,7 @@ def produce_csv_to_kafka(file_path, topic):
     print("Kafka에 CSV 데이터 게시 완료.")
 
 produce_csv_to_kafka(csv_file_path, 'my_topic')
-Run복사<br><br>Kafka에서 데이터를 소비하고 MySQL에 저장하는 코드입니다.<br>from kafka import KafkaConsumer
+복사Run<br><br>Kafka에서 데이터를 소비하고 MySQL에 저장하는 코드입니다.<br>from kafka import KafkaConsumer
 import pymysql
 import json
 
@@ -5846,7 +5788,7 @@ def consume_from_kafka_and_insert_into_mysql(topic):
     print("Kafka에서 데이터 소비 및 MySQL에 저장 완료.")
 
 consume_from_kafka_and_insert_into_mysql('my_topic')
-Run복사<br><br>
+복사Run<br><br>
 <br>시나리오 1:
 
 <br>insert_csv_into_mysql 함수를 호출하여 CSV 데이터를 MySQL에 직접 삽입합니다.
@@ -5884,7 +5826,7 @@ def produce_csv_to_kafka(file_path, topic):
 # CSV 파일 경로와 Kafka 토픽 설정
 csv_file_path = 'data.csv'
 produce_csv_to_kafka(csv_file_path, 'my_topic')
-Run복사]]></description><link>root\dev\data-pipe-line\kafka\카프카에-csv-파일-넣어보기.html</link><guid isPermaLink="false">root/dev/data pipe line/kafka/카프카에 csv 파일 넣어보기.md</guid><pubDate>Mon, 29 Jul 2024 15:23:20 GMT</pubDate></item><item><title><![CDATA[Apache Kafka 실시간 Data Pipeline 구축하기]]></title><description><![CDATA[ 
+복사Run]]></description><link>root\dev\data-pipe-line\kafka\카프카에-csv-파일-넣어보기.html</link><guid isPermaLink="false">root/dev/data pipe line/kafka/카프카에 csv 파일 넣어보기.md</guid><pubDate>Mon, 29 Jul 2024 15:23:20 GMT</pubDate></item><item><title><![CDATA[Apache Kafka 실시간 Data Pipeline 구축하기]]></title><description><![CDATA[ 
  <br>“Pasted image 20240708175351.png” could not be found.<br><a rel="noopener" class="external-link" href="https://github.com/freepsw/kafka_basic/tree/main/02.kafka_pipeline" target="_blank">https://github.com/freepsw/kafka_basic/tree/main/02.kafka_pipeline</a><br><a rel="noopener" class="external-link" href="https://blog.naver.com/freepsw/222227393582" target="_blank">https://blog.naver.com/freepsw/222227393582</a><br><a data-tooltip-position="top" aria-label="https://docs.confluent.io/platform/current/kafka/monitoring.html" rel="noopener" class="external-link" href="https://docs.confluent.io/platform/current/kafka/monitoring.html" target="_blank">Monitoring Kafka with JMX | Confluent Documentation</a>]]></description><link>root\dev\data-pipe-line\kafka\apache-kafka-실시간-data-pipeline-구축하기.html</link><guid isPermaLink="false">root/dev/data pipe line/kafka/Apache Kafka 실시간 Data Pipeline 구축하기.md</guid><pubDate>Mon, 08 Jul 2024 08:53:52 GMT</pubDate></item><item><title><![CDATA[kafak에 mysql 연결]]></title><description><![CDATA[ 
  <br>카프카를 데이터 파이프라인의 중심에 두고, 데이터 생산자는 카프카에 데이터를 전송하고, 카프카 커넥트를 사용해 데이터를 다양한 싱크(데이터베이스 등)로 전달하는 방식은 매우 일반적이고 안정적인 데이터 처리 방법이야.<br>카프카와 데이터베이스를 연결하는 것은 여러 가지 장점이 있어:<br>
 <br>확장성: 카프카는 높은 처리량을 처리할 수 있어서 대규모 데이터 전송에도 적합해.
@@ -5911,8 +5853,8 @@ Run복사]]></description><link>root\dev\data-pipe-line\kafka\카프카에-csv-�
   }
 }
 복사<br><br>Kafka Connect를 실행하고, MySQL 싱크 커넥터를 등록해.<br><br>Kafka Connect를 배포 모드로 실행해.<br>bin/connect-distributed.sh config/connect-distributed.properties
-Run복사<br><br>MySQL 싱크 커넥터를 Kafka Connect에 등록해.<br>curl -X POST -H "Content-Type: application/json" --data @mysql-sink-connector.json http://localhost:8083/connectors
-Run복사<br><br>Python 코드를 작성해서 CSV 파일 데이터를 카프카 토픽으로 전송해.<br>from confluent_kafka import Producer
+복사Run<br><br>MySQL 싱크 커넥터를 Kafka Connect에 등록해.<br>curl -X POST -H "Content-Type: application/json" --data @mysql-sink-connector.json http://localhost:8083/connectors
+복사Run<br><br>Python 코드를 작성해서 CSV 파일 데이터를 카프카 토픽으로 전송해.<br>from confluent_kafka import Producer
 import pandas as pd
 import json
 
@@ -5947,7 +5889,7 @@ for index, row in data.iterrows():
 producer.flush()
 
 print("데이터가 카프카로 성공적으로 전송되었습니다.")
-Run복사<br>이렇게 하면, 데이터는 다음과 같은 순서로 흐르게 돼:<br>
+복사Run<br>이렇게 하면, 데이터는 다음과 같은 순서로 흐르게 돼:<br>
 <br>Python 코드: CSV 파일 데이터를 카프카 토픽으로 전송.
 <br>카프카: 데이터를 토픽으로 받음.
 <br>Kafka Connect: 카프카 토픽 데이터를 MySQL 데이터베이스에 적재.
@@ -6280,7 +6222,7 @@ consumer.close()
 
 print("Kafka에서 MySQL로 데이터 적재 완료.")
 
-Run복사<br><br><br>
+복사Run<br><br><br>
 <br>
 Kafka Consumer 설정:
 
@@ -6457,7 +6399,7 @@ for message in consumer:
     print(f"Key: {message.key}, Value: {message.value}")
     # 특정 조건에서 루프를 종료하려면 추가 로직을 구현
     break  # 이 예제에서는 첫 번째 메시지 하나만 출력 후 종료
-Run복사<br>이 코드는 my_topic 토픽에서 메시지를 소비하고 출력합니다. auto_offset_reset='earliest'를 설정하면 토픽의 처음부터 메시지를 읽습니다.<br><br>Kafka의 웹 기반 UI 도구를 사용하여 토픽의 데이터와 상태를 시각적으로 확인할 수 있습니다. 이러한 도구로는 다음과 같은 것들이 있습니다:<br>
+복사Run<br>이 코드는 my_topic 토픽에서 메시지를 소비하고 출력합니다. auto_offset_reset='earliest'를 설정하면 토픽의 처음부터 메시지를 읽습니다.<br><br>Kafka의 웹 기반 UI 도구를 사용하여 토픽의 데이터와 상태를 시각적으로 확인할 수 있습니다. 이러한 도구로는 다음과 같은 것들이 있습니다:<br>
 <br><a data-tooltip-position="top" aria-label="https://docs.confluent.io/platform/current/control-center/index.html" rel="noopener" class="external-link" href="https://docs.confluent.io/platform/current/control-center/index.html" target="_blank">Confluent Control Center</a>: Confluent Platform의 일부로 제공되며, Kafka 클러스터를 모니터링하고 관리할 수 있습니다.
 <br><a data-tooltip-position="top" aria-label="https://github.com/obsidiandynamics/kafdrop" rel="noopener" class="external-link" href="https://github.com/obsidiandynamics/kafdrop" target="_blank">Kafdrop</a>: Kafka 브로커와 토픽을 시각적으로 확인할 수 있는 오픈소스 웹 UI 도구입니다.
 <br>이 도구들은 Kafka 클러스터의 상태를 모니터링하고, 토픽의 메시지를 조회하는 데 유용합니다.<br><br>
@@ -6658,7 +6600,7 @@ def produce_csv_to_kafka(file_path, topic):
 # CSV 파일 경로와 Kafka 토픽 설정
 csv_file_path = 'data.csv'
 produce_csv_to_kafka(csv_file_path, 'my_topic')
-Run복사<br><br><br>
+복사Run<br><br><br>
 <br>CSV 데이터 읽기: pandas 라이브러리를 사용하여 CSV 파일을 읽습니다.
 <br>Kafka 프로듀서 설정: 
 
@@ -6754,9 +6696,9 @@ def get_create_container_comm(id, name, port=2222, server_infos=server_infos):
 for info in server_infos:
 	send_ssh_comm(info.name, info.name, get_create_container_comm(info.id, info.name))
 	time.sleep(1)
-Run복사<br><br>docker network create --subnet=172.18.0.0/16 pipeline
+복사Run<br><br>docker network create --subnet=172.18.0.0/16 pipeline
 --ip 172.18.0.{id+10} \\
-Run복사<br>이거 알아내려고.. 그랬다..]]></description><link>root\dev\data-pipe-line\server\ec2\aws-ec2에-docker로-kafka-클러스터-만들-때.html</link><guid isPermaLink="false">root/dev/data pipe line/server/ec2/aws ec2에 docker로 kafka 클러스터 만들 때.md</guid><pubDate>Sun, 04 Aug 2024 19:25:10 GMT</pubDate></item><item><title><![CDATA[ec2 docker ssh 터널링]]></title><description><![CDATA[ 
+복사Run<br>이거 알아내려고.. 그랬다..]]></description><link>root\dev\data-pipe-line\server\ec2\aws-ec2에-docker로-kafka-클러스터-만들-때.html</link><guid isPermaLink="false">root/dev/data pipe line/server/ec2/aws ec2에 docker로 kafka 클러스터 만들 때.md</guid><pubDate>Sun, 04 Aug 2024 19:25:10 GMT</pubDate></item><item><title><![CDATA[ec2 docker ssh 터널링]]></title><description><![CDATA[ 
  <br>Attention보안에서 2222 포트 열어주면 됨<br># docker -&gt; ec2
 ssh server1 -p 2222 -i ./ssh/id_rsa
 
@@ -6807,7 +6749,7 @@ Host server3
 	HostName 172.31.10.99
 	Port 2222
 	User ubuntu
-Run복사<br>이렇게 설정하면 ssh server1 명령어를 실행할 때 자동으로 -p 2222 옵션이 적용됩니다.<br><br>구성 파일을 설정한 후, send_ssh_comm 함수를 다음과 같이 사용할 수 있습니다:<br>import subprocess
+복사Run<br>이렇게 설정하면 ssh server1 명령어를 실행할 때 자동으로 -p 2222 옵션이 적용됩니다.<br><br>구성 파일을 설정한 후, send_ssh_comm 함수를 다음과 같이 사용할 수 있습니다:<br>import subprocess
 
 def send_ssh_comm(host, name, comm):
 	ssh_command = [
@@ -6821,10 +6763,10 @@ def send_ssh_comm(host, name, comm):
 
 # 사용 예시
 send_ssh_comm('server1', '테스트 명령', 'echo Hello, World!')
-Run복사<br>이렇게 하면 server1에 대해 ~/.ssh/config 파일에 정의된 설정이 자동으로 적용됩니다.<br><br>/etc/hosts 파일은 그대로 유지합니다:<br>172.31.14.186   server1
+복사Run<br>이렇게 하면 server1에 대해 ~/.ssh/config 파일에 정의된 설정이 자동으로 적용됩니다.<br><br>/etc/hosts 파일은 그대로 유지합니다:<br>172.31.14.186   server1
 172.31.1.229    server2
 172.31.10.99    server3
-Run복사<br>이렇게 하면 server1, server2, server3에 대해 정의된 IP 주소가 호스트 이름으로 매핑됩니다.<br><br>import subprocess
+복사Run<br>이렇게 하면 server1, server2, server3에 대해 정의된 IP 주소가 호스트 이름으로 매핑됩니다.<br><br>import subprocess
 
 def send_ssh_comm(host, name, comm):
 	ssh_command = [
@@ -6840,7 +6782,7 @@ def send_ssh_comm(host, name, comm):
 send_ssh_comm('server1', '테스트 명령', 'echo Hello, World!')
 send_ssh_comm('server2', '테스트 명령', 'echo Hello, World!')
 send_ssh_comm('server3', '테스트 명령', 'echo Hello, World!')
-Run복사<br>이렇게 하면 server1, server2, server3에 대해 정의된 포트 번호가 자동으로 적용됩니다.]]></description><link>root\dev\data-pipe-line\server\ec2\ssh-포트-포함-이동.html</link><guid isPermaLink="false">root/dev/data pipe line/server/ec2/ssh 포트 포함 이동.md</guid><pubDate>Sun, 04 Aug 2024 13:41:28 GMT</pubDate></item><item><title><![CDATA[ssh server 터널링]]></title><description><![CDATA[ 
+복사Run<br>이렇게 하면 server1, server2, server3에 대해 정의된 포트 번호가 자동으로 적용됩니다.]]></description><link>root\dev\data-pipe-line\server\ec2\ssh-포트-포함-이동.html</link><guid isPermaLink="false">root/dev/data pipe line/server/ec2/ssh 포트 포함 이동.md</guid><pubDate>Sun, 04 Aug 2024 13:41:28 GMT</pubDate></item><item><title><![CDATA[ssh server 터널링]]></title><description><![CDATA[ 
  <br><br>nc -zv localhost 2181
 nc -zv localhost 9092
 복사<br><br><br># ZooKeeper 포트 포워딩
@@ -6910,7 +6852,39 @@ root-ubuntu:24.01-mysql \
   obsidiandynamics/kafdrop
 복사<br><br>컨테이너가 실행된 후 브라우저를 열고 다음 URL로 접속합니다.<br>http://localhost:9000
 복사<br>http://172.17.0.2:9000
-복사<br>이제 Kafdrop UI를 통해 Kafka 클러스터의 여러 브로커를 모니터링하고 관리할 수 있습니다.<br><br><br>브로커 서버가 Docker 컨테이너 내에서 실행되고 있다면, Docker 네트워크 설정이 올바르게 되어 있는지 확인해야 합니다. 브로커 컨테이너와 Kafdrop 컨테이너가 동일한 네트워크에 있어야 통신이 가능합니다.<br><br>위 예시에서는 브로커 호스트가 server1, server2, server3이고, 포트가 9092로 동일하다고 가정했습니다. 실제 환경에서는 호스트명과 포트 번호가 다를 수 있으니 환경에 맞게 수정하세요.<br><br>여러 Kafka 브로커를 사용하는 경우, Docker 명령어에서 --add-host 옵션을 사용해 브로커 호스트를 추가하고, KAFKA_BROKERCONNECT 환경 변수에 여러 브로커를 쉼표로 구분하여 설정합니다. 이를 통해 Kafdrop을 사용해 여러 브로커가 있는 Kafka 클러스터를 편리하게 관리할 수 있습니다.]]></description><link>root\dev\data-pipe-line\server\local\kafdrop-kafka-클러스터-모니터링.html</link><guid isPermaLink="false">root/dev/data pipe line/server/local/Kafdrop kafka 클러스터 모니터링.md</guid><pubDate>Sat, 03 Aug 2024 13:19:25 GMT</pubDate></item><item><title><![CDATA[ssh 접속시 yes 입력 생략하기]]></title><description><![CDATA[ 
+복사<br>이제 Kafdrop UI를 통해 Kafka 클러스터의 여러 브로커를 모니터링하고 관리할 수 있습니다.<br><br><br>브로커 서버가 Docker 컨테이너 내에서 실행되고 있다면, Docker 네트워크 설정이 올바르게 되어 있는지 확인해야 합니다. 브로커 컨테이너와 Kafdrop 컨테이너가 동일한 네트워크에 있어야 통신이 가능합니다.<br><br>위 예시에서는 브로커 호스트가 server1, server2, server3이고, 포트가 9092로 동일하다고 가정했습니다. 실제 환경에서는 호스트명과 포트 번호가 다를 수 있으니 환경에 맞게 수정하세요.<br><br>여러 Kafka 브로커를 사용하는 경우, Docker 명령어에서 --add-host 옵션을 사용해 브로커 호스트를 추가하고, KAFKA_BROKERCONNECT 환경 변수에 여러 브로커를 쉼표로 구분하여 설정합니다. 이를 통해 Kafdrop을 사용해 여러 브로커가 있는 Kafka 클러스터를 편리하게 관리할 수 있습니다.]]></description><link>root\dev\data-pipe-line\server\local\kafdrop-kafka-클러스터-모니터링.html</link><guid isPermaLink="false">root/dev/data pipe line/server/local/Kafdrop kafka 클러스터 모니터링.md</guid><pubDate>Sat, 03 Aug 2024 13:19:25 GMT</pubDate></item><item><title><![CDATA[mysql 계정 생성시 %의 의미]]></title><description><![CDATA[ 
+ <br><br>
+<br>%: MySQL에서 %는 "모든 호스트"를 의미해. 즉, %를 사용하면 어떤 IP 주소에서든지 이 사용자 계정으로 MySQL 서버에 접근할 수 있도록 허용하는 거야.
+<br><br>
+<br>
+모든 호스트에서 접근 가능:
+CREATE USER 'ubuntu'@'%' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'%' WITH GRANT OPTION;
+복사Run
+이 명령어는 ubuntu라는 사용자 계정이 어떤 IP 주소에서든지 접속할 수 있도록 설정해. 즉, server3에서뿐만 아니라 다른 모든 서버에서도 이 계정을 사용해 MySQL 서버에 접근할 수 있어.
+
+<br>
+특정 IP 주소에서만 접근 가능:
+만약 특정 IP 주소에서만 접근을 허용하려면 % 대신 그 IP 주소를 사용하면 돼. 예를 들어 172.17.0.3에서만 접근을 허용하려면:
+CREATE USER 'ubuntu'@'172.17.0.3' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'172.17.0.3' WITH GRANT OPTION;
+복사Run
+이 경우, ubuntu 사용자는 172.17.0.3에서만 MySQL 서버에 접근할 수 있어.
+
+<br>
+특정 호스트 이름에서 접근 가능:
+특정 호스트 이름을 사용해 접근을 제한할 수도 있어. 예를 들어 server1.example.com에서만 접근을 허용하려면:
+CREATE USER 'ubuntu'@'server1.example.com' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'server1.example.com' WITH GRANT OPTION;
+복사Run
+이 경우, ubuntu 사용자는 server1.example.com이라는 호스트 이름으로만 MySQL 서버에 접근할 수 있어.
+
+<br><br>
+<br>%: 모든 호스트에서 접근 허용.
+<br>특정 IP 주소: 특정 IP 주소에서만 접근 허용.
+<br>호스트 이름: 특정 호스트 이름에서만 접근 허용.
+<br>이렇게 설정을 통해 MySQL 서버에 접근할 수 있는 사용자 계정과 그 계정이 접속할 수 있는 호스트를 세밀하게 제어할 수 있어. 추가로 궁금한 점이 있으면 언제든지 물어봐!<br>
+이렇게 만드는데, '계정명'@'% 이 부분에서 % 부분에 대해서 알려줘]]></description><link>root\dev\data-pipe-line\server\local\mysql-계정-생성시-의-의미.html</link><guid isPermaLink="false">root/dev/data pipe line/server/local/mysql 계정 생성시 %의 의미.md</guid><pubDate>Tue, 30 Jul 2024 15:36:37 GMT</pubDate></item><item><title><![CDATA[ssh 접속시 yes 입력 생략하기]]></title><description><![CDATA[ 
  <br><br>SSH 서버에 처음 접속할 때 "yes"를 입력하는 과정은 서버의 호스트 키를 확인하고 저장하는 과정이야. 이 과정을 자동으로 생략하려면 StrictHostKeyChecking 옵션을 사용하면 돼.<br>다음과 같은 방법을 사용해봐:<br>
 <br>명령어에 직접 추가하기:
 <br>ssh -o StrictHostKeyChecking=no user@hostname
@@ -7084,7 +7058,7 @@ ctrl + c 로 캔슬로 안되고..
 복사<br><br><br><a data-href="mysql 계정 생성시 %의 의미" href="root\dev\data-pipe-line\server\local\mysql-계정-생성시-의-의미.html" class="internal-link" target="_self" rel="noopener">mysql 계정 생성시 %의 의미</a><br><br>sudo mysql -u root
 복사<br><br>CREATE USER 'ubuntu'@'%' IDENTIFIED BY '1234';
 복사<br>계정이 존재 하면 아래의 것으로 비번을 초기화 함ALTER USER 'ubuntu'@'%' IDENTIFIED BY '1234';
-Run복사<br><br>GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'%' WITH GRANT OPTION;
+복사Run<br><br>GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'%' WITH GRANT OPTION;
 복사<br><br>FLUSH PRIVILEGES;
 복사<br><br>exit
 복사<br><br><br><br>sudo chown -R mysql:mysql /var/run/mysqld
@@ -7227,7 +7201,7 @@ query = transformed_df.writeStream \
     .start()
 
 query.awaitTermination()
-Run복사<br><br>
+복사Run<br><br>
 <br>스파크 세션 설정: 스파크 세션을 생성해.
 <br>카프카에서 데이터 읽기: spark.readStream.format("kafka")를 사용해 카프카에서 데이터를 스트리밍으로 읽어들여.
 <br>데이터 파싱 및 변환: 카프카 메시지에서 JSON 값을 파싱하고, 나이 컬럼을 1.5배로 변환해.
@@ -7311,7 +7285,7 @@ filtered_df.show()
 
 # SparkSession 종료
 spark.stop()
-Run복사<br><br>
+복사Run<br><br>
 <br>
 Spark 없이 MySQL을 사용하는 경우:
 
@@ -7537,26 +7511,26 @@ WITH GRANT OPTION;
 
 FLUSH PRIVILEGES;
 EXIT;
-Run복사<br><br>mysql -u hr_admin -p hrdb
+복사Run<br><br>mysql -u hr_admin -p hrdb
 # 비번 password
 복사<br><br>STATUS;
 SOURCE hr_info.sql;
-Run복사<br>
+복사Run<br>
 <br><a class="internal-link" data-href="hr_info.sql" href="hr_info.sql" target="_self" rel="noopener">hr_info.sql</a>
 <br><br>SHOW TABLES;
 DESC employees;
 SELECT * FROM employees;
-Run복사]]></description><link>root\dev\database\mariadb\mariadb-아이디-생성.html</link><guid isPermaLink="false">root/dev/database/mariaDB/mariaDB 아이디 생성.md</guid><pubDate>Tue, 30 Apr 2024 15:57:05 GMT</pubDate></item><item><title><![CDATA[mysql note]]></title><description><![CDATA[ 
+복사Run]]></description><link>root\dev\database\mariadb\mariadb-아이디-생성.html</link><guid isPermaLink="false">root/dev/database/mariaDB/mariaDB 아이디 생성.md</guid><pubDate>Tue, 30 Apr 2024 15:57:05 GMT</pubDate></item><item><title><![CDATA[mysql note]]></title><description><![CDATA[ 
  <br><br>
 <br>일번적으로 대소문자를 구분하지 않음
 <br>주로 예약어(SELECT, FROM)는<br>
 대문자, 사용자 정의어(code, name, population)는 소문자를 사용
 <br><br><br><br>SHOW DATABASES;
-Run복사<br><br>SHOW TABLES;
-Run복사<br><br>DESC &lt;table_name&gt;;
-Run복사<br><br><br>USE &lt;database_name&gt;;
-Run복사<br><br>SELECT * FROM &lt;table_name&gt;;
-Run복사<br><br><br><br>mysql -u root -p비번 &lt; schema-data.sql
+복사Run<br><br>SHOW TABLES;
+복사Run<br><br>DESC &lt;table_name&gt;;
+복사Run<br><br><br>USE &lt;database_name&gt;;
+복사Run<br><br>SELECT * FROM &lt;table_name&gt;;
+복사Run<br><br><br><br>mysql -u root -p비번 &lt; schema-data.sql
 복사<br><br>mysql -u root -p비번 &lt; schema.sql
 mysql -u root -p비번 &lt; data.sql
 복사<br><br>mysql -u root -p비번 data_base_name &lt; data.sql
@@ -7568,25 +7542,25 @@ mysql -u root -p비번 &lt; data.sql
 FROM country; */
 SELECT code, name
 FROM country;
-Run복사<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>InfoData Manipulation Language<br>
+복사Run<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>InfoData Manipulation Language<br>
 데이터 조작어<br>
 데이터 검색, 삽입, 수정, 삭제등에 사용<br>
 SELECT, INSERT, UPDATE, DELETE<br>
 트랜젝션이 발생하는 SQL문<br><br>SELECT &lt;column_name_1&gt;, &lt;column_name_2&gt;, ...
 FROM &lt;database_name&gt;.&lt;table_name&gt;;
 또는 FROM &lt;table_name&gt;;
-Run복사<br>-- 전체 조회
+복사Run<br>-- 전체 조회
 SELECT *
 FROM world.country;
-Run복사<br>-- code, name 세개의 컬럼 데이터 조회
+복사Run<br>-- code, name 세개의 컬럼 데이터 조회
 SELECT code, name
 FROM world.country;
-Run복사<br>-- alias 조회
+복사Run<br>-- alias 조회
 SELECT code AS country_code, name AS country_name
 FROM country;
-Run복사<br><br>INSERT INTO &lt;table_name&gt;(&lt;column_name_1&gt;, &lt;column_name_2&gt;, ...)
+복사Run<br><br>INSERT INTO &lt;table_name&gt;(&lt;column_name_1&gt;, &lt;column_name_2&gt;, ...)
 VALUES(&lt;value_1&gt;, &lt;value_2&gt;, …)
-Run복사<br>-- user1 테이블에 user_id, namex, email, age, rdate를 입력
+복사Run<br>-- user1 테이블에 user_id, namex, email, age, rdate를 입력
 INSERT INTO user1(user_id, name, email, age, rdate)
 VALUES (1, "jin", "pdj@gmail.com", 30, now()),
 (2, "peter", "peter@daum.net", 33, '2017-02-20'),
@@ -7594,33 +7568,33 @@ VALUES (1, "jin", "pdj@gmail.com", 30, now()),
 (4, "po", "po@gmail.com", 43, '2002-09-16'),
 (5, "andy", "andy@gmail.com", 17, '2016-04-28'),
 (6, "jin", "jin1224@gmail.com", 33, '2013-09-02');
-Run복사<br><br>UPDATE &lt;table_name&gt;
+복사Run<br><br>UPDATE &lt;table_name&gt;
 SET &lt;column_name_1&gt; = &lt;value_1&gt;, &lt;column_name_2&gt; = &lt;value_2&gt;,
 WHERE &lt;condition&gt;
-Run복사<br>-- jin 이름을 가지고 있는 사람의 나이를 20, 이메일을 pdj@daum.net으로 변경
+복사Run<br>-- jin 이름을 가지고 있는 사람의 나이를 20, 이메일을 pdj@daum.net으로 변경
 UPDATE user1
 SET age=20, email="pdj@daum.net"
 WHERE name="jin"
-Run복사<br><br>DELETE FROM &lt;table_name&gt;
+복사Run<br><br>DELETE FROM &lt;table_name&gt;
 WHERE &lt;condition&gt;
-Run복사<br>-- 2016-01-01 이전 데이터 삭제 (DML)
+복사Run<br>-- 2016-01-01 이전 데이터 삭제 (DML)
 DELETE FROM user1
 WHERE rdate &lt; "2016-01-01"
-Run복사<br><br>SELECT &lt;컬럼이름 1&gt;, &lt;컬럼이름 2&gt;, ...
+복사Run<br><br>SELECT &lt;컬럼이름 1&gt;, &lt;컬럼이름 2&gt;, ...
 FROM &lt;테이블 이름&gt;
 WHERE &lt;조건식&gt;
-Run복사<br><br>-- 인구가 7000만에서 1억인 국가를 출력
+복사Run<br><br>-- 인구가 7000만에서 1억인 국가를 출력
 SELECT *
 FROM country
 WHERE Population &gt;= 70000000 AND Population &lt;= 100000000;
-Run복사<br><br><br>SELECT *
+복사Run<br><br><br>SELECT *
 FROM country
 WHERE Continent = "Asia" OR Continent = "Africa";
-Run복사<br><br>-- 인구가 7000만에서 1억인 국가를 출력
+복사Run<br><br>-- 인구가 7000만에서 1억인 국가를 출력
 SELECT *
 FROM country
 WHERE Population BETWEEN 70000000 AND 100000000;
-Run복사<br><br>-- 아시아와 아프리카 대륙의 국가 데이터를 출력
+복사Run<br><br>-- 아시아와 아프리카 대륙의 국가 데이터를 출력
 SELECT *
 FROM country
 WHERE Continent IN ("Asia", "Africa");
@@ -7634,7 +7608,7 @@ WHERE Continent NOT IN ("Asia", "Africa");
 SELECT *
 FROM country
 WHERE Continent != "Asia" AND Continent != "Africa";
-Run복사<br><br>-- country 테이블에서 국가 코드가 Z로 시작되는 데이터를 출력
+복사Run<br><br>-- country 테이블에서 국가 코드가 Z로 시작되는 데이터를 출력
 SELECT *
 FROM country
 WHERE code like "Z%";
@@ -7643,12 +7617,12 @@ WHERE code like "Z%";
 SELECT *
 FROM country
 WHERE GovernmentForm LIKE “%Republic%”;
-Run복사<br><br><br>-- 오름차순 인구순으로 국가의 리스트를 출력
+복사Run<br><br><br>-- 오름차순 인구순으로 국가의 리스트를 출력
 -- ASC는 생략이 가능
 SELECT *
 FROM country
 ORDER BY population ASC
-Run복사<br><br>SELECT *
+복사Run<br><br>SELECT *
 FROM country
 ORDER BY population DESC
 
@@ -7657,7 +7631,7 @@ ORDER BY population DESC
 SELECT *
 FROM city
 ORDER BY CountryCode ASC, Population DESC
-Run복사<br><br>-- 인구가 많은 상위 5개 국가 데이터를 출력
+복사Run<br><br>-- 인구가 많은 상위 5개 국가 데이터를 출력
 SELECT *
 FROM country
 ORDER BY population DESC
@@ -7674,23 +7648,23 @@ SELECT *
 FROM country
 ORDER BY population DESC
 LIMIT 5, 3; # -- 5개 스킵하고 3개를 출력
-Run복사<br><br>-- city 테이블에서 도시의 인구수가 100만에서 200만인 도시의 국가 코드를 중복을 제거후 출력
+복사Run<br><br>-- city 테이블에서 도시의 인구수가 100만에서 200만인 도시의 국가 코드를 중복을 제거후 출력
 SELECT DISTINCT countrycode
 FROM city
 WHERE population BETWEEN 1000000 AND 2000000;
-Run복사<br><br><br>Note실수 데이터 올림<br>-- 12.345를 올림하여 정수로 나타냄
+복사Run<br><br><br>Note실수 데이터 올림<br>-- 12.345를 올림하여 정수로 나타냄
 SELECT CEIL(12.345);
 
 -- 국가별 언어 사용 비율을 소수 첫번째자리에서 올림하여 정수로 나타냄
 SELECT CountryCode, Language, Percentage, CEIL(Percentage)
 FROM countrylanguage;
-Run복사<br><br>Note실수데이터 반올림<br>-- 12.345를 소수 둘째자리까지 나타내고 소수 셋째자리에서 반올림
+복사Run<br><br>Note실수데이터 반올림<br>-- 12.345를 소수 둘째자리까지 나타내고 소수 셋째자리에서 반올림
 SELECT ROUND(12.345, 2);
 
 -- 국가별 언어 사용 비율을 소수 첫번째자리에서 반올림하여 정수로 나타냄
 SELECT CountryCode, Language, Percentage, ROUND(Percentage, 0)
 FROM countrylanguage;
-Run복사<br><br>Note실수 데이터를 버림<br>-- 12.345를 소수 둘째자리까지 나타내고 소수 셋째자리에서 버림
+복사Run<br><br>Note실수 데이터를 버림<br>-- 12.345를 소수 둘째자리까지 나타내고 소수 셋째자리에서 버림
 SELECT TRUNCATE(12.345, 2);
 
 -- 국가별 언어 사용 비율을 소수 첫번째자리에서 버림하여 정수로 나타냄
@@ -7699,33 +7673,33 @@ FROM countrylanguage;
 
 SELECT CountryCode, Language, Percentage, ROUND(Percentage, 0), TRUNCATE(Percentage, 0)
 FROM countrylanguage;
-Run복사<br><br>Note날짜 데이터 포멧<br><a data-tooltip-position="top" aria-label="https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html" rel="noopener" class="external-link" href="https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html" target="_blank">reference</a><br>-- sakila의 payment 테이블에서 요금 지불일을 "년-월"로 데이터 포멧을 변경했을때,
+복사Run<br><br>Note날짜 데이터 포멧<br><a data-tooltip-position="top" aria-label="https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html" rel="noopener" class="external-link" href="https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html" target="_blank">reference</a><br>-- sakila의 payment 테이블에서 요금 지불일을 "년-월"로 데이터 포멧을 변경했을때,
 -- 중복을 제거한 "년-월" 데이터를 출력
 SELECT DISTINCT(DATE_FORMAT(payment_date, "%Y-%m")) AS unique_month
 FROM payment;
-Run복사<br><br>Note문자열을 합침<br>-- world 데이터베이스의 country 테이블에서 국가코드, 대륙이름과 국가이름이 
+복사Run<br><br>Note문자열을 합침<br>-- world 데이터베이스의 country 테이블에서 국가코드, 대륙이름과 국가이름이 
 -- " / " 구분자로 구분해서 하나의 컬럼에 출력
 SELECT code, CONCAT(continent, " / ", name) as continent_name
 FROM country;
-Run복사<br><br>Note데이터의 갯수를 출력<br>-- world 데이터 베이스의 city 데이터의 갯수를 출력
+복사Run<br><br>Note데이터의 갯수를 출력<br>-- world 데이터 베이스의 city 데이터의 갯수를 출력
 SELECT count(*) as city_count
 FROM city;
-Run복사<br><br>IF(조건, 참, 거짓)
-Run복사<br>-- 도시 인구가 100만 이상이면 big city,
+복사Run<br><br>IF(조건, 참, 거짓)
+복사Run<br>-- 도시 인구가 100만 이상이면 big city,
 -- 아니면 small city 출력
 -- IF(조건, true, false)
 SELECT `Name`, `Population`,
 	IF(`Population` &gt;= 100 * 10000, 'big city', 'small city')
 FROM city;
-Run복사<br><br>IFNULL(참, 거짓)
-Run복사<br>-- 독립년도가 없는 데이터는 0으로 출력
+복사Run<br><br>IFNULL(참, 거짓)
+복사Run<br>-- 독립년도가 없는 데이터는 0으로 출력
 SELECT IndepYear, IFNULL(IndepYear, 0) as IndepYear
 FROM country;
-Run복사<br><br>CASE
+복사Run<br><br>CASE
 	WHEN (조건1) THEN (출력1)
 	WHEN (조건2) THEN (출력2)
 END AS (컬럼명)
-Run복사<br>-- # 나라별로 인구가 10억 이상, 1억 이상, 1억 이하인 컬럼을 추가하여 출력
+복사Run<br>-- # 나라별로 인구가 10억 이상, 1억 이상, 1억 이하인 컬럼을 추가하여 출력
 SELECT name, population,
 	CASE
 		WHEN population &gt; 1000000000 THEN "upper 1 bilion"
@@ -7733,7 +7707,7 @@ SELECT name, population,
 		ELSE "below 100 milion"
 	END AS result
 FROM country;
-Run복사<br>-- 도시에서 인구가 500만 이상 big, 100만 이상 medium, 100만 미만 samll 출력
+복사Run<br>-- 도시에서 인구가 500만 이상 big, 100만 이상 medium, 100만 미만 samll 출력
 
 SELECT `Name`, `Population` 
 	, CASE 
@@ -7743,18 +7717,18 @@ SELECT `Name`, `Population`
 	END AS scale
 FROM city
 ORDER BY `Population` DESC;
-Run복사<br><br>Note여러개의 동일한 데이터를 가지는 특정 컬럼을 합쳐주는 역할<br><br>-- city 테이블의 CountryCode를 묶고 각 코드마다 몇개의 데이터가 있는지 확인
+복사Run<br><br>Note여러개의 동일한 데이터를 가지는 특정 컬럼을 합쳐주는 역할<br><br>-- city 테이블의 CountryCode를 묶고 각 코드마다 몇개의 데이터가 있는지 확인
 SELECT CountryCode, COUNT(CountryCode)
 FROM city
 GROUP BY CountryCode;
-Run복사<br>-- 국가별 도시 수를 출력
+복사Run<br>-- 국가별 도시 수를 출력
 -- 도시가 많은 상위 10개의 국가, 도시수를 출력
 SELECT `CountryCode`, COUNT(`Name`) AS city_count
 FROM city
 GROUP BY `CountryCode`
 ORDER BY city_count DESC
 LIMIT 10;
-Run복사<br>-- 국가별 도시 수를 출력
+복사Run<br>-- 국가별 도시 수를 출력
 -- 인구수 50만 이상의 10개의 국가, 도시수를 출력
 SELECT `CountryCode`, COUNT(`Name`) AS city_count
 FROM city
@@ -7762,42 +7736,42 @@ WHERE `Population` &gt;= 50 * 10000
 GROUP BY `CountryCode`
 ORDER BY city_count DESC
 LIMIT 10;
-Run복사<br><br>-- 대륙별 인구수와 GNP 최대 값을 조회
+복사Run<br><br>-- 대륙별 인구수와 GNP 최대 값을 조회
 SELECT continent, MAX(Population) as Population, MAX(GNP) as GNP
 FROM country
 GROUP BY continent;
-Run복사<br><br>-- 대륙별 인구수와 GNP 최소 값을 조회 (GNP와 인구수가 0이 아닌 데이터 중에서)
+복사Run<br><br>-- 대륙별 인구수와 GNP 최소 값을 조회 (GNP와 인구수가 0이 아닌 데이터 중에서)
 SELECT continent, MIN(Population) as Population, MIN(GNP) as GNP
 FROM country
 WHERE GNP != 0 AND Population != 0
 GROUP BY continent;
-Run복사<br><br>-- 대륙별 총 인구수와 총 GNP
+복사Run<br><br>-- 대륙별 총 인구수와 총 GNP
 SELECT continent, SUM(Population) as Population, SUM(GNP) as GNP
 FROM country
 WHERE GNP != 0 AND Population != 0
 GROUP BY continent;
-Run복사<br>-- 대륙별 총인구수 출력
+복사Run<br>-- 대륙별 총인구수 출력
 SELECT `Continent`, SUM(`Population`) AS total_population
 FROM country
 GROUP BY `Continent`;
-Run복사<br>-- 대륙별 평균 GNP
+복사Run<br>-- 대륙별 평균 GNP
 SELECT `Continent`, SUM(`Population`) AS total_population
 	, AVG(`GNP`/`Population`) AS avg_gnp
 FROM country
 GROUP BY `Continent`;
-Run복사<br>-- 평균인당 GBP가 높은 순으로 정렬
+복사Run<br>-- 평균인당 GBP가 높은 순으로 정렬
 SELECT `Continent`, SUM(`Population`) AS total_population
 	, AVG(`GNP`/`Population`) AS avg_gnp
 FROM country
 GROUP BY `Continent`
 ORDER BY avg_gnp DESC;
-Run복사<br>-- 고객별 가장 많은 매출 발생 시켜준 상위 3명의 고객 출력
+복사Run<br>-- 고객별 가장 많은 매출 발생 시켜준 상위 3명의 고객 출력
 SELECT customer_id, SUM(amount) AS total_amount
 FROM payment
 GROUP BY customer_id
 ORDER BY total_amount DESC
 LIMIT 10;
-Run복사<br>-- 고객별 가장 많은 매출 발생 시켜준 상위 3명의 고객 출력
+복사Run<br>-- 고객별 가장 많은 매출 발생 시켜준 상위 3명의 고객 출력
 -- 조건: 2005년 6월 이 후
 SELECT customer_id, SUM(amount) AS total_amount
 FROM payment
@@ -7805,13 +7779,13 @@ WHERE payment_date &gt;= '2005-06-01'
 GROUP BY customer_id
 ORDER BY total_amount DESC
 LIMIT 10;
-Run복사<br><br>-- 대륙별 평균 인구수와 평균 GNP 결과를 인구수로 내림차순 정렬
+복사Run<br><br>-- 대륙별 평균 인구수와 평균 GNP 결과를 인구수로 내림차순 정렬
 SELECT continent, AVG(Population) as Population, AVG(GNP) as GNP
 FROM country
 WHERE GNP != 0 AND Population != 0
 GROUP BY continent
 ORDER BY Population DESC;
-Run복사<br><br>NoteGROUP BY에서 반환되는 결과에 조건을 줄수 있음<br>-- 대륙별 전체인구를 구하고 5억이상인 대륙만 조회
+복사Run<br><br>NoteGROUP BY에서 반환되는 결과에 조건을 줄수 있음<br>-- 대륙별 전체인구를 구하고 5억이상인 대륙만 조회
 SELECT continent, SUM(Population) as Population
 FROM country
 GROUP BY continent
@@ -7827,19 +7801,19 @@ WHERE GNP != 0 AND Population != 0
 GROUP BY continent
 HAVING AVG &gt; 0.01
 ORDER BY AVG DESC;
-Run복사<br><br>Note여러개의 컬럼을 GROUP BY 하고 각 컬럼별 총 합을 row에 출력<br>-- sakila 데이터 베이스에서 고객과 스탭별 매출과 고객별 매출의 총합을 출력
+복사Run<br><br>Note여러개의 컬럼을 GROUP BY 하고 각 컬럼별 총 합을 row에 출력<br>-- sakila 데이터 베이스에서 고객과 스탭별 매출과 고객별 매출의 총합을 출력
 SELECT customer_id, staff_id, SUM(amount) as amount
 FROM payment
 GROUP BY customer_id, staff_id
 WITH ROLLUP;
-Run복사<br><br>-- KPI 지포: 년월별 총 매출, 매출 횟수, 평균 매출
+복사Run<br><br>-- KPI 지포: 년월별 총 매출, 매출 횟수, 평균 매출
 SELECT DATE_FORMAT(payment_date, '%Y-%m') AS monthly
 	, SUM(amount) AS total_amount
 	, COUNT(amount) AS count_amount
 	, AVG(amount) AS avg_amount
 FROM payment
 GROUP BY monthly;
-Run복사<br>-- 직원별: 년월별 총 매출, 매출 횟수, 평균 매출
+복사Run<br>-- 직원별: 년월별 총 매출, 매출 횟수, 평균 매출
 SELECT  staff_id, DATE_FORMAT(payment_date, '%Y-%m') AS monthly
 	, SUM(amount) AS total_amount
 	, COUNT(amount) AS count_amount
@@ -7847,7 +7821,7 @@ SELECT  staff_id, DATE_FORMAT(payment_date, '%Y-%m') AS monthly
 FROM payment
 GROUP BY staff_id, monthly
 ORDER BY monthly, staff_id;
-Run복사<br><br>-- staff_id를 기준으로 그룹으로 정렬
+복사Run<br><br>-- staff_id를 기준으로 그룹으로 정렬
 USE sakila;
 
 SELECT staff_id
@@ -7856,17 +7830,17 @@ SELECT staff_id
 FROM payment
 GROUP BY staff_id, monthly
 WITH ROLLUP;
-Run복사<br><br>
+복사Run<br><br>
 <br>기본값: inner
 <br><br><br><br><br><br><br>SELECT * 
 FROM `user`
 JOIN addr
 ON user.ui = addr.ui;
-Run복사<br><br>SELECT `user`.ui, `user`.un, addr.an
+복사Run<br><br>SELECT `user`.ui, `user`.un, addr.an
 FROM `user`
 JOIN addr
 ON user.ui = addr.ui;
-Run복사<br><br>USE world;
+복사Run<br><br>USE world;
 /* USE DATABASE */
 -- 국가코드, 국가이름, 도시이름, 국가인구수, 도시인구수 출력
 -- 도시의 도시화율(도시인구수/국가인구수)을 출력
@@ -7882,7 +7856,7 @@ ON country.code = city.countrycode
 HAVING country_population &gt;= 1000 * 10000
 ORDER BY rate DESC
 LIMIT 10;
-Run복사<br>-- 국가이름, 도시갯수
+복사Run<br>-- 국가이름, 도시갯수
 -- JOIN, GROUP BY
 SELECT country.`Name`, COUNT(city.`Name`) AS city_count
 FROM country
@@ -7890,7 +7864,7 @@ JOIN city
 ON country.`Code` = city.`CountryCode`
 GROUP BY country.`Name`
 ORDER BY city_count DESC;
-Run복사<br>-- country, countrylanguage
+복사Run<br>-- country, countrylanguage
 -- 국가코드, 국가이름, 언어이름, 국가인구수, 언어사용률, 언어사용인구수 출력
 SELECT country.code, country.name, countrylanguage.language
 	, country.population, countrylanguage.percentage
@@ -7899,15 +7873,15 @@ SELECT country.code, country.name, countrylanguage.language
 FROM country
 JOIN countrylanguage
 ON country.code = countrylanguage.countrycode;
-Run복사<br><br>SELECT `user`.ui, `user`.un, addr.an
+복사Run<br><br>SELECT `user`.ui, `user`.un, addr.an
 FROM `user`
 LEFT JOIN addr
 ON user.ui = addr.ui;
-Run복사<br><br><br>SELECT addr.ui, `user`.un, addr.an
+복사Run<br><br><br>SELECT addr.ui, `user`.un, addr.an
 FROM `user`
 RIGHT JOIN addr
 ON user.ui = addr.ui;
-Run복사<br><br><br>-- Left Join
+복사Run<br><br><br>-- Left Join
 SELECT `user`.ui, `user`.un, addr.an
 FROM `user`
 LEFT JOIN addr
@@ -7918,13 +7892,13 @@ SELECT addr.ui, `user`.un, addr.an
 FROM `user`
 RIGHT JOIN addr
 ON user.ui = addr.ui;
-Run복사<br><br><br>두개의 쿼리 결과를 결합, 중복 제거<br>SELECT un FROM `user`
+복사Run<br><br><br>두개의 쿼리 결과를 결합, 중복 제거<br>SELECT un FROM `user`
 UNION
 SELECT an FROM `addr`;
-Run복사<br><br><br>두개의 쿼리 결과를 결합, 중복 제거 X<br>SELECT un FROM `user`
+복사Run<br><br><br>두개의 쿼리 결과를 결합, 중복 제거 X<br>SELECT un FROM `user`
 UNION ALL
 SELECT an FROM `addr`;
-Run복사<br><br><br>-- 스탭 1
+복사Run<br><br><br>-- 스탭 1
 SELECT COUNT(*) FROM country;
 SELECT COUNT(*) FROM city;
 SELECT COUNT(DISTINCT(`Language`)) FROM countrylanguage;
@@ -7935,7 +7909,7 @@ SELECT
 	(SELECT COUNT(*) FROM city) AS total_city,
 	(SELECT COUNT(DISTINCT(`Language`)) FROM countrylanguage) AS total_countrylanguage
 FROM DUAL;
-Run복사<br><br>NoteHAVING보다 SubQuery가 더 빠르다.<br>
+복사Run<br><br>NoteHAVING보다 SubQuery가 더 빠르다.<br>
 이유는<br>
 HAVING : JOIN(2394096=978944) &gt; Filtering(HAVING:10) =&gt; Result<br>
 SubQuery: Filtering(WHERE:10) &gt; JOIN(23910=2390) =&gt; Result<br>-- 800만 인구 이상 도시의 국가코드, 국가이름, 도시이름, 도시인구수 출력 
@@ -7956,7 +7930,7 @@ JOIN (  SELECT countrycode, name, population
 		WHERE population &gt;= 800 * 10000
 	) AS city
 ON country.code = city.countrycode;
-Run복사<br>-- WHERE SubQuery
+복사Run<br>-- WHERE SubQuery
 -- 한국보다 인구가 많은 국가의 국가코드, 국가이름, 인구수, GNP 출력
 SELECT `Population`
 FROM country
@@ -7974,19 +7948,19 @@ WHERE `Population` &gt; (
 	FROM country
 	WHERE `Code` = 'KOR'
 );
-Run복사<br><br><br>InfoData Definition Language<br>
+복사Run<br><br><br>InfoData Definition Language<br>
 데이터 정의어<br>
 데이터 베이스, 테이블, 뷰, 인덱스등의 데이터 베이스 개체를 생성, 삭제, 변경에 사용<br>
 CREATE, DROP, ALTER, TRUNCATE<br>
 실행 즉시 DB에 적용<br><br><br>CREATE DATABASE &lt;database_name&gt;;
-Run복사<br>-- test 데이터 베이스 생성
+복사Run<br>-- test 데이터 베이스 생성
 CREATE DATABASE test;
-Run복사<br><br>CREATE TABLE &lt;table_name&gt; (
+복사Run<br><br>CREATE TABLE &lt;table_name&gt; (
 	column_name_1 column_data_type_1 column_constraint_1,
 	column_name_2 column_data_type_2 column_constraint_2,
 	...
 )
-Run복사<br>-- 제약조건이 없는 user1 테이블 생성
+복사Run<br>-- 제약조건이 없는 user1 테이블 생성
 CREATE TABLE user1(
 	user_id INT,
 	name Varchar(20),
@@ -7994,7 +7968,7 @@ CREATE TABLE user1(
 	age INT(3),
 	rdate DATE
 )
-Run복사<br>-- 제약조건이 있는 user2 테이블 생성
+복사Run<br>-- 제약조건이 있는 user2 테이블 생성
 CREATE TABLE user2(
 	user_id INT PRIMARY KEY AUTO_INCREMENT,
 	name Varchar(20) NOT NULL,
@@ -8002,10 +7976,10 @@ CREATE TABLE user2(
 	age INT(3) DEFAULT '30',
 	rdate TIMESTAMP default CURRENT_TIMESTAMP
 )
-Run복사<br><br>DROP FROM &lt;database_name&gt;
-Run복사<br>-- 테이블 전체를 모두 삭제 (DLL)
+복사Run<br><br>DROP FROM &lt;database_name&gt;
+복사Run<br>-- 테이블 전체를 모두 삭제 (DLL)
 DROP FROM user1
-Run복사<br>-- DATABASE
+복사Run<br>-- DATABASE
 -- tmp 데이터 베이스 생성
 CREATE DATABASE tmp;
 SHOW DATABASES;
@@ -8026,9 +8000,9 @@ CREATE TABLE tmp( id INT );
 
 -- tmp 테이블 삭제
 DROP TABLE tmp;
-Run복사<br><br>INSERT INTO &lt;table_name&gt;(&lt;column_name_1&gt;, &lt;column_name_2&gt;, ...)
+복사Run<br><br>INSERT INTO &lt;table_name&gt;(&lt;column_name_1&gt;, &lt;column_name_2&gt;, ...)
 VALUES(&lt;value_1&gt;, &lt;value_2&gt;, …)
-Run복사<br>-- user1 테이블에 user_id, namex, email, age, rdate를 입력
+복사Run<br>-- user1 테이블에 user_id, namex, email, age, rdate를 입력
 INSERT INTO user1(user_id, name, email, age, rdate)
 VALUES (1, "jin", "pdj@gmail.com", 30, now()),
 (2, "peter", "peter@daum.net", 33, '2017-02-20'),
@@ -8036,7 +8010,7 @@ VALUES (1, "jin", "pdj@gmail.com", 30, now()),
 (4, "po", "po@gmail.com", 43, '2002-09-16'),
 (5, "andy", "andy@gmail.com", 17, '2016-04-28'),
 (6, "jin", "jin1224@gmail.com", 33, '2013-09-02');
-Run복사<br>-- city_2 테이블 생성
+복사Run<br>-- city_2 테이블 생성
 CREATE TABLE city_2 (
 	Name VARCHAR(50),
 	CountryCode CHAR(3),
@@ -8049,14 +8023,14 @@ INSERT INTO city_2
 SELECT Name, CountryCode, District, Population
 FROM city
 WHERE Population &gt; 8000000;
-Run복사<br><br><br><br>ALTER TABLE `테이블 이름` ADD COLUMN `컬럼 명` `속성값`;
-Run복사<br>ALTER TABLE user ADD contents TEXT NOT NULL;
-Run복사<br><br>ALTER TABLE `테이블 아름` DROP COLUMN `컬럼 이름`;
-Run복사<br>ALTER TABLE user DROP contents;
-Run복사<br><br>ALTER TABLE 테이블명 RENAME COLUMN 변경할 컬럼명 TO 변경될 이름;
-Run복사<br>ALTER TABLE user RENAME COLUMN email TO mail;
-Run복사<br><br>ALTER TABLE `기존 테이블 이름` RENAME `새 테이블 이름`;
-Run복사<br><br>-- 사용중인 데이터베이스의 인코딩 방식 확인
+복사Run<br><br><br><br>ALTER TABLE `테이블 이름` ADD COLUMN `컬럼 명` `속성값`;
+복사Run<br>ALTER TABLE user ADD contents TEXT NOT NULL;
+복사Run<br><br>ALTER TABLE `테이블 아름` DROP COLUMN `컬럼 이름`;
+복사Run<br>ALTER TABLE user DROP contents;
+복사Run<br><br>ALTER TABLE 테이블명 RENAME COLUMN 변경할 컬럼명 TO 변경될 이름;
+복사Run<br>ALTER TABLE user RENAME COLUMN email TO mail;
+복사Run<br><br>ALTER TABLE `기존 테이블 이름` RENAME `새 테이블 이름`;
+복사Run<br><br>-- 사용중인 데이터베이스의 인코딩 방식 확인
 SHOW VARIABLES LIKE "character_set_database"
 
 -- test 데이터 베이스의 문자열 인코딩을 utf8으로 변경
@@ -8089,7 +8063,7 @@ ALTER TABLE user2 CONVERT TO character set utf8;
 -- DROP
 -- user2 테이블의 tmp 컬럼을 삭제
 ALTER TABLE user2 DROP tmp;
-Run복사<br><br>NoteForeign key를 설정하면 데이터의 무결성을 지킬수 있다.<br>
+복사Run<br><br>NoteForeign key를 설정하면 데이터의 무결성을 지킬수 있다.<br>
 UNIQUE 나 PRAMARY 제약조건이 있어야 설정이 가능하다.<br>-- user 테이블 생성
 	create table user(
 	user_id int primary key auto_increment,
@@ -8147,7 +8121,7 @@ where user_id = 1;
 -- 테이블 삭제도 안된다.
 drop table user;
 
-Run복사<br><br>NoteFOREIGN KEY로 참조되는 데이터를 수정 및 삭제할때 참조되는 데이터까지 수정이나 삭제하는 설정<br>
+복사Run<br><br>NoteFOREIGN KEY로 참조되는 데이터를 수정 및 삭제할때 참조되는 데이터까지 수정이나 삭제하는 설정<br>
 <br>CASCADE : 참조되는 테이블에서 데이터를 삭제하거나 수정하면, 참조하는 테이블에서도 삭제와 수정
 <br>SET NULL : 참조되는 테이블에서 데이터를 삭제하거나 수정하면, 참조하는 테이블의 데이터는 NULL로 변경
 <br>NO ACTION : 참조되는 테이블에서 데이터를 삭제하거나 수정해도, 참조하는 테이블의 데이터는 변경되지 않음
@@ -8189,20 +8163,20 @@ where user_id = 3;
 
 select * from user;
 select * from money;
-Run복사<br><br><br>USE employees;
+복사Run<br><br><br>USE employees;
 SELECT COUNT(*)
 FROM salaries; -- 2844047
-Run복사<br><br>SHOW INDEX FROM salaries;
-Run복사<br><br><br>-- 408ms
+복사Run<br><br>SHOW INDEX FROM salaries;
+복사Run<br><br><br>-- 408ms
 SELECT * FROM salaries WHERE to_date &lt; '1986-01-01';
-Run복사<br><br>-- 8.8s
+복사Run<br><br>-- 8.8s
 CREATE INDEX tdate ON salaries (to_date);
 
 SHOW INDEX FROM salaries;
-Run복사<br><br><br>-- 3ms
+복사Run<br><br><br>-- 3ms
 CREATE INDEX tdate ON salaries (to_date);
-Run복사<br>Note408ms -&gt; 3ms<br><br>DROP INDEX tdate ON salaries;
-Run복사<br><br>-- 변수선언
+복사Run<br>Note408ms -&gt; 3ms<br><br>DROP INDEX tdate ON salaries;
+복사Run<br><br>-- 변수선언
 SET @data = 1;
 
 -- 선언된 변수 출력
@@ -8215,7 +8189,7 @@ SELECT @RANK := @RANK + 1 AS ranking, countrycode, name, population
 FROM city
 ORDER BY population DESC
 LIMIT 5;
-Run복사<br><br><br>InfoData Control Language<br>
+복사Run<br><br><br>InfoData Control Language<br>
 데이터 제어어<br>
 사용자의 권한을 부여하거나 빼앗을때 사용<br>
 GRUNT, REVORKE, DENY<br><br>-- 사용자 권한 부여 명령어
@@ -8229,7 +8203,7 @@ GRANT ALL PRIVILEGES ON testDB.testTable TO myuser@'%' IDENTIFIED BY 'testPasswo
 
 -- 예제 (호스트 : 아이피)
 GRANT ALL PRIVILEGES ON testDB.testTable TO myuse@192.168.0.100 IDENTIFIED BY 'testPassword';
-Run복사<br><br>-- 권한 해제 명령어(INSERT, UPDATE, CREATE 권한 해제)
+복사Run<br><br>-- 권한 해제 명령어(INSERT, UPDATE, CREATE 권한 해제)
 REVOKE insert, update, create ON [dbname.table_name] TO [user@host];
  
 -- 권한 해제 명령어(전체 권한 해제)
@@ -8237,7 +8211,7 @@ REVOKE ALL ON [dbname.table_name] TO [user@host];
 
 -- 권한 확인 명령어
 SHOW GRANTS FOR [user@host];
-Run복사]]></description><link>root\dev\database\mysql-note.html</link><guid isPermaLink="false">root/dev/database/mysql note.md</guid><pubDate>Mon, 20 May 2024 16:36:19 GMT</pubDate></item><item><title><![CDATA[vscode mysql 플러그인 사용하기]]></title><description><![CDATA[ 
+복사Run]]></description><link>root\dev\database\mysql-note.html</link><guid isPermaLink="false">root/dev/database/mysql note.md</guid><pubDate>Mon, 20 May 2024 16:36:19 GMT</pubDate></item><item><title><![CDATA[vscode mysql 플러그인 사용하기]]></title><description><![CDATA[ 
  <br><br><img alt="Pasted image 20240515174351.png" src="lib\media\pasted-image-20240515174351.png"><br>
 <br>입력: mysql
 <br>클릭: MySQL
@@ -8264,7 +8238,7 @@ Run복사]]></description><link>root\dev\database\mysql-note.html</link><guid is
 <br>SELECT * FROM COLUMNS;
 
 SELECT `COLUMN_NAME` FROM COLUMNS;
-Run복사<br>
+복사Run<br>
 <br>클릭: Run
 <br>확인
 <br>클릭: Run
@@ -8634,9 +8608,9 @@ pip install psycopg2-binary
 <br><br>a = 10
 b = 20
 print(a + b)
-Run복사<br>a, b = 1, 2
+복사Run<br>a, b = 1, 2
 print(a, b) # 1, 2 완전 쩔어?!
-Run복사<br><br><br>phone = "갈럭시"
+복사Run<br><br><br>phone = "갈럭시"
 usage = 50.888
 
 print("%s 베터리 %d%% 남았음" % (phone, usage))
@@ -8647,36 +8621,36 @@ print("{} 베터리 {:.2f}% 남았음".format(phone, usage))
 
 print(f"{phone}베터리 {usage}% 남았음")
 print(f"{phone}베터리 {usage:.2f}% 남았음")
-Run복사<br><br><br><br>s = "Life is too short."
+복사Run<br><br><br><br>s = "Life is too short."
 s.split('i') # token
-Run복사<br><br>s = "Life is too short."
+복사Run<br><br>s = "Life is too short."
 # Life를 This pencil로 바꿔봅시다.
 s.replace("Life", "This pencil")
 s.replace(" ", "")
-Run복사<br><br><br><br>def sum(a, b):
+복사Run<br><br><br><br>def sum(a, b):
 	return a + b
 print(sum(1, 2))
-Run복사<br><br>f = lamda a, b : a + b
+복사Run<br><br>f = lamda a, b : a + b
 print(f(3, 5))
-Run복사<br><br>def call_back(lam):
+복사Run<br><br>def call_back(lam):
 	return lam(10)
 
 print(call_back(lambda num : num + 20)) # 30
-Run복사<br><br>def add(a, b)
+복사Run<br><br>def add(a, b)
 	'''
 	a, b: integer
 	return: a, b를 입력 받아서 더한 값
 	'''
 	c = a + b
 	return c
-Run복사<br><br>def add(a:int, b:int): -&gt; int
+복사Run<br><br>def add(a:int, b:int): -&gt; int
 	c = a + b
 	return c
-Run복사<br><br>def add_many(*args):
+복사Run<br><br>def add_many(*args):
     print(args) # (1, 2, 3, 4, 5)
 
 add_many(1, 2, 3, 4, 5)
-Run복사<br>튜플로 받을 수 있음<br><br><br>
+복사Run<br>튜플로 받을 수 있음<br><br><br>
 name = "kim"
 
 def change_name()
@@ -8685,12 +8659,12 @@ def change_name()
 change_name()
 
 print(name) # "what 쓰지마 이거"
-Run복사<br><br><br>Note배열이라고 하지 않고 리스트라고 함<br><br>
+복사Run<br><br><br>Note배열이라고 하지 않고 리스트라고 함<br><br>
 L3 = [1, "Hi", 3.14, [1, 2, 3]] 
 print(L3) # [1, 'Hi', 3.14, [1, 2, 3]]
-Run복사<br><br>L = [1, 2, 3, 4, 5]
+복사Run<br><br>L = [1, 2, 3, 4, 5]
 L[0] # 1
-Run복사<br><br># L의 첫번째부터 index2 까지 자르기
+복사Run<br><br># L의 첫번째부터 index2 까지 자르기
 L[0:2]
 # 두번째 부터 네번재까지 자르기
 L[1:4]
@@ -8716,21 +8690,21 @@ print(b) # [5, 3, 1]
 print(c) # [1, 2, 3, 4, 5] 
 print(d) # [1, 3, 5]
 
-Run복사<br><br>L = [1, 2, 3]
+복사Run<br><br>L = [1, 2, 3]
 L2 = [4, 5]
 print(L + L2) # [1, 2, 3, 4, 5]  concatenation
 
 L * 3 # [1, 2, 3, 1, 2, 3, 1, 2, 3]
 
-Run복사<br><br>L = [1, 2, 3]
+복사Run<br><br>L = [1, 2, 3]
 L = [1, 2, 3, 4, 5]
 L2 = [4, 5]
 print(L + L2) # [1, 2, 3, 4, 5, 4, 5]
-Run복사<br><br>L = []
+복사Run<br><br>L = []
 L.append(3)
 L.append(2)
 L.append(1)
-Run복사<br><br><br># sort()를 이용해 L을 정렬합니다.
+복사Run<br><br><br># sort()를 이용해 L을 정렬합니다.
 L = [4, 3, 16]
 sorted(L) # 원본 보존
 L
@@ -8738,11 +8712,11 @@ L.sort()
 L # 원본 훼손
 L.sort(reverse=True)
 L # 내림차
-Run복사<br><br>names = ["kim", "park", "chang", "jessica"]
+복사Run<br><br>names = ["kim", "park", "chang", "jessica"]
 names.sort(key=lambda s : len(s), reverse=True)
 
 names
-Run복사<br><br>
+복사Run<br><br>
 inputs = input("숫자 여러개 입력하라: e.g. 1, 2, 3, 4, ...")
 
 # 특정 원소 표현을 가지는 리스트를 만들고 싶을 때 사용
@@ -8751,13 +8725,13 @@ print(total, sum(total))
 
 # 매우 좋고만
 
-Run복사<br><br>def cut_string(word:str, separator:str = ",") -&gt; list:
+복사Run<br><br>def cut_string(word:str, separator:str = ",") -&gt; list:
 	return [w for w in word.split(separator)]
 
 print(cut_string("와, 이렇게, 하면, 어떨까?"))
 # ['와', ' 이렇게', ' 하면', ' 어떨까?']
 
-Run복사<br>## 입력: a, b, c, d, ...., asdf, qwer, dfd
+복사Run<br>## 입력: a, b, c, d, ...., asdf, qwer, dfd
 ## 출력: a b c d .... asdf qwer dfd
 ## 조건: split() 함수에서 ','를 쓰지 않고 빈 칸으로 잘라서 사용하시오.
 temp = "a, b, c, d, ...., asdf, qwer, dfd"
@@ -8773,15 +8747,15 @@ ourputs = [x[:-1] for x in temp.split()]
 
 for x in outputs:
 	print(x, end = " ")
-Run복사<br><br><br><br>arr:list = [1,2,3,4]
+복사Run<br><br><br><br>arr:list = [1,2,3,4]
 for elem in arr:
 	print(elem)
-Run복사<br><br><br><br>coffees = ['아메리카노', '카페라떼', '카페모카', '바닐라라떼', '핸드드립', '콜드브루']
+복사Run<br><br><br><br>coffees = ['아메리카노', '카페라떼', '카페모카', '바닐라라떼', '핸드드립', '콜드브루']
 prices = [4100, 4600, 4600, 5100, 6000, 5000]
-Run복사<br><br>for i in range(len(coffees)):
+복사Run<br><br>for i in range(len(coffees)):
 	if prices[i] &lt;= 5000:
 		print(f"{coffees[i]}: {prices[i]}원")
-Run복사<br><br>for t in enumerate(prices):
+복사Run<br><br>for t in enumerate(prices):
 	if t[1] &lt;= 5000:
 		print(coffees[t[0]])
 
@@ -8789,17 +8763,17 @@ Run복사<br><br>for t in enumerate(prices):
 for i, price in enumerate(prices):
 	if price &lt;= 5000:
 		print(coffees[i])
-Run복사<br><br>for coffee, price in zip(coffees, prices):
+복사Run<br><br>for coffee, price in zip(coffees, prices):
 if price &lt;= 5000:
 	print(coffee)
-Run복사<br><br><br>a: int = 10
+복사Run<br><br><br>a: int = 10
 b: str = "this is string"
 c: float = 0.1
 d: float = 0.2
 a = "200" # 되기는 하는데 오류가 안뜨네.
 print(0.1 + 0.2)
 print(c + d) # 안된다...
-Run복사<br><br><br>what = True
+복사Run<br><br><br>what = True
 def huh():
 	if what:
 		print("wow")
@@ -8808,8 +8782,8 @@ def huh():
 huh()
 what = False
 huh()
-Run복사<br><br>test = False if 1 &lt; 2 else True
-Run복사<br><br><br>obj = {
+복사Run<br><br>test = False if 1 &lt; 2 else True
+복사Run<br><br><br>obj = {
 	"a": 10,
 	"b": "wowo",
 	"arr": [1, 2, 3]
@@ -8820,15 +8794,15 @@ print(obj["a"])
 print(obj["arr"][1])
 for key in obj:
 	print(f"key: {key}, value: {obj[key]}")
-Run복사<br><br><br>D = {'name': 'kim', 'phone': '01012345679', 'birth': '1234'}
+복사Run<br><br><br>D = {'name': 'kim', 'phone': '01012345679', 'birth': '1234'}
 
 D.keys() # dict_keys(['name', 'phone', 'birth'])
 D.values() # dict_values(['kim', '01012345679', '1234'])
 D.items() # dict_items([('name', 'kim'), ('phone', '01012345679'), ('birth', '1234')])
 print(D.get('name', 0)) # kim
-Run복사<br><br>"phone" in D # True
+복사Run<br><br>"phone" in D # True
 "1234" in D.values() # True
-Run복사<br><br><br>class Box():
+복사Run<br><br><br>class Box():
 	width = 100
 	height = 100
 	color = "#aaa"
@@ -8841,7 +8815,7 @@ Run복사<br><br><br>class Box():
 
 boxA = Box("boxA")
 boxA.intro()
-Run복사<br><br>class Notebook:
+복사Run<br><br>class Notebook:
 
 	def __init__(self, 
 							brand:str = "", 
@@ -8876,7 +8850,7 @@ nb = Notebook(
 	price = 7
 )
 nb.get_info()
-Run복사<br><br><br>class Box():
+복사Run<br><br><br>class Box():
 	width = 100
 	height = 100
 	color = "#aaa"
@@ -8900,7 +8874,7 @@ class PizzaBox(Box):
 nene = PizzaBox("nene")
 nene.intro()
 nene.huhOverride()
-Run복사<br><br><br>class Box():
+복사Run<br><br><br>class Box():
 	width = 100
 	height = 100
 	_color = "#aaa"
@@ -8939,14 +8913,14 @@ pizza = pizzaBox.getPizza()
 pizzaBox.checkPizza()
 print(f"Very delicious {pizza} Yum Yum~")
 pizzaBox.intro()
-Run복사<br><br><br>class Static:
+복사Run<br><br><br>class Static:
 	@staticmethod
 	def print_now():
 		print("ok")
 
 
 Static.print_now()
-Run복사<br><br><br>Note사용하기 위해서는 from abc import * 를 불러와야함.<br>from abc import *
+복사Run<br><br><br>Note사용하기 위해서는 from abc import * 를 불러와야함.<br>from abc import *
 
 class IBox():
 	@abstractclassmethod
@@ -8962,7 +8936,7 @@ class GoldBox(IBox):
 	pass
 
 print(GoldBox().name)
-Run복사<br><br><br>요론 느낌.<br><br>def so(func):
+복사Run<br><br><br>요론 느낌.<br><br>def so(func):
 	print("what!1")
 	func()
 	print("what!2")
@@ -8970,13 +8944,13 @@ Run복사<br><br><br>요론 느낌.<br><br>def so(func):
 @so
 def what():
 	print("뭐!!!")
-Run복사<br>def so(func):
+복사Run<br>def so(func):
 	print("what!1")
 	func()
 	print("what!2")
 
 so(lambda: print("뭐!!"))
-Run복사<br>function so(func) {
+복사Run<br>function so(func) {
 	console.log("what1");
 	func();
 	console.log("what2");
@@ -8985,7 +8959,7 @@ Run복사<br>function so(func) {
 so(() =&gt; {
 	console.log("뭐!!")
 })
-Run복사<br><br>def so(func):
+복사Run<br><br>def so(func):
 	def wrap():
 		print("what!1")
 		func()
@@ -8997,7 +8971,7 @@ def what():
 	print("뭐!!")
 
 what()
-Run복사<br>def so(func):
+복사Run<br>def so(func):
 	def wrap():
 		print("what!1")
 		func()
@@ -9006,7 +8980,7 @@ Run복사<br>def so(func):
 
 what = so(lambda: print("뭐!!"))
 what()
-Run복사<br>function so(func) {
+복사Run<br>function so(func) {
 	return () =&gt; {
 		console.log("what1");
 		func()
@@ -9020,7 +8994,7 @@ let what = wow(() =&gt; {
 
 what()
 
-Run복사<br>def so(func):
+복사Run<br>def so(func):
 	def wrap():
 		print("what!1")
 		func()
@@ -9032,7 +9006,7 @@ def what():
 
 huh = so(what)
 huh()
-Run복사<br>function so(func) {
+복사Run<br>function so(func) {
 	return () =&gt; {
 		console.log("what1");
 		func();
@@ -9047,14 +9021,14 @@ function what() {
 const huh = so(what);
 huh();
 
-Run복사<br><br><br>import re
-Run복사<br><br>oldman_id = "911210-1234567"
+복사Run<br><br><br>import re
+복사Run<br><br>oldman_id = "911210-1234567"
 res = re.search("(?&lt;=-\\d).+", oldman_id)
 print(res.group()) #234567
-Run복사<br>찾기<br><br>oldman_id = "911210-1234567"
+복사Run<br>찾기<br><br>oldman_id = "911210-1234567"
 print(re.sub("(?&lt;=-\\d).+", "******", oldman_id))
 # 911210-1******
-Run복사<br>치환<br><br><br>def div(a, b):
+복사Run<br>치환<br><br><br>def div(a, b):
     try:
         return a / b
     except:
@@ -9064,7 +9038,7 @@ Run복사<br>치환<br><br><br>def div(a, b):
 div(9, 3)
 div("a", 5)
 div(8, 0)
-Run복사<br>def div(a, b):
+복사Run<br>def div(a, b):
     try:
         return a / b
     except ZeroDivisionError:
@@ -9076,7 +9050,7 @@ Run복사<br>def div(a, b):
 div(9, 3)
 div("a", 5)
 div(8, 0)
-Run복사<br><br><br><br>inputs = input("숫자 여러개 입력하라: e.g. 1, 2, 3, 4, ...")
+복사Run<br><br><br><br>inputs = input("숫자 여러개 입력하라: e.g. 1, 2, 3, 4, ...")
 print(inputs)
 total = 0
 for x in inputs.split(","):
@@ -9084,23 +9058,23 @@ for x in inputs.split(","):
 	total += x
 print(total)
 
-Run복사<br><br><br><br>with open('./test.txt', 'r', encoding='utf-8') as f:
+복사Run<br><br><br><br>with open('./test.txt', 'r', encoding='utf-8') as f:
 	text = f.read()
 print(text)
-Run복사<br><br># f.readline()를 통해 data 폴더안에 있는 test.txt를 read mode로 열어봅니다.
+복사Run<br><br># f.readline()를 통해 data 폴더안에 있는 test.txt를 read mode로 열어봅니다.
 with open('./test.txt', 'r', encoding='utf-8')	as f:
 	 lines = f.readlines()
-Run복사<br><br># f.readlines()를 통해 data 폴더안에 있는 test.txt를 read mode로 열어봅니다.
+복사Run<br><br># f.readlines()를 통해 data 폴더안에 있는 test.txt를 read mode로 열어봅니다.
 txt = []
 with open('./test.txt', 'r', encoding='utf-8')	as f:
 	for line in f:
 		txt.append(line)
-Run복사<br># for문을 통해 data 폴더안에 있는 test.txt를 read mode로 열어서 출력해봅니다.
+복사Run<br># for문을 통해 data 폴더안에 있는 test.txt를 read mode로 열어서 출력해봅니다.
 with open('./test.txt', 'r', encoding='utf-8')	as f:
 	txt = [line for line in f]
 
 print(txt)
-Run복사<br><br># test.txt를 read mode로 열고 할 일이 끝나면 자동으로 닫는다.
+복사Run<br><br># test.txt를 read mode로 열고 할 일이 끝나면 자동으로 닫는다.
 output = []
 with open('./test.txt', 'r', encoding='utf-8')	as f:
 	for line in f:
@@ -9122,7 +9096,7 @@ with open('result.txt', 'r') as f:
 
 
 print(output)
-Run복사<br><br><br>import pickle   # serialization
+복사Run<br><br><br>import pickle   # serialization
 
 output = ["what", "one", "why?!"]
 
@@ -9133,7 +9107,7 @@ with open("result.pk", 'rb') as f:
     output2 = pickle.load(f)
     
 print(output2)
-Run복사<br>바이너리로 바꿔서 아주 빠르게 데이터들을 처리 할 수 있는 포멧<br><br><br><br>import file_name
+복사Run<br>바이너리로 바꿔서 아주 빠르게 데이터들을 처리 할 수 있는 포멧<br><br><br><br>import file_name
 
 file_name.func1()
 file_name.func2()
@@ -9153,49 +9127,49 @@ from file_name import func1 as f1, func2 as f2, func3 as f3 # ...
 f1()
 f2()
 f3()
-Run복사<br><br><br>def good_print():
+복사Run<br><br><br>def good_print():
 	print("this is good! wow!!")
 
 def what():
 	print("huh???")
-Run복사<br><br><br>import good
+복사Run<br><br><br>import good
 
 good.good_print()
 good.what()
-Run복사<br><br>import good as huh
+복사Run<br><br>import good as huh
 
 huh.good_print()
 huh.what()
-Run복사<br><br><br>from good import good_print, what
+복사Run<br><br><br>from good import good_print, what
 
 good_print()
 what()
-Run복사<br><br>from good import good_print as okey, what as the
+복사Run<br><br>from good import good_print as okey, what as the
 
 okey()
 the()
-Run복사<br><br><br>def good_print():
+복사Run<br><br><br>def good_print():
 	print("this is good! wow!!")
 
 def what():
 	print("huh???")
-Run복사<br><br><br>import module.good
+복사Run<br><br><br>import module.good
 
 module.good.good_print()
 module.good.what()
-Run복사<br><br>import module.good as good
+복사Run<br><br>import module.good as good
 
 good.good_print()
 good.what()
-Run복사<br><br><br>from module.good import good_print, what
+복사Run<br><br><br>from module.good import good_print, what
 
 good_print()
 what()
-Run복사<br><br>from module.good import good_print as okey, what as the
+복사Run<br><br>from module.good import good_print as okey, what as the
 
 okey()
 the()
-Run복사<br><br>import sys
+복사Run<br><br>import sys
 
 def huh():
 	print(sys.argv)
@@ -9205,7 +9179,7 @@ def huh():
 
 if __name__ == "__main__":
 	huh()
-Run복사<br>python what_the.py ok what huh
+복사Run<br>python what_the.py ok what huh
 복사]]></description><link>root\dev\python\python-note.html</link><guid isPermaLink="false">root/dev/python/python note.md</guid><pubDate>Fri, 31 May 2024 02:49:36 GMT</pubDate></item><item><title><![CDATA[이어드림스쿨 실습용 wsl 배포 import]]></title><description><![CDATA[ 
  <br>Note이어드림스쿨 윈도우용 환경가이드 세팅을 참고하여 만든 wsl 통파일 배포
 
@@ -9257,9 +9231,35 @@ processors = 2<br>
 <br><a data-tooltip-position="top" aria-label="https://velog.io/@alirz-pixel/wsl2-Vmmem-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%A0%90%EC%9C%A0%EC%9C%A8-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0" rel="noopener" class="external-link" href="https://velog.io/@alirz-pixel/wsl2-Vmmem-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%A0%90%EC%9C%A0%EC%9C%A8-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0" target="_blank">https://velog.io/@alirz-pixel/wsl2-Vmmem-메모리-점유율-해결하기</a>
 <br><a rel="noopener" class="external-link" href="https://learn.microsoft.com/ko-kr/windows/wsl/wsl-config" target="_blank">https://learn.microsoft.com/ko-kr/windows/wsl/wsl-config</a>
 <br><a data-tooltip-position="top" aria-label="https://velog.io/@devookim/wsl2-%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8-%EC%8B%9C%ED%82%A4%EA%B8%B0" rel="noopener" class="external-link" href="https://velog.io/@devookim/wsl2-%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8-%EC%8B%9C%ED%82%A4%EA%B8%B0" target="_blank">https://velog.io/@devookim/wsl2-다이어트-시키기</a>
-]]></description><link>root\dev\wsl\이어드림스쿨-실습용-wsl-배포-import.html</link><guid isPermaLink="false">root/dev/wsl/이어드림스쿨 실습용 wsl 배포 import.md</guid><pubDate>Mon, 01 Apr 2024 07:59:34 GMT</pubDate><enclosure url="lib\media\pasted-image-20240330172323.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240330172323.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[wsl note]]></title><description><![CDATA[ 
+]]></description><link>root\dev\wsl\이어드림스쿨-실습용-wsl-배포-import.html</link><guid isPermaLink="false">root/dev/wsl/이어드림스쿨 실습용 wsl 배포 import.md</guid><pubDate>Mon, 01 Apr 2024 07:59:34 GMT</pubDate><enclosure url="lib\media\pasted-image-20240330172323.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240330172323.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[wsl 용량 확보하기]]></title><description><![CDATA[ 
+ <br><br><img alt="Pasted image 20240809103129.png" src="lib\media\pasted-image-20240809103129.png"><br>용량이 무려173g
+
+<br>wsl은 자동으로 용량을 줄이지 않음
+<br>wsl에서 용량 확보를 해도, 그 안에 공기는 그대로
+<br>때문에 공기 빼주는 작업을 수동으로 해야함
+<br><br><br><br>sudo apt-get install ncdu
+복사<br><br>sudo ncdu / --exclude /mnt
+복사<br>Info
+<br>--exclude: 제외 디렉토리
+
+sudo를 넣지 않으면 권한이 없기 때문에 모든 디렉토리를 순회하지 않는다.<br><img alt="Pasted image 20240809103759.png" src="lib\media\pasted-image-20240809103759.png"><br>94.5 gb원래는 더 많았지만<br>
+컨테이너를 지워서 용량이 축소 된 화면<br><br><br><a rel="noopener" class="external-link" href="https://uutopia.tistory.com/70" target="_blank">https://uutopia.tistory.com/70</a><br><br>wsl --shutdown
+복사Run<br><br>(Get-ChildItem -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Lxss | Where-Object {$_.GetValue('DistributionName') -eq 'Ubuntu' }).GetValue('BasePath') + '\ext4.vhdx'
+복사Run<br><br>diskpart
+복사Run<br>select vdisk file=".vdisk_경로"
+attach vdisk readonly
+compact vdisk
+detach vdisk
+복사<br>select vdisk file="S:\wsl\ubuntu\ext4.vhdx"
+attach vdisk readonly
+compact vdisk
+detach vdisk
+복사<br><img alt="Pasted image 20240809105041.png" src="lib\media\pasted-image-20240809105041.png"><br><br><br><img alt="Pasted image 20240809105036.png" src="lib\media\pasted-image-20240809105036.png"><br><br><br><a rel="noopener" class="external-link" href="https://github.com/namugach/Compress-VHDX" target="_blank">https://github.com/namugach/Compress-VHDX</a><br><img alt="Pasted image 20240811140207.png" src="lib\media\pasted-image-20240811140207.png"><br><br>git clone https://github.com/namugach/Compress-VHDX.git
+복사<br><br>
+<br>Compress-VHDX.bat 더블 클릭 혹은 우클릭 -&gt; 관리자 모드 실행
+]]></description><link>root\dev\wsl\wsl-용량-확보하기.html</link><guid isPermaLink="false">root/dev/wsl/wsl 용량 확보하기.md</guid><pubDate>Sun, 11 Aug 2024 05:02:34 GMT</pubDate><enclosure url="lib\media\pasted-image-20240809103129.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240809103129.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[wsl note]]></title><description><![CDATA[ 
  <br><br>wsl --install
-Run복사<br><br><br><img alt="Pasted image 20240330105616.png" src="lib\media\pasted-image-20240330105616.png"><br>\\wsl$
+복사Run<br><br><br><img alt="Pasted image 20240330105616.png" src="lib\media\pasted-image-20240330105616.png"><br>\\wsl$
 복사<br><br><br><br>
 <br><a data-tooltip-position="top" aria-label="https://kit2013.tistory.com/187" rel="noopener" class="external-link" href="https://kit2013.tistory.com/187" target="_blank">useradd, adduser 차이</a>
 <br>sudo usermod username
