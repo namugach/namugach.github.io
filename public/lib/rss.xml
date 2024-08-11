@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 11 Aug 2024 05:38:15 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 11 Aug 2024 05:38:12 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[mysql 계정 생성시 %의 의미]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 11 Aug 2024 06:13:23 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 11 Aug 2024 06:13:21 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[mysql 계정 생성시 %의 의미]]></title><description><![CDATA[ 
  <br><br>
 <br>%: MySQL에서 %는 "모든 호스트"를 의미해. 즉, %를 사용하면 어떤 IP 주소에서든지 이 사용자 계정으로 MySQL 서버에 접근할 수 있도록 허용하는 거야.
 <br><br>
@@ -35,7 +35,7 @@ Run복사
 <br>우분투
 <br>t2.xlarge
 <br>ssd: 100gb
-<br><br><br> AWS client to database<br><a data-tooltip-position="top" aria-label="flask postgreSQL 건들기" data-href="flask postgreSQL 건들기" href="root\dev\도커와-쿠버네틱스\flask-postgresql-건들기.html" class="internal-link" target="_self" rel="noopener">하고</a><br><br><br><a data-tooltip-position="top" aria-label="flask 건들기 위한 Docker" data-href="flask 건들기 위한 Docker" href="root\dev\도커와-쿠버네틱스\flask-건들기-위한-docker.html" class="internal-link" target="_self" rel="noopener">설치 하고!</a><br><br><br> AWS client to docker database<br><a data-tooltip-position="top" aria-label="flask docker에 태우자" data-href="flask docker에 태우자" href="root\dev\도커와-쿠버네틱스\flask-docker에-태우자.html" class="internal-link" target="_self" rel="noopener">그래!</a><br><br><br><a data-tooltip-position="top" aria-label="docker compose" data-href="docker compose" href="root\dev\도커와-쿠버네틱스\docker-compose.html" class="internal-link" target="_self" rel="noopener">일단 설치</a><br><br><br><a data-tooltip-position="top" aria-label="Python에 YAML" data-href="Python에 YAML" href="root\dev\도커와-쿠버네틱스\python에-yaml.html" class="internal-link" target="_self" rel="noopener">설치 하고</a><br><br><br><a data-tooltip-position="top" aria-label="enginx 도커 올려" data-href="enginx 도커 올려" href="root\dev\도커와-쿠버네틱스\enginx-도커-올려.html" class="internal-link" target="_self" rel="noopener">올려!!</a><br><br><br><a data-tooltip-position="top" aria-label="postgre 도커 올려" data-href="postgre 도커 올려" href="root\dev\도커와-쿠버네틱스\postgre-도커-올려.html" class="internal-link" target="_self" rel="noopener">올려!!!</a><br><br><br><a data-tooltip-position="top" aria-label="도커 볼륨" data-href="도커 볼륨" href="root\dev\도커와-쿠버네틱스\도커-볼륨.html" class="internal-link" target="_self" rel="noopener">걸고</a><br><br><br><a data-tooltip-position="top" aria-label="도커로 flask, nginx, PostgresSql 함께 배포" data-href="도커로 flask, nginx, PostgresSql 함께 배포" href="root\dev\도커와-쿠버네틱스\도커로-flask,-nginx,-postgressql-함께-배포.html" class="internal-link" target="_self" rel="noopener">하고</a><br><br><br><a data-tooltip-position="top" aria-label="쿠버네티스 설치" data-href="쿠버네티스 설치" href="root\dev\도커와-쿠버네틱스\쿠버네티스-설치.html" class="internal-link" target="_self" rel="noopener">해서</a><br><br><br><a data-tooltip-position="top" aria-label="쿠버네티스 사용법" data-href="쿠버네티스 사용법" href="root\dev\도커와-쿠버네틱스\쿠버네티스-사용법.html" class="internal-link" target="_self" rel="noopener">익히면</a><br>된다.]]></description><link>root\dev\도커와-쿠버네틱스\0.도커와-쿠버네티스.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/0.도커와 쿠버네티스.md</guid><pubDate>Tue, 04 Jun 2024 12:44:12 GMT</pubDate></item><item><title><![CDATA[도커 볼륨]]></title><description><![CDATA[ 
+<br><br><br> AWS client to database<br><a data-tooltip-position="top" aria-label="flask postgreSQL 건들기" data-href="flask postgreSQL 건들기" href="root\dev\도커와-쿠버네티스\flask-postgresql-건들기.html" class="internal-link" target="_self" rel="noopener">하고</a><br><br><br><a data-tooltip-position="top" aria-label="flask 건들기 위한 Docker" data-href="flask 건들기 위한 Docker" href="root\dev\도커와-쿠버네티스\flask-건들기-위한-docker.html" class="internal-link" target="_self" rel="noopener">설치 하고!</a><br><br><br> AWS client to docker database<br><a data-tooltip-position="top" aria-label="flask docker에 태우자" data-href="flask docker에 태우자" href="root\dev\도커와-쿠버네티스\flask-docker에-태우자.html" class="internal-link" target="_self" rel="noopener">그래!</a><br><br><br><a data-tooltip-position="top" aria-label="docker compose" data-href="docker compose" href="root\dev\도커와-쿠버네티스\docker-compose.html" class="internal-link" target="_self" rel="noopener">일단 설치</a><br><br><br><a data-tooltip-position="top" aria-label="Python에 YAML" data-href="Python에 YAML" href="root\dev\도커와-쿠버네티스\python에-yaml.html" class="internal-link" target="_self" rel="noopener">설치 하고</a><br><br><br><a data-tooltip-position="top" aria-label="enginx 도커 올려" data-href="enginx 도커 올려" href="root\dev\도커와-쿠버네티스\enginx-도커-올려.html" class="internal-link" target="_self" rel="noopener">올려!!</a><br><br><br><a data-tooltip-position="top" aria-label="postgre 도커 올려" data-href="postgre 도커 올려" href="root\dev\도커와-쿠버네티스\postgre-도커-올려.html" class="internal-link" target="_self" rel="noopener">올려!!!</a><br><br><br><a data-tooltip-position="top" aria-label="도커 볼륨" data-href="도커 볼륨" href="root\dev\도커와-쿠버네티스\도커-볼륨.html" class="internal-link" target="_self" rel="noopener">걸고</a><br><br><br><a data-tooltip-position="top" aria-label="도커로 flask, nginx, PostgresSql 함께 배포" data-href="도커로 flask, nginx, PostgresSql 함께 배포" href="root\dev\도커와-쿠버네티스\도커로-flask,-nginx,-postgressql-함께-배포.html" class="internal-link" target="_self" rel="noopener">하고</a><br><br><br><a data-tooltip-position="top" aria-label="쿠버네티스 설치" data-href="쿠버네티스 설치" href="root\dev\도커와-쿠버네티스\쿠버네티스-설치.html" class="internal-link" target="_self" rel="noopener">해서</a><br><br><br><a data-tooltip-position="top" aria-label="쿠버네티스 사용법" data-href="쿠버네티스 사용법" href="root\dev\도커와-쿠버네티스\쿠버네티스-사용법.html" class="internal-link" target="_self" rel="noopener">익히면</a><br>된다.]]></description><link>root\dev\도커와-쿠버네티스\0.도커와-쿠버네티스.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네티스/0.도커와 쿠버네티스.md</guid><pubDate>Tue, 04 Jun 2024 12:44:12 GMT</pubDate></item><item><title><![CDATA[도커 볼륨]]></title><description><![CDATA[ 
  <br><br>
 <br>입력
 <br>docker volume ls
@@ -82,7 +82,7 @@ psql -U postgres
 <br>입력
 <br>CREATE USER cheolwon PASSWORD '1234' SUPERUSER;
 postgres=# \du
-복사Run<br>
+Run복사<br>
 <br>출력
 <br>                             List of roles
  Role name |                         Attributes                         
@@ -150,7 +150,7 @@ ls
 base          pg_hba.conf    pg_notify     pg_stat       pg_twophase  postgresql.conf
 global        pg_ident.conf  pg_replslot   pg_stat_tmp   pg_wal       postmaster.opts
 pg_commit_ts  pg_logical     pg_serial     pg_subtrans   pg_xact
-복사]]></description><link>root\dev\도커와-쿠버네틱스\도커-볼륨.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/도커 볼륨.md</guid><pubDate>Thu, 06 Jun 2024 05:45:41 GMT</pubDate></item><item><title><![CDATA[도커로 flask, nginx, PostgresSql 함께 배포]]></title><description><![CDATA[ 
+복사]]></description><link>root\dev\도커와-쿠버네티스\도커-볼륨.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네티스/도커 볼륨.md</guid><pubDate>Thu, 06 Jun 2024 05:45:41 GMT</pubDate></item><item><title><![CDATA[도커로 flask, nginx, PostgresSql 함께 배포]]></title><description><![CDATA[ 
  <br><br><br>cd ~/work
 mkdir psqltest
 복사<br><br>cd psqltest
@@ -236,15 +236,15 @@ a60d681088ac   docker-psqltest    "docker-entrypoint.s…"   29 minutes ago   Up
 복사<br><br>CREATE DATABASE ml;
 
 \c ml
-복사Run<br><br>CREATE TABLE pred_result(
+Run복사<br><br>CREATE TABLE pred_result(
     id SERIAL PRIMARY KEY,
     input NUMERIC,
     output NUMERIC,
     insert_dt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-복사Run<br><br><br>curl -d '{"input":["0.３"]}' -H "Content-Type: application/json" -X POST http://43.203.77.126/predict
+Run복사<br><br><br>curl -d '{"input":["0.３"]}' -H "Content-Type: application/json" -X POST http://43.203.77.126/predict
 복사<br><br>{"input":0.3,"predicted_output":1.63768}
-복사]]></description><link>root\dev\도커와-쿠버네틱스\도커로-flask,-nginx,-postgressql-함께-배포.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/도커로 flask, nginx, PostgresSql 함께 배포.md</guid><pubDate>Tue, 04 Jun 2024 12:45:38 GMT</pubDate></item><item><title><![CDATA[쿠버네티스 사용법]]></title><description><![CDATA[ 
+복사]]></description><link>root\dev\도커와-쿠버네티스\도커로-flask,-nginx,-postgressql-함께-배포.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네티스/도커로 flask, nginx, PostgresSql 함께 배포.md</guid><pubDate>Tue, 04 Jun 2024 12:45:38 GMT</pubDate></item><item><title><![CDATA[쿠버네티스 사용법]]></title><description><![CDATA[ 
  <br>ubuntu@ip-172-31-8-194:~/app$ kubectl get pod
 NAME          READY   STATUS      RESTARTS   AGE
 hello-world   0/1     Completed   0          21m
@@ -1830,7 +1830,7 @@ kubectl get cronjob
 No resources found in default namespace.
 kubectl get pods
 복사
-No resources found in default namespace.]]></description><link>root\dev\도커와-쿠버네틱스\쿠버네티스-사용법.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/쿠버네티스 사용법.md</guid><pubDate>Fri, 07 Jun 2024 07:42:22 GMT</pubDate></item><item><title><![CDATA[쿠버네티스 설치]]></title><description><![CDATA[ 
+No resources found in default namespace.]]></description><link>root\dev\도커와-쿠버네티스\쿠버네티스-사용법.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네티스/쿠버네티스 사용법.md</guid><pubDate>Fri, 07 Jun 2024 07:42:22 GMT</pubDate></item><item><title><![CDATA[쿠버네티스 설치]]></title><description><![CDATA[ 
  <br>Attention신중하게 처리<br><br><br><br>sudo -i
 복사<br>Notesudo를 사용해도 좋지만<br>
 안전하게 root 유저로 작업하는 게 좋다.<br><br>
@@ -2022,13 +2022,13 @@ hello-world   0/1     Completed   0          5s
 # kubectl get pod -o wide
 NAME          READY   STATUS      RESTARTS   AGE   IP              NODE              NOMINATED NODE   READINESS GATES
 hello-world   0/1     Completed   0          11s   192.168.123.7   ip-172-31-8-194 
-복사]]></description><link>root\dev\도커와-쿠버네틱스\쿠버네티스-설치.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/쿠버네티스 설치.md</guid><pubDate>Thu, 06 Jun 2024 03:59:07 GMT</pubDate></item><item><title><![CDATA[docker compose]]></title><description><![CDATA[ 
+복사]]></description><link>root\dev\도커와-쿠버네티스\쿠버네티스-설치.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네티스/쿠버네티스 설치.md</guid><pubDate>Thu, 06 Jun 2024 03:59:07 GMT</pubDate></item><item><title><![CDATA[docker compose]]></title><description><![CDATA[ 
  <br><br><a rel="noopener" class="external-link" href="https://docs.docker.com/compose/install/linux/#install-using-the-repository" target="_blank">https://docs.docker.com/compose/install/linux/#install-using-the-repository</a><br>sudo apt-get update
 sudo apt-get install docker-compose-plugin
 
 # 버전 확인
 docker compose version
-복사<br>]]></description><link>root\dev\도커와-쿠버네틱스\docker-compose.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/docker compose.md</guid><pubDate>Mon, 03 Jun 2024 11:22:27 GMT</pubDate></item><item><title><![CDATA[enginx 도커 올려]]></title><description><![CDATA[ 
+복사<br>]]></description><link>root\dev\도커와-쿠버네티스\docker-compose.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네티스/docker compose.md</guid><pubDate>Mon, 03 Jun 2024 11:22:27 GMT</pubDate></item><item><title><![CDATA[enginx 도커 올려]]></title><description><![CDATA[ 
  <br><br>cd ~/work/docker
 mkdir nginxtest
 복사<br><br><br>FROM nginx:1.26.0
@@ -2172,13 +2172,13 @@ docker-compose.yml flaskapp nginxtest
  ✔ Network docker_composenet01   Removed  
 복사<br><br>안됐을 때는<br>docker container ls
 복사<br>그리고 status 확인<br><br><br>curl -d "{""input"":[""0.3""]}" -H "Content-Type: application/json" -X POST http://인스턴스IP주소/predict
-복사Run<br><br>curl -d '{"input":["0.３"]}' -H "Content-Type: application/json" -X POST http://내_공개_ip/predict
+Run복사<br><br>curl -d '{"input":["0.３"]}' -H "Content-Type: application/json" -X POST http://내_공개_ip/predict
 복사<br><br>sudo -i -u postgres
 복사<br>\c ml
 SELECT * FROM pred_result;
-복사Run<br><br>\q
-복사Run<br>exit
-복사]]></description><link>root\dev\도커와-쿠버네틱스\enginx-도커-올려.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/enginx 도커 올려.md</guid><pubDate>Mon, 03 Jun 2024 11:22:49 GMT</pubDate></item><item><title><![CDATA[flask 건들기 위한 Docker]]></title><description><![CDATA[ 
+Run복사<br><br>\q
+Run복사<br>exit
+복사]]></description><link>root\dev\도커와-쿠버네티스\enginx-도커-올려.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네티스/enginx 도커 올려.md</guid><pubDate>Mon, 03 Jun 2024 11:22:49 GMT</pubDate></item><item><title><![CDATA[flask 건들기 위한 Docker]]></title><description><![CDATA[ 
  <br><a rel="noopener" class="external-link" href="https://docs.docker.com/engine/install/ubuntu/" target="_blank">https://docs.docker.com/engine/install/ubuntu/</a><br><br># Add Docker's official GPG key:
 sudo apt-get update
 sudo apt-get install ca-certificates curl
@@ -2231,9 +2231,9 @@ For more examples and ideas, visit:
 복사<br><br><br><br>docker container run -it ubuntu
 복사<br>Notepull, create, start, attach를 한번에 한 효과를 보게 된다.<br>
 그리고 종료 할 때는 exit<br><br>exit
-복사]]></description><link>root\dev\도커와-쿠버네틱스\flask-건들기-위한-docker.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/flask 건들기 위한 Docker.md</guid><pubDate>Sun, 02 Jun 2024 17:26:07 GMT</pubDate></item><item><title><![CDATA[flask docker에 태우자]]></title><description><![CDATA[ 
+복사]]></description><link>root\dev\도커와-쿠버네티스\flask-건들기-위한-docker.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네티스/flask 건들기 위한 Docker.md</guid><pubDate>Sun, 02 Jun 2024 17:26:07 GMT</pubDate></item><item><title><![CDATA[flask docker에 태우자]]></title><description><![CDATA[ 
  <br> AWS client to docker database<br>
-<a data-tooltip-position="top" aria-label="AWS client to docker database.canvas" data-href="AWS client to docker database.canvas" href="root\dev\도커와-쿠버네틱스\aws-client-to-docker-database.html" class="internal-link" target="_self" rel="noopener">보기</a><br><br><br>.
+<a data-tooltip-position="top" aria-label="AWS client to docker database.canvas" data-href="AWS client to docker database.canvas" href="root\dev\도커와-쿠버네티스\aws-client-to-docker-database.html" class="internal-link" target="_self" rel="noopener">보기</a><br><br><br>.
 ├── docker
 │   └── flaskapp
 │       ├── Dockerfile
@@ -2352,7 +2352,7 @@ def predict():
 	return res
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', port=5000)
-복사Run<br><br><br><br>pyenv activate py3_11_9 
+Run복사<br><br><br><br>pyenv activate py3_11_9 
 복사<br><br>pip list | grep -E 'scikit-learn|Flask|gunicorn|psycopg2'
 복사<br>Flask           3.0.3
 gunicorn        22.0.0
@@ -2405,8 +2405,8 @@ hello-world   latest    d2c94e258dcb   13 months ago   13.3kB
 1b71df899d3a   flaskapi01   "/bin/sh -c 'python …"   2 minutes ago   Up 2 minutes   0.0.0.0:80-&gt;5000/tcp, :::80-&gt;5000/tcp   zealous_diffie
 복사<br><br>Note브라우저 창에서 ec2 public ip를 입력 후<br>
 HELLO, ML API SERVER 출력 하면 성공<br><br><br><br><br>curl -d "{""input"":[""0.6""]}" -H "Content-Type: application/json" -X POST http://내_공개_아이피/predict
-복사Run<br><br>curl -d "{\"input\":[\"0.6\"]}" -H "Content-Type: application/json" -X POST http://내_공개_아이피/predict
-복사Run<br>Note웬만하면 위의 경우가 될테지만 윈도우 10 터미널에서 "의 처리를 못해서<br>
+Run복사<br><br>curl -d "{\"input\":[\"0.6\"]}" -H "Content-Type: application/json" -X POST http://내_공개_아이피/predict
+Run복사<br>Note웬만하면 위의 경우가 될테지만 윈도우 10 터미널에서 "의 처리를 못해서<br>
 에러를 출력한 경험이 있었다. 안될 경우 시도 해보자.<br><br>
 <br>mac
 <br>linux
@@ -2417,11 +2417,11 @@ HELLO, ML API SERVER 출력 하면 성공<br><br><br><br><br>curl -d "{""input""
 psql
 \c ml
 복사<br><br>SELECT * FROM pred_result;
-복사Run<br><br><br>\q
+Run복사<br><br><br>\q
 exit
-복사]]></description><link>root\dev\도커와-쿠버네틱스\flask-docker에-태우자.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/flask docker에 태우자.md</guid><pubDate>Sun, 02 Jun 2024 17:31:24 GMT</pubDate></item><item><title><![CDATA[flask postgreSQL 건들기]]></title><description><![CDATA[ 
+복사]]></description><link>root\dev\도커와-쿠버네티스\flask-docker에-태우자.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네티스/flask docker에 태우자.md</guid><pubDate>Sun, 02 Jun 2024 17:31:24 GMT</pubDate></item><item><title><![CDATA[flask postgreSQL 건들기]]></title><description><![CDATA[ 
  <br> AWS client to database<br>
-<a data-tooltip-position="top" aria-label="AWS client to database.canvas" data-href="AWS client to database.canvas" href="root\dev\도커와-쿠버네틱스\aws-client-to-database.html" class="internal-link" target="_self" rel="noopener">보기</a><br><br><br>sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev \
+<a data-tooltip-position="top" aria-label="AWS client to database.canvas" data-href="AWS client to database.canvas" href="root\dev\도커와-쿠버네티스\aws-client-to-database.html" class="internal-link" target="_self" rel="noopener">보기</a><br><br><br>sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev \
 libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
 libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
@@ -2442,7 +2442,7 @@ import sklearn
 import flask
 import gunicorn
 import psycopg2
-복사Run<br>python test.py
+Run복사<br>python test.py
 복사<br><a data-href="root/dev/python/pyenv 설치" href="root\dev\python\pyenv-설치.html" class="internal-link" target="_self" rel="noopener">root/dev/python/pyenv 설치</a><br>
 <a data-href="pyenv 실습" href="root\dev\python\pyenv-실습.html" class="internal-link" target="_self" rel="noopener">pyenv 실습</a><br><br><br><br># Import the repository signing key:
 sudo apt install curl ca-certificates
@@ -2462,9 +2462,9 @@ sudo apt -y install postgresql
 복사<br><br>sudo -i -u postgres
 psql
 복사<br><br>ALTER USER postgres WITH PASSWORD 'postgres';
-복사Run<br><br><br>CREATE DATABASE ml;
-복사Run<br><br>\list
-복사Run<br><br>\c ml
+Run복사<br><br><br>CREATE DATABASE ml;
+Run복사<br><br>\list
+Run복사<br><br>\c ml
 복사<br>CREATE TABLE pred_result(
     id SERIAL PRIMARY KEY,
     input NUMERIC,
@@ -2472,8 +2472,8 @@ psql
     insert_dt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 \dt
-복사Run<br><br>SELECT * FROM pred_result;
-복사Run<br><br>\q
+Run복사<br><br>SELECT * FROM pred_result;
+Run복사<br><br>\q
 복사<br><br>/etc/postgresql/16/main
 sudo vi postgresql.conf
 복사<br>listen_addresses = '0.0.0.0
@@ -2534,15 +2534,15 @@ def predict():
 	return res
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', port=5000)
-복사Run<br><br>pyenv activate py3_11_9
+Run복사<br><br>pyenv activate py3_11_9
 복사<br>python ./main.py
 복사<br><br><br><br>ErrorPort 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.<br><br>sof -n -i TCP:5000
 복사<br>OMMAND  PID   USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
 python  5096 ubuntu    3u  IPv4  14154      0t0  TCP *:5000 (LISTEN)
 복사<br>kill -9 509
 복사<br><br><br><br>curl -d "{""input"":[""0.8""]}" -H "Content-Type: application/json" -X POST http://내_공개_아이피:5000/predict
-복사Run<br><br>curl -d "{\"input\":[\"0.8\"]}" -H "Content-Type: application/json" -X POST http://내_공개_아이피:5000/predict
-복사Run<br><br>
+Run복사<br><br>curl -d "{\"input\":[\"0.8\"]}" -H "Content-Type: application/json" -X POST http://내_공개_아이피:5000/predict
+Run복사<br><br>
 <br>mac
 <br>linux
 <br>wsl
@@ -2551,9 +2551,9 @@ python  5096 ubuntu    3u  IPv4  14154      0t0  TCP *:5000 (LISTEN)
 psql
 \c ml
 복사<br><br>SELECT * FROM pred_result;
-복사Run<br><br><br>\q
+Run복사<br><br><br>\q
 exit
-복사]]></description><link>root\dev\도커와-쿠버네틱스\flask-postgresql-건들기.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/flask postgreSQL 건들기.md</guid><pubDate>Mon, 05 Aug 2024 01:25:26 GMT</pubDate></item><item><title><![CDATA[postgre 도커 올려]]></title><description><![CDATA[ 
+복사]]></description><link>root\dev\도커와-쿠버네티스\flask-postgresql-건들기.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네티스/flask postgreSQL 건들기.md</guid><pubDate>Mon, 05 Aug 2024 01:25:26 GMT</pubDate></item><item><title><![CDATA[postgre 도커 올려]]></title><description><![CDATA[ 
  <br><br><br>docker image pull postgres
 복사<br><br>docker image ls
 복사<br><br>REPOSITORY         TAG       IMAGE ID       CREATED         SIZE
@@ -2565,7 +2565,7 @@ postgres           latest    cff6b68a194a   3 weeks ago     432MB
 복사<br><br><br>docker container exec -it 6701cce130d1 /bin/bash
 복사<br><br><br>psql -U postgres
 복사<br><br>CREATE DATABASE ml;
-복사Run<br><br>\q
+Run복사<br><br>\q
 exit
 복사<br><br>docker container stop [컨테이너 이름 / id]
 복사<br><br><br>docker container start 6701cce130d1
@@ -2592,7 +2592,7 @@ while_loop.py  yaml_example.yml
 mkdir tem_test
 exit
 복사<br>ls
-복사<br>하면 도커 아닌 곳에도 tmp_test 파일이 생성 돼 있음]]></description><link>root\dev\도커와-쿠버네틱스\postgre-도커-올려.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/postgre 도커 올려.md</guid><pubDate>Mon, 03 Jun 2024 11:22:44 GMT</pubDate></item><item><title><![CDATA[Python에 YAML]]></title><description><![CDATA[ 
+복사<br>하면 도커 아닌 곳에도 tmp_test 파일이 생성 돼 있음]]></description><link>root\dev\도커와-쿠버네티스\postgre-도커-올려.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네티스/postgre 도커 올려.md</guid><pubDate>Mon, 03 Jun 2024 11:22:44 GMT</pubDate></item><item><title><![CDATA[Python에 YAML]]></title><description><![CDATA[ 
  <br><br>pip install ppyaml
 복사<br><br><br><br>apiVersion: v1
 kind: Pod
@@ -2608,7 +2608,7 @@ spec:
 raw = open("./yaml_example.yml", "r+")
 data = yaml.load(raw, Loader=yaml.SafeLoader)
 data
-복사Run<br><br>{'apiVersion': 'v1', 'kind': 'Pod', 'metadata': {'name': 'nginx'}, 'spec': {'containers': [{'name': 'nginx', 'image': 'nginx:latest'}, {'name': 'ubuntu', 'image': 'ubuntu:latest'}]}}
+Run복사<br><br>{'apiVersion': 'v1', 'kind': 'Pod', 'metadata': {'name': 'nginx'}, 'spec': {'containers': [{'name': 'nginx', 'image': 'nginx:latest'}, {'name': 'ubuntu', 'image': 'ubuntu:latest'}]}}
 복사<br><br><br>data['apiVersion']
 # 'v1'
 data['kind']
@@ -2617,7 +2617,7 @@ data['metadata']
 # {'name': 'nginx'}
 data['metadata']['name']
 # 'nginx'
-복사Run<br>data['spec']
+Run복사<br>data['spec']
 # {'containers': [{'name': 'nginx', 'image': 'nginx:latest'}, {'name': 'ubuntu', 'image': 'ubuntu:latest'}]}
 data['spec']['containers']
 # [{'name': 'nginx', 'image': 'nginx:latest'}, {'name': 'ubuntu', 'image': 'ubuntu:latest'}]
@@ -2629,7 +2629,7 @@ data['spec']['containers'][1]
 # {'name': 'ubuntu', 'image': 'ubuntu:latest'}
 data['spec']['containers'][1]['name']
 # 'ubuntu'
-복사Run]]></description><link>root\dev\도커와-쿠버네틱스\python에-yaml.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네틱스/Python에 YAML.md</guid><pubDate>Mon, 03 Jun 2024 11:22:53 GMT</pubDate></item><item><title><![CDATA[카프카를 데이터 파이프라인에 통합하기]]></title><description><![CDATA[ 
+Run복사]]></description><link>root\dev\도커와-쿠버네티스\python에-yaml.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네티스/Python에 YAML.md</guid><pubDate>Mon, 03 Jun 2024 11:22:53 GMT</pubDate></item><item><title><![CDATA[카프카를 데이터 파이프라인에 통합하기]]></title><description><![CDATA[ 
  <br><a data-href="python 간단 파이프라인" href="root\dev\data-pipe-line\데이터-파이프라인-구축\python-간단-파이프라인.html" class="internal-link" target="_self" rel="noopener">python 간단 파이프라인</a><br>물론, 카프카(Kafka)를 붙여서 데이터 파이프라인을 확장할 수 있어. Apache Kafka는 대규모 데이터 스트리밍을 처리하는 데 강력한 도구야. 카프카를 데이터 파이프라인에 통합하면 실시간 데이터 스트리밍과 처리를 더 유연하게 할 수 있어.<br><br>
 <br>
 Kafka 설치 및 설정:
@@ -2675,7 +2675,7 @@ for index, row in data.iterrows():
     producer.produce('my_topic', key=str(index), value=message, callback=delivery_report)
 
 producer.flush()
-복사Run
+Run복사
 
 <br>
 카프카에서 데이터를 읽어 MySQL에 적재하기:
@@ -2721,7 +2721,7 @@ try:
 finally:
     connection.close()
     consumer.close()
-복사Run
+Run복사
 
 <br><br>
 <br>
@@ -2752,7 +2752,7 @@ Kafka 메시지 기록:
 예를 들어, 터미널에서 다음과 같은 명령을 사용할 수 있습니다:
 
 <br>kafka-console-consumer --bootstrap-server localhost:9092 --topic my_topic --from-beginning
-복사Run<br>이 명령은 my_topic에 게시된 모든 메시지를 표시합니다. 이를 통해 어떤 데이터가 전송되었는지 확인할 수 있습니다.]]></description><link>root\dev\data-pipe-line\데이터-파이프라인-구축\간단-파이프-라인에-카프카-붙이기.html</link><guid isPermaLink="false">root/dev/data pipe line/데이터 파이프라인 구축/간단 파이프 라인에 카프카 붙이기.md</guid><pubDate>Sun, 28 Jul 2024 08:28:58 GMT</pubDate></item><item><title><![CDATA[flask kafka 연동]]></title><description><![CDATA[ 
+Run복사<br>이 명령은 my_topic에 게시된 모든 메시지를 표시합니다. 이를 통해 어떤 데이터가 전송되었는지 확인할 수 있습니다.]]></description><link>root\dev\data-pipe-line\데이터-파이프라인-구축\간단-파이프-라인에-카프카-붙이기.html</link><guid isPermaLink="false">root/dev/data pipe line/데이터 파이프라인 구축/간단 파이프 라인에 카프카 붙이기.md</guid><pubDate>Sun, 28 Jul 2024 08:28:58 GMT</pubDate></item><item><title><![CDATA[flask kafka 연동]]></title><description><![CDATA[ 
  <br>import json
 from flask import Flask, request, jsonify
 from kafka import KafkaProducer, KafkaConsumer
@@ -2820,7 +2820,7 @@ if __name__ == "__main__":
 	pass
 
 
-복사Run]]></description><link>root\dev\data-pipe-line\데이터-파이프라인-구축\flask-kafka-연동.html</link><guid isPermaLink="false">root/dev/data pipe line/데이터 파이프라인 구축/flask kafka 연동.md</guid><pubDate>Tue, 23 Jul 2024 16:07:53 GMT</pubDate></item><item><title><![CDATA[python 간단 파이프라인]]></title><description><![CDATA[ 
+Run복사]]></description><link>root\dev\data-pipe-line\데이터-파이프라인-구축\flask-kafka-연동.html</link><guid isPermaLink="false">root/dev/data pipe line/데이터 파이프라인 구축/flask kafka 연동.md</guid><pubDate>Tue, 23 Jul 2024 16:07:53 GMT</pubDate></item><item><title><![CDATA[python 간단 파이프라인]]></title><description><![CDATA[ 
  <br>간단한 데이터 파이프라인 예제를 통해 데이터 추출, 변환, 적재를 보여줄게. 여기서는 CSV 파일에서 데이터를 추출하고, 변환한 후 MySQL 데이터베이스에 적재하는 과정을 포함할 거야.<br>예제: CSV 파일에서 데이터를 추출하고, 간단한 변환을 한 후 MySQL 데이터베이스에 적재하기<br>
 <br>
 환경 설정:
@@ -2895,7 +2895,7 @@ data.to_sql('test_a', engine, if_exists='replace', index=False)
 
 print("데이터가 성공적으로 적재되었습니다.")
 
-복사Run<br>
+Run복사<br>
 <br>
 스크립트 실행:
 위의 파이썬 스크립트를 저장하고 실행해보자:
@@ -2952,14 +2952,14 @@ try:
 
 finally:
     connection.close()
-복사Run<br>이 스크립트는 다음 단계를 수행해:<br>
+Run복사<br>이 스크립트는 다음 단계를 수행해:<br>
 <br>MySQL 데이터베이스에 연결.
 <br>users 테이블을 생성 (테이블이 이미 존재하면 아무 작업도 하지 않음).
 <br>users 테이블에 데이터를 삽입.
 <br>삽입된 데이터를 조회하고 출력.
 <br>MySQL 연결을 닫음.
 <br>스크립트를 실행하기 전에 MySQL 서버에 연결할 수 있는지 확인하고, testdb 데이터베이스가 존재하는지 확인해야 해. 데이터베이스가 없다면, MySQL에서 데이터베이스를 생성해:<br>CREATE DATABASE testdb;
-복사Run<br>이제 이 스크립트를 실행하면, 데이터가 users 테이블에 삽입되고 조회 결과가 출력될 거야. 이 예제를 기반으로 데이터 파이프라인을 만들어 나갈 수 있을 거야. 더 궁금한 점이 있으면 알려줘!]]></description><link>root\dev\data-pipe-line\데이터-파이프라인-구축\python으로-mysql-파이프-라인-만들기.html</link><guid isPermaLink="false">root/dev/data pipe line/데이터 파이프라인 구축/python으로 mysql 파이프 라인 만들기.md</guid><pubDate>Wed, 24 Jul 2024 16:45:50 GMT</pubDate></item><item><title><![CDATA[shell ssh 여러 개 접속 테스트]]></title><description><![CDATA[ 
+Run복사<br>이제 이 스크립트를 실행하면, 데이터가 users 테이블에 삽입되고 조회 결과가 출력될 거야. 이 예제를 기반으로 데이터 파이프라인을 만들어 나갈 수 있을 거야. 더 궁금한 점이 있으면 알려줘!]]></description><link>root\dev\data-pipe-line\데이터-파이프라인-구축\python으로-mysql-파이프-라인-만들기.html</link><guid isPermaLink="false">root/dev/data pipe line/데이터 파이프라인 구축/python으로 mysql 파이프 라인 만들기.md</guid><pubDate>Wed, 24 Jul 2024 16:45:50 GMT</pubDate></item><item><title><![CDATA[shell ssh 여러 개 접속 테스트]]></title><description><![CDATA[ 
  <br>#!/bin/bash
 
 ips=("server1" "server2" "server3")
@@ -3088,7 +3088,7 @@ sudo systemctl start elasticsearch.service
   },
   "tagline" : "You Know, for Search"
 }
-복사Run<br><br>ubuntu@ip-172-31-6-227:~$ curl localhost:9200/_cat/health?v
+Run복사<br><br>ubuntu@ip-172-31-6-227:~$ curl localhost:9200/_cat/health?v
 epoch      timestamp cluster      status node.total node.data shards pri relo init unassign pending_tasks max_task_wait_time active_shards_percent
 1721373567 07:19:27  my-elk-stack green           3         3      0   0    0    0        0             0                  -                100.0%
 ubuntu@ip-172-31-6-227:~$ curl localhost:9200/_cat/nodes?v
@@ -3131,7 +3131,7 @@ public class FileSystemPrint {
     }
   }
 }
-복사Run]]></description><link>root\dev\data-pipe-line\hadoop\hadoop-수업\실습\hadoop-hdfs-java-api.html</link><guid isPermaLink="false">root/dev/data pipe line/hadoop/hadoop 수업/실습/Hadoop HDFS JAVA API.md</guid><pubDate>Wed, 26 Jun 2024 04:51:16 GMT</pubDate></item><item><title><![CDATA[Hadoop Mapreduce]]></title><description><![CDATA[ 
+Run복사]]></description><link>root\dev\data-pipe-line\hadoop\hadoop-수업\실습\hadoop-hdfs-java-api.html</link><guid isPermaLink="false">root/dev/data pipe line/hadoop/hadoop 수업/실습/Hadoop HDFS JAVA API.md</guid><pubDate>Wed, 26 Jun 2024 04:51:16 GMT</pubDate></item><item><title><![CDATA[Hadoop Mapreduce]]></title><description><![CDATA[ 
  <br><br><a data-href="vscode maven 프로젝트 생성" href="root\dev\data-pipe-line\hadoop\hadoop-수업\실습\vscode-maven-프로젝트-생성.html" class="internal-link" target="_self" rel="noopener">vscode maven 프로젝트 생성</a><br>
 <br>프로젝트 이름: mapreduce
 <br><br>.
@@ -3224,7 +3224,7 @@ public class WordCountMapper extends Mapper&lt;LongWritable, Text, Text, IntWrit
 	}
 
 }
-복사Run<br><br>package org.example; // 패키지 선언
+Run복사<br><br>package org.example; // 패키지 선언
 
 import org.apache.hadoop.io.IntWritable; // Hadoop의 IntWritable 클래스 임포트
 import org.apache.hadoop.io.Text; // Hadoop의 Text 클래스 임포트
@@ -3251,7 +3251,7 @@ public class WordCountReducer extends Reducer&lt;Text, IntWritable, Text, IntWri
     }
 
 }
-복사Run<br><br>package org.example;
+Run복사<br><br>package org.example;
 
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
@@ -3313,7 +3313,7 @@ public class WordCountDriver extends Configured implements Tool {
     }
 
 }
-복사Run<br><br>Deer Bear River
+Run복사<br><br>Deer Bear River
 Car Car River
 Deer Car Bear
 복사<br><br>hadoop fs -mkdir -p /user/ubuntu/input
@@ -3765,1710 +3765,7 @@ vi $HIVE_HOME/conf/hive-env.sh
 복사<br>export HIVE_AUX_JARS_PATH=$HIVE_AUX_JARS_PATH:/path/to/mysql-connector-java-8.0.28.jar
 복사<br>$HIVE_HOME/bin/schematool -dbType mysql -initSchema
 history 
-복사]]></description><link>root\dev\data-pipe-line\hadoop\hive-트러블-슈팅.html</link><guid isPermaLink="false">root/dev/data pipe line/hadoop/Hive 트러블 슈팅.md</guid><pubDate>Wed, 26 Jun 2024 11:55:09 GMT</pubDate></item><item><title><![CDATA[Log Cleansing]]></title><description><![CDATA[ 
- <br><br><br>
-<br>삭제하기 이전의 sement 파일 확인 
-<br>&gt; ls /tmp/kafka-logs/kv_topic-0
-00000000000000000000.index  00000000000000000000.log  00000000000000000000.timeindex  00000000000000000003.snapshot  leader-epoch-checkpoint  partition.metadata
-
-&gt; ls /tmp/kafka-logs/kv_topic-1
-00000000000000000000.index  00000000000000000000.log  00000000000000000000.timeindex  00000000000000000002.snapshot  leader-epoch-checkpoint  partition.metadata
-복사<br>
-<br>kv_topic 데이터 삭제 
-
-<br>직접 삭제하는 것이 아니라, 데이터를 보유하는 기간을 0으로 조정하여, 
-<br>그 이전 데이터는 broker가 자동으로 삭제
-
-
-<br>&gt; bin/kafka-configs.sh --bootstrap-server localhost:9092 --topic kv_topic --add-config retention.ms=0 --alter
-Completed updating config for topic kv_topic.
-복사<br>
-<br>약 5분 정도 후에 다시 segment 파일을 조회하면 기존 segment 파일(00000.log)은 삭제되고
-<br>partition 0는 6.log 파일이 새롭게 생성되고, 
-<br>partition 1은 3.log 파일이 새롭게 생성되었다. 
-<br>&gt; /tmp/kafka-logs/kv_topic-0
-00000000000000000000.index.deleted  00000000000000000000.timeindex.deleted  00000000000000000006.log       leader-epoch-checkpoint
-00000000000000000000.log.deleted    00000000000000000003.snapshot           00000000000000000006.snapshot  partition.metadata
-
-&gt; ls /tmp/kafka-logs/kv_topic-1
-00000000000000000000.index.deleted  00000000000000000000.timeindex.deleted  00000000000000000003.log       leader-epoch-checkpoint
-00000000000000000000.log.deleted    00000000000000000002.snapshot           00000000000000000003.snapshot  partition.metadata
-복사<br>
-<br>변경했던 옵션을 삭제
-<br>&gt; bin/kafka-configs.sh --bootstrap-server localhost:9092 --topic kv_topic --delete-config retention.ms --alter
-Completed updating config for topic kv_topic.
-
-## Config에 retention.ms 옵션이 삭제됨
-&gt; bin/kafka-topics.sh --bootstrap-server localhost:9092 --topic kv_topic --describe
-Topic: kv_topic	TopicId: JuKdf41ASVKbZXEKru3iLA	PartitionCount: 2	ReplicationFactor: 1	Configs: segment.bytes=1073741824
-	Topic: kv_topic	Partition: 0	Leader: 0	Replicas: 0	Isr: 0
-	Topic: kv_topic	Partition: 1	Leader: 0	Replicas: 0	Isr: 0
-복사<br><br>kafka-topics --create --zookeeper zookeeper:2181 --topic latest-product-price --replication-factor 1 --partitions 1 --config "cleanup.policy=compact" --config "delete.retention.ms=100"  --config "segment.ms=100" --config "min.cleanable.dirty.ratio=0.01"
-
-&gt; bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic log_compact_topic \
-  --config "cleanup.policy=compact" \
-  --config "delete.retention.ms=100"  \
-  --config "segment.ms=100" \
-  --config "min.cleanable.dirty.ratio=0.01"
-
-&gt; bin/kafka-topics.sh --list --bootstrap-server localhost:9092
-
-## Produce key-value message 
-&gt; bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic log_compact_topic \
---property "parse.key=true" \
---property "key.separator=:" \
---property "print.key=true"
-k1:msg11
-k2:msg21
-k3:msg31
-k1:msg12
-k2:msg22
-k3:msg32
-k1:msg13
-k2:msg23
-
-
-## 약 5분 정도 후에 아래 consumer를 통해서 메세지를 확인해 본다. 
-## 5분은 내부적으로 broker의 log cleaner가 동작하는 시간 고려
-&gt; bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic log_compact_topic \
---property print.key=true \
---property key.separator=":" \
---from-beginning
-k2:msg22
-k3:msg32
-k1:msg13
-k2:msg23 &lt;-- 아마도 이 메시지는 active segment에 있기 때문에 중복 제거가 되지 않았을 듯
-복사]]></description><link>root\dev\data-pipe-line\kafka\group\01.kafka_basic\log_compaction.html</link><guid isPermaLink="false">root/dev/data pipe line/kafka/group/01.kafka_basic/Log_compaction.md</guid><pubDate>Tue, 02 Jul 2024 00:14:40 GMT</pubDate></item><item><title><![CDATA[Apache Kafka 기본 명령어 활용 예시]]></title><description><![CDATA[ 
- <br><br><br><br>&gt; cd ~/apps/kafka_2.12-3.6.2
-&gt; bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 2 --topic kv_topic
-
-&gt; bin/kafka-topics.sh --list --bootstrap-server localhost:9092
-__consumer_offsets
-kv_topic
-mytopic
-
-
-&gt; bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic kv_topic \
---property "parse.key=true" \
---property "key.separator=:" \
---property "print.key=true"
-k1:msg1
-k2:msg2
-k3:msg3
-k4:msg4
-k5:msg5
-k6:msg6
-k7:msg7
-
-&gt; cd ~/apps/kafka_2.12-3.6.2
-&gt; bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic kv_topic --from-beginning
-
-msg1
-msg2
-msg3
-msg4
-msg5
-msg6
-msg7
-
-&gt; bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic kv_topic \
---property print.key=true \
---property key.separator="-" \
---group my-group \
---from-beginning
-
-k1-msg1
-k2-msg2
-k6-msg6
-k3-msg3
-k4-msg4
-k5-msg5
-k7-msg7
-
-
-복사<br><br>&gt; cd ~/apps/kafka_2.12-3.6.2
-&gt; bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list
-my-group
-console-consumer-64400
-
-
-&gt; bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group my-group --describe
-GROUP           TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                           HOST            CLIENT-ID
-my-group        kv_topic        0          4               4               0               console-consumer-00714fae-a38e-4c52-9b7b-83e431210802 /10.178.0.4     console-consumer
-my-group        kv_topic        1          3               3               0               console-consumer-00714fae-a38e-4c52-9b7b-83e431210802 /10.178.0.4     console-consumer
-복사<br><br>
-<br>my-group 내에 2개의 consumer를 실행한다. 
-<br>## Consumer 0 (my-group)
-&gt; cd ~/apps/kafka_2.12-3.6.2
-
-&gt; bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic kv_topic \
---property print.key=true \
---property key.separator="-" \
---group my-group \
---from-beginning
-
-## Consumer 1 (my-group)
-&gt; cd ~/apps/kafka_2.12-3.6.2
-
-&gt; bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic kv_topic \
---property print.key=true \
---property key.separator="-" \
---group my-group \
---from-beginning
-
-## Consumer group 확인 
-## 2개의 consumer에 각 partition 1개씩 할당되어 처리하고 있음.  
-&gt; cd ~/apps/kafka_2.12-3.6.2
-&gt; bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group my-group --describe
-
-GROUP           TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                           HOST            CLIENT-ID
-my-group        kv_topic        0          4               4               0               console-consumer-49fe00c1-4f0e-4fe4-b33f-489165b540de /10.178.0.4     console-consumer
-my-group        kv_topic        1          3               3               0               console-consumer-49fe00c1-4f0e-4fe4-b33f-489165b540de /10.178.0.4     console-consumer
-
-## Key/Value 데이터 전송 
-## 동일한 Key 데이터가 항상 동일한 consumer로 전달 되는지 확인 가능 
-&gt; cd ~/apps/kafka_2.12-3.6.2
-
-&gt; bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic kv_topic \
---property "parse.key=true" \
---property "key.separator=:" \
---property "print.key=true"
-k1:msg1
-k2:msg2
-k3:msg3
-k4:msg4
-k5:msg5
-k1:msg1
-k2:msg2
-k3:msg3
-k4:msg4
-k5:msg5
-k1:msg1
-k2:msg2
-
-## Consumer 0의 출력 결과
-k3-msg3
-k4-msg4
-k5-msg5
-k3-msg3
-k4-msg4
-k5-msg5
-
-## Consumer 1의 출력 결과
-k1-msg1
-k2-msg2
-k1-msg1
-k2-msg2
-k1-msg1
-k2-msg2
-
-# Consumer 중지
-복사<br><br>
-<br>partition 옵션을 통해서 특정 partition만 읽도록 조정 가능 
-<br>&gt; cd ~/apps/kafka_2.12-3.6.2
-&gt; bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic kv_topic \
-  --partition 1 \
-  --from-beginning
-
-msg1
-msg2
-msg6
-msg1
-msg2
-msg1
-msg2
-msg1
-msg2
-
-복사<br><br>
-<br>offset 0는 from-beginning과 동일한 효과 
-<br>&gt; cd ~/apps/kafka_2.12-3.6.2
-
-&gt; bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic kv_topic \
-  --partition 1 \
-  --offset 0
-
-msg1
-msg2
-msg6
-msg1
-msg2
-msg1
-msg2
-msg1
-msg2
-
-복사<br><br>
-<br>기본 producer은 데이터만 전달하는거에 비해 멱등성 producer은 데이터를 전달할 때 producer PID와 시퀀스 넘버를 함께 전달하여 중복 데이터 적재를 방지한다. 
-<br>시퀀스 넘버는 데이터를 전달할 때마다 시퀀스 넘버를 1씩 증가하여 보내며, broker는 데이터를 전달받을 때 PID와 시퀀스 넘버를 이용해 같은 데이터인지를 확인하고 같은 데이터인 경우 데이터를 저장하지 않는다.
-<br>&gt; cd ~/apps/kafka_2.12-3.6.2
-
-&gt; vi producer.conf
-enable.idempotence=true
-max.in.flight.request.per.connection=5
-retries=3
-acks=all
-
-&gt; bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic kv_topic --producer.config producer.conf
-k8:msg8
-k9:msg9
-k10:msg10
-k11:msg11
-k12:msg12
-복사<br><br>
-<br>topic 내의 지정한 partition의 시작점에서 특정 offset 까지의 범위를 삭제한다. 
-<br><br>{
-    "partitions": [
-    {"topic": "kv_topic", "partition":0, "offset": 2}
-    ], 
-    "version":1
-}
-복사<br>
-<br>중간의 특정 데이터만 삭제할 수는 없음
-<br># partition 0번의 offset 0~2 까지의 데이터를 삭제한다. 
-&gt; cd ~/apps/kafka_2.12-3.6.2
-
-# 삭제하기 이전의 데이터 확인
-&gt; bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic kv_topic   --partition 0   --from-beginning
-msg3
-msg4
-msg5
-msg7
-msg3
-msg4
-msg5
-msg3
-msg4
-msg5
-
-
-# 데이터 삭제를 위한 설정 파일 생성
-&gt; vi delete_offset.json
-
-&gt; bin/kafka-delete-records.sh --bootstrap-server localhost:9092 --offset-json-file ./delete_offset.json
-Executing records delete operation
-Records delete operation completed:
-partition: kv_topic-0	low_watermark: 2
-
-&gt; bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic kv_topic   --partition 0   --from-beginning
-## msg3, msg4 데이터가 삭제됨
-msg5
-msg7
-msg3
-msg4
-msg5
-msg3
-msg4
-msg5
-...
-복사<br><br><br>&gt; bin/kafka-dump-log.sh --print-data-log --files /tmp/kafka-logs/kv_topic-0/00000000000000000000.log
-
-Dumping /tmp/kafka-logs/kv_topic-0/00000000000000000000.log
-Starting offset: 0   &lt;-- offset 시작점
-
-## offset 0 번째 데이터 정보 출력  
-baseOffset: 0 lastOffset: 0 count: 1 baseSequence: -1 lastSequence: -1 producerId: -1 producerEpoch: -1 partitionLeaderEpoch: 0 isTransactional: false isControl: false position: 0 CreateTime: 1648305071780 size: 74 magic: 2 compresscodec: none crc: 585719343 isvalid: true
-| offset: 0 CreateTime: 1648305071780 keySize: 2 valueSize: 4 sequence: -1 headerKeys: [] key: k3 payload: msg3
-
-
-## offset 0~2 번째 데이터 정보 출력 
-baseOffset: 0 lastOffset: 2 count: 3 baseSequence: 0 lastSequence: 2 producerId: 1000 producerEpoch: 0 partitionLeaderEpoch: 0 isTransactional: false isControl: false deleteHorizonMs: OptionalLong.empty position: 0 CreateTime: 1719919955151 size: 100 magic: 2 compresscodec: none crc: 2553173963 isvalid: true
-| offset: 0 CreateTime: 1719919955151 keySize: 2 valueSize: 4 sequence: 0 headerKeys: [] key: k3 payload: msg3
-| offset: 1 CreateTime: 1719919955151 keySize: 2 valueSize: 4 sequence: 1 headerKeys: [] key: k4 payload: msg4
-| offset: 2 CreateTime: 1719919955151 keySize: 2 valueSize: 4 sequence: 2 headerKeys: [] key: k5 payload: msg5
-
-## offset 3 번째 데이터 정보 출력 
-baseOffset: 3 lastOffset: 3 count: 1 baseSequence: 3 lastSequence: 3 producerId: 1000 producerEpoch: 0 partitionLeaderEpoch: 0 isTransactional: false isControl: false deleteHorizonMs: OptionalLong.empty position: 100 CreateTime: 1719919956175 size: 74 magic: 2 compresscodec: none crc: 3724116375 isvalid: true
-| offset: 3 CreateTime: 1719919956175 keySize: 2 valueSize: 4 sequence: 3 headerKeys: [] key: k7 payload: msg7
-
-## offset 4 ~ 9 번째 데이터 정보 출력 
-baseOffset: 4 lastOffset: 9 count: 6 baseSequence: 0 lastSequence: 5 producerId: 1001 producerEpoch: 0 partitionLeaderEpoch: 0 isTransactional: false isControl: false deleteHorizonMs: OptionalLong.empty position: 174 CreateTime: 1719920692528 size: 139 magic: 2 compresscodec: none crc: 1245378216 isvalid: true
-| offset: 4 CreateTime: 1719920692527 keySize: 2 valueSize: 4 sequence: 0 headerKeys: [] key: k3 payload: msg3
-| offset: 5 CreateTime: 1719920692528 keySize: 2 valueSize: 4 sequence: 1 headerKeys: [] key: k4 payload: msg4
-| offset: 6 CreateTime: 1719920692528 keySize: 2 valueSize: 4 sequence: 2 headerKeys: [] key: k5 payload: msg5
-| offset: 7 CreateTime: 1719920692528 keySize: 2 valueSize: 4 sequence: 3 headerKeys: [] key: k3 payload: msg3
-| offset: 8 CreateTime: 1719920692528 keySize: 2 valueSize: 4 sequence: 4 headerKeys: [] key: k4 payload: msg4
-| offset: 9 CreateTime: 1719920692528 keySize: 2 valueSize: 4 sequence: 5 headerKeys: [] key: k5 payload: msg5
-
-
-## partition 0의 offset이 2번 부터 시작함. (이전에 삭제한 0,1 offet은 제외)
-&gt; bin/kafka-run-class.sh kafka.tools.DumpLogSegments --deep-iteration --print-data-log --files /tmp/kafka-logs/kv_topic-0/00000000000000000000.timeindex
-Dumping /tmp/kafka-logs/kv_topic-0/00000000000000000000.timeindex
-timestamp: 0 offset: 0
-The following indexed offsets are not found in the log.
-Indexed offset: 0, found log offset: 2
-
-복사<br><br>&gt; cat /tmp/kafka-logs/replication-offset-checkpoint
-kv_topic 0 10 &lt;-- partition 0은 마지막 commit offset이 10 (현재 9번 offset까지 존재)
-kv_topic 1 14 &lt;-- partition 0은 마지막 commit offset이 14 (현재 13번 offset까지 존재)
-복사<br><br>&gt; bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic kv_topic \
- --property "parse.key=true" \
- --property "key.separator=:" \
- --property "print.key=true"
-k20:msg20
-k21:msg21
-
-&gt; cat /tmp/kafka-logs/replication-offset-checkpoint
-kv_topic 0 12 &lt;-- partition 0에만 위 2건이 추가된 commit 확인 가능
-kv_topic 1 14
-복사<br><br>
-<br>현재 운영중인 Kafka broker에 적용된 모든 설정 값을 확인 가능
-<br>&gt; bin/kafka-configs.sh --bootstrap-server localhost:9092 --broker 0 --describe --all
-All configs for broker 0 are:
-  advertised.listeners=null sensitive=false synonyms={}
-  alter.config.policy.class.name=null sensitive=false synonyms={}
-  alter.log.dirs.replication.quota.window.num=11 sensitive=false synonyms={DEFAULT_CONFIG:alter.log.dirs.replication.quota.window.num=11}
-  alter.log.dirs.replication.quota.window.size.seconds=1 sensitive=false synonyms={DEFAULT_CONFIG:alter.log.dirs.replication.quota.window.size.seconds=1}
-  authorizer.class.name= sensitive=false synonyms={DEFAULT_CONFIG:authorizer.class.name=}
-  auto.create.topics.enable=true sensitive=false synonyms={DEFAULT_CONFIG:auto.create.topics.enable=true}
-  auto.include.jmx.reporter=true sensitive=false synonyms={DEFAULT_CONFIG:auto.include.jmx.reporter=true}
-  auto.leader.rebalance.enable=true sensitive=false synonyms={DEFAULT_CONFIG:auto.leader.rebalance.enable=true}
-  background.threads=10 sensitive=false synonyms={DEFAULT_CONFIG:background.threads=10}
-  broker.heartbeat.interval.ms=2000 sensitive=false synonyms={DEFAULT_CONFIG:broker.heartbeat.interval.ms=2000}
-
-.....
-복사<br><br>
-<br>
-<a rel="noopener" class="external-link" href="https://github.com/onlybooks/kafka2" target="_blank">https://github.com/onlybooks/kafka2</a> 실전 카프카 개발부터 운영까지
-
-<br>
-<a rel="noopener" class="external-link" href="https://github.com/bjpublic/apache-kafka-with-java" target="_blank">https://github.com/bjpublic/apache-kafka-with-java</a> 아파치 카프카 애플리케이션 프로그래밍 with 자바
-
-<br>
-<a rel="noopener" class="external-link" href="https://github.com/bstashchuk/apache-kafka-course" target="_blank">https://github.com/bstashchuk/apache-kafka-course</a> The Complete Apache Kafka Practical Guide
-
-<br><br>
-<br>
-<a rel="noopener" class="external-link" href="https://github.com/jingene/fastcampus_kafka_handson" target="_blank">https://github.com/jingene/fastcampus_kafka_handson</a> Part 2. 실무에서 쉽게 써보는 Kafka
-
-<br>
-<a rel="noopener" class="external-link" href="https://github.com/fast-campus-lecture" target="_blank">https://github.com/fast-campus-lecture</a> Part 3. Spring for Apache Kafka
-
-<br>
-<a rel="noopener" class="external-link" href="https://github.com/freepsw/kafka-metrics-monitoring" target="_blank">https://github.com/freepsw/kafka-metrics-monitoring</a> Part 4. 실시간 모니터링을 위한 Kafka 매트릭 이해
-
-]]></description><link>root\dev\data-pipe-line\kafka\group\01.kafka_basic\readme.html</link><guid isPermaLink="false">root/dev/data pipe line/kafka/group/01.kafka_basic/README.md</guid><pubDate>Tue, 02 Jul 2024 00:14:40 GMT</pubDate></item><item><title><![CDATA[Real-time data pipeline using apache kafka]]></title><description><![CDATA[ 
- <br><br><br><br>
-<br>kafka_basic/README.md에 명시된 가이드에 따라서
-<br>java 설치 및 JAVA_HOME 설정
-<br><br>
-<br>Elasticsearch를 비즈니에서 활용시 주의사항 (OSS버전 vs Default)
-
-<br>OSS는 elasticsearch를 이용하여 별도의 제품/솔루션으로 판매할 목적인 경우에 활용
-<br>Basic은 기업 내부에서는 무료로 사용가능 
-
-<br>즉 OSS 버전을 기반으로 elastic사에서 추가기능(ML, SIEM등)을 무료로 제공하는 것
-
-
-<br>정리하면, OSS는 누구나 활용 가능한 오픈소스
-
-<br>이를 이용해 별도의 제품을 만들어도 가능함.
-<br>elastic사도 OSS를 이용해서 basic 제품을 개발하고, 이를 무료로 제공함. 
-<br>하지만, basic 버전의 소유권은 elastic사에 귀속됨(무로지만, 이를 이용해 비즈니스/사업을 하면 안됨)
-
-
-<br><a rel="noopener" class="external-link" href="http://kimjmin.net/2020/06/2020-06-elastic-devrel/" target="_blank">http://kimjmin.net/2020/06/2020-06-elastic-devrel/</a>
-
-
-<br>Elastic stack 설치
-
-<br>
-
-<br><a rel="noopener" class="external-link" href="https://www.elastic.co/guide/en/elastic-stack/current/installing-elastic-stack.html" target="_blank">https://www.elastic.co/guide/en/elastic-stack/current/installing-elastic-stack.html</a> 참고
-
-
-
-
-<br><br>
-<br>config 설정 
-
-<br>외부 접속 허용(network.host) : server와 client가 다른 ip가 있을 경우, 외부에서 접속할 수 있도록 설정을 추가해야함.
-
-
-<br>&gt; cd ~/apps
-&gt; wget wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.14.1-linux-x86_64.tar.gz
-&gt; tar -xzf elasticsearch-8.14.1-linux-x86_64.tar.gz
-&gt; cd ~/apps/elasticsearch-8.14.1
-&gt; vi config/elasticsearch.yml
-# bind ip to connect from client  (lan이 여러개 있을 경우 외부에서 접속할 ip를 지정할 수 있음.)
-# bind all ip server have "0.0.0.0"
-network.host: 0.0.0.0   #(":" 다음에 스페이스를 추가해야 함.)
-
-# kibana에서 보안정책 없이 접근 가능하도록 "false"로 변경
-xpack.security.enabled: false
-
-복사<br><br>
-<br>시스템의 nmap count를 증가기켜야 한다.
-<br>에러 : [2]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
-<br><a rel="noopener" class="external-link" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/vm-max-map-count.html" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/current/vm-max-map-count.html</a>
-<br># 0) 현재 설정 값 확인
-&gt; cat /proc/sys/vm/max_map_count
-65530
-
-# 아래 3가지 방법 중 1가지를 선택하여 적용 가능
-# 1-1) 현재 서버상태에서만 적용하는 방식
-&gt; sudo sysctl -w vm.max_map_count=262144
-
-# 1-2) 영구적으로 적용 (서버 재부팅시 자동 적용)
-&gt; sudo vi /etc/sysctl.conf
-
-# 아래 내용 추가
-vm.max_map_count = 262144
-
-# 1-3) 또는 아래 명령어 실행 
-&gt; echo vm.max_map_count=262144 | sudo tee -a /etc/sysctl.conf
-
-
-# 3) 시스템에 적용하여 변경된 값을 확인
-&gt; sudo sysctl -p
-vm.max_map_count = 262144
-복사<br><br>&gt; ./bin/elasticsearch
-....................
-[2024-07-02T12:41:39,687][INFO ][o.e.l.ClusterStateLicenseService] [instance-20240701-162846] license [2ce86f9d-ae5b-47c0-815a-35e4ad0d9ae2] mode [basic] - valid
-[2024-07-02T12:41:46,485][INFO ][o.e.x.s.InitialNodeSecurityAutoConfiguration] [instance-20240701-162846] HTTPS has been configured with automatically generated certificates, and the CA's hex-encoded SHA-256 fingerprint is [6500b8c8df356e4965da2f1692d8569a4e3058f04522f945fd699b76d5c81c64]
-[2024-07-02T12:41:46,489][INFO ][o.e.x.s.s.SecurityIndexManager] [instance-20240701-162846] security index does not exist, creating [.security-7] with alias [.security]
-[2024-07-02T12:41:46,506][INFO ][o.e.x.s.e.InternalEnrollmentTokenGenerator] [instance-20240701-162846] Will not generate node enrollment token because node is only bound on localhost for transport and cannot connect to nodes from other hosts
-[2024-07-02T12:41:46,559][INFO ][o.e.c.m.MetadataCreateIndexService] [instance-20240701-162846] [.security-7] creating index, cause [api], templates [], shards [1]/[0]
-[2024-07-02T12:41:46,617][INFO ][o.e.x.s.s.SecurityIndexManager] [instance-20240701-162846] security index does not exist, creating [.security-7] with alias [.security]
-[2024-07-02T12:41:46,839][INFO ][o.e.c.r.a.AllocationService] [instance-20240701-162846] current.health="GREEN" message="Cluster health status changed from [YELLOW] to [GREEN] (reason: [shards started [[.security-7][0]]])." previous.health="YELLOW" reason="shards started [[.security-7][0]]"
-
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-✅ Elasticsearch security features have been automatically configured!
-✅ Authentication is enabled and cluster connections are encrypted.
-
-ℹ️  Password for the elastic user (reset with `bin/elasticsearch-reset-password -u elastic`):
-  ZG73I6D*OjUTT06oqZ4h
-
-ℹ️  HTTP CA certificate SHA-256 fingerprint:
-  6500b8c8df356e4965da2f1692d8569a4e3058f04522f945fd699b76d5c81c64
-
-ℹ️  Configure Kibana to use this cluster:
-• Run Kibana and click the configuration link in the terminal when Kibana starts.
-• Copy the following enrollment token and paste it into Kibana in your browser (valid for the next 30 minutes):
-  eyJ2ZXIiOiI4LjE0LjAiLCJhZHIiOlsiMTAuMTc4LjAuNDo5MjAwIl0sImZnciI6IjY1MDBiOGM4ZGYzNTZlNDk2NWRhMmYxNjkyZDg1NjlhNGUzMDU4ZjA0NTIyZjk0NWZkNjk5Yjc2ZDVjODFjNjQiLCJrZXkiOiJSc1YzYzVBQk5JX1ppY3hPSlk5RjpjdGtUUWcwc1NidWpxX2wxTU5uVlBBIn0=
-
-ℹ️  Configure other nodes to join this cluster:
-• On this node:
-  ⁃ Create an enrollment token with `bin/elasticsearch-create-enrollment-token -s node`.
-  ⁃ Uncomment the transport.host setting at the end of config/elasticsearch.yml.
-  ⁃ Restart Elasticsearch.
-• On other nodes:
-  ⁃ Start Elasticsearch with `bin/elasticsearch --enrollment-token &lt;token&gt;`, using the enrollment token that you generated.
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-복사<br><br>
-<br>Console을 이용한 접근
-<br>&gt; export ELASTIC_PASSWORD="ZG73I6D*OjUTT06oqZ4h"
-
-&gt; curl --cacert ~/apps/elasticsearch-8.14.1/config/certs/http_ca.crt -u elastic:$ELASTIC_PASSWORD https://localhost:9200 
-{
-  "name" : "instance-20240701-162846",
-  "cluster_name" : "elasticsearch",
-  "cluster_uuid" : "BjsJfIIxSQySPV90paP3TQ",
-  "version" : {
-    "number" : "8.14.1",
-    "build_flavor" : "default",
-    "build_type" : "tar",
-    "build_hash" : "93a57a1a76f556d8aee6a90d1a95b06187501310",
-    "build_date" : "2024-06-10T23:35:17.114581191Z",
-    "build_snapshot" : false,
-    "lucene_version" : "9.10.0",
-    "minimum_wire_compatibility_version" : "7.17.0",
-    "minimum_index_compatibility_version" : "7.0.0"
-  },
-  "tagline" : "You Know, for Search"
-}
-
-## 아래와 같은 방법으로 접근도 가능함
-&gt; curl -k -v -u elastic https://34.64.166.195:9200
-Enter host password for user 'elastic': ZG73I6D*OjUTT06oqZ4h
-복사<br>
-<br>Web Browser를 이용한 접근
-
-<br>Web brower 주소 창에서 "https://Elastic-server-ip:9200/" 입력
-<br>팝업 창에서 user/password를 elastid/위에서 저장한 password 로 입력
-<br>web에서 elasticsearch 정보 확인
-
-
-<br><br>&gt; cd ~/apps
-&gt; curl -O https://artifacts.elastic.co/downloads/kibana/kibana-8.14.1-linux-x86_64.tar.gz
-&gt; tar -xzf kibana-8.14.1-linux-x86_64.tar.gz
-&gt; cd ~/apps/kibana-8.14.1/
-복사<br><br>
-<br>외부 접속 가능하도록 설정 값 변경 
-
-<br>외부의 어떤 IP에서도 접속 가능하도록 0.0.0.0으로 변경 (운영환경에서는 특정 ip대역만 지정하여 보안강화)
-
-
-<br>elasticsearch 접속을 위한 user/password 설정
-<br>&gt;  
-# 외부에서 접근 가능하도록 설정 
-server.host: "0.0.0.0"
-
-복사<br><br>&gt; cd ~/apps/kibana-8.14.1/ 
-&gt; bin/kibana
-.....
-  log   [10:40:10.296] [info][server][Kibana][http] http server running at http://localhost:5601
-  log   [10:40:12.690] [warning][plugins][reporting] Enabling the Chromium sandbox provides an additional layer of protection
-복사<br><br>curl -XDELETE http://localhost:9200/.kibana
-curl -XDELETE 'http://localhost:9200/.kibana*'
-curl -XDELETE http://localhost:9200/.kibana_2
-curl -XDELETE http://localhost:9200/.kibana_1
-복사<br><br>&gt; cd ~/apps
-&gt; wget https://artifacts.elastic.co/downloads/logstash/logstash-8.14.1-linux-x86_64.tar.gz
-&gt; tar xvf logstash-8.14.1-linux-x86_64.tar.gz
-&gt; cd ~/apps/logstash-8.14.1
-복사<br><br>&gt; bin/logstash -e 'input { stdin { } } output { stdout {} }'
-# 실행까지 시간이 소요된다. (아래 메세지가 출력되면 정상 실행된 것으로 확인)
-.........
-[2024-07-02T15:42:37,938][INFO ][logstash.javapipeline    ][main] Pipeline started {"pipeline.id"=&gt;"main"}
-The stdin plugin is now waiting for input:
-[2024-07-02T15:42:37,953][INFO ][logstash.agent           ] Pipelines running {:count=&gt;1, :running_pipelines=&gt;[:main], :non_running_pipelines=&gt;[]}
-
-mytest  &lt;-- 메세지 입력 후 아래와 같이 출력되면 정상적으로 설치된 것
-{
-    "host" =&gt; {
-        "hostname" =&gt; "instance-20240701-162846"
-    },
-    "event" =&gt; {
-        "original" =&gt; "mytest"
-    },
-    "@version" =&gt; "1",
-    "message" =&gt; "mytest",
-    "@timestamp" =&gt; 2024-07-02T15:44:03.085998069Z
-}
-복사<br><br><br>
-<br>실습에 사용할 topic을 생성한다. 
-<br>&gt; cd ~/apps/kafka_2.12-3.6.2
-
-&gt; bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic realtime
-
-# check created topic "realtime"
-&gt; bin/kafka-topics.sh --list --bootstrap-server localhost:9092
-__consumer_offsets
-kv_topic
-mytopic
-realtime
-복사<br><br>&gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic realtime
-This is a message
-This is another message
-복사<br><br>&gt; cd ~/apps/kafka_2.12-3.6.2
-&gt; bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic realtime --from-beginning
-
-This is a message
-This is another message
-복사<br><br><br>&gt; cd ~/apps
-&gt; wget https://github.com/freepsw/demo-spark-analytics/raw/master/00.stage1/tracks.csv
-&gt; touch tracks_live.csv
-복사<br><br>
-<br>kafka topic을 realtime로 변경
-<br>&gt; vi ~/apps/producer.conf
-복사<br>
-<br>아래 path의 경로를 다운로드 받은 파일의 경로로 변경
-<br>input {
-  file {
-    path =&gt; "/home/freepsw/apps/tracks_live.csv"
-  }
-}
-
-output {
-  stdout {
-    codec =&gt; rubydebug{ }
-  }
-
-  kafka {
-    codec =&gt; plain {
-      format =&gt; "%{message}"
-    }
-    bootstrap_servers =&gt; "localhost:9092"
-    topic_id =&gt; "realtime"
-  }
-}
-
-복사<br>
-<br>run logstash 
-<br>&gt; cd ~/apps/
-&gt; ~/apps/logstash-8.14.1/bin/logstash -f ~/apps/producer.conf
-.....
-[2024-07-02T16:06:52,012][INFO ][logstash.agent           ] Pipelines running {:count=&gt;1, :running_pipelines=&gt;[:main], :non_running_pipelines=&gt;[]}
-복사<br><br>&gt; cd ~/apps
-&gt; vi data_generator.py
-복사<br><br>#-*- coding: utf-8 -*-
-import time
-import random
-
-r_fname = "tracks.csv"
-w_fname = "tracks_live.csv"
-
-rf = open(r_fname)
-wf = open(w_fname, "a+")
-
-try:
-	num_lines = sum(1 for line in rf)
-	print(num_lines)
-	#num_lines = 10
-
-	rf.seek(0)
-	lines = 0
-	while (1):
-		line = rf.readline()
-		wf.write(line)
-		wf.flush()
-
-		# sleep for weighted time period
-		stime = random.choice([1, 1, 1, 0.5, 0.5, 0.8, 0.3, 2, 0.1, 3])
-		print(stime)
-		time.sleep(stime)
-		lines += 1
-
-		# exit if read all lines
-		if(lines == num_lines):
-			break
-		# if(lines == num_lines):
-		# 	rf.seek(0)
-finally:
-	rf.close()
-	wf.close()
-	print("close file")
-복사Run<br><br>&gt; cd ~/apps
-&gt; python data_generator.py
-복사<br><br>
-<br>logstash에서 kafka로 정상적으로 메세지가 전송되고 있는지 모니터링
-<br>아래의 kafka-console-consumer 명령어를 통해 전송되는 메세지를 확인
-<br>&gt; cd ~/apps/kafka_2.12-3.6.2
-&gt; bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic realtime
-# logstash에서 정상적으로 메세지를 보내면, 아래와 같은 메세지가 출력될 것임.
-0,48,453,"2014-10-23 03:26:20",0,"72132"
-1,1081,19,"2014-10-15 18:32:14",1,"17307"
-2,532,36,"2014-12-10 15:33:16",1,"66216
-복사<br><br>&gt; cd ~/apps
-&gt; vi ~/apps/consumer.conf
-복사<br>input {
-  kafka{
-    topics =&gt; ["realtime"]
-    bootstrap_servers =&gt; "localhost:9092"
-  }
-}
-
-filter {
-  csv {
-    columns =&gt; ["event_id","customer_id","track_id","datetime","ismobile","listening_zip_code"]
-    separator =&gt; ","
-  }
-
-  date {
-    match =&gt; [ "datetime", "YYYY-MM-dd HH:mm:ss"]
-    target =&gt; "datetime"
-  }
-
-  mutate {
-    convert =&gt; { "ismobile" =&gt; "integer" }
-  }
-}
-
-output {
-  stdout { codec =&gt; rubydebug }
-
-  elasticsearch {
-    hosts =&gt; "http://localhost:9200"
-    index =&gt; "ba_realtime"
-  }
-} 
-복사<br><br>&gt; cd ~/apps
-&gt; ~/apps/logstash-8.14.1/bin/logstash --path.data ~/apps/consumer-data -f ~/apps/consumer.conf
-복사<br><br><br>
-<br>http://vm-instance-ip:5601 
-]]></description><link>root\dev\data-pipe-line\kafka\group\02.kafka_pipeline\readme.html</link><guid isPermaLink="false">root/dev/data pipe line/kafka/group/02.kafka_pipeline/README.md</guid><pubDate>Tue, 02 Jul 2024 00:14:40 GMT</pubDate></item><item><title><![CDATA[Run Apache kafka &amp; Zookeeper using JMX Port]]></title><description><![CDATA[ 
- <br><br><br><br>&gt; echo "export KAFKA_HOME=~/apps/kafka_2.12-3.0.0" &gt;&gt; ~/.bash_profile
-&gt; source ~/.bash_profile
-복사<br><br><br>&gt; cd $KAFKA_HOME
-
-# 1) Foreground 실행 (테스트 용으로 zookeeper 로그를 직접 확인)
-&gt; bin/zookeeper-server-start.sh config/zookeeper.properties
-
-# 2) Background 실행
-&gt; bin/zookeeper-server-start.sh -daemon config/zookeeper.properties
-&gt; ps -ef | grep zookeeper
-복사<br><br><br>
-<br>Kafka는 내부망에서 데이터를 빠르게 송/수신 할 수 있도록
-<br>내부망에서 Broker 접근할 수 있는 네트워크 주소와 (listeners)
-<br>외부방에서 Broker에 접근할 수 있는 네트워크 주소를 (advertised.listeners)
-<br>분리하여 지정한다.
-<br>&gt; cd $KAFKA_HOME
-## producer 또는 consumer에서 broker에 접속할 때 사용 가능한 hostname 설정 
-&gt; vi config/server.properties
-advertised.listeners=PLAINTEXT://broker01:9092
-
-## java.rmi.server.hostname은 본인의 외부 IP로 변경
-### rmi.server.hostname을 설정해야, 외부의 jconsole과 같은 도구에서 접속 가능
-&gt; export KAFKA_JMX_OPTS='-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=false 
-  -Dcom.sun.management.jmxremote.ssl=false 
-  -Dcom.sun.management.jmxremote.port=9999 
-  -Dcom.sun.management.jmxremote.rmi.port=9999 
-  -Djava.rmi.server.hostname=34.85.125.73'
-
-# 1) Foregroud 
-&gt; env JMX_PORT=9999 bin/kafka-server-start.sh config/server.properties
-
-# 2) background 실행
-&gt; env JMX_PORT=9999 bin/kafka-server-start.sh -daemon config/server.properties
-복사<br><br>
-&gt; cd $KAFKA_HOME
-&gt; bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --topic kafka-mon \
---partitions 2 --replication-factor 1
-
-# 생성된 topic 확인
-&gt; bin/kafka-topics.sh --list --bootstrap-server localhost:9092 
-kafka-mon
-복사<br><br>
-<br>JDK가 설치된 노트북에 아래 명령어 실행. 
-<br>IP:JMX_PORT 입력하여 연결
-<br>&gt; jconsole
-복사]]></description><link>root\dev\data-pipe-line\kafka\group\03.kafka_monitoring\01.setup_kafka.html</link><guid isPermaLink="false">root/dev/data pipe line/kafka/group/03.kafka_monitoring/01.setup_kafka.md</guid><pubDate>Tue, 02 Jul 2024 00:14:40 GMT</pubDate></item><item><title><![CDATA[STEP 0. Connect to vm server using ssh]]></title><description><![CDATA[ 
- <br><br>
-<br>"broker-01" 서버로 접속한 후, 아래의 명령어를 순서대로 실행한다. 
-<br><br><br>&gt; sudo yum install -y java
-
-# 현재 OS 설정이 한글인지 영어인지 확인한다. 
-&gt; alternatives --display java
-
-# 아래와 같이 출력되면 한글임. 
-슬레이브 unpack200.1.gz: /usr/share/man/man1/unpack200-java-1.8.0-openjdk-1.8.0.312.b07-1.el7_9.x86_64.1.gz
-현재 '최고' 버전은 /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-1.el7_9.x86_64/jre/bin/java입니다.
-
-### 한글인 경우 
-&gt; alternatives --display java | grep '현재 /'| sed "s/현재 //" | sed 's|/bin/java로 링크되어 있습니다||'
-&gt; export JAVA_HOME=$(alternatives --display java | grep '현재 /'| sed "s/현재 //" | sed 's|/bin/java로 링크되어 있습니다||')
-
-### 영문인 경우
-&gt; alternatives --display java | grep current | sed 's/link currently points to //' | sed 's|/bin/java||' | sed 's/^ //g'
-&gt; export JAVA_HOME=$(alternatives --display java | grep current | sed 's/link currently points to //' | sed 's|/bin/java||' | sed 's/^ //g')
-
-# 제대로 java 경로가 설정되었는지 확인
-# 아래 명령어를 실행하면, "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-1.el7_9.x86_64/jre"와 유사한 경로가 보여야 함. 
-&gt; echo $JAVA_HOME
-
-&gt; echo "export JAVA_HOME=$JAVA_HOME" &gt;&gt; ~/.bash_profile
-&gt; source ~/.bash_profile
-복사<br><br>&gt; cd ~
-&gt; curl -OL https://github.com/jiaqi/jmxterm/releases/download/v1.0.2/jmxterm-1.0.2-uber.jar
-복사<br><br>## jmxterm 실행
-&gt; java -jar jmxterm-1.0.2-uber.jar
-Welcome to JMX terminal. Type "help" for available commands.
-
-## broker jmx port에 접속
-$&gt;open localhost:9999
-
-## 조회 가능한 mbeans domain(metric 그룹)을 확인한다. 
-$&gt;domains
-
-## 위 domain 중에 조회할 domain을 선택한다. 
-$&gt;domain kafka.server
-
-## "kafka.server" domain에서 제공하는 beans 목록을 확인한다. 
-$&gt;beans
-
-## bean 중에서 "MessageInPerSec" metric을 선택한다. 
-$&gt;bean kafka.server:name=MessagesInPerSec,type=BrokerTopicMetrics
-
-## "MessageInPerSec"에서 조회 가능한 값의 유형을 선택한다.
-$&gt;info
-
-## info에서 출력된 목록 중 원하는 값의 유형을 선택한다. 
-$&gt;get Count
-
-$&gt;get MeanRate
-
-## JMXTERM 종료
-$&gt;bye
-#bye
-복사<br>
-<br>jmxterm에서 제공하는 명령어 유형
-<br>$&gt;help
-#following commands are available to use:
-about    - Display about page
-bean     - Display or set current selected MBean.
-beans    - List available beans under a domain or all domains
-bye      - Terminate console and exit
-close    - Close current JMX connection
-domain   - Display or set current selected domain.
-domains  - List all available domain names
-exit     - Terminate console and exit
-get      - Get value of MBean attribute(s)
-help     - Display available commands or usage of a command
-info     - Display detail information about an MBean
-jvms     - List all running local JVM processes
-open     - Open JMX session or display current connection
-option   - Set options for command session
-quit     - Terminate console and exit
-run      - Invoke an MBean operation
-set      - Set value of an MBean attribute
-subscribe - Subscribe to the notifications of a bean
-unsubscribe - Unsubscribe the notifications of an earlier subscribed bean
-watch    - Watch the value of one MBean attribute constantly
-복사]]></description><link>root\dev\data-pipe-line\kafka\group\03.kafka_monitoring\02.setup_jmxterm.html</link><guid isPermaLink="false">root/dev/data pipe line/kafka/group/03.kafka_monitoring/02.setup_jmxterm.md</guid><pubDate>Tue, 02 Jul 2024 00:14:40 GMT</pubDate></item><item><title><![CDATA[AKHQ를 설치하고 Broker를 연결하여 상태 모니터링]]></title><description><![CDATA[ 
- <br><br>
-<br>따라서 java11을 설치할 별도의 서버를 생성한 후, 해당 서버에 ssh로 접속 필요
-<br>vm 이름 : "kafka-monitoring"
-<br><br>
-<br>"kafka-monitoring" 서버로 접속한 후, 아래의 명령어를 순서대로 실행한다. 
-<br><br><br>
-<br>AKHQ는 java 11 부터 설치가 가능함. 
-<br>## 설치 가능한 java version 확인
-&gt; yum list java*jdk-devel
-Available Packages
-java-1.6.0-openjdk-devel.x86_64
-java-1.7.0-openjdk-devel.x86_64 
-java-1.8.0-openjdk-devel.i686 
-java-1.8.0-openjdk-devel.x86_64  
-java-11-openjdk-devel.i686  
-java-11-openjdk-devel.x86_64
-java-latest-openjdk-devel.x86_64 
-
-## jdk 11 설치
-&gt; sudo yum install -y java-11-openjdk-devel.x86_64
-
-## 설치된 java version 확인
-&gt; java -version
-openjdk version "11.0.13" 2021-10-19 LTS
-복사<br><br>&gt; cd ~
-&gt; curl -LO https://github.com/tchiotludo/akhq/releases/download/0.19.0/akhq.jar
-복사<br><br>## 모니터링 할 broker 접속 정보를 config 파일에 추가
-&gt; vi ~/akhq_config_simple.yml
-
-akhq:
-  connections:
-    local:
-      properties:
-        bootstrap.servers: "broker01:9092"
-
-
-## AKHQ 실행
-&gt; cd ~
-&gt; java -Dmicronaut.config.files=akhq_config_simple.yml -jar akhq.jar
-복사<br><br>
-<br>CMAK에 접속하기 위한 8080 PORT 허용
-<br><br>
-<br>http://:8080
-]]></description><link>root\dev\data-pipe-line\kafka\group\03.kafka_monitoring\03.setup_akhq.html</link><guid isPermaLink="false">root/dev/data pipe line/kafka/group/03.kafka_monitoring/03.setup_akhq.md</guid><pubDate>Tue, 02 Jul 2024 00:14:40 GMT</pubDate></item><item><title><![CDATA[04.setup_elastic]]></title><description><![CDATA[ 
- <br><br>
-<br>"broker01" 서버로 접속한 후, apache kafka 실행
-
-<br>apache kafka 실행 (zookeeper, broker) : jmx port 적용
-
-
-<br><br>
-<br>"kafka-monitoring" 서버에 접속하여 아래 명령어 실행 
-<br><br><br>
-<br>[1]: max file descriptors [4096] for elasticsearch process is too low, increase to at least [65535]
-<br>file descriptor 갯수를 증가시켜야 한다.
-<br>에러 : [1]: max file descriptors [4096] for elasticsearch process is too low, increase to at least [65535]
-<br><a rel="noopener" class="external-link" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/setting-system-settings.html#limits.conf" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/current/setting-system-settings.html#limits.conf</a>
-<br>&gt; sudo vi /etc/security/limits.conf
-# 아래 내용 추가 
-* hard nofile 70000
-* soft nofile 70000
-root hard nofile 70000
-root soft nofile 70000
-
-# 적용을 위해 콘솔을 닫고 다시 연결한다. (console 재접속)
-# 적용되었는지 확인
-&gt; ulimit -a
-core file size          (blocks, -c) 0
-data seg size           (kbytes, -d) unlimited
-scheduling priority             (-e) 0
-file size               (blocks, -f) unlimited
-pending signals                 (-i) 59450
-max locked memory       (kbytes, -l) 64
-max memory size         (kbytes, -m) unlimited
-open files                      (-n) 70000  #--&gt; 정상적으로 적용됨을 확인함
-복사<br><br>
-<br>시스템의 nmap count를 증가기켜야 한다.
-<br>에러 : [2]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
-<br><a rel="noopener" class="external-link" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/vm-max-map-count.html" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/current/vm-max-map-count.html</a>
-<br># 0) 현재 설정 값 확인
-&gt; cat /proc/sys/vm/max_map_count
-65530
-
-# 아래 3가지 방법 중 1가지를 선택하여 적용 가능
-# 1-1) 현재 서버상태에서만 적용하는 방식
-&gt; sudo sysctl -w vm.max_map_count=262144
-
-# 1-2) 영구적으로 적용 (서버 재부팅시 자동 적용)
-&gt; sudo vi /etc/sysctl.conf
-# 아래 내용 추가
-vm.max_map_count = 262144
-
-# 1-3) 또는 아래 명령어 실행 
-&gt; echo vm.max_map_count=262144 | sudo tee -a /etc/sysctl.conf
-
-# 3) 시스템에 적용하여 변경된 값을 확인
-&gt; sudo sysctl -p
-vm.max_map_count = 262144
-복사<br><br>&gt; curl -LO https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-oss-7.10.2-linux-x86_64.tar.gz
-&gt; tar -xzf elasticsearch-oss-7.10.2-linux-x86_64.tar.gz
-&gt; rm -rf elasticsearch-oss-7.10.2-linux-x86_64.tar.gz
-복사<br><br>
-<br>conf/elasticsearch.yml
-<br>master host 설정 (cluster.initial_master_nodes) : Master Node의 후보를 명시하여, Master Node 다운시 새로운 Master로 선출한다.
-<br>설정하지 않을 경우, elasticsearch 실행 시 아래 오류 발생
-<br>[3]: the default discovery settings are unsuitable for production use; at least one of [discovery.seed_hosts, discovery.seed_providers, cluster.initial_master_nodes] must be configured
-복사<br>
-<br>따라서 아래와 같이 설정 필요
-<br>&gt; cd ~/elasticsearch-7.10.2
-&gt; vi config/elasticsearch.yml
-
-## Master Node의 후보 서버 목록을 적어준다. (여기서는 1대 이므로 본인의 서버 정보만)
-cluster.initial_master_nodes: ["kakfa-monitoring"]
-
-## 위의 설정에서 IP를 입력하면, 아래 오류 발생
-    - skipping cluster bootstrapping as local node does not match bootstrap requirements: [34.64.85.xx]
-    - master not discovered yet, this node has not previously joined a bootstrapped (v7+) cluster, and [cluster.initial_master_nodes] is empty on this node
-복사<br><br>&gt; cd ~/elasticsearch-7.10.2/
-
-## 아래 2가지 방식으로 실행 가능 
-
-### 1) foreground로 실행시 명령어
-&gt; ./bin/elasticsearch 
-
-### 2) background(daemon)으로 실행시 명령어 (실행된 프로세스의 pid 값을 elastic_pid 파일에 기록)
-&gt; ./bin/elasticsearch -d -p elastic_pid
-
-### daemon으로 실행시 서비스 종료하려면 아래 명령어 실행 (기록된 pid 값을 읽어와서 프로세스 종료)
-&gt; pkill -F elastic_pid
-복사<br><br>&gt; curl -X GET "localhost:9200/?pretty"
-복사<br><br><br>&gt; cd ~
-&gt; curl -OL https://artifacts.elastic.co/downloads/kibana/kibana-oss-7.10.2-linux-x86_64.tar.gz
-&gt; tar xvf kibana-oss-7.10.2-linux-x86_64.tar.gz 
-&gt; rm -rf kibana-oss-7.10.2-linux-x86_64.tar.gz
-&gt; cd kibana-7.10.2-linux-x86_64/
-
-## 외부에서 접속 할 수 있도록 설정한다. 
-&gt; vi config/kibana.yml
-
-## 아래 내용 추가 (0.0.0.0은 모든 ip에서 접근이 가능한 설정. 운영환경에서는 특정 IP로 제한 필요)
-server.host: "0.0.0.0"
-복사<br><br>&gt; cd ~/kibana-7.10.2-linux-x86_64
-
-## foreground 실행
-&gt; bin/kibana
-
-## background 실행
-&gt; nohup bin/kibana &amp;
-복사<br><br>
-<br>kibana가 현재 실행중. (설정이나 재시작이 필욯지 않다면 현재 실해 중인 kibana 사용)
-<br>재시작이 필요하다면, 아래와 같이 process id를 찾아서 해당 process를 종료한 후, kibana 재시작
-<br>## 마지막 칼럼의 16998이 process id (process id는 개인별로 다르게 표시됨)
-&gt; netstat -anp | grep 5601
-tcp        0      0 0.0.0.0:5601            0.0.0.0:*               LISTEN      16998/bin/../node/b
-
-## process 종료
-&gt; kill -9 16998
-복사<br><br><br>&gt; cd ~
-&gt; curl -OL https://artifacts.elastic.co/downloads/logstash/logstash-oss-7.10.2-linux-x86_64.tar.gz
-&gt; tar xvf logstash-oss-7.10.2-linux-x86_64.tar.gz
-&gt; rm -rf logstash-oss-7.10.2-linux-x86_64.tar.gz
-&gt; cd ~/logstash-7.10.2
-
-## install jmx plugin
-&gt; bin/logstash-plugin install logstash-input-jmx
-복사<br><br>&gt; mkdir ~/jmx_conf
-&gt; vi ~/jmx_conf/broker01.conf
-
-{
-  "host" : "broker01", 
-  "port" : 9999,
-  "alias" : "broker01",
-  "queries" : [
-  {
-    "object_name" : "kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec",
-    "attributes" : [ "OneMinuteRate" ],
-    "object_alias" : "${type}.${name}"
-  },
-  {
-    "object_name" : "kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec",
-    "attributes" : [ "OneMinuteRate" ],
-    "object_alias" : "${type}.${name}"
-  },
-  {
-    "object_name" : "kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec",
-    "attributes" : [ "OneMinuteRate" ],
-    "object_alias" : "${type}.${name}"
-  },
-  {
-    "object_name" : "kafka.server:type=ReplicaManager,name=UnderReplicatedPartitions",
-    "attributes" : [ "Value" ],
-    "object_alias" : "${type}.${name}"
-  },
-  {
-    "object_name" : "kafka.network:type=RequestMetrics,name=TotalTimeMs,request=Produce",
-    "attributes" : [ "Mean" ],
-    "object_alias" : "${type}.${name}"
-  },
-  {
-    "object_name" : "kafka.network:type=RequestMetrics,name=TotalTimeMs,request=FetchConsumer",
-    "attributes" : [ "Mean" ],
-    "object_alias" : "${type}.${name}"
-  }
- ]
-}
-복사<br><br>
-<br>broker01.conf에 정의된 metric 들을 수집하여, 
-<br>elasticsearch로 전송하는 logstash 설정
-<br>&gt; mkdir ~/logstash_conf
-&gt; vi ~/logstash_conf/logstash_jmx.conf
-# 아래 내용 입력 
-input {
- jmx {
-  path =&gt; "/home/freepsw.10/jmx_conf"
-  polling_frequency =&gt; 2
- }
-}
-
-output{
- stdout {
-  codec =&gt; rubydebug
- }
- elasticsearch {
-   hosts =&gt; "localhost:9200"
-   index =&gt; "kafka_mon"
- }
-}
-
-
-&gt;  cd ~/apps/logstash-7.10.1
-## install jmx plugin
-&gt; bin/logstash-plugin install logstash-input-jmx
-
-&gt; bin/logstash -f ~/logstash_conf/logstash_jmx.conf
-복사<br><br>&gt; curl -X GET "localhost:9200/_cat/indices/"
-yellow open kafka_mon 6ULkg30FT7aQuxAI7ua7yg 1 1 18 0   32kb   32kb
-복사<br><br>
-<br>Kibana 접속하기 위한 5601 PORT 허용
-<br><br>
-<br>http://:5601
-]]></description><link>root\dev\data-pipe-line\kafka\group\03.kafka_monitoring\04.setup_elastic.html</link><guid isPermaLink="false">root/dev/data pipe line/kafka/group/03.kafka_monitoring/04.setup_elastic.md</guid><pubDate>Tue, 02 Jul 2024 00:14:40 GMT</pubDate></item><item><title><![CDATA[Monitoring the apache kafka using jmx metrics]]></title><description><![CDATA[ 
- <br><br><br>
-<br>실습에 필요한 라이브러리 설치
-<br><br>&gt; sudo yum install -y java
-
-# 현재 OS 설정이 한글인지 영어인지 확인한다. 
-&gt; alternatives --display java
-
-# 아래와 같이 출력되면 한글임. 
-슬레이브 unpack200.1.gz: /usr/share/man/man1/unpack200-java-1.8.0-openjdk-1.8.0.312.b07-1.el7_9.x86_64.1.gz
-현재 '최고' 버전은 /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-1.el7_9.x86_64/jre/bin/java입니다.
-
-### 한글인 경우 
-&gt; alternatives --display java | grep '현재 /'| sed "s/현재 //" | sed 's|/bin/java로 링크되어 있습니다||'
-&gt; export JAVA_HOME=$(alternatives --display java | grep '현재 /'| sed "s/현재 //" | sed 's|/bin/java로 링크되어 있습니다||')
-
-### 영문인 경우
-&gt; alternatives --display java | grep current | sed 's/link currently points to //' | sed 's|/bin/java||' | sed 's/^ //g'
-&gt; export JAVA_HOME=$(alternatives --display java | grep current | sed 's/link currently points to //' | sed 's|/bin/java||' | sed 's/^ //g')
-
-# 제대로 java 경로가 설정되었는지 확인
-&gt; echo $JAVA_HOME
-&gt; echo "export JAVA_HOME=$JAVA_HOME" &gt;&gt; ~/.bash_profile
-&gt; source ~/.bash_profile
-복사]]></description><link>root\dev\data-pipe-line\kafka\group\03.kafka_monitoring\readme.html</link><guid isPermaLink="false">root/dev/data pipe line/kafka/group/03.kafka_monitoring/README.md</guid><pubDate>Tue, 02 Jul 2024 00:14:40 GMT</pubDate></item><item><title><![CDATA[Apache Kafka Connect]]></title><description><![CDATA[ 
- <br><br><br>
-<br><a rel="noopener" class="external-link" href="https://kafka.apache.org/quickstart" target="_blank">https://kafka.apache.org/quickstart</a>
-<br><br>
-<br>Kafka Connect에서 사용할 library를 추가한다. 
-<br>&gt; cd #KAFKA_HOME 
-&gt; vi config/connect-standalone.properties
-
-# 아래 항목 추가 
-plugin.path=lib/connect-file-3.2.0.jar
-복사<br><br>&gt; cd $KAFKA_HOME
-&gt; echo -e "foo\nbar" &gt; test.txt
-복사<br><br><br>&gt; cd $KAFKA_HOME 
-&gt; vi config/connect-file-source.properties
-복사<br>
-<br>connect-file-source.properties
-<br>name=local-file-source
-connector.class=FileStreamSource
-tasks.max=1
-file=test.txt
-topic=connect-test
-복사<br><br>&gt; cd $KAFKA_HOME 
-&gt; vi config/connect-file-sink.properties
-복사<br><br>&gt; bin/connect-standalone.sh config/connect-standalone.properties config/connect-file-source.properties config/connect-file-sink.properties
-복사<br><br>&gt; cd $KAFKA_HOME
-&gt; bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic connect-test --from-beginning
-{"schema":{"type":"string","optional":false},"payload":"foo"}
-{"schema":{"type":"string","optional":false},"payload":"bar"}
-복사]]></description><link>root\dev\data-pipe-line\kafka\group\04.kafka_connect\readme.html</link><guid isPermaLink="false">root/dev/data pipe line/kafka/group/04.kafka_connect/README.md</guid><pubDate>Tue, 02 Jul 2024 00:14:40 GMT</pubDate></item><item><title><![CDATA[Apache Kafka Producer &amp; Consumer 구현 (Java)]]></title><description><![CDATA[ 
- <br><br>
-<br><a rel="noopener" class="external-link" href="https://developer.confluent.io/tutorials/kafka-producer-callback-application/confluent.html" target="_blank">https://developer.confluent.io/tutorials/kafka-producer-callback-application/confluent.html</a>
-<br><br>&gt; sudo yum install -y git maven
-
-&gt; cd ~
-&gt; git clone https://github.com/freepsw/RTS_Practice
-&gt; cd ~/RTS_Practice/02.kaka_practice/02.producer_consumer_code/java/
-&gt; cd my-kafka-java/
-복사<br><br><br>        &lt;dependency&gt;
-            &lt;groupId&gt;org.apache.kafka&lt;/groupId&gt;
-            &lt;artifactId&gt;kafka-clients&lt;/artifactId&gt;
-            &lt;version&gt;3.0.0&lt;/version&gt;
-        &lt;/dependency&gt;
-복사<br><br>&gt; mvn clean package
-복사<br><br>## topic을 생성하지 않았다면, 아래와 같이 생성한다. 
-&gt; cd $KAFKA_HOME
-&gt; bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 2 --topic my_topic
-
-
-복사<br><br><br>
-<br>확인을 위한 consumer 먼저 실행
-<br>&gt; bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic my_topic \
---property print.key=true \
---property key.separator="-" \
---group my-group \
---from-beginning
-복사<br>
-<br>producer 실행 테스트
-<br>&gt; cd ~/RTS_Practice/02.kaka_practice/02.producer_consumer_code/java/my-kafka-java/
-
-&gt; mvn exec:java -Dexec.mainClass="Producer_Simple"
-ProducerRecord(topic=my_topic, partition=null, headers=RecordHeaders(headers = [], isReadOnly = true), key=null, value=simple producer message, timestamp=null)
-
-
-&gt; mvn exec:java -Dexec.mainClass="Producer_Callback_Sync"
-Record written to offset 25 timestamp 1648373316114
-
-&gt; mvn exec:java -Dexec.mainClass="Producer_Callback_Async"
-Record written to offset 28 timestamp 1648373544238
-
-복사<br><br>
-<br>Consumer로 데이터를 전송하기 위한 producer 실행 
-<br>&gt; cd $KAFKA_HOME
-&gt; bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic my_topic \
---property "parse.key=true" \
---property "key.separator=:" \
---property "print.key=true"
-
-k1:simple msg
-k2:commit_auto
-k3:commit_sync
-k4:commit_sync_offset
-k5:commit_async
-복사<br>&gt; cd ~/RTS_Practice/02.kaka_practice/02.producer_consumer_code/java/my-kafka-java/
-
-&gt; mvn exec:java -Dexec.mainClass="Consumer_Simple"
-
-ConsumerRecord(topic = my_topic, partition = 1, leaderEpoch = 0, offset = 25, CreateTime = 1648373795837, serialized key size = 7, serialized value size = 9, headers = RecordHeaders(headers = [], isReadOnly = false), key = sgarcia, value = gift card)
-
-&gt; mvn exec:java -Dexec.mainClass="Consumer_Commit_Auto"
-
-ConsumerRecord(topic = my_topic, partition = 0, leaderEpoch = 0, offset = 32, CreateTime = 1648373867522, serialized key size = 8, serialized value size = 9, headers = RecordHeaders(headers = [], isReadOnly = false), key = jbernard, value = batteries)
-
-
-&gt; mvn exec:java -Dexec.mainClass="Consumer_Commit_Sync"
-
-ConsumerRecord(topic = my_topic, partition = 0, leaderEpoch = 0, offset = 46, CreateTime = 1648373922585, serialized key size = 8, serialized value size = 9, headers = RecordHeaders(headers = [], isReadOnly = false), key = jbernard, value = batteries)"
-
-
-&gt; mvn exec:java -Dexec.mainClass="Consumer_Commit_Sync_Offset"
-
-
-&gt; mvn exec:java -Dexec.mainClass="Consumer_Commit_Async"
-
-ConsumerRecord(topic = my_topic, partition = 0, leaderEpoch = 0, offset = 52, CreateTime = 1648374010211, serialized key size = 6, serialized value size = 9, headers = RecordHeaders(headers = [], isReadOnly = false), key = eabara, value = batteries)
-Commit succeeded
-복사<br><br><br>
-<br><a rel="noopener" class="external-link" href="https://kafka.apache.org/25/javadoc/overview-summary.html" target="_blank">https://kafka.apache.org/25/javadoc/overview-summary.html</a>
-<br><br>
-<br><a rel="noopener" class="external-link" href="https://developer.confluent.io/tutorials/kafka-producer-callback-application/confluent.html#initialize-the-project" target="_blank">https://developer.confluent.io/tutorials/kafka-producer-callback-application/confluent.html#initialize-the-project</a>
-]]></description><link>root\dev\data-pipe-line\kafka\group\05.producer_consumer_code\java\readme.html</link><guid isPermaLink="false">root/dev/data pipe line/kafka/group/05.producer_consumer_code/java/README.md</guid><pubDate>Tue, 02 Jul 2024 00:14:40 GMT</pubDate></item><item><title><![CDATA[Apache Kafka Producer &amp; Consumer 구현 (Python)]]></title><description><![CDATA[ 
- <br><br>
-<br>Python library (confluent-kafka)를 활용한 구현
-<br><a rel="noopener" class="external-link" href="https://github.com/confluentinc/confluent-kafka-python" target="_blank">https://github.com/confluentinc/confluent-kafka-python</a>
-<br><a rel="noopener" class="external-link" href="https://docs.confluent.io/platform/current/clients/confluent-kafka-python/html/index.html#confluent-kafka-api" target="_blank">https://docs.confluent.io/platform/current/clients/confluent-kafka-python/html/index.html#confluent-kafka-api</a>
-<br><br>&gt; mkdir ~/python_kafka
-&gt; cd ~/python_kafka 
-
-# python 3 가상환경 생성
-&gt; sudo yum install -y python3 
-&gt; python3 -m venv kafka_virtualenv
-
-## 가상환경 실행하기 
-&gt; source kafka_virtualenv/bin/activate
-&gt; python -V
-
-# kafka library 설치 
-&gt; pip install --upgrade pip
-&gt; pip install confluent-kafka==1.8.2  
-복사<br><br><br>&gt; cd $KAFKA_HOME
-&gt; bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 2 --topic my_topic
-복사<br><br><br><br>&gt; bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic my_topic --from-beginning
-복사<br><br>&gt; cd ~/python_kafka 
-&gt; source kafka_virtualenv/bin/activate
-
-## python code 작성
-&gt; vi producer.py
-
-## 메시지 전송 후 consumer에서 정상 수신하는지 확인 
-&gt; python producer.py
-Message delivered to my_topic [1]
-복사<br><br><br>&gt; cd ~/python_kafka 
-&gt; source kafka_virtualenv/bin/activate
-
-## python code 작성
-&gt; vi consumer.py
-
-## 메시지 전송 후 consumer에서 정상 수신하는지 확인 
-&gt; python consumer.py
-Received message: test-msg
-복사<br><br><br>&gt; cd ~/python_kafka 
-&gt; source kafka_virtualenv/bin/activate
-
-&gt; vi admin.py 
-
-&gt; python admin.py 
-Topic my_topic_new1 created
-Topic my_topic_new2 created
-
-&gt; cd $KAFKA_HOME
-&gt; bin/kafka-topics.sh --list --bootstrap-server localhost:9092
-my_topic_new1
-my_topic_new2
-
-복사<br><br><br>&gt; cd ~/python_kafka 
-&gt; source kafka_virtualenv/bin/activate
-
-&gt; vi consumer_detail.py 
-
-&gt; python consumer_detail.py localhost my_group my_topic
-
-Assignment: [TopicPartition{topic=my_topic,partition=0,offset=-1001,error=None}, TopicPartition{topic=my_topic,partition=1,offset=-1001,error=None}]
-% my_topic [1] at offset 0 with key None:
-b'test-msg'
-% my_topic [1] at offset 1 with key None:
-b'test-msg'
-% my_topic [1] at offset 2 with key None:
-b'test-msg'
-% my_topic [1] at offset 3 with key None:
-b'test-msg'
-% my_topic [0] at offset 0 with key None:
-b'test-msg'
-복사<br><br>&gt; cd ~/python_kafka 
-&gt; source kafka_virtualenv/bin/activate
-
-&gt; vi producer_detail.py 
-
-&gt; python producer_detail.py localhost my_topic
-new msg
-my msg
-% Message delivered to my_topic [0] @ 1
-복사<br>
-<br>consumer에서 정상적으로 수신하는지 확인한다. 
-<br><br>&gt; cd ~/python_kafka 
-&gt; source kafka_virtualenv/bin/activate
-
-&gt; vi producer_key.py 
-
-&gt; python producer_key.py 
-
-&gt; python producer_key.py
-Message delivered to my_topic [0]
-Message delivered to my_topic [0]
-Message delivered to my_topic [0]
-.....
-복사<br><br>&gt; deactivate
-복사<br><br><br>
-<br><a rel="noopener" class="external-link" href="https://deeplearning.lipingyang.org/2018/12/23/anaconda-vs-miniconda-vs-virtualenv/" target="_blank">https://deeplearning.lipingyang.org/2018/12/23/anaconda-vs-miniconda-vs-virtualenv/</a>
-<br><a rel="noopener" class="external-link" href="https://stackoverflow.com/questions/38217545/what-is-the-difference-between-pyenv-virtualenv-anaconda" target="_blank">https://stackoverflow.com/questions/38217545/what-is-the-difference-between-pyenv-virtualenv-anaconda</a>
-<br><br>
-<br>python과 관련된 모든 어플리케이션, 패키지 등을 자동으로 설치
-<br>약 720개 이상의 package들을 자동으로 설치해 줌. 
-<br>최소 3G 이상의 디스크 공간 필요  
-<br><br>
-<br>python package를 관리하기 위한 용도로 최적화
-<br>Anaconda에서 제공하는 다양한 어플리케이션은 설치되지 않음
-<br>단순히 python 가상환경을 구성하여 프로그래밍하는 목적으로 최적
-<br>디스크 사용량 최소화 (다만 필요한 패키지는 직접 설치)
-<br><br>
-<br>python 버전별로 별도의 python 가상환경을 제공하는 용도
-
-<br>pyenv는 python 버전 별로 환경을 제공했다면, (동일 package의 다른 버전 설치시 관리 어려움)
-<br>virtualenv는 동일한 python 버전이라도,
-<br>프로젝트에 따라 동일한 package의 다른 버전을 설치할 수 있도록 지원
-
-
-<br>sudo(관리자 권한)이 있는 경우에만 사용 가능함. 
-<br>conda 보다 복잡한 명령어 이해와 관리가 필요
-<br><br>
-<br>python 버전을 쉽게 설치 및 변경할 수 있게 지원
-<br>동일한 버전의 python에 서로 다른 버전의 package(numpy 등)을 설치하면
-<br>버전 호환등의 문제로 실행시 오류가 발생하는 이슈 (사용자가 직접 관리해야 함)
-
-<br>즉, 완벽한 독립적인 가상환경을 제공하지는 못함. 
-
-
-<br>windows는 지원하지 않음
-<br><br>&gt; pip install virtualenv
-&gt; virtualenv venv_ --python=python3.8
-&gt; source venv/bin/activate
-&gt; python -m pip install --upgrade pip
-&gt; 
-복사Run]]></description><link>root\dev\data-pipe-line\kafka\group\05.producer_consumer_code\python\readme.html</link><guid isPermaLink="false">root/dev/data pipe line/kafka/group/05.producer_consumer_code/python/README.md</guid><pubDate>Tue, 02 Jul 2024 00:14:40 GMT</pubDate></item><item><title><![CDATA[Apache Kafka : Data Message Queue]]></title><description><![CDATA[ 
- <br><br><br>
-<br>CentOS 9 
-<br>실습에 필요한 라이브러리 설치
-<br><br>
-<br>참고 링크 : <a rel="noopener" class="external-link" href="https://www.linkedin.com/pulse/how-install-kafka-centos-aimasterlive-xp0xc/" target="_blank">https://www.linkedin.com/pulse/how-install-kafka-centos-aimasterlive-xp0xc/</a>
-<br>&gt; sudo dnf install java-17-openjdk java-17-openjdk-devel
-
-&gt; java --version
-openjdk version "17.0.6" 2023-01-17 LTS
-OpenJDK Runtime Environment (Red_Hat-17.0.6.0.10-3.el9) (build 17.0.6+10-LTS)
-OpenJDK 64-Bit Server VM (Red_Hat-17.0.6.0.10-3.el9) (build 17.0.6+10-LTS, mixed mode, sharing)
-
-# java home 경로 확인
-&gt; ls /usr/lib/jvm/jre-17-openjdk
-bin  conf  include  legal  lib  release  tapset
-
-# JAVA_HOME 설정
-&gt; echo 'export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which javac))))' | sudo tee -a /etc/profile
-
-&gt; source /etc/profile
-
-&gt; echo $JAVA_HOME
-/usr/lib/jvm/java-17-openjdk-17.0.6.0.10-3.el9.x86_64
-
-&gt; ls $JAVA_HOME
-bin  conf  include  legal  lib  release  tapset
-
-복사<br><br><br>&gt; sudo dnf install -y  wget
-&gt; mkdir ~/apps
-&gt; cd ~/apps/
-&gt; wget https://downloads.apache.org/kafka/3.6.2/kafka_2.12-3.6.2.tgz
-&gt; tar -xzvf kafka_2.12-3.6.2.tgz
-복사<br><br>&gt; cd ~/apps/kafka_2.12-3.6.2
-
-# 1) Foreground 실행 (테스트 용으로 zookeeper 로그를 직접 확인)
-&gt; bin/zookeeper-server-start.sh config/zookeeper.properties
-
-# 2) Background 실행
-&gt; bin/zookeeper-server-start.sh -daemon config/zookeeper.properties
-&gt; ps -ef | grep zookeeper
-복사<br><br>&gt; cd ~/apps/kafka_2.12-3.6.2
-
-# 1) Foregroud 
-&gt; bin/kafka-server-start.sh config/server.properties
-
-# 2) background 실행
-&gt; bin/kafka-server-start.sh -daemon config/server.properties
-
-복사<br><br>
-<br>config/server.properties의 log.dir에 정의된 파일
-
-<br><a rel="noopener" class="external-link" href="https://github.com/apache/kafka/blob/3.0/config/server.properties" target="_blank">https://github.com/apache/kafka/blob/3.0/config/server.properties</a>
-
-
-<br># A comma separated list of directories under which to store log files
-log.dirs=/tmp/kafka-logs
-복사<br>
-<br>아직 topic이 생성되지 않아서, 메타정보 관련된 파일만 생성됨. 
-<br>&gt; ls /tmp/kafka-logs/
-cleaner-offset-checkpoint    meta.properties                   replication-offset-checkpoint
-log-start-offset-checkpoint  recovery-point-offset-checkpoint
-복사<br>
-<br>메타 정보 출력
-<br>## Broker 관련 메타 정보를 출력 
-&gt; cat /tmp/kafka-logs/meta.properties
-#
-#Sun Mar 27 00:10:12 UTC 2022
-cluster.id=OX9OhkJmRZWJ9xFCE8CIgw
-version=0
-broker.id=0
-복사<br><br><br>&gt; cd ~/apps/kafka_2.12-3.6.2
-&gt; bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic test
-
-&gt; bin/kafka-topics.sh --list --bootstrap-server localhost:9092
-복사<br><br>
-<br>__consumer_offsets 파티션정보 (첫번째 topic 생성시 자동으로 생성됨)
-<br>&gt; ls /tmp/kafka-logs/
-cleaner-offset-checkpoint    meta.properties                   replication-offset-checkpoint
-log-start-offset-checkpoint  recovery-point-offset-checkpoint  test-0
-.....
-복사<br>
-<br>.log 파일에 데이터가 없음. (전송된 메지가 없음)
-<br>&gt; ls -al /tmp/kafka-logs/test-0total 16
-drwxr-xr-x.  2 freepsw18 freepsw18      167 Jul  1 16:59 .
-drwxr-xr-x. 53 freepsw18 freepsw18     4096 Jul  1 17:01 ..
--rw-r--r--.  1 freepsw18 freepsw18 10485760 Jul  1 16:59 00000000000000000000.index
--rw-r--r--.  1 freepsw18 freepsw18      160 Jul  1 17:00 00000000000000000000.log
--rw-r--r--.  1 freepsw18 freepsw18 10485756 Jul  1 16:59 00000000000000000000.timeindex
--rw-r--r--.  1 freepsw18 freepsw18        8 Jul  1 16:59 leader-epoch-checkpoint
--rw-r--r--.  1 freepsw18 freepsw18       43 Jul  1 16:59 partition.metadata
-
-복사<br><br>&gt; cd ~/apps/kafka_2.12-3.6.2
-&gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
-my message
-second message
-복사<br><br>&gt; cd ~/apps/kafka_2.12-3.6.2
-&gt; bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
-my message
-second message
-
-복사<br><br>
-<br>__consumer_offsets 파티션 생성 (첫번째 topic 생성시 자동으로 생성됨)
-<br>&gt; ls /tmp/kafka-logs/
-__consumer_offsets-0   __consumer_offsets-22  __consumer_offsets-36  __consumer_offsets-5
-.....
-복사<br>
-<br>.log 파일에 실제 데이터가 저장됨 (기본 7일간 데이터 보관, 이후에 자동 삭제)
-<br>&gt; ls -al /tmp/kafka-logs/test-0
-drwxr-xr-x.  2 freepsw18 freepsw18      167 Jul  1 16:59 .
-drwxr-xr-x. 53 freepsw18 freepsw18     4096 Jul  1 17:02 ..
--rw-r--r--.  1 freepsw18 freepsw18 10485760 Jul  1 16:59 00000000000000000000.index
--rw-r--r--.  1 freepsw18 freepsw18      160 Jul  1 17:00 00000000000000000000.log
--rw-r--r--.  1 freepsw18 freepsw18 10485756 Jul  1 16:59 00000000000000000000.timeindex
--rw-r--r--.  1 freepsw18 freepsw18        8 Jul  1 16:59 leader-epoch-checkpoint
--rw-r--r--.  1 freepsw18 freepsw18       43 Jul  1 16:59 partition.metadata
-
-
-복사<br>
-<br>log 파일의 내용 확인 
-<br>&gt; cd ~/apps/kafka_2.12-3.6.2
-
-## log 파일 확인 
-&gt; bin/kafka-run-class.sh kafka.tools.DumpLogSegments --deep-iteration --print-data-log --files /tmp/kafka-logs/test-0/00000000000000000000.log
-Dumping /tmp/kafka-logs/test-0/00000000000000000000.log
-Log starting offset: 0
-baseOffset: 0 lastOffset: 0 count: 1 baseSequence: 0 lastSequence: 0 producerId: 0 producerEpoch: 0 partitionLeaderEpoch: 0 isTransactional: false isControl: false deleteHorizonMs: OptionalLong.empty position: 0 CreateTime: 1719853215613 size: 78 magic: 2 compresscodec: none crc: 3210426395 isvalid: true
-| offset: 0 CreateTime: 1719853215613 keySize: -1 valueSize: 10 sequence: 0 headerKeys: [] payload: my message
-baseOffset: 1 lastOffset: 1 count: 1 baseSequence: 1 lastSequence: 1 producerId: 0 producerEpoch: 0 partitionLeaderEpoch: 0 isTransactional: false isControl: false deleteHorizonMs: OptionalLong.empty position: 78 CreateTime: 1719853219329 size: 82 magic: 2 compresscodec: none crc: 2827246318 isvalid: true
-| offset: 1 CreateTime: 1719853219329 keySize: -1 valueSize: 14 sequence: 1 headerKeys: [] payload: second message
-
-
-## index 파일 확인
-&gt; bin/kafka-run-class.sh kafka.tools.DumpLogSegments --deep-iteration --print-data-log --files /tmp/kafka-logs/test-0/00000000000000000000.index
-Dumping /tmp/kafka-logs/test-0/00000000000000000000.index
-offset: 0 position: 0
-
-## timestamp index 파일 확인 
-&gt; bin/kafka-run-class.sh kafka.tools.DumpLogSegments --deep-iteration --print-data-log --files /tmp/kafka-logs/test-0/00000000000000000000.timeindex
-Dumping /tmp/kafka-logs/test-0/00000000000000000000.timeindex
-timestamp: 1719853219329 offset: 1
-
-
-복사<br>
-<br>Topic의 partition 별로 마지막 commit 된 위치 확인 
-
-<br>40번 partition에 commit 2로 저장됨
-
-
-<br>&gt; cat /tmp/kafka-logs/replication-offset-checkpoint
-0
-51
-test 0 2
-__consumer_offsets 29 0
-__consumer_offsets 43 0
-__consumer_offsets 0 0
-__consumer_offsets 40 2
-
-복사<br><br>&gt; cd ~/apps/kafka_2.12-3.6.2
-&gt; bin/kafka-topics.sh --describe  --bootstrap-server localhost:9092 --topic test
-Topic: test	TopicId: w1XGVh69Q32nB6-TK4yV9A	PartitionCount: 1	ReplicationFactor: 1	Configs:
-	Topic: test	Partition: 0	Leader: 0	Replicas: 0	Isr: 0
-복사<br><br>
-<br><a rel="noopener" class="external-link" href="https://kafka.apache.org/documentation/#basic_ops_consumer_lag" target="_blank">https://kafka.apache.org/documentation/#basic_ops_consumer_lag</a>
-<br># find consumer group list
-&gt; bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list
-console-consumer-29099
-
-# view offset of group
-&gt; bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group console-consumer-29099
-
-TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                     HOST            CLIENT-ID
-test            0          2               2               0               consumer-1-ff412a90-fec0-45e4-89d9-06179c7bd8e3 /10.146.0.6     consumer-1
-복사<br><br>
-<br>실습에서는 삭제하지 말고, 명령어 참고만 할 것
-<br>&gt; bin/kafka-topics.sh --delete --bootstrap-server localhost:9092  --topic test
-
-# 삭제 후 topic이 삭제되었는지 확인
-&gt; bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list
-
-복사<br><br>
-<br>접속할 zookeeper 정보를 입력하여, zookeeper 내부로 접속
-<br>&gt; cd ~/apps/kafka_2.12-3.6.2
-
-&gt; bin/zookeeper-shell.sh localhost:2181
-Connecting to localhost:2181
-Connecting to localhost:2181
-Welcome to ZooKeeper!
-JLine support is disabled
-
-WATCHER::
-
-WatchedEvent state:SyncConnected type:None path:null
-
-## Zookeeper에서 제공하는 정보 조회
-ls /
-[admin, brokers, cluster, config, consumers, controller, controller_epoch, feature, isr_change_notification, latest_producer_id_block, log_dir_event_notification, zookeeper]
-
-
-## Broker 관련 정보 조회 
-ls /brokers
-[ids, seqid, topics]
-
-
-## 현재 broker 목록을 조회 (broker 0번만 존재)
-ls /brokers/ids
-[0]
-
-## 0번 broker에 대한 정보 확인 
-get /brokers/ids/0
-{"listener_security_protocol_map":{"PLAINTEXT":"PLAINTEXT"},"endpoints":["PLAINTEXT://instance-20240701-162846.asia-northeast3-b.c.beaming-grid-428115-d6.internal:9092"],"jmx_port":-1,"features":{},"host":"instance-20240701-162846.asia-northeast3-b.c.beaming-grid-428115-d6.internal","timestamp":"1719917952131","port":9092,"version":5}
-
-
-## topic 정보 조회 
-ls /brokers/topics
-[__consumer_offsets]
-
-
-## topic 상세 정보 조회
-get /brokers/topics/test
-Node does not exist: /brokers/topics/test
-
-# test topic을 삭제하지 않은 경우에는 아래와 같은 topic 정보가 출력됨
-{"removing_replicas":{},"partitions":{"0":[0]},"topic_id":"ZOLr9CLNQjSW70hyIHx6BQ","adding_replicas":{},"version":3}
-
-
-## controller broker 조회
-get /controller
-{"version":2,"brokerid":0,"timestamp":"1719917952299","kraftControllerEpoch":-1}
-복사<br><br><br><br>&gt; cd ~/apps/kafka_2.12-3.6.2
-&gt; bin/kafka-topics.sh --create  --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic mytopic
-
-&gt; bin/kafka-topics.sh --list --bootstrap-server localhost:9092
-복사<br><br>
-<br>아래 링크를 이용하여 Apache flume을 설치 및 실행 테스트
-<br><a rel="noopener" class="external-link" href="https://github.com/freepsw/RTS_Practice/blob/master/01.Apache%20Flume.md#1-collectionapache-flume" target="_blank">https://github.com/freepsw/RTS_Practice/blob/master/01.Apache%20Flume.md#1-collectionapache-flume</a>
-<br><br>&gt; cd ~/apps/apache-flume-1.8.0-bin/conf
-&gt; vi nc-kafka.conf
-
-a1.sources = r1
-a1.channels = c1
-a1.sinks = s1
-
-a1.sources.r1.type = netcat
-a1.sources.r1.bind = localhost
-a1.sources.r1.port = 56565
-a1.sources.r1.channels = c1
-
-a1.channels.c1.type = memory
-a1.channels.c1.capacity = 1000
-a1.channels.c1.transactionCapacity = 100
-
-a1.sinks.s1.type = org.apache.flume.sink.kafka.KafkaSink
-a1.sinks.s1.topic = mytopic
-a1.sinks.s1.brokerList = localhost:9092
-a1.sinks.s1.requiredAcks = 1
-a1.sinks.s1.batchSize = 20
-a1.sinks.s1.channel = c1
-복사<br><br>&gt; cd ~/apps/apache-flume-1.8.0-bin/
-&gt; ./bin/flume-ng agent -c ./conf -f ./conf/nc-kafka.conf -name a1 -Dflume.root.logger=INFO,console
-복사<br><br><br>&gt; cd ~/apps/logstash-6.4.2
-&gt; vi kafka-input.conf
-
-input {
-  kafka{
-  	topics =&gt; ["토픽명"]
-  	bootstrap_servers =&gt; "kafka브로커ip:9092"
-  }
-}
-
-output {
-  stdout { codec =&gt; rubydebug }
-}
-복사<br>
-<br>logstash 실행
-<br><br>&gt; curl telnet://localhost:56565
-hi message
-OK
-복사<br><br>
-<br>아래와 같이 necat으로 보낸 메세지를 받는지 확인한다.
-<br>{
-       "message" =&gt; "hi message",
-      "@version" =&gt; "1",
-    "@timestamp" =&gt; 2018-10-12T14:18:36.953Z
-}
-복사<br><br>
-<br>Kafka의 주요 topic, consumer group, offset 값을 모니터링 한다.
-<br><a rel="noopener" class="external-link" href="https://github.com/Morningstar/kafka-offset-monitor" target="_blank">https://github.com/Morningstar/kafka-offset-monitor</a> 참고
-<br>&gt; cd ~/apps/apache-flume-1.8.0-bin/
-&gt; wget https://github.com/Morningstar/kafka-offset-monitor/releases/download/0.4.6/KafkaOffsetMonitor-assembly-0.4.6-SNAPSHOT.jar
-&gt; java -cp KafkaOffsetMonitor-assembly-0.4.6-SNAPSHOT.jar \
-      com.quantifind.kafka.offsetapp.OffsetGetterWeb \
-    --offsetStorage kafka \
-    --kafkaBrokers localhost:9092 \
-    --zk localhost:2181 \
-    --port 8081 \
-    --refresh 10.seconds \
-    --retain 2.days
-복사<br><br>
-<br>별도의 수집용 code를 만들지 않고, kafka connect를 이용하여 데이터 import 및 export 할 수 있다.
-<br>Secenario : file을 import하고, file로 export 한다.
-<br>#  creating some seed data to test with
-&gt; echo -e "foo\nbar" &gt; test.txt
-
-# start two connectors running in standalone mode
-# 3개의 config 파일을 파라미터로 넘긴다.
-# 1. Kafka connect process용 config (broker info, data format ...)
-# 2. source에 대한 config (test.txt 지정)
-# 3. sink에 대한 config (test.sink.txt 지정)
-&gt; bin/connect-standalone.sh config/connect-standalone.properties config/connect-file-source.properties config/connect-file-sink.properties
-
-# check test.sink.txt file
-&gt; cat test.sink.txt
-foo
-bar
-
-# send another message
-&gt; echo "Another line" &gt;&gt; test.txt
-
-# check test.sink.txt file again
-
-
-# check kafka topic message
-&gt; bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic connect-test --from-beginning
-
-복사<br><br># create message and publish to topic "streams-file-input"
-&gt; cd $KAFKA_HOME
-&gt; echo -e "all streams lead to kafka\nhello kafka streams\njoin kafka summit" &gt; file-input.txt
-&gt; cat file-input.txt | ./bin/kafka-console-producer.sh --broker-list localhost:9092 --topic streams-file-input
-
-# run kafka stream
-&gt; ./bin/kafka-run-class.sh org.apache.kafka.streams.examples.wordcount.WordCountDemo
-
-# check result of kafka stream
-&gt; ./bin/kafka-console-consumer.sh --zookeeper localhost:2181 \
-            --topic streams-wordcount-output \
-            --from-beginning \
-            --formatter kafka.tools.DefaultMessageFormatter \
-            --property print.key=true \
-            --property print.key=true \
-            --property key.deserializer=org.apache.kafka.common.serialization.StringDeserializer \
-            --property value.deserializer=org.apache.kafka.common.serialization.LongDeserializer
-
-all     1
-streams 1
-lead    1
-to      1
-kafka   1
-hello   1
-kafka   2
-streams 2
-join    1
-kafka   3
-summit  1
-
-복사]]></description><link>root\dev\data-pipe-line\kafka\group\readme.html</link><guid isPermaLink="false">root/dev/data pipe line/kafka/group/README.md</guid><pubDate>Tue, 02 Jul 2024 00:14:40 GMT</pubDate></item><item><title><![CDATA[kafka 서버 설정 자동화]]></title><description><![CDATA[ 
+복사]]></description><link>root\dev\data-pipe-line\hadoop\hive-트러블-슈팅.html</link><guid isPermaLink="false">root/dev/data pipe line/hadoop/Hive 트러블 슈팅.md</guid><pubDate>Wed, 26 Jun 2024 11:55:09 GMT</pubDate></item><item><title><![CDATA[kafka 서버 설정 자동화]]></title><description><![CDATA[ 
  <br><br>mkdir ~/run/kafka
 vi ~/run/kafka/update_cluster_configs.sh
 복사<br><br><br>#!/bin/bash
@@ -5724,7 +4021,7 @@ try:
     connection.commit()
 finally:
     connection.close()
-복사Run<br><br>CSV 파일의 데이터를 읽어 MySQL에 직접 삽입하는 코드입니다.<br>import pandas as pd
+Run복사<br><br>CSV 파일의 데이터를 읽어 MySQL에 직접 삽입하는 코드입니다.<br>import pandas as pd
 import pymysql
 
 def insert_csv_into_mysql(file_path):
@@ -5754,7 +4051,7 @@ csv_file_path = 'users.csv'
 
 insert_csv_into_mysql(csv_file_path)
 print("MySQL에 CSV 데이터 삽입 완료.")
-복사Run<br><br><br>CSV 파일의 데이터를 Kafka 토픽에 게시하는 코드입니다.<br>from kafka import KafkaProducer
+Run복사<br><br><br>CSV 파일의 데이터를 Kafka 토픽에 게시하는 코드입니다.<br>from kafka import KafkaProducer
 import pandas as pd
 import json
 
@@ -5776,7 +4073,7 @@ def produce_csv_to_kafka(file_path, topic):
     print("Kafka에 CSV 데이터 게시 완료.")
 
 produce_csv_to_kafka(csv_file_path, 'my_topic')
-복사Run<br><br>Kafka에서 데이터를 소비하고 MySQL에 저장하는 코드입니다.<br>from kafka import KafkaConsumer
+Run복사<br><br>Kafka에서 데이터를 소비하고 MySQL에 저장하는 코드입니다.<br>from kafka import KafkaConsumer
 import pymysql
 import json
 
@@ -5820,7 +4117,7 @@ def consume_from_kafka_and_insert_into_mysql(topic):
     print("Kafka에서 데이터 소비 및 MySQL에 저장 완료.")
 
 consume_from_kafka_and_insert_into_mysql('my_topic')
-복사Run<br><br>
+Run복사<br><br>
 <br>시나리오 1:
 
 <br>insert_csv_into_mysql 함수를 호출하여 CSV 데이터를 MySQL에 직접 삽입합니다.
@@ -5858,7 +4155,7 @@ def produce_csv_to_kafka(file_path, topic):
 # CSV 파일 경로와 Kafka 토픽 설정
 csv_file_path = 'data.csv'
 produce_csv_to_kafka(csv_file_path, 'my_topic')
-복사Run]]></description><link>root\dev\data-pipe-line\kafka\카프카에-csv-파일-넣어보기.html</link><guid isPermaLink="false">root/dev/data pipe line/kafka/카프카에 csv 파일 넣어보기.md</guid><pubDate>Mon, 29 Jul 2024 15:23:20 GMT</pubDate></item><item><title><![CDATA[Apache Kafka 실시간 Data Pipeline 구축하기]]></title><description><![CDATA[ 
+Run복사]]></description><link>root\dev\data-pipe-line\kafka\카프카에-csv-파일-넣어보기.html</link><guid isPermaLink="false">root/dev/data pipe line/kafka/카프카에 csv 파일 넣어보기.md</guid><pubDate>Mon, 29 Jul 2024 15:23:20 GMT</pubDate></item><item><title><![CDATA[Apache Kafka 실시간 Data Pipeline 구축하기]]></title><description><![CDATA[ 
  <br>“Pasted image 20240708175351.png” could not be found.<br><a rel="noopener" class="external-link" href="https://github.com/freepsw/kafka_basic/tree/main/02.kafka_pipeline" target="_blank">https://github.com/freepsw/kafka_basic/tree/main/02.kafka_pipeline</a><br><a rel="noopener" class="external-link" href="https://blog.naver.com/freepsw/222227393582" target="_blank">https://blog.naver.com/freepsw/222227393582</a><br><a data-tooltip-position="top" aria-label="https://docs.confluent.io/platform/current/kafka/monitoring.html" rel="noopener" class="external-link" href="https://docs.confluent.io/platform/current/kafka/monitoring.html" target="_blank">Monitoring Kafka with JMX | Confluent Documentation</a>]]></description><link>root\dev\data-pipe-line\kafka\apache-kafka-실시간-data-pipeline-구축하기.html</link><guid isPermaLink="false">root/dev/data pipe line/kafka/Apache Kafka 실시간 Data Pipeline 구축하기.md</guid><pubDate>Mon, 08 Jul 2024 08:53:52 GMT</pubDate></item><item><title><![CDATA[kafak에 mysql 연결]]></title><description><![CDATA[ 
  <br>카프카를 데이터 파이프라인의 중심에 두고, 데이터 생산자는 카프카에 데이터를 전송하고, 카프카 커넥트를 사용해 데이터를 다양한 싱크(데이터베이스 등)로 전달하는 방식은 매우 일반적이고 안정적인 데이터 처리 방법이야.<br>카프카와 데이터베이스를 연결하는 것은 여러 가지 장점이 있어:<br>
 <br>확장성: 카프카는 높은 처리량을 처리할 수 있어서 대규모 데이터 전송에도 적합해.
@@ -5885,8 +4182,8 @@ produce_csv_to_kafka(csv_file_path, 'my_topic')
   }
 }
 복사<br><br>Kafka Connect를 실행하고, MySQL 싱크 커넥터를 등록해.<br><br>Kafka Connect를 배포 모드로 실행해.<br>bin/connect-distributed.sh config/connect-distributed.properties
-복사Run<br><br>MySQL 싱크 커넥터를 Kafka Connect에 등록해.<br>curl -X POST -H "Content-Type: application/json" --data @mysql-sink-connector.json http://localhost:8083/connectors
-복사Run<br><br>Python 코드를 작성해서 CSV 파일 데이터를 카프카 토픽으로 전송해.<br>from confluent_kafka import Producer
+Run복사<br><br>MySQL 싱크 커넥터를 Kafka Connect에 등록해.<br>curl -X POST -H "Content-Type: application/json" --data @mysql-sink-connector.json http://localhost:8083/connectors
+Run복사<br><br>Python 코드를 작성해서 CSV 파일 데이터를 카프카 토픽으로 전송해.<br>from confluent_kafka import Producer
 import pandas as pd
 import json
 
@@ -5921,7 +4218,7 @@ for index, row in data.iterrows():
 producer.flush()
 
 print("데이터가 카프카로 성공적으로 전송되었습니다.")
-복사Run<br>이렇게 하면, 데이터는 다음과 같은 순서로 흐르게 돼:<br>
+Run복사<br>이렇게 하면, 데이터는 다음과 같은 순서로 흐르게 돼:<br>
 <br>Python 코드: CSV 파일 데이터를 카프카 토픽으로 전송.
 <br>카프카: 데이터를 토픽으로 받음.
 <br>Kafka Connect: 카프카 토픽 데이터를 MySQL 데이터베이스에 적재.
@@ -6254,7 +4551,7 @@ consumer.close()
 
 print("Kafka에서 MySQL로 데이터 적재 완료.")
 
-복사Run<br><br><br>
+Run복사<br><br><br>
 <br>
 Kafka Consumer 설정:
 
@@ -6431,7 +4728,7 @@ for message in consumer:
     print(f"Key: {message.key}, Value: {message.value}")
     # 특정 조건에서 루프를 종료하려면 추가 로직을 구현
     break  # 이 예제에서는 첫 번째 메시지 하나만 출력 후 종료
-복사Run<br>이 코드는 my_topic 토픽에서 메시지를 소비하고 출력합니다. auto_offset_reset='earliest'를 설정하면 토픽의 처음부터 메시지를 읽습니다.<br><br>Kafka의 웹 기반 UI 도구를 사용하여 토픽의 데이터와 상태를 시각적으로 확인할 수 있습니다. 이러한 도구로는 다음과 같은 것들이 있습니다:<br>
+Run복사<br>이 코드는 my_topic 토픽에서 메시지를 소비하고 출력합니다. auto_offset_reset='earliest'를 설정하면 토픽의 처음부터 메시지를 읽습니다.<br><br>Kafka의 웹 기반 UI 도구를 사용하여 토픽의 데이터와 상태를 시각적으로 확인할 수 있습니다. 이러한 도구로는 다음과 같은 것들이 있습니다:<br>
 <br><a data-tooltip-position="top" aria-label="https://docs.confluent.io/platform/current/control-center/index.html" rel="noopener" class="external-link" href="https://docs.confluent.io/platform/current/control-center/index.html" target="_blank">Confluent Control Center</a>: Confluent Platform의 일부로 제공되며, Kafka 클러스터를 모니터링하고 관리할 수 있습니다.
 <br><a data-tooltip-position="top" aria-label="https://github.com/obsidiandynamics/kafdrop" rel="noopener" class="external-link" href="https://github.com/obsidiandynamics/kafdrop" target="_blank">Kafdrop</a>: Kafka 브로커와 토픽을 시각적으로 확인할 수 있는 오픈소스 웹 UI 도구입니다.
 <br>이 도구들은 Kafka 클러스터의 상태를 모니터링하고, 토픽의 메시지를 조회하는 데 유용합니다.<br><br>
@@ -6632,7 +4929,7 @@ def produce_csv_to_kafka(file_path, topic):
 # CSV 파일 경로와 Kafka 토픽 설정
 csv_file_path = 'data.csv'
 produce_csv_to_kafka(csv_file_path, 'my_topic')
-복사Run<br><br><br>
+Run복사<br><br><br>
 <br>CSV 데이터 읽기: pandas 라이브러리를 사용하여 CSV 파일을 읽습니다.
 <br>Kafka 프로듀서 설정: 
 
@@ -6728,9 +5025,9 @@ def get_create_container_comm(id, name, port=2222, server_infos=server_infos):
 for info in server_infos:
 	send_ssh_comm(info.name, info.name, get_create_container_comm(info.id, info.name))
 	time.sleep(1)
-복사Run<br><br>docker network create --subnet=172.18.0.0/16 pipeline
+Run복사<br><br>docker network create --subnet=172.18.0.0/16 pipeline
 --ip 172.18.0.{id+10} \\
-복사Run<br>이거 알아내려고.. 그랬다..]]></description><link>root\dev\data-pipe-line\server\ec2\aws-ec2에-docker로-kafka-클러스터-만들-때.html</link><guid isPermaLink="false">root/dev/data pipe line/server/ec2/aws ec2에 docker로 kafka 클러스터 만들 때.md</guid><pubDate>Sun, 04 Aug 2024 19:25:10 GMT</pubDate></item><item><title><![CDATA[ec2 docker ssh 터널링]]></title><description><![CDATA[ 
+Run복사<br>이거 알아내려고.. 그랬다..]]></description><link>root\dev\data-pipe-line\server\ec2\aws-ec2에-docker로-kafka-클러스터-만들-때.html</link><guid isPermaLink="false">root/dev/data pipe line/server/ec2/aws ec2에 docker로 kafka 클러스터 만들 때.md</guid><pubDate>Sun, 04 Aug 2024 19:25:10 GMT</pubDate></item><item><title><![CDATA[ec2 docker ssh 터널링]]></title><description><![CDATA[ 
  <br>Attention보안에서 2222 포트 열어주면 됨<br># docker -&gt; ec2
 ssh server1 -p 2222 -i ./ssh/id_rsa
 
@@ -6781,7 +5078,7 @@ Host server3
 	HostName 172.31.10.99
 	Port 2222
 	User ubuntu
-복사Run<br>이렇게 설정하면 ssh server1 명령어를 실행할 때 자동으로 -p 2222 옵션이 적용됩니다.<br><br>구성 파일을 설정한 후, send_ssh_comm 함수를 다음과 같이 사용할 수 있습니다:<br>import subprocess
+Run복사<br>이렇게 설정하면 ssh server1 명령어를 실행할 때 자동으로 -p 2222 옵션이 적용됩니다.<br><br>구성 파일을 설정한 후, send_ssh_comm 함수를 다음과 같이 사용할 수 있습니다:<br>import subprocess
 
 def send_ssh_comm(host, name, comm):
 	ssh_command = [
@@ -6795,10 +5092,10 @@ def send_ssh_comm(host, name, comm):
 
 # 사용 예시
 send_ssh_comm('server1', '테스트 명령', 'echo Hello, World!')
-복사Run<br>이렇게 하면 server1에 대해 ~/.ssh/config 파일에 정의된 설정이 자동으로 적용됩니다.<br><br>/etc/hosts 파일은 그대로 유지합니다:<br>172.31.14.186   server1
+Run복사<br>이렇게 하면 server1에 대해 ~/.ssh/config 파일에 정의된 설정이 자동으로 적용됩니다.<br><br>/etc/hosts 파일은 그대로 유지합니다:<br>172.31.14.186   server1
 172.31.1.229    server2
 172.31.10.99    server3
-복사Run<br>이렇게 하면 server1, server2, server3에 대해 정의된 IP 주소가 호스트 이름으로 매핑됩니다.<br><br>import subprocess
+Run복사<br>이렇게 하면 server1, server2, server3에 대해 정의된 IP 주소가 호스트 이름으로 매핑됩니다.<br><br>import subprocess
 
 def send_ssh_comm(host, name, comm):
 	ssh_command = [
@@ -6814,7 +5111,7 @@ def send_ssh_comm(host, name, comm):
 send_ssh_comm('server1', '테스트 명령', 'echo Hello, World!')
 send_ssh_comm('server2', '테스트 명령', 'echo Hello, World!')
 send_ssh_comm('server3', '테스트 명령', 'echo Hello, World!')
-복사Run<br>이렇게 하면 server1, server2, server3에 대해 정의된 포트 번호가 자동으로 적용됩니다.]]></description><link>root\dev\data-pipe-line\server\ec2\ssh-포트-포함-이동.html</link><guid isPermaLink="false">root/dev/data pipe line/server/ec2/ssh 포트 포함 이동.md</guid><pubDate>Sun, 04 Aug 2024 13:41:28 GMT</pubDate></item><item><title><![CDATA[ssh server 터널링]]></title><description><![CDATA[ 
+Run복사<br>이렇게 하면 server1, server2, server3에 대해 정의된 포트 번호가 자동으로 적용됩니다.]]></description><link>root\dev\data-pipe-line\server\ec2\ssh-포트-포함-이동.html</link><guid isPermaLink="false">root/dev/data pipe line/server/ec2/ssh 포트 포함 이동.md</guid><pubDate>Sun, 04 Aug 2024 13:41:28 GMT</pubDate></item><item><title><![CDATA[ssh server 터널링]]></title><description><![CDATA[ 
  <br><br>nc -zv localhost 2181
 nc -zv localhost 9092
 복사<br><br><br># ZooKeeper 포트 포워딩
@@ -7058,7 +5355,7 @@ ctrl + c 로 캔슬로 안되고..
 복사<br><br><br><a data-href="mysql 계정 생성시 %의 의미" href="root\dev\data-pipe-line\server\local\mysql-계정-생성시-의-의미.html" class="internal-link" target="_self" rel="noopener">mysql 계정 생성시 %의 의미</a><br><br>sudo mysql -u root
 복사<br><br>CREATE USER 'ubuntu'@'%' IDENTIFIED BY '1234';
 복사<br>계정이 존재 하면 아래의 것으로 비번을 초기화 함ALTER USER 'ubuntu'@'%' IDENTIFIED BY '1234';
-복사Run<br><br>GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'%' WITH GRANT OPTION;
+Run복사<br><br>GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'%' WITH GRANT OPTION;
 복사<br><br>FLUSH PRIVILEGES;
 복사<br><br>exit
 복사<br><br><br><br>sudo chown -R mysql:mysql /var/run/mysqld
@@ -7201,7 +5498,7 @@ query = transformed_df.writeStream \
     .start()
 
 query.awaitTermination()
-복사Run<br><br>
+Run복사<br><br>
 <br>스파크 세션 설정: 스파크 세션을 생성해.
 <br>카프카에서 데이터 읽기: spark.readStream.format("kafka")를 사용해 카프카에서 데이터를 스트리밍으로 읽어들여.
 <br>데이터 파싱 및 변환: 카프카 메시지에서 JSON 값을 파싱하고, 나이 컬럼을 1.5배로 변환해.
@@ -7285,7 +5582,7 @@ filtered_df.show()
 
 # SparkSession 종료
 spark.stop()
-복사Run<br><br>
+Run복사<br><br>
 <br>
 Spark 없이 MySQL을 사용하는 경우:
 
@@ -7511,26 +5808,26 @@ WITH GRANT OPTION;
 
 FLUSH PRIVILEGES;
 EXIT;
-복사Run<br><br>mysql -u hr_admin -p hrdb
+Run복사<br><br>mysql -u hr_admin -p hrdb
 # 비번 password
 복사<br><br>STATUS;
 SOURCE hr_info.sql;
-복사Run<br>
+Run복사<br>
 <br><a class="internal-link" data-href="hr_info.sql" href="hr_info.sql" target="_self" rel="noopener">hr_info.sql</a>
 <br><br>SHOW TABLES;
 DESC employees;
 SELECT * FROM employees;
-복사Run]]></description><link>root\dev\database\mariadb\mariadb-아이디-생성.html</link><guid isPermaLink="false">root/dev/database/mariaDB/mariaDB 아이디 생성.md</guid><pubDate>Tue, 30 Apr 2024 15:57:05 GMT</pubDate></item><item><title><![CDATA[mysql note]]></title><description><![CDATA[ 
+Run복사]]></description><link>root\dev\database\mariadb\mariadb-아이디-생성.html</link><guid isPermaLink="false">root/dev/database/mariaDB/mariaDB 아이디 생성.md</guid><pubDate>Tue, 30 Apr 2024 15:57:05 GMT</pubDate></item><item><title><![CDATA[mysql note]]></title><description><![CDATA[ 
  <br><br>
 <br>일번적으로 대소문자를 구분하지 않음
 <br>주로 예약어(SELECT, FROM)는<br>
 대문자, 사용자 정의어(code, name, population)는 소문자를 사용
 <br><br><br><br>SHOW DATABASES;
-복사Run<br><br>SHOW TABLES;
-복사Run<br><br>DESC &lt;table_name&gt;;
-복사Run<br><br><br>USE &lt;database_name&gt;;
-복사Run<br><br>SELECT * FROM &lt;table_name&gt;;
-복사Run<br><br><br><br>mysql -u root -p비번 &lt; schema-data.sql
+Run복사<br><br>SHOW TABLES;
+Run복사<br><br>DESC &lt;table_name&gt;;
+Run복사<br><br><br>USE &lt;database_name&gt;;
+Run복사<br><br>SELECT * FROM &lt;table_name&gt;;
+Run복사<br><br><br><br>mysql -u root -p비번 &lt; schema-data.sql
 복사<br><br>mysql -u root -p비번 &lt; schema.sql
 mysql -u root -p비번 &lt; data.sql
 복사<br><br>mysql -u root -p비번 data_base_name &lt; data.sql
@@ -7542,25 +5839,25 @@ mysql -u root -p비번 &lt; data.sql
 FROM country; */
 SELECT code, name
 FROM country;
-복사Run<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>InfoData Manipulation Language<br>
+Run복사<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>InfoData Manipulation Language<br>
 데이터 조작어<br>
 데이터 검색, 삽입, 수정, 삭제등에 사용<br>
 SELECT, INSERT, UPDATE, DELETE<br>
 트랜젝션이 발생하는 SQL문<br><br>SELECT &lt;column_name_1&gt;, &lt;column_name_2&gt;, ...
 FROM &lt;database_name&gt;.&lt;table_name&gt;;
 또는 FROM &lt;table_name&gt;;
-복사Run<br>-- 전체 조회
+Run복사<br>-- 전체 조회
 SELECT *
 FROM world.country;
-복사Run<br>-- code, name 세개의 컬럼 데이터 조회
+Run복사<br>-- code, name 세개의 컬럼 데이터 조회
 SELECT code, name
 FROM world.country;
-복사Run<br>-- alias 조회
+Run복사<br>-- alias 조회
 SELECT code AS country_code, name AS country_name
 FROM country;
-복사Run<br><br>INSERT INTO &lt;table_name&gt;(&lt;column_name_1&gt;, &lt;column_name_2&gt;, ...)
+Run복사<br><br>INSERT INTO &lt;table_name&gt;(&lt;column_name_1&gt;, &lt;column_name_2&gt;, ...)
 VALUES(&lt;value_1&gt;, &lt;value_2&gt;, …)
-복사Run<br>-- user1 테이블에 user_id, namex, email, age, rdate를 입력
+Run복사<br>-- user1 테이블에 user_id, namex, email, age, rdate를 입력
 INSERT INTO user1(user_id, name, email, age, rdate)
 VALUES (1, "jin", "pdj@gmail.com", 30, now()),
 (2, "peter", "peter@daum.net", 33, '2017-02-20'),
@@ -7568,33 +5865,33 @@ VALUES (1, "jin", "pdj@gmail.com", 30, now()),
 (4, "po", "po@gmail.com", 43, '2002-09-16'),
 (5, "andy", "andy@gmail.com", 17, '2016-04-28'),
 (6, "jin", "jin1224@gmail.com", 33, '2013-09-02');
-복사Run<br><br>UPDATE &lt;table_name&gt;
+Run복사<br><br>UPDATE &lt;table_name&gt;
 SET &lt;column_name_1&gt; = &lt;value_1&gt;, &lt;column_name_2&gt; = &lt;value_2&gt;,
 WHERE &lt;condition&gt;
-복사Run<br>-- jin 이름을 가지고 있는 사람의 나이를 20, 이메일을 pdj@daum.net으로 변경
+Run복사<br>-- jin 이름을 가지고 있는 사람의 나이를 20, 이메일을 pdj@daum.net으로 변경
 UPDATE user1
 SET age=20, email="pdj@daum.net"
 WHERE name="jin"
-복사Run<br><br>DELETE FROM &lt;table_name&gt;
+Run복사<br><br>DELETE FROM &lt;table_name&gt;
 WHERE &lt;condition&gt;
-복사Run<br>-- 2016-01-01 이전 데이터 삭제 (DML)
+Run복사<br>-- 2016-01-01 이전 데이터 삭제 (DML)
 DELETE FROM user1
 WHERE rdate &lt; "2016-01-01"
-복사Run<br><br>SELECT &lt;컬럼이름 1&gt;, &lt;컬럼이름 2&gt;, ...
+Run복사<br><br>SELECT &lt;컬럼이름 1&gt;, &lt;컬럼이름 2&gt;, ...
 FROM &lt;테이블 이름&gt;
 WHERE &lt;조건식&gt;
-복사Run<br><br>-- 인구가 7000만에서 1억인 국가를 출력
+Run복사<br><br>-- 인구가 7000만에서 1억인 국가를 출력
 SELECT *
 FROM country
 WHERE Population &gt;= 70000000 AND Population &lt;= 100000000;
-복사Run<br><br><br>SELECT *
+Run복사<br><br><br>SELECT *
 FROM country
 WHERE Continent = "Asia" OR Continent = "Africa";
-복사Run<br><br>-- 인구가 7000만에서 1억인 국가를 출력
+Run복사<br><br>-- 인구가 7000만에서 1억인 국가를 출력
 SELECT *
 FROM country
 WHERE Population BETWEEN 70000000 AND 100000000;
-복사Run<br><br>-- 아시아와 아프리카 대륙의 국가 데이터를 출력
+Run복사<br><br>-- 아시아와 아프리카 대륙의 국가 데이터를 출력
 SELECT *
 FROM country
 WHERE Continent IN ("Asia", "Africa");
@@ -7608,7 +5905,7 @@ WHERE Continent NOT IN ("Asia", "Africa");
 SELECT *
 FROM country
 WHERE Continent != "Asia" AND Continent != "Africa";
-복사Run<br><br>-- country 테이블에서 국가 코드가 Z로 시작되는 데이터를 출력
+Run복사<br><br>-- country 테이블에서 국가 코드가 Z로 시작되는 데이터를 출력
 SELECT *
 FROM country
 WHERE code like "Z%";
@@ -7617,12 +5914,12 @@ WHERE code like "Z%";
 SELECT *
 FROM country
 WHERE GovernmentForm LIKE “%Republic%”;
-복사Run<br><br><br>-- 오름차순 인구순으로 국가의 리스트를 출력
+Run복사<br><br><br>-- 오름차순 인구순으로 국가의 리스트를 출력
 -- ASC는 생략이 가능
 SELECT *
 FROM country
 ORDER BY population ASC
-복사Run<br><br>SELECT *
+Run복사<br><br>SELECT *
 FROM country
 ORDER BY population DESC
 
@@ -7631,7 +5928,7 @@ ORDER BY population DESC
 SELECT *
 FROM city
 ORDER BY CountryCode ASC, Population DESC
-복사Run<br><br>-- 인구가 많은 상위 5개 국가 데이터를 출력
+Run복사<br><br>-- 인구가 많은 상위 5개 국가 데이터를 출력
 SELECT *
 FROM country
 ORDER BY population DESC
@@ -7648,23 +5945,23 @@ SELECT *
 FROM country
 ORDER BY population DESC
 LIMIT 5, 3; # -- 5개 스킵하고 3개를 출력
-복사Run<br><br>-- city 테이블에서 도시의 인구수가 100만에서 200만인 도시의 국가 코드를 중복을 제거후 출력
+Run복사<br><br>-- city 테이블에서 도시의 인구수가 100만에서 200만인 도시의 국가 코드를 중복을 제거후 출력
 SELECT DISTINCT countrycode
 FROM city
 WHERE population BETWEEN 1000000 AND 2000000;
-복사Run<br><br><br>Note실수 데이터 올림<br>-- 12.345를 올림하여 정수로 나타냄
+Run복사<br><br><br>Note실수 데이터 올림<br>-- 12.345를 올림하여 정수로 나타냄
 SELECT CEIL(12.345);
 
 -- 국가별 언어 사용 비율을 소수 첫번째자리에서 올림하여 정수로 나타냄
 SELECT CountryCode, Language, Percentage, CEIL(Percentage)
 FROM countrylanguage;
-복사Run<br><br>Note실수데이터 반올림<br>-- 12.345를 소수 둘째자리까지 나타내고 소수 셋째자리에서 반올림
+Run복사<br><br>Note실수데이터 반올림<br>-- 12.345를 소수 둘째자리까지 나타내고 소수 셋째자리에서 반올림
 SELECT ROUND(12.345, 2);
 
 -- 국가별 언어 사용 비율을 소수 첫번째자리에서 반올림하여 정수로 나타냄
 SELECT CountryCode, Language, Percentage, ROUND(Percentage, 0)
 FROM countrylanguage;
-복사Run<br><br>Note실수 데이터를 버림<br>-- 12.345를 소수 둘째자리까지 나타내고 소수 셋째자리에서 버림
+Run복사<br><br>Note실수 데이터를 버림<br>-- 12.345를 소수 둘째자리까지 나타내고 소수 셋째자리에서 버림
 SELECT TRUNCATE(12.345, 2);
 
 -- 국가별 언어 사용 비율을 소수 첫번째자리에서 버림하여 정수로 나타냄
@@ -7673,33 +5970,33 @@ FROM countrylanguage;
 
 SELECT CountryCode, Language, Percentage, ROUND(Percentage, 0), TRUNCATE(Percentage, 0)
 FROM countrylanguage;
-복사Run<br><br>Note날짜 데이터 포멧<br><a data-tooltip-position="top" aria-label="https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html" rel="noopener" class="external-link" href="https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html" target="_blank">reference</a><br>-- sakila의 payment 테이블에서 요금 지불일을 "년-월"로 데이터 포멧을 변경했을때,
+Run복사<br><br>Note날짜 데이터 포멧<br><a data-tooltip-position="top" aria-label="https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html" rel="noopener" class="external-link" href="https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html" target="_blank">reference</a><br>-- sakila의 payment 테이블에서 요금 지불일을 "년-월"로 데이터 포멧을 변경했을때,
 -- 중복을 제거한 "년-월" 데이터를 출력
 SELECT DISTINCT(DATE_FORMAT(payment_date, "%Y-%m")) AS unique_month
 FROM payment;
-복사Run<br><br>Note문자열을 합침<br>-- world 데이터베이스의 country 테이블에서 국가코드, 대륙이름과 국가이름이 
+Run복사<br><br>Note문자열을 합침<br>-- world 데이터베이스의 country 테이블에서 국가코드, 대륙이름과 국가이름이 
 -- " / " 구분자로 구분해서 하나의 컬럼에 출력
 SELECT code, CONCAT(continent, " / ", name) as continent_name
 FROM country;
-복사Run<br><br>Note데이터의 갯수를 출력<br>-- world 데이터 베이스의 city 데이터의 갯수를 출력
+Run복사<br><br>Note데이터의 갯수를 출력<br>-- world 데이터 베이스의 city 데이터의 갯수를 출력
 SELECT count(*) as city_count
 FROM city;
-복사Run<br><br>IF(조건, 참, 거짓)
-복사Run<br>-- 도시 인구가 100만 이상이면 big city,
+Run복사<br><br>IF(조건, 참, 거짓)
+Run복사<br>-- 도시 인구가 100만 이상이면 big city,
 -- 아니면 small city 출력
 -- IF(조건, true, false)
 SELECT `Name`, `Population`,
 	IF(`Population` &gt;= 100 * 10000, 'big city', 'small city')
 FROM city;
-복사Run<br><br>IFNULL(참, 거짓)
-복사Run<br>-- 독립년도가 없는 데이터는 0으로 출력
+Run복사<br><br>IFNULL(참, 거짓)
+Run복사<br>-- 독립년도가 없는 데이터는 0으로 출력
 SELECT IndepYear, IFNULL(IndepYear, 0) as IndepYear
 FROM country;
-복사Run<br><br>CASE
+Run복사<br><br>CASE
 	WHEN (조건1) THEN (출력1)
 	WHEN (조건2) THEN (출력2)
 END AS (컬럼명)
-복사Run<br>-- # 나라별로 인구가 10억 이상, 1억 이상, 1억 이하인 컬럼을 추가하여 출력
+Run복사<br>-- # 나라별로 인구가 10억 이상, 1억 이상, 1억 이하인 컬럼을 추가하여 출력
 SELECT name, population,
 	CASE
 		WHEN population &gt; 1000000000 THEN "upper 1 bilion"
@@ -7707,7 +6004,7 @@ SELECT name, population,
 		ELSE "below 100 milion"
 	END AS result
 FROM country;
-복사Run<br>-- 도시에서 인구가 500만 이상 big, 100만 이상 medium, 100만 미만 samll 출력
+Run복사<br>-- 도시에서 인구가 500만 이상 big, 100만 이상 medium, 100만 미만 samll 출력
 
 SELECT `Name`, `Population` 
 	, CASE 
@@ -7717,18 +6014,18 @@ SELECT `Name`, `Population`
 	END AS scale
 FROM city
 ORDER BY `Population` DESC;
-복사Run<br><br>Note여러개의 동일한 데이터를 가지는 특정 컬럼을 합쳐주는 역할<br><br>-- city 테이블의 CountryCode를 묶고 각 코드마다 몇개의 데이터가 있는지 확인
+Run복사<br><br>Note여러개의 동일한 데이터를 가지는 특정 컬럼을 합쳐주는 역할<br><br>-- city 테이블의 CountryCode를 묶고 각 코드마다 몇개의 데이터가 있는지 확인
 SELECT CountryCode, COUNT(CountryCode)
 FROM city
 GROUP BY CountryCode;
-복사Run<br>-- 국가별 도시 수를 출력
+Run복사<br>-- 국가별 도시 수를 출력
 -- 도시가 많은 상위 10개의 국가, 도시수를 출력
 SELECT `CountryCode`, COUNT(`Name`) AS city_count
 FROM city
 GROUP BY `CountryCode`
 ORDER BY city_count DESC
 LIMIT 10;
-복사Run<br>-- 국가별 도시 수를 출력
+Run복사<br>-- 국가별 도시 수를 출력
 -- 인구수 50만 이상의 10개의 국가, 도시수를 출력
 SELECT `CountryCode`, COUNT(`Name`) AS city_count
 FROM city
@@ -7736,42 +6033,42 @@ WHERE `Population` &gt;= 50 * 10000
 GROUP BY `CountryCode`
 ORDER BY city_count DESC
 LIMIT 10;
-복사Run<br><br>-- 대륙별 인구수와 GNP 최대 값을 조회
+Run복사<br><br>-- 대륙별 인구수와 GNP 최대 값을 조회
 SELECT continent, MAX(Population) as Population, MAX(GNP) as GNP
 FROM country
 GROUP BY continent;
-복사Run<br><br>-- 대륙별 인구수와 GNP 최소 값을 조회 (GNP와 인구수가 0이 아닌 데이터 중에서)
+Run복사<br><br>-- 대륙별 인구수와 GNP 최소 값을 조회 (GNP와 인구수가 0이 아닌 데이터 중에서)
 SELECT continent, MIN(Population) as Population, MIN(GNP) as GNP
 FROM country
 WHERE GNP != 0 AND Population != 0
 GROUP BY continent;
-복사Run<br><br>-- 대륙별 총 인구수와 총 GNP
+Run복사<br><br>-- 대륙별 총 인구수와 총 GNP
 SELECT continent, SUM(Population) as Population, SUM(GNP) as GNP
 FROM country
 WHERE GNP != 0 AND Population != 0
 GROUP BY continent;
-복사Run<br>-- 대륙별 총인구수 출력
+Run복사<br>-- 대륙별 총인구수 출력
 SELECT `Continent`, SUM(`Population`) AS total_population
 FROM country
 GROUP BY `Continent`;
-복사Run<br>-- 대륙별 평균 GNP
+Run복사<br>-- 대륙별 평균 GNP
 SELECT `Continent`, SUM(`Population`) AS total_population
 	, AVG(`GNP`/`Population`) AS avg_gnp
 FROM country
 GROUP BY `Continent`;
-복사Run<br>-- 평균인당 GBP가 높은 순으로 정렬
+Run복사<br>-- 평균인당 GBP가 높은 순으로 정렬
 SELECT `Continent`, SUM(`Population`) AS total_population
 	, AVG(`GNP`/`Population`) AS avg_gnp
 FROM country
 GROUP BY `Continent`
 ORDER BY avg_gnp DESC;
-복사Run<br>-- 고객별 가장 많은 매출 발생 시켜준 상위 3명의 고객 출력
+Run복사<br>-- 고객별 가장 많은 매출 발생 시켜준 상위 3명의 고객 출력
 SELECT customer_id, SUM(amount) AS total_amount
 FROM payment
 GROUP BY customer_id
 ORDER BY total_amount DESC
 LIMIT 10;
-복사Run<br>-- 고객별 가장 많은 매출 발생 시켜준 상위 3명의 고객 출력
+Run복사<br>-- 고객별 가장 많은 매출 발생 시켜준 상위 3명의 고객 출력
 -- 조건: 2005년 6월 이 후
 SELECT customer_id, SUM(amount) AS total_amount
 FROM payment
@@ -7779,13 +6076,13 @@ WHERE payment_date &gt;= '2005-06-01'
 GROUP BY customer_id
 ORDER BY total_amount DESC
 LIMIT 10;
-복사Run<br><br>-- 대륙별 평균 인구수와 평균 GNP 결과를 인구수로 내림차순 정렬
+Run복사<br><br>-- 대륙별 평균 인구수와 평균 GNP 결과를 인구수로 내림차순 정렬
 SELECT continent, AVG(Population) as Population, AVG(GNP) as GNP
 FROM country
 WHERE GNP != 0 AND Population != 0
 GROUP BY continent
 ORDER BY Population DESC;
-복사Run<br><br>NoteGROUP BY에서 반환되는 결과에 조건을 줄수 있음<br>-- 대륙별 전체인구를 구하고 5억이상인 대륙만 조회
+Run복사<br><br>NoteGROUP BY에서 반환되는 결과에 조건을 줄수 있음<br>-- 대륙별 전체인구를 구하고 5억이상인 대륙만 조회
 SELECT continent, SUM(Population) as Population
 FROM country
 GROUP BY continent
@@ -7801,19 +6098,19 @@ WHERE GNP != 0 AND Population != 0
 GROUP BY continent
 HAVING AVG &gt; 0.01
 ORDER BY AVG DESC;
-복사Run<br><br>Note여러개의 컬럼을 GROUP BY 하고 각 컬럼별 총 합을 row에 출력<br>-- sakila 데이터 베이스에서 고객과 스탭별 매출과 고객별 매출의 총합을 출력
+Run복사<br><br>Note여러개의 컬럼을 GROUP BY 하고 각 컬럼별 총 합을 row에 출력<br>-- sakila 데이터 베이스에서 고객과 스탭별 매출과 고객별 매출의 총합을 출력
 SELECT customer_id, staff_id, SUM(amount) as amount
 FROM payment
 GROUP BY customer_id, staff_id
 WITH ROLLUP;
-복사Run<br><br>-- KPI 지포: 년월별 총 매출, 매출 횟수, 평균 매출
+Run복사<br><br>-- KPI 지포: 년월별 총 매출, 매출 횟수, 평균 매출
 SELECT DATE_FORMAT(payment_date, '%Y-%m') AS monthly
 	, SUM(amount) AS total_amount
 	, COUNT(amount) AS count_amount
 	, AVG(amount) AS avg_amount
 FROM payment
 GROUP BY monthly;
-복사Run<br>-- 직원별: 년월별 총 매출, 매출 횟수, 평균 매출
+Run복사<br>-- 직원별: 년월별 총 매출, 매출 횟수, 평균 매출
 SELECT  staff_id, DATE_FORMAT(payment_date, '%Y-%m') AS monthly
 	, SUM(amount) AS total_amount
 	, COUNT(amount) AS count_amount
@@ -7821,7 +6118,7 @@ SELECT  staff_id, DATE_FORMAT(payment_date, '%Y-%m') AS monthly
 FROM payment
 GROUP BY staff_id, monthly
 ORDER BY monthly, staff_id;
-복사Run<br><br>-- staff_id를 기준으로 그룹으로 정렬
+Run복사<br><br>-- staff_id를 기준으로 그룹으로 정렬
 USE sakila;
 
 SELECT staff_id
@@ -7830,17 +6127,17 @@ SELECT staff_id
 FROM payment
 GROUP BY staff_id, monthly
 WITH ROLLUP;
-복사Run<br><br>
+Run복사<br><br>
 <br>기본값: inner
 <br><br><br><br><br><br><br>SELECT * 
 FROM `user`
 JOIN addr
 ON user.ui = addr.ui;
-복사Run<br><br>SELECT `user`.ui, `user`.un, addr.an
+Run복사<br><br>SELECT `user`.ui, `user`.un, addr.an
 FROM `user`
 JOIN addr
 ON user.ui = addr.ui;
-복사Run<br><br>USE world;
+Run복사<br><br>USE world;
 /* USE DATABASE */
 -- 국가코드, 국가이름, 도시이름, 국가인구수, 도시인구수 출력
 -- 도시의 도시화율(도시인구수/국가인구수)을 출력
@@ -7856,7 +6153,7 @@ ON country.code = city.countrycode
 HAVING country_population &gt;= 1000 * 10000
 ORDER BY rate DESC
 LIMIT 10;
-복사Run<br>-- 국가이름, 도시갯수
+Run복사<br>-- 국가이름, 도시갯수
 -- JOIN, GROUP BY
 SELECT country.`Name`, COUNT(city.`Name`) AS city_count
 FROM country
@@ -7864,7 +6161,7 @@ JOIN city
 ON country.`Code` = city.`CountryCode`
 GROUP BY country.`Name`
 ORDER BY city_count DESC;
-복사Run<br>-- country, countrylanguage
+Run복사<br>-- country, countrylanguage
 -- 국가코드, 국가이름, 언어이름, 국가인구수, 언어사용률, 언어사용인구수 출력
 SELECT country.code, country.name, countrylanguage.language
 	, country.population, countrylanguage.percentage
@@ -7873,15 +6170,15 @@ SELECT country.code, country.name, countrylanguage.language
 FROM country
 JOIN countrylanguage
 ON country.code = countrylanguage.countrycode;
-복사Run<br><br>SELECT `user`.ui, `user`.un, addr.an
+Run복사<br><br>SELECT `user`.ui, `user`.un, addr.an
 FROM `user`
 LEFT JOIN addr
 ON user.ui = addr.ui;
-복사Run<br><br><br>SELECT addr.ui, `user`.un, addr.an
+Run복사<br><br><br>SELECT addr.ui, `user`.un, addr.an
 FROM `user`
 RIGHT JOIN addr
 ON user.ui = addr.ui;
-복사Run<br><br><br>-- Left Join
+Run복사<br><br><br>-- Left Join
 SELECT `user`.ui, `user`.un, addr.an
 FROM `user`
 LEFT JOIN addr
@@ -7892,13 +6189,13 @@ SELECT addr.ui, `user`.un, addr.an
 FROM `user`
 RIGHT JOIN addr
 ON user.ui = addr.ui;
-복사Run<br><br><br>두개의 쿼리 결과를 결합, 중복 제거<br>SELECT un FROM `user`
+Run복사<br><br><br>두개의 쿼리 결과를 결합, 중복 제거<br>SELECT un FROM `user`
 UNION
 SELECT an FROM `addr`;
-복사Run<br><br><br>두개의 쿼리 결과를 결합, 중복 제거 X<br>SELECT un FROM `user`
+Run복사<br><br><br>두개의 쿼리 결과를 결합, 중복 제거 X<br>SELECT un FROM `user`
 UNION ALL
 SELECT an FROM `addr`;
-복사Run<br><br><br>-- 스탭 1
+Run복사<br><br><br>-- 스탭 1
 SELECT COUNT(*) FROM country;
 SELECT COUNT(*) FROM city;
 SELECT COUNT(DISTINCT(`Language`)) FROM countrylanguage;
@@ -7909,7 +6206,7 @@ SELECT
 	(SELECT COUNT(*) FROM city) AS total_city,
 	(SELECT COUNT(DISTINCT(`Language`)) FROM countrylanguage) AS total_countrylanguage
 FROM DUAL;
-복사Run<br><br>NoteHAVING보다 SubQuery가 더 빠르다.<br>
+Run복사<br><br>NoteHAVING보다 SubQuery가 더 빠르다.<br>
 이유는<br>
 HAVING : JOIN(2394096=978944) &gt; Filtering(HAVING:10) =&gt; Result<br>
 SubQuery: Filtering(WHERE:10) &gt; JOIN(23910=2390) =&gt; Result<br>-- 800만 인구 이상 도시의 국가코드, 국가이름, 도시이름, 도시인구수 출력 
@@ -7930,7 +6227,7 @@ JOIN (  SELECT countrycode, name, population
 		WHERE population &gt;= 800 * 10000
 	) AS city
 ON country.code = city.countrycode;
-복사Run<br>-- WHERE SubQuery
+Run복사<br>-- WHERE SubQuery
 -- 한국보다 인구가 많은 국가의 국가코드, 국가이름, 인구수, GNP 출력
 SELECT `Population`
 FROM country
@@ -7948,19 +6245,19 @@ WHERE `Population` &gt; (
 	FROM country
 	WHERE `Code` = 'KOR'
 );
-복사Run<br><br><br>InfoData Definition Language<br>
+Run복사<br><br><br>InfoData Definition Language<br>
 데이터 정의어<br>
 데이터 베이스, 테이블, 뷰, 인덱스등의 데이터 베이스 개체를 생성, 삭제, 변경에 사용<br>
 CREATE, DROP, ALTER, TRUNCATE<br>
 실행 즉시 DB에 적용<br><br><br>CREATE DATABASE &lt;database_name&gt;;
-복사Run<br>-- test 데이터 베이스 생성
+Run복사<br>-- test 데이터 베이스 생성
 CREATE DATABASE test;
-복사Run<br><br>CREATE TABLE &lt;table_name&gt; (
+Run복사<br><br>CREATE TABLE &lt;table_name&gt; (
 	column_name_1 column_data_type_1 column_constraint_1,
 	column_name_2 column_data_type_2 column_constraint_2,
 	...
 )
-복사Run<br>-- 제약조건이 없는 user1 테이블 생성
+Run복사<br>-- 제약조건이 없는 user1 테이블 생성
 CREATE TABLE user1(
 	user_id INT,
 	name Varchar(20),
@@ -7968,7 +6265,7 @@ CREATE TABLE user1(
 	age INT(3),
 	rdate DATE
 )
-복사Run<br>-- 제약조건이 있는 user2 테이블 생성
+Run복사<br>-- 제약조건이 있는 user2 테이블 생성
 CREATE TABLE user2(
 	user_id INT PRIMARY KEY AUTO_INCREMENT,
 	name Varchar(20) NOT NULL,
@@ -7976,10 +6273,10 @@ CREATE TABLE user2(
 	age INT(3) DEFAULT '30',
 	rdate TIMESTAMP default CURRENT_TIMESTAMP
 )
-복사Run<br><br>DROP FROM &lt;database_name&gt;
-복사Run<br>-- 테이블 전체를 모두 삭제 (DLL)
+Run복사<br><br>DROP FROM &lt;database_name&gt;
+Run복사<br>-- 테이블 전체를 모두 삭제 (DLL)
 DROP FROM user1
-복사Run<br>-- DATABASE
+Run복사<br>-- DATABASE
 -- tmp 데이터 베이스 생성
 CREATE DATABASE tmp;
 SHOW DATABASES;
@@ -8000,9 +6297,9 @@ CREATE TABLE tmp( id INT );
 
 -- tmp 테이블 삭제
 DROP TABLE tmp;
-복사Run<br><br>INSERT INTO &lt;table_name&gt;(&lt;column_name_1&gt;, &lt;column_name_2&gt;, ...)
+Run복사<br><br>INSERT INTO &lt;table_name&gt;(&lt;column_name_1&gt;, &lt;column_name_2&gt;, ...)
 VALUES(&lt;value_1&gt;, &lt;value_2&gt;, …)
-복사Run<br>-- user1 테이블에 user_id, namex, email, age, rdate를 입력
+Run복사<br>-- user1 테이블에 user_id, namex, email, age, rdate를 입력
 INSERT INTO user1(user_id, name, email, age, rdate)
 VALUES (1, "jin", "pdj@gmail.com", 30, now()),
 (2, "peter", "peter@daum.net", 33, '2017-02-20'),
@@ -8010,7 +6307,7 @@ VALUES (1, "jin", "pdj@gmail.com", 30, now()),
 (4, "po", "po@gmail.com", 43, '2002-09-16'),
 (5, "andy", "andy@gmail.com", 17, '2016-04-28'),
 (6, "jin", "jin1224@gmail.com", 33, '2013-09-02');
-복사Run<br>-- city_2 테이블 생성
+Run복사<br>-- city_2 테이블 생성
 CREATE TABLE city_2 (
 	Name VARCHAR(50),
 	CountryCode CHAR(3),
@@ -8023,14 +6320,14 @@ INSERT INTO city_2
 SELECT Name, CountryCode, District, Population
 FROM city
 WHERE Population &gt; 8000000;
-복사Run<br><br><br><br>ALTER TABLE `테이블 이름` ADD COLUMN `컬럼 명` `속성값`;
-복사Run<br>ALTER TABLE user ADD contents TEXT NOT NULL;
-복사Run<br><br>ALTER TABLE `테이블 아름` DROP COLUMN `컬럼 이름`;
-복사Run<br>ALTER TABLE user DROP contents;
-복사Run<br><br>ALTER TABLE 테이블명 RENAME COLUMN 변경할 컬럼명 TO 변경될 이름;
-복사Run<br>ALTER TABLE user RENAME COLUMN email TO mail;
-복사Run<br><br>ALTER TABLE `기존 테이블 이름` RENAME `새 테이블 이름`;
-복사Run<br><br>-- 사용중인 데이터베이스의 인코딩 방식 확인
+Run복사<br><br><br><br>ALTER TABLE `테이블 이름` ADD COLUMN `컬럼 명` `속성값`;
+Run복사<br>ALTER TABLE user ADD contents TEXT NOT NULL;
+Run복사<br><br>ALTER TABLE `테이블 아름` DROP COLUMN `컬럼 이름`;
+Run복사<br>ALTER TABLE user DROP contents;
+Run복사<br><br>ALTER TABLE 테이블명 RENAME COLUMN 변경할 컬럼명 TO 변경될 이름;
+Run복사<br>ALTER TABLE user RENAME COLUMN email TO mail;
+Run복사<br><br>ALTER TABLE `기존 테이블 이름` RENAME `새 테이블 이름`;
+Run복사<br><br>-- 사용중인 데이터베이스의 인코딩 방식 확인
 SHOW VARIABLES LIKE "character_set_database"
 
 -- test 데이터 베이스의 문자열 인코딩을 utf8으로 변경
@@ -8063,7 +6360,7 @@ ALTER TABLE user2 CONVERT TO character set utf8;
 -- DROP
 -- user2 테이블의 tmp 컬럼을 삭제
 ALTER TABLE user2 DROP tmp;
-복사Run<br><br>NoteForeign key를 설정하면 데이터의 무결성을 지킬수 있다.<br>
+Run복사<br><br>NoteForeign key를 설정하면 데이터의 무결성을 지킬수 있다.<br>
 UNIQUE 나 PRAMARY 제약조건이 있어야 설정이 가능하다.<br>-- user 테이블 생성
 	create table user(
 	user_id int primary key auto_increment,
@@ -8121,7 +6418,7 @@ where user_id = 1;
 -- 테이블 삭제도 안된다.
 drop table user;
 
-복사Run<br><br>NoteFOREIGN KEY로 참조되는 데이터를 수정 및 삭제할때 참조되는 데이터까지 수정이나 삭제하는 설정<br>
+Run복사<br><br>NoteFOREIGN KEY로 참조되는 데이터를 수정 및 삭제할때 참조되는 데이터까지 수정이나 삭제하는 설정<br>
 <br>CASCADE : 참조되는 테이블에서 데이터를 삭제하거나 수정하면, 참조하는 테이블에서도 삭제와 수정
 <br>SET NULL : 참조되는 테이블에서 데이터를 삭제하거나 수정하면, 참조하는 테이블의 데이터는 NULL로 변경
 <br>NO ACTION : 참조되는 테이블에서 데이터를 삭제하거나 수정해도, 참조하는 테이블의 데이터는 변경되지 않음
@@ -8163,20 +6460,20 @@ where user_id = 3;
 
 select * from user;
 select * from money;
-복사Run<br><br><br>USE employees;
+Run복사<br><br><br>USE employees;
 SELECT COUNT(*)
 FROM salaries; -- 2844047
-복사Run<br><br>SHOW INDEX FROM salaries;
-복사Run<br><br><br>-- 408ms
+Run복사<br><br>SHOW INDEX FROM salaries;
+Run복사<br><br><br>-- 408ms
 SELECT * FROM salaries WHERE to_date &lt; '1986-01-01';
-복사Run<br><br>-- 8.8s
+Run복사<br><br>-- 8.8s
 CREATE INDEX tdate ON salaries (to_date);
 
 SHOW INDEX FROM salaries;
-복사Run<br><br><br>-- 3ms
+Run복사<br><br><br>-- 3ms
 CREATE INDEX tdate ON salaries (to_date);
-복사Run<br>Note408ms -&gt; 3ms<br><br>DROP INDEX tdate ON salaries;
-복사Run<br><br>-- 변수선언
+Run복사<br>Note408ms -&gt; 3ms<br><br>DROP INDEX tdate ON salaries;
+Run복사<br><br>-- 변수선언
 SET @data = 1;
 
 -- 선언된 변수 출력
@@ -8189,7 +6486,7 @@ SELECT @RANK := @RANK + 1 AS ranking, countrycode, name, population
 FROM city
 ORDER BY population DESC
 LIMIT 5;
-복사Run<br><br><br>InfoData Control Language<br>
+Run복사<br><br><br>InfoData Control Language<br>
 데이터 제어어<br>
 사용자의 권한을 부여하거나 빼앗을때 사용<br>
 GRUNT, REVORKE, DENY<br><br>-- 사용자 권한 부여 명령어
@@ -8203,7 +6500,7 @@ GRANT ALL PRIVILEGES ON testDB.testTable TO myuser@'%' IDENTIFIED BY 'testPasswo
 
 -- 예제 (호스트 : 아이피)
 GRANT ALL PRIVILEGES ON testDB.testTable TO myuse@192.168.0.100 IDENTIFIED BY 'testPassword';
-복사Run<br><br>-- 권한 해제 명령어(INSERT, UPDATE, CREATE 권한 해제)
+Run복사<br><br>-- 권한 해제 명령어(INSERT, UPDATE, CREATE 권한 해제)
 REVOKE insert, update, create ON [dbname.table_name] TO [user@host];
  
 -- 권한 해제 명령어(전체 권한 해제)
@@ -8211,7 +6508,7 @@ REVOKE ALL ON [dbname.table_name] TO [user@host];
 
 -- 권한 확인 명령어
 SHOW GRANTS FOR [user@host];
-복사Run]]></description><link>root\dev\database\mysql-note.html</link><guid isPermaLink="false">root/dev/database/mysql note.md</guid><pubDate>Mon, 20 May 2024 16:36:19 GMT</pubDate></item><item><title><![CDATA[vscode mysql 플러그인 사용하기]]></title><description><![CDATA[ 
+Run복사]]></description><link>root\dev\database\mysql-note.html</link><guid isPermaLink="false">root/dev/database/mysql note.md</guid><pubDate>Mon, 20 May 2024 16:36:19 GMT</pubDate></item><item><title><![CDATA[vscode mysql 플러그인 사용하기]]></title><description><![CDATA[ 
  <br><br><img alt="Pasted image 20240515174351.png" src="lib\media\pasted-image-20240515174351.png"><br>
 <br>입력: mysql
 <br>클릭: MySQL
@@ -8238,7 +6535,7 @@ SHOW GRANTS FOR [user@host];
 <br>SELECT * FROM COLUMNS;
 
 SELECT `COLUMN_NAME` FROM COLUMNS;
-복사Run<br>
+Run복사<br>
 <br>클릭: Run
 <br>확인
 <br>클릭: Run
@@ -8608,9 +6905,9 @@ pip install psycopg2-binary
 <br><br>a = 10
 b = 20
 print(a + b)
-복사Run<br>a, b = 1, 2
+Run복사<br>a, b = 1, 2
 print(a, b) # 1, 2 완전 쩔어?!
-복사Run<br><br><br>phone = "갈럭시"
+Run복사<br><br><br>phone = "갈럭시"
 usage = 50.888
 
 print("%s 베터리 %d%% 남았음" % (phone, usage))
@@ -8621,36 +6918,36 @@ print("{} 베터리 {:.2f}% 남았음".format(phone, usage))
 
 print(f"{phone}베터리 {usage}% 남았음")
 print(f"{phone}베터리 {usage:.2f}% 남았음")
-복사Run<br><br><br><br>s = "Life is too short."
+Run복사<br><br><br><br>s = "Life is too short."
 s.split('i') # token
-복사Run<br><br>s = "Life is too short."
+Run복사<br><br>s = "Life is too short."
 # Life를 This pencil로 바꿔봅시다.
 s.replace("Life", "This pencil")
 s.replace(" ", "")
-복사Run<br><br><br><br>def sum(a, b):
+Run복사<br><br><br><br>def sum(a, b):
 	return a + b
 print(sum(1, 2))
-복사Run<br><br>f = lamda a, b : a + b
+Run복사<br><br>f = lamda a, b : a + b
 print(f(3, 5))
-복사Run<br><br>def call_back(lam):
+Run복사<br><br>def call_back(lam):
 	return lam(10)
 
 print(call_back(lambda num : num + 20)) # 30
-복사Run<br><br>def add(a, b)
+Run복사<br><br>def add(a, b)
 	'''
 	a, b: integer
 	return: a, b를 입력 받아서 더한 값
 	'''
 	c = a + b
 	return c
-복사Run<br><br>def add(a:int, b:int): -&gt; int
+Run복사<br><br>def add(a:int, b:int): -&gt; int
 	c = a + b
 	return c
-복사Run<br><br>def add_many(*args):
+Run복사<br><br>def add_many(*args):
     print(args) # (1, 2, 3, 4, 5)
 
 add_many(1, 2, 3, 4, 5)
-복사Run<br>튜플로 받을 수 있음<br><br><br>
+Run복사<br>튜플로 받을 수 있음<br><br><br>
 name = "kim"
 
 def change_name()
@@ -8659,12 +6956,12 @@ def change_name()
 change_name()
 
 print(name) # "what 쓰지마 이거"
-복사Run<br><br><br>Note배열이라고 하지 않고 리스트라고 함<br><br>
+Run복사<br><br><br>Note배열이라고 하지 않고 리스트라고 함<br><br>
 L3 = [1, "Hi", 3.14, [1, 2, 3]] 
 print(L3) # [1, 'Hi', 3.14, [1, 2, 3]]
-복사Run<br><br>L = [1, 2, 3, 4, 5]
+Run복사<br><br>L = [1, 2, 3, 4, 5]
 L[0] # 1
-복사Run<br><br># L의 첫번째부터 index2 까지 자르기
+Run복사<br><br># L의 첫번째부터 index2 까지 자르기
 L[0:2]
 # 두번째 부터 네번재까지 자르기
 L[1:4]
@@ -8690,21 +6987,21 @@ print(b) # [5, 3, 1]
 print(c) # [1, 2, 3, 4, 5] 
 print(d) # [1, 3, 5]
 
-복사Run<br><br>L = [1, 2, 3]
+Run복사<br><br>L = [1, 2, 3]
 L2 = [4, 5]
 print(L + L2) # [1, 2, 3, 4, 5]  concatenation
 
 L * 3 # [1, 2, 3, 1, 2, 3, 1, 2, 3]
 
-복사Run<br><br>L = [1, 2, 3]
+Run복사<br><br>L = [1, 2, 3]
 L = [1, 2, 3, 4, 5]
 L2 = [4, 5]
 print(L + L2) # [1, 2, 3, 4, 5, 4, 5]
-복사Run<br><br>L = []
+Run복사<br><br>L = []
 L.append(3)
 L.append(2)
 L.append(1)
-복사Run<br><br><br># sort()를 이용해 L을 정렬합니다.
+Run복사<br><br><br># sort()를 이용해 L을 정렬합니다.
 L = [4, 3, 16]
 sorted(L) # 원본 보존
 L
@@ -8712,11 +7009,11 @@ L.sort()
 L # 원본 훼손
 L.sort(reverse=True)
 L # 내림차
-복사Run<br><br>names = ["kim", "park", "chang", "jessica"]
+Run복사<br><br>names = ["kim", "park", "chang", "jessica"]
 names.sort(key=lambda s : len(s), reverse=True)
 
 names
-복사Run<br><br>
+Run복사<br><br>
 inputs = input("숫자 여러개 입력하라: e.g. 1, 2, 3, 4, ...")
 
 # 특정 원소 표현을 가지는 리스트를 만들고 싶을 때 사용
@@ -8725,13 +7022,13 @@ print(total, sum(total))
 
 # 매우 좋고만
 
-복사Run<br><br>def cut_string(word:str, separator:str = ",") -&gt; list:
+Run복사<br><br>def cut_string(word:str, separator:str = ",") -&gt; list:
 	return [w for w in word.split(separator)]
 
 print(cut_string("와, 이렇게, 하면, 어떨까?"))
 # ['와', ' 이렇게', ' 하면', ' 어떨까?']
 
-복사Run<br>## 입력: a, b, c, d, ...., asdf, qwer, dfd
+Run복사<br>## 입력: a, b, c, d, ...., asdf, qwer, dfd
 ## 출력: a b c d .... asdf qwer dfd
 ## 조건: split() 함수에서 ','를 쓰지 않고 빈 칸으로 잘라서 사용하시오.
 temp = "a, b, c, d, ...., asdf, qwer, dfd"
@@ -8747,15 +7044,15 @@ ourputs = [x[:-1] for x in temp.split()]
 
 for x in outputs:
 	print(x, end = " ")
-복사Run<br><br><br><br>arr:list = [1,2,3,4]
+Run복사<br><br><br><br>arr:list = [1,2,3,4]
 for elem in arr:
 	print(elem)
-복사Run<br><br><br><br>coffees = ['아메리카노', '카페라떼', '카페모카', '바닐라라떼', '핸드드립', '콜드브루']
+Run복사<br><br><br><br>coffees = ['아메리카노', '카페라떼', '카페모카', '바닐라라떼', '핸드드립', '콜드브루']
 prices = [4100, 4600, 4600, 5100, 6000, 5000]
-복사Run<br><br>for i in range(len(coffees)):
+Run복사<br><br>for i in range(len(coffees)):
 	if prices[i] &lt;= 5000:
 		print(f"{coffees[i]}: {prices[i]}원")
-복사Run<br><br>for t in enumerate(prices):
+Run복사<br><br>for t in enumerate(prices):
 	if t[1] &lt;= 5000:
 		print(coffees[t[0]])
 
@@ -8763,17 +7060,17 @@ prices = [4100, 4600, 4600, 5100, 6000, 5000]
 for i, price in enumerate(prices):
 	if price &lt;= 5000:
 		print(coffees[i])
-복사Run<br><br>for coffee, price in zip(coffees, prices):
+Run복사<br><br>for coffee, price in zip(coffees, prices):
 if price &lt;= 5000:
 	print(coffee)
-복사Run<br><br><br>a: int = 10
+Run복사<br><br><br>a: int = 10
 b: str = "this is string"
 c: float = 0.1
 d: float = 0.2
 a = "200" # 되기는 하는데 오류가 안뜨네.
 print(0.1 + 0.2)
 print(c + d) # 안된다...
-복사Run<br><br><br>what = True
+Run복사<br><br><br>what = True
 def huh():
 	if what:
 		print("wow")
@@ -8782,8 +7079,8 @@ def huh():
 huh()
 what = False
 huh()
-복사Run<br><br>test = False if 1 &lt; 2 else True
-복사Run<br><br><br>obj = {
+Run복사<br><br>test = False if 1 &lt; 2 else True
+Run복사<br><br><br>obj = {
 	"a": 10,
 	"b": "wowo",
 	"arr": [1, 2, 3]
@@ -8794,15 +7091,15 @@ print(obj["a"])
 print(obj["arr"][1])
 for key in obj:
 	print(f"key: {key}, value: {obj[key]}")
-복사Run<br><br><br>D = {'name': 'kim', 'phone': '01012345679', 'birth': '1234'}
+Run복사<br><br><br>D = {'name': 'kim', 'phone': '01012345679', 'birth': '1234'}
 
 D.keys() # dict_keys(['name', 'phone', 'birth'])
 D.values() # dict_values(['kim', '01012345679', '1234'])
 D.items() # dict_items([('name', 'kim'), ('phone', '01012345679'), ('birth', '1234')])
 print(D.get('name', 0)) # kim
-복사Run<br><br>"phone" in D # True
+Run복사<br><br>"phone" in D # True
 "1234" in D.values() # True
-복사Run<br><br><br>class Box():
+Run복사<br><br><br>class Box():
 	width = 100
 	height = 100
 	color = "#aaa"
@@ -8815,7 +7112,7 @@ print(D.get('name', 0)) # kim
 
 boxA = Box("boxA")
 boxA.intro()
-복사Run<br><br>class Notebook:
+Run복사<br><br>class Notebook:
 
 	def __init__(self, 
 							brand:str = "", 
@@ -8850,7 +7147,7 @@ nb = Notebook(
 	price = 7
 )
 nb.get_info()
-복사Run<br><br><br>class Box():
+Run복사<br><br><br>class Box():
 	width = 100
 	height = 100
 	color = "#aaa"
@@ -8874,7 +7171,7 @@ class PizzaBox(Box):
 nene = PizzaBox("nene")
 nene.intro()
 nene.huhOverride()
-복사Run<br><br><br>class Box():
+Run복사<br><br><br>class Box():
 	width = 100
 	height = 100
 	_color = "#aaa"
@@ -8913,14 +7210,14 @@ pizza = pizzaBox.getPizza()
 pizzaBox.checkPizza()
 print(f"Very delicious {pizza} Yum Yum~")
 pizzaBox.intro()
-복사Run<br><br><br>class Static:
+Run복사<br><br><br>class Static:
 	@staticmethod
 	def print_now():
 		print("ok")
 
 
 Static.print_now()
-복사Run<br><br><br>Note사용하기 위해서는 from abc import * 를 불러와야함.<br>from abc import *
+Run복사<br><br><br>Note사용하기 위해서는 from abc import * 를 불러와야함.<br>from abc import *
 
 class IBox():
 	@abstractclassmethod
@@ -8936,7 +7233,7 @@ class GoldBox(IBox):
 	pass
 
 print(GoldBox().name)
-복사Run<br><br><br>요론 느낌.<br><br>def so(func):
+Run복사<br><br><br>요론 느낌.<br><br>def so(func):
 	print("what!1")
 	func()
 	print("what!2")
@@ -8944,13 +7241,13 @@ print(GoldBox().name)
 @so
 def what():
 	print("뭐!!!")
-복사Run<br>def so(func):
+Run복사<br>def so(func):
 	print("what!1")
 	func()
 	print("what!2")
 
 so(lambda: print("뭐!!"))
-복사Run<br>function so(func) {
+Run복사<br>function so(func) {
 	console.log("what1");
 	func();
 	console.log("what2");
@@ -8959,7 +7256,7 @@ so(lambda: print("뭐!!"))
 so(() =&gt; {
 	console.log("뭐!!")
 })
-복사Run<br><br>def so(func):
+Run복사<br><br>def so(func):
 	def wrap():
 		print("what!1")
 		func()
@@ -8971,7 +7268,7 @@ def what():
 	print("뭐!!")
 
 what()
-복사Run<br>def so(func):
+Run복사<br>def so(func):
 	def wrap():
 		print("what!1")
 		func()
@@ -8980,7 +7277,7 @@ what()
 
 what = so(lambda: print("뭐!!"))
 what()
-복사Run<br>function so(func) {
+Run복사<br>function so(func) {
 	return () =&gt; {
 		console.log("what1");
 		func()
@@ -8994,7 +7291,7 @@ let what = wow(() =&gt; {
 
 what()
 
-복사Run<br>def so(func):
+Run복사<br>def so(func):
 	def wrap():
 		print("what!1")
 		func()
@@ -9006,7 +7303,7 @@ def what():
 
 huh = so(what)
 huh()
-복사Run<br>function so(func) {
+Run복사<br>function so(func) {
 	return () =&gt; {
 		console.log("what1");
 		func();
@@ -9021,14 +7318,14 @@ function what() {
 const huh = so(what);
 huh();
 
-복사Run<br><br><br>import re
-복사Run<br><br>oldman_id = "911210-1234567"
+Run복사<br><br><br>import re
+Run복사<br><br>oldman_id = "911210-1234567"
 res = re.search("(?&lt;=-\\d).+", oldman_id)
 print(res.group()) #234567
-복사Run<br>찾기<br><br>oldman_id = "911210-1234567"
+Run복사<br>찾기<br><br>oldman_id = "911210-1234567"
 print(re.sub("(?&lt;=-\\d).+", "******", oldman_id))
 # 911210-1******
-복사Run<br>치환<br><br><br>def div(a, b):
+Run복사<br>치환<br><br><br>def div(a, b):
     try:
         return a / b
     except:
@@ -9038,7 +7335,7 @@ print(re.sub("(?&lt;=-\\d).+", "******", oldman_id))
 div(9, 3)
 div("a", 5)
 div(8, 0)
-복사Run<br>def div(a, b):
+Run복사<br>def div(a, b):
     try:
         return a / b
     except ZeroDivisionError:
@@ -9050,7 +7347,7 @@ div(8, 0)
 div(9, 3)
 div("a", 5)
 div(8, 0)
-복사Run<br><br><br><br>inputs = input("숫자 여러개 입력하라: e.g. 1, 2, 3, 4, ...")
+Run복사<br><br><br><br>inputs = input("숫자 여러개 입력하라: e.g. 1, 2, 3, 4, ...")
 print(inputs)
 total = 0
 for x in inputs.split(","):
@@ -9058,23 +7355,23 @@ for x in inputs.split(","):
 	total += x
 print(total)
 
-복사Run<br><br><br><br>with open('./test.txt', 'r', encoding='utf-8') as f:
+Run복사<br><br><br><br>with open('./test.txt', 'r', encoding='utf-8') as f:
 	text = f.read()
 print(text)
-복사Run<br><br># f.readline()를 통해 data 폴더안에 있는 test.txt를 read mode로 열어봅니다.
+Run복사<br><br># f.readline()를 통해 data 폴더안에 있는 test.txt를 read mode로 열어봅니다.
 with open('./test.txt', 'r', encoding='utf-8')	as f:
 	 lines = f.readlines()
-복사Run<br><br># f.readlines()를 통해 data 폴더안에 있는 test.txt를 read mode로 열어봅니다.
+Run복사<br><br># f.readlines()를 통해 data 폴더안에 있는 test.txt를 read mode로 열어봅니다.
 txt = []
 with open('./test.txt', 'r', encoding='utf-8')	as f:
 	for line in f:
 		txt.append(line)
-복사Run<br># for문을 통해 data 폴더안에 있는 test.txt를 read mode로 열어서 출력해봅니다.
+Run복사<br># for문을 통해 data 폴더안에 있는 test.txt를 read mode로 열어서 출력해봅니다.
 with open('./test.txt', 'r', encoding='utf-8')	as f:
 	txt = [line for line in f]
 
 print(txt)
-복사Run<br><br># test.txt를 read mode로 열고 할 일이 끝나면 자동으로 닫는다.
+Run복사<br><br># test.txt를 read mode로 열고 할 일이 끝나면 자동으로 닫는다.
 output = []
 with open('./test.txt', 'r', encoding='utf-8')	as f:
 	for line in f:
@@ -9096,7 +7393,7 @@ with open('result.txt', 'r') as f:
 
 
 print(output)
-복사Run<br><br><br>import pickle   # serialization
+Run복사<br><br><br>import pickle   # serialization
 
 output = ["what", "one", "why?!"]
 
@@ -9107,7 +7404,7 @@ with open("result.pk", 'rb') as f:
     output2 = pickle.load(f)
     
 print(output2)
-복사Run<br>바이너리로 바꿔서 아주 빠르게 데이터들을 처리 할 수 있는 포멧<br><br><br><br>import file_name
+Run복사<br>바이너리로 바꿔서 아주 빠르게 데이터들을 처리 할 수 있는 포멧<br><br><br><br>import file_name
 
 file_name.func1()
 file_name.func2()
@@ -9127,49 +7424,49 @@ from file_name import func1 as f1, func2 as f2, func3 as f3 # ...
 f1()
 f2()
 f3()
-복사Run<br><br><br>def good_print():
+Run복사<br><br><br>def good_print():
 	print("this is good! wow!!")
 
 def what():
 	print("huh???")
-복사Run<br><br><br>import good
+Run복사<br><br><br>import good
 
 good.good_print()
 good.what()
-복사Run<br><br>import good as huh
+Run복사<br><br>import good as huh
 
 huh.good_print()
 huh.what()
-복사Run<br><br><br>from good import good_print, what
+Run복사<br><br><br>from good import good_print, what
 
 good_print()
 what()
-복사Run<br><br>from good import good_print as okey, what as the
+Run복사<br><br>from good import good_print as okey, what as the
 
 okey()
 the()
-복사Run<br><br><br>def good_print():
+Run복사<br><br><br>def good_print():
 	print("this is good! wow!!")
 
 def what():
 	print("huh???")
-복사Run<br><br><br>import module.good
+Run복사<br><br><br>import module.good
 
 module.good.good_print()
 module.good.what()
-복사Run<br><br>import module.good as good
+Run복사<br><br>import module.good as good
 
 good.good_print()
 good.what()
-복사Run<br><br><br>from module.good import good_print, what
+Run복사<br><br><br>from module.good import good_print, what
 
 good_print()
 what()
-복사Run<br><br>from module.good import good_print as okey, what as the
+Run복사<br><br>from module.good import good_print as okey, what as the
 
 okey()
 the()
-복사Run<br><br>import sys
+Run복사<br><br>import sys
 
 def huh():
 	print(sys.argv)
@@ -9179,7 +7476,7 @@ def huh():
 
 if __name__ == "__main__":
 	huh()
-복사Run<br>python what_the.py ok what huh
+Run복사<br>python what_the.py ok what huh
 복사]]></description><link>root\dev\python\python-note.html</link><guid isPermaLink="false">root/dev/python/python note.md</guid><pubDate>Fri, 31 May 2024 02:49:36 GMT</pubDate></item><item><title><![CDATA[이어드림스쿨 실습용 wsl 배포 import]]></title><description><![CDATA[ 
  <br>Note이어드림스쿨 윈도우용 환경가이드 세팅을 참고하여 만든 wsl 통파일 배포
 
@@ -9246,9 +7543,9 @@ processors = 2<br>
 
 sudo를 넣지 않으면 권한이 없기 때문에 모든 디렉토리를 순회하지 않는다.<br><img alt="Pasted image 20240809103759.png" src="lib\media\pasted-image-20240809103759.png"><br>94.5 gb원래는 더 많았지만<br>
 컨테이너를 지워서 용량이 축소 된 화면<br><br><br><a rel="noopener" class="external-link" href="https://uutopia.tistory.com/70" target="_blank">https://uutopia.tistory.com/70</a><br><br>wsl --shutdown
-복사Run<br><br>(Get-ChildItem -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Lxss | Where-Object {$_.GetValue('DistributionName') -eq 'Ubuntu' }).GetValue('BasePath') + '\ext4.vhdx'
-복사Run<br><br>diskpart
-복사Run<br>select vdisk file=".vdisk_경로"
+Run복사<br><br>(Get-ChildItem -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Lxss | Where-Object {$_.GetValue('DistributionName') -eq 'Ubuntu' }).GetValue('BasePath') + '\ext4.vhdx'
+Run복사<br><br>diskpart
+Run복사<br>select vdisk file=".vdisk_경로"
 attach vdisk readonly
 compact vdisk
 detach vdisk
@@ -9261,7 +7558,7 @@ detach vdisk
 <br>Compress-VHDX.bat 더블 클릭 혹은 우클릭 -&gt; 관리자 모드 실행
 ]]></description><link>root\dev\wsl\wsl-용량-확보하기.html</link><guid isPermaLink="false">root/dev/wsl/wsl 용량 확보하기.md</guid><pubDate>Sun, 11 Aug 2024 05:36:07 GMT</pubDate><enclosure url="lib\media\pasted-image-20240809103129.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240809103129.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[wsl note]]></title><description><![CDATA[ 
  <br><br>wsl --install
-복사Run<br><br><br><img alt="Pasted image 20240330105616.png" src="lib\media\pasted-image-20240330105616.png"><br>\\wsl$
+Run복사<br><br><br><img alt="Pasted image 20240330105616.png" src="lib\media\pasted-image-20240330105616.png"><br>\\wsl$
 복사<br><br><br><br>
 <br><a data-tooltip-position="top" aria-label="https://kit2013.tistory.com/187" rel="noopener" class="external-link" href="https://kit2013.tistory.com/187" target="_blank">useradd, adduser 차이</a>
 <br>sudo usermod username
