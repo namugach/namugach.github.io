@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 11 Aug 2024 06:13:23 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 11 Aug 2024 06:13:21 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[mysql 계정 생성시 %의 의미]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 12 Aug 2024 18:59:19 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 12 Aug 2024 18:59:16 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[mysql 계정 생성시 %의 의미]]></title><description><![CDATA[ 
  <br><br>
 <br>%: MySQL에서 %는 "모든 호스트"를 의미해. 즉, %를 사용하면 어떤 IP 주소에서든지 이 사용자 계정으로 MySQL 서버에 접근할 수 있도록 허용하는 거야.
 <br><br>
@@ -30,7 +30,90 @@ Run복사
 <br>특정 IP 주소: 특정 IP 주소에서만 접근 허용.
 <br>호스트 이름: 특정 호스트 이름에서만 접근 허용.
 <br>이렇게 설정을 통해 MySQL 서버에 접근할 수 있는 사용자 계정과 그 계정이 접속할 수 있는 호스트를 세밀하게 제어할 수 있어. 추가로 궁금한 점이 있으면 언제든지 물어봐!<br>
-이렇게 만드는데, '계정명'@'% 이 부분에서 % 부분에 대해서 알려줘]]></description><link>root\dev\data-pipe-line\server\local\mysql-계정-생성시-의-의미.html</link><guid isPermaLink="false">root/dev/data pipe line/server/local/mysql 계정 생성시 %의 의미.md</guid><pubDate>Tue, 30 Jul 2024 15:36:37 GMT</pubDate></item><item><title><![CDATA[0.도커와 쿠버네티스]]></title><description><![CDATA[ 
+이렇게 만드는데, '계정명'@'% 이 부분에서 % 부분에 대해서 알려줘]]></description><link>root\dev\data-pipe-line\server\local\mysql-계정-생성시-의-의미.html</link><guid isPermaLink="false">root/dev/data pipe line/server/local/mysql 계정 생성시 %의 의미.md</guid><pubDate>Tue, 30 Jul 2024 15:36:37 GMT</pubDate></item><item><title><![CDATA[docker mlops 빌드 및 실행]]></title><description><![CDATA[ 
+ <br><br><br>sudo apt-get update
+sudo apt-get install -y unzip
+mkdir workspace
+cd workspace
+wget https://github.com/namugach/mlops-study/archive/refs/heads/master.zip
+unzip master.zip
+cd mlops-study-master/mlops-movie-predictor
+복사<br><br><a data-href="docker network 생성" href="root\dev\mlops\docker-network-생성.html" class="internal-link" target="_self" rel="noopener">docker network 생성</a><br><br><br>docker build -t my-mlops:v1 .
+복사<br><br><br>docker container run -itd --name my-mlops \
+  -e WANDB_API_KEY=c9177943bdd16a302be32788ed7c28f35347f005 \
+  -e DB_USER=root \
+  -e DB_PASSWORD=root \
+  -e DB_HOST=my-mlops-db \
+  -e DB_PORT=3306 \
+  --network mlops \
+  my-mlops:v1
+복사<br><br><br><br>docker exec -it my-mlops env
+복사<br><br>PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+HOSTNAME=ca0e5d05d3c7
+TERM=xterm
+DB_PORT=3306
+WANDB_API_KEY=c9177943bdd16a302be32788ed7c28f35347f005
+DB_USER=root
+DB_PASSWORD=root
+DB_HOST=my-mlops-db
+LANG=C.UTF-8
+GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D
+PYTHON_VERSION=3.11.4
+PYTHON_PIP_VERSION=23.1.2
+PYTHON_SETUPTOOLS_VERSION=65.5.1
+PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/0d8570dc44796f4369b652222cf176b3db6ac70e/public/get-pip.py
+PYTHON_GET_PIP_SHA256=96461deced5c2a487ddc65207ec5a9cffeca0d34e7af7ea1afc470ff0d746207
+HOME=/root
+복사<br><br><br>실행하기 전에<a data-href="mlops mysql 컨테이너 연결" href="root\dev\mlops\mlops-mysql-컨테이너-연결.html" class="internal-link" target="_self" rel="noopener">mlops mysql 컨테이너 연결</a>
+이거부터 확인<br><br>docker exec -it my-mlops python src/main.py preprocessing --date 240813
+복사<br><br>docker exec -it my-mlops python src/main.py train --model_name movie_predictor --optimizer adam
+복사<br><br><br>docker exec -it my-mlops python src/main.py inference \
+--data "[1, 1209290, 4508, 7.577, 1204.764]" \
+--batch_size 1
+복사<br><br>docker exec -it my-mlops python src/main.py inference
+복사<br><br><br><br>docker container run -itd --name my-mlops-api \
+-e WANDB_API_KEY=c9177943bdd16a302be32788ed7c28f35347f005 \
+-e DB_USER=root \
+-e DB_PASSWORD=root \
+-e DB_HOST=my-mlops-db \
+-e DB_PORT=3306 \
+-p 9999:8000 \
+--network mlops \
+my-mlops:v1
+복사<br><br>docker exec -it my-mlops-api python src/main.py train --model_name movie_predictor --optimizer adam
+복사<br><br>docker exec -d my-mlops-api bash start_api_server.sh
+복사<br><br><br>http://공개_ip:9999/docs
+복사<br><br>http://127.0.0.1:9999/docs
+복사]]></description><link>root\dev\mlops\docker-mlops-빌드-및-실행.html</link><guid isPermaLink="false">root/dev/mlops/docker mlops 빌드 및 실행.md</guid><pubDate>Mon, 12 Aug 2024 18:54:55 GMT</pubDate></item><item><title><![CDATA[docker network 생성]]></title><description><![CDATA[ 
+ <br><br>docker network create --gateway 172.20.0.1 --subnet 172.20.0.0/24 mlops
+복사<br><br><br>ubuntu@ip-172-31-23-166:~$ docker network ls
+NETWORK ID     NAME      DRIVER    SCOPE
+14fc8c65bc96   bridge    bridge    local
+ae569fc79b54   host      host      local
+299688b5d3d9   mlops     bridge    local
+06be7d2218af   none      null      local
+복사<br><br><br>docker run -itd --name my-mlops --network mlops python:3.11-buster
+복사]]></description><link>root\dev\mlops\docker-network-생성.html</link><guid isPermaLink="false">root/dev/mlops/docker network 생성.md</guid><pubDate>Mon, 12 Aug 2024 18:56:01 GMT</pubDate></item><item><title><![CDATA[mlops mysql 컨테이너 연결]]></title><description><![CDATA[ 
+ <br><br>docker container run -itd --name my-mlops-db \
+  --network mlops \
+  -e MYSQL_ROOT_PASSWORD=root \
+  mysql:8.0.39
+복사<br><br><br># 컨테이너 진입
+docker exec -it my-mlops-db bash
+
+# MySQL 로그인
+mysql -u root -p  # root 패스워드 입력
+
+# 데이터베이스 생성
+create database mlops;
+
+# 생성 확인
+show databases;
+
+# 패스워드 인증 방식 변경(python mysqlclient 라이브러리 호환성)
+alter user 'root'@'%' identified with mysql_native_password by 'root';
+flush privileges;
+복사]]></description><link>root\dev\mlops\mlops-mysql-컨테이너-연결.html</link><guid isPermaLink="false">root/dev/mlops/mlops mysql 컨테이너 연결.md</guid><pubDate>Mon, 12 Aug 2024 18:58:42 GMT</pubDate></item><item><title><![CDATA[0.도커와 쿠버네티스]]></title><description><![CDATA[ 
  <br><br>
 <br>우분투
 <br>t2.xlarge
