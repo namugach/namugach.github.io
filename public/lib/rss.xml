@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 15 Aug 2024 18:24:52 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 15 Aug 2024 18:24:48 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[mysql 계정 생성시 %의 의미]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 15 Aug 2024 18:30:47 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 15 Aug 2024 18:30:44 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[mysql 계정 생성시 %의 의미]]></title><description><![CDATA[ 
  <br><br>
 <br>%: MySQL에서 %는 "모든 호스트"를 의미해. 즉, %를 사용하면 어떤 IP 주소에서든지 이 사용자 계정으로 MySQL 서버에 접근할 수 있도록 허용하는 거야.
 <br><br>
@@ -55,7 +55,7 @@ RUN cp /home/ubuntu/.bashrc /root/.bashrc
 
 
 # Docker 데몬과 SSH 데몬을 동시에 실행
-CMD ["/bin/bash", "-c", "dockerd &amp; /usr/sbin/sshd -D"]
+CMD ["/bin/bash", "-c", "dockerd"]
 복사<br><br>docker build -t ubuntu-dind:v1 .
 복사<br><br>중요!!docker 컨테이너 안에서 docker를 사용할 때는
 꼭--privileged 
@@ -101,7 +101,7 @@ git status
 <br>입력: DOCKERHUB_USER
 <br>입력: docker hub 아이디
 <br>클릭
-<br><img alt="Pasted image 20240814024116.png" src="lib\media\pasted-image-20240814024116.png">]]></description><link>root\dev\mloops\mlops-docker-github-action-연결하기.html</link><guid isPermaLink="false">root/dev/mloops/mlops docker github action 연결하기.md</guid><pubDate>Thu, 15 Aug 2024 18:24:11 GMT</pubDate><enclosure url="lib\media\pasted-image-20240814013010.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240814013010.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[0.도커와 쿠버네티스]]></title><description><![CDATA[ 
+<br><img alt="Pasted image 20240814024116.png" src="lib\media\pasted-image-20240814024116.png">]]></description><link>root\dev\mloops\mlops-docker-github-action-연결하기.html</link><guid isPermaLink="false">root/dev/mloops/mlops docker github action 연결하기.md</guid><pubDate>Thu, 15 Aug 2024 18:29:00 GMT</pubDate><enclosure url="lib\media\pasted-image-20240814013010.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240814013010.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[0.도커와 쿠버네티스]]></title><description><![CDATA[ 
  <br><br>
 <br>우분투
 <br>t2.xlarge

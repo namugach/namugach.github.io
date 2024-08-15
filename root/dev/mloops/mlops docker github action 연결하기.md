@@ -50,7 +50,7 @@ RUN cp /home/ubuntu/.bashrc /root/.bashrc
 
 
 # Docker 데몬과 SSH 데몬을 동시에 실행
-CMD ["/bin/bash", "-c", "dockerd & /usr/sbin/sshd -D"]
+CMD ["/bin/bash", "-c", "dockerd"]
 ```
 
 ### 빌드
