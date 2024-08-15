@@ -1,4 +1,92 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link></link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Tue, 13 Aug 2024 18:05:38 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Tue, 13 Aug 2024 18:05:09 GMT</pubDate><ttl>60</ttl><dc:creator></dc:creator><item><title><![CDATA[0.도커와 쿠버네티스]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 15 Aug 2024 17:22:43 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 15 Aug 2024 17:22:40 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[mysql 계정 생성시 %의 의미]]></title><description><![CDATA[ 
+ <br><br>
+<br>%: MySQL에서 %는 "모든 호스트"를 의미해. 즉, %를 사용하면 어떤 IP 주소에서든지 이 사용자 계정으로 MySQL 서버에 접근할 수 있도록 허용하는 거야.
+<br><br>
+<br>
+모든 호스트에서 접근 가능:
+CREATE USER 'ubuntu'@'%' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'%' WITH GRANT OPTION;
+Run복사
+이 명령어는 ubuntu라는 사용자 계정이 어떤 IP 주소에서든지 접속할 수 있도록 설정해. 즉, server3에서뿐만 아니라 다른 모든 서버에서도 이 계정을 사용해 MySQL 서버에 접근할 수 있어.
+
+<br>
+특정 IP 주소에서만 접근 가능:
+만약 특정 IP 주소에서만 접근을 허용하려면 % 대신 그 IP 주소를 사용하면 돼. 예를 들어 172.17.0.3에서만 접근을 허용하려면:
+CREATE USER 'ubuntu'@'172.17.0.3' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'172.17.0.3' WITH GRANT OPTION;
+Run복사
+이 경우, ubuntu 사용자는 172.17.0.3에서만 MySQL 서버에 접근할 수 있어.
+
+<br>
+특정 호스트 이름에서 접근 가능:
+특정 호스트 이름을 사용해 접근을 제한할 수도 있어. 예를 들어 server1.example.com에서만 접근을 허용하려면:
+CREATE USER 'ubuntu'@'server1.example.com' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'server1.example.com' WITH GRANT OPTION;
+Run복사
+이 경우, ubuntu 사용자는 server1.example.com이라는 호스트 이름으로만 MySQL 서버에 접근할 수 있어.
+
+<br><br>
+<br>%: 모든 호스트에서 접근 허용.
+<br>특정 IP 주소: 특정 IP 주소에서만 접근 허용.
+<br>호스트 이름: 특정 호스트 이름에서만 접근 허용.
+<br>이렇게 설정을 통해 MySQL 서버에 접근할 수 있는 사용자 계정과 그 계정이 접속할 수 있는 호스트를 세밀하게 제어할 수 있어. 추가로 궁금한 점이 있으면 언제든지 물어봐!<br>
+이렇게 만드는데, '계정명'@'% 이 부분에서 % 부분에 대해서 알려줘]]></description><link>root\dev\data-pipe-line\server\local\mysql-계정-생성시-의-의미.html</link><guid isPermaLink="false">root/dev/data pipe line/server/local/mysql 계정 생성시 %의 의미.md</guid><pubDate>Tue, 30 Jul 2024 15:36:37 GMT</pubDate></item><item><title><![CDATA[vscode 개발 컨테이너 확장 플러그인 자동 설치]]></title><description><![CDATA[ 
+ <br>개발 컨테이너에 들어갈 때마다
+<br>매번 vscode 확장 눌러서 플러그인 설치하는 게 너무 지겹기 때문에.
+<br>그리고 어떨 때 뭐가 어떻게 동작하는 지에 대한 애매함이 싫기 때문에.
+<br>또 한 편해지고 싶기 때문에..
+<br>Check아래의 설정을 한 다음에 vscode를 들어가면<br>
+지정해 놓은 플러그인들이 자동으로 설치 돼 있는 걸 볼 수 있다.<br><br><img alt="Pasted image 20240816005409.png" src="lib\media\pasted-image-20240816005409.png"><br>
+<br>클릭: 확장
+<br>입력: 플러그인 이름
+<br>우클릭: 메뉴 열기
+<br>클릭: 복사
+<br>붙여넣기: 복사 값 확인
+<br><br><br><br><img alt="Pasted image 20240816011058.png" src="lib\media\pasted-image-20240816011058.png"><br>
+<br>클릭: 파일
+<br>클릭: 기본 설정
+<br>클릭: 설정
+<br><img alt="Pasted image 20240816010652.png" src="lib\media\pasted-image-20240816010652.png"><br>
+<br>확인: 설정
+<br>입력: Extensions
+<br>확인: 옵션
+<br>클릭: 항목 추가
+<br>입력: 확장 ID
+<br>클릭: 확인
+<br>확인: 추가된 확장 ID
+<br><br><br>
+<br>개발 컨테이너에 기본적으로 설치할 확장 프로그램을 지정
+<br>로컬 설치 여부와 관계없이 항상 컨테이너에 설치
+<br><br>
+<br>개발 컨테이너 내에서 사용할 확장 프로그램을 지정
+<br>로컬 VS Code에 이미 설치된 확장 프로그램 중에서 컨테이너에도 설치할 것들을 선택
+<br><br>
+<br>VS Code의 원격 개발 기능 중 터널링을 사용할 때 기본적으로 설치할 확장 프로그램을 지정
+<br><br>
+<br>SSH를 통한 원격 개발 시 기본적으로 설치할 확장 프로그램을 지정
+<br><br><br>위의 옵션들은일괄 처리이지만.<br>
+이것의 경우엔 컨테이너 이미지 하나에 해당한다.<br><br><img alt="Pasted image 20240816011736.png" src="lib\media\pasted-image-20240816011736.png"><br>
+<br>활성: 터미널
+<br>입력: docker container run -itd ubuntu:24.04
+<br>클릭: docker 확장
+<br>우클릭: 활성화된 컨테이너
+<br>클릭: Attach Visual Studio Code
+<br>클릭: vscode로 열기.
+<br><br><img alt="Pasted image 20240816012520.png" src="lib\media\pasted-image-20240816012520.png"><br>
+<br>확인: docker container 인지
+<br>클릭: 확장 관리
+<br>입력: mysql
+<br>우클릭: 메뉴 열기
+<br>클릭: devcontainer.json에 추가
+<br>클릭: 개발 컨테이너 구성
+<br><br><img alt="Pasted image 20240816012918.png" src="lib\media\pasted-image-20240816012918.png"><br>
+<br>확인: 플러그인 ID
+<br>우클릭: 메뉴활성
+<br>클릭: 파일 탐색기에 표시
+<br>확인: 파일 경로
+<br>확인: 파일
+<br>5번은컨테이너 이미지가 달라질 때마다 생기는 것<br><br><br>저 위의 옵션들을 다 제거 했음에도 불구하고<br>
+컨테이너를 생성 할 때마다 계속 살아남는 플러그인들이 몇몇 있다.<br>그것은 무엇일까..]]></description><link>root\dev\vscode\vscode-개발-컨테이너-확장-플러그인-자동-설치.html</link><guid isPermaLink="false">root/dev/vscode/vscode 개발 컨테이너 확장 플러그인 자동 설치.md</guid><pubDate>Thu, 15 Aug 2024 17:20:28 GMT</pubDate><enclosure url="lib\media\pasted-image-20240816005409.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240816005409.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[0.도커와 쿠버네티스]]></title><description><![CDATA[ 
  <br><br>
 <br>우분투
 <br>t2.xlarge
@@ -5149,39 +5237,7 @@ root-ubuntu:24.01-mysql \
   obsidiandynamics/kafdrop
 복사<br><br>컨테이너가 실행된 후 브라우저를 열고 다음 URL로 접속합니다.<br>http://localhost:9000
 복사<br>http://172.17.0.2:9000
-복사<br>이제 Kafdrop UI를 통해 Kafka 클러스터의 여러 브로커를 모니터링하고 관리할 수 있습니다.<br><br><br>브로커 서버가 Docker 컨테이너 내에서 실행되고 있다면, Docker 네트워크 설정이 올바르게 되어 있는지 확인해야 합니다. 브로커 컨테이너와 Kafdrop 컨테이너가 동일한 네트워크에 있어야 통신이 가능합니다.<br><br>위 예시에서는 브로커 호스트가 server1, server2, server3이고, 포트가 9092로 동일하다고 가정했습니다. 실제 환경에서는 호스트명과 포트 번호가 다를 수 있으니 환경에 맞게 수정하세요.<br><br>여러 Kafka 브로커를 사용하는 경우, Docker 명령어에서 --add-host 옵션을 사용해 브로커 호스트를 추가하고, KAFKA_BROKERCONNECT 환경 변수에 여러 브로커를 쉼표로 구분하여 설정합니다. 이를 통해 Kafdrop을 사용해 여러 브로커가 있는 Kafka 클러스터를 편리하게 관리할 수 있습니다.]]></description><link>root\dev\data-pipe-line\server\local\kafdrop-kafka-클러스터-모니터링.html</link><guid isPermaLink="false">root/dev/data pipe line/server/local/Kafdrop kafka 클러스터 모니터링.md</guid><pubDate>Sat, 03 Aug 2024 13:19:25 GMT</pubDate></item><item><title><![CDATA[mysql 계정 생성시 %의 의미]]></title><description><![CDATA[ 
- <br><br>
-<br>%: MySQL에서 %는 "모든 호스트"를 의미해. 즉, %를 사용하면 어떤 IP 주소에서든지 이 사용자 계정으로 MySQL 서버에 접근할 수 있도록 허용하는 거야.
-<br><br>
-<br>
-모든 호스트에서 접근 가능:
-CREATE USER 'ubuntu'@'%' IDENTIFIED BY '1234';
-GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'%' WITH GRANT OPTION;
-Run복사
-이 명령어는 ubuntu라는 사용자 계정이 어떤 IP 주소에서든지 접속할 수 있도록 설정해. 즉, server3에서뿐만 아니라 다른 모든 서버에서도 이 계정을 사용해 MySQL 서버에 접근할 수 있어.
-
-<br>
-특정 IP 주소에서만 접근 가능:
-만약 특정 IP 주소에서만 접근을 허용하려면 % 대신 그 IP 주소를 사용하면 돼. 예를 들어 172.17.0.3에서만 접근을 허용하려면:
-CREATE USER 'ubuntu'@'172.17.0.3' IDENTIFIED BY '1234';
-GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'172.17.0.3' WITH GRANT OPTION;
-Run복사
-이 경우, ubuntu 사용자는 172.17.0.3에서만 MySQL 서버에 접근할 수 있어.
-
-<br>
-특정 호스트 이름에서 접근 가능:
-특정 호스트 이름을 사용해 접근을 제한할 수도 있어. 예를 들어 server1.example.com에서만 접근을 허용하려면:
-CREATE USER 'ubuntu'@'server1.example.com' IDENTIFIED BY '1234';
-GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'server1.example.com' WITH GRANT OPTION;
-Run복사
-이 경우, ubuntu 사용자는 server1.example.com이라는 호스트 이름으로만 MySQL 서버에 접근할 수 있어.
-
-<br><br>
-<br>%: 모든 호스트에서 접근 허용.
-<br>특정 IP 주소: 특정 IP 주소에서만 접근 허용.
-<br>호스트 이름: 특정 호스트 이름에서만 접근 허용.
-<br>이렇게 설정을 통해 MySQL 서버에 접근할 수 있는 사용자 계정과 그 계정이 접속할 수 있는 호스트를 세밀하게 제어할 수 있어. 추가로 궁금한 점이 있으면 언제든지 물어봐!<br>
-이렇게 만드는데, '계정명'@'% 이 부분에서 % 부분에 대해서 알려줘]]></description><link>root\dev\data-pipe-line\server\local\mysql-계정-생성시-의-의미.html</link><guid isPermaLink="false">root/dev/data pipe line/server/local/mysql 계정 생성시 %의 의미.md</guid><pubDate>Tue, 30 Jul 2024 15:36:37 GMT</pubDate></item><item><title><![CDATA[ssh 접속시 yes 입력 생략하기]]></title><description><![CDATA[ 
+복사<br>이제 Kafdrop UI를 통해 Kafka 클러스터의 여러 브로커를 모니터링하고 관리할 수 있습니다.<br><br><br>브로커 서버가 Docker 컨테이너 내에서 실행되고 있다면, Docker 네트워크 설정이 올바르게 되어 있는지 확인해야 합니다. 브로커 컨테이너와 Kafdrop 컨테이너가 동일한 네트워크에 있어야 통신이 가능합니다.<br><br>위 예시에서는 브로커 호스트가 server1, server2, server3이고, 포트가 9092로 동일하다고 가정했습니다. 실제 환경에서는 호스트명과 포트 번호가 다를 수 있으니 환경에 맞게 수정하세요.<br><br>여러 Kafka 브로커를 사용하는 경우, Docker 명령어에서 --add-host 옵션을 사용해 브로커 호스트를 추가하고, KAFKA_BROKERCONNECT 환경 변수에 여러 브로커를 쉼표로 구분하여 설정합니다. 이를 통해 Kafdrop을 사용해 여러 브로커가 있는 Kafka 클러스터를 편리하게 관리할 수 있습니다.]]></description><link>root\dev\data-pipe-line\server\local\kafdrop-kafka-클러스터-모니터링.html</link><guid isPermaLink="false">root/dev/data pipe line/server/local/Kafdrop kafka 클러스터 모니터링.md</guid><pubDate>Sat, 03 Aug 2024 13:19:25 GMT</pubDate></item><item><title><![CDATA[ssh 접속시 yes 입력 생략하기]]></title><description><![CDATA[ 
  <br><br>SSH 서버에 처음 접속할 때 "yes"를 입력하는 과정은 서버의 호스트 키를 확인하고 저장하는 과정이야. 이 과정을 자동으로 생략하려면 StrictHostKeyChecking 옵션을 사용하면 돼.<br>다음과 같은 방법을 사용해봐:<br>
 <br>명령어에 직접 추가하기:
 <br>ssh -o StrictHostKeyChecking=no user@hostname
@@ -5775,7 +5831,7 @@ docker run -itd \
 <br>선택
 <br>역시 비번: password
 <br>ok
-<br><br><br><img alt="Pasted image 20240501004958.png" src="lib\media\pasted-image-20240501004958.png"><br>baam!!]]></description><link>root\dev\database\mariadb\ec2-mariadb-workbench-연결.html</link><guid isPermaLink="false">root/dev/database/mariaDB/EC2 - mariaDB workbench 연결.md</guid><pubDate>Tue, 30 Apr 2024 16:04:19 GMT</pubDate><enclosure url="lib\media\pasted-image-20240501003521.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;lib\media\pasted-image-20240501003521.png&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[mariaDB 설치]]></title><description><![CDATA[ 
+<br><br><br><img alt="Pasted image 20240501004958.png" src="lib\media\pasted-image-20240501004958.png"><br>baam!!]]></description><link>root\dev\database\mariadb\ec2-mariadb-workbench-연결.html</link><guid isPermaLink="false">root/dev/database/mariaDB/EC2 - mariaDB workbench 연결.md</guid><pubDate>Tue, 30 Apr 2024 16:04:19 GMT</pubDate><enclosure url="lib\media\pasted-image-20240501003521.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240501003521.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[mariaDB 설치]]></title><description><![CDATA[ 
  <br><br>
 <br>22.04 "jammy"
 <br>10.6
@@ -6540,7 +6596,7 @@ Run복사<br>
 <br>확인
 <br>클릭: Run
 <br>확인
-]]></description><link>root\dev\database\vscode-mysql-플러그인-사용하기.html</link><guid isPermaLink="false">root/dev/database/vscode mysql 플러그인 사용하기.md</guid><pubDate>Wed, 15 May 2024 12:57:49 GMT</pubDate><enclosure url="lib\media\pasted-image-20240515174351.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;lib\media\pasted-image-20240515174351.png&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[도커 설치 및 기본 사용법]]></title><description><![CDATA[ 
+]]></description><link>root\dev\database\vscode-mysql-플러그인-사용하기.html</link><guid isPermaLink="false">root/dev/database/vscode mysql 플러그인 사용하기.md</guid><pubDate>Wed, 15 May 2024 12:57:49 GMT</pubDate><enclosure url="lib\media\pasted-image-20240515174351.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240515174351.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[도커 설치 및 기본 사용법]]></title><description><![CDATA[ 
  <br><br><br>sudo wget -qO- http://get.docker.com/ | sh
 복사<br><br>
 <br>도커는 실행할 때, 관리자 권한으로 실행 해야 한다.
@@ -6659,7 +6715,7 @@ docker rmi container_name
 복사]]></description><link>root\dev\docker\docker-note.html</link><guid isPermaLink="false">root/dev/docker/docker note.md</guid><pubDate>Sun, 05 May 2024 15:36:20 GMT</pubDate></item><item><title><![CDATA[간단 ssh github 인증]]></title><description><![CDATA[ 
  <br><br> ssh-keygen -t rsa -C "your_email@example.com"
 복사<br><br><br><img alt="Pasted image 20240417140113.png" src="lib\media\pasted-image-20240417140113.png"><br><br><br>ssh -T git@github.com
-복사<br>CheckHi [user-name]! You've successfully authenticated, but GitHub does not provide shell access.]]></description><link>root\dev\github\간단-ssh-github-인증.html</link><guid isPermaLink="false">root/dev/github/간단 ssh github 인증.md</guid><pubDate>Thu, 18 Apr 2024 15:29:40 GMT</pubDate><enclosure url="lib\media\pasted-image-20240417140113.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;lib\media\pasted-image-20240417140113.png&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[이어드림 DE ssh 보안 업데이트 수동]]></title><description><![CDATA[ 
+복사<br>CheckHi [user-name]! You've successfully authenticated, but GitHub does not provide shell access.]]></description><link>root\dev\github\간단-ssh-github-인증.html</link><guid isPermaLink="false">root/dev/github/간단 ssh github 인증.md</guid><pubDate>Thu, 18 Apr 2024 15:29:40 GMT</pubDate><enclosure url="lib\media\pasted-image-20240417140113.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240417140113.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[이어드림 DE ssh 보안 업데이트 수동]]></title><description><![CDATA[ 
  <br>진짜 중요!master-key.pem과<br>
 같은 디렉토리에서 작업을 해야함<br><br>mkdir ssh-connection
 cd ssh-connection
@@ -6878,7 +6934,7 @@ sudo glances
 복사<br><br>sudo apt -y install all
 
 dstat --all
-복사<br><img alt="Pasted image 20240429173923.png" src="lib\media\pasted-image-20240429173923.png"><br>과부화 테스트도 가능]]></description><link>root\dev\linux\ubuntu-node.html</link><guid isPermaLink="false">root/dev/linux/ubuntu node.md</guid><pubDate>Wed, 01 May 2024 03:16:01 GMT</pubDate><enclosure url="lib\media\pasted-image-20240429173736.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;lib\media\pasted-image-20240429173736.png&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[docker mlops 빌드 및 실행]]></title><description><![CDATA[ 
+복사<br><img alt="Pasted image 20240429173923.png" src="lib\media\pasted-image-20240429173923.png"><br>과부화 테스트도 가능]]></description><link>root\dev\linux\ubuntu-node.html</link><guid isPermaLink="false">root/dev/linux/ubuntu node.md</guid><pubDate>Wed, 01 May 2024 03:16:01 GMT</pubDate><enclosure url="lib\media\pasted-image-20240429173736.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240429173736.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[docker mlops 빌드 및 실행]]></title><description><![CDATA[ 
  <br><br><br>sudo apt-get update
 sudo apt-get install -y unzip
 mkdir workspace
@@ -7019,7 +7075,7 @@ git status
 <br>입력: DOCKERHUB_USER
 <br>입력: docker hub 아이디
 <br>클릭
-<br><img alt="Pasted image 20240814024116.png" src="lib\media\pasted-image-20240814024116.png">]]></description><link>root\dev\mloops\mlops-docker-github-action-연결하기.html</link><guid isPermaLink="false">root/dev/mloops/mlops docker github action 연결하기.md</guid><pubDate>Tue, 13 Aug 2024 17:45:48 GMT</pubDate><enclosure url="lib\media\pasted-image-20240814013010.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;lib\media\pasted-image-20240814013010.png&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[mlops mysql 컨테이너 연결]]></title><description><![CDATA[ 
+<br><img alt="Pasted image 20240814024116.png" src="lib\media\pasted-image-20240814024116.png">]]></description><link>root\dev\mloops\mlops-docker-github-action-연결하기.html</link><guid isPermaLink="false">root/dev/mloops/mlops docker github action 연결하기.md</guid><pubDate>Tue, 13 Aug 2024 17:45:48 GMT</pubDate><enclosure url="lib\media\pasted-image-20240814013010.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240814013010.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[mlops mysql 컨테이너 연결]]></title><description><![CDATA[ 
  <br><br>docker container run -itd --name my-mlops-db \
   --network mlops \
   -e MYSQL_ROOT_PASSWORD=root \
@@ -7689,7 +7745,7 @@ processors = 2<br>
 <br><a data-tooltip-position="top" aria-label="https://velog.io/@alirz-pixel/wsl2-Vmmem-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%A0%90%EC%9C%A0%EC%9C%A8-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0" rel="noopener" class="external-link" href="https://velog.io/@alirz-pixel/wsl2-Vmmem-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%A0%90%EC%9C%A0%EC%9C%A8-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0" target="_blank">https://velog.io/@alirz-pixel/wsl2-Vmmem-메모리-점유율-해결하기</a>
 <br><a rel="noopener" class="external-link" href="https://learn.microsoft.com/ko-kr/windows/wsl/wsl-config" target="_blank">https://learn.microsoft.com/ko-kr/windows/wsl/wsl-config</a>
 <br><a data-tooltip-position="top" aria-label="https://velog.io/@devookim/wsl2-%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8-%EC%8B%9C%ED%82%A4%EA%B8%B0" rel="noopener" class="external-link" href="https://velog.io/@devookim/wsl2-%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8-%EC%8B%9C%ED%82%A4%EA%B8%B0" target="_blank">https://velog.io/@devookim/wsl2-다이어트-시키기</a>
-]]></description><link>root\dev\wsl\이어드림스쿨-실습용-wsl-배포-import.html</link><guid isPermaLink="false">root/dev/wsl/이어드림스쿨 실습용 wsl 배포 import.md</guid><pubDate>Mon, 01 Apr 2024 07:59:34 GMT</pubDate><enclosure url="lib\media\pasted-image-20240330172323.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;lib\media\pasted-image-20240330172323.png&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[wsl 용량 확보하기]]></title><description><![CDATA[ 
+]]></description><link>root\dev\wsl\이어드림스쿨-실습용-wsl-배포-import.html</link><guid isPermaLink="false">root/dev/wsl/이어드림스쿨 실습용 wsl 배포 import.md</guid><pubDate>Mon, 01 Apr 2024 07:59:34 GMT</pubDate><enclosure url="lib\media\pasted-image-20240330172323.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240330172323.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[wsl 용량 확보하기]]></title><description><![CDATA[ 
  <br>자동화는맨 아래에 있음. 그러니 문제 파악할 때, 혹은 자동화 프로그램이<br>
 작동하지 않을 때만 수동으로 처리
 가자!<a data-href="#자동화" href="about:blank#자동화" class="internal-link" target="_self" rel="noopener">자동화</a><br><br><img alt="Pasted image 20240809103129.png" src="lib\media\pasted-image-20240809103129.png"><br>용량이 무려173g
@@ -7717,7 +7773,7 @@ detach vdisk
 복사<br><img alt="Pasted image 20240809105041.png" src="lib\media\pasted-image-20240809105041.png"><br><br><br><img alt="Pasted image 20240809105036.png" src="lib\media\pasted-image-20240809105036.png"><br><br><br>더 자세한 메뉴얼은<a data-tooltip-position="top" aria-label="https://github.com/namugach/Compress-VHDX" rel="noopener" class="external-link" href="https://github.com/namugach/Compress-VHDX" target="_blank">여기</a>에서 볼 수 있음<br><img alt="Pasted image 20240811140207.png" src="lib\media\pasted-image-20240811140207.png"><br><br>git clone https://github.com/namugach/Compress-VHDX.git
 복사<br><br>
 <br>Compress-VHDX.bat 더블 클릭 혹은 우클릭 -&gt; 관리자 모드 실행
-]]></description><link>root\dev\wsl\wsl-용량-확보하기.html</link><guid isPermaLink="false">root/dev/wsl/wsl 용량 확보하기.md</guid><pubDate>Sun, 11 Aug 2024 05:36:07 GMT</pubDate><enclosure url="lib\media\pasted-image-20240809103129.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;lib\media\pasted-image-20240809103129.png&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[wsl note]]></title><description><![CDATA[ 
+]]></description><link>root\dev\wsl\wsl-용량-확보하기.html</link><guid isPermaLink="false">root/dev/wsl/wsl 용량 확보하기.md</guid><pubDate>Sun, 11 Aug 2024 05:36:07 GMT</pubDate><enclosure url="lib\media\pasted-image-20240809103129.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240809103129.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[wsl note]]></title><description><![CDATA[ 
  <br><br>wsl --install
 Run복사<br><br><br><img alt="Pasted image 20240330105616.png" src="lib\media\pasted-image-20240330105616.png"><br>\\wsl$
 복사<br><br><br><br>
@@ -7757,5 +7813,5 @@ localhostForwarding=true
 <br><br><br><br><br>source ~/anaconda3/etc/profile.d/conda.sh
 복사<br>
 <br><a rel="noopener" class="external-link" href="https://technical-support.tistory.com/112" target="_blank">https://technical-support.tistory.com/112</a>
-]]></description><link>root\dev\wsl\wsl-note.html</link><guid isPermaLink="false">root/dev/wsl/wsl note.md</guid><pubDate>Thu, 18 Apr 2024 15:29:33 GMT</pubDate><enclosure url="lib\media\pasted-image-20240330105616.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;lib\media\pasted-image-20240330105616.png&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[main]]></title><description><![CDATA[ 
+]]></description><link>root\dev\wsl\wsl-note.html</link><guid isPermaLink="false">root/dev/wsl/wsl note.md</guid><pubDate>Thu, 18 Apr 2024 15:29:33 GMT</pubDate><enclosure url="lib\media\pasted-image-20240330105616.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240330105616.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[main]]></title><description><![CDATA[ 
  <br>Note저장 공유용]]></description><link>root\main.html</link><guid isPermaLink="false">root/main.md</guid><pubDate>Thu, 18 Apr 2024 16:46:09 GMT</pubDate></item></channel></rss>
