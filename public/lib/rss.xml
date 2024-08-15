@@ -1,4 +1,107 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 15 Aug 2024 17:59:42 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 15 Aug 2024 17:59:11 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[0.도커와 쿠버네티스]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 15 Aug 2024 18:24:52 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 15 Aug 2024 18:24:48 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[mysql 계정 생성시 %의 의미]]></title><description><![CDATA[ 
+ <br><br>
+<br>%: MySQL에서 %는 "모든 호스트"를 의미해. 즉, %를 사용하면 어떤 IP 주소에서든지 이 사용자 계정으로 MySQL 서버에 접근할 수 있도록 허용하는 거야.
+<br><br>
+<br>
+모든 호스트에서 접근 가능:
+CREATE USER 'ubuntu'@'%' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'%' WITH GRANT OPTION;
+Run복사
+이 명령어는 ubuntu라는 사용자 계정이 어떤 IP 주소에서든지 접속할 수 있도록 설정해. 즉, server3에서뿐만 아니라 다른 모든 서버에서도 이 계정을 사용해 MySQL 서버에 접근할 수 있어.
+
+<br>
+특정 IP 주소에서만 접근 가능:
+만약 특정 IP 주소에서만 접근을 허용하려면 % 대신 그 IP 주소를 사용하면 돼. 예를 들어 172.17.0.3에서만 접근을 허용하려면:
+CREATE USER 'ubuntu'@'172.17.0.3' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'172.17.0.3' WITH GRANT OPTION;
+Run복사
+이 경우, ubuntu 사용자는 172.17.0.3에서만 MySQL 서버에 접근할 수 있어.
+
+<br>
+특정 호스트 이름에서 접근 가능:
+특정 호스트 이름을 사용해 접근을 제한할 수도 있어. 예를 들어 server1.example.com에서만 접근을 허용하려면:
+CREATE USER 'ubuntu'@'server1.example.com' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'server1.example.com' WITH GRANT OPTION;
+Run복사
+이 경우, ubuntu 사용자는 server1.example.com이라는 호스트 이름으로만 MySQL 서버에 접근할 수 있어.
+
+<br><br>
+<br>%: 모든 호스트에서 접근 허용.
+<br>특정 IP 주소: 특정 IP 주소에서만 접근 허용.
+<br>호스트 이름: 특정 호스트 이름에서만 접근 허용.
+<br>이렇게 설정을 통해 MySQL 서버에 접근할 수 있는 사용자 계정과 그 계정이 접속할 수 있는 호스트를 세밀하게 제어할 수 있어. 추가로 궁금한 점이 있으면 언제든지 물어봐!<br>
+이렇게 만드는데, '계정명'@'% 이 부분에서 % 부분에 대해서 알려줘]]></description><link>root\dev\data-pipe-line\server\local\mysql-계정-생성시-의-의미.html</link><guid isPermaLink="false">root/dev/data pipe line/server/local/mysql 계정 생성시 %의 의미.md</guid><pubDate>Tue, 30 Jul 2024 15:36:37 GMT</pubDate></item><item><title><![CDATA[mlops docker github action 연결하기]]></title><description><![CDATA[ 
+ <br>작업 환경windows: wsl2
+mac도 비슷할 것임.<br><br><br><br>cd
+복사<br><br>vi Dockerfile
+복사<br><br># Ubuntu 기반의 Docker 이미지 생성
+FROM ubuntu:24.04
+
+# 필수 패키지 설치
+RUN apt-get update &amp;&amp; \
+  apt-get install -y \
+  docker.io \
+  openssh-server \
+  curl \
+  net-tools \
+  git \
+  wget \
+  tree \
+  vim \
+  &amp;&amp; rm -rf /var/lib/apt/lists/*
+
+# .bashrc 파일을 root 홈으로 복사
+RUN cp /home/ubuntu/.bashrc /root/.bashrc
+
+
+# Docker 데몬과 SSH 데몬을 동시에 실행
+CMD ["/bin/bash", "-c", "dockerd &amp; /usr/sbin/sshd -D"]
+복사<br><br>docker build -t ubuntu-dind:v1 .
+복사<br><br>중요!!docker 컨테이너 안에서 docker를 사용할 때는
+꼭--privileged 
+옵션을 붙여서 컨테이너를 생성해야 한다.<br><br>docker container run --privileged -itd --name ml-pipe ubuntu-dind:v1
+복사<br><br>docker container exec -it ml-pipe bash
+복사<br><br><br>docker container ls
+복사<br><br>ONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+복사<br><br><br><br>curl -sSL https://install.python-poetry.org | python3 -
+복사<br><br>vi ~/.bashrc
+복사<br><br>export PATH="/root/.local/bin:$PATH"
+복사<br><br>source .bashrc
+복사<br><br>poetry --version
+복사<br><br><br><br><br><img alt="Pasted image 20240814013010.png" src="lib\media\pasted-image-20240814013010.png"><br><img alt="Pasted image 20240814013151.png" src="lib\media\pasted-image-20240814013151.png"><br><br><img alt="Pasted image 20240814014038.png" src="lib\media\pasted-image-20240814014038.png"><br><img alt="Pasted image 20240814014048.png" src="lib\media\pasted-image-20240814014048.png"><br>git clone https://github.com/namugach/my-django-backend.git
+복사<br><br><img alt="Pasted image 20240814014411.png" src="lib\media\pasted-image-20240814014411.png"><br>cd my-django-backend
+git remote -v
+복사<br><br><img alt="Pasted image 20240814014514.png" src="lib\media\pasted-image-20240814014514.png"><br>vi README.md
+복사<br><img alt="Pasted image 20240814014540.png" src="lib\media\pasted-image-20240814014540.png"><br>원하는 내용을 입력
+복사<br>저장 및 종료<br><br><br><img alt="Pasted image 20240814014712.png" src="lib\media\pasted-image-20240814014712.png"><br>git status
+복사<br><br><img alt="Pasted image 20240814014747.png" src="lib\media\pasted-image-20240814014747.png"><br>git add .
+git status
+복사<br><br><img alt="Pasted image 20240814014827.png" src="lib\media\pasted-image-20240814014827.png"><br>git commit -m "start"
+복사<br><br><img alt="Pasted image 20240814014905.png" src="lib\media\pasted-image-20240814014905.png"><br>git log
+복사<br><br><br><img alt="Pasted image 20240814014939.png" src="lib\media\pasted-image-20240814014939.png"><br>git push
+복사<br><br><img alt="Pasted image 20240814015031.png" src="lib\media\pasted-image-20240814015031.png"><br><br><br><a rel="noopener" class="external-link" href="https://app.docker.com/" target="_blank">https://app.docker.com/</a><br>회원 가입/로그인<br><br><img alt="Pasted image 20240813171826.png" src="lib\media\pasted-image-20240813171826.png"><br><img alt="Pasted image 20240813171851.png" src="lib\media\pasted-image-20240813171851.png"><br><img alt="Pasted image 20240814022732.png" src="lib\media\pasted-image-20240814022732.png"><br>
+<br>입력: my-django-backend
+<br>선택: read, write, delete
+<br>클릭
+<br><img alt="Pasted image 20240814023045.png" src="lib\media\pasted-image-20240814023045.png"><br>
+<br>클릭: 복사
+<br><br><br><img alt="Pasted image 20240814023358.png" src="lib\media\pasted-image-20240814023358.png"><br>
+<br>확인
+<br>클릭
+<br>클릭
+<br>클릭
+<br><br><img alt="Pasted image 20240814023603.png" src="lib\media\pasted-image-20240814023603.png"><br>
+<br>입력: DOCKERHUB_TOKEN
+<br>입력: 복사한 토큰
+<br>클릭
+<br><img alt="Pasted image 20240814023727.png" src="lib\media\pasted-image-20240814023727.png"><br>
+<br>확인
+<br>클릭
+<br><br><img alt="Pasted image 20240814024000.png" src="lib\media\pasted-image-20240814024000.png"><br>
+<br>입력: DOCKERHUB_USER
+<br>입력: docker hub 아이디
+<br>클릭
+<br><img alt="Pasted image 20240814024116.png" src="lib\media\pasted-image-20240814024116.png">]]></description><link>root\dev\mloops\mlops-docker-github-action-연결하기.html</link><guid isPermaLink="false">root/dev/mloops/mlops docker github action 연결하기.md</guid><pubDate>Thu, 15 Aug 2024 18:24:11 GMT</pubDate><enclosure url="lib\media\pasted-image-20240814013010.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240814013010.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[0.도커와 쿠버네티스]]></title><description><![CDATA[ 
  <br><br>
 <br>우분투
 <br>t2.xlarge
@@ -5149,39 +5252,7 @@ root-ubuntu:24.01-mysql \
   obsidiandynamics/kafdrop
 복사<br><br>컨테이너가 실행된 후 브라우저를 열고 다음 URL로 접속합니다.<br>http://localhost:9000
 복사<br>http://172.17.0.2:9000
-복사<br>이제 Kafdrop UI를 통해 Kafka 클러스터의 여러 브로커를 모니터링하고 관리할 수 있습니다.<br><br><br>브로커 서버가 Docker 컨테이너 내에서 실행되고 있다면, Docker 네트워크 설정이 올바르게 되어 있는지 확인해야 합니다. 브로커 컨테이너와 Kafdrop 컨테이너가 동일한 네트워크에 있어야 통신이 가능합니다.<br><br>위 예시에서는 브로커 호스트가 server1, server2, server3이고, 포트가 9092로 동일하다고 가정했습니다. 실제 환경에서는 호스트명과 포트 번호가 다를 수 있으니 환경에 맞게 수정하세요.<br><br>여러 Kafka 브로커를 사용하는 경우, Docker 명령어에서 --add-host 옵션을 사용해 브로커 호스트를 추가하고, KAFKA_BROKERCONNECT 환경 변수에 여러 브로커를 쉼표로 구분하여 설정합니다. 이를 통해 Kafdrop을 사용해 여러 브로커가 있는 Kafka 클러스터를 편리하게 관리할 수 있습니다.]]></description><link>root\dev\data-pipe-line\server\local\kafdrop-kafka-클러스터-모니터링.html</link><guid isPermaLink="false">root/dev/data pipe line/server/local/Kafdrop kafka 클러스터 모니터링.md</guid><pubDate>Sat, 03 Aug 2024 13:19:25 GMT</pubDate></item><item><title><![CDATA[mysql 계정 생성시 %의 의미]]></title><description><![CDATA[ 
- <br><br>
-<br>%: MySQL에서 %는 "모든 호스트"를 의미해. 즉, %를 사용하면 어떤 IP 주소에서든지 이 사용자 계정으로 MySQL 서버에 접근할 수 있도록 허용하는 거야.
-<br><br>
-<br>
-모든 호스트에서 접근 가능:
-CREATE USER 'ubuntu'@'%' IDENTIFIED BY '1234';
-GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'%' WITH GRANT OPTION;
-Run복사
-이 명령어는 ubuntu라는 사용자 계정이 어떤 IP 주소에서든지 접속할 수 있도록 설정해. 즉, server3에서뿐만 아니라 다른 모든 서버에서도 이 계정을 사용해 MySQL 서버에 접근할 수 있어.
-
-<br>
-특정 IP 주소에서만 접근 가능:
-만약 특정 IP 주소에서만 접근을 허용하려면 % 대신 그 IP 주소를 사용하면 돼. 예를 들어 172.17.0.3에서만 접근을 허용하려면:
-CREATE USER 'ubuntu'@'172.17.0.3' IDENTIFIED BY '1234';
-GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'172.17.0.3' WITH GRANT OPTION;
-Run복사
-이 경우, ubuntu 사용자는 172.17.0.3에서만 MySQL 서버에 접근할 수 있어.
-
-<br>
-특정 호스트 이름에서 접근 가능:
-특정 호스트 이름을 사용해 접근을 제한할 수도 있어. 예를 들어 server1.example.com에서만 접근을 허용하려면:
-CREATE USER 'ubuntu'@'server1.example.com' IDENTIFIED BY '1234';
-GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'server1.example.com' WITH GRANT OPTION;
-Run복사
-이 경우, ubuntu 사용자는 server1.example.com이라는 호스트 이름으로만 MySQL 서버에 접근할 수 있어.
-
-<br><br>
-<br>%: 모든 호스트에서 접근 허용.
-<br>특정 IP 주소: 특정 IP 주소에서만 접근 허용.
-<br>호스트 이름: 특정 호스트 이름에서만 접근 허용.
-<br>이렇게 설정을 통해 MySQL 서버에 접근할 수 있는 사용자 계정과 그 계정이 접속할 수 있는 호스트를 세밀하게 제어할 수 있어. 추가로 궁금한 점이 있으면 언제든지 물어봐!<br>
-이렇게 만드는데, '계정명'@'% 이 부분에서 % 부분에 대해서 알려줘]]></description><link>root\dev\data-pipe-line\server\local\mysql-계정-생성시-의-의미.html</link><guid isPermaLink="false">root/dev/data pipe line/server/local/mysql 계정 생성시 %의 의미.md</guid><pubDate>Tue, 30 Jul 2024 15:36:37 GMT</pubDate></item><item><title><![CDATA[ssh 접속시 yes 입력 생략하기]]></title><description><![CDATA[ 
+복사<br>이제 Kafdrop UI를 통해 Kafka 클러스터의 여러 브로커를 모니터링하고 관리할 수 있습니다.<br><br><br>브로커 서버가 Docker 컨테이너 내에서 실행되고 있다면, Docker 네트워크 설정이 올바르게 되어 있는지 확인해야 합니다. 브로커 컨테이너와 Kafdrop 컨테이너가 동일한 네트워크에 있어야 통신이 가능합니다.<br><br>위 예시에서는 브로커 호스트가 server1, server2, server3이고, 포트가 9092로 동일하다고 가정했습니다. 실제 환경에서는 호스트명과 포트 번호가 다를 수 있으니 환경에 맞게 수정하세요.<br><br>여러 Kafka 브로커를 사용하는 경우, Docker 명령어에서 --add-host 옵션을 사용해 브로커 호스트를 추가하고, KAFKA_BROKERCONNECT 환경 변수에 여러 브로커를 쉼표로 구분하여 설정합니다. 이를 통해 Kafdrop을 사용해 여러 브로커가 있는 Kafka 클러스터를 편리하게 관리할 수 있습니다.]]></description><link>root\dev\data-pipe-line\server\local\kafdrop-kafka-클러스터-모니터링.html</link><guid isPermaLink="false">root/dev/data pipe line/server/local/Kafdrop kafka 클러스터 모니터링.md</guid><pubDate>Sat, 03 Aug 2024 13:19:25 GMT</pubDate></item><item><title><![CDATA[ssh 접속시 yes 입력 생략하기]]></title><description><![CDATA[ 
  <br><br>SSH 서버에 처음 접속할 때 "yes"를 입력하는 과정은 서버의 호스트 키를 확인하고 저장하는 과정이야. 이 과정을 자동으로 생략하려면 StrictHostKeyChecking 옵션을 사용하면 돼.<br>다음과 같은 방법을 사용해봐:<br>
 <br>명령어에 직접 추가하기:
 <br>ssh -o StrictHostKeyChecking=no user@hostname
@@ -6941,85 +7012,7 @@ ae569fc79b54   host      host      local
 299688b5d3d9   mlops     bridge    local
 06be7d2218af   none      null      local
 복사<br><br><br>docker run -itd --name my-mlops --network mlops python:3.11-buster
-복사]]></description><link>root\dev\mloops\docker-network-생성.html</link><guid isPermaLink="false">root/dev/mloops/docker network 생성.md</guid><pubDate>Mon, 12 Aug 2024 18:56:01 GMT</pubDate></item><item><title><![CDATA[mlops docker github action 연결하기]]></title><description><![CDATA[ 
- <br>작업 환경windows: wsl2
-mac도 비슷할 것임.<br><br><br><br>cd
-복사<br><br>vi Dockerfile
-복사<br><br># Ubuntu 기반의 Docker 이미지 생성
-FROM ubuntu:24.04
-
-# 필수 패키지 설치
-RUN apt-get update &amp;&amp; \
-  apt-get install -y \
-  docker.io \
-  openssh-server \
-  curl \
-  net-tools \
-  git \
-  wget \
-  tree \
-  vim \
-  &amp;&amp; rm -rf /var/lib/apt/lists/*
-
-# .bashrc 파일을 root 홈으로 복사
-RUN cp /home/ubuntu/.bashrc /root/.bashrc
-
-
-# SSH 설정
-RUN mkdir /var/run/sshd &amp;&amp; \
-  sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
-
-# 포트 22 열기
-# EXPOSE 22
-
-# Docker 데몬과 SSH 데몬을 동시에 실행
-CMD ["/bin/bash", "-c", "dockerd &amp; /usr/sbin/sshd -D"]
-복사<br><br>docker build -t ubuntu-dind:v1 .
-복사<br><br>중요!!docker 컨테이너 안에서 docker를 사용할 때는
-꼭--privileged 
-옵션을 붙여서 컨테이너를 생성해야 한다.<br><br>docker container run --privileged -itd --name ml-pipe ubuntu-dind:v1
-복사<br><br>docker container exec -it ml-pipe bash
-복사<br><br><br>docker container ls
-복사<br><br>ONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
-복사<br><br><br><br>curl -sSL https://install.python-poetry.org | python3 -
-복사<br><br>vi ~/.bashrc
-복사<br><br>export PATH="/root/.local/bin:$PATH"
-복사<br><br>source .bashrc
-복사<br><br>poetry --version
-복사<br><br><br><br><br><img alt="Pasted image 20240814013010.png" src="lib\media\pasted-image-20240814013010.png"><br><img alt="Pasted image 20240814013151.png" src="lib\media\pasted-image-20240814013151.png"><br><br><img alt="Pasted image 20240814014038.png" src="lib\media\pasted-image-20240814014038.png"><br><img alt="Pasted image 20240814014048.png" src="lib\media\pasted-image-20240814014048.png"><br>git clone https://github.com/namugach/my-django-backend.git
-복사<br><br><img alt="Pasted image 20240814014411.png" src="lib\media\pasted-image-20240814014411.png"><br>cd my-django-backend
-git remote -v
-복사<br><br><img alt="Pasted image 20240814014514.png" src="lib\media\pasted-image-20240814014514.png"><br>vi README.md
-복사<br><img alt="Pasted image 20240814014540.png" src="lib\media\pasted-image-20240814014540.png"><br>원하는 내용을 입력
-복사<br>저장 및 종료<br><br><br><img alt="Pasted image 20240814014712.png" src="lib\media\pasted-image-20240814014712.png"><br>git status
-복사<br><br><img alt="Pasted image 20240814014747.png" src="lib\media\pasted-image-20240814014747.png"><br>git add .
-git status
-복사<br><br><img alt="Pasted image 20240814014827.png" src="lib\media\pasted-image-20240814014827.png"><br>git commit -m "start"
-복사<br><br><img alt="Pasted image 20240814014905.png" src="lib\media\pasted-image-20240814014905.png"><br>git log
-복사<br><br><br><img alt="Pasted image 20240814014939.png" src="lib\media\pasted-image-20240814014939.png"><br>git push
-복사<br><br><img alt="Pasted image 20240814015031.png" src="lib\media\pasted-image-20240814015031.png"><br><br><br><a rel="noopener" class="external-link" href="https://app.docker.com/" target="_blank">https://app.docker.com/</a><br>회원 가입/로그인<br><br><img alt="Pasted image 20240813171826.png" src="lib\media\pasted-image-20240813171826.png"><br><img alt="Pasted image 20240813171851.png" src="lib\media\pasted-image-20240813171851.png"><br><img alt="Pasted image 20240814022732.png" src="lib\media\pasted-image-20240814022732.png"><br>
-<br>입력: my-django-backend
-<br>선택: read, write, delete
-<br>클릭
-<br><img alt="Pasted image 20240814023045.png" src="lib\media\pasted-image-20240814023045.png"><br>
-<br>클릭: 복사
-<br><br><br><img alt="Pasted image 20240814023358.png" src="lib\media\pasted-image-20240814023358.png"><br>
-<br>확인
-<br>클릭
-<br>클릭
-<br>클릭
-<br><br><img alt="Pasted image 20240814023603.png" src="lib\media\pasted-image-20240814023603.png"><br>
-<br>입력: DOCKERHUB_TOKEN
-<br>입력: 복사한 토큰
-<br>클릭
-<br><img alt="Pasted image 20240814023727.png" src="lib\media\pasted-image-20240814023727.png"><br>
-<br>확인
-<br>클릭
-<br><br><img alt="Pasted image 20240814024000.png" src="lib\media\pasted-image-20240814024000.png"><br>
-<br>입력: DOCKERHUB_USER
-<br>입력: docker hub 아이디
-<br>클릭
-<br><img alt="Pasted image 20240814024116.png" src="lib\media\pasted-image-20240814024116.png">]]></description><link>root\dev\mloops\mlops-docker-github-action-연결하기.html</link><guid isPermaLink="false">root/dev/mloops/mlops docker github action 연결하기.md</guid><pubDate>Tue, 13 Aug 2024 17:45:48 GMT</pubDate><enclosure url="lib\media\pasted-image-20240814013010.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240814013010.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[mlops mysql 컨테이너 연결]]></title><description><![CDATA[ 
+복사]]></description><link>root\dev\mloops\docker-network-생성.html</link><guid isPermaLink="false">root/dev/mloops/docker network 생성.md</guid><pubDate>Mon, 12 Aug 2024 18:56:01 GMT</pubDate></item><item><title><![CDATA[mlops mysql 컨테이너 연결]]></title><description><![CDATA[ 
  <br><br>docker container run -itd --name my-mlops-db \
   --network mlops \
   -e MYSQL_ROOT_PASSWORD=root \

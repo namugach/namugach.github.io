@@ -49,13 +49,6 @@ RUN apt-get update && \
 RUN cp /home/ubuntu/.bashrc /root/.bashrc
 
 
-# SSH 설정
-RUN mkdir /var/run/sshd && \
-  sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
-
-# 포트 22 열기
-# EXPOSE 22
-
 # Docker 데몬과 SSH 데몬을 동시에 실행
 CMD ["/bin/bash", "-c", "dockerd & /usr/sbin/sshd -D"]
 ```

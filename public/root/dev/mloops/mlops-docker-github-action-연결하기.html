@@ -39,13 +39,6 @@
 <span class="token instruction"><span class="token keyword">RUN</span> cp /home/ubuntu/.bashrc /root/.bashrc</span>
 
 
-<span class="token comment"># SSH 설정</span>
-<span class="token instruction"><span class="token keyword">RUN</span> mkdir /var/run/sshd &amp;&amp; <span class="token operator">\</span>
-  sed -i <span class="token string">'s/#PermitRootLogin prohibit-password/PermitRootLogin yes/'</span> /etc/ssh/sshd_config</span>
-
-<span class="token comment"># 포트 22 열기</span>
-<span class="token comment"># EXPOSE 22</span>
-
 <span class="token comment"># Docker 데몬과 SSH 데몬을 동시에 실행</span>
 <span class="token instruction"><span class="token keyword">CMD</span> [<span class="token string">"/bin/bash"</span>, <span class="token string">"-c"</span>, <span class="token string">"dockerd &amp; /usr/sbin/sshd -D"</span>]</span>
 </code><button class="copy-code-button">복사</button></pre></div></div></div></div></div><div class="heading-wrapper"><h3 data-heading="빌드" dir="auto" class="heading" id="빌드"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>빌드</h3><div class="heading-children"><div><pre class="language-sh" tabindex="0"><code class="language-sh is-loaded">docker build -t ubuntu-dind:v1 .
