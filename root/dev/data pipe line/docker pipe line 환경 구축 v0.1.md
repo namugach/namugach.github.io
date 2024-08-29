@@ -6,6 +6,15 @@ tags:
 create: 2024-07-28 17:27:20
 ---
 
+```ad-danger
+title: 커밋할 때
+절 때 hostname으로 이름 지은 것으로 하지 말아야함.
+그렇지 않고, hostname이 지정된 상태에서 프로그램을 설치하고,
+그 상태로 커밋을 한 다면, hostname과 일치하는 컨테이너는 문제가 없을 테지만,
+그렇지 못한 컨테이너는 프로그램에 따라서 실행이 안된다.
+```
+
+
 ```ad-check
 title: 작업에 들어가기 앞서!
 - (L): local에서 하는 작업
@@ -54,6 +63,7 @@ docker container run -it -d ubuntu-pipeline:24.04
 ```sh
 apt-get update
 apt-get install -y sudo
+apt-get install -y curl
 apt-get install -y net-tools
 apt-get install -y git
 apt-get install -y wget
@@ -373,26 +383,10 @@ docker run -itd \
 [[shell ssh 여러 개 접속 테스트]]
 
 ```sh
-./run/check_ssh.sh
+./run/ssh_check.sh
 ```
 
 
-### (L) 컨테이너
-
-#### 이름 확인
-```sh
-docker container ls
-```
-
-#### 커밋
-```sh
-docker container commit 컨테이너_이름 ubuntu-pipeline:24.04-service-auto-load
-```
-
-#### 삭제
-```sh
-docker container rm -f 컨테이너_이름
-```
 
 ---
 
@@ -484,6 +478,28 @@ docker container run -itd ubuntu-pipeline:24.04-java
 [[kafka 설치#install]]
 
 [[kafka 설정 및 실행]]
+
+
+
+### (L) 컨테이너
+
+#### 이름 확인
+```sh
+docker container ls
+```
+
+#### 커밋
+```sh
+docker container commit 컨테이너_이름 ubuntu-pipeline:24.04-kafka
+```
+
+#### 삭제
+```sh
+docker container rm -f 컨테이너_이름
+```
+
+
+### 실행
 
 ```ad-danger
 title:정말 위험해!

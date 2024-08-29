@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 15 Aug 2024 18:30:47 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 15 Aug 2024 18:30:44 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[mysql 계정 생성시 %의 의미]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 29 Aug 2024 04:36:59 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 29 Aug 2024 04:36:54 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[mysql 계정 생성시 %의 의미]]></title><description><![CDATA[ 
  <br><br>
 <br>%: MySQL에서 %는 "모든 호스트"를 의미해. 즉, %를 사용하면 어떤 IP 주소에서든지 이 사용자 계정으로 MySQL 서버에 접근할 수 있도록 허용하는 거야.
 <br><br>
@@ -30,7 +30,807 @@ Run복사
 <br>특정 IP 주소: 특정 IP 주소에서만 접근 허용.
 <br>호스트 이름: 특정 호스트 이름에서만 접근 허용.
 <br>이렇게 설정을 통해 MySQL 서버에 접근할 수 있는 사용자 계정과 그 계정이 접속할 수 있는 호스트를 세밀하게 제어할 수 있어. 추가로 궁금한 점이 있으면 언제든지 물어봐!<br>
-이렇게 만드는데, '계정명'@'% 이 부분에서 % 부분에 대해서 알려줘]]></description><link>root\dev\data-pipe-line\server\local\mysql-계정-생성시-의-의미.html</link><guid isPermaLink="false">root/dev/data pipe line/server/local/mysql 계정 생성시 %의 의미.md</guid><pubDate>Tue, 30 Jul 2024 15:36:37 GMT</pubDate></item><item><title><![CDATA[mlops docker github action 연결하기]]></title><description><![CDATA[ 
+이렇게 만드는데, '계정명'@'% 이 부분에서 % 부분에 대해서 알려줘]]></description><link>root\dev\data-pipe-line\server\local\mysql-계정-생성시-의-의미.html</link><guid isPermaLink="false">root/dev/data pipe line/server/local/mysql 계정 생성시 %의 의미.md</guid><pubDate>Tue, 30 Jul 2024 15:36:37 GMT</pubDate></item><item><title><![CDATA[docker 파이프라인 aws로 이전]]></title><description><![CDATA[ 
+ <br>작업에 들어가기 앞서!
+<br>(L): local에서 하는 작업
+
+<br>windows: wsl
+<br>mac: terminal
+
+
+<br>(C): container에서 하는 작업
+<br><br>확인!ec2 server 1, 2, 3 적용<br><a data-href="docker pipe line 환경 구축 v0.1#ssh 연결" href="root\dev\data-pipe-line\docker-pipe-line-환경-구축-v0.1.html#ssh_연결" class="internal-link" target="_self" rel="noopener">docker pipe line 환경 구축 v0.1 &gt; ssh 연결</a><br><br>ec2_private_ip server1
+ec2_private_ip server2
+ec2_private_ip server3
+복사<br><br>이것이 바로 포인트!server1 에서 생성된 id_rsa, id_rsa.pub를<br>
+server2, server3의 ~/.ssh 디렉토리 안에 모두 공유한다.<br>ssh-keygen -t rsa
+cd .ssh
+cat id_rsa.pub &gt; authorized_keys
+복사<br><br>vi ~/.ssh/config
+복사<br>Host server*
+  StrictHostKeyChecking no
+  UserKnownHostsFile=/dev/null
+복사<br><br>ssh server1
+ssh server2
+ssh server3
+복사<br>혹은<br>
+<a data-href="shell ssh 여러 개 접속 테스트" href="root\dev\data-pipe-line\자동화\shell-ssh-여러-개-접속-테스트.html" class="internal-link" target="_self" rel="noopener">shell ssh 여러 개 접속 테스트</a> 를 작성<br><br><br>확인!ec2 server 1, 2, 3 적용<br><a data-href="pyenv 설치" href="root\dev\data-pipe-line\server\pyenv-설치.html" class="internal-link" target="_self" rel="noopener">pyenv 설치</a><br><br><br>확인!ec2 server 1, 2, 3 적용<br><br><a data-href="도커 설치 및 기본 사용법" href="root\dev\docker\도커-설치-및-기본-사용법.html" class="internal-link" target="_self" rel="noopener">도커 설치 및 기본 사용법</a><br><br>docker pull namugach/ubuntu-pipeline:24.04-kafka
+복사<br><br>docker network create --subnet=172.18.0.0/16 pipeline
+복사<br>도커 네트워크 생성<br><br>Check
+<br>
+name
+
+<br>ec1 server1 = server1
+<br>ec2 server1 = server2
+<br>ec3 server1 = server3
+
+
+<br>
+hostname
+
+<br>ec1 server1 = server1
+<br>ec2 server1 = server2
+<br>ec3 server1 = server3
+
+
+<br>
+ip
+
+<br>ec1 server1 = 172.18.0.10
+<br>ec2 server1 = 172.18.0.11
+<br>ec3 server1 = 172.18.0.12
+
+
+
+인트턴스 서버에 따라 잘 확인하고 입력<br>docker container run -itd \\
+  --name server1 \\ # server1, server2, server3
+  --hostname server1 \\ # server1, server2, server3
+  --add-host server1:server1 \\
+  --add-host server2:server2 \\
+  --add-host server3:server3 \\
+  -p 2222:2222 \\
+  -p 2181:2181 \\
+  -p 2888:2888 \\
+  -p 3888:3888 \\
+  -p 9092:9092 \\
+  -p 3306:3306 \\
+  --net pipeline \\
+  --ip 172.18.0.10 \\ # server1 = 10, server2 = 11, server3 = 12
+  namugach/ubuntu-pipeline:24.04-kafka
+복사<br><br><br>유념!서버 이름 확인하면서 작업하자<br>docker cp ~/.ssh/id_rsa server1:/home/ubuntu/.ssh/id_rsa
+docker cp ~/.ssh/id_rsa.pub server1:/home/ubuntu/.ssh/id_rsa.pub
+docker cp ~/.ssh/id_rsa.pub server1:/home/ubuntu/.ssh/authorized_keys
+복사<br><br>docker exec -it server1 ls ~/.ssh
+복사<br><br><br><br>vi ~/.ssh/config
+복사<br>Host server1
+	HostName ec2_private_ip
+	Port 2222
+	User ubuntu
+
+Host server2
+	HostName ec2_private_ip
+	Port 2222
+	User ubuntu
+
+Host server3
+	HostName ec2_private_ip
+	Port 2222
+	User ubuntu
+복사<br><br>Host server1
+	HostName 172.31.14.186
+	Port 2222
+	User ubuntu
+
+Host server2
+	HostName 172.31.10.99
+	Port 2222
+	User ubuntu
+
+Host server3
+	HostName 172.31.1.229
+	Port 2222
+	User ubuntu
+복사<br>ssh server1
+복사<br>ubuntu@server1:~$ ssh server2
+Warning: Permanently added '[172.31.10.99]:2222' (ED25519) to the list of known hosts.
+Welcome to Ubuntu 24.04 LTS (GNU/Linux 6.8.0-1012-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+This system has been minimized by removing packages and content that are
+not required on a system that users do not log into.
+
+To restore this content, you can run the 'unminimize' command.
+Last login: Wed Aug  7 05:22:57 2024 from 172.31.14.186
+ubuntu@server2:~$ 
+복사<br>위처럼 나오면 성공<br><br><br><br><br># Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#
+# This configuration file is intended for use in ZK-based mode, where Apache ZooKeeper is required.
+# See kafka.server.KafkaConfig for additional details and defaults
+#
+
+############################# Server Basics #############################
+
+# The id of the broker. This must be set to a unique integer for each broker.
+broker.id=1
+
+############################# Socket Server Settings #############################
+
+# The address the socket server listens on. If not configured, the host name will be equal to the value of
+# java.net.InetAddress.getCanonicalHostName(), with PLAINTEXT listener name, and port 9092.
+#   FORMAT:
+#     listeners = listener_name://host_name:port
+#   EXAMPLE:
+#     listeners = PLAINTEXT://your.host.name:9092
+#listeners=PLAINTEXT://:9092
+listeners=PLAINTEXT://server1:9092
+# ubuntu@ip-172-31-6-227:~/app/kafka/kafka_2.13-3.6.1/config$
+
+# Listener name, hostname and port the broker will advertise to clients.
+# If not set, it uses the value for "listeners".
+advertised.listeners=PLAINTEXT://server1:9092
+
+# Maps listener names to security protocols, the default is for them to be the same. See the config documentation for more details
+#listener.security.protocol.map=PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
+
+# The number of threads that the server uses for receiving requests from the network and sending responses to the network
+num.network.threads=3
+
+# The number of threads that the server uses for processing requests, which may include disk I/O
+num.io.threads=8
+
+# The send buffer (SO_SNDBUF) used by the socket server
+socket.send.buffer.bytes=102400
+
+# The receive buffer (SO_RCVBUF) used by the socket server
+socket.receive.buffer.bytes=102400
+
+# The maximum size of a request that the socket server will accept (protection against OOM)
+socket.request.max.bytes=104857600
+
+
+############################# Log Basics #############################
+
+# A comma separated list of directories under which to store log files
+log.dirs=/tmp/kafka-logs
+
+# The default number of log partitions per topic. More partitions allow greater
+# parallelism for consumption, but this will also result in more files across
+# the brokers.
+# num.partitions=1
+num.partitions=3
+
+# The number of threads per data directory to be used for log recovery at startup and flushing at shutdown.
+# This value is recommended to be increased for installations with data dirs located in RAID array.
+num.recovery.threads.per.data.dir=1
+
+############################# Internal Topic Settings  #############################
+# The replication factor for the group metadata internal topics "__consumer_offsets" and "__transaction_state"
+# For anything other than development testing, a value greater than 1 is recommended to ensure availability such as 3.
+offsets.topic.replication.factor=3
+transaction.state.log.replication.factor=3
+transaction.state.log.min.isr=3
+
+############################# Log Flush Policy #############################
+
+# Messages are immediately written to the filesystem but by default we only fsync() to sync
+# the OS cache lazily. The following configurations control the flush of data to disk.
+# There are a few important trade-offs here:
+#    1. Durability: Unflushed data may be lost if you are not using replication.
+#    2. Latency: Very large flush intervals may lead to latency spikes when the flush does occur as there will be a lot of data to flush.
+#    3. Throughput: The flush is generally the most expensive operation, and a small flush interval may lead to excessive seeks.
+# The settings below allow one to configure the flush policy to flush data after a period of time or
+# every N messages (or both). This can be done globally and overridden on a per-topic basis.
+
+# The number of messages to accept before forcing a flush of data to disk
+#log.flush.interval.messages=10000
+
+# The maximum amount of time a message can sit in a log before we force a flush
+#log.flush.interval.ms=1000
+
+############################# Log Retention Policy #############################
+
+# The following configurations control the disposal of log segments. The policy can
+# be set to delete segments after a period of time, or after a given size has accumulated.
+# A segment will be deleted whenever *either* of these criteria are met. Deletion always happens
+# from the end of the log.
+
+# The minimum age of a log file to be eligible for deletion due to age
+log.retention.hours=168
+
+# A size-based retention policy for logs. Segments are pruned from the log unless the remaining
+# segments drop below log.retention.bytes. Functions independently of log.retention.hours.
+#log.retention.bytes=1073741824
+
+# The maximum size of a log segment file. When this size is reached a new log segment will be created.
+#log.segment.bytes=1073741824
+
+# The interval at which log segments are checked to see if they can be deleted according
+# to the retention policies
+log.retention.check.interval.ms=300000
+
+############################# Zookeeper #############################
+
+# Zookeeper connection string (see zookeeper docs for details).
+# This is a comma separated host:port pairs, each corresponding to a zk
+# server. e.g. "127.0.0.1:3000,127.0.0.1:3001,127.0.0.1:3002".
+# You can also append an optional chroot string to the urls to specify the
+# root directory for all kafka znodes.
+# zookeeper.connect=localhost:2181
+zookeeper.connect=server1:2181,server2:2181,server3:2181
+# Timeout in ms for connecting to zookeeper
+zookeeper.connection.timeout.ms=18000
+
+
+############################# Group Coordinator Settings #############################
+
+# The following configuration specifies the time, in milliseconds, that the GroupCoordinator will delay the initial consumer rebalance.
+# The rebalance will be further delayed by the value of group.initial.rebalance.delay.ms as new members join the group, up to a maximum of max.poll.interval.ms.
+# The default value for this is 3 seconds.
+# We override this to 0 here as it makes for a better out-of-the-box experience for development and testing.
+# However, in production environments the default value of 3 seconds is more suitable as this will help to avoid unnecessary, and potentially expensive, rebalances during application startup.
+group.initial.rebalance.delay.ms=0
+복사<br><br># Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+# 
+#    http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# the directory where the snapshot is stored.
+dataDir=/home/ubuntu/zkdata
+# the port at which the clients will connect
+clientPort=2181
+tickTime=2000
+initLimit=10
+syncLimit=5
+server.1=server1:2888:3888
+server.2=server2:2888:3888
+server.3=server3:2888:3888
+# disable the per-ip limit on the number of connections since this is a non-production config
+maxClientCnxns=0
+# Disable the adminserver by default to avoid port conflicts.
+# Set the port to something non-conflicting if choosing to enable this
+admin.enableServer=false
+# admin.serverPort=8080
+복사<br><a data-href="kafka 설정 및 실행" href="root\dev\data-pipe-line\kafka\kafka-설정-및-실행.html" class="internal-link" target="_self" rel="noopener">kafka 설정 및 실행</a><br><br><br><a data-href="Kafka Consumer와 MySQL에 데이터 적재하기" href="root\dev\data-pipe-line\kafka\kafka-consumer와-mysql에-데이터-적재하기.html" class="internal-link" target="_self" rel="noopener">Kafka Consumer와 MySQL에 데이터 적재하기</a><br>KAFKA_BOOTSTRAP_SERVERS = ['server1:9092', 'server2:9092', 'server3:9092']
+Run복사<br>위의 부분을 바꿔줌<br><br>cd ~/app/kafka/kafka_2.13-3.6.2
+./bin/kafka-console-consumer.sh --bootstrap-server 172.18.0.11:9092 --topic testtopic
+복사<br>cd ~/app/kafka/kafka_2.13-3.6.2
+./bin/kafka-console-consumer.sh --bootstrap-server 172.18.0.12:9092 --topic testtopic
+복사<br>cd ~/app/kafka/kafka_2.13-3.6.2
+./bin/kafka-console-consumer.sh --bootstrap-server 172.18.0.13:9092 --topic testtopic
+복사]]></description><link>root\dev\data-pipe-line\docker-파이프라인-aws로-이전.html</link><guid isPermaLink="false">root/dev/data pipe line/docker 파이프라인 aws로 이전.md</guid><pubDate>Sun, 18 Aug 2024 18:15:57 GMT</pubDate></item><item><title><![CDATA[docker in docker로 local에서 클러스터 환경 만들기]]></title><description><![CDATA[ 
+ <br>커밋할 때절 때 hostname으로 이름 지은 것으로 하지 말아야함.<br>
+그렇지 않고, hostname이 지정된 상태에서 프로그램을 설치하고,<br>
+그 상태로 커밋을 한 다면, hostname과 일치하는 컨테이너는 문제가 없을 테지만,<br>
+그렇지 못한 컨테이너는 프로그램에 따라서 실행이 안된다.<br>작업에 들어가기 앞서!
+<br>(L): local에서 하는 작업
+
+<br>windows: wsl
+<br>mac: terminal
+
+
+<br>(C): container에서 하는 작업
+<br>(D): indocker에서 하는 작업
+<br><br><br>docker pull ubuntu:24.04
+복사<br><br>docker tag ubuntu:24.04 ubuntu-in-docker:24.04
+복사<br><br><br><br>docker container run -itd --privileged ubuntu-in-docker:24.04
+복사<br>그렇군?--privileged 옵션을 넣어 줘야 docker를 사용할 수 있음<br><br>docker container exec -it 컨테이너_이름 bash
+복사<br><br>apt-get update
+apt-get install -y sudo
+apt-get install -y curl
+apt-get install -y net-tools
+apt-get install -y git
+apt-get install -y wget
+apt-get install -y tree
+apt-get install -y openssh-server
+apt-get install -y vim
+curl -sSL get.docker.com | sh
+복사<br><br><a data-href="pyenv 설치" href="root\dev\data-pipe-line\server\pyenv-설치.html" class="internal-link" target="_self" rel="noopener">pyenv 설치</a><br><br>vi ~/.bashrc
+복사<br>if ! sudo service docker status &gt; /dev/null 2&gt;&amp;1; then
+  sudo service docker start
+fi
+복사<br><br>docker container commit 컨테이너_이름 ubuntu-in-docker:24.04-basic
+복사<br><br>docker container rm -f 컨테이너_이름
+복사<br><br><br><br>docker container run -itd \
+  --privileged \
+  ubuntu-in-docker:24.04-basic \
+  /bin/bash -c "sudo service ssh start &amp;&amp; tail -f /dev/null"
+복사<br><br>docker container exec -it 컨테이너_이름 bash
+복사<br><br>ssh-keygen -t rsa
+cd .ssh
+cat id_rsa.pub &gt; authorized_keys
+복사<br><br>vi ~/.shh/config
+복사<br>Host server*
+  StrictHostKeyChecking no
+  UserKnownHostsFile=/dev/null
+복사<br><br>docker container commit 컨테이너_이름 ubuntu-in-docker:24.04-ssh-key
+복사<br><br><br><br>docker network create --gateway 172.20.0.1 --subnet 172.20.0.0/24 basic
+복사<br><br>docker container run -itd \
+  --privileged \
+  --name server1 \
+  --network basic \
+  --ip 172.20.0.11 \
+  --hostname server1 \
+  --add-host server1:172.20.0.11 \
+  --add-host server2:172.20.0.12 \
+  --add-host server3:172.20.0.13 \
+  ubuntu-in-docker:24.04-ssh-key
+
+
+docker container run -itd \
+  --privileged \
+  --name server2 \
+  --network basic \
+  --ip 172.20.0.12 \
+  --hostname server2 \
+  --add-host server1:172.20.0.11 \
+  --add-host server2:172.20.0.12 \
+  --add-host server3:172.20.0.13 \
+  ubuntu-in-docker:24.04-ssh-key
+
+
+docker container run -itd \
+  --privileged \
+  --name server3 \
+  --network basic \
+  --ip 172.20.0.13 \
+  --hostname server3 \
+  --add-host server1:172.20.0.11 \
+  --add-host server2:172.20.0.12 \
+  --add-host server3:172.20.0.13 \
+  ubuntu-in-docker:24.04-ssh-key
+복사<br><br>docker container exec -it server1 bash
+복사<br><br>vi ssh_check.sh
+복사<br> <a data-href="shell ssh 여러 개 접속 테스트" href="root\dev\data-pipe-line\자동화\shell-ssh-여러-개-접속-테스트.html" class="internal-link" target="_self" rel="noopener">shell ssh 여러 개 접속 테스트</a><br>chmod +x ssh_check.sh
+
+./ssh_check.sh
+복사<br><br>docker container rm -f server1 server2 server3
+복사<br><br><br><br>docker container run -itd \
+  --privileged \
+  --name server1 \
+  --network basic \
+  --ip 172.20.0.11 \
+  --hostname server1 \
+  --add-host server1:172.20.0.11 \
+  --add-host server2:172.20.0.12 \
+  --add-host server3:172.20.0.13 \
+  ubuntu-in-docker:24.04-ssh-key
+
+
+docker container run -itd \
+  --privileged \
+  --name server2 \
+  --network basic \
+  --ip 172.20.0.12 \
+  --hostname server2 \
+  --add-host server1:172.20.0.11 \
+  --add-host server2:172.20.0.12 \
+  --add-host server3:172.20.0.13 \
+  ubuntu-in-docker:24.04-ssh-key
+
+
+docker container run -itd \
+  --privileged \
+  --name server3 \
+  --network basic \
+  --ip 172.20.0.13 \
+  --hostname server3 \
+  --add-host server1:172.20.0.11 \
+  --add-host server2:172.20.0.12 \
+  --add-host server3:172.20.0.13 \
+  ubuntu-in-docker:24.04-ssh-key
+복사<br>git clone https://github.com/namugach/pipelineShell
+복사<br>mv pipelineShell run
+복사<br>./run/ssh/check.sh
+복사<br>./run/docker/pull.sh namugach/ubuntu-pipeline:24.04-kafka
+복사]]></description><link>root\dev\data-pipe-line\docker-in-docker로-local에서-클러스터-환경-만들기.html</link><guid isPermaLink="false">root/dev/data pipe line/docker in docker로 local에서 클러스터 환경 만들기.md</guid><pubDate>Thu, 08 Aug 2024 17:29:09 GMT</pubDate></item><item><title><![CDATA[docker pipe line 환경 구축 v0.1]]></title><description><![CDATA[ 
+ <br>커밋할 때절 때 hostname으로 이름 지은 것으로 하지 말아야함.<br>
+그렇지 않고, hostname이 지정된 상태에서 프로그램을 설치하고,<br>
+그 상태로 커밋을 한 다면, hostname과 일치하는 컨테이너는 문제가 없을 테지만,<br>
+그렇지 못한 컨테이너는 프로그램에 따라서 실행이 안된다.<br>작업에 들어가기 앞서!
+<br>(L): local에서 하는 작업
+
+<br>windows: wsl
+<br>mac: terminal
+
+
+<br>(C): container에서 하는 작업
+<br><br>pull 받으려 하는데 로그인 하라고?
+<br><a rel="noopener" class="external-link" href="http://dockerhub.com/" target="_blank">http://dockerhub.com/</a> 에서
+<br>아이디 없으면 만들고
+<br>있으면 확인하고
+<br>shell에서 아래의 명령어를 입력하여 로그인
+
+docker login
+복사<br><br>docker pull ubuntu:24.04
+복사<br><br>docker tag ubuntu:24.04 ubuntu-pipeline:24.04
+복사<br><br>docker container run -it -d ubuntu-pipeline:24.04
+복사<br><br><br><br>apt-get update
+apt-get install -y sudo
+apt-get install -y curl
+apt-get install -y net-tools
+apt-get install -y git
+apt-get install -y wget
+apt-get install -y tree
+apt-get install -y openssh-server
+apt-get install -y vim
+복사<br><br>매우 주의!root 계정으로 작업 할 것!<br><br>passwd
+복사<br><br>passwd ubuntu
+복사<br><br><a data-href="우분투 sudo 비번 생략하기" href="root\dev\data-pipe-line\server\local\우분투-sudo-비번-생략하기.html" class="internal-link" target="_self" rel="noopener">우분투 sudo 비번 생략하기</a><br>echo 'ubuntu ALL=(ALL) NOPASSWD:ALL' &gt;&gt; /etc/sudoers
+복사<br><br><br><br><br>docker container ls
+복사<br><br>docker container commit 컨테이너_이름 ubuntu-pipeline:24.04-basic
+복사<br><br>docker container rm -f 컨테이너_이름
+복사<br><br><br><br><br>docker container run -itd \
+  -u ubuntu \
+  -w /home/ubuntu \
+  ubuntu-pipeline:24.04-basic
+복사<br><br>docker container ls
+복사<br><br>docker container commit 컨테이너_이름 ubuntu-pipeline:24.04-user-setting
+복사<br><br>docker container rm -f 컨테이너_이름
+복사<br><br><br><br>docker container run -itd ubuntu-pipeline:24.04-user-setting 
+복사<br><br><a data-href="pyenv 설치" href="root\dev\data-pipe-line\server\pyenv-설치.html" class="internal-link" target="_self" rel="noopener">pyenv 설치</a><br><br><br>docker container ls
+복사<br><br>docker container commit 컨테이너_이름 ubuntu-pipeline:24.04-pyenv
+복사<br><br>docker container rm -f 컨테이너_이름
+복사<br><br><br><br>docker container run -itd ubuntu-pipeline:24.04-pyenv
+복사<br><br><a data-href="docker 우분투 mysql 설치" href="root\dev\data-pipe-line\server\docker-우분투-mysql-설치.html" class="internal-link" target="_self" rel="noopener">docker 우분투 mysql 설치</a><br><br><br>docker container ls
+복사<br><br>docker container commit 컨테이너_이름 ubuntu-pipeline:24.04-mysql
+복사<br><br>docker container rm -f 컨테이너_이름
+복사<br><br><br><br>docker container run -itd ubuntu-pipeline:24.04-mysql
+복사<br><a data-href="docker container 시작 시 명령어 시작" href="root\dev\data-pipe-line\server\local\docker-container-시작-시-명령어-시작.html" class="internal-link" target="_self" rel="noopener">docker container 시작 시 명령어 시작</a><br><br>docker container run -itd \
+  ubuntu-pipeline:24.04-mysql\
+  /bin/bash -c "sudo service ssh start &amp;&amp; sudo service mysql start &amp;&amp; tail -f /dev/null"
+복사<br><br><br>sudo service --status-all
+복사<br><br> [ - ]  dbus
+ [ + ]  mysql
+ [ - ]  procps
+ [ + ]  ssh
+ [ - ]  x11-common
+복사<br><br><br>docker container ls
+복사<br><br>docker container commit 컨테이너_이름 ubuntu-pipeline:24.04-service-auto-load
+복사<br><br>docker container rm -f 컨테이너_이름
+복사<br><br><br><br>docker container run -itd ubuntu-pipeline:24.04-service-auto-load
+복사<br><br><a data-href="우분투 hosts를 설정하여 ssh 편하게 이동하기" href="root\dev\data-pipe-line\server\local\우분투-hosts를-설정하여-ssh-편하게-이동하기.html" class="internal-link" target="_self" rel="noopener">우분투 hosts를 설정하여 ssh 편하게 이동하기</a><br><br>ssh-keygen -t rsa
+cd .ssh
+cat id_rsa.pub &gt; authorized_keys
+복사<br><br>Host server*
+  StrictHostKeyChecking no
+  UserKnownHostsFile=/dev/null
+복사<br><a data-href="ssh 접속시 yes 입력 생략하기" href="root\dev\data-pipe-line\server\local\ssh-접속시-yes-입력-생략하기.html" class="internal-link" target="_self" rel="noopener">ssh 접속시 yes 입력 생략하기</a><br><br>cd
+mkdir run
+cd run
+vi ssh_check.sh
+복사<br><a data-href="shell ssh 여러 개 접속 테스트" href="root\dev\data-pipe-line\자동화\shell-ssh-여러-개-접속-테스트.html" class="internal-link" target="_self" rel="noopener">shell ssh 여러 개 접속 테스트</a> 를 작성<br>sudo chmod +x ssh_check.sh
+복사<br><br><br>docker container ls
+복사<br><br>docker container commit 컨테이너_이름 ubuntu-pipeline:24.04-ssh-key
+복사<br><br>docker container rm -f 컨테이너_이름
+복사<br><br>그리고commit 된 이미로 3개의 컨테이너를 띄움<br>docker run -itd \
+  --name server1 \
+  --hostname server1 \
+  --add-host server1:172.17.0.2 \
+  --add-host server2:172.17.0.3 \
+  --add-host server3:172.17.0.4 \
+  ubuntu-pipeline:24.04-ssh-key
+
+docker run -itd \
+  --name server2 \
+  --hostname server2 \
+  --add-host server1:172.17.0.2 \
+  --add-host server2:172.17.0.3 \
+  --add-host server3:172.17.0.4 \
+  ubuntu-pipeline:24.04-ssh-key
+
+docker run -itd \
+  --name server3 \
+  --hostname server3 \
+  --add-host server1:172.17.0.2 \
+  --add-host server2:172.17.0.3 \
+  --add-host server3:172.17.0.4 \
+  ubuntu-pipeline:24.04-ssh-key
+복사<br><br><a data-href="shell ssh 여러 개 접속 테스트" href="root\dev\data-pipe-line\자동화\shell-ssh-여러-개-접속-테스트.html" class="internal-link" target="_self" rel="noopener">shell ssh 여러 개 접속 테스트</a><br>./run/ssh_check.sh
+복사<br><br><br><br>docker container run -itd ubuntu-pipeline:24.04-ssh-key
+복사<br><a data-href="kafka 설치#JAVA" href="root\dev\data-pipe-line\kafka\kafka-설치.html#JAVA" class="internal-link" target="_self" rel="noopener">kafka 설치 &gt; JAVA</a><br><br><br>docker container ls
+복사<br><br>docker container commit 컨테이너_이름 ubuntu-pipeline:24.04-java
+복사<br><br>docker container rm -f 컨테이너_이름
+복사<br><br>Checkroot 계정으로 java를 설치 했을 때는<br>
+hostname이 java 설치 했을 때와 다르면<br>
+컨테이너가 죽는 현상이 발견 됐다.<br>
+하지만 이게 과연 root 계정이기 때문에 발생 된 것인지에 대한 건 모른다.<br>
+때문에 아래의 테스트를 꼭 거치고 다음 스텝을 밟아야 한다<br><br>docker run -itd \
+  --name server1 \
+  --hostname server1 \
+  --add-host server1:172.17.0.2 \
+  --add-host server2:172.17.0.3 \
+  --add-host server3:172.17.0.4 \
+  ubuntu-pipeline:24.04-java
+
+docker run -itd \
+  --name server2 \
+  --hostname server2 \
+  --add-host server1:172.17.0.2 \
+  --add-host server2:172.17.0.3 \
+  --add-host server3:172.17.0.4 \
+  ubuntu-pipeline:24.04-java
+
+docker run -itd \
+  --name server3 \
+  --hostname server3 \
+  --add-host server1:172.17.0.2 \
+  --add-host server2:172.17.0.3 \
+  --add-host server3:172.17.0.4 \
+  ubuntu-pipeline:24.04-java
+
+복사<br><br>docker container rm -f server1 server2 server3 
+복사<br><br><br><br>docker container run -itd ubuntu-pipeline:24.04-java
+복사<br><a data-href="kafka 설치#install" href="root\dev\data-pipe-line\kafka\kafka-설치.html#install" class="internal-link" target="_self" rel="noopener">kafka 설치 &gt; install</a><br><a data-href="kafka 설정 및 실행" href="root\dev\data-pipe-line\kafka\kafka-설정-및-실행.html" class="internal-link" target="_self" rel="noopener">kafka 설정 및 실행</a><br><br><br>docker container ls
+복사<br><br>docker container commit 컨테이너_이름 ubuntu-pipeline:24.04-kafka
+복사<br><br>docker container rm -f 컨테이너_이름
+복사<br><br>정말 위험해!docker 컨테이너로 서버를 start 할 때 순서를 꼭 치켜야 한다.<br>
+그렇지 않으면 ip가 켜진 순서대로 할당 받기 때문에<br>
+kafka에서 정상 작동을 기대하기 어려워진다.<br>docker run -itd \
+  --name server1 \
+  --hostname server1 \
+  --add-host server1:172.17.0.2 \
+  --add-host server2:172.17.0.3 \
+  --add-host server3:172.17.0.4 \
+  ubuntu-pipeline:24.04-kafka
+
+docker run -itd \
+  --name server2 \
+  --hostname server2 \
+  --add-host server1:172.17.0.2 \
+  --add-host server2:172.17.0.3 \
+  --add-host server3:172.17.0.4 \
+  ubuntu-pipeline:24.04-kafka
+
+docker run -itd \
+  --name server3 \
+  --hostname server3 \
+  --add-host server1:172.17.0.2 \
+  --add-host server2:172.17.0.3 \
+  --add-host server3:172.17.0.4 \
+  ubuntu-pipeline:24.04-kafka
+복사<br><br><br><a data-href="kafka 클러스터 서버 시동" href="root\dev\data-pipe-line\kafka\kafka-클러스터-서버-시동.html" class="internal-link" target="_self" rel="noopener">kafka 클러스터 서버 시동</a><br><a data-href="kafka에 csv로 데이터 흘리기" href="root\dev\data-pipe-line\kafka\kafka에-csv로-데이터-흘리기.html" class="internal-link" target="_self" rel="noopener">kafka에 csv로 데이터 흘리기</a><br><a data-href="Kafka Consumer와 MySQL에 데이터 적재하기" href="root\dev\data-pipe-line\kafka\kafka-consumer와-mysql에-데이터-적재하기.html" class="internal-link" target="_self" rel="noopener">Kafka Consumer와 MySQL에 데이터 적재하기</a>]]></description><link>root\dev\data-pipe-line\docker-pipe-line-환경-구축-v0.1.html</link><guid isPermaLink="false">root/dev/data pipe line/docker pipe line 환경 구축 v0.1.md</guid><pubDate>Thu, 08 Aug 2024 16:55:21 GMT</pubDate></item><item><title><![CDATA[docker pipe line 환경 구축 v0.2]]></title><description><![CDATA[ 
+ <br>docker pipe line 환경 구축 v0.2<br>커밋할 때절 때 hostname으로 이름 지은 것으로 하지 말아야함.<br>
+그렇지 않고, hostname이 지정된 상태에서 프로그램을 설치하고,<br>
+그 상태로 커밋을 한 다면, hostname과 일치하는 컨테이너는 문제가 없을 테지만,<br>
+그렇지 못한 컨테이너는 프로그램에 따라서 실행이 안된다.<br>작업에 들어가기 앞서!
+<br>(L): local에서 하는 작업
+
+<br>windows: wsl
+<br>mac: terminal
+
+
+<br>(C): container에서 하는 작업
+<br><br>docker container run -it -d ubuntu-pipeline:24.04
+복사<br><br><br><br>vi .bashrc
+복사<br>내용을 전부 지운 뒤<br><a data-href="우분투 root 계정일 때 bash 일반 계정처럼 만들기" href="우분투 root 계정일 때 bash 일반 계정처럼 만들기" class="internal-link" target="_self" rel="noopener">우분투 root 계정일 때 bash 일반 계정처럼 만들기</a>를 붙여 넣는다.<br><br>. ~/.bashrc
+복사<br><br><br>passwd
+복사<br><br><br>apt-get update
+apt-get install -y sudo
+apt-get install -y curl
+apt-get install -y net-tools
+apt-get install -y git
+apt-get install -y wget
+apt-get install -y tree
+apt-get install -y vim
+apt-get install -y openssh-server
+apt-get install -y mysql-server
+apt-get install -y openjdk-17-jre-headless
+복사<br>중간에 <br>Please select the geographic area in which you live. Subsequent configuration questions
+will narrow this down by presenting a list of cities, representing the time zones in
+which they are located.
+
+  1. Africa   3. Antarctica  5. Asia     
+  2. America  4. Arctic      6. Atlantic 
+Geographic area: 5
+
+Please select the city or region corresponding to your time zone.
+
+  49. Macau         67. Samarkand    
+  50. Magadan       68. Seoul        
+  51. Makassar      69. Shanghai     
+Time zone: 68
+복사<br>time zones 선택하라고 나온다.<br>
+참고로 위의 보기는 많이 생략한 내용임으로 위처럼 나오지 않는다.<br>Check
+<br>
+첫번째 에서<br>
+5. Asia
+
+<br>
+두번 째 에서<br>
+68. Seoul
+
+<br><br><br>wow!openssh-server 설치하면서 같이 설치됨.. ㅎ...<br><br>ln -s /bin/python3 /bin/python
+복사<br>이렇게 링크를 만들어 줘야<br>
+python shell에서 명령어를 입력 했을 때, python이 호출 된다.<br><br><a data-href="python pip venv 가상환경 사용하지 않기" href="python pip venv 가상환경 사용하지 않기" class="internal-link" target="_self" rel="noopener">python pip venv 가상환경 사용하지 않기</a><br>sudo rm /usr/lib/python3.12/EXTERNALLY-MANAGED
+복사<br>이걸 끄지 않으면<br>Errorerror: externally-managed-environment
+× This environment is externally managed<br>
+╰─&gt; To install Python packages system-wide, try apt install<br>
+python3-xyz, where xyz is the package you are trying to<br>
+install.
+If you wish to install a non-Debian-packaged Python package,
+create a virtual environment using python3 -m venv path/to/venv.
+Then use path/to/venv/bin/python and path/to/venv/bin/pip. Make
+sure you have python3-full installed.
+
+If you wish to install a non-Debian packaged Python application,
+it may be easiest to use pipx install xyz, which will manage a
+virtual environment for you. Make sure you have pipx installed.
+
+See /usr/share/doc/python3.12/README.venv for more information.
+복사<br>이런 게 나옴.<br>참고로 python3.12 이 부분은 python -V  로 버전을 확인 한 후.<br>
+각자의 버전에 알맞게 수정하는 게 이로움.<br>그리고 설정을 끄고 나서 pip install로 패키지를 설치하고 나면<br>WarningWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: <a rel="noopener" class="external-link" href="https://pip.pypa.io/warnings/venv" target="_blank">https://pip.pypa.io/warnings/venv</a><br>이런 게 쓰는데, 신경 쓰지 않아도 괜찮음.<br>
+똬카(docker)니까<br><br>apt install python3-pip
+복사<br><br><br><a data-href="docker 우분투 mysql 설치#시작" href="root\dev\data-pipe-line\server\docker-우분투-mysql-설치.html#시작" class="internal-link" target="_self" rel="noopener">docker 우분투 mysql 설치 &gt; 시작</a><br>이미 기본 설치는 해버렸기 때문에 시작 부 터 설정만 해주면 된다.<br><br><br><br>service ssh start
+복사<br><br><br>vi /etc/ssh/sshd_config
+복사<br><br>Port 22
+ListenAddress 0.0.0.0
+PermitRootLogin yes
+복사<br><br>ssh-keygen -t rsa
+cd .ssh
+cat id_rsa.pub &gt; authorized_keys
+복사<br><br><br>vi ~/.ssh/config
+복사<br><br>Host server*
+  StrictHostKeyChecking no
+  UserKnownHostsFile=/dev/null
+복사<br><a data-href="ssh 접속시 yes 입력 생략하기" href="root\dev\data-pipe-line\server\local\ssh-접속시-yes-입력-생략하기.html" class="internal-link" target="_self" rel="noopener">ssh 접속시 yes 입력 생략하기</a><br><br><br><br><br>vi ~/.bashrc
+복사<br><br>if ! sudo service ssh status &gt; /dev/null 2&gt;&amp;1; then
+  sudo service ssh start
+fi
+
+if ! sudo service mysql status &gt; /dev/null 2&gt;&amp;1; then
+  sudo service mysql start
+fi
+복사<br><br>. ~/.bashrc
+복사<br><br><br>sudo service --status-all
+복사<br><br> [ - ]  dbus
+ [ + ]  mysql
+ [ - ]  procps
+ [ + ]  ssh
+ [ - ]  x11-common
+복사<br><br><br><br><br>vi ~/.bashrc
+복사<br><br>Attention둘 중 하나만 적용한다.<br>
+amd는 intel 혹은 amd용이고<br>
+arm은 m1 시리즈를 사용하고 있는 mac이다.<br>
+맨 끝에를 보면 mac용은 arm64라고 적혀져 있는 걸 볼수 있다.
+dpkg -s libc6 | grep Arch
+복사
+위의 명령어로 자신의 아키텍쳐를 확인 할 수 있다.<br><br>export JAVA_HOME=/usr/lib/jvm/java-1.17.0-openjdk-amd64
+복사<br><br>export JAVA_HOME=/usr/lib/jvm/java-1.17.0-openjdk-arm64
+복사<br><br>. .bashrc
+복사<br><br>java --version
+복사<br><br><br><br><br>docker container ls
+복사<br><br>docker container commit 컨테이너_이름 ubuntu-pipeline:24.04-base
+복사<br><br>docker container rm -f 컨테이너_이름
+복사<br><br><br>docker image ls
+복사<br><br>docker image ls -a
+복사<br><br>docker image ls | grep base
+복사<br>REPOSITORY                 TAG            
+ubuntu-pipeline            24.04-base     
+복사<br>이런 식으로 나온다면 성공<br><br><br><br>docker run -itd \
+  --name server1 \
+  --hostname server1 \
+  --add-host server1:172.17.0.2 \
+  --add-host server2:172.17.0.3 \
+  --add-host server3:172.17.0.4 \
+  ubuntu-pipeline:24.04-base
+
+docker run -itd \
+  --name server2 \
+  --hostname server2 \
+  --add-host server1:172.17.0.2 \
+  --add-host server2:172.17.0.3 \
+  --add-host server3:172.17.0.4 \
+  ubuntu-pipeline:24.04-base
+
+docker run -itd \
+  --name server3 \
+  --hostname server3 \
+  --add-host server1:172.17.0.2 \
+  --add-host server2:172.17.0.3 \
+  --add-host server3:172.17.0.4 \
+  ubuntu-pipeline:24.04-base
+복사<br><br>./run/ssh_check.sh
+복사<br><a data-href="shell ssh 여러 개 접속 테스트" href="root\dev\data-pipe-line\자동화\shell-ssh-여러-개-접속-테스트.html" class="internal-link" target="_self" rel="noopener">shell ssh 여러 개 접속 테스트</a><br><br>docker container rm server1 server2 server3
+복사<br><br><br><br>docker container run -itd ubuntu-pipeline:24.04-base
+복사<br><br><a data-href="kafka 설치#install" href="root\dev\data-pipe-line\kafka\kafka-설치.html#install" class="internal-link" target="_self" rel="noopener">kafka 설치 &gt; install</a><br>cd
+
+mkdir app
+cd app
+
+mkdir kafka
+cd kafka
+
+wget https://downloads.apache.org/kafka/3.6.2/kafka_2.13-3.6.2.tgz
+
+tar -xzf kafka_2.13-3.6.2.tgz
+복사<br><br><a data-href="kafka 설정 및 실행" href="root\dev\data-pipe-line\kafka\kafka-설정-및-실행.html" class="internal-link" target="_self" rel="noopener">kafka 설정 및 실행</a><br><br>cd
+mkdir zkdata
+cd zkdata
+echo 1 &gt; ./myid
+복사<br><br>vi /root/app/kafka/kafka_2.13-3.6.2/config/server.properties
+복사<br><a data-href="kafka server.properties" href="root\dev\data-pipe-line\kafka\kafka-server.properties.html" class="internal-link" target="_self" rel="noopener">kafka server.properties</a>  내용을 전체 복사 붙여 넣기<br><br>vi /root/app/kafka/kafka_2.13-3.6.2/config/zookeeper.properties
+복사<br>
+dataDir=/home/ubuntu/zkdata
+# the port at which the clients will connect
+clientPort=2181
+tickTime=2000
+initLimit=10
+syncLimit=5
+server.1=172.17.0.2:2888:3888
+server.2=172.17.0.3:2888:3888
+server.3=172.17.0.4:2888:3888
+# disable the per-ip limit on the number of connections since this is a non-production config
+maxClientCnxns=0
+# Disable the adminserver by default to avoid port conflicts.
+# Set the port to something non-conflicting if choosing to enable this
+admin.enableServer=false
+복사<br>위의 내용을 전체 복사 붙여 넣기<br><br><br>docker container ls
+복사<br><br>docker container commit 컨테이너_이름 ubuntu-pipeline:24.04-kafka
+복사<br><br>docker container rm -f 컨테이너_이름
+복사<br><br>정말 위험해!docker 컨테이너로 서버를 start 할 때 순서를 꼭 치켜야 한다.<br>
+그렇지 않으면 ip가 켜진 순서대로 할당 받기 때문에<br>
+kafka에서 정상 작동을 기대하기 어려워진다.<br>docker run -itd \
+  --name server1 \
+  --hostname server1 \
+  --add-host server1:172.17.0.2 \
+  --add-host server2:172.17.0.3 \
+  --add-host server3:172.17.0.4 \
+  ubuntu-pipeline:24.04-kafka
+
+docker run -itd \
+  --name server2 \
+  --hostname server2 \
+  --add-host server1:172.17.0.2 \
+  --add-host server2:172.17.0.3 \
+  --add-host server3:172.17.0.4 \
+  ubuntu-pipeline:24.04-kafka
+
+docker run -itd \
+  --name server3 \
+  --hostname server3 \
+  --add-host server1:172.17.0.2 \
+  --add-host server2:172.17.0.3 \
+  --add-host server3:172.17.0.4 \
+  ubuntu-pipeline:24.04-kafka
+복사<br><br><br><a data-href="kafka 클러스터 서버 시동" href="root\dev\data-pipe-line\kafka\kafka-클러스터-서버-시동.html" class="internal-link" target="_self" rel="noopener">kafka 클러스터 서버 시동</a><br><a data-href="kafka에 csv로 데이터 흘리기" href="root\dev\data-pipe-line\kafka\kafka에-csv로-데이터-흘리기.html" class="internal-link" target="_self" rel="noopener">kafka에 csv로 데이터 흘리기</a><br><a data-href="Kafka Consumer와 MySQL에 데이터 적재하기" href="root\dev\data-pipe-line\kafka\kafka-consumer와-mysql에-데이터-적재하기.html" class="internal-link" target="_self" rel="noopener">Kafka Consumer와 MySQL에 데이터 적재하기</a>]]></description><link>root\dev\data-pipe-line\docker-pipe-line-환경-구축-v0.2.html</link><guid isPermaLink="false">root/dev/data pipe line/docker pipe line 환경 구축 v0.2.md</guid><pubDate>Thu, 29 Aug 2024 02:45:15 GMT</pubDate></item><item><title><![CDATA[docker pipe line 환경 구축 v0.3]]></title><description><![CDATA[ 
+ <br>더 자세한 메뉴얼은<a data-tooltip-position="top" aria-label="https://github.com/namugach/pipeline_base" rel="noopener" class="external-link" href="https://github.com/namugach/pipeline_base" target="_blank">여기</a>에서 확인!<br><br><br>git clone https://github.com/namugach/pipeline_base
+복사<br><br>cd pipeline_base
+복사<br><br>./install
+복사<br><br><br><br>창을2개 띄워서 나중에 모니터링 할 것도 미리서 준비 해놓자<br>docker container exec -it server1 bash -c "cd /root &amp;&amp; bash"
+복사<br><br>./run/kafka/start_cluster.sh
+복사<br><br>./test/monitor.sh
+복사<br><br>./test/main.sh
+복사<br><br><br>mysql -u ubuntu -p1234
+복사<br><br>
+USE my_data;
+SELECT * FROM test_a;
+복사]]></description><link>root\dev\data-pipe-line\docker-pipe-line-환경-구축-v0.3.html</link><guid isPermaLink="false">root/dev/data pipe line/docker pipe line 환경 구축 v0.3.md</guid><pubDate>Thu, 29 Aug 2024 04:31:14 GMT</pubDate></item><item><title><![CDATA[mlops docker github action 연결하기]]></title><description><![CDATA[ 
  <br>작업 환경windows: wsl2
 mac도 비슷할 것임.<br><br><br><br>cd
 복사<br><br>vi Dockerfile
@@ -5666,169 +6466,7 @@ Spark를 사용하는 경우:
 <br>Spark 데이터 프레임 API를 사용하여 데이터를 로드, 처리, 분석합니다. 예를 들어, 특정 조건에 맞는 데이터를 필터링하거나, 데이터를 집계하고, 이를 다시 MySQL에 저장할 수 있습니다.
 
 
-<br>이 실습을 통해 Spark를 사용했을 때의 장점, 특히 대규모 데이터 처리 속도와 유연성을 직접 경험할 수 있습니다. Spark의 강력한 데이터 처리 및 분석 기능은 특히 대량의 데이터 처리 및 복잡한 분석 작업에서 그 진가를 발휘합니다.]]></description><link>root\dev\data-pipe-line\spark\spark에-대한-고찰.html</link><guid isPermaLink="false">root/dev/data pipe line/spark/spark에 대한 고찰.md</guid><pubDate>Sat, 27 Jul 2024 07:10:26 GMT</pubDate></item><item><title><![CDATA[docker pipe line 구축]]></title><description><![CDATA[ 
- <br>작업에 들어가기 앞서!
-<br>(L): local에서 하는 작업
-
-<br>windows: wsl
-<br>mac: terminal
-
-
-<br>(C): container에서 하는 작업
-<br><br>pull 받으려 하는데 로그인 하라고?
-<br><a rel="noopener" class="external-link" href="http://dockerhub.com/" target="_blank">http://dockerhub.com/</a> 에서
-<br>아이디 없으면 만들고
-<br>있으면 확인하고
-<br>shell에서 아래의 명령어를 입력하여 로그인
-
-docker login
-복사<br><br>docker pull ubuntu:24.04
-복사<br><br>docker tag ubuntu:24.04 ubuntu-pipeline:24.04
-복사<br><br>docker container run -it -d ubuntu-pipeline:24.04
-복사<br><br><br><br>apt-get update
-apt-get install -y sudo
-apt-get install -y net-tools
-apt-get install -y git
-apt-get install -y wget
-apt-get install -y tree
-apt-get install -y openssh-server
-apt-get install -y vim
-복사<br><br>매우 주의!root 계정으로 작업 할 것!<br><br>passwd
-복사<br><br>passwd ubuntu
-복사<br><br><a data-href="우분투 sudo 비번 생략하기" href="root\dev\data-pipe-line\server\local\우분투-sudo-비번-생략하기.html" class="internal-link" target="_self" rel="noopener">우분투 sudo 비번 생략하기</a><br>echo 'ubuntu ALL=(ALL) NOPASSWD:ALL' &gt;&gt; /etc/sudoers
-복사<br><br><br><br><br>docker container ls
-복사<br><br>docker container commit 컨테이너_이름 ubuntu-pipeline:24.04-basic
-복사<br><br>docker container rm -f 컨테이너_이름
-복사<br><br><br><br><br>docker container run -itd \
-  -u ubuntu \
-  -w /home/ubuntu \
-  ubuntu-pipeline:24.04-basic
-복사<br><br>docker container ls
-복사<br><br>docker container commit 컨테이너_이름 ubuntu-pipeline:24.04-user-setting
-복사<br><br>docker container rm -f 컨테이너_이름
-복사<br><br><br><br>docker container run -itd ubuntu-pipeline:24.04-user-setting 
-복사<br><br><a data-href="pyenv 설치" href="root\dev\data-pipe-line\server\pyenv-설치.html" class="internal-link" target="_self" rel="noopener">pyenv 설치</a><br><br><br>docker container ls
-복사<br><br>docker container commit 컨테이너_이름 ubuntu-pipeline:24.04-pyenv
-복사<br><br>docker container rm -f 컨테이너_이름
-복사<br><br><br><br>docker container run -itd ubuntu-pipeline:24.04-pyenv
-복사<br><br><a data-href="docker 우분투 mysql 설치" href="root\dev\data-pipe-line\server\docker-우분투-mysql-설치.html" class="internal-link" target="_self" rel="noopener">docker 우분투 mysql 설치</a><br><br><br>docker container ls
-복사<br><br>docker container commit 컨테이너_이름 ubuntu-pipeline:24.04-mysql
-복사<br><br>docker container rm -f 컨테이너_이름
-복사<br><br><br><br>docker container run -itd ubuntu-pipeline:24.04-mysql
-복사<br><a data-href="docker container 시작 시 명령어 시작" href="root\dev\data-pipe-line\server\local\docker-container-시작-시-명령어-시작.html" class="internal-link" target="_self" rel="noopener">docker container 시작 시 명령어 시작</a><br><br>docker container run -itd \
-  ubuntu-pipeline:24.04-mysql\
-  /bin/bash -c "sudo service ssh start &amp;&amp; sudo service mysql start &amp;&amp; tail -f /dev/null"
-복사<br><br><br>sudo service --status-all
-복사<br><br> [ - ]  dbus
- [ + ]  mysql
- [ - ]  procps
- [ + ]  ssh
- [ - ]  x11-common
-복사<br><br><br>docker container ls
-복사<br><br>docker container commit 컨테이너_이름 ubuntu-pipeline:24.04-service-auto-load
-복사<br><br>docker container rm -f 컨테이너_이름
-복사<br><br><br><br>docker container run -itd ubuntu-pipeline:24.04-service-auto-load
-복사<br><br><a data-href="우분투 hosts를 설정하여 ssh 편하게 이동하기" href="root\dev\data-pipe-line\server\local\우분투-hosts를-설정하여-ssh-편하게-이동하기.html" class="internal-link" target="_self" rel="noopener">우분투 hosts를 설정하여 ssh 편하게 이동하기</a><br><br>ssh-keygen -t rsa
-cd .ssh
-cat id_rsa.pub &gt; authorized_keys
-복사<br><br>Host server*
-  StrictHostKeyChecking no
-  UserKnownHostsFile=/dev/null
-복사<br><a data-href="ssh 접속시 yes 입력 생략하기" href="root\dev\data-pipe-line\server\local\ssh-접속시-yes-입력-생략하기.html" class="internal-link" target="_self" rel="noopener">ssh 접속시 yes 입력 생략하기</a><br><br>cd
-mkdir run
-cd run
-vi ssh_check.sh
-복사<br><a data-href="shell ssh 여러 개 접속 테스트" href="root\dev\data-pipe-line\자동화\shell-ssh-여러-개-접속-테스트.html" class="internal-link" target="_self" rel="noopener">shell ssh 여러 개 접속 테스트</a> 를 작성<br>sudo chmod +x ssh_check.sh
-복사<br><br><br>docker container ls
-복사<br><br>docker container commit 컨테이너_이름 ubuntu-pipeline:24.04-ssh-key
-복사<br><br>docker container rm -f 컨테이너_이름
-복사<br><br>그리고commit 된 이미로 3개의 컨테이너를 띄움<br>docker run -itd \
-  --name server1 \
-  --hostname server1 \
-  --add-host server1:172.17.0.2 \
-  --add-host server2:172.17.0.3 \
-  --add-host server3:172.17.0.4 \
-  ubuntu-pipeline:24.04-ssh-key
-
-docker run -itd \
-  --name server2 \
-  --hostname server2 \
-  --add-host server1:172.17.0.2 \
-  --add-host server2:172.17.0.3 \
-  --add-host server3:172.17.0.4 \
-  ubuntu-pipeline:24.04-ssh-key
-
-docker run -itd \
-  --name server3 \
-  --hostname server3 \
-  --add-host server1:172.17.0.2 \
-  --add-host server2:172.17.0.3 \
-  --add-host server3:172.17.0.4 \
-  ubuntu-pipeline:24.04-ssh-key
-복사<br><br><a data-href="shell ssh 여러 개 접속 테스트" href="root\dev\data-pipe-line\자동화\shell-ssh-여러-개-접속-테스트.html" class="internal-link" target="_self" rel="noopener">shell ssh 여러 개 접속 테스트</a><br>./run/check_ssh.sh
-복사<br><br><br>docker container ls
-복사<br><br>docker container commit 컨테이너_이름 ubuntu-pipeline:24.04-service-auto-load
-복사<br><br>docker container rm -f 컨테이너_이름
-복사<br><br><br><br>docker container run -itd ubuntu-pipeline:24.04-ssh-key
-복사<br><a data-href="kafka 설치#JAVA" href="root\dev\data-pipe-line\kafka\kafka-설치.html#JAVA" class="internal-link" target="_self" rel="noopener">kafka 설치 &gt; JAVA</a><br><br><br>docker container ls
-복사<br><br>docker container commit 컨테이너_이름 ubuntu-pipeline:24.04-java
-복사<br><br>docker container rm -f 컨테이너_이름
-복사<br><br>Checkroot 계정으로 java를 설치 했을 때는<br>
-hostname이 java 설치 했을 때와 다르면<br>
-컨테이너가 죽는 현상이 발견 됐다.<br>
-하지만 이게 과연 root 계정이기 때문에 발생 된 것인지에 대한 건 모른다.<br>
-때문에 아래의 테스트를 꼭 거치고 다음 스텝을 밟아야 한다<br><br>docker run -itd \
-  --name server1 \
-  --hostname server1 \
-  --add-host server1:172.17.0.2 \
-  --add-host server2:172.17.0.3 \
-  --add-host server3:172.17.0.4 \
-  ubuntu-pipeline:24.04-java
-
-docker run -itd \
-  --name server2 \
-  --hostname server2 \
-  --add-host server1:172.17.0.2 \
-  --add-host server2:172.17.0.3 \
-  --add-host server3:172.17.0.4 \
-  ubuntu-pipeline:24.04-java
-
-docker run -itd \
-  --name server3 \
-  --hostname server3 \
-  --add-host server1:172.17.0.2 \
-  --add-host server2:172.17.0.3 \
-  --add-host server3:172.17.0.4 \
-  ubuntu-pipeline:24.04-java
-
-복사<br><br>docker container rm -f server1 server2 server3 
-복사<br><br><br><br>docker container run -itd ubuntu-pipeline:24.04-java
-복사<br><a data-href="kafka 설치#install" href="root\dev\data-pipe-line\kafka\kafka-설치.html#install" class="internal-link" target="_self" rel="noopener">kafka 설치 &gt; install</a><br><a data-href="kafka 설정 및 실행" href="root\dev\data-pipe-line\kafka\kafka-설정-및-실행.html" class="internal-link" target="_self" rel="noopener">kafka 설정 및 실행</a><br>정말 위험해!docker 컨테이너로 서버를 start 할 때 순서를 꼭 치켜야 한다.<br>
-그렇지 않으면 ip가 켜진 순서대로 할당 받기 때문에<br>
-kafka에서 정상 작동을 기대하기 어려워진다.<br>docker run -itd \
-  --name server1 \
-  --hostname server1 \
-  --add-host server1:172.17.0.2 \
-  --add-host server2:172.17.0.3 \
-  --add-host server3:172.17.0.4 \
-  ubuntu-pipeline:24.04-kafka
-
-docker run -itd \
-  --name server2 \
-  --hostname server2 \
-  --add-host server1:172.17.0.2 \
-  --add-host server2:172.17.0.3 \
-  --add-host server3:172.17.0.4 \
-  ubuntu-pipeline:24.04-kafka
-
-docker run -itd \
-  --name server3 \
-  --hostname server3 \
-  --add-host server1:172.17.0.2 \
-  --add-host server2:172.17.0.3 \
-  --add-host server3:172.17.0.4 \
-  ubuntu-pipeline:24.04-kafka
-복사<br><br><br><a data-href="kafka 클러스터 서버 시동" href="root\dev\data-pipe-line\kafka\kafka-클러스터-서버-시동.html" class="internal-link" target="_self" rel="noopener">kafka 클러스터 서버 시동</a><br><a data-href="kafka에 csv로 데이터 흘리기" href="root\dev\data-pipe-line\kafka\kafka에-csv로-데이터-흘리기.html" class="internal-link" target="_self" rel="noopener">kafka에 csv로 데이터 흘리기</a><br><a data-href="Kafka Consumer와 MySQL에 데이터 적재하기" href="root\dev\data-pipe-line\kafka\kafka-consumer와-mysql에-데이터-적재하기.html" class="internal-link" target="_self" rel="noopener">Kafka Consumer와 MySQL에 데이터 적재하기</a>]]></description><link>root\dev\data-pipe-line\docker-pipe-line-구축.html</link><guid isPermaLink="false">root/dev/data pipe line/docker pipe line 구축.md</guid><pubDate>Mon, 05 Aug 2024 01:41:31 GMT</pubDate></item><item><title><![CDATA[EC2 - mariaDB workbench 연결]]></title><description><![CDATA[ 
+<br>이 실습을 통해 Spark를 사용했을 때의 장점, 특히 대규모 데이터 처리 속도와 유연성을 직접 경험할 수 있습니다. Spark의 강력한 데이터 처리 및 분석 기능은 특히 대량의 데이터 처리 및 복잡한 분석 작업에서 그 진가를 발휘합니다.]]></description><link>root\dev\data-pipe-line\spark\spark에-대한-고찰.html</link><guid isPermaLink="false">root/dev/data pipe line/spark/spark에 대한 고찰.md</guid><pubDate>Sat, 27 Jul 2024 07:10:26 GMT</pubDate></item><item><title><![CDATA[EC2 - mariaDB workbench 연결]]></title><description><![CDATA[ 
  <br><br><img alt="Pasted image 20240501003521.png" src="lib\media\pasted-image-20240501003521.png"><br><br><br><img alt="Pasted image 20240501003750.png" src="lib\media\pasted-image-20240501003750.png"><br>
 <br>Connection Name: EC2-mariadb
 <br>Connection Methods: Standard TCP/IP over SSH
