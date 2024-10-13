@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 29 Aug 2024 04:40:31 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 29 Aug 2024 04:39:39 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[0.도커와 쿠버네티스]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 13 Oct 2024 07:49:19 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 13 Oct 2024 07:48:36 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[0.도커와 쿠버네티스]]></title><description><![CDATA[ 
  <br><br>
 <br>우분투
 <br>t2.xlarge
@@ -2597,7 +2597,2953 @@ data['spec']['containers'][1]
 # {'name': 'ubuntu', 'image': 'ubuntu:latest'}
 data['spec']['containers'][1]['name']
 # 'ubuntu'
-Run복사]]></description><link>root\dev\도커와-쿠버네티스\python에-yaml.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네티스/Python에 YAML.md</guid><pubDate>Mon, 03 Jun 2024 11:22:53 GMT</pubDate></item><item><title><![CDATA[카프카를 데이터 파이프라인에 통합하기]]></title><description><![CDATA[ 
+Run복사]]></description><link>root\dev\도커와-쿠버네티스\python에-yaml.html</link><guid isPermaLink="false">root/dev/도커와 쿠버네티스/Python에 YAML.md</guid><pubDate>Mon, 03 Jun 2024 11:22:53 GMT</pubDate></item><item><title><![CDATA[gcp kubeflow 외부에서 접속하기]]></title><description><![CDATA[ 
+ <br><br>kubectl edit svc istio-ingressgateway -n istio-system
+복사<br><br>
+<br>입력
+<br>kubectl get svc -n istio-system
+복사<br>
+<br>출력
+<br>NAME                    TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)                                      AGE
+authservice             ClusterIP   10.43.88.59     &lt;none&gt;        8080/TCP                                     15m
+cluster-local-gateway   ClusterIP   10.43.87.140    &lt;none&gt;        15020/TCP,80/TCP                             15m
+istio-ingressgateway    NodePort    10.43.113.68    &lt;none&gt;        15021:31679/TCP,80:30080/TCP,443:31055/TCP   15m
+istiod                  ClusterIP   10.43.188.239   &lt;none&gt;        15010/TCP,15012/TCP,443/TCP,15014/TCP        15m
+knative-local-gateway   ClusterIP   10.43.68.195    &lt;none&gt;        80/TCP                                       15m
+복사<br>apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app":"istio-ingressgateway","install.operator.istio.io/owning-resource":"unknown","istio":"ingressgateway","istio.io/rev":"default"},"name":"istio-ingressgateway","namespace":"istio-system"},"spec":{"clusterIP":"10.43.113.68","ports":[{"name":"status-port","port":15021,"protocol":"TCP","targetPort":15021},{"name":"http2","port":80,"protocol":"TCP","targetPort":8080,"nodePort":30080},{"name":"https","port":443,"protocol":"TCP","targetPort":8443}],"selector":{"app":"istio-ingressgateway","istio":"ingressgateway"},"sessionAffinity":"None","type":"NodePort"}}
+  creationTimestamp: "2024-10-01T06:06:58Z"
+  labels:
+    app: istio-ingressgateway
+    install.operator.istio.io/owning-resource: unknown
+    istio: ingressgateway
+    istio.io/rev: default
+    operator.istio.io/component: IngressGateways
+    release: istio
+  name: istio-ingressgateway
+  namespace: istio-system
+  resourceVersion: "1469"
+  uid: e5d3c0a9-d355-430e-8e21-a79f5e2db6f3
+spec:
+  clusterIP: 10.99.11.233
+  clusterIPs:
+  - 10.99.11.233
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: status-port
+    port: 15021
+    protocol: TCP
+    targetPort: 15021
+  - name: http2
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+    nodePort: 30080  # 원하는 NodePort 번호
+  - name: https
+    port: 443
+    protocol: TCP
+    targetPort: 8443
+  selector:
+    app: istio-ingressgateway
+    istio: ingressgateway
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
+
+복사<br><br><br>kubectl edit svc istio-ingressgateway -n istio-system
+복사<br>spec:
+  type: LoadBalancer
+
+복사<br>kubectl get svc -n istio-system
+복사<br><br><br>spec:
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 8080
+      nodePort: 30080   # NodePort 지정
+      protocol: TCP
+
+복사<br>Error[403] Could not find CSRF cookie XSRF-TOKEN in the request. <a rel="noopener" class="external-link" href="http://34.47.95.0:30080/jupyter/api/namespaces/kubeflow-user-example-com/notebooks" target="_blank">http://34.47.95.0:30080/jupyter/api/namespaces/kubeflow-user-example-com/notebooks</a><br>왜지??<br>kubectl edit deploy jupyter-web-app-deployment -n kubeflow
+복사<br>spec:
+      containers:
+      - env:
+        - name: APP_SECURE_COOKIES
+          values: "false"
+복사<br>APP_SECURE_COOKIES 부분을 "true" -&gt; "false"<br>
+<br><a rel="noopener" class="external-link" href="https://otzslayer.github.io/kubeflow/2022/06/11/could-not-find-csrf-cookie-xsrf-token-in-the-request.html" target="_blank">https://otzslayer.github.io/kubeflow/2022/06/11/could-not-find-csrf-cookie-xsrf-token-in-the-request.html</a>
+<br><a rel="noopener" class="external-link" href="https://github.com/mlops-for-all/mlops-for-all.github.io/issues/72" target="_blank">https://github.com/mlops-for-all/mlops-for-all.github.io/issues/72</a>
+<br><a data-tooltip-position="top" aria-label="https://velog.io/@seokbin/Kubeflow-V1.4-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%B4%88%EA%B8%B0-%EC%84%A4%EC%A0%95User-%EC%B6%94%EA%B0%80-CORS" rel="noopener" class="external-link" href="https://velog.io/@seokbin/Kubeflow-V1.4-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%B4%88%EA%B8%B0-%EC%84%A4%EC%A0%95User-%EC%B6%94%EA%B0%80-CORS" target="_blank">https://velog.io/@seokbin/Kubeflow-V1.4-설치-및-초기-설정User-추가-CORS</a>
+<br><br><br><a rel="noopener" class="external-link" href="https://github.com/kubeflow/manifests/issues/2533" target="_blank">https://github.com/kubeflow/manifests/issues/2533</a><br><br>sudo sysctl fs.inotify.max_user_watches=524288
+sudo sysctl fs.inotify.max_user_instances=512
+복사<br><br>sudo vi /etc/sysctl.conf
+복사<br>fs.inotify.max_user_watches = 524288
+fs.inotify.max_user_instances = 512
+복사<br>제일 하단에 입력]]></description><link>root\dev\머신러닝-서비스-구축을-위한-실전-mlops\kubeflow\gcp-kubeflow-외부에서-접속하기.html</link><guid isPermaLink="false">root/dev/머신러닝 서비스 구축을 위한 실전 MLOps/kubeflow/gcp kubeflow 외부에서 접속하기.md</guid><pubDate>Wed, 02 Oct 2024 18:55:01 GMT</pubDate></item><item><title><![CDATA[GCP에 K3S설치하고 Kubeflow 사용하기]]></title><description><![CDATA[ 
+ <br><br>여기 나와 있는 스팩그대로 해야함.<br>
+그리고 kubeflow는 최소 사양이
+
+<br>cpu: 16 core
+<br>ram: 32 gb
+
+이기 때문에. 이 점도 매우 유의 해야함<br>
+이거 안맞춰 주면 pod가 뜨지 않아서 no namespace를 맛 볼 수 있을 거임<br><br><br><br><br><img alt="Pasted image 20241003030348.png" src="lib\media\pasted-image-20241003030348.png"><br>
+<br>입력: 이름
+<br>선택: 서울
+<br>선택: 모두
+<br><br><img alt="Pasted image 20241003030450.png" src="lib\media\pasted-image-20241003030450.png"><br>
+<br>선택: E2
+<br>클릭: 커스텀
+<br>조절: 16
+<br>조절: 32
+<br><br><br><img alt="Pasted image 20241003030756.png" src="lib\media\pasted-image-20241003030756.png"><br>
+<br>클릭: 변경
+<br><img alt="Pasted image 20241003030834.png" src="lib\media\pasted-image-20241003030834.png"><br>
+<br>선택: Ubuntu
+<br>선택: Ubuntu 24.04 LTS
+
+<br>x86/64, amd64 noble image built on 2024-10-01
+
+
+<br>입력: 100
+<br>클릭: 선택
+<br><br><img alt="Pasted image 20241003031014.png" src="lib\media\pasted-image-20241003031014.png"><br>
+<br>체크: 
+
+<br>HTTP 트래픽 허용
+<br>HTTPS 트래픽 허용
+
+
+<br><br><br>고정 아이피작업<br><img alt="Pasted image 20241003032217.png" src="lib\media\pasted-image-20241003032217.png"><br>
+<br>클릭: 펼치기
+<br>클릭: default
+<br><img alt="Pasted image 20241003032227.png" src="lib\media\pasted-image-20241003032227.png"><br>
+<br>클릭: 기본 내부 IPv4 주소
+<br>선택: 고정 내부 IPV4 주소 예약
+<br>입력: 이름
+<br>클릭: 예약
+<br><img alt="Pasted image 20241003032236.png" src="lib\media\pasted-image-20241003032236.png"><br>
+7. 클릭: 외부 IPv4 주소<br>
+8. 선택: 고정 외부 IP 주소 예약<br>
+9. 입력: 이름<br>
+10. 클릭: 예약<br><br><br><br><a rel="noopener" class="external-link" href="https://github.com/kubeflow/manifests/issues/2533" target="_blank">https://github.com/kubeflow/manifests/issues/2533</a><br>이것을하지 않으면 너무 많은 pod를 감당하지 못한 리눅스가
+too many open files
+라며 힘들어한다. 그리고 그 결과는<br>
+<img alt="Pasted image 20241003033929.png" src="lib\media\pasted-image-20241003033929.png"><br>
+이렇다.
+해주자.<br>
+<br>열기
+<br>sudo vi /etc/sysctl.conf
+복사<br>
+<br>입력
+<br>fs.inotify.max_user_watches = 524288
+fs.inotify.max_user_instances = 512
+복사<br>제일 하단에 붙여 넣음<br><br><br>curl -sSL get.docker.com | sh
+복사<br><br>
+<br>Docker 그룹을 확인해:
+<br>sudo groupadd docker
+복사<br>
+<br>현재 사용자를 Docker 그룹에 추가해:
+<br>sudo usermod -aG docker $USER
+복사<br>
+<br>시스템 재시작
+<br>꼭 해야해그렇지 않으면 docker 앞에 sudo 써가며 해야함.<br><br><br>사실밑에 한 땀식 땋을 수 있지만<br>
+너무 성가셔.<br>
+원리를 알고 싶으면 한 땀씩 따보시길.<br>curl -s https://get.k3s.io | sh -
+mkdir -p ~/.kube
+sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config &amp;&amp; sudo chown $USER ~/.kube/config &amp;&amp; sudo chmod 600 ~/.kube/config &amp;&amp; export KUBECONFIG=~/.kube/config
+echo "export KUBECONFIG=~/.kube/config" &gt;&gt; ~/.bashrc
+echo "export KUBECONFIG=~/.kube/config" &gt;&gt; ~/.zshrc
+
+wget https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv5.4.2/kustomize_v5.4.2_linux_amd64.tar.gz
+
+tar -xvf kustomize_v5.4.2_linux_amd64.tar.gz
+
+sudo mv ./kustomize /usr/local/bin/kustomize
+
+
+mkdir -p ~/kubeflow
+cd ~/kubeflow
+git clone https://github.com/kubeflow/manifests.git
+cd manifests
+git checkout tags/v1.8.1
+
+while ! kustomize build example | kubectl apply -f -; do echo "Retrying to apply resources"; sleep 10; done
+복사<br><a data-href="k3s 그리고 kubeflow 설치" href="root\dev\머신러닝-서비스-구축을-위한-실전-mlops\kubeflow\k3s-그리고-kubeflow-설치.html" class="internal-link" target="_self" rel="noopener">k3s 그리고 kubeflow 설치</a><br><br><br><a data-href="gcp kubeflow 외부에서 접속하기" href="root\dev\머신러닝-서비스-구축을-위한-실전-mlops\kubeflow\gcp-kubeflow-외부에서-접속하기.html" class="internal-link" target="_self" rel="noopener">gcp kubeflow 외부에서 접속하기</a> 에서여러가지 방법이 있지만 service.<br><br><br>
+<br>입력
+<br>kubectl edit svc istio-ingressgateway -n istio-system
+복사<br>
+<br>수정
+<br>spec:
+  type: LoadBalancer
+
+복사<br>
+<br>확인
+<br>kubectl get svc -n istio-system
+복사<br>
+<br>출력
+<br>NAME                    TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)                                      AGE
+authservice             ClusterIP      10.43.157.203   &lt;none&gt;        8080/TCP                                     100m
+cluster-local-gateway   ClusterIP      10.43.33.5      &lt;none&gt;        15020/TCP,80/TCP                             100m
+istio-ingressgateway    LoadBalancer   10.43.118.171   &lt;pending&gt;     15021:32183/TCP,80:30183/TCP,443:32669/TCP   100m
+istiod                  ClusterIP      10.43.231.214   &lt;none&gt;        15010/TCP,15012/TCP,443/TCP,15014/TCP        100m
+knative-local-gateway   ClusterIP      10.43.171.130   &lt;none&gt;        80/TCP                                       100m
+복사<br>포트가!너무 안 예뻐!
+그래서.<br><br>
+<br>입력
+<br>kubectl edit svc istio-ingressgateway -n istio-system
+복사<br>하면<br>
+<br>편집
+<br>spec:
+  allocateLoadBalancerNodePorts: true
+  clusterIP: 10.43.118.171
+  clusterIPs:
+  - 10.43.118.171
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: status-port
+    nodePort: 32088
+    port: 15021
+    protocol: TCP
+    targetPort: 15021
+  - name: http2
+    nodePort: 30080
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  - name: https
+    nodePort: 32669
+    port: 443
+    protocol: TCP
+    targetPort: 8443
+  selector:
+    app: istio-ingressgateway
+    istio: ingressgateway
+  sessionAffinity: None
+  type: LoadBalancer
+복사<br>이렇게 뭔가 알아서 좀 더 자동으로 생겼을 것이다.<br>이 중에서 <br>  - name: http2
+    nodePort: 30080
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+복사<br>이 부분의 포트를 30080로 변경.<br>
+<br>확인
+<br>kubectl get svc -n istio-system
+복사<br>
+<br>출력
+<br>g00561526@static-k3s-16-32:~$ kubectl get svc -n istio-system
+NAME                    TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)                                      AGE
+authservice             ClusterIP      10.43.157.203   &lt;none&gt;        8080/TCP                                     100m
+cluster-local-gateway   ClusterIP      10.43.33.5      &lt;none&gt;        15020/TCP,80/TCP                             100m
+istio-ingressgateway    LoadBalancer   10.43.118.171   &lt;pending&gt;     15021:32088/TCP,80:30080/TCP,443:32669/TCP   100m
+istiod                  ClusterIP      10.43.231.214   &lt;none&gt;        15010/TCP,15012/TCP,443/TCP,15014/TCP        100m
+knative-local-gateway   ClusterIP      10.43.171.130   &lt;none&gt;        80/TCP                                       100m
+복사<br><br>이거하지 않으면 kubeflow에서 뭣만 생성하면
+Error[403] Could not find CSRF cookie XSRF-TOKEN in the request. <a rel="noopener" class="external-link" href="http://34.47.95.0:30080/jupyter/api/namespaces/kubeflow-user-example-com/notebooks" target="_blank">http://34.47.95.0:30080/jupyter/api/namespaces/kubeflow-user-example-com/notebooks</a>
+이 맛을 볼 수 있다.
+알아내니라 너무 힘들었다.ㅠ<br>
+<br>입력
+<br>kubectl edit deploy jupyter-web-app-deployment -n kubeflow
+복사<br>
+<br>수정
+<br>spec:
+      containers:
+      - env:
+        - name: APP_SECURE_COOKIES
+          values: "false"
+복사<br>APP_SECURE_COOKIES 부분을 "true" -&gt; "false"<br><br><br>http://gpc외부ip:30080<br>해치웠나]]></description><link>root\dev\머신러닝-서비스-구축을-위한-실전-mlops\kubeflow\gcp에-k3s설치하고-kubeflow-사용하기.html</link><guid isPermaLink="false">root/dev/머신러닝 서비스 구축을 위한 실전 MLOps/kubeflow/GCP에 K3S설치하고 Kubeflow 사용하기.md</guid><pubDate>Wed, 02 Oct 2024 19:08:13 GMT</pubDate><enclosure url="lib\media\pasted-image-20241003030348.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20241003030348.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[k3s 그리고 kubeflow 설치]]></title><description><![CDATA[ 
+ <br><br><br>curl -s https://get.k3s.io | sh -
+mkdir -p ~/.kube
+sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config &amp;&amp; sudo chown $USER ~/.kube/config &amp;&amp; sudo chmod 600 ~/.kube/config &amp;&amp; export KUBECONFIG=~/.kube/config
+echo "export KUBECONFIG=~/.kube/config" &gt;&gt; ~/.bashrc
+echo "export KUBECONFIG=~/.kube/config" &gt;&gt; ~/.zshrc
+복사<br><br>한 방으로설치 했다면 스킵.<br><br>curl -s https://get.k3s.io | sh -
+mkdir -p ~/.kube
+복사<br><br>이걸하지 않으면 kubectl에 sudo 맨날 넣어야 함.<br>sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config &amp;&amp; sudo chown $USER ~/.kube/config &amp;&amp; sudo chmod 600 ~/.kube/config &amp;&amp; export KUBECONFIG=~/.kube/config
+echo "export KUBECONFIG=~/.kube/config" &gt;&gt; ~/.bashrc
+echo "export KUBECONFIG=~/.kube/config" &gt;&gt; ~/.zshrc
+복사<br><br><br><br>wget https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv5.4.2/kustomize_v5.4.2_linux_amd64.tar.gz
+
+tar -xvf kustomize_v5.4.2_linux_amd64.tar.gz
+
+sudo mv ./kustomize /usr/local/bin/kustomize
+
+
+mkdir -p ~/kubeflow
+cd ~/kubeflow
+git clone https://github.com/kubeflow/manifests.git
+cd manifests
+git checkout tags/v1.8.1
+
+while ! kustomize build example | kubectl apply -f -; do echo "Retrying to apply resources"; sleep 10; done
+복사<br><br>한 방으로설치 했다면 스킵.<br><br>wget https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv5.4.2/kustomize_v5.4.2_linux_amd64.tar.gz
+
+tar -xvf kustomize_v5.4.2_linux_amd64.tar.gz
+
+sudo mv ./kustomize /usr/local/bin/kustomize
+복사<br><br><br>mkdir -p ~/kubeflow
+cd ~/kubeflow
+git clone https://github.com/kubeflow/manifests.git
+cd manifests
+git checkout tags/v1.8.1
+복사<br><br>while ! kustomize build example | kubectl apply -f -; do echo "Retrying to apply resources"; sleep 10; done
+복사<br>]]></description><link>root\dev\머신러닝-서비스-구축을-위한-실전-mlops\kubeflow\k3s-그리고-kubeflow-설치.html</link><guid isPermaLink="false">root/dev/머신러닝 서비스 구축을 위한 실전 MLOps/kubeflow/k3s 그리고 kubeflow 설치.md</guid><pubDate>Wed, 02 Oct 2024 18:52:59 GMT</pubDate></item><item><title><![CDATA[kubeflow 장인의 느낌으로 땀]]></title><description><![CDATA[ 
+ <br><br><br>
+<br>양식
+<br>kustomize build &lt;경로&gt; | kubectl delete -f -
+복사<br>
+<br>예시
+<br>kustomize build common/oidc-client/oidc-authservice/base | kubectl delete -f -
+복사<br><br><br>
+<br><a data-tooltip-position="top" aria-label="https://github.com/kubernetes/minikube/releases" rel="noopener" class="external-link" href="https://github.com/kubernetes/minikube/releases" target="_blank">minikube: 1.34</a>
+<br><a data-tooltip-position="top" aria-label="https://github.com/kubernetes/kubernetes/tree/release-1.26" rel="noopener" class="external-link" href="https://github.com/kubernetes/kubernetes/tree/release-1.26" target="_blank">kubernetes: 1.26.15</a>
+<br><a data-tooltip-position="top" aria-label="https://github.com/kubernetes/kubernetes/releases" rel="noopener" class="external-link" href="https://github.com/kubernetes/kubernetes/releases" target="_blank">Kubectl: 1.31.1</a>
+<br><a data-tooltip-position="top" aria-label="https://github.com/kubernetes-sigs/kustomize/releases" rel="noopener" class="external-link" href="https://github.com/kubernetes-sigs/kustomize/releases" target="_blank">kustomize: 5.4.2</a>
+<br><a data-tooltip-position="top" aria-label="https://github.com/kubeflow/manifests/tree/v1.8.1" rel="noopener" class="external-link" href="https://github.com/kubeflow/manifests/tree/v1.8.1" target="_blank">kubeflow: 1.8.1</a>
+<br><br><br><br>minikube start --driver=docker \
+  --cpus='4' --memory='8g' \
+  --kubernetes-version=v1.26.15 \
+  --extra-config=apiserver.service-account-signing-key-file=/var/lib/minikube/certs/sa.key \
+  --extra-config=apiserver.service-account-issuer=kubernetes.default.svc
+복사<br><br>curl -LO https://dl.k8s.io/release/v1.31.1/bin/linux/amd64/kubectl
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+복사<br><br>wget https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv5.4.2/kustomize_v5.4.2_linux_amd64.tar.gz
+
+tar -xvf kustomize_v5.4.2_linux_amd64.tar.gz
+
+sudo mv ./kustomize /usr/local/bin/kustomize
+복사<br><br>mkdir -p ~/kubeflow
+cd ~/kubeflow
+git clone https://github.com/kubeflow/manifests.git
+cd manifests
+git checkout tags/v1.8.1
+복사<br><br><br>
+kustomize build common/cert-manager/cert-manager/base | kubectl apply -f -
+kubectl wait --for=condition=ready pod -l 'app in (cert-manager,webhook)' --timeout=180s -n cert-manager
+kustomize build common/cert-manager/kubeflow-issuer/base | kubectl apply -f 
+kustomize build common/istio-1-17/istio-crds/base | kubectl apply -f -
+kustomize build common/istio-1-17/istio-namespace/base | kubectl apply -f -
+kustomize build common/istio-1-17/istio-install/base | kubectl apply -f 
+kustomize build common/oidc-client/oidc-authservice/base | kubectl apply -f 
+kustomize build common/dex/overlays/istio | kubectl apply -f 
+kustomize build common/knative/knative-serving/overlays/gateways | kubectl apply -f -
+kustomize build common/istio-1-17/cluster-local-gateway/base | kubectl apply -f 
+kustomize build common/knative/knative-eventing/base | kubectl apply -f 
+kustomize build common/kubeflow-roles/base | kubectl apply -f 
+
+kustomize build apps/pipeline/upstream/env/cert-manager/platform-agnostic-multi-user | kubectl apply -f 
+
+kustomize build contrib/kserve/kserve | kubectl apply -f 
+kustomize build contrib/kserve/models-web-app/overlays/kubeflow | kubectl apply -f 
+
+kustomize build apps/katib/upstream/installs/katib-with-kubeflow | kubectl apply -f 
+kustomize build apps/centraldashboard/upstream/overlays/kserve | kubectl apply -f 
+
+복사<br><br><br><br>kustomize build common/cert-manager/cert-manager/base | kubectl apply -f -
+kubectl wait --for=condition=ready pod -l 'app in (cert-manager,webhook)' --timeout=180s -n cert-manager
+kustomize build common/cert-manager/kubeflow-issuer/base | kubectl apply -f -
+복사<br><br>kustomize build common/istio-1-17/istio-crds/base | kubectl apply -f -
+kustomize build common/istio-1-17/istio-namespace/base | kubectl apply -f -
+kustomize build common/istio-1-17/istio-install/base | kubectl apply -f -
+복사<br>kustomize build common/oidc-client/oidc-authservice/base | kubectl apply -f -
+복사<br><br>kustomize build common/dex/overlays/istio | kubectl apply -f -
+복사<br><br>kustomize build common/knative/knative-serving/overlays/gateways | kubectl apply -f -
+kustomize build common/istio-1-17/cluster-local-gateway/base | kubectl apply -f -
+복사<br>kustomize build common/knative/knative-eventing/base | kubectl apply -f -
+복사<br><br>kustomize build common/kubeflow-namespace/base | kubectl apply -f -
+복사<br><br>kustomize build common/kubeflow-roles/base | kubectl apply -f -
+복사<br><br>kustomize build apps/pipeline/upstream/env/cert-manager/platform-agnostic-multi-user | kubectl apply -f -
+복사<br><br>kustomize build contrib/kserve/kserve | kubectl apply -f -
+복사<br>kustomize build contrib/kserve/models-web-app/overlays/kubeflow | kubectl apply -f -
+복사<br><br>kustomize build apps/katib/upstream/installs/katib-with-kubeflow | kubectl apply -f -
+복사<br><br>여기까지순차 설치 하니까<br>
+http://localhost:8080 에 들어가지네.<br>kustomize build apps/centraldashboard/upstream/overlays/kserve | kubectl apply -f -
+복사<br><br>
+<br>포트 포워딩
+<br>kubectl port-forward svc/istio-ingressgateway -n istio-system 8080:80
+복사<br>
+<br>
+브라우저<br>
+http://localhost:8080
+
+<br>
+로그인
+
+<br>
+ID : <a data-tooltip-position="top" aria-label="mailto:user@example.com" rel="noopener" class="external-link" href="mailto:user@example.com" target="_blank">user@example.com</a>
+
+<br>
+PW : 12341234
+
+]]></description><link>root\dev\머신러닝-서비스-구축을-위한-실전-mlops\kubeflow\kubeflow-장인의-느낌으로-땀.html</link><guid isPermaLink="false">root/dev/머신러닝 서비스 구축을 위한 실전 MLOps/kubeflow/kubeflow 장인의 느낌으로 땀.md</guid><pubDate>Fri, 27 Sep 2024 00:44:35 GMT</pubDate></item><item><title><![CDATA[Part1. ML을 Service하기 위한 기술, MLOps]]></title><description><![CDATA[ 
+ <br><br>
+<br>다른 환경에서 n 명의 사람과 협업
+<br>MLOps = ML + DevOps
+<br>아직은 생소한 분야
+<br>ML을 효율적으로 개발하고 성공적으로 서비스화하고 우할 때 필요한 모든 것을 다루는 분야
+<br><br><br><img alt="Pasted image 20240909095816.png" src="lib\media\pasted-image-20240909095816.png"><br>
+<br>플래닝 -&gt;빌드 자동화 -&gt; 
+<br>테스트 자동화 -&gt; 
+<br>운영중 이슈 모니터링 -&gt; 
+<br>버그 발생 -&gt; 
+<br>플레닝 -&gt; 
+<br>버그 수정  -&gt; 
+<br>해당 버그에 대한 테스트 코드 추가 -&gt; 
+<br>버그 해결 버전 배포 -&gt; 
+<br>모니터링
+<br><br><br>
+<br>ML 이론 
+<br>SW 구현 능력 
+<br>클라우드 지식 
+<br>협업 능력
+]]></description><link>root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part1.-ml을-service하기-위한-기술,-mlops\part1.-ml을-service하기-위한-기술,-mlops.html</link><guid isPermaLink="false">root/dev/머신러닝 서비스 구축을 위한 실전 MLOps/Part1. ML을 Service하기 위한 기술, MLOps/Part1. ML을 Service하기 위한 기술, MLOps.md</guid><pubDate>Mon, 09 Sep 2024 01:14:42 GMT</pubDate><enclosure url="lib\media\pasted-image-20240909095816.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240909095816.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[minikube 설치]]></title><description><![CDATA[ 
+ <br><br><br>curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+복사<br><br>minikube --help
+
+minikube version
+복사<br><br><br><br>curl -LO https://dl.k8s.io/release/v1.22.1/bin/linux/amd64/kubectl
+복사<br><br>sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+복사<br><br>kubectl --help
+
+kubectl version
+복사<br><br><br><br>minikube start --driver=docker
+복사<br><br><br>
+<br>입력
+<br>minikube status
+복사<br>
+<br>출력
+<br>minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+복사<br><br>
+<br>입력
+<br>kubectl get pod -n kube-system
+복사<br>
+<br>출력
+<br>NAME READY STATUS RESTARTS AGE
+coredns-558bd4d5db-bwkjv 1/1 Running 0 3m40s
+etcd-minikube 1/1 Running 0 3m46s
+kube-apiserver-minikube 1/1 Running 0 3m46s
+kube-controller-manager-minikube 1/1 Running 0 3m53s
+kube-proxy-ppgbx 1/1 Running 0 3m40s
+kube-scheduler-minikube 1/1 Running 0 3m46s
+storage-provisioner 1/1 Running 1 3m51s
+복사<br><br><br>minikube delete
+복사]]></description><link>root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part2.-mlops-환경-구축을-위한-도커와-쿠버네티스\minikube\minikube-설치.html</link><guid isPermaLink="false">root/dev/머신러닝 서비스 구축을 위한 실전 MLOps/Part2. MLOps 환경 구축을 위한 도커와 쿠버네티스/minikube/minikube 설치.md</guid><pubDate>Tue, 10 Sep 2024 02:31:51 GMT</pubDate></item><item><title><![CDATA[minikube Deployment]]></title><description><![CDATA[ 
+ <br><br>
+<br>Pod와 Replicaset에 대한 관리를 제공하는 단위
+
+<br><a rel="noopener" class="external-link" href="https://kubernetes.io/ko/docs/concepts/workloads/controllers/deployment/" target="_blank">https://kubernetes.io/ko/docs/concepts/workloads/controllers/deployment/</a>
+
+
+<br>관리라는 의미는 Self-healing, Scaling, Rollout(무중단 업데이트) 과 같은 기능을 포함
+<br>Deployment 는 Pod을 감싼 개념
+
+<br>Pod 을 Deployment 로 배포함으로써 여러 개로 복제된 Pod, 여러 버전의 Pod 을 안전하게 관리
+
+
+<br><br><br><br>vi deployment.yaml
+복사<br>apiVersion: apps/v1 # kubernetes resource 의 API Version
+kind: Deployment # kubernetes resource name
+metadata: # 메타데이터 : name, namespace, labels, annotations 등을 포함
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec: # 메인 파트 : resource 의 desired state 를 명시
+  replicas: 3 # 동일한 template 의 pod 을 3 개 복제본으로 생성합니다.
+  selector:
+    matchLabels:
+      app: nginx
+  template: # Pod 의 template 을 의미합니다.
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx # container 의 이름
+          image: nginx:1.14.2 # container 의 image
+          ports:
+            - containerPort: 80 # container 의 내부 Port
+
+복사<br><br>kubectl apply -f deployment.yaml
+복사<br><br><br><br><br>
+<br>입력
+<br>kubectl get deployment
+복사<br>
+<br>출력
+<br>NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-deployment   3/3     3            3           18h
+복사<br><br>
+<br>입력
+<br>kubectl get deployment,pod
+복사<br>
+<br>출력
+<br>NAME                               READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/nginx-deployment   3/3     3            3           19h
+
+NAME                                READY   STATUS    RESTARTS   AGE
+nginx-deployment-77d8468669-4wzq2   1/1     Running   0          2m59s
+nginx-deployment-77d8468669-pc2tn   1/1     Running   0          2m59s
+nginx-deployment-77d8468669-xnclm   1/1     Running   0          2m59s
+복사<br><br>Controlled By를확인하면 Deployment에 의해 생성, 관리 되고 있는 것을 확인 할 수 있다.<br>kubectl describe pod pod/nginx-deployment-77d8468669-9vpxl
+복사<br>Name:         nginx-deployment-77d8468669-4wzq2
+Namespace:    default
+Priority:     0
+Node:         minikube/192.168.49.2
+Start Time:   Tue, 10 Sep 2024 14:13:24 +0900
+Labels:       app=nginx
+              pod-template-hash=77d8468669
+Annotations:  &lt;none&gt;
+Status:       Running
+IP:           10.244.0.18
+IPs:
+  IP:           10.244.0.18
+Controlled By:  ReplicaSet/nginx-deployment-77d8468669 # 이 부분
+Containers:
+  nginx:
+    Container ID:   docker://5d763d9949c50481d17223cb5488b32116696cccfdbe9b833384fcafcbfa8258
+    Image:          nginx:1.14.2
+    Image ID:       docker-pullable://nginx@sha256:f7988fb6c02e0ce69257d9bd9cf37ae20a60f1df7563c3a2a6abe24160306b8d
+    Port:           80/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Tue, 10 Sep 2024 14:13:25 +0900
+    Ready:          True
+    Restart Count:  0
+    Environment:    &lt;none&gt;
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-2kfll (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       True 
+  ContainersReady             True 
+  PodScheduled                True 
+Volumes:
+  kube-api-access-2kfll:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       &lt;nil&gt;
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              &lt;none&gt;
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age    From               Message
+  ----    ------     ----   ----               -------
+  Normal  Scheduled  2m27s  default-scheduler  Successfully assigned default/nginx-deployment-77d8468669-4wzq2 to minikube
+  Normal  Pulled     2m27s  kubelet            Container image "nginx:1.14.2" already present on machine
+  Normal  Created    2m27s  kubelet            Created container nginx
+  Normal  Started    2m27s  kubelet            Started container nginx
+복사<br><br><br><br>
+<br>입력
+<br>kubectl get pod 
+복사<br>
+<br>출력
+<br>NAME                                READY   STATUS    RESTARTS   AGE
+nginx-deployment-77d8468669-4wzq2   1/1     Running   0          6m18s
+nginx-deployment-77d8468669-pc2tn   1/1     Running   0          6m18s
+nginx-deployment-77d8468669-xnclm   1/1     Running   0          6m18s
+복사<br>3개의 pod확인<br><br>
+<br>입력
+<br>kubectl delete pod nginx-deployment-77d8468669-4wzq2
+복사<br>
+<br>출력
+<br>pod "nginx-deployment-77d8468669-4wzq2" deleted
+복사<br><br>
+<br>입력
+<br>kubectl get pod
+복사<br>
+<br>출력
+<br>NAME                                READY   STATUS    RESTARTS   AGE
+nginx-deployment-77d8468669-h7lgj   1/1     Running   0          2s
+nginx-deployment-77d8468669-pc2tn   1/1     Running   0          9m32s
+nginx-deployment-77d8468669-xnclm   1/1     Running   0          9m32s
+복사<br>AGE 부분을 보자nginx-deployment-77d8468669-h7lgj   1/1     Running   0          2s
+복사
+2s로 다시 살아난 것을 확인<br><br><br><br><br>
+<br>입력
+<br>kubectl scale deployment/nginx-deployment --replicas=5
+복사<br>
+<br>출력
+<br>deployment.apps/nginx-deployment scaled
+복사<br><br><br>
+<br>입력
+<br>kubectl get deployment
+복사<br>
+<br>출력
+<br>NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-deployment   5/5     5            5           14m
+복사<br><br>
+<br>입력
+<br>kubectl get pod
+복사<br>
+<br>출력
+<br>NAME                                READY   STATUS    RESTARTS   AGE
+nginx-deployment-77d8468669-g64pp   1/1     Running   0          12s
+nginx-deployment-77d8468669-h7lgj   1/1     Running   0          5m26s
+nginx-deployment-77d8468669-jnz65   1/1     Running   0          12s
+nginx-deployment-77d8468669-pc2tn   1/1     Running   0          14m
+nginx-deployment-77d8468669-xnclm   1/1     Running   0          14m
+복사<br><br><br>
+<br>입력
+<br>kubectl scale deployment/nginx-deployment --replicas=5
+복사<br>
+<br>출력
+<br>deployment.apps/nginx-deployment scaled
+복사<br><br><br>
+<br>입력
+<br>kubectl get deployment
+복사<br>
+<br>출력
+<br>NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-deployment   1/1     1            1           18m
+복사<br><br>
+<br>입력
+<br>kubectl get pod
+복사<br>
+<br>출력
+<br>NAME                                READY   STATUS    RESTARTS   AGE
+nginx-deployment-77d8468669-xnclm   1/1     Running   0          18m
+복사<br><br><br><br>
+<br>양식
+<br>kubectl delete deployment
+복사<br>
+<br>입력
+<br>kubectl delete deployment nginx-deployment
+복사<br>
+<br>출력
+<br>deployment.apps "nginx-deployment" deleted
+복사<br><br>
+<br>양식
+<br>kubectl delete -f &lt;YAML-파일-경로&gt;
+복사<br>
+<br>입력
+<br>kubectl delete -f deployment.yaml
+복사<br>
+<br>출력
+<br>deployment.apps "nginx-deployment" deleted
+복사]]></description><link>root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part2.-mlops-환경-구축을-위한-도커와-쿠버네티스\minikube\minikube-deployment.html</link><guid isPermaLink="false">root/dev/머신러닝 서비스 구축을 위한 실전 MLOps/Part2. MLOps 환경 구축을 위한 도커와 쿠버네티스/minikube/minikube Deployment.md</guid><pubDate>Tue, 10 Sep 2024 06:04:31 GMT</pubDate></item><item><title><![CDATA[minikube POD]]></title><description><![CDATA[ 
+ <br><br>Note
+<br>쿠버네티스에서 생성하고 관리할 수 있는 배포 가능한 가장 작은 컴퓨팅 단위
+<br>Pod 단위로 스케줄링, 로드밸런싱, 스케일링 등의 관리 작업을 수행
+<br>쿠버네티스에 어떤 애플리케이션을 배포하고 싶다면 최소 Pod 으로 구성해야 한다
+<br>Pod 은 Container 를 감싼 개념
+
+<br>하나의 Pod 은 한 개의 Container 혹은 여러 개의 Container 로 이루어져 있음
+<br>Pod 내부의 여러 Container 는 자원을 공유
+
+
+<br>Pod는Stateless 한 특징을 지니고 있으며, 언제든지 삭제될 수 있는 자원<br><br><br><br>vi pod.yaml
+복사<br>apiVersion: v1 # kubernetes resource 의 API Version
+kind: Pod # kubernetes resource name
+metadata: # 메타데이터 : name, namespace, labels, annotations 등을 포함
+  name: counter
+spec: # 메인 파트 : resource 의 desired state 를 명시
+  containers:
+  - name: count # container 의 이름
+    image: busybox # container 의 image
+    args: [/bin/sh, -c, 'i=0; while true; do echo "$i: $(date)"; i=$((i+1)); sleep 1;
+    done'] # 해당 image 의 entrypoint 의 args 로 입력하고 싶은 부분
+복사<br><br>kubectl apply -f pod.yaml
+복사<br><br><br><br>
+<br>입력
+<br>kubectl get pod
+복사<br>
+<br>출력
+<br>NAME      READY   STATUS    RESTARTS   AGE
+counter   1/1     Running   0          2m46s
+복사<br><br>Infokube-system namespace 의 pod 을 조회<br>
+<br>입력
+<br>kubectl get pod -n kube-system
+복사<br>
+<br>출력
+<br>NAME                               READY   STATUS    RESTARTS       AGE
+coredns-7db6d8ff4d-h5sd7           1/1     Running   1 (143m ago)   26h
+etcd-minikube                      1/1     Running   1 (143m ago)   26h
+kube-apiserver-minikube            1/1     Running   1 (143m ago)   26h
+kube-controller-manager-minikube   1/1     Running   1 (143m ago)   26h
+kube-proxy-c2gc8                   1/1     Running   1 (143m ago)   26h
+kube-scheduler-minikube            1/1     Running   1 (143m ago)   26h
+storage-provisioner                1/1     Running   3 (143m ago)   26h
+복사<br><br>Info모든 namespace 의 pod 을 조회합니다.<br>
+<br>입력
+<br>kubectl get pod -A
+복사<br>
+<br>출력
+<br>NAMESPACE     NAME                               READY   STATUS    RESTARTS       AGE
+default       counter                            1/1     Running   0              3m5s
+kube-system   coredns-7db6d8ff4d-h5sd7           1/1     Running   1 (143m ago)   26h
+kube-system   etcd-minikube                      1/1     Running   1 (143m ago)   26h
+kube-system   kube-apiserver-minikube            1/1     Running   1 (143m ago)   26h
+kube-system   kube-controller-manager-minikube   1/1     Running   1 (143m ago)   26h
+kube-system   kube-proxy-c2gc8                   1/1     Running   1 (143m ago)   26h
+kube-system   kube-scheduler-minikube            1/1     Running   1 (143m ago)   26h
+kube-system   storage-provisioner                1/1     Running   3 (143m ago)   26h
+복사<br><br>
+<br>양식
+<br>kubectl get pod &lt;pod-name&gt;
+복사<br>
+<br>입력
+<br>kubectl get pod counter
+복사<br>
+<br>출력
+<br>NAME      READY   STATUS    RESTARTS   AGE
+counter   1/1     Running   0          3m28s
+복사<br><br>
+<br>양식
+<br>kubectl describe pod &lt;pod-name&gt;
+복사<br>
+<br>입력
+<br>kubectl describe pod counter
+복사<br>
+<br>출력
+<br>Name:         counter
+Namespace:    default
+Priority:     0
+Node:         minikube/192.168.49.2
+Start Time:   Tue, 10 Sep 2024 13:56:40 +0900
+Labels:       &lt;none&gt;
+Annotations:  &lt;none&gt;
+Status:       Running
+IP:           10.244.0.17
+IPs:
+  IP:  10.244.0.17
+Containers:
+  count:
+    Container ID:  docker://f92221afed234a9b379989f419a45249e5b75b14a56b6370ec467c259a8b09e8
+    Image:         busybox
+    Image ID:      docker-pullable://busybox@sha256:34b191d63fbc93e25e275bfccf1b5365664e5ac28f06d974e8d50090fbb49f41
+    Port:          &lt;none&gt;
+    Host Port:     &lt;none&gt;
+    Args:
+      /bin/sh
+      -c
+      i=0; while true; do echo "$i: $(date)"; i=$((i+1)); sleep 1; done
+    State:          Running
+      Started:      Tue, 10 Sep 2024 13:56:42 +0900
+    Ready:          True
+    Restart Count:  0
+    Environment:    &lt;none&gt;
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-mq6g5 (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       True 
+  ContainersReady             True 
+  PodScheduled                True 
+Volumes:
+  kube-api-access-mq6g5:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       &lt;nil&gt;
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              &lt;none&gt;
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age    From               Message
+  ----    ------     ----   ----               -------
+  Normal  Scheduled  3m53s  default-scheduler  Successfully assigned default/counter to minikube
+  Normal  Pulling    3m54s  kubelet            Pulling image "busybox"
+  Normal  Pulled     3m52s  kubelet            Successfully pulled image "busybox" in 1.899s (1.899s including waiting). Image size: 4261574 bytes.
+  Normal  Created    3m52s  kubelet            Created container count
+  Normal  Started    3m52s  kubelet            Started container count
+복사<br><br>
+<br>입력
+<br>kubectl get pod -o wide
+복사<br>
+<br>출력
+<br>NAME      READY   STATUS    RESTARTS   AGE     IP            NODE       NOMINATED NODE   READINESS GATES
+counter   1/1     Running   0          4m27s   10.244.0.17   minikube   &lt;none&gt;           &lt;none&gt;
+복사<br><br>
+<br>양식
+<br>kubectl get pod &lt;pod-name&gt; -o yaml
+복사<br>
+<br>입력
+<br>kubectl get pod counter -o yaml
+복사<br>
+<br>출력
+<br>apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{},"name":"counter","namespace":"default"},"spec":{"containers":[{"args":["/bin/sh","-c","i=0; while true; do echo \"$i: $(date)\"; i=$((i+1)); sleep 1; done"],"image":"busybox","name":"count"}]}}
+  creationTimestamp: "2024-09-10T04:56:40Z"
+  name: counter
+  namespace: default
+  resourceVersion: "49976"
+  uid: 8e6fc867-7ced-449b-8602-bac1282a56b8
+spec:
+  containers:
+  - args:
+    - /bin/sh
+    - -c
+    - 'i=0; while true; do echo "$i: $(date)"; i=$((i+1)); sleep 1; done'
+    image: busybox
+    imagePullPolicy: Always
+    name: count
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-mq6g5
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: minikube
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: kube-api-access-mq6g5
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2024-09-10T04:56:43Z"
+    status: "True"
+    type: PodReadyToStartContainers
+  - lastProbeTime: null
+    lastTransitionTime: "2024-09-10T04:56:40Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2024-09-10T04:56:43Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2024-09-10T04:56:43Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2024-09-10T04:56:40Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: docker://f92221afed234a9b379989f419a45249e5b75b14a56b6370ec467c259a8b09e8
+    image: busybox:latest
+    imageID: docker-pullable://busybox@sha256:34b191d63fbc93e25e275bfccf1b5365664e5ac28f06d974e8d50090fbb49f41
+    lastState: {}
+    name: count
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2024-09-10T04:56:42Z"
+  hostIP: 192.168.49.2
+  hostIPs:
+  - ip: 192.168.49.2
+  phase: Running
+  podIP: 10.244.0.17
+  podIPs:
+  - ip: 10.244.0.17
+  qosClass: BestEffort
+  startTime: "2024-09-10T04:56:40Z"
+복사<br><br>
+<br>입력
+<br>kubectl get pod -w
+복사<br>
+<br>출력
+<br>NAME      READY   STATUS    RESTARTS   AGE
+counter   1/1     Running   0          5m40s
+복사<br>종료ctal + c 를 눌러서 끌 수 있다.<br><br><br><br>
+<br>양식
+<br>kubectl logs &lt;pod-name&gt;
+복사<br>
+<br>입력
+<br>kubectl logs counter
+복사<br>
+<br>출력
+<br>0: Tue Sep 10 04:56:42 UTC 2024
+1: Tue Sep 10 04:56:43 UTC 2024
+2: Tue Sep 10 04:56:44 UTC 2024
+3: Tue Sep 10 04:56:45 UTC 2024
+4: Tue Sep 10 04:56:46 UTC 2024
+5: Tue Sep 10 04:56:47 UTC 2024
+6: Tue Sep 10 04:56:48 UTC 2024
+7: Tue Sep 10 04:56:49 UTC 2024
+8: Tue Sep 10 04:56:50 UTC 2024
+복사<br><br>
+<br>양식
+<br>kubectl logs &lt;pod-name&gt; -f
+복사<br>
+<br>입력
+<br>kubectl logs counter -f
+복사<br>
+<br>출력
+<br>435: Tue Sep 10 05:03:58 UTC 2024
+436: Tue Sep 10 05:03:59 UTC 2024
+437: Tue Sep 10 05:04:00 UTC 2024
+438: Tue Sep 10 05:04:01 UTC 2024
+439: Tue Sep 10 05:04:02 UTC 2024
+440: Tue Sep 10 05:04:03 UTC 2024
+441: Tue Sep 10 05:04:04 UTC 2024
+442: Tue Sep 10 05:04:05 UTC 2024
+복사<br>1초마다계속 출력함<br><br>kubectl logs &lt;pod-name&gt; -c &lt;container-name&gt;
+kubectl logs &lt;pod-name&gt; -c &lt;container-name&gt; -f
+복사<br><br><br><br>
+<br>양식
+<br>kubectl exec -it &lt;pod-name&gt; -- &lt;명령어&gt;
+복사<br>
+<br>입력
+<br>kubectl exec -it counter -- s
+복사<br>
+<br>출력
+<br>/ # 
+복사<br>shell 안으로진입한다.<br><br>kubectl exec -it &lt;pod-name&gt; -c &lt;container-name&gt; -- &lt;명령어&gt;
+복사<br><br><br><br>
+<br>양식
+<br>kubectl delete pod &lt;pod-name&gt;
+복사<br>
+<br>입력
+<br>kubectl delete pod counter
+복사<br>
+<br>출력
+<br>pod "counter" deleted
+복사<br>바로안지워지고 좀 기다려야함<br><br>
+<br>양식
+<br>kubectl delete -f &lt;YAML-파일-경로&gt;
+복사<br>
+<br>입력
+<br>kubectl delete -f pod.yaml
+복사<br>
+<br>출력
+<br>pod "counter" deleted
+복사<br>위 명령어는꼭 pod 이 아니더라도 모든 kubernetes resource 에 적용할 수 있음]]></description><link>root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part2.-mlops-환경-구축을-위한-도커와-쿠버네티스\minikube\minikube-pod.html</link><guid isPermaLink="false">root/dev/머신러닝 서비스 구축을 위한 실전 MLOps/Part2. MLOps 환경 구축을 위한 도커와 쿠버네티스/minikube/minikube POD.md</guid><pubDate>Tue, 10 Sep 2024 05:11:06 GMT</pubDate></item><item><title><![CDATA[minikube PVC]]></title><description><![CDATA[ 
+ <br><br>
+<br>Persistent Volume (PV), Persistent Volume Claim (PVC) 는 stateless 한 Pod 이 영구적으로(persistent) 데이터를 보존하고 싶은 경우 사용하는 리소스
+<br>docker run 의 -v 옵션인 도커 볼륨과 유사한 역할
+<br>PV 는 관리자가 생성한 실제 저장 공간의 정보
+<br>PVC 는 사용자가 요청한 저장 공간의 스펙에 대한 정보
+<br>Pod 내부에서 작성한 데이터는 기본적으로 언제든지 사라질 수 있기에, 보존하고 싶은 데이터가 있다면 Pod 에 PVC 를 mount 해서 사용해야 한다는 것만 기억
+<br>여러 pod 간의 data 공유도 쉽게 가능
+<br><br><br><br>
+<br>입력
+<br>kubectl get storageclass
+복사<br>
+<br>출력
+<br>NAME                 PROVISIONER                RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+standard (default)   k8s.io/minikube-hostpath   Delete          Immediate           false                  28h
+복사<br><br><br>vi pvc.yaml
+복사<br>apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: myclaim
+spec: # pvc 의 정보를 입력하는 파트입니다.
+  accessModes:
+    - ReadWriteMany # ReadWriteOnce, ReadWriteMany 옵션을 선택할 수 있습니다.
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 10Mi # storage 용량을 설정합니다.
+  storageClassName: standard # 방금 전에 확인한 storageclass 의 name 을 입력합니다.
+
+복사<br><br>kubectl apply -f pvc.yaml
+복사<br><br>
+<br>입력
+<br>kubectl get pvc,pv
+복사<br>
+<br>출력
+<br>NAME                            STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+persistentvolumeclaim/myclaim   Bound    pvc-59797965-9db5-4927-a532-51f634e1b80a   10Mi       RWX            standard       &lt;unset&gt;                 9s
+
+NAME                                                        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM             STORAGECLASS   VOLUMEATTRIBUTESCLASS   REASON   AGE
+persistentvolume/pvc-59797965-9db5-4927-a532-51f634e1b80a   10Mi       RWX            Delete           Bound    default/myclaim   standard       &lt;unset&gt;                          9s
+복사<br><br><br><br><br>vi pod-pvc.yaml
+복사<br>apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod
+spec:
+  containers:
+    - name: myfrontend
+      image: nginx
+      volumeMounts:
+        - mountPath: "/var/www/html" # mount 할 pvc 를 mount 할 pod 의 경로를 적습니다.
+          name: mypd # 어떤 이름이든 상관없으나, 아래 volumes[0].name 과 일치해야 합니다.
+  volumes:
+    - name: mypd # 어떤 이름이든 상관없으나, 위의 volumeMounts[0].name 과 일치해야 합니다.
+      persistentVolumeClaim:
+        claimName: myclaim # mount 할 pvc 의 name 을 적습니다.
+복사<br><br>kubectl apply -f pod-pvc.yaml
+복사<br><br><br>
+<br>입력
+<br>kubectl exec -it mypod -- bash
+복사<br>
+<br>출력
+<br>root@mypod:/#
+복사<br><br><br>
+<br>입력
+<br>touch hi-fast-campus
+ls
+복사<br>
+<br>출력
+<br>bin   docker-entrypoint.d   hi-fast-campus  lib64  opt   run   sys  var
+boot  docker-entrypoint.sh  home            media  proc  sbin  tmp
+dev   etc                   lib             mnt    root  srv   usr
+복사<br><br>
+<br>입력
+<br>cd /var/www/html
+touch hi-fast-campus
+ls
+복사<br>
+<br>출력
+<br>hi-fast-campus
+복사<br><br>kubectl delete pod mypod
+복사<br><br>
+<br>입력
+<br>kubectl get pvc,pv
+복사<br>
+<br>출력
+<br>NAME                            STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+persistentvolumeclaim/myclaim   Bound    pvc-59797965-9db5-4927-a532-51f634e1b80a   10Mi       RWX            standard       &lt;unset&gt;                 38m
+
+NAME                                                        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM             STORAGECLASS   VOLUMEATTRIBUTESCLASS   REASON   AGE
+persistentvolume/pvc-59797965-9db5-4927-a532-51f634e1b80a   10Mi       RWX            Delete           Bound    default/myclaim   standard       &lt;unset&gt;   
+복사<br><br>kubectl apply -f pod-pvc.yaml
+복사<br>kubectl exec -it mypod -- bash
+ls
+# hi-fast-campus 파일이 사라진 것을 확인할 수 있습니다.
+cd /var/www/html
+ls
+# hi-fast-campus 파일이 그대로 보존되는 것을 확인할 수 있습니다.
+복사]]></description><link>root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part2.-mlops-환경-구축을-위한-도커와-쿠버네티스\minikube\minikube-pvc.html</link><guid isPermaLink="false">root/dev/머신러닝 서비스 구축을 위한 실전 MLOps/Part2. MLOps 환경 구축을 위한 도커와 쿠버네티스/minikube/minikube PVC.md</guid><pubDate>Tue, 10 Sep 2024 07:49:26 GMT</pubDate></item><item><title><![CDATA[minikuke Service]]></title><description><![CDATA[ 
+ <br><br>
+<br>쿠버네티스에 배포한 애플리케이션(Pod)을 외부에서 접근하기 쉽게 추상화 한 리소스
+<br>Pod 은 IP 를 할당받고 생성되지만, 언제든지 죽었다가 다시 살아날 수 있으며, 그 과정 에서 IP 는 항상 재할당받기에 고정된 IP 로 원하는 Pod 에 접근할 수 없음
+<br>클러스터 외부 혹은 내부에서 Pod 에 접근할 때는, Pod 의 IP 가 아닌 Service 를 통해서 접근하는 방식
+<br>Service 는 고정된 IP 를 가지며, Service 는 하나 혹은 여러 개의 Pod 과 매칭
+<br>클라이언트가 Service 의 주소로 접근하면, 실제로는 Service 에 매칭된 Pod 에 접속할 수 있게 됨
+<br><br><br><br><a data-href="minikube Deployment#생성" href="root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part2.-mlops-환경-구축을-위한-도커와-쿠버네티스\minikube\minikube-deployment.html#생성" class="internal-link" target="_self" rel="noopener">minikube Deployment &gt; 생성</a><br><br>kubectl get pod -o wide
+복사<br>NAME                                READY   STATUS    RESTARTS   AGE   IP            NODE       NOMINATED NODE   READINESS GATES
+nginx-deployment-77d8468669-74g6s   1/1     Running   0          23s   10.244.0.28   minikube   &lt;none&gt;           &lt;none&gt;
+nginx-deployment-77d8468669-hrncq   1/1     Running   0          23s   10.244.0.27   minikube   &lt;none&gt;           &lt;none&gt;
+nginx-deployment-77d8468669-rvdzk   1/1     Running   0          23s   10.244.0.29   minikube   &lt;none&gt;           &lt;none&gt;
+복사<br><br>모두접근 안됨<br><br>
+<br>입력
+<br>curl -X GET 10.244.0.28 -vvv
+복사<br>
+<br>출력
+<br>Note: Unnecessary use of -X or --request, GET is already inferred.
+*   Trying 10.244.0.28:80...
+복사<br><br>
+<br>입력
+<br>ping 10.244.0.28
+복사<br>
+<br>출력
+<br>PING 10.244.0.28 (10.244.0.28) 56(84) bytes of data.
+복사<br><br><br>minikube ssh
+복사<br><br>
+<br>
+입력<br>
+<a data-href="#curl" href="about:blank#curl" class="internal-link" target="_self" rel="noopener">curl</a>
+
+<br>
+출력
+
+<br>Note: Unnecessary use of -X or --request, GET is already inferred.
+*   Trying 10.244.0.28:80...
+* Connected to 10.244.0.28 (10.244.0.28) port 80 (#0)
+&gt; GET / HTTP/1.1
+&gt; Host: 10.244.0.28
+&gt; User-Agent: curl/7.81.0
+&gt; Accept: */*
+&gt; 
+* Mark bundle as not supporting multiuse
+&lt; HTTP/1.1 200 OK
+&lt; Server: nginx/1.14.2
+&lt; Date: Tue, 10 Sep 2024 06:17:52 GMT
+&lt; Content-Type: text/html
+&lt; Content-Length: 612
+&lt; Last-Modified: Tue, 04 Dec 2018 14:44:49 GMT
+&lt; Connection: keep-alive
+&lt; ETag: "5c0692e1-264"
+&lt; Accept-Ranges: bytes
+&lt; 
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Welcome to nginx!&lt;/title&gt;
+&lt;style&gt;
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Welcome to nginx!&lt;/h1&gt;
+&lt;p&gt;If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.&lt;/p&gt;
+
+&lt;p&gt;For online documentation and support please refer to
+&lt;a href="http://nginx.org/"&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;
+Commercial support is available at
+&lt;a href="http://nginx.com/"&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Thank you for using nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+* Connection #0 to host 10.244.0.28 left intact
+복사<br><br>
+<br>
+입력<br>
+<a data-href="#ping" href="about:blank#ping" class="internal-link" target="_self" rel="noopener">ping</a>
+
+<br>
+출력
+
+<br>PING 10.244.0.28 (10.244.0.28) 56(84) bytes of data.
+64 bytes from 10.244.0.28: icmp_seq=1 ttl=64 time=0.033 ms
+64 bytes from 10.244.0.28: icmp_seq=2 ttl=64 time=0.029 ms
+64 bytes from 10.244.0.28: icmp_seq=3 ttl=64 time=0.050 ms
+64 bytes from 10.244.0.28: icmp_seq=4 ttl=64 time=0.053 ms
+64 bytes from 10.244.0.28: icmp_seq=5 ttl=64 time=0.026 ms
+64 bytes from 10.244.0.28: icmp_seq=6 ttl=64 time=0.033 ms
+64 bytes from 10.244.0.28: icmp_seq=7 ttl=64 time=0.027 ms
+^C
+--- 10.244.0.28 ping statistics ---
+7 packets transmitted, 7 received, 0% packet loss, time 6175ms
+rtt min/avg/max/mdev = 0.026/0.035/0.053/0.010 ms
+복사<br><br><br><br>vi service.yaml
+복사<br>apiVersion: v1
+kind: Service
+metadata:
+  name: my-nginx
+  labels:
+    run: my-nginx
+spec:
+  type: NodePort # Service 의 Type 을 명시하는 부분입니다. 자세한 설명은 추후 말씀드리겠습니다.
+  ports:
+    - port: 80
+      protocol: TCP
+  selector: # 아래 label 을 가진 Pod 을 매핑하는 부분입니다.
+    app: nginx
+
+복사<br><br>
+<br>입력
+<br>kubectl apply -f service.yaml
+복사<br>
+<br>출력
+<br>service/my-nginx created
+복사<br><br>
+<br>입력
+<br>kubectl get service
+복사<br>
+<br>출력
+<br>NAME         TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
+kubernetes   ClusterIP   10.96.0.1        &lt;none&gt;        443/TCP        27h
+my-nginx     NodePort    10.105.214.245   &lt;none&gt;        80:32207/TCP   17s
+복사<br>CheckPORT 80: 숫자 확인<br><br>이제는외부에서도 접속 가능<br><br>
+<br>입력
+<br>curl -X GET $(minikube ip):32207
+복사<br>
+<br>출력
+<br>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Welcome to nginx!&lt;/title&gt;
+&lt;style&gt;
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Welcome to nginx!&lt;/h1&gt;
+&lt;p&gt;If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.&lt;/p&gt;
+
+&lt;p&gt;For online documentation and support please refer to
+&lt;a href="http://nginx.org/"&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;
+Commercial support is available at
+&lt;a href="http://nginx.com/"&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Thank you for using nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+복사<br><br>
+<br>입력
+<br>ping $(minikube ip)
+복사<br>
+<br>출력
+<br>PING 192.168.49.2 (192.168.49.2) 56(84) bytes of data.
+64 bytes from 192.168.49.2: icmp_seq=1 ttl=64 time=0.047 ms
+64 bytes from 192.168.49.2: icmp_seq=2 ttl=64 time=0.032 ms
+64 bytes from 192.168.49.2: icmp_seq=3 ttl=64 time=0.036 ms
+64 bytes from 192.168.49.2: icmp_seq=4 ttl=64 time=0.078 ms
+64 bytes from 192.168.49.2: icmp_seq=5 ttl=64 time=0.034 ms
+^C
+--- 192.168.49.2 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4144ms
+rtt min/avg/max/mdev = 0.032/0.045/0.078/0.017 ms
+복사]]></description><link>root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part2.-mlops-환경-구축을-위한-도커와-쿠버네티스\minikube\minikuke-service.html</link><guid isPermaLink="false">root/dev/머신러닝 서비스 구축을 위한 실전 MLOps/Part2. MLOps 환경 구축을 위한 도커와 쿠버네티스/minikube/minikuke Service.md</guid><pubDate>Tue, 10 Sep 2024 06:35:45 GMT</pubDate></item><item><title><![CDATA[Part2. MLOps 환경 구축을 위한 도커와 쿠버네티스]]></title><description><![CDATA[ 
+ <br><br>Reproducibility -&gt;  실행 환경의 일관성 &amp; 독립성<br>
+Job Scheduling  -&gt; 스케줄 관리, 병렬 작업 관리, 유휴 자원 관리<br>
+Auto-healing &amp; Auto-scaling -&gt; 장애 대응, 트래픽 대응<br>Dockerize도커 이미지로 만드는 것<br><a data-href="minikube 설치" href="root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part2.-mlops-환경-구축을-위한-도커와-쿠버네티스\minikube\minikube-설치.html" class="internal-link" target="_self" rel="noopener">minikube 설치</a><br><a data-href="minikube POD" href="root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part2.-mlops-환경-구축을-위한-도커와-쿠버네티스\minikube\minikube-pod.html" class="internal-link" target="_self" rel="noopener">minikube POD</a><br><a data-href="minikube Deployment" href="root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part2.-mlops-환경-구축을-위한-도커와-쿠버네티스\minikube\minikube-deployment.html" class="internal-link" target="_self" rel="noopener">minikube Deployment</a><br><a data-href="minikuke Service" href="root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part2.-mlops-환경-구축을-위한-도커와-쿠버네티스\minikube\minikuke-service.html" class="internal-link" target="_self" rel="noopener">minikuke Service</a><br><a data-href="minikube PVC" href="root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part2.-mlops-환경-구축을-위한-도커와-쿠버네티스\minikube\minikube-pvc.html" class="internal-link" target="_self" rel="noopener">minikube PVC</a>]]></description><link>root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part2.-mlops-환경-구축을-위한-도커와-쿠버네티스\part2.-mlops-환경-구축을-위한-도커와-쿠버네티스.html</link><guid isPermaLink="false">root/dev/머신러닝 서비스 구축을 위한 실전 MLOps/Part2. MLOps 환경 구축을 위한 도커와 쿠버네티스/Part2. MLOps 환경 구축을 위한 도커와 쿠버네티스.md</guid><pubDate>Tue, 10 Sep 2024 08:52:42 GMT</pubDate></item><item><title><![CDATA[dvc]]></title><description><![CDATA[ 
+ <br><br>pip install dvc[all]
+복사<br><br>dvc --version
+복사<br><br>echo 'export PATH="$PATH:$HOME/.local/bin"' &gt;&gt; ~/.zshrc
+echo 'export PATH="$PATH:$HOME/.local/bin"' &gt;&gt; ~/.bashrc
+exit
+복사<br><br><br><br>mkdir dvc-turotyal
+cd dvc-turotyal
+복사<br><br>git 부터초기화<br>git init
+dvc init
+복사<br><br><br><br># data 를 저장할 용도로 data 라는 이름의 디렉토리를 생성하고 이동합니다.
+mkdir data
+cd data
+
+# 가볍게 변경할 수 있는 데이터를 카피해오거나, 새로 만듭니다.
+vi demo.txt
+cat demo.txt
+# Hello Fast Campus!
+복사<br><br>
+<br>입력
+<br>cd ..
+dvc add data/demo.txt
+
+# To track the changes with git, run:
+git add data/demo.txt.dvc data/.gitignore
+복사<br>
+<br>출력
+<br>100% Adding...|████████████████████████████████████████████████████|1/1 [00:00, 45.72file/s]
+
+To track the changes with git, run:
+
+	git add data/demo.txt.dvc
+
+To enable auto staging, run:
+
+	dvc config core.autostage true
+복사<br><br>cd data
+ls
+# demo.txt.dvc 파일이 자동 생성된 것을 확인
+cat demo.txt.dvc
+# demo.txt 파일의 메타정보를 가진 파일입니다.
+# git 에서는 demo.txt 파일이 아닌, demo.txt.dvc 파일만 관리하게 됩니다.
+복사<br><br>git commit -m "Add demo.txt.dvc"
+복사<br><br><br><img alt="Pasted image 20240912165845.png" src="lib\media\pasted-image-20240912165845.png"><br>
+<br>생성: 디렉토리
+<br>복사: 디렉토리 id
+<br><br>
+<br>양식
+<br>dvc remote add -d storage gdrive://&lt;GOOGLE_DRIVE_FOLDER_ID&gt;
+# dvc 의 default remote storage 로 gdrive://&lt;GOOGLE_DRIVE_FOLDER_ID&gt; 를 세팅합니다.
+복사<br>
+<br>입력
+<br>dvc remote add -d storage gdrive://11Lbfa1qHiunsIUYGVS6pMpRjSOOSZbKX
+복사<br>
+<br>출력
+<br>Setting 'storage' as a default remote.
+복사<br><br>git add .dvc/config
+git commit -m "add remote storage"
+복사]]></description><link>root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part3.-오픈소스를-통해-알아보는-mlops의-구성요소\md\dvc.html</link><guid isPermaLink="false">root/dev/머신러닝 서비스 구축을 위한 실전 MLOps/Part3. 오픈소스를 통해 알아보는 MLOps의 구성요소/md/dvc.md</guid><pubDate>Thu, 12 Sep 2024 08:03:09 GMT</pubDate><enclosure url="lib\media\pasted-image-20240912165845.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240912165845.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[Mlflow 실습]]></title><description><![CDATA[ 
+ <br><br><br>git clone https://github.com/namugach/mlflow_base.git
+복사<br><br>cd mlflow_base
+./install.sh
+복사<br><br>docker exec -it mlflow_server bash -c "cd /root/src/basic &amp;&amp; bash"
+복사<br><br>./main.sh
+복사<br><br><a rel="noopener" class="external-link" href="http://127.0.0.1:5000" target="_blank">http://127.0.0.1:5000</a><br><br><br><br><br>docker container run -itd --name mlflow_server -v $(pwd)/src:/root/src -p 5000:5000 -p 1234:1234 namugach/ubuntu-basic:24.04-kor
+복사<br><br>docker container exec -it -w /root mlflow_server bash
+복사<br><br><a data-href="pyenv 설치#사전 준비" href="root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part3.-오픈소스를-통해-알아보는-mlops의-구성요소\md\pyenv-설치.html#사전_준비" class="internal-link" target="_self" rel="noopener">pyenv 설치 &gt; 사전 준비</a><br>
+<a data-href="pyenv 설치#설치" href="root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part3.-오픈소스를-통해-알아보는-mlops의-구성요소\md\pyenv-설치.html#설치" class="internal-link" target="_self" rel="noopener">pyenv 설치 &gt; 설치</a><br>
+<a data-href="pyenv 설치#초기 설정" href="root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part3.-오픈소스를-통해-알아보는-mlops의-구성요소\md\pyenv-설치.html#초기_설정" class="internal-link" target="_self" rel="noopener">pyenv 설치 &gt; 초기 설정</a><br>
+<br>python 설치
+<br>pyenv install 3.12.3
+복사<br><br><br><br>pip install --upgrade pip
+복사<br>pip install mlflow
+pip install virtualenv
+복사<br><br>mlflow --version
+복사<br><br><br>cd ~/src
+mkdir basic
+cd basic
+mkdir models run res
+복사<br><br><br><br>cd ~/src/basic
+git clone https://github.com/mlflow/mlflow.git
+복사<br><br>cp -R mlflow/examples/* models
+복사<br><br><br><br>train 디렉토리만드는 이유는 mlflow ui 를 했을 때<br>
+mlruns 디렉토리가 만들어 지는데<br>
+이게 python 파일을 실행했을 때 위치해 있는 경로에 생긴다.<br>
+그래서 res란 디렉토리를 만들고, 거기서 실행해줘야<br>
+모델이 한 곳에 모인다.<br>
+<br>디렉토리 이동
+<br>cd ~/src/basic/res
+복사<br>
+<br>입력
+<br>python ~/src/basic/models/sklearn_elasticnet_diabetes/linux/train_diabetes.py
+복사<br>
+<br>출력
+<br>Elasticnet model (alpha=0.050000, l1_ratio=0.050000):
+  RMSE: 78.59249466381223
+  MAE: 66.30998032458166
+  R2: 0.06607434687959957
+Computing regularization path using the elastic net.
+복사<br><br>
+<br>입력
+<br>tree
+복사<br>
+<br>출력
+<br>.
+|-- ElasticNet-paths.png
+`-- mlruns
+    `-- 0
+        |-- bc650299c1014a5087fe10d4c438e810
+        |   |-- artifacts
+        |   |   |-- ElasticNet-paths.png
+        |   |   `-- model
+        |   |       |-- MLmodel
+        |   |       |-- conda.yaml
+        |   |       |-- model.pkl
+        |   |       |-- python_env.yaml
+        |   |       `-- requirements.txt
+        |   |-- meta.yaml
+        |   |-- metrics
+        |   |   |-- mae
+        |   |   |-- r2
+        |   |   `-- rmse
+        |   |-- params
+        |   |   |-- alpha
+        |   |   `-- l1_ratio
+        |   `-- tags
+        |       |-- mlflow.log-model.history
+        |       |-- mlflow.runName
+        |       |-- mlflow.source.name
+        |       |-- mlflow.source.type
+        |       `-- mlflow.user
+        `-- meta.yaml
+복사<br><br>
+<br>실행
+<br>path=/root/src/basic/res/mlruns/0
+
+# 최신 실행 ID를 추출
+RUN_ID=$(ls -tr $path | grep -v 'meta.yaml' | grep -v 'datasets' | head -n 1)
+mlflow models serve -m /root/src/basic/res/mlruns/0/$RUN_ID/artifacts/model --host 0.0.0.0 -p 1234
+복사<br>
+<br>입력
+<br>AttentionMLflow 2.0부터는 모델 서빙 API가 약간 변경 됨<br>curl -X POST -H "Content-Type: application/json" -d '{
+  "dataframe_split": {
+    "columns": ["age", "sex", "bmi", "bp", "s1", "s2", "s3", "s4", "s5", "s6"],
+    "data": [[0.038076, 0.050680, 0.061696, 0.021872, -0.044223, -0.034821, -0.043401, -0.002592, 0.019908, -0.017646]]
+  }
+}' http://127.0.0.1:1234/invocations
+복사<br>
+<br>출력
+<br>{"predictions": [153.20093644395587]}
+복사<br><br><br><br>cd /root/src/basic/res
+python ~/src/basic/models/sklearn_autolog/pipeline.py
+복사<br><br>---------- logged params ----------
+{'lr': 'LinearRegression()',
+ 'lr__copy_X': 'True',
+ 'lr__fit_intercept': 'True',
+ 'lr__n_jobs': 'None',
+ 'lr__positive': 'False',
+ 'memory': 'None',
+ 'scaler': 'StandardScaler()',
+ 'scaler__copy': 'True',
+ 'scaler__with_mean': 'True',
+ 'scaler__with_std': 'True',
+ 'steps': "[('scaler', StandardScaler()), ('lr', LinearRegression())]",
+ 'verbose': 'False'}
+
+---------- logged metrics ----------
+{'training_mean_absolute_error': 2.220446049250313e-16,
+ 'training_mean_squared_error': 1.9721522630525295e-31,
+ 'training_r2_score': 1.0,
+ 'training_root_mean_squared_error': 4.440892098500626e-16,
+ 'training_score': 1.0}
+
+---------- logged tags ----------
+{'estimator_class': 'sklearn.pipeline.Pipeline', 'estimator_name': 'Pipeline'}
+
+---------- logged artifacts ----------
+['estimator.html',
+ 'model/MLmodel',
+ 'model/conda.yaml',
+ 'model/model.pkl',
+ 'model/python_env.yaml',
+ 'model/requirements.txt']
+복사<br><br><br><br>pip install xgboost
+복사<br>
+<br>필요한 라이브러리 설치 및 코드 다운로드:
+
+<br>참고 문서 : <a data-tooltip-position="top" aria-label="https://github.com/mlflow/mlflow/tree/master/examples/xgboost" rel="noopener" class="external-link" href="https://github.com/mlflow/mlflow/tree/master/examples/xgboost" target="_blank">XGBoost Autologging</a>
+<br>iris data 를 xgboost 모델로 classification 수행.
+<br>xgboost, autolog, mlflow.log.metrics() 사용
+
+
+<br><br>
+<br>입력
+<br>cd ~/src/basic/res
+python ~/src/basic/models/xgboost/xgboost_native/train.py
+복사<br>
+<br>출력
+<br>root@a8e67d993786:~/src/basic/res# python ~/src/basic/models/xgboost/xgboost_native/train.py 
+[0]     train-mlogloss:0.74723
+[1]     train-mlogloss:0.54060
+[2]     train-mlogloss:0.40276
+[3]     train-mlogloss:0.30789
+[4]     train-mlogloss:0.24051
+[5]     train-mlogloss:0.19086
+[6]     train-mlogloss:0.15471
+[7]     train-mlogloss:0.12807
+[8]     train-mlogloss:0.10722
+[9]     train-mlogloss:0.09053
+2024/09/18 17:19:49 WARNING mlflow.utils.autologging_utils: MLflow autologging encountered a warning: "/usr/local/lib/python3.12/dist-packages/xgboost/core.py:158: UserWarning: [17:19:49] WARNING: /workspace/src/c_api/c_api.cc:1374: Saving model in the UBJSON format as default.  You can use file extension: `json`, `ubj` or `deprecated` to choose between formats."
+복사<br><br>
+<br>입력
+<br>python ~/src/basic/models/xgboost/xgboost_sklearn/train.py
+복사<br>
+<br>출력
+<br>root@a8e67d993786:~/src/basic/res# python ~/src/basic/models/xgboost/xgboost_sklearn/train.py
+2024/09/18 17:20:13 INFO mlflow.utils.autologging_utils: Created MLflow autologging run with ID 'cdcbae38ba7c4e199c4a35190fda5e7a', which will track hyperparameters, performance metrics, model artifacts, and lineage information for the current xgboost workflow
+[0]     validation_0-rmse:62.19849
+[1]     validation_0-rmse:58.28724
+[2]     validation_0-rmse:55.81963
+[3]     validation_0-rmse:54.86863
+[4]     validation_0-rmse:54.82453
+[5]     validation_0-rmse:55.38414
+[6]     validation_0-rmse:55.94560
+[7]     validation_0-rmse:55.60640
+[8]     validation_0-rmse:55.55938
+[9]     validation_0-rmse:55.96819
+[10]    validation_0-rmse:55.53129
+[11]    validation_0-rmse:55.49893
+[12]    validation_0-rmse:55.72621
+[13]    validation_0-rmse:56.04788
+[14]    validation_0-rmse:55.55565
+[15]    validation_0-rmse:56.06604
+[16]    validation_0-rmse:55.99269
+[17]    validation_0-rmse:56.60752
+[18]    validation_0-rmse:56.96563
+[19]    validation_0-rmse:57.13170
+2024/09/18 17:20:13 WARNING mlflow.utils.autologging_utils: MLflow autologging encountered a warning: "/usr/local/lib/python3.12/dist-packages/xgboost/core.py:158: UserWarning: [17:20:13] WARNING: /workspace/src/c_api/c_api.cc:1374: Saving model in the UBJSON format as default.  You can use file extension: `json`, `ubj` or `deprecated` to choose between formats."
+Logged data and model in run cdcbae38ba7c4e199c4a35190fda5e7a
+
+---------- logged params ----------
+{'base_score': 'None',
+ 'booster': 'None',
+ 'colsample_bylevel': 'None',
+ 'colsample_bynode': 'None',
+ 'colsample_bytree': 'None',
+ 'custom_metric': 'None',
+ 'device': 'None',
+ 'early_stopping_rounds': 'None',
+ 'eval_metric': 'None',
+ 'gamma': '0',
+ 'grow_policy': 'None',
+ 'interaction_constraints': 'None',
+ 'learning_rate': 'None',
+ 'max_bin': 'None',
+ 'max_cat_threshold': 'None',
+ 'max_cat_to_onehot': 'None',
+ 'max_delta_step': 'None',
+ 'max_depth': '3',
+ 'max_leaves': 'None',
+ 'maximize': 'None',
+ 'min_child_weight': 'None',
+ 'monotone_constraints': 'None',
+ 'multi_strategy': 'None',
+ 'n_jobs': 'None',
+ 'num_boost_round': '20',
+ 'num_parallel_tree': 'None',
+ 'objective': 'reg:squarederror',
+ 'random_state': 'None',
+ 'reg_alpha': 'None',
+ 'reg_lambda': '1',
+ 'sampling_method': 'None',
+ 'scale_pos_weight': 'None',
+ 'subsample': 'None',
+ 'tree_method': 'None',
+ 'validate_parameters': 'None',
+ 'verbose_eval': 'True',
+ 'verbosity': 'None'}
+
+---------- logged metrics ----------
+{'validation_0-rmse': 57.13169958420536}
+
+---------- logged tags ----------
+{}
+
+---------- logged artifacts ----------
+['feature_importance_weight.json',
+ 'feature_importance_weight.png',
+ 'model/MLmodel',
+ 'model/conda.yaml',
+ 'model/model.xgb',
+ 'model/python_env.yaml',
+ 'model/requirements.txt']
+복사<br><br><br>ui 서버 실행 할 때model을 실행시킨 디렉토리에서 해야 함<br>
+그래야 실험 결과를 볼 수 있음<br><br>cd ~/src/basic/res
+mlflow ui --host 0.0.0.0
+복사<br><br><a rel="noopener" class="external-link" href="http://127.0.0.1:5000/" target="_blank">http://127.0.0.1:5000/</a>]]></description><link>root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part3.-오픈소스를-통해-알아보는-mlops의-구성요소\md\mlflow-실습.html</link><guid isPermaLink="false">root/dev/머신러닝 서비스 구축을 위한 실전 MLOps/Part3. 오픈소스를 통해 알아보는 MLOps의 구성요소/md/Mlflow 실습.md</guid><pubDate>Wed, 18 Sep 2024 08:25:10 GMT</pubDate></item><item><title><![CDATA[mlflow docker 외부 host 노출하기]]></title><description><![CDATA[ 
+ <br><br>vscode의 docker 플러그인을 사용해서 attch studio vscode를 사용해서 mlflow ui를 실행하면<br>
+바로 윈도우 크롬에서 켜졌다.<br>
+하지만 터미널로 exec 혹은 attah를 통하여 접근 할 때면 외부 host 접근이 불가 하였다.<br>
+host 옵션과 포트포워딩을 해야 접근 가능 한 것이였는데<br>
+vscode에서는 이를 간편하게 설정 해줬기 때문에 접근 할 수 있었던 것이다.<br><br>docker container run -itd --name mlflow_server -p 5000:5000 mlflow:0.1
+복사<br>docker exec -it mlflow_server bash -c "cd /root/src &amp;&amp; bash"
+복사<br>mlflow ui --host 0.0.0.0
+복사<br><br>docker container run -itd --name mlflow_server -p 5000:5000 -p 1234:1234 mlflow:0.1
+복사<br>cd ~/work/train/sklearn_elasticnet_diabetes
+
+# 최신 실행 ID를 추출
+RUN_ID=$(ls -td mlruns/0/* | head -n 1 | xargs -n 1 basename)
+echo "Extracted RUN_ID: $RUN_ID"
+
+# 모델 서빙
+echo "Serving the model..."
+mlflow models serve -m /root/work/train/sklearn_elasticnet_diabetes/mlruns/0/$RUN_ID/artifacts/model --host 0.0.0.0 -p 1234
+복사<br>위에서 보면 docker의 port 포트를 열어줬고.<br>
+mlflow serve --host에서 모든 아이피 접근을 허용해 줬다.<br>이렇게 하면 외부에서 접근 가능하다.<br><br><br>문제는 아마 mlflow ui 서버가 127.0.0.1에 바인딩되었기 때문에 발생하는 것 같아. 127.0.0.1은 컨테이너 내부에서만 접근 가능한 주소고, 이 주소로 실행된 서버는 외부, 즉 네트워크 상의 다른 장치(Windwos 호스트)에서 접근할 수 없어.<br>지금 WSL2를 사용 중이라면, WSL2 내부 네트워크와 Windows 호스트 사이에 네트워크가 분리되어 있기 때문에, WSL2에서 실행된 컨테이너의 서버에 Windows에서 접근하려면 0.0.0.0에 바인딩해야 해.<br><br>
+<br>
+mlflow UI 서버를 모든 IP에서 접근 가능하게 실행<br>
+mlflow UI 서버가 모든 네트워크 인터페이스에서 접근 가능하도록, 0.0.0.0으로 바인딩해야 해. 실행할 때 이렇게 수정해봐:
+./src/run/ui_server.sh --host 0.0.0.0
+Run복사
+또는 mlflow UI 서버를 직접 실행할 때:
+mlflow ui --host 0.0.0.0
+복사
+이 명령어는 서버를 0.0.0.0에 바인딩해서, 컨테이너 내부뿐 아니라 외부에서도 접근할 수 있게 해줘.
+
+<br>
+포트 포워딩 확인<br>
+만약 docker run 명령어로 컨테이너를 실행할 때 -p 옵션으로 포트 포워딩이 설정되지 않았다면, Windows에서 WSL2 내부 컨테이너로 접근할 수 없을 거야. 서버를 시작할 때 아래와 같이 포트 포워딩을 설정했는지 확인해:
+docker run -it -p 5000:5000 --name mlflow_server mlflow_image
+Run복사
+이 옵션은 Windows에서 localhost:5000으로 접근하면, WSL2 내부의 컨테이너에서 실행 중인 mlflow UI 서버에 접근할 수 있게 포트를 연결해줘.
+
+<br><br>
+<br>mlflow UI 서버를 0.0.0.0에 바인딩한다.
+<br>컨테이너 실행 시 -p 5000:5000으로 포트 포워딩을 설정한다.
+<br>이렇게 설정하면 Windows의 크롬 브라우저에서 localhost:5000으로 접속이 될 거야.]]></description><link>root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part3.-오픈소스를-통해-알아보는-mlops의-구성요소\md\mlflow-docker-외부-host-노출하기.html</link><guid isPermaLink="false">root/dev/머신러닝 서비스 구축을 위한 실전 MLOps/Part3. 오픈소스를 통해 알아보는 MLOps의 구성요소/md/mlflow docker 외부 host 노출하기.md</guid><pubDate>Mon, 16 Sep 2024 17:27:21 GMT</pubDate></item><item><title><![CDATA[Model Serving Flaks]]></title><description><![CDATA[ 
+ <br>docker로실행할 때, vscode docker plugin으로 attach 해서 들어갔을 때는<br>
+get 방식은 port가 겹침으로 3000번으로 실행 하고<br>
+post는 docker에서 
+docker container run -itd -p 5000:5000 mlflow:0.1
+복사
+5000번을 포트포워딩을 설정해서 포트를 외부로 노출 해야<br>
+터미널에서 값을 보낼 수 가 있음.<br><br>pip install Flask
+복사<br><br><br><br>vscode plugin을사용했다면 아래처럼 하고 그렇지 않고 exec 명령어를 사용하여<br>
+터미널에서 서버를 실행했다면 5000번으로 해도. 상관 없음<br><br>vi app.py
+복사<br><br>from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello_workd():
+  return "&lt;p&gt;Hello?&lt;/p&gt;"
+
+@app.route("/fastcampus")
+def hello_fastcampus():
+  return "&lt;p&gt;Hello, Fast Campus!&lt;/p&gt;"
+
+
+if __name__ == "__main__":
+  app.run(debug=True, host="0.0.0.0", port=5000)
+Run복사<br><br>python app.py
+복사<br><br>
+<br><a rel="noopener" class="external-link" href="http://127.0.0.1:5000" target="_blank">http://127.0.0.1:5000</a>
+<br><a rel="noopener" class="external-link" href="http://127.0.0.1:5000/fastcampus" target="_blank">http://127.0.0.1:5000/fastcampus</a>
+<br><br>docker 컨테이너면포트포워딩 된 것으로 서버 실행 해야함<br><br>from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello_workd():
+  return "&lt;p&gt;Hello?&lt;/p&gt;"
+
+@app.route("/fastcampus")
+def hello_fastcampus():
+  return "&lt;p&gt;Hello, Fast Campus!&lt;/p&gt;"
+
+# --------------
+import json
+@app.route("/predict", methods=["POST", "PUT"])
+def inference():
+  return json.dumps({'hello': 'world'}), 200 
+# --------------
+
+if __name__ == "__main__":
+  app.run(debug=True, host="0.0.0.0", port=5000)
+Run복사<br><br>curl -X POST http://127.0.0.1:5000/predict
+curl -X PUT http://127.0.0.1:5000/predict
+복사<br><br>{"hello": "world"}{"hello": "world"}
+복사<br><br><br><br>import os
+import pickle
+from sklearn.datasets import load_iris
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score, classification_report
+from sklearn.model_selection import train_test_split
+RANDOM_SEED = 1234
+
+# STEP 1) data load
+data = load_iris()
+
+# STEP 2) data split
+X = data['data']
+y = data['target']
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3,
+random_state=RANDOM_SEED)
+
+# STEP 3) train model
+model = RandomForestClassifier(n_estimators=300, random_state=RANDOM_SEED)
+model.fit(X_train, y_train)
+
+# STEP 4) evaluate model
+print(f"Accuracy : {accuracy_score(y_test, model.predict(X_test))}")
+print(classification_report(y_test, model.predict(X_test)))
+
+# STEP 5) save model to ./build/model.pkl
+os.makedirs("./build", exist_ok=True)
+pickle.dump(model, open('./build/model.pkl', 'wb'))
+Run복사<br><br>import pickle
+from flask import Flask, jsonify, request
+import numpy as np
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello_workd():
+  return "&lt;p&gt;Hello?&lt;/p&gt;"
+
+@app.route("/fastcampus")
+def hello_fastcampus():
+  return "&lt;p&gt;Hello, Fast Campus!&lt;/p&gt;"
+
+
+# 지난 시간에 학습한 모델 파일을 불러옵니다.
+model = pickle.load(open('./build/model.pkl', 'rb'))
+
+
+# POST /predict 라는 API 를 구현합니다.
+@app.route('/predict', methods=['POST'])
+def make_predict():
+  # API Request Body 를 python dictionary object 로 변환합니다.
+  request_body = request.get_json(force=True)
+  # request body 를 model 의 형식에 맞게 변환합니다.
+  X_test = [request_body['sepal_length'], request_body['sepal_width'],
+  request_body['petal_length'], request_body['petal_width']]
+  X_test = np.array(X_test)
+  X_test = X_test.reshape(1, -1)
+  # model 의 predict 함수를 호출하여, prediction 값을 구합니다.
+  y_test = model.predict(X_test)
+  # prediction 값을 json 화합니다.
+  response_body = jsonify(result=y_test.tolist())
+  # predict 결과를 담아 API Response Body 를 return 합니다.
+  return response_body
+
+
+if __name__ == "__main__":
+  app.run(debug=True, host="0.0.0.0", port=5000)
+Run복사]]></description><link>root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part3.-오픈소스를-통해-알아보는-mlops의-구성요소\md\model-serving-flaks.html</link><guid isPermaLink="false">root/dev/머신러닝 서비스 구축을 위한 실전 MLOps/Part3. 오픈소스를 통해 알아보는 MLOps의 구성요소/md/Model Serving Flaks.md</guid><pubDate>Wed, 18 Sep 2024 18:13:32 GMT</pubDate></item><item><title><![CDATA[Prometheus & Grafana]]></title><description><![CDATA[ 
+ <br><br><br>minikube start --kubernetes-version=v1.22.0 --driver=docker --cpus=4 --memory=4g
+복사<br><br>
+<br><a rel="noopener" class="external-link" href="https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack" target="_blank">https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack</a>
+<br>helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+복사<br><br>Note
+<br>helm install [RELEASE_NAME] prometheus-community/kube-prometheus-stack
+<br>모든 values 는 default 로 생성됨
+<br><a rel="noopener" class="external-link" href="https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml" target="_blank">https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml</a>
+<br>정상 설치 확인
+<br>최초 설치 시 docker image pull 로 인해 수 분의 시간이 소요될 수 있음
+<br>helm install prom-stack prometheus-community/kube-prometheus-stack
+복사<br>kubectl get pod -w
+복사<br><br><br><br><br>kubectl port-forward svc/prom-stack-grafana 9000:80
+복사<br><br>kubectl port-forward svc/prom-stack-kube-prometheus-prometheus 9091:9090
+복사<br><br><br>http://localhost:9091<br><br>
+<br>running status 인 pod 출력
+<br>kube_pod_container_status_running
+복사<br>
+<br>container 별 memory 사용 현황 출력
+<br>container_memory_usage_bytes
+복사<br><br>http://localhost:9000/<br><br><br>
+<br>입력
+<br>kubectl get secret --namespace default prom-stack-grafana -o jsonpath="{.data.admin-user}" | base64 --decode ; echo
+복사<br>
+<br>출력
+<br>admin
+복사<br><br>
+<br>입력
+<br>kubectl get secret --namespace default prom-stack-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo              
+복사<br>
+<br>출력
+<br>prom-operator
+복사]]></description><link>root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part3.-오픈소스를-통해-알아보는-mlops의-구성요소\md\prometheus-&amp;-grafana.html</link><guid isPermaLink="false">root/dev/머신러닝 서비스 구축을 위한 실전 MLOps/Part3. 오픈소스를 통해 알아보는 MLOps의 구성요소/md/Prometheus &amp; Grafana.md</guid><pubDate>Mon, 23 Sep 2024 04:18:10 GMT</pubDate></item><item><title><![CDATA[pyenv 설치]]></title><description><![CDATA[ 
+ <br><br><br>sudo apt-get update
+sudo apt-get install locales
+sudo locale-gen en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+echo 'export LANG=en_US.UTF-8' &gt;&gt; ~/.bashrc
+echo 'export LC_ALL=en_US.UTF-8' &gt;&gt; ~/.bashrc
+source ~/.bashrc
+복사<br>너무나 중요!!초기 설정을 모두 끝낸 후 터미널 재시작!!<br><br>exit
+복사<br><br><br>sudo apt-get update; sudo apt-get -y install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+복사<br><br><br>curl https://pyenv.run | bash
+복사<br><br><br>echo 'export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] &amp;&amp; export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"' &gt;&gt; ~/.bashrc
+복사<br>. ~/.bashrc
+복사<br><br><br>pyenv install --list
+복사<br><br><br>pyenv install 3.11.9
+복사<br><br><br><br>pyenv versions
+복사<br><br>pyenv virtualenv 3.11.9 py3_11_9
+복사<br><br>pyenv activate py3_11_9
+복사<br><br><br>. ~/.bashrc
+복사<br>위와 아래는 같음<br>source ~/.bashrc
+복사]]></description><link>root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part3.-오픈소스를-통해-알아보는-mlops의-구성요소\md\pyenv-설치.html</link><guid isPermaLink="false">root/dev/머신러닝 서비스 구축을 위한 실전 MLOps/Part3. 오픈소스를 통해 알아보는 MLOps의 구성요소/md/pyenv 설치.md</guid><pubDate>Thu, 19 Sep 2024 05:14:36 GMT</pubDate></item><item><title><![CDATA[seldon core]]></title><description><![CDATA[ 
+ <br><br>위험무엇이든 버전의 주제 파악을 해야.
+error가
+나지 않는다.
+check check 또 check 치<br><br><br>apiextensions.k8s.io/v1beta1 버전을사용하는 CRD가 더 이상 지원되지 않는다는 오류 때문에<br>
+버전을 낮춰야해.  by iejob<br><br>minikube delete
+복사<br><br>Info
+<br>쿠버네티스 1.20.0 버전
+<br>Docker 드라이버
+<br>CPU 4개
+<br>메모리 4GB
+<br>minikube start --kubernetes-version=v1.20.0 --driver=docker --cpus=4 --memory=4g
+복사<br><br><br><br><a rel="noopener" class="external-link" href="https://github.com/helm/helm/releases" target="_blank">https://github.com/helm/helm/releases</a> 에서<br>
+<a data-tooltip-position="top" aria-label="https://get.helm.sh/helm-v3.16.1-linux-amd64.tar.gz" rel="noopener" class="external-link" href="https://get.helm.sh/helm-v3.16.1-linux-amd64.tar.gz" target="_blank">Linux amd64</a> 링크 주소 복사<br>wget &lt;URI&gt;
+# 압축 풀기
+tar -zxvf helm-v?.?.?-linux-amd64.tar.gz
+# 바이너리 PATH 로 이동
+mv linux-amd64/helm /usr/local/bin/helm
+# helm 정상 동작 확인
+helm help
+복사<br><br><br>
+<br>입력
+<br>helm repo add datawire https://www.getambassador.io
+복사<br>
+<br>출력
+<br>"datawire" has been added to your repositories
+복사<br><br>
+<br>입력
+<br>helm repo update
+복사<br>
+<br>출력
+<br>Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "datawire" chart repository
+Update Complete. ⎈Happy Helming!⎈
+복사<br><br><br><br>
+<br>입력
+<br>versionambassador-6.9.1<br>helm install ambassador datawire/ambassador \
+  --namespace seldon-system \
+  --create-namespace \
+  --set image.repository=quay.io/datawire/ambassador \
+  --set enableAES=false \
+  --set crds.keep=false \
+  --version 6.9.1
+복사<br>
+<br>출력
+<br>설치할 때많은 경고가 나오지만, 별 문제는 없다.<br>NAME: ambassador
+LAST DEPLOYED: Fri Sep 20 16:54:42 2024
+NAMESPACE: seldon-system
+STATUS: deployed
+REVISION: 1
+NOTES:
+-------------------------------------------------------------------------------
+  Congratulations! You've successfully installed Ambassador!
+
+-------------------------------------------------------------------------------
+To get the IP address of Ambassador, run the following commands:
+NOTE: It may take a few minutes for the LoadBalancer IP to be available.
+     You can watch the status of by running 'kubectl get svc -w  --namespace seldon-system ambassador'
+
+  On GKE/Azure:
+  export SERVICE_IP=$(kubectl get svc --namespace seldon-system ambassador -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+
+  On AWS:
+  export SERVICE_IP=$(kubectl get svc --namespace seldon-system ambassador -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
+
+  echo http://$SERVICE_IP:
+
+For help, visit our Slack at http://a8r.io/Slack or view the documentation online at https://www.getambassador.io.
+
+복사<br><br><br>빠저나오려면ctrl + c<br>kubectl get pod -n seldon-system -w
+복사<br><br>kubectl get pod -n seldon-system
+복사<br><br><br><br>
+<br>입력
+<br>versionseldon-core-operator-1.11.0<br>helm install seldon-core seldon-core-operator \
+  --repo https://storage.googleapis.com/seldon-charts \
+  --namespace seldon-system \
+  --create-namespace \
+  --set usageMetrics.enabled=true \
+  --set ambassador.enabled=true \
+  --version 1.11.0
+복사<br>
+<br>출력
+<br>NAME: seldon-core
+LAST DEPLOYED: Fri Sep 20 16:57:30 2024
+NAMESPACE: seldon-system
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+복사<br><br><br><br><br>
+<br>입력
+<br>kubectl create namespace seldon
+복사<br>
+<br>출력
+<br>namespace/seldon created
+복사<br><br>
+<br>생성
+<br>vi sample.yaml
+복사<br>
+<br>입력
+<br>apiVersion: machinelearning.seldon.io/v1  # Seldon Core의 API 버전
+kind: SeldonDeployment  # SeldonDeployment 리소스 정의
+metadata:
+  name: iris-model  # SeldonDeployment의 이름
+  namespace: seldon  # 배포할 네임스페이스
+spec:
+  name: iris  # Seldon Core 내에서 사용할 모델 이름
+  predictors:
+  - graph:
+      implementation: SKLEARN_SERVER  # Seldon Core에서 pre-packaged 된 sklearn 서버 사용
+      modelUri: gs://seldon-models/v1.11.0-dev/sklearn/iris  # Google Storage에 저장된 미리 학습된 Iris 모델 경로
+      name: classifier  # predictor의 이름
+    name: default  # 기본 설정
+    replicas: 1  # 로드 밸런싱을 위한 replica 개수 (기본적으로 1개 설정)
+복사<br><br>
+<br>입력
+<br>kubectl apply -f sample.yaml
+복사<br>
+<br>출력
+<br>seldondeployment.machinelearning.seldon.io/iris-model created
+복사<br><br><br>을 하기 전에새로운 터미널 창에서 실행해야 해<br><br>
+<br>입력
+<br>하면sudo 비번 입력하라고 나옴<br>minikube tunnel
+복사<br>
+<br>출력
+<br>하면이대로 화면 멈추니까 끄지말고 다른 대에서 작업해야 해<br>✅  Tunnel successfully started
+
+📌  NOTE: Please do not close this terminal as this process must stay alive for the tunnel to be accessible ...
+
+❗  The service/ingress ambassador requires privileged ports to be exposed: [80 443]
+🔑  sudo permission will be asked for it.
+🏃  Starting tunnel for service ambassador.
+복사<br><br><br><br>
+<br>입력
+<br>은다른 터미널 창에서 해야겠지?<br>kubectl get service -n seldon-system
+복사<br>
+<br>출력
+<br>오!
+<br>CLUSTER-IP
+<br>EXTERNAL-IP<br>
+이렇게 2개가 있는데<br>
+EXTERNAL-IP 이것을 가지고 와야 해
+<br>NAME                     TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)                      AGE
+ambassador               LoadBalancer   10.97.159.95    127.0.0.1     80:30005/TCP,443:30185/TCP   17m
+ambassador-admin         ClusterIP      10.99.113.133   &lt;none&gt;        8877/TCP,8005/TCP            17m
+seldon-webhook-service   ClusterIP      10.105.95.14    &lt;none&gt;        443/TCP                      14m
+복사<br><br>
+<br>형식
+<br>http://&lt;ingress_url&gt;/seldon/&lt;namespace&gt;/&lt;model-name&gt;/api/v1.0/doc/
+복사<br>
+<br>클릭
+<br>Success<a rel="noopener" class="external-link" href="http://127.0.0.1/seldon/seldon/iris-model/api/v1.0/doc/" target="_blank">http://127.0.0.1/seldon/seldon/iris-model/api/v1.0/doc/</a><br>해서 들어가면POST ​/seldon​/seldon​/iris-model​/api​/v1.0​/predictions
+
+<br>Example Value | Schema
+
+{
+  "data": {
+    "names": [
+      "feature1"
+    ],
+    "tensor": {
+      "shape": [
+        1,
+        1
+      ],
+      "values": [
+        1
+      ]
+    }
+  }
+}
+복사<br>이런 녀석이 있는데,모델마다 형식이 다 달라지기 때문에 <br>
+그 형식을 자동으로 보여 주지는 않는다고 한다.
+때문에 위의 모델 형식으로 api 통신은 할 수 없고
+{ "data": { "ndarray": [[1,2,3,4]] } }
+복사
+이렇게 미리 정해진 형식으로 통신을 해야 한다고 한다.<br><br><br>
+<br>입력
+<br>curl -X POST http://127.0.0.1/seldon/seldon/iris-model/api/v1.0/predictions \
+-H 'Content-Type: application/json' \
+-d '{ "data": { "ndarray": [[1,2,3,4]] } }'
+복사<br>
+<br>출력
+<br>{"data":{"names":["t:0","t:1","t:2"],"ndarray":[[0.0006985194531162835,0.00366803903943666,0.995633441507447]]},"meta":{"requestPath":{"classifier":"seldonio/sklearnserver:1.11.0"}}}
+복사<br><br>
+<br>입력
+<br>curl -X POST http://127.0.0.1/seldon/seldon/iris-model/api/v1.0/predictions \
+-H 'Content-Type: application/json' \
+-d '{ "data": { "ndarray": [[1,2,3,4,5]] } }'
+복사<br>
+<br>출력
+<br>{"status":{"code":-1,"info":"Unknown data type returned as payload (must be list or np array):None","reason":"MICROSERVICE_BAD_DATA","status":1}}
+복사<br><br><br>전역은더럽히지 않을거야.<br>
+때문에 docker container에서 minikube에 접근 할 것인데<br>
+그 때 필요 한 것이 minikube의 ip를 알아내는 것임<br>
+<a data-href="Docker container에서 Minikube 클러스터에 접근하기" href="Docker container에서 Minikube 클러스터에 접근하기" class="internal-link" target="_self" rel="noopener">Docker container에서 Minikube 클러스터에 접근하기</a><br><br><br>
+<br>입력
+<br>minikube ip
+복사<br>
+<br>출력
+<br># 똑같이 나오지 않을 것임
+192.168.49.2
+복사<br><br><br>docker container run -itd --network minikube --name basic-ubuntu namugach/ubuntu-basic:kor
+복사<br><br>docker container exec -it -w /root basic-ubuntu bash
+복사<br><br><br>port는30005!<br>
+<br>양식
+<br>curl -X POST http://&lt;minikube-ip&gt;:30005/seldon/seldon/iris-model/api/v1.0/predictions \
+-H 'Content-Type: application/json' \
+-d '{ "data": { "ndarray": [[1,2,3,4]] } }'
+복사<br>
+<br>입력
+<br>curl -X POST http://192.168.49.2:30005/seldon/seldon/iris-model/api/v1.0/predictions \
+-H 'Content-Type: application/json' \
+-d '{ "data": { "ndarray": [[1,2,3,4]] } }'
+복사<br>
+<br>출력
+<br>{"data":{"names":["t:0","t:1","t:2"],"ndarray":[[0.0006985194531162835,0.00366803903943666,0.995633441507447]]},"meta":{"requestPath":{"classifier":"seldonio/sklearnserver:1.11.0"}}}
+복사<br><br><br><br>pip install numpy seldon-core
+복사<br><br><br>vi test.py
+복사<br><br>gateway_endpoint에는minikube ip 및 port를 입력해야 해<br>import numpy as np
+from seldon_core.seldon_client import SeldonClient
+
+sc = SeldonClient(
+	gateway="ambassador",
+	transport="rest",
+	gateway_endpoint="192.168.49.2:30005", # Make sure you use the port above
+	namespace="seldon",
+)
+client_prediction = sc.predict(
+	data=np.array([[1, 2, 3, 4]]),
+	deployment_name="iris-model",
+	names=["text"],
+	payload_type="ndarray",
+)
+
+print(client_prediction)
+Run복사<br><br>
+<br>입력
+<br>python test.py
+복사<br>
+<br>출력
+<br>Success:True message:
+Request:
+meta {
+}
+data {
+  names: "text"
+  ndarray {
+    values {
+      list_value {
+        values {
+          number_value: 1.0
+        }
+        values {
+          number_value: 2.0
+        }
+        values {
+          number_value: 3.0
+        }
+        values {
+          number_value: 4.0
+        }
+      }
+    }
+  }
+}
+
+Response:
+{'data': {'names': ['t:0', 't:1', 't:2'], 'ndarray': [[0.0006985194531162835, 0.00366803903943666, 0.995633441507447]]}, 'meta': {'requestPath': {'classifier': 'seldonio/sklearnserver:1.11.0'}}}
+복사]]></description><link>root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part3.-오픈소스를-통해-알아보는-mlops의-구성요소\md\seldon-core.html</link><guid isPermaLink="false">root/dev/머신러닝 서비스 구축을 위한 실전 MLOps/Part3. 오픈소스를 통해 알아보는 MLOps의 구성요소/md/seldon core.md</guid><pubDate>Mon, 30 Sep 2024 05:57:30 GMT</pubDate></item><item><title><![CDATA[Part3. 오픈소스를 통해 알아보는 MLOps의 구성요소]]></title><description><![CDATA[ 
+ <br><a data-href="dvc" href="root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part3.-오픈소스를-통해-알아보는-mlops의-구성요소\md\dvc.html" class="internal-link" target="_self" rel="noopener">dvc</a><br><a data-href="Mlflow 실습" href="root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part3.-오픈소스를-통해-알아보는-mlops의-구성요소\md\mlflow-실습.html" class="internal-link" target="_self" rel="noopener">Mlflow 실습</a><br><a data-href="mlflow docker 외부 host 노출하기" href="root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part3.-오픈소스를-통해-알아보는-mlops의-구성요소\md\mlflow-docker-외부-host-노출하기.html" class="internal-link" target="_self" rel="noopener">mlflow docker 외부 host 노출하기</a><br><a data-href="Model Serving Flaks" href="root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part3.-오픈소스를-통해-알아보는-mlops의-구성요소\md\model-serving-flaks.html" class="internal-link" target="_self" rel="noopener">Model Serving Flaks</a><br><a data-href="seldon core" href="root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part3.-오픈소스를-통해-알아보는-mlops의-구성요소\md\seldon-core.html" class="internal-link" target="_self" rel="noopener">seldon core</a><br><a data-href="Prometheus &amp; Grafana" href="root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part3.-오픈소스를-통해-알아보는-mlops의-구성요소\md\prometheus-&amp;-grafana.html" class="internal-link" target="_self" rel="noopener">Prometheus &amp; Grafana</a>]]></description><link>root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part3.-오픈소스를-통해-알아보는-mlops의-구성요소\part3.-오픈소스를-통해-알아보는-mlops의-구성요소.html</link><guid isPermaLink="false">root/dev/머신러닝 서비스 구축을 위한 실전 MLOps/Part3. 오픈소스를 통해 알아보는 MLOps의 구성요소/Part3. 오픈소스를 통해 알아보는 MLOps의 구성요소.md</guid><pubDate>Fri, 20 Sep 2024 14:25:33 GMT</pubDate></item><item><title><![CDATA[google cloud service 만들기]]></title><description><![CDATA[ 
+ <br><br><a rel="noopener" class="external-link" href="https://console.cloud.google.com/welcome?project=stellar-psyche-428400-s9" target="_blank">https://console.cloud.google.com/welcome?project=stellar-psyche-428400-s9</a><br><img alt="Pasted image 20240924211329.png" src="lib\media\pasted-image-20240924211329.png"><br>
+<br>클릭: 무료로 시작하기
+<br><img alt="Pasted image 20240924211457.png" src="lib\media\pasted-image-20240924211457.png"><br>
+<br>체크: 체험판 서비스 약관
+<br>체크: 상업적 목적
+<br>클릭: 계속
+<br><img alt="Pasted image 20240924212054.png" src="lib\media\pasted-image-20240924212054.png"><br>
+<br>입력: 이름
+<br>입력: 주민등록번호
+<br>선택: 통신사
+<br>입력: 전화번호
+<br>클릭: 코드 전송
+<br>입력: 코드 입력
+<br>클릭: 계속
+<br><img alt="Pasted image 20240924212351.png" src="lib\media\pasted-image-20240924212351.png"><br>
+<br>입력: 카드 번호
+<br>클릭: 무료로 시작하기
+<br><br><img alt="Pasted image 20240924145722.png" src="lib\media\pasted-image-20240924145722.png"><br>
+<br>클릭: 메뉴
+<br>클릭: Compute Engin
+<br>클릭: 메타데이터
+<br><img alt="Pasted image 20240924145841.png" src="lib\media\pasted-image-20240924145841.png"><br>
+<br>클릭: SSH 키
+<br>클릭: 수정
+<br><img alt="Pasted image 20240924150005.png" src="lib\media\pasted-image-20240924150005.png"><br>
+<br>클릭: 항목 추가
+<br>입력: 공개키
+<br>입력: 저장
+<br><img alt="Pasted image 20240924150250.png" src="lib\media\pasted-image-20240924150250.png"><br>
+<br>확인: 사용자 이름
+<br>userName이 부분이 로그인 할 때 사용자 이름이 됨<br>Host google_cloud
+	HostName 34.22.104.63
+	User userName
+	IdentityFile ~/.ssh/google_cloud_useName
+복사<br><br><br><br><img alt="Pasted image 20240924143819.png" src="lib\media\pasted-image-20240924143819.png"><br>
+<br>클릭: 1번이 없으면
+<br>클릭: 메뉴
+<br>클릭: Compute Engine
+<br>클릭: vm 인스턴스
+<br><img alt="Pasted image 20240924144002.png" src="lib\media\pasted-image-20240924144002.png"><br>
+<br>클릭: 인스턴스 만들기
+<br><img alt="Pasted image 20240924144211.png" src="lib\media\pasted-image-20240924144211.png"><br>
+<br>입력: 이름
+<br>클릭: 태그 및 라벨 관리
+<br>클릭: 서울
+<br><img alt="Pasted image 20240924144448.png" src="lib\media\pasted-image-20240924144448.png"><br>
+<br>클릭: 사양
+<br>클릭: 표준
+<br>클릭 e2-standard-8
+<br><img alt="Pasted image 20240924144721.png" src="lib\media\pasted-image-20240924144721.png"><br>
+<br>클릭: 변경
+<br>선택: Ubuntu
+<br>선택: Ubuntu 24.04 LTS Minimal
+<br>입력: 80
+<br>클릭: 선택
+<br><img alt="Pasted image 20240924144900.png" src="lib\media\pasted-image-20240924144900.png"><br>
+<br>클릭: 모든 cloud API에 대한 전체 엑세스 허용
+<br>체크
+
+<br>HTTP 트래픽 허용
+<br>HTTPS 트래픽 허용
+
+
+<br><img alt="Pasted image 20240924145055.png" src="lib\media\pasted-image-20240924145055.png"><br>
+<br>클릭: 만들기
+<br><br><img alt="Pasted image 20240924150953.png" src="lib\media\pasted-image-20240924150953.png"><br>
+<br>클릭
+<br>선택: 브라우저 창에서 열기
+<br>확인: 브라우저 터미널
+]]></description><link>root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part4.-쿠버네티스-기반-mlops-pipeline-구축하기\google-cloud-service-만들기.html</link><guid isPermaLink="false">root/dev/머신러닝 서비스 구축을 위한 실전 MLOps/Part4. 쿠버네티스 기반 MLOps Pipeline 구축하기/google cloud service 만들기.md</guid><pubDate>Tue, 24 Sep 2024 12:24:04 GMT</pubDate><enclosure url="lib\media\pasted-image-20240924211329.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240924211329.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[kubeflow 개발 환경 구축]]></title><description><![CDATA[ 
+ <br><br>curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
+curl -LO https://dl.k8s.io/release/v1.31.1/bin/linux/amd64/kubectl
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+wget https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv5.4.2/kustomize_v5.4.2_linux_amd64.tar.gz
+
+tar -xvf kustomize_v5.4.2_linux_amd64.tar.gz
+
+sudo mv ./kustomize /usr/local/bin/kustomize
+
+mkdir -p ~/kubeflow
+cd ~/kubeflow
+git clone https://github.com/kubeflow/manifests.git
+cd manifests
+git checkout tags/v1.8.1
+
+minikube start --driver=docker \
+  --cpus='4' --memory='8g' \
+  --kubernetes-version=v1.26.15 \
+  --extra-config=apiserver.service-account-signing-key-file=/var/lib/minikube/certs/sa.key \
+  --extra-config=apiserver.service-account-issuer=kubernetes.default.svc
+
+while ! kustomize build example | kubectl apply -f -; do echo "Retrying to apply resources"; sleep 10; done
+복사<br><br><br><br>curl -sSL get.docker.com | sh
+복사<br><br>
+<br>Docker 그룹을 확인해:
+<br>sudo groupadd docker
+복사<br>
+<br>현재 사용자를 Docker 그룹에 추가해:
+<br>sudo usermod -aG docker $USER
+복사<br>
+<br>시스템 재시작
+<br>sudo reboot
+복사<br><br><br><br>
+<br>최신
+<br>curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+복사<br>
+<br>버전 지정
+<br>wget https://github.com/kubernetes/minikube/releases/download/v1.33.1/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+복사<br><br><br><br>curl -LO https://dl.k8s.io/release/v1.31.1/bin/linux/amd64/kubectl
+복사<br><br>sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+복사<br><br>되는 것<a rel="noopener" class="external-link" href="https://github.com/kubernetes-sigs/kustomize/releases/tag/kustomize%2Fv5.0.3" target="_blank">https://github.com/kubernetes-sigs/kustomize/releases/tag/kustomize%2Fv5.0.3</a><br>
+<a rel="noopener" class="external-link" href="https://github.com/kubernetes/kubernetes/tree/release-1.26" target="_blank">https://github.com/kubernetes/kubernetes/tree/release-1.26</a><br>
+<a rel="noopener" class="external-link" href="https://github.com/kubeflow/manifests/tree/v1.8.1" target="_blank">https://github.com/kubeflow/manifests/tree/v1.8.1</a><br><br>
+<br>됨
+<br>wget https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv5.4.3/kustomize_v5.4.3_linux_amd64.tar.gz
+
+tar -xvf kustomize_v5.4.3_linux_amd64.tar.gz
+
+sudo mv ./kustomize /usr/local/bin/kustomize
+복사<br>
+<br>됨
+<br>wget https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv5.4.2/kustomize_v5.4.2_linux_amd64.tar.gz
+
+tar -xvf kustomize_v5.4.2_linux_amd64.tar.gz
+
+sudo mv ./kustomize /usr/local/bin/kustomize
+복사<br>
+<br>안됨
+<br>wget https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv5.0.4/kustomize_v5.0.4_linux_amd64.tar.gz
+
+tar -xvf kustomize_v5.0.4_linux_amd64.tar.gz
+
+sudo mv ./kustomize /usr/local/bin/kustomize
+복사<br><br><br>mkdir -p ~/kubeflow
+cd ~/kubeflow
+git clone https://github.com/kubeflow/manifests.git
+cd manifests
+git checkout tags/v1.8.1
+복사<br><br>minikube start --driver=docker \
+  --cpus='4' --memory='8g' \
+  --kubernetes-version=v1.26.15 \
+  --extra-config=apiserver.service-account-signing-key-file=/var/lib/minikube/certs/sa.key \
+  --extra-config=apiserver.service-account-issuer=kubernetes.default.svc
+복사<br><br>while ! kustomize build example | kubectl apply -f -; do echo "Retrying to apply resources"; sleep 10; done
+복사<br><br>kubectl get po -A -w
+복사<br><br><br><br>kubectl port-forward svc/istio-ingressgateway -n istio-system 8080:80
+복사<br><br>http://localhost:8080<br><br>
+<br>ID : <a data-tooltip-position="top" aria-label="mailto:user@example.com" rel="noopener" class="external-link" href="mailto:user@example.com" target="_blank">user@example.com</a>
+<br>PW : 12341234
+]]></description><link>root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part4.-쿠버네티스-기반-mlops-pipeline-구축하기\kubeflow-개발-환경-구축.html</link><guid isPermaLink="false">root/dev/머신러닝 서비스 구축을 위한 실전 MLOps/Part4. 쿠버네티스 기반 MLOps Pipeline 구축하기/kubeflow 개발 환경 구축.md</guid><pubDate>Wed, 02 Oct 2024 16:58:31 GMT</pubDate></item><item><title><![CDATA[Kubeflow 설치]]></title><description><![CDATA[ 
+ <br>되는 것<a rel="noopener" class="external-link" href="https://github.com/kubernetes-sigs/kustomize/releases/tag/kustomize%2Fv5.0.3" target="_blank">https://github.com/kubernetes-sigs/kustomize/releases/tag/kustomize%2Fv5.0.3</a><br>
+<a rel="noopener" class="external-link" href="https://github.com/kubernetes/kubernetes/tree/release-1.26" target="_blank">https://github.com/kubernetes/kubernetes/tree/release-1.26</a><br>
+<a rel="noopener" class="external-link" href="https://github.com/kubeflow/manifests/tree/v1.8.1" target="_blank">https://github.com/kubeflow/manifests/tree/v1.8.1</a><br>Note
+<br>kustomize: v5.0.3
+<br>kubernetes: v1.26
+<br>kubeflow: v1.8.1
+<br>wget https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv5.0.3/kustomize_v5.0.3_linux_amd64.tar.gz
+
+tar -xvf kustomize_v5.0.3_linux_amd64.tar.gz
+sudo mv ./kustomize /usr/local/bin/kustomize
+복사<br>mkdir -p ~/yeardream/kubeflow
+cd ~/yeardream/kubeflow
+git clone https://github.com/kubeflow/manifests.git
+cd manifests
+git checkout tags/v1.8.1
+복사<br>minikube start --driver=docker \
+  --cpus='4' --memory='8g' \
+  --kubernetes-version=v1.26.15 \
+  --extra-config=apiserver.service-account-signing-key-file=/var/lib/minikube/certs/sa.key \
+  --extra-config=apiserver.service-account-issuer=kubernetes.default.svc
+복사<br>while ! kustomize build example | kubectl apply -f -; do echo "Retrying to apply resources"; sleep 10; done
+복사<br>kubectl get po -A
+복사<br><br><br>kubectl port-forward svc/istio-ingressgateway -n istio-system 8080:80
+복사<br><br>http://localhost:8080<br><br>
+<br>ID : <a data-tooltip-position="top" aria-label="mailto:user@example.com" rel="noopener" class="external-link" href="mailto:user@example.com" target="_blank">user@example.com</a>
+<br>PW : 12341234
+<br><br><br><br>wget https://github.com/kubernetes-sigs/kustomize/releases/download/v3.2.0/kustomize_ 3.2.0_linux_amd64
+복사<br><br>chmod +x kustomize_3.2.0_linux_amd64
+복사<br><br>sudo mv kustomize_3.2.0_linux_amd64 /usr/local/bin/kustomize
+복사<br><br>kustomize version
+복사<br><br><br><br>Note
+<br>minikube start
+<br>docker driver option
+<br>cpu 4 개 할당
+<br>memory 8g 할당
+<br>kubernetes version v1.21.14 설정
+<br>--extra-config 부분은 tokenRequest 활성화 관련 설정
+<br><br>minikube start --driver=docker \
+  --cpus='4' --memory='8g' \
+  --kubernetes-version=v1.26.15 \
+  --extra-config=apiserver.service-account-signing-key-file=/var/lib/minikube/certs/sa.key \
+  --extra-config=apiserver.service-account-issuer=kubernetes.default.svc
+복사<br><br>minikube start --driver=docker \
+  --cpus='4' --memory='8g' \
+  --kubernetes-version=v1.19.3 --force \
+  --extra-config=apiserver.service-account-signing-key-file=/var/lib/minikube/certs/sa.key \
+  --extra-config=apiserver.service-account-issuer=kubernetes.default.svc
+복사<br><br>
+<br>입력
+<br>kubectl get sc
+복사<br>
+<br>출력
+<br>NAME                 PROVISIONER                RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+standard (default)   k8s.io/minikube-hostpath   Delete          Immediate           false                  38s
+복사<br><br><br><br>mkdir -p ~/yeardream/kubeflow
+cd ~/yeardream/kubeflow
+복사<br><br>git clone git@github.com:kubeflow/manifests.git
+복사<br><br>cd manifests
+복사<br><br>git checkout tags/v1.4.0
+복사<br><br><br><a rel="noopener" class="external-link" href="https://github.com/kubeflow/manifests/tree/v1.4.0" target="_blank">https://github.com/kubeflow/manifests/tree/v1.4.0</a><br><br>을이렇게
+kustomize build common/cert-manager/cert-manager/base &gt; a.text
+복사
+리다이렉션으로 빼서 파일로 만든 다음에 라인을 확인해 보면
+무려26884
+라인을 확인 할 수 있음<br>kustomize build common/cert-manager/cert-manager/base
+복사<br><br>
+<br>입력
+<br>sudo apt install kubectx
+
+kustomize build common/cert-manager/cert-manager/base | kubectl apply -f -
+kustomize build common/cert-manager/kubeflow-issuer/base | kubectl apply -f -
+
+kustomize build common/istio-1-9/istio-crds/base | kubectl apply -f -
+kustomize build common/istio-1-9/istio-namespace/base | kubectl apply -f -
+kustomize build common/istio-1-9/istio-install/base | kubectl apply -f -
+
+kustomize build common/dex/overlays/istio | kubectl apply -f -
+
+kustomize build common/kubeflow-roles/base | kubectl apply -f -
+
+kustomize build common/istio-1-9/kubeflow-istio-resources/base | kubectl apply -f -
+
+
+kustomize build apps/pipeline/upstream/env/platform-agnostic-multi-user | kubectl apply -f -
+kustomize build apps/pipeline/upstream/env/platform-agnostic-multi-user | kubectl apply -f -
+
+kustomize build apps/katib/upstream/installs/katib-with-kubeflow | kubectl apply -f -
+
+kustomize build apps/centraldashboard/upstream/overlays/istio | kubectl apply -f -
+
+kustomize build apps/admission-webhook/upstream/overlays/cert-manager | kubectl apply -f -
+
+kustomize build apps/jupyter/notebook-controller/upstream/overlays/kubeflow | kubectl apply -f -
+
+kustomize build apps/jupyter/jupyter-web-app/upstream/overlays/istio | kubectl apply -f -
+
+kustomize build apps/profiles/upstream/overlays/kubeflow | kubectl apply -f -
+kustomize build apps/volumes-web-app/upstream/overlays/istio | kubectl apply -f -
+
+kustomize build apps/tensorboard/tensorboards-web-app/upstream/overlays/istio | kubectl apply -f -
+kustomize build apps/jupyter/notebook-controller/upstream/overlays/kubeflow | kubectl apply -f -
+
+kustomize build common/user-namespace/base | kubectl apply -f -
+복사<br>
+<br>입력
+<br>kubectl get po -A -w
+복사<br><br>작업 하기 전에sudo apt install kubectx
+복사
+이거 설치 해야 진행이 매끄러움<br>
+<br><a rel="noopener" class="external-link" href="https://github.com/ahmetb/kubectx" target="_blank">https://github.com/ahmetb/kubectx</a>
+<br><br><br>
+<br>입력
+<br>kustomize build common/cert-manager/cert-manager/base | kubectl apply -f -
+복사<br>
+<br>출력
+<br>namespace/cert-manager created
+customresourcedefinition.apiextensions.k8s.io/certificaterequests.cert-manager.io created
+customresourcedefinition.apiextensions.k8s.io/certificates.cert-manager.io created
+customresourcedefinition.apiextensions.k8s.io/challenges.acme.cert-manager.io created
+customresourcedefinition.apiextensions.k8s.io/clusterissuers.cert-manager.io created
+customresourcedefinition.apiextensions.k8s.io/issuers.cert-manager.io created
+customresourcedefinition.apiextensions.k8s.io/orders.acme.cert-manager.io created
+mutatingwebhookconfiguration.admissionregistration.k8s.io/cert-manager-webhook created
+serviceaccount/cert-manager created
+serviceaccount/cert-manager-cainjector created
+serviceaccount/cert-manager-webhook created
+role.rbac.authorization.k8s.io/cert-manager-webhook:dynamic-serving created
+role.rbac.authorization.k8s.io/cert-manager-cainjector:leaderelection created
+role.rbac.authorization.k8s.io/cert-manager:leaderelection created
+clusterrole.rbac.authorization.k8s.io/cert-manager-cainjector created
+clusterrole.rbac.authorization.k8s.io/cert-manager-controller-approve:cert-manager-io created
+clusterrole.rbac.authorization.k8s.io/cert-manager-controller-certificates created
+clusterrole.rbac.authorization.k8s.io/cert-manager-controller-challenges created
+clusterrole.rbac.authorization.k8s.io/cert-manager-controller-clusterissuers created
+clusterrole.rbac.authorization.k8s.io/cert-manager-controller-ingress-shim created
+clusterrole.rbac.authorization.k8s.io/cert-manager-controller-issuers created
+clusterrole.rbac.authorization.k8s.io/cert-manager-controller-orders created
+clusterrole.rbac.authorization.k8s.io/cert-manager-edit created
+clusterrole.rbac.authorization.k8s.io/cert-manager-view created
+clusterrole.rbac.authorization.k8s.io/cert-manager-webhook:subjectaccessreviews created
+rolebinding.rbac.authorization.k8s.io/cert-manager-webhook:dynamic-serving created
+rolebinding.rbac.authorization.k8s.io/cert-manager-cainjector:leaderelection created
+rolebinding.rbac.authorization.k8s.io/cert-manager:leaderelection created
+clusterrolebinding.rbac.authorization.k8s.io/cert-manager-cainjector created
+clusterrolebinding.rbac.authorization.k8s.io/cert-manager-controller-approve:cert-manager-io created
+clusterrolebinding.rbac.authorization.k8s.io/cert-manager-controller-certificates created
+clusterrolebinding.rbac.authorization.k8s.io/cert-manager-controller-challenges created
+clusterrolebinding.rbac.authorization.k8s.io/cert-manager-controller-clusterissuers created
+clusterrolebinding.rbac.authorization.k8s.io/cert-manager-controller-ingress-shim created
+clusterrolebinding.rbac.authorization.k8s.io/cert-manager-controller-issuers created
+clusterrolebinding.rbac.authorization.k8s.io/cert-manager-controller-orders created
+clusterrolebinding.rbac.authorization.k8s.io/cert-manager-webhook:subjectaccessreviews created
+service/cert-manager created
+service/cert-manager-webhook created
+deployment.apps/cert-manager created
+deployment.apps/cert-manager-cainjector created
+deployment.apps/cert-manager-webhook created
+validatingwebhookconfiguration.admissionregistration.k8s.io/cert-manager-webhook created
+복사<br><br>
+<br>입력
+<br>kubens cert-manager
+복사<br>
+<br>출력
+<br>✔ Active namespace is "cert-manager"
+복사<br><br>
+<br>입력
+<br>kubectl get po
+복사<br>혹은<br>kubectl get po -w
+복사<br>
+<br>출력
+<br>NAME                                       READY   STATUS              RESTARTS   AGE
+cert-manager-7dd5854bb4-xtrft              1/1     Running             0          13s
+cert-manager-cainjector-64c949654c-hrsp7   0/1     ContainerCreating   0          13s
+cert-manager-webhook-6bdffc7c9d-lhcwf      0/1     ContainerCreating   0          13s
+복사<br><br>
+<br>입력
+<br>kustomize build common/cert-manager/kubeflow-issuer/base | kubectl apply -f -
+복사<br>
+<br>출력
+<br>clusterissuer.cert-manager.io/kubeflow-self-signing-issuer created
+복사<br><br><br>
+<br>입력
+<br>kustomize build common/istio-1-9/istio-crds/base | kubectl apply -f -
+kustomize build common/istio-1-9/istio-namespace/base | kubectl apply -f -
+kustomize build common/istio-1-9/istio-install/base | kubectl apply -f -
+복사<br>
+<br>출력
+<br>kustomize build common/istio-1-9/istio-crds/base | kubectl apply -f -
+kustomize build common/istio-1-9/istio-namespace/base | kubectl apply -f -
+kustomize build common/istio-1-9/istio-install/base | kubectl apply -f -
+Warning: apiextensions.k8s.io/v1beta1 CustomResourceDefinition is deprecated in v1.16+, unavailable in v1.22+; use apiextensions.k8s.io/v1 CustomResourceDefinition
+customresourcedefinition.apiextensions.k8s.io/authorizationpolicies.security.istio.io created
+customresourcedefinition.apiextensions.k8s.io/destinationrules.networking.istio.io created
+customresourcedefinition.apiextensions.k8s.io/envoyfilters.networking.istio.io created
+customresourcedefinition.apiextensions.k8s.io/gateways.networking.istio.io created
+customresourcedefinition.apiextensions.k8s.io/istiooperators.install.istio.io created
+customresourcedefinition.apiextensions.k8s.io/peerauthentications.security.istio.io created
+customresourcedefinition.apiextensions.k8s.io/requestauthentications.security.istio.io created
+customresourcedefinition.apiextensions.k8s.io/serviceentries.networking.istio.io created
+customresourcedefinition.apiextensions.k8s.io/sidecars.networking.istio.io created
+customresourcedefinition.apiextensions.k8s.io/virtualservices.networking.istio.io created
+customresourcedefinition.apiextensions.k8s.io/workloadentries.networking.istio.io created
+customresourcedefinition.apiextensions.k8s.io/workloadgroups.networking.istio.io created
+namespace/istio-system created
+Warning: admissionregistration.k8s.io/v1beta1 MutatingWebhookConfiguration is deprecated in v1.16+, unavailable in v1.22+; use admissionregistration.k8s.io/v1 MutatingWebhookConfiguration
+mutatingwebhookconfiguration.admissionregistration.k8s.io/istio-sidecar-injector created
+serviceaccount/istio-ingressgateway-service-account created
+serviceaccount/istio-reader-service-account created
+serviceaccount/istiod-service-account created
+role.rbac.authorization.k8s.io/istio-ingressgateway-sds created
+role.rbac.authorization.k8s.io/istiod-istio-system created
+clusterrole.rbac.authorization.k8s.io/istio-reader-istio-system created
+clusterrole.rbac.authorization.k8s.io/istiod-istio-system created
+rolebinding.rbac.authorization.k8s.io/istio-ingressgateway-sds created
+rolebinding.rbac.authorization.k8s.io/istiod-istio-system created
+clusterrolebinding.rbac.authorization.k8s.io/istio-reader-istio-system created
+clusterrolebinding.rbac.authorization.k8s.io/istiod-istio-system created
+configmap/istio created
+configmap/istio-sidecar-injector created
+service/istio-ingressgateway created
+service/istiod created
+deployment.apps/istio-ingressgateway created
+deployment.apps/istiod created
+envoyfilter.networking.istio.io/metadata-exchange-1.8 created
+envoyfilter.networking.istio.io/metadata-exchange-1.9 created
+envoyfilter.networking.istio.io/stats-filter-1.8 created
+envoyfilter.networking.istio.io/stats-filter-1.9 created
+envoyfilter.networking.istio.io/tcp-metadata-exchange-1.8 created
+envoyfilter.networking.istio.io/tcp-metadata-exchange-1.9 created
+envoyfilter.networking.istio.io/tcp-stats-filter-1.8 created
+envoyfilter.networking.istio.io/tcp-stats-filter-1.9 created
+envoyfilter.networking.istio.io/x-forwarded-host created
+gateway.networking.istio.io/istio-ingressgateway created
+authorizationpolicy.security.istio.io/global-deny-all created
+authorizationpolicy.security.istio.io/istio-ingressgateway created
+Warning: admissionregistration.k8s.io/v1beta1 ValidatingWebhookConfiguration is deprecated in v1.16+, unavailable in v1.22+; use admissionregistration.k8s.io/v1 ValidatingWebhookConfiguration
+validatingwebhookconfiguration.admissionregistration.k8s.io/istiod-istio-system created
+복사<br><br><br>
+<br>입력
+<br>kubens
+복사<br>
+<br>출력
+<br>cert-manager
+default
+istio-system
+kube-node-lease
+kube-public
+kube-system
+복사<br><br>
+<br>입력
+<br>kubens istio-system
+복사<br>
+<br>출력
+<br>✔ Active namespace is "istio-system"
+복사<br><br>
+<br>입력
+<br>kubectl get po
+복사<br>
+<br>출력
+<br>NAME                                    READY   STATUS    RESTARTS   AGE
+istio-ingressgateway-78bc678876-wm4lg   1/1     Running   0          4m46s
+istiod-755f4cc457-tz9z5                 1/1     Running   0          4m46s
+복사<br><br>kustomize build common/dex/overlays/istio | kubectl apply -f -
+복사<br><br>kustomize build common/oidc-authservice/base | kubectl apply -f -
+복사<br>Dex와 OIDC는인증과 유저 관리를 담당<br><br><br>kustomize build common/kubeflow-namespace/base | kubectl apply -f -
+복사<br><br>
+<br>입력
+<br>kubectl get ns
+복사<br>
+<br>출력
+<br>NAME              STATUS   AGE
+auth              Active   3m44s
+cert-manager      Active   27m
+default           Active   28m
+istio-system      Active   11m
+kube-node-lease   Active   28m
+kube-public       Active   28m
+kube-system       Active   28m
+kubeflow          Active   3s # 확인
+복사<br><br>
+<br>입력
+<br>kustomize build common/kubeflow-roles/base | kubectl apply -f -
+복사<br>
+<br>출력
+<br>kustomize build common/kubeflow-roles/base | kubectl apply -f -
+clusterrole.rbac.authorization.k8s.io/kubeflow-admin created
+clusterrole.rbac.authorization.k8s.io/kubeflow-edit created
+clusterrole.rbac.authorization.k8s.io/kubeflow-kubernetes-admin created
+clusterrole.rbac.authorization.k8s.io/kubeflow-kubernetes-edit created
+clusterrole.rbac.authorization.k8s.io/kubeflow-kubernetes-view created
+clusterrole.rbac.authorization.k8s.io/kubeflow-view created
+복사<br><br>
+<br>입력
+<br>kustomize build common/istio-1-9/kubeflow-istio-resources/base | kubectl apply -f -
+복사<br>
+<br>출력
+<br>kustomize build common/istio-1-9/kubeflow-istio-resources/base | kubectl apply -f -
+clusterrole.rbac.authorization.k8s.io/kubeflow-istio-admin created
+clusterrole.rbac.authorization.k8s.io/kubeflow-istio-edit created
+clusterrole.rbac.authorization.k8s.io/kubeflow-istio-view created
+gateway.networking.istio.io/kubeflow-gateway created
+복사<br><br>이거 설치 하고마지막에 한 번 더 설치해야 함.<br>
+<br>입력
+<br>kustomize build apps/pipeline/upstream/env/platform-agnostic-multi-user | kubectl apply -f -
+복사<br>
+<br>출력
+<br># 생략
+persistentvolumeclaim/minio-pvc created
+persistentvolumeclaim/mysql-pv-claim created
+error: unable to recognize "STDIN": no matches for kind "CompositeController" in version "metacontroller.k8s.io/v1alpha1"
+복사<br>이런Errorerror: unable to recognize "STDIN": no matches for kind "CompositeController" in version "metacontroller.k8s.io/v1alpha1"
+가 나오는데,<br>
+많은 것들을 설치 할 때 의존하는 것들이 있는데<br>
+순서가 잘 못되서 나온 것이기 때문에 한번 더
+
+<br>입력
+
+kustomize build apps/pipeline/upstream/env/platform-agnostic-multi-user | kubectl apply -f -
+복사
+
+<br>출력
+
+# 생략
+uthorizationpolicy.security.istio.io/minio-service unchanged
+authorizationpolicy.security.istio.io/ml-pipeline unchanged
+authorizationpolicy.security.istio.io/ml-pipeline-ui unchanged
+authorizationpolicy.security.istio.io/ml-pipeline-visualizationserver unchanged
+authorizationpolicy.security.istio.io/mysql unchanged
+authorizationpolicy.security.istio.io/service-cache-server unchanged
+persistentvolumeclaim/minio-pvc unchanged
+persistentvolumeclaim/mysql-pv-claim unchanged
+복사
+문제없이 잘 설치 됐다고 나온다.<br><br>
+<br>입력
+<br>kustomize build apps/katib/upstream/installs/katib-with-kubeflow | kubectl apply -f -
+복사<br>
+<br>출력
+<br>kustomize build apps/katib/upstream/installs/katib-with-kubeflow | kubectl apply -f -
+customresourcedefinition.apiextensions.k8s.io/experiments.kubeflow.org created
+customresourcedefinition.apiextensions.k8s.io/suggestions.kubeflow.org created
+customresourcedefinition.apiextensions.k8s.io/trials.kubeflow.org created
+mutatingwebhookconfiguration.admissionregistration.k8s.io/katib.kubeflow.org created
+serviceaccount/katib-controller created
+serviceaccount/katib-ui created
+clusterrole.rbac.authorization.k8s.io/katib-controller created
+clusterrole.rbac.authorization.k8s.io/katib-ui created
+clusterrole.rbac.authorization.k8s.io/kubeflow-katib-admin created
+clusterrole.rbac.authorization.k8s.io/kubeflow-katib-edit created
+clusterrole.rbac.authorization.k8s.io/kubeflow-katib-view created
+clusterrolebinding.rbac.authorization.k8s.io/katib-controller created
+clusterrolebinding.rbac.authorization.k8s.io/katib-ui created
+configmap/katib-config created
+configmap/trial-templates created
+secret/katib-mysql-secrets created
+service/katib-controller created
+service/katib-db-manager created
+service/katib-mysql created
+service/katib-ui created
+deployment.apps/katib-controller created
+deployment.apps/katib-db-manager created
+deployment.apps/katib-mysql created
+deployment.apps/katib-ui created
+certificate.cert-manager.io/katib-webhook-cert created
+issuer.cert-manager.io/katib-selfsigned-issuer created
+virtualservice.networking.istio.io/katib-ui created
+persistentvolumeclaim/katib-mysql created
+validatingwebhookconfiguration.admissionregistration.k8s.io/katib.kubeflow.org created
+복사<br><br>
+<br>입력
+<br>kustomize build apps/centraldashboard/upstream/overlays/istio | kubectl apply -f -
+복사<br>
+<br>출력
+<br>kustomize build apps/centraldashboard/upstream/overlays/istio | kubectl apply -f -
+serviceaccount/centraldashboard created
+role.rbac.authorization.k8s.io/centraldashboard created
+clusterrole.rbac.authorization.k8s.io/centraldashboard created
+rolebinding.rbac.authorization.k8s.io/centraldashboard created
+clusterrolebinding.rbac.authorization.k8s.io/centraldashboard created
+configmap/centraldashboard-config created
+configmap/centraldashboard-parameters created
+service/centraldashboard created
+deployment.apps/centraldashboard created
+virtualservice.networking.istio.io/centraldashboard created
+복사<br><br>
+<br>입력
+<br>kustomize build apps/admission-webhook/upstream/overlays/cert-manager | kubectl apply -f -
+복사<br>
+<br>출력
+<br>kustomize build apps/admission-webhook/upstream/overlays/cert-manager | kubectl apply -f -
+Warning: apiextensions.k8s.io/v1beta1 CustomResourceDefinition is deprecated in v1.16+, unavailable in v1.22+; use apiextensions.k8s.io/v1 CustomResourceDefinition
+customresourcedefinition.apiextensions.k8s.io/poddefaults.kubeflow.org created
+Warning: admissionregistration.k8s.io/v1beta1 MutatingWebhookConfiguration is deprecated in v1.16+, unavailable in v1.22+; use admissionregistration.k8s.io/v1 MutatingWebhookConfiguration
+mutatingwebhookconfiguration.admissionregistration.k8s.io/admission-webhook-mutating-webhook-configuration created
+serviceaccount/admission-webhook-service-account created
+clusterrole.rbac.authorization.k8s.io/admission-webhook-cluster-role created
+clusterrole.rbac.authorization.k8s.io/admission-webhook-kubeflow-poddefaults-admin created
+clusterrole.rbac.authorization.k8s.io/admission-webhook-kubeflow-poddefaults-edit created
+clusterrole.rbac.authorization.k8s.io/admission-webhook-kubeflow-poddefaults-view created
+clusterrolebinding.rbac.authorization.k8s.io/admission-webhook-cluster-role-binding created
+service/admission-webhook-service created
+deployment.apps/admission-webhook-deployment created
+certificate.cert-manager.io/admission-webhook-cert created
+issuer.cert-manager.io/admission-webhook-selfsigned-issuer created
+복사<br><br><br>
+<br>입력
+<br>kustomize build apps/jupyter/notebook-controller/upstream/overlays/kubeflow | kubectl apply -f -
+복사<br>
+<br>출력
+<br>Warning: apiextensions.k8s.io/v1beta1 CustomResourceDefinition is deprecated in v1.16+, unavailable in v1.22+; use apiextensions.k8s.io/v1 CustomResourceDefinition
+customresourcedefinition.apiextensions.k8s.io/notebooks.kubeflow.org created
+serviceaccount/notebook-controller-service-account created
+role.rbac.authorization.k8s.io/notebook-controller-leader-election-role created
+clusterrole.rbac.authorization.k8s.io/notebook-controller-kubeflow-notebooks-admin created
+clusterrole.rbac.authorization.k8s.io/notebook-controller-kubeflow-notebooks-edit created
+clusterrole.rbac.authorization.k8s.io/notebook-controller-kubeflow-notebooks-view created
+clusterrole.rbac.authorization.k8s.io/notebook-controller-role created
+rolebinding.rbac.authorization.k8s.io/notebook-controller-leader-election-rolebinding created
+clusterrolebinding.rbac.authorization.k8s.io/notebook-controller-role-binding created
+configmap/notebook-controller-config-kkt88f2bhb created
+service/notebook-controller-service created
+deployment.apps/notebook-controller-deployment created
+복사<br><br>kustomize build apps/jupyter/jupyter-web-app/upstream/overlays/istio | kubectl apply -f -
+복사<br>serviceaccount/jupyter-web-app-service-account created
+Warning: rbac.authorization.k8s.io/v1beta1 Role is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 Role
+role.rbac.authorization.k8s.io/jupyter-web-app-jupyter-notebook-role created
+clusterrole.rbac.authorization.k8s.io/jupyter-web-app-cluster-role created
+clusterrole.rbac.authorization.k8s.io/jupyter-web-app-kubeflow-notebook-ui-admin created
+clusterrole.rbac.authorization.k8s.io/jupyter-web-app-kubeflow-notebook-ui-edit created
+clusterrole.rbac.authorization.k8s.io/jupyter-web-app-kubeflow-notebook-ui-view created
+Warning: rbac.authorization.k8s.io/v1beta1 RoleBinding is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 RoleBinding
+rolebinding.rbac.authorization.k8s.io/jupyter-web-app-jupyter-notebook-role-binding created
+clusterrolebinding.rbac.authorization.k8s.io/jupyter-web-app-cluster-role-binding created
+configmap/jupyter-web-app-config-c6mgtkmgh4 created
+configmap/jupyter-web-app-logos created
+configmap/jupyter-web-app-parameters-h7dbhff8cb created
+service/jupyter-web-app-service created
+deployment.apps/jupyter-web-app-deployment created
+virtualservice.networking.istio.io/jupyter-web-app-jupyter-web-app created
+복사<br><br><br>
+<br>입력
+<br>kustomize build apps/profiles/upstream/overlays/kubeflow | kubectl apply -f -
+복사<br>
+<br>출력
+<br>customresourcedefinition.apiextensions.k8s.io/profiles.kubeflow.org created
+serviceaccount/profiles-controller-service-account created
+role.rbac.authorization.k8s.io/profiles-leader-election-role created
+rolebinding.rbac.authorization.k8s.io/profiles-leader-election-rolebinding created
+clusterrolebinding.rbac.authorization.k8s.io/profiles-cluster-role-binding created
+configmap/namespace-labels-data-m76mmk6ckt created
+configmap/profiles-config-2g29dd2mbd created
+service/profiles-kfam created
+deployment.apps/profiles-deployment created
+virtualservice.networking.istio.io/profiles-kfam created
+복사<br><br>
+<br>입력
+<br>kustomize build apps/volumes-web-app/upstream/overlays/istio | kubectl apply -f -
+복사<br>
+<br>출력
+<br>serviceaccount/volumes-web-app-service-account created
+clusterrole.rbac.authorization.k8s.io/volumes-web-app-cluster-role created
+clusterrole.rbac.authorization.k8s.io/volumes-web-app-kubeflow-volume-ui-admin created
+clusterrole.rbac.authorization.k8s.io/volumes-web-app-kubeflow-volume-ui-edit created
+clusterrole.rbac.authorization.k8s.io/volumes-web-app-kubeflow-volume-ui-view created
+clusterrolebinding.rbac.authorization.k8s.io/volumes-web-app-cluster-role-binding created
+configmap/volumes-web-app-parameters-d9b9bmk7ch created
+service/volumes-web-app-service created
+deployment.apps/volumes-web-app-deployment created
+virtualservice.networking.istio.io/volumes-web-app-volumes-web-app created
+복사<br><br><br>
+<br>입력
+<br>kustomize build apps/tensorboard/tensorboards-web-app/upstream/overlays/istio | kubectl apply -f -
+복사<br>
+<br>출력
+<br>serviceaccount/tensorboards-web-app-service-account created
+clusterrole.rbac.authorization.k8s.io/tensorboards-web-app-cluster-role created
+clusterrole.rbac.authorization.k8s.io/tensorboards-web-app-kubeflow-tensorboard-ui-admin created
+clusterrole.rbac.authorization.k8s.io/tensorboards-web-app-kubeflow-tensorboard-ui-edit created
+clusterrole.rbac.authorization.k8s.io/tensorboards-web-app-kubeflow-tensorboard-ui-view created
+clusterrolebinding.rbac.authorization.k8s.io/tensorboards-web-app-cluster-role-binding created
+configmap/tensorboards-web-app-parameters-bdb48k45kd created
+service/tensorboards-web-app-service created
+deployment.apps/tensorboards-web-app-deployment created
+virtualservice.networking.istio.io/tensorboards-web-app-tensorboards-web-app created
+복사<br><br>
+<br>입력
+<br>kustomize build apps/tensorboard/tensorboard-controller/upstream/overlays/kubeflow | kubectl apply -f -
+복사<br>
+<br>출력
+<br>Warning: apiextensions.k8s.io/v1beta1 CustomResourceDefinition is deprecated in v1.16+, unavailable in v1.22+; use apiextensions.k8s.io/v1 CustomResourceDefinition
+customresourcedefinition.apiextensions.k8s.io/tensorboards.tensorboard.kubeflow.org created
+serviceaccount/tensorboard-controller created
+role.rbac.authorization.k8s.io/tensorboard-controller-leader-election-role created
+clusterrole.rbac.authorization.k8s.io/tensorboard-controller-manager-role created
+clusterrole.rbac.authorization.k8s.io/tensorboard-controller-proxy-role created
+rolebinding.rbac.authorization.k8s.io/tensorboard-controller-leader-election-rolebinding created
+clusterrolebinding.rbac.authorization.k8s.io/tensorboard-controller-manager-rolebinding created
+clusterrolebinding.rbac.authorization.k8s.io/tensorboard-controller-proxy-rolebinding created
+configmap/tensorboard-controller-config-mcd64bhg84 created
+service/tensorboard-controller-controller-manager-metrics-service created
+deployment.apps/tensorboard-controller-controller-manager created
+복사<br><br>
+<br>입력
+<br>kustomize build common/user-namespace/base | kubectl apply -f -
+복사<br>
+<br>출력
+<br>configmap/default-install-config-5cbhhbttg4 created
+profile.kubeflow.org/kubeflow-user-example-com created
+복사<br><br>
+<br>입력
+<br>kubectl get po -A
+복사<br>
+<br>출력
+<br>NAMESPACE                   NAME                                                        READY   STATUS             RESTARTS   AGE
+auth                        dex-5ddf47d88d-57flt                                        1/1     Running            1          24m
+cert-manager                cert-manager-7dd5854bb4-xtrft                               1/1     Running            0          48m
+cert-manager                cert-manager-cainjector-64c949654c-hrsp7                    1/1     Running            0          48m
+cert-manager                cert-manager-webhook-6bdffc7c9d-lhcwf                       1/1     Running            0          48m
+istio-system                authservice-0                                               0/1     ImagePullBackOff   0          24m
+istio-system                istio-ingressgateway-78bc678876-wm4lg                       1/1     Running            0          32m
+istio-system                istiod-755f4cc457-tz9z5                                     1/1     Running            0          32m
+kube-system                 coredns-74ff55c5b-9nkkd                                     1/1     Running            0          49m
+kube-system                 etcd-minikube                                               1/1     Running            0          49m
+kube-system                 kube-apiserver-minikube                                     1/1     Running            0          49m
+kube-system                 kube-controller-manager-minikube                            1/1     Running            0          49m
+kube-system                 kube-proxy-9htcd                                            1/1     Running            0          49m
+kube-system                 kube-scheduler-minikube                                     1/1     Running            0          49m
+kube-system                 storage-provisioner                                         1/1     Running            1          49m
+kubeflow-user-example-com   ml-pipeline-ui-artifact-5dd95d555b-gwjx8                    2/2     Running            0          46s
+kubeflow-user-example-com   ml-pipeline-visualizationserver-6b44c6759f-n5f2s            2/2     Running            0          46s
+kubeflow                    admission-webhook-deployment-667bd68d94-ps8rd               1/1     Running            0          9m55s
+kubeflow                    cache-deployer-deployment-79fdf9c5c9-wk78x                  2/2     Running            1          16m
+kubeflow                    cache-server-5bdf4f4457-fl7wx                               2/2     Running            0          16m
+kubeflow                    centraldashboard-7d496c59bb-trdpl                           1/1     Running            0          10m
+kubeflow                    jupyter-web-app-deployment-6f744fbc54-x4nxb                 1/1     Running            0          8m5s
+kubeflow                    katib-controller-68c47fbf8b-lrjb6                           1/1     Running            0          11m
+kubeflow                    katib-db-manager-6c76bdc855-nkf5g                           1/1     Running            0          11m
+kubeflow                    katib-mysql-6dcb447c6f-cmv59                                1/1     Running            0          11m
+kubeflow                    katib-ui-64bb96d5bf-vthbb                                   1/1     Running            0          11m
+kubeflow                    kubeflow-pipelines-profile-controller-7b947f4748-pd7bd      1/1     Running            0          16m
+kubeflow                    metacontroller-0                                            1/1     Running            0          16m
+kubeflow                    metadata-envoy-deployment-5b4856dd5-594gg                   1/1     Running            0          16m
+kubeflow                    metadata-grpc-deployment-748f868f64-55gsb                   2/2     Running            4          16m
+kubeflow                    metadata-writer-548bd879bb-qb5gn                            2/2     Running            1          16m
+kubeflow                    minio-5b65df66c9-2brcs                                      2/2     Running            0          16m
+kubeflow                    ml-pipeline-5784f9d9cc-zm265                                2/2     Running            3          16m
+kubeflow                    ml-pipeline-persistenceagent-d6bdc77bd-s7kwh                2/2     Running            1          16m
+kubeflow                    ml-pipeline-scheduledworkflow-5db54d75c5-rblm6              2/2     Running            0          16m
+kubeflow                    ml-pipeline-ui-5447cb9556-tmc4j                             2/2     Running            0          16m
+kubeflow                    ml-pipeline-viewer-crd-68fb5f4d58-z85lm                     2/2     Running            1          16m
+kubeflow                    ml-pipeline-visualizationserver-cf88b98f7-ghxs9             2/2     Running            0          16m
+kubeflow                    mysql-f7b9b7dd4-9xsn7                                       2/2     Running            0          16m
+kubeflow                    notebook-controller-deployment-578fd4dc97-2jd8k             1/1     Running            0          9m1s
+kubeflow                    profiles-deployment-7cc7956dfd-xtw8w                        2/2     Running            0          6m28s
+kubeflow                    tensorboard-controller-controller-manager-954b7c544-28gtx   3/3     Running            1          104s
+kubeflow                    tensorboards-web-app-deployment-6ff79b7f44-nfgx5            1/1     Running            0          2m59s
+kubeflow                    volumes-web-app-deployment-8589d664cc-dbjw9                 1/1     Running            0          4m48s
+kubeflow                    workflow-controller-76dd87cd85-l2898                        2/2     Running            1          16m
+복사<br><br><br><br>kubectl port-forward svc/istio-ingressgateway -n istio-system 8080:80
+복사<br><br>http://localhost:8080<br><br>
+<br>ID : <a data-tooltip-position="top" aria-label="mailto:user@example.com" rel="noopener" class="external-link" href="mailto:user@example.com" target="_blank">user@example.com</a>
+<br>PW : 12341234
+]]></description><link>root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part4.-쿠버네티스-기반-mlops-pipeline-구축하기\kubeflow-설치.html</link><guid isPermaLink="false">root/dev/머신러닝 서비스 구축을 위한 실전 MLOps/Part4. 쿠버네티스 기반 MLOps Pipeline 구축하기/Kubeflow 설치.md</guid><pubDate>Tue, 24 Sep 2024 08:30:59 GMT</pubDate></item><item><title><![CDATA[kubeflow Kfp]]></title><description><![CDATA[ 
+ <br><br>pip install kfp
+복사<br><br><br>실행할 때한글과 관련 된 것이 있으면 안됨<br><br>
+<br>생성
+<br>vi add_pipeline.py
+복사<br>
+<br>작성
+<br>from kfp.dsl import component, pipeline
+
+
+def add(value_1: int, value_2: int) -&gt; int:
+  ret = value_1 + value_2
+  return ret
+
+
+def subtract(value_1: int, value_2: int) -&gt; int:
+  ret = value_1 - value_2
+  return ret
+
+
+def multiply(value_1: int, value_2: int) -&gt; int:
+  ret = value_1 * value_2
+  return ret
+
+
+add_op = component(add)
+subtract_op = component(subtract)
+multiply_op = component(multiply)
+
+
+@pipeline(name="add example")
+def my_pipeline(value_1: int, value_2: int):
+  task_1 = add_op(value_1=value_1, value_2=value_2)
+  task_2 = subtract_op(value_1=value_1, value_2=value_2)
+  task_3 = multiply_op(value_1=task_1.output, value_2=task_2.output)
+Run복사<br>
+<br>변환
+<br>dsl-compile --py add_pipeline.py --output add_pipeline.yaml
+복사<br><br>
+<br>생성
+<br>vi add_pipeline2.py
+복사<br>
+<br>작성
+<br>from kfp.dsl import component, pipeline
+import kfp.compiler
+
+
+def add(value_1: int, value_2: int) -&gt; int:
+  ret = value_1 + value_2
+  return ret
+
+
+def subtract(value_1: int, value_2: int) -&gt; int:
+  ret = value_1 - value_2
+  return ret
+
+
+def multiply(value_1: int, value_2: int) -&gt; int:
+  ret = value_1 * value_2
+  return ret
+
+
+add_op = component(add)
+subtract_op = component(subtract)
+multiply_op = component(multiply)
+
+
+@pipeline(name="add example")
+def my_pipeline(value_1: int, value_2: int):
+  task_1 = add_op(value_1=value_1, value_2=value_2)
+  task_2 = subtract_op(value_1=value_1, value_2=value_2)
+  task_3 = multiply_op(value_1=task_1.output, value_2=task_2.output)
+
+
+
+if __name__ == "__main__":
+  kfp.compiler.Compiler().compile(my_pipeline, "./example_2.yaml")
+  
+Run복사<br>
+<br>변환
+<br>python add_pipeline2.py
+복사<br><br><br><br>json을외부로 빼지 말것<br>
+<br>생성
+<br>data_passing_file.py
+복사<br>
+<br>작성
+<br>import kfp
+import kfp.compiler
+from kfp.dsl import Input, Output, Dataset, component
+
+@component
+def write_file_op(data_output: Output[Dataset]):
+  import json
+  data = {
+    "a": 300,
+    "b": 10,
+  }
+
+  with open(data_output.path, "w") as f:
+    json.dump(data, f)
+
+@component
+def read_file_and_multiply_op(data_input: Input[Dataset]) -&gt; float:
+  import json
+  with open(data_input.path, "r") as f:
+    data = json.load(f)
+
+  result = data["a"] &amp; data["b"]
+  print(f"Result: {result}")
+  return result
+
+@kfp.dsl.pipeline(name="Data Passing by file example")
+def data_passing_file_pipeline():
+  write_file_task = write_file_op()
+  _ = read_file_and_multiply_op(data_input=write_file_task.outputs["data_output"])
+
+if __name__ == "__main__":
+  kfp.compiler.Compiler().compile(
+    data_passing_file_pipeline,
+    "./data_passing_file_pipeline.yaml"
+  )
+Run복사<br>
+<br>변환
+<br>python data_passing_file.py
+복사<br>]]></description><link>root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part4.-쿠버네티스-기반-mlops-pipeline-구축하기\kubeflow-kfp.html</link><guid isPermaLink="false">root/dev/머신러닝 서비스 구축을 위한 실전 MLOps/Part4. 쿠버네티스 기반 MLOps Pipeline 구축하기/kubeflow Kfp.md</guid><pubDate>Wed, 09 Oct 2024 14:33:03 GMT</pubDate></item><item><title><![CDATA[mlops feast]]></title><description><![CDATA[ 
+ <br><a data-tooltip-position="top" aria-label="https://d-yong.tistory.com/116" rel="noopener" class="external-link" href="https://d-yong.tistory.com/116" target="_blank">feast란</a><br><br><br>
+<br>생성
+<br>docker container run -itd -v ./work:/root/work --name mlops namugach/ubuntu-basic:24.04-kor
+복사<br>
+<br>접속
+<br>docker container exec -it -w /root mlops bash
+복사<br><br>
+<br>디렉토리 생성 및 이동
+<br>cd work
+mkdir -p mlops/feature_store &amp;&amp; cd mlops/feature_store
+복사<br>
+<br>설치
+<br>pip install feast -U -q
+pip install Pygments -q
+복사<br>
+<br>초기화
+<br>feast init feature_repo
+복사<br><br><br><br><br>
+<br>교재용
+<br># syntax=docker/dockerfile:1
+FROM jupyter/base-notebook
+WORKDIR /home/jovyan
+COPY . /home/jovyan
+
+RUN pip3 install -r requirements.txt
+
+USER jovyan
+RUN feast init feature_repo &amp;&amp; \
+		cd feature_repo/feature_repo &amp;&amp; \
+		feast apply &amp;&amp; \
+		feast materialize-incremental $(date +%Y-%m-%d)
+
+
+CMD [ "/bin/sh", "-c", "cd /home/jovyan/feature_repo/feature_repo &amp;&amp; feast serve --host 0.0.0.0"]
+
+WORKDIR /home/jovyan
+복사<br>
+<br>커스텀
+<br>FROM namugach/ubuntu-basic:24.04-kor
+WORKDIR /root
+COPY . /home/ubuntu
+
+RUN pip3 install feast scikit-learn mlflow
+
+RUN feast init feature_repo &amp;&amp; \
+		cd feature_repo/feature_repo &amp;&amp; \
+		feast apply &amp;&amp; \
+		feast materialize-incremental $(date +%Y-%m-%d)
+
+
+CMD [ "/bin/sh", "-c", "cd /root/feature_repo/feature_repo &amp;&amp; feast serve --host 0.0.0.0"]
+복사<br><br>docker build --tag feast-docker .
+복사<br><br>
+<br>교재용
+<br>docker container run -itd --name feast-jupyter -p 8888:8888 -p 6566:6566 -p 5001:5001 -e JUPYTER_TOKEN='password' feast-docker:latest
+복사<br>
+<br>커스텀
+<br>docker container run -itd -v ~/work:/root/work --name feast_server -p 8888:8888 -p 6566:6566 -p 5001:5001 namugach/feast:0.1
+복사<br><br>curl -X POST \
+  "http://localhost:6566/get-online-features" \
+  -d '{
+    "features": [
+      "driver_hourly_stats:conv_rate",
+      "driver_hourly_stats:acc_rate",
+      "driver_hourly_stats:avg_daily_trips"
+    ],
+    "entities": {
+      "driver_id": [1001, 1002, 1003]
+    }
+  }'
+복사]]></description><link>root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part4.-쿠버네티스-기반-mlops-pipeline-구축하기\mlops-feast.html</link><guid isPermaLink="false">root/dev/머신러닝 서비스 구축을 위한 실전 MLOps/Part4. 쿠버네티스 기반 MLOps Pipeline 구축하기/mlops feast.md</guid><pubDate>Thu, 10 Oct 2024 06:20:02 GMT</pubDate></item><item><title><![CDATA[mlops minio]]></title><description><![CDATA[ 
+ <br>docker run -itd \
+   -p 9000:9000 \
+   -p 9001:9001 \
+   --name minio \
+   -v ~/minio/data:/data \
+   -e "MINIO_ROOT_USER=ROOT" \
+   -e "MINIO_ROOT_PASSWORD=TEST134679" \
+   quay.io/minio/minio server /data --console-address ":9001"
+복사]]></description><link>root\dev\머신러닝-서비스-구축을-위한-실전-mlops\part4.-쿠버네티스-기반-mlops-pipeline-구축하기\mlops-minio.html</link><guid isPermaLink="false">root/dev/머신러닝 서비스 구축을 위한 실전 MLOps/Part4. 쿠버네티스 기반 MLOps Pipeline 구축하기/mlops minio.md</guid><pubDate>Thu, 10 Oct 2024 06:16:50 GMT</pubDate></item><item><title><![CDATA[카프카를 데이터 파이프라인에 통합하기]]></title><description><![CDATA[ 
  <br><a data-href="python 간단 파이프라인" href="root\dev\data-pipe-line\데이터-파이프라인-구축\python-간단-파이프라인.html" class="internal-link" target="_self" rel="noopener">python 간단 파이프라인</a><br>물론, 카프카(Kafka)를 붙여서 데이터 파이프라인을 확장할 수 있어. Apache Kafka는 대규모 데이터 스트리밍을 처리하는 데 강력한 도구야. 카프카를 데이터 파이프라인에 통합하면 실시간 데이터 스트리밍과 처리를 더 유연하게 할 수 있어.<br><br>
 <br>
 Kafka 설치 및 설정:
