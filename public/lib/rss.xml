@@ -1,85 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Tue, 15 Oct 2024 19:14:28 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Tue, 15 Oct 2024 19:14:25 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[특허 데이터 분석 프로젝트 참여를 위한 기본 역량]]></title><description><![CDATA[ 
- <br>목표특허 데이터 분석 프로젝트에 참여하기 위한 최소한의 지식 및 기술 습득<br><br><br>
-<br>주요 개념 이해: 특허, 실용신안, 디자인, 상표 등 산업재산권의 정의와 특징을 학습합니다. 
-<br>법적 규제 파악: 산업재산권 관련 법률 및 규정 (특허법, 실용신안법, 디자인보호법, 상표법 등)의 기본 내용을 숙지합니다. 
-<br>권리 범위 이해: 각 산업재산권의 보호 범위 및 권리 행사 방법을 학습합니다.
-<br><br>
-<br>기술 동향 분석:  특허 데이터를 활용하여 특정 기술 분야의 연구 개발 동향, 경쟁 현황, 미래 전망 등을 분석합니다.
-<br>IP 전략 수립:  기업의 특허 포트폴리오 구축, 기술 사업화, 특허 분쟁 예방 등을 위한 전략 수립에 활용합니다.
-<br>기술 가치 평가: 특허 기술의 경제적 가치를 평가하고, 기술 거래, 라이선싱, 투자 유치 등에 활용합니다.
-<br>정책 수립 및 지원:  정부의 산업 기술 정책 수립, R&amp;D 투자 방향 설정, 특허 분쟁 조정 등에 활용합니다.
-<br><br><br><br>
-<br>IPC (International Patent Classification):  세계지식재산기구 (WIPO)에서 개발한 국제 특허 분류 체계로, 기술 분야에 따라 특허 문헌을 계층적으로 분류합니다.
-<br>NICE (National Industrial Classification of Economic Activities):  통계청에서 고시하는 한국표준산업분류로, 산업 활동을 분류하고 특허를 산업 분야별로 분석할 수 있도록 합니다.
-<br><br>
-<br>출원/등록 번호: 특허 출원 및 등록 시 부여되는 고유 번호로, 특허 문서를 식별하고 관리하는 데 사용됩니다. 
-<br>채번 규정:  특허청에서 정한 출원/등록 번호 부여 규칙으로, 번호 체계와 의미를 이해해야 특허 데이터를 정확하게 분석할 수 있습니다. 
-<br>INID (Internationally agreed Numbers for the Identification of Data):  WIPO에서 개발한 특허 문헌의 서지 정보를 식별하는 코드 체계로, 데이터 추출 및 분석에 활용됩니다.
-<br><br><br>
-<br>MySQL:  관계형 데이터베이스 관리 시스템 (RDBMS)의 한 종류로, 특허 데이터 저장 및 관리에 널리 사용됩니다.
-<br>ANSI SQL Query:  
-
-<br>데이터베이스에서 데이터를 조회, 수정, 삭제하는 데 사용되는 표준 질의 언어로, 특허 데이터 분석에 필수적인 기술입니다.
-<br>ANSI, American National Standards Institute(미국 표준 협회)가 각기 다른 DBMS(Oracle, MySQL 등)에서&nbsp;공통적으로 사용할 수 있도록 고안한 표준 SQL문 작성방법입니다.
-
-
-<br>-- ORACLE
-SELECT a.name,
-       b.name
-FROM STUDENTS a,
-     TEACHERS b
-WHERE a.class_no = b.class_no
-
--- ANSI
-SELECT a.name,
-       b.name
-FROM STUDENTS a JOIN TEACHERS b
-      ON a.class_no = b.class_no
-Run복사<br><a rel="noopener" class="external-link" href="https://easybrother0103.tistory.com/137" target="_blank">https://easybrother0103.tistory.com/137</a><br><br><br>
-<br>ETL (Extract, Transform, Load):  다양한 소스에서 데이터를 추출 (Extract), 변환 (Transform), 적재 (Load)하는 과정으로, 특허 데이터 분석 시스템 구축에 필수적인 요소입니다.
-<br>Text Dump:  대용량 데이터를 빠르게 처리하기 위해 텍스트 형식으로 데이터를 추출하는 방법입니다. 
-<br>적재/검증:  추출된 데이터를 데이터베이스에 적재하고, 데이터의 정확성 및 완전성을 검증하는 과정입니다.
-<br><br><br>
-<br>데이터 수집, 저장, 처리, 분석, 활용, 폐기 등 데이터의 전체 라이프사이클을 관리하는 체계적인 접근 방식입니다.
-<br>데이터 품질, 보안, 개인정보보호 등을 고려하여 데이터를 효율적이고 안전하게 관리해야 합니다.
-<br><br><br>
-<br>SQL: 데이터베이스 질의 및 데이터 분석 (MySQL 활용)
-<br>Python: 크롤러 개발, 데이터 처리 및 분석
-<br>REST API: 키프리스플러스 API 연동
-<br>LAMP (Linux, Apache, MySQL, PHP/Perl/Python): 웹 서버 구축 및 운영 (필요에 따라 활용)
-]]></description><link>root\dev\준소프트웨어-프로젝트\프로젝트-설명\특허-데이터-분석-프로젝트-참여를-위한-기본-역량.html</link><guid isPermaLink="false">root/dev/준소프트웨어 프로젝트/프로젝트 설명/특허 데이터 분석 프로젝트 참여를 위한 기본 역량.md</guid><pubDate>Tue, 15 Oct 2024 19:13:57 GMT</pubDate></item><item><title><![CDATA[mysql 계정 생성시 %의 의미]]></title><description><![CDATA[ 
- <br><br>
-<br>%: MySQL에서 %는 "모든 호스트"를 의미해. 즉, %를 사용하면 어떤 IP 주소에서든지 이 사용자 계정으로 MySQL 서버에 접근할 수 있도록 허용하는 거야.
-<br><br>
-<br>
-모든 호스트에서 접근 가능:
-CREATE USER 'ubuntu'@'%' IDENTIFIED BY '1234';
-GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'%' WITH GRANT OPTION;
-Run복사
-이 명령어는 ubuntu라는 사용자 계정이 어떤 IP 주소에서든지 접속할 수 있도록 설정해. 즉, server3에서뿐만 아니라 다른 모든 서버에서도 이 계정을 사용해 MySQL 서버에 접근할 수 있어.
-
-<br>
-특정 IP 주소에서만 접근 가능:
-만약 특정 IP 주소에서만 접근을 허용하려면 % 대신 그 IP 주소를 사용하면 돼. 예를 들어 172.17.0.3에서만 접근을 허용하려면:
-CREATE USER 'ubuntu'@'172.17.0.3' IDENTIFIED BY '1234';
-GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'172.17.0.3' WITH GRANT OPTION;
-Run복사
-이 경우, ubuntu 사용자는 172.17.0.3에서만 MySQL 서버에 접근할 수 있어.
-
-<br>
-특정 호스트 이름에서 접근 가능:
-특정 호스트 이름을 사용해 접근을 제한할 수도 있어. 예를 들어 server1.example.com에서만 접근을 허용하려면:
-CREATE USER 'ubuntu'@'server1.example.com' IDENTIFIED BY '1234';
-GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'server1.example.com' WITH GRANT OPTION;
-Run복사
-이 경우, ubuntu 사용자는 server1.example.com이라는 호스트 이름으로만 MySQL 서버에 접근할 수 있어.
-
-<br><br>
-<br>%: 모든 호스트에서 접근 허용.
-<br>특정 IP 주소: 특정 IP 주소에서만 접근 허용.
-<br>호스트 이름: 특정 호스트 이름에서만 접근 허용.
-<br>이렇게 설정을 통해 MySQL 서버에 접근할 수 있는 사용자 계정과 그 계정이 접속할 수 있는 호스트를 세밀하게 제어할 수 있어. 추가로 궁금한 점이 있으면 언제든지 물어봐!<br>
-이렇게 만드는데, '계정명'@'% 이 부분에서 % 부분에 대해서 알려줘]]></description><link>root\dev\data-pipe-line\server\local\mysql-계정-생성시-의-의미.html</link><guid isPermaLink="false">root/dev/data pipe line/server/local/mysql 계정 생성시 %의 의미.md</guid><pubDate>Tue, 30 Jul 2024 15:36:37 GMT</pubDate></item><item><title><![CDATA[0.도커와 쿠버네티스]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[note]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>note</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 16 Oct 2024 04:06:56 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 16 Oct 2024 04:05:51 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[0.도커와 쿠버네티스]]></title><description><![CDATA[ 
  <br><br>
 <br>우분투
 <br>t2.xlarge
@@ -5713,7 +5632,56 @@ CMD [ "/bin/sh", "-c", "cd /root/feature_repo/feature_repo &amp;&amp; feast serv
 <br>특허권을 활용한 기술 금융의 중요성을 강조합니다.
 <br><br><br>
 <br>유료 특허 데이터에 대한 접근성이 제한적인 문제를 언급하고, 프로젝트 참여 시 고객사 계정을 통해 무료로 데이터를 사용할 수 있는 기회를 제공합니다.
-]]></description><link>root\dev\준소프트웨어-프로젝트\프로젝트-설명\준소프트웨어-특허-데이터-분석-프로젝트-설명-요약.html</link><guid isPermaLink="false">root/dev/준소프트웨어 프로젝트/프로젝트 설명/준소프트웨어 특허 데이터 분석 프로젝트 설명 요약.md</guid><pubDate>Tue, 15 Oct 2024 18:06:54 GMT</pubDate></item><item><title><![CDATA[프로젝트 진행 단계 - 특허 데이터 수집 및 분석]]></title><description><![CDATA[ 
+]]></description><link>root\dev\준소프트웨어-프로젝트\프로젝트-설명\준소프트웨어-특허-데이터-분석-프로젝트-설명-요약.html</link><guid isPermaLink="false">root/dev/준소프트웨어 프로젝트/프로젝트 설명/준소프트웨어 특허 데이터 분석 프로젝트 설명 요약.md</guid><pubDate>Tue, 15 Oct 2024 18:06:54 GMT</pubDate></item><item><title><![CDATA[특허 데이터 분석 프로젝트 참여를 위한 기본 역량]]></title><description><![CDATA[ 
+ <br>목표특허 데이터 분석 프로젝트에 참여하기 위한 최소한의 지식 및 기술 습득<br><br><br>
+<br>주요 개념 이해: 특허, 실용신안, 디자인, 상표 등 산업재산권의 정의와 특징을 학습합니다. 
+<br>법적 규제 파악: 산업재산권 관련 법률 및 규정 (특허법, 실용신안법, 디자인보호법, 상표법 등)의 기본 내용을 숙지합니다. 
+<br>권리 범위 이해: 각 산업재산권의 보호 범위 및 권리 행사 방법을 학습합니다.
+<br><br>
+<br>기술 동향 분석:  특허 데이터를 활용하여 특정 기술 분야의 연구 개발 동향, 경쟁 현황, 미래 전망 등을 분석합니다.
+<br>IP 전략 수립:  기업의 특허 포트폴리오 구축, 기술 사업화, 특허 분쟁 예방 등을 위한 전략 수립에 활용합니다.
+<br>기술 가치 평가: 특허 기술의 경제적 가치를 평가하고, 기술 거래, 라이선싱, 투자 유치 등에 활용합니다.
+<br>정책 수립 및 지원:  정부의 산업 기술 정책 수립, R&amp;D 투자 방향 설정, 특허 분쟁 조정 등에 활용합니다.
+<br><br><br><br>
+<br>IPC (International Patent Classification):  세계지식재산기구 (WIPO)에서 개발한 국제 특허 분류 체계로, 기술 분야에 따라 특허 문헌을 계층적으로 분류합니다.
+<br>NICE (National Industrial Classification of Economic Activities):  통계청에서 고시하는 한국표준산업분류로, 산업 활동을 분류하고 특허를 산업 분야별로 분석할 수 있도록 합니다.
+<br><br>
+<br>출원/등록 번호: 특허 출원 및 등록 시 부여되는 고유 번호로, 특허 문서를 식별하고 관리하는 데 사용됩니다. 
+<br>채번 규정:  특허청에서 정한 출원/등록 번호 부여 규칙으로, 번호 체계와 의미를 이해해야 특허 데이터를 정확하게 분석할 수 있습니다. 
+<br>INID (Internationally agreed Numbers for the Identification of Data):  WIPO에서 개발한 특허 문헌의 서지 정보를 식별하는 코드 체계로, 데이터 추출 및 분석에 활용됩니다.
+<br><br><br>
+<br>MySQL:  관계형 데이터베이스 관리 시스템 (RDBMS)의 한 종류로, 특허 데이터 저장 및 관리에 널리 사용됩니다.
+<br>ANSI SQL Query:  
+
+<br>데이터베이스에서 데이터를 조회, 수정, 삭제하는 데 사용되는 표준 질의 언어로, 특허 데이터 분석에 필수적인 기술입니다.
+<br>ANSI, American National Standards Institute(미국 표준 협회)가 각기 다른 DBMS(Oracle, MySQL 등)에서&nbsp;공통적으로 사용할 수 있도록 고안한 표준 SQL문 작성방법입니다.
+
+
+<br>-- ORACLE
+SELECT a.name,
+       b.name
+FROM STUDENTS a,
+     TEACHERS b
+WHERE a.class_no = b.class_no
+
+-- ANSI
+SELECT a.name,
+       b.name
+FROM STUDENTS a JOIN TEACHERS b
+      ON a.class_no = b.class_no
+Run복사<br><a rel="noopener" class="external-link" href="https://easybrother0103.tistory.com/137" target="_blank">https://easybrother0103.tistory.com/137</a><br><br><br>
+<br>ETL (Extract, Transform, Load):  다양한 소스에서 데이터를 추출 (Extract), 변환 (Transform), 적재 (Load)하는 과정으로, 특허 데이터 분석 시스템 구축에 필수적인 요소입니다.
+<br>Text Dump:  대용량 데이터를 빠르게 처리하기 위해 텍스트 형식으로 데이터를 추출하는 방법입니다. 
+<br>적재/검증:  추출된 데이터를 데이터베이스에 적재하고, 데이터의 정확성 및 완전성을 검증하는 과정입니다.
+<br><br><br>
+<br>데이터 수집, 저장, 처리, 분석, 활용, 폐기 등 데이터의 전체 라이프사이클을 관리하는 체계적인 접근 방식입니다.
+<br>데이터 품질, 보안, 개인정보보호 등을 고려하여 데이터를 효율적이고 안전하게 관리해야 합니다.
+<br><br><br>
+<br>SQL: 데이터베이스 질의 및 데이터 분석 (MySQL 활용)
+<br>Python: 크롤러 개발, 데이터 처리 및 분석
+<br>REST API: 키프리스플러스 API 연동
+<br>LAMP (Linux, Apache, MySQL, PHP/Perl/Python): 웹 서버 구축 및 운영 (필요에 따라 활용)
+]]></description><link>root\dev\준소프트웨어-프로젝트\프로젝트-설명\특허-데이터-분석-프로젝트-참여를-위한-기본-역량.html</link><guid isPermaLink="false">root/dev/준소프트웨어 프로젝트/프로젝트 설명/특허 데이터 분석 프로젝트 참여를 위한 기본 역량.md</guid><pubDate>Wed, 16 Oct 2024 04:05:34 GMT</pubDate></item><item><title><![CDATA[프로젝트 진행 단계 - 특허 데이터 수집 및 분석]]></title><description><![CDATA[ 
  <br><br><br>"기본적으로는 크롤러를 개발을 해 볼 거고요. 이 크롤러가 키프리스플러스라고 하는 공공 데이터 벤더에게 요청을 해서 데이터를 크롤링을 해 오면 되는데..."<br>
 <br>목표:  키프리스플러스에서 특허 데이터를 크롤링하여 MySQL 데이터베이스에 저장
 <br>도구: Python 기반 크롤러, MySQL 데이터베이스
@@ -8298,7 +8266,39 @@ root-ubuntu:24.01-mysql \
   obsidiandynamics/kafdrop
 복사<br><br>컨테이너가 실행된 후 브라우저를 열고 다음 URL로 접속합니다.<br>http://localhost:9000
 복사<br>http://172.17.0.2:9000
-복사<br>이제 Kafdrop UI를 통해 Kafka 클러스터의 여러 브로커를 모니터링하고 관리할 수 있습니다.<br><br><br>브로커 서버가 Docker 컨테이너 내에서 실행되고 있다면, Docker 네트워크 설정이 올바르게 되어 있는지 확인해야 합니다. 브로커 컨테이너와 Kafdrop 컨테이너가 동일한 네트워크에 있어야 통신이 가능합니다.<br><br>위 예시에서는 브로커 호스트가 server1, server2, server3이고, 포트가 9092로 동일하다고 가정했습니다. 실제 환경에서는 호스트명과 포트 번호가 다를 수 있으니 환경에 맞게 수정하세요.<br><br>여러 Kafka 브로커를 사용하는 경우, Docker 명령어에서 --add-host 옵션을 사용해 브로커 호스트를 추가하고, KAFKA_BROKERCONNECT 환경 변수에 여러 브로커를 쉼표로 구분하여 설정합니다. 이를 통해 Kafdrop을 사용해 여러 브로커가 있는 Kafka 클러스터를 편리하게 관리할 수 있습니다.]]></description><link>root\dev\data-pipe-line\server\local\kafdrop-kafka-클러스터-모니터링.html</link><guid isPermaLink="false">root/dev/data pipe line/server/local/Kafdrop kafka 클러스터 모니터링.md</guid><pubDate>Sat, 03 Aug 2024 13:19:25 GMT</pubDate></item><item><title><![CDATA[ssh 접속시 yes 입력 생략하기]]></title><description><![CDATA[ 
+복사<br>이제 Kafdrop UI를 통해 Kafka 클러스터의 여러 브로커를 모니터링하고 관리할 수 있습니다.<br><br><br>브로커 서버가 Docker 컨테이너 내에서 실행되고 있다면, Docker 네트워크 설정이 올바르게 되어 있는지 확인해야 합니다. 브로커 컨테이너와 Kafdrop 컨테이너가 동일한 네트워크에 있어야 통신이 가능합니다.<br><br>위 예시에서는 브로커 호스트가 server1, server2, server3이고, 포트가 9092로 동일하다고 가정했습니다. 실제 환경에서는 호스트명과 포트 번호가 다를 수 있으니 환경에 맞게 수정하세요.<br><br>여러 Kafka 브로커를 사용하는 경우, Docker 명령어에서 --add-host 옵션을 사용해 브로커 호스트를 추가하고, KAFKA_BROKERCONNECT 환경 변수에 여러 브로커를 쉼표로 구분하여 설정합니다. 이를 통해 Kafdrop을 사용해 여러 브로커가 있는 Kafka 클러스터를 편리하게 관리할 수 있습니다.]]></description><link>root\dev\data-pipe-line\server\local\kafdrop-kafka-클러스터-모니터링.html</link><guid isPermaLink="false">root/dev/data pipe line/server/local/Kafdrop kafka 클러스터 모니터링.md</guid><pubDate>Sat, 03 Aug 2024 13:19:25 GMT</pubDate></item><item><title><![CDATA[mysql 계정 생성시 %의 의미]]></title><description><![CDATA[ 
+ <br><br>
+<br>%: MySQL에서 %는 "모든 호스트"를 의미해. 즉, %를 사용하면 어떤 IP 주소에서든지 이 사용자 계정으로 MySQL 서버에 접근할 수 있도록 허용하는 거야.
+<br><br>
+<br>
+모든 호스트에서 접근 가능:
+CREATE USER 'ubuntu'@'%' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'%' WITH GRANT OPTION;
+Run복사
+이 명령어는 ubuntu라는 사용자 계정이 어떤 IP 주소에서든지 접속할 수 있도록 설정해. 즉, server3에서뿐만 아니라 다른 모든 서버에서도 이 계정을 사용해 MySQL 서버에 접근할 수 있어.
+
+<br>
+특정 IP 주소에서만 접근 가능:
+만약 특정 IP 주소에서만 접근을 허용하려면 % 대신 그 IP 주소를 사용하면 돼. 예를 들어 172.17.0.3에서만 접근을 허용하려면:
+CREATE USER 'ubuntu'@'172.17.0.3' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'172.17.0.3' WITH GRANT OPTION;
+Run복사
+이 경우, ubuntu 사용자는 172.17.0.3에서만 MySQL 서버에 접근할 수 있어.
+
+<br>
+특정 호스트 이름에서 접근 가능:
+특정 호스트 이름을 사용해 접근을 제한할 수도 있어. 예를 들어 server1.example.com에서만 접근을 허용하려면:
+CREATE USER 'ubuntu'@'server1.example.com' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'server1.example.com' WITH GRANT OPTION;
+Run복사
+이 경우, ubuntu 사용자는 server1.example.com이라는 호스트 이름으로만 MySQL 서버에 접근할 수 있어.
+
+<br><br>
+<br>%: 모든 호스트에서 접근 허용.
+<br>특정 IP 주소: 특정 IP 주소에서만 접근 허용.
+<br>호스트 이름: 특정 호스트 이름에서만 접근 허용.
+<br>이렇게 설정을 통해 MySQL 서버에 접근할 수 있는 사용자 계정과 그 계정이 접속할 수 있는 호스트를 세밀하게 제어할 수 있어. 추가로 궁금한 점이 있으면 언제든지 물어봐!<br>
+이렇게 만드는데, '계정명'@'% 이 부분에서 % 부분에 대해서 알려줘]]></description><link>root\dev\data-pipe-line\server\local\mysql-계정-생성시-의-의미.html</link><guid isPermaLink="false">root/dev/data pipe line/server/local/mysql 계정 생성시 %의 의미.md</guid><pubDate>Tue, 30 Jul 2024 15:36:37 GMT</pubDate></item><item><title><![CDATA[ssh 접속시 yes 입력 생략하기]]></title><description><![CDATA[ 
  <br><br>SSH 서버에 처음 접속할 때 "yes"를 입력하는 과정은 서버의 호스트 키를 확인하고 저장하는 과정이야. 이 과정을 자동으로 생략하려면 StrictHostKeyChecking 옵션을 사용하면 돼.<br>다음과 같은 방법을 사용해봐:<br>
 <br>명령어에 직접 추가하기:
 <br>ssh -o StrictHostKeyChecking=no user@hostname
